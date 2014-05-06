@@ -5,7 +5,7 @@ http://www.mulesoft.org/schema/mule/apikit http://www.mulesoft.org/schema/mule/a
 http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
 http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd">
     <context:property-placeholder location="classpath:3ps-dax-int.properties, file:///${app.properties.override.location}" />
-    <apikit:config name="apiConfig" raml="api.raml" consoleEnabled="true" consolePath="console" doc:name="Router" />
+    <apikit:config name="apiConfig" raml="3ps-dax-int.raml" consoleEnabled="true" consolePath="console" doc:name="Router" />
     <apikit:mapping-exception-strategy name="apiKitGlobalExceptionMapping">
         <apikit:mapping statusCode="404">
             <apikit:exception value="org.mule.module.apikit.exception.NotFoundException" />
