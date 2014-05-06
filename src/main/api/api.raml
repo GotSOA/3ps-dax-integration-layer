@@ -1,0 +1,27 @@
+#%RAML 0.8
+---
+title: 3PS-DAX-INT
+version: 1.0
+baseUri: http://localhost:8080/api
+documentation:
+  - title: 3PCS-DAX Integration.
+    content: |
+      This sample API has been created as part of your APIkit project. It is located in src/main/api. Feel free to poke around.
+/3ps-dax-int:
+  displayName: 3ps-dax-integration
+  post:
+    description: json payload from 3ps
+    body:
+      application/json:
+        example: |        
+          {
+            "3psObject": "3ps fields"
+          }      
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              {
+                "status": "ACK"
+              }
