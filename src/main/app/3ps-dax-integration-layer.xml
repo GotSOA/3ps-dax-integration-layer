@@ -43,7 +43,7 @@ http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/m
         </apikit:mapping>
     </apikit:mapping-exception-strategy>
     <flow name="main" doc:name="main">
-        <http:inbound-endpoint address="http://localhost:${http.port}/api" doc:name="HTTP" />
+        <http:inbound-endpoint address="http://localhost:${http.port}/api" doc:name="HTTP" exchange-pattern="request-response"/>
         <apikit:router config-ref="apiConfig" doc:name="APIkit Router" />
         <exception-strategy ref="apiKitGlobalExceptionMapping" doc:name="Reference Exception Strategy" />
     </flow>
@@ -72,8 +72,8 @@ http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/m
         <!-- <custom-transformer class="" doc:name="Canon-to-CompanyRequest"/> -->
         <!-- <enricher doc:name="Enricher - Company svc"> -->
             <cxf:jaxws-client doc:name="SOAP" clientClass="org.tempuri.CustCompanyCodeService_Service" operation="create" port="BasicHttpBinding_CustCompanyCodeService"/>
-            <expression-component doc:name="Expression">flowVars['username']='rvenu00'; flowVars['password']='Ammu1234'; flowVars['domain']='vsclbomdxp05w.bhnetwork.local'; flowVars['realm']='bhnetwork' ; </expression-component>
-        	<http:outbound-endpoint  exchange-pattern="request-response" transformer-refs="objectToByteArrayTransformer" method="POST" doc:name="HTTP" path="MicrosoftDynamicsAXAif50/custcompanycodeservice.svc" host="vsclbomdxp05w.bhnetwork.local" port="80"/>
+            <expression-component doc:name="Expression">flowVars['username']='${dax.username}'; flowVars['password']='${dax.password}'; flowVars['domain']='${dax.domain}'; flowVars['realm']='${dax.realm}' ; </expression-component>
+        	<http:outbound-endpoint  exchange-pattern="request-response" transformer-refs="objectToByteArrayTransformer" method="POST" doc:name="HTTP" path="MicrosoftDynamicsAXAif50/custcompanycodeservice.svc" host="${dax.http.host}" port="${dax.http.port}"/>
         <!-- </enricher> -->
         <logger level="INFO" doc:name="Enrich-Canonical-w-DAX-values"/>
         <!-- <custom-transformer class="" doc:name="Enrich-Canonical-w-DAX-values"/> -->
