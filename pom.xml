@@ -72,6 +72,10 @@
                             <groupId>org.mule.modules</groupId>
                             <artifactId>mule-module-apikit</artifactId>
                         </inclusion>
+                    <inclusion>
+                            <groupId>com.mulesoft.muleesb.modules</groupId>
+                            <artifactId>mule-module-tracking-ee</artifactId>
+                        </inclusion>
                     </inclusions>
                 </configuration>
 			</plugin>
@@ -197,6 +201,31 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+			    <groupId>org.apache.cxf</groupId>
+			    <artifactId>cxf-codegen-plugin</artifactId>
+			    <version>2.5.1</version>
+			    <executions>
+			        <execution>
+			            <id>generate-sources</id>
+			            <phase>generate-sources</phase>
+			            <configuration>
+			                <sourceRoot>${project.build.directory}/generated/cxf</sourceRoot>
+			                <wsdlOptions>
+			                    <wsdlOption>
+			                        <wsdl>${basedir}/src/main/config/custcompanycodeservice_1.wsdl</wsdl>
+			                    </wsdlOption>
+			                    <wsdlOption>
+			                        <wsdl>${basedir}/src/main/config/custdivisioncodeservice_1.wsdl</wsdl>
+			                    </wsdlOption>
+			                </wsdlOptions>
+			            </configuration>
+			            <goals>
+			                <goal>wsdl2java</goal>
+			            </goals>
+			        </execution>
+			    </executions>
+			</plugin>
 		</plugins>
 	</build>
 
@@ -413,6 +442,12 @@
             <groupId>org.mule.modules</groupId>
             <artifactId>mule-module-apikit</artifactId>
             <version>1.1.1</version>
+        </dependency>
+    <dependency>
+            <groupId>com.mulesoft.muleesb.modules</groupId>
+            <artifactId>mule-module-tracking-ee</artifactId>
+            <version>${mule.version}</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 

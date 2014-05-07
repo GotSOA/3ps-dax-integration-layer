@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org">
+  <xs:import schemaLocation="custcompanycodeservice_1.xsd" namespace="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList"/>
+  <xs:import schemaLocation="custcompanycodeservice_1_2_3.xsd" namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/CustCompanyCode"/>
+  <xs:import schemaLocation="custcompanycodeservice_1_2_3_4.xsd" namespace="http://schemas.microsoft.com/dynamics/2006/02/documents/QueryCriteria"/>
+  <xs:element name="CustCompanyCodeServiceReadRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="q1:EntityKeyList" xmlns:q1="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CustCompanyCodeServiceReadResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="q2:CustCompanyCode" xmlns:q2="http://schemas.microsoft.com/dynamics/2008/01/documents/CustCompanyCode"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CustCompanyCodeServiceDeleteRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="q3:EntityKeyList" xmlns:q3="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CustCompanyCodeServiceCreateRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="q4:CustCompanyCode" xmlns:q4="http://schemas.microsoft.com/dynamics/2008/01/documents/CustCompanyCode"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CustCompanyCodeServiceCreateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="q5:EntityKeyList" xmlns:q5="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CustCompanyCodeServiceUpdateRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="q6:EntityKeyList" xmlns:q6="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList"/>
+        <xs:element minOccurs="0" ref="q7:CustCompanyCode" xmlns:q7="http://schemas.microsoft.com/dynamics/2008/01/documents/CustCompanyCode"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CustCompanyCodeServiceFindRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="q8:QueryCriteria" xmlns:q8="http://schemas.microsoft.com/dynamics/2006/02/documents/QueryCriteria"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CustCompanyCodeServiceFindResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="q9:CustCompanyCode" xmlns:q9="http://schemas.microsoft.com/dynamics/2008/01/documents/CustCompanyCode"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CustCompanyCodeServiceFindKeysRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="q10:QueryCriteria" xmlns:q10="http://schemas.microsoft.com/dynamics/2006/02/documents/QueryCriteria"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CustCompanyCodeServiceFindKeysResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="q11:EntityKeyList" xmlns:q11="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

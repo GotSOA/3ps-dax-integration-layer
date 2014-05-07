@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="CustCompanyCodeService" targetNamespace="http://tempuri.org" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsp:Policy wsu:Id="BasicHttpBinding_CustCompanyCodeService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <http:NtlmAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http"/>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="custcompanycodeservice.xsd" namespace="http://tempuri.org"/>
+      <xsd:import schemaLocation="custcompanycodeservice_1_2_3_4_5.xsd" namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault"/>
+      <xsd:import schemaLocation="custcompanycodeservice_1_2_3_4_5_6.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+      <xsd:import schemaLocation="custcompanycodeservice_1.xsd" namespace="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList"/>
+      <xsd:import schemaLocation="custcompanycodeservice_1_2.xsd" namespace="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKey"/>
+      <xsd:import schemaLocation="custcompanycodeservice_1_2_3_4_5_6_7.xsd"/>
+      <xsd:import schemaLocation="custcompanycodeservice_1_2_3.xsd" namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/CustCompanyCode"/>
+      <xsd:import schemaLocation="custcompanycodeservice_1_2_3_4.xsd" namespace="http://schemas.microsoft.com/dynamics/2006/02/documents/QueryCriteria"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="CustCompanyCodeServiceReadRequest">
+    <wsdl:part name="parameters" element="tns:CustCompanyCodeServiceReadRequest"/>
+  </wsdl:message>
+  <wsdl:message name="CustCompanyCodeServiceReadResponse">
+    <wsdl:part name="parameters" element="tns:CustCompanyCodeServiceReadResponse"/>
+  </wsdl:message>
+  <wsdl:message name="CustCompanyCodeService_read_AifFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q1:AifFault" xmlns:q1="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault"/>
+  </wsdl:message>
+  <wsdl:message name="CustCompanyCodeServiceDeleteRequest">
+    <wsdl:part name="parameters" element="tns:CustCompanyCodeServiceDeleteRequest"/>
+  </wsdl:message>
+  <wsdl:message name="CustCompanyCodeService_delete_OutputMessage"/>
+  <wsdl:message name="CustCompanyCodeService_delete_AifFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q2:AifFault" xmlns:q2="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault"/>
+  </wsdl:message>
+  <wsdl:message name="CustCompanyCodeServiceCreateRequest">
+    <wsdl:part name="parameters" element="tns:CustCompanyCodeServiceCreateRequest"/>
+  </wsdl:message>
+  <wsdl:message name="CustCompanyCodeServiceCreateResponse">
+    <wsdl:part name="parameters" element="tns:CustCompanyCodeServiceCreateResponse"/>
+  </wsdl:message>
+  <wsdl:message name="CustCompanyCodeService_create_AifFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q3:AifFault" xmlns:q3="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault"/>
+  </wsdl:message>
+  <wsdl:message name="CustCompanyCodeServiceUpdateRequest">
+    <wsdl:part name="parameters" element="tns:CustCompanyCodeServiceUpdateRequest"/>
+  </wsdl:message>
+  <wsdl:message name="CustCompanyCodeService_update_OutputMessage"/>
+  <wsdl:message name="CustCompanyCodeService_update_AifFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q4:AifFault" xmlns:q4="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault"/>
+  </wsdl:message>
+  <wsdl:message name="CustCompanyCodeServiceFindRequest">
+    <wsdl:part name="parameters" element="tns:CustCompanyCodeServiceFindRequest"/>
+  </wsdl:message>
+  <wsdl:message name="CustCompanyCodeServiceFindResponse">
+    <wsdl:part name="parameters" element="tns:CustCompanyCodeServiceFindResponse"/>
+  </wsdl:message>
+  <wsdl:message name="CustCompanyCodeService_find_AifFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q5:AifFault" xmlns:q5="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault"/>
+  </wsdl:message>
+  <wsdl:message name="CustCompanyCodeServiceFindKeysRequest">
+    <wsdl:part name="parameters" element="tns:CustCompanyCodeServiceFindKeysRequest"/>
+  </wsdl:message>
+  <wsdl:message name="CustCompanyCodeServiceFindKeysResponse">
+    <wsdl:part name="parameters" element="tns:CustCompanyCodeServiceFindKeysResponse"/>
+  </wsdl:message>
+  <wsdl:message name="CustCompanyCodeService_findKeys_AifFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q6:AifFault" xmlns:q6="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault"/>
+  </wsdl:message>
+  <wsdl:portType name="CustCompanyCodeService">
+    <wsdl:operation name="read">
+      <wsdl:input wsaw:Action="http://tempuri.org/CustCompanyCodeService/read" name="CustCompanyCodeServiceReadRequest" message="tns:CustCompanyCodeServiceReadRequest"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/CustCompanyCodeService/readResponse" name="CustCompanyCodeServiceReadResponse" message="tns:CustCompanyCodeServiceReadResponse"/>
+      <wsdl:fault wsaw:Action="http://tempuri.org/CustCompanyCodeService/readAifFaultFault" name="AifFaultFault" message="tns:CustCompanyCodeService_read_AifFaultFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <wsdl:input wsaw:Action="http://tempuri.org/CustCompanyCodeService/delete" name="CustCompanyCodeServiceDeleteRequest" message="tns:CustCompanyCodeServiceDeleteRequest"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/CustCompanyCodeService/deleteResponse" message="tns:CustCompanyCodeService_delete_OutputMessage"/>
+      <wsdl:fault wsaw:Action="http://tempuri.org/CustCompanyCodeService/deleteAifFaultFault" name="AifFaultFault" message="tns:CustCompanyCodeService_delete_AifFaultFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="create">
+      <wsdl:input wsaw:Action="http://tempuri.org/CustCompanyCodeService/create" name="CustCompanyCodeServiceCreateRequest" message="tns:CustCompanyCodeServiceCreateRequest"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/CustCompanyCodeService/createResponse" name="CustCompanyCodeServiceCreateResponse" message="tns:CustCompanyCodeServiceCreateResponse"/>
+      <wsdl:fault wsaw:Action="http://tempuri.org/CustCompanyCodeService/createAifFaultFault" name="AifFaultFault" message="tns:CustCompanyCodeService_create_AifFaultFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="update">
+      <wsdl:input wsaw:Action="http://tempuri.org/CustCompanyCodeService/update" name="CustCompanyCodeServiceUpdateRequest" message="tns:CustCompanyCodeServiceUpdateRequest"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/CustCompanyCodeService/updateResponse" message="tns:CustCompanyCodeService_update_OutputMessage"/>
+      <wsdl:fault wsaw:Action="http://tempuri.org/CustCompanyCodeService/updateAifFaultFault" name="AifFaultFault" message="tns:CustCompanyCodeService_update_AifFaultFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="find">
+      <wsdl:input wsaw:Action="http://tempuri.org/CustCompanyCodeService/find" name="CustCompanyCodeServiceFindRequest" message="tns:CustCompanyCodeServiceFindRequest"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/CustCompanyCodeService/findResponse" name="CustCompanyCodeServiceFindResponse" message="tns:CustCompanyCodeServiceFindResponse"/>
+      <wsdl:fault wsaw:Action="http://tempuri.org/CustCompanyCodeService/findAifFaultFault" name="AifFaultFault" message="tns:CustCompanyCodeService_find_AifFaultFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="findKeys">
+      <wsdl:input wsaw:Action="http://tempuri.org/CustCompanyCodeService/findKeys" name="CustCompanyCodeServiceFindKeysRequest" message="tns:CustCompanyCodeServiceFindKeysRequest"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/CustCompanyCodeService/findKeysResponse" name="CustCompanyCodeServiceFindKeysResponse" message="tns:CustCompanyCodeServiceFindKeysResponse"/>
+      <wsdl:fault wsaw:Action="http://tempuri.org/CustCompanyCodeService/findKeysAifFaultFault" name="AifFaultFault" message="tns:CustCompanyCodeService_findKeys_AifFaultFault_FaultMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_CustCompanyCodeService" type="tns:CustCompanyCodeService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_CustCompanyCodeService_policy"/>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="read">
+      <soap:operation soapAction="http://tempuri.org/CustCompanyCodeService/read" style="document"/>
+      <wsdl:input name="CustCompanyCodeServiceReadRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="CustCompanyCodeServiceReadResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault name="AifFaultFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <soap:operation soapAction="http://tempuri.org/CustCompanyCodeService/delete" style="document"/>
+      <wsdl:input name="CustCompanyCodeServiceDeleteRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault name="AifFaultFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="create">
+      <soap:operation soapAction="http://tempuri.org/CustCompanyCodeService/create" style="document"/>
+      <wsdl:input name="CustCompanyCodeServiceCreateRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="CustCompanyCodeServiceCreateResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault name="AifFaultFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="update">
+      <soap:operation soapAction="http://tempuri.org/CustCompanyCodeService/update" style="document"/>
+      <wsdl:input name="CustCompanyCodeServiceUpdateRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault name="AifFaultFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="find">
+      <soap:operation soapAction="http://tempuri.org/CustCompanyCodeService/find" style="document"/>
+      <wsdl:input name="CustCompanyCodeServiceFindRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="CustCompanyCodeServiceFindResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault name="AifFaultFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findKeys">
+      <soap:operation soapAction="http://tempuri.org/CustCompanyCodeService/findKeys" style="document"/>
+      <wsdl:input name="CustCompanyCodeServiceFindKeysRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="CustCompanyCodeServiceFindKeysResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault name="AifFaultFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CustCompanyCodeService">
+    <wsdl:port name="BasicHttpBinding_CustCompanyCodeService" binding="tns:BasicHttpBinding_CustCompanyCodeService">
+      <soap:address location="http://vsclbomdxp05w.bhnetwork.local/MicrosoftDynamicsAXAif50/custcompanycodeservice.svc"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/dynamics/2008/01/documents/CustDivisionCode" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/dynamics/2008/01/documents/CustDivisionCode">
+  <xs:element name="CustDivisionCode" type="AxdCustDivisionCode"/>
+  <xs:complexType name="AxdCustDivisionCode">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DocPurpose" nillable="true" type="AxdEnum_XMLDocPurpose"/>
+      <xs:element minOccurs="0" name="SenderId" nillable="true" type="AxdExtType_dataAreaId"/>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="bhnCustDivisionTable" type="AxdEntity_bhnCustDivisionTable"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="AxdEnum_XMLDocPurpose">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Product:Product</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Original"/>
+      <xs:enumeration value="Duplicate"/>
+      <xs:enumeration value="Proforma"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_dataAreaId">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Company:ID for an area of data</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="4"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdEnum_AxdEntityAction">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">AxdEntityAction:AxdEntityAction</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="create"/>
+      <xs:enumeration value="update"/>
+      <xs:enumeration value="replace"/>
+      <xs:enumeration value="delete"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="AxdEntity_bhnCustDivisionTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="_DocumentHash" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="AcquirerCode" nillable="true" type="AxdExtType_bhnCustCompanyCode"/>
+      <xs:element minOccurs="0" name="AcquirerType" nillable="true" type="AxdExtType_bhnAcquirerTypeId"/>
+      <xs:element minOccurs="0" name="AdditionalInfo" nillable="true" type="AxdExtType_bhnAdditionalInfo"/>
+      <xs:element minOccurs="0" name="BankAuthorizationRequired" nillable="true" type="AxdExtType_BankAuthoizationRequired"/>
+      <xs:element minOccurs="0" name="BhnGUID" nillable="true" type="AxdExtType_bhnGUID"/>
+      <xs:element minOccurs="0" name="BhnLocalPartner" nillable="true" type="AxdEnum_NoYes"/>
+      <xs:element minOccurs="0" name="BhnPartnerPortalSource" nillable="true" type="AxdExtType_bhnpartnerPortalSource"/>
+      <xs:element minOccurs="0" name="BhnSetupComplete" nillable="true" type="AxdExtType_NoYesId"/>
+      <xs:element minOccurs="0" name="BhnStandInCSR" nillable="true" type="AxdExtType_Inactive"/>
+      <xs:element minOccurs="0" name="BhnValidateTxn" nillable="true" type="AxdExtType_Inactive"/>
+      <xs:element minOccurs="0" name="BhnVoidSupport" nillable="true" type="AxdExtType_bhnVoidSupportMode"/>
+      <xs:element minOccurs="0" name="BillingSourceCode" nillable="true" type="AxdExtType_bhnDivisionBillingSource"/>
+      <xs:element minOccurs="0" name="BusChannel" nillable="true" type="AxdExtType_bhnBusChannel"/>
+      <xs:element minOccurs="0" name="Comments" nillable="true" type="AxdExtType_Comments"/>
+      <xs:element minOccurs="1" name="CompanyCode" type="AxdExtType_bhnCustCompanyCode"/>
+      <xs:element minOccurs="0" name="ContractComplete" nillable="true" type="AxdEnum_NoYes"/>
+      <xs:element minOccurs="0" name="DisabledDate" nillable="true" type="AxdExtType_bhnDisabledDate"/>
+      <xs:element minOccurs="0" name="DivisionAID" nillable="true" type="AxdExtType_bhnDivisionAID"/>
+      <xs:element minOccurs="1" name="DivisionCode" type="AxdExtType_bhnCustDivisionCode"/>
+      <xs:element minOccurs="0" name="DivisionMID" nillable="true" type="AxdExtType_bhnDivisionMID"/>
+      <xs:element minOccurs="0" name="EnabledDate" nillable="true" type="AxdExtType_bhnEnabledDate"/>
+      <xs:element minOccurs="0" name="ExpiryDate" nillable="true" type="AxdExtType_TransDate"/>
+      <xs:element minOccurs="0" name="Inactive" nillable="true" type="AxdExtType_Inactive"/>
+      <xs:element minOccurs="1" name="Name" type="AxdExtType_Name"/>
+      <xs:element minOccurs="0" name="PartnerRecId" nillable="true" type="AxdExtType_RefRecId"/>
+      <xs:element minOccurs="0" name="ProcessorCode" nillable="true" type="AxdExtType_bhnCustCompanyCode"/>
+      <xs:element minOccurs="0" name="ProcessorType" nillable="true" type="AxdExtType_bhnProcessorTypeId"/>
+      <xs:element minOccurs="0" name="RecId" nillable="true" type="AxdExtType_recId"/>
+      <xs:element minOccurs="0" name="RecVersion" nillable="true" type="AxdExtType_recVersion"/>
+      <xs:element minOccurs="0" name="RegulatedProducts" nillable="true" type="AxdExtType_RegulatedProducts"/>
+      <xs:element minOccurs="1" name="RelationCode" type="AxdExtType_bhnCompRelationCode"/>
+      <xs:element minOccurs="0" name="SideLetter" nillable="true" type="AxdExtType_SideLetterType"/>
+      <xs:element minOccurs="0" name="SideLetterReq" nillable="true" type="AxdEnum_NoYes"/>
+      <xs:element minOccurs="0" name="WebSite" nillable="true" type="AxdUnion_AxdType_Str_AxdType_ExtCodeValue"/>
+    </xs:sequence>
+    <xs:attribute fixed="entity" name="class" use="required"/>
+    <xs:attribute name="action" type="AxdEnum_AxdEntityAction"/>
+  </xs:complexType>
+  <xs:simpleType name="AxdExtType_bhnCustCompanyCode">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Company code:The company code related to a customer or product.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="10"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_bhnAcquirerTypeId">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Acquirer type:Type of acquiring institution.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="15"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_bhnAdditionalInfo">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Additional info:</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="250"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_BankAuthoizationRequired">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Bank authorization required:</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="No"/>
+      <xs:enumeration value="Yes"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_bhnGUID">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">BHN GUID:</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="40"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdEnum_NoYes">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">:</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="No"/>
+      <xs:enumeration value="Yes"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_bhnpartnerPortalSource">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Partner Portal Source:</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="30"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_NoYesId">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">:</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="No"/>
+      <xs:enumeration value="Yes"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_Inactive">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Inactive:</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="No"/>
+      <xs:enumeration value="Yes"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_bhnVoidSupportMode">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Void Support Mode:</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Systematic"/>
+      <xs:enumeration value="Notsupported"/>
+      <xs:enumeration value="ManualCSR"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_bhnDivisionBillingSource">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Billing source code:Division billing source code.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="10"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_bhnBusChannel">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Business channel:Business channel for division</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="10"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_Comments">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Comments:</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="100"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_bhnDisabledDate">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Disabled date:Transaction date.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:date"/>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_bhnDivisionAID">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Division AID:Division code AID.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="10"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_bhnCustDivisionCode">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Division code:The division code related to a customer or product.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="5"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_bhnDivisionMID">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Division MID:Division code MID.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="10"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_bhnEnabledDate">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Enabled date:Transaction date.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:date"/>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_TransDate">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Date:Transaction date.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:date"/>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_Name">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Name:Name.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="60"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_RefRecId">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Reference:Reference field in a different table.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="AxdType_Int64"/>
+  </xs:simpleType>
+  <xs:simpleType name="AxdType_Int64">
+    <xs:restriction base="xs:long">
+      <xs:minInclusive value="-9223372036854775808"/>
+      <xs:maxInclusive value="9223372036854775807"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_bhnProcessorTypeId">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Processor type:Type of processor.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="30"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_recId">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Record-ID:Unique ID for the record in the database</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="AxdType_Int64"/>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_recVersion">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Record Version:Version of the record in the database</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="AxdType_Integer"/>
+  </xs:simpleType>
+  <xs:simpleType name="AxdType_Integer">
+    <xs:restriction base="xs:int">
+      <xs:minInclusive value="-2147483648"/>
+      <xs:maxInclusive value="2147483647"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_RegulatedProducts">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Regulated products:</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="No"/>
+      <xs:enumeration value="Yes"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_bhnCompRelationCode">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Relation code:Company relation code.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="10"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_SideLetterType">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Side letter type:</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="100"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdType_ExtCodeValue">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Value:Actual value of the related record according to the selected external code type.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="50"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdUnion_AxdType_Str_AxdType_ExtCodeValue">
+    <xs:union memberTypes="AxdType_Str AxdType_ExtCodeValue"/>
+  </xs:simpleType>
+  <xs:simpleType name="AxdType_Str">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Web site:</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="255"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
