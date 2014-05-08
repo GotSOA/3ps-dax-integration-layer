@@ -1,6 +1,7 @@
 package com.bhnetwork.integration.pppstodax.canonical;
 
 import java.util.Date;
+
 import java.util.List;
 
 /**
@@ -36,15 +37,9 @@ public class Company {
 	private Integer contractComplete;
 	private Date contractExpDate;
 	
+	// for Megatron: single division
 	private List<Division> cpDivision;
-	
-	private List<ItemID> iid;
-	
 	private String legalEntityCode;
 	private String legalEntityStateOfIncorporation;
-
-	private List<ProductUpc> product;
-	
-	private List<SubstitutionGroup> substGrp;
 	
 }

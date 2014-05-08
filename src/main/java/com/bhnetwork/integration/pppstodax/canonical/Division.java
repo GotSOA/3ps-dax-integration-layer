@@ -1,5 +1,7 @@
 package com.bhnetwork.integration.pppstodax.canonical;
 
+import java.util.List;
+
 /**
  * 
  * BHN Integration canonical model for Division
@@ -48,4 +50,11 @@ public class Division {
 	private	String	processorHasRealTimeIssuance;
 	private	String	processorType;
 	private	String	relationCode;
+	
+	// 1 or multiple products (UPCs)
+	private List<Product> products;
+	
+	// somehow on the latest API 1.6 spec, the stores are part of division
+	private List<Store> stores;
+	
 }

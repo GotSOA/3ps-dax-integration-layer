@@ -2,8 +2,17 @@ package com.bhnetwork.integration.pppstodax.canonical;
 
 import java.util.Date;
 
+/**
+ * 
+ * BHN Integration canonical model for Product/Upc
+ * per spec 3.3, doc ref: MasterDataGapAnalysisGROUP 3PS v 3_3 .xlsx 
+ * 
+ * @author Stephane Rata - Got SOA?
+ *
+ */
+
 public class Product {
-	// everything bhn... is DAX internal specific and may be not exposed on the json
+	
 	private String	bhnBarcodeType;
 	private String	bhnCheckDigit;
 	private Boolean	bhnComplete;
@@ -62,4 +71,10 @@ public class Product {
 	private Boolean	isProductUsingStandardDesignTemplate;
 	private Double	reloadMaxAmount;
 	private Double	reloadMinAmount;
+	
+	// we expect 1 IID per product
+	private ItemID iid;
+	
+	private SubstitutionGroup substGrp;
+	
 }
