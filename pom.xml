@@ -210,13 +210,16 @@
 			            <id>generate-sources</id>
 			            <phase>generate-sources</phase>
 			            <configuration>
+		            	  	<defaultOptions>
+						      	<bindingFiles>
+						          	<bindingFile>${basedir}/src/main/config/bindings.xml</bindingFile>
+						      	</bindingFiles>
+						      	<noAddressBinding>true</noAddressBinding>
+						  	</defaultOptions>
 			                <sourceRoot>${project.build.directory}/generated/cxf</sourceRoot>
 			                <wsdlOptions>
 			                    <wsdlOption>
 			                        <wsdl>${basedir}/src/main/config/custcompanycodeservice_1.wsdl</wsdl>
-			                    </wsdlOption>
-			                    <wsdlOption>
-			                        <wsdl>${basedir}/src/main/config/custdivisioncodeservice_1.wsdl</wsdl>
 			                    </wsdlOption>
 			                </wsdlOptions>
 			            </configuration>

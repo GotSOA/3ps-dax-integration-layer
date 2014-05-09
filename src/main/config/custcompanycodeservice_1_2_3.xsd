@@ -53,12 +53,15 @@
       <xs:element minOccurs="1" name="Country" type="AxdUnion_AxdExtType_AddressCountryRegionId_AxdType_ExtCodeValue"/>
       <xs:element minOccurs="0" name="Inactive" nillable="true" type="AxdExtType_Inactive"/>
       <xs:element minOccurs="0" name="LegalEntityCode" nillable="true" type="AxdExtType_BhnLegalEntityCode"/>
+      <xs:element minOccurs="0" name="MerchRecordNumber" nillable="true" type="AxdExtType_MerchRecordNumber"/>
       <xs:element minOccurs="1" name="Name" type="AxdExtType_Name"/>
+      <xs:element minOccurs="0" name="PartnerProfileId" nillable="true" type="AxdExtType_bhnGUID"/>
       <xs:element minOccurs="0" name="ProcessorType" nillable="true" type="AxdExtType_bhnProcessorTypeId"/>
       <xs:element minOccurs="0" name="RecId" nillable="true" type="AxdExtType_recId"/>
       <xs:element minOccurs="0" name="RecVersion" nillable="true" type="AxdExtType_recVersion"/>
       <xs:element minOccurs="0" name="SideLetterReq" nillable="true" type="AxdEnum_NoYes"/>
       <xs:element minOccurs="0" name="TestDateReq" nillable="true" type="AxdEnum_NoYes"/>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="bhnOnlineCompanyAttributes" type="AxdEntity_bhnOnlineCompanyAttributes"/>
     </xs:sequence>
     <xs:attribute fixed="entity" name="class" use="required"/>
     <xs:attribute name="action" type="AxdEnum_AxdEntityAction"/>
@@ -183,6 +186,15 @@
       <xs:maxLength value="20"/>
     </xs:restriction>
   </xs:simpleType>
+  <xs:simpleType name="AxdExtType_MerchRecordNumber">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Service Now Merchant Record Number:</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="10"/>
+    </xs:restriction>
+  </xs:simpleType>
   <xs:simpleType name="AxdExtType_Name">
     <xs:annotation>
       <xs:documentation xml:lang="EN-US">Name:Name.</xs:documentation>
@@ -223,6 +235,105 @@
     <xs:restriction base="xs:int">
       <xs:minInclusive value="-2147483648"/>
       <xs:maxInclusive value="2147483647"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="AxdEntity_bhnOnlineCompanyAttributes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CompanyAddressLine1" nillable="true" type="AxdExtType_AddressStreet"/>
+      <xs:element minOccurs="0" name="CompanyAddressLine2" nillable="true" type="AxdExtType_AddressStreet"/>
+      <xs:element minOccurs="0" name="Companycity" nillable="true" type="AxdExtType_AddressCity"/>
+      <xs:element minOccurs="1" name="CompanyCode" type="AxdExtType_bhnCustCompanyCode"/>
+      <xs:element minOccurs="0" name="CompanyContractTerm" nillable="true" type="AxdUnion_AxdType_Str_AxdType_ExtCodeValue"/>
+      <xs:element minOccurs="0" name="CompanyMerchantCategoryCode" nillable="true" type="AxdUnion_AxdType_Str_AxdType_ExtCodeValue"/>
+      <xs:element minOccurs="0" name="CompanyPrimaryContactBusinessTitle" nillable="true" type="AxdExtType_Name"/>
+      <xs:element minOccurs="0" name="CompanyPrimaryContactEmail" nillable="true" type="AxdExtType_Email"/>
+      <xs:element minOccurs="0" name="CompanyPrimaryContactFirstName" nillable="true" type="AxdExtType_bhnMegatronName"/>
+      <xs:element minOccurs="0" name="CompanyPrimaryContactLastName" nillable="true" type="AxdExtType_bhnMegatronName"/>
+      <xs:element minOccurs="0" name="CompanyPrimaryPhoneNumber" nillable="true" type="AxdExtType_Phone"/>
+      <xs:element minOccurs="0" name="CompanyPrimaryPhoneNumberExt" nillable="true" type="AxdUnion_AxdType_Str_AxdType_ExtCodeValue"/>
+      <xs:element minOccurs="0" name="CompanyState" nillable="true" type="AxdExtType_AddressStateId"/>
+      <xs:element minOccurs="0" name="CompanyWebSiteURL" nillable="true" type="AxdExtType_WebSiteURL"/>
+      <xs:element minOccurs="0" name="CompanyZipPostalCode" nillable="true" type="AxdUnion_AxdExtType_AddressZipCodeId_AxdType_ExtCodeValue"/>
+      <xs:element minOccurs="0" name="LegalEntityStateOfIncorporation" nillable="true" type="AxdUnion_AxdType_Str_AxdType_ExtCodeValue"/>
+      <xs:element minOccurs="0" name="RecId" nillable="true" type="AxdExtType_recId"/>
+      <xs:element minOccurs="0" name="RecVersion" nillable="true" type="AxdExtType_recVersion"/>
+    </xs:sequence>
+    <xs:attribute fixed="entity" name="class" use="required"/>
+    <xs:attribute name="action" type="AxdEnum_AxdEntityAction"/>
+  </xs:complexType>
+  <xs:simpleType name="AxdExtType_AddressStreet">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Street name:Enter the street name of the address.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="250"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_AddressCity">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">City:City for ZIP/postal Code.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="60"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_Email">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">E-mail:Internet e-mail address.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="80"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_bhnMegatronName">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">:</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="100"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_Phone">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Telephone:Telephone number.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="20"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_AddressStateId">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">State:Identification of state.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="10"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_WebSiteURL">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Internet address:WWW address for Internet homepage.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="255"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdUnion_AxdExtType_AddressZipCodeId_AxdType_ExtCodeValue">
+    <xs:union memberTypes="AxdExtType_AddressZipCodeId AxdType_ExtCodeValue"/>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_AddressZipCodeId">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">ZIP/postal Code:Identify ZIP/postal Code district.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="10"/>
     </xs:restriction>
   </xs:simpleType>
 </xs:schema>

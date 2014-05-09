@@ -1,0 +1,958 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="dax-devqa" soapui-version="4.5.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="BasicHttpBinding_CustCompanyCodeService" type="wsdl" bindingName="{http://tempuri.org}BasicHttpBinding_CustCompanyCodeService" soapVersion="1_1" anonymous="optional" definition="http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/custcompanycodeservice.svc?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/custcompanycodeservice.svc?wsdl"><con:part><con:url>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/custcompanycodeservice.svc?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="CustCompanyCodeService" targetNamespace="http://schemas.microsoft.com/dynamics/2008/01/services" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:tns="http://schemas.microsoft.com/dynamics/2008/01/services" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:i0="http://tempuri.org" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsdl:import namespace="http://tempuri.org" location="http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/custcompanycodeservice.svc?wsdl=wsdl0"/>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://schemas.microsoft.com/dynamics/2008/01/services/Imports">
+      <xsd:import schemaLocation="http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/custcompanycodeservice.svc?xsd=xsd0" namespace="http://schemas.microsoft.com/dynamics/2008/01/services"/>
+      <xsd:import schemaLocation="http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/custcompanycodeservice.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault"/>
+      <xsd:import schemaLocation="http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/custcompanycodeservice.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+      <xsd:import schemaLocation="http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/custcompanycodeservice.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList"/>
+      <xsd:import schemaLocation="http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/custcompanycodeservice.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKey"/>
+      <xsd:import schemaLocation="http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/custcompanycodeservice.svc?xsd=xsd4"/>
+      <xsd:import schemaLocation="http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/custcompanycodeservice.svc?xsd=xsd6" namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/CustCompanyCode"/>
+      <xsd:import schemaLocation="http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/custcompanycodeservice.svc?xsd=xsd7" namespace="http://schemas.microsoft.com/dynamics/2006/02/documents/QueryCriteria"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="CustCompanyCodeServiceDeleteRequest">
+    <wsdl:part name="parameters" element="tns:CustCompanyCodeServiceDeleteRequest"/>
+  </wsdl:message>
+  <wsdl:message name="CustCompanyCodeService_delete_OutputMessage"/>
+  <wsdl:message name="CustCompanyCodeService_delete_AifFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q1:AifFault" xmlns:q1="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault"/>
+  </wsdl:message>
+  <wsdl:message name="CustCompanyCodeServiceCreateRequest">
+    <wsdl:part name="parameters" element="tns:CustCompanyCodeServiceCreateRequest"/>
+  </wsdl:message>
+  <wsdl:message name="CustCompanyCodeServiceCreateResponse">
+    <wsdl:part name="parameters" element="tns:CustCompanyCodeServiceCreateResponse"/>
+  </wsdl:message>
+  <wsdl:message name="CustCompanyCodeService_create_AifFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q2:AifFault" xmlns:q2="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault"/>
+  </wsdl:message>
+  <wsdl:message name="CustCompanyCodeServiceFindRequest">
+    <wsdl:part name="parameters" element="tns:CustCompanyCodeServiceFindRequest"/>
+  </wsdl:message>
+  <wsdl:message name="CustCompanyCodeServiceFindResponse">
+    <wsdl:part name="parameters" element="tns:CustCompanyCodeServiceFindResponse"/>
+  </wsdl:message>
+  <wsdl:message name="CustCompanyCodeService_find_AifFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q3:AifFault" xmlns:q3="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault"/>
+  </wsdl:message>
+  <wsdl:message name="CustCompanyCodeServiceReadRequest">
+    <wsdl:part name="parameters" element="tns:CustCompanyCodeServiceReadRequest"/>
+  </wsdl:message>
+  <wsdl:message name="CustCompanyCodeServiceReadResponse">
+    <wsdl:part name="parameters" element="tns:CustCompanyCodeServiceReadResponse"/>
+  </wsdl:message>
+  <wsdl:message name="CustCompanyCodeService_read_AifFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q4:AifFault" xmlns:q4="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault"/>
+  </wsdl:message>
+  <wsdl:message name="CustCompanyCodeServiceUpdateRequest">
+    <wsdl:part name="parameters" element="tns:CustCompanyCodeServiceUpdateRequest"/>
+  </wsdl:message>
+  <wsdl:message name="CustCompanyCodeService_update_OutputMessage"/>
+  <wsdl:message name="CustCompanyCodeService_update_AifFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q5:AifFault" xmlns:q5="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault"/>
+  </wsdl:message>
+  <wsdl:portType name="CustCompanyCodeService">
+    <wsdl:operation name="delete">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/CustCompanyCodeService/delete" name="CustCompanyCodeServiceDeleteRequest" message="tns:CustCompanyCodeServiceDeleteRequest"/>
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/CustCompanyCodeService/deleteResponse" message="tns:CustCompanyCodeService_delete_OutputMessage"/>
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/CustCompanyCodeService/deleteAifFaultFault" name="AifFaultFault" message="tns:CustCompanyCodeService_delete_AifFaultFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="create">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/CustCompanyCodeService/create" name="CustCompanyCodeServiceCreateRequest" message="tns:CustCompanyCodeServiceCreateRequest"/>
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/CustCompanyCodeService/createResponse" name="CustCompanyCodeServiceCreateResponse" message="tns:CustCompanyCodeServiceCreateResponse"/>
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/CustCompanyCodeService/createAifFaultFault" name="AifFaultFault" message="tns:CustCompanyCodeService_create_AifFaultFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="find">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/CustCompanyCodeService/find" name="CustCompanyCodeServiceFindRequest" message="tns:CustCompanyCodeServiceFindRequest"/>
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/CustCompanyCodeService/findResponse" name="CustCompanyCodeServiceFindResponse" message="tns:CustCompanyCodeServiceFindResponse"/>
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/CustCompanyCodeService/findAifFaultFault" name="AifFaultFault" message="tns:CustCompanyCodeService_find_AifFaultFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="read">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/CustCompanyCodeService/read" name="CustCompanyCodeServiceReadRequest" message="tns:CustCompanyCodeServiceReadRequest"/>
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/CustCompanyCodeService/readResponse" name="CustCompanyCodeServiceReadResponse" message="tns:CustCompanyCodeServiceReadResponse"/>
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/CustCompanyCodeService/readAifFaultFault" name="AifFaultFault" message="tns:CustCompanyCodeService_read_AifFaultFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="update">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/CustCompanyCodeService/update" name="CustCompanyCodeServiceUpdateRequest" message="tns:CustCompanyCodeServiceUpdateRequest"/>
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/CustCompanyCodeService/updateResponse" message="tns:CustCompanyCodeService_update_OutputMessage"/>
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/CustCompanyCodeService/updateAifFaultFault" name="AifFaultFault" message="tns:CustCompanyCodeService_update_AifFaultFault_FaultMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:service name="CustCompanyCodeService">
+    <wsdl:port name="BasicHttpBinding_CustCompanyCodeService" binding="i0:BasicHttpBinding_CustCompanyCodeService">
+      <soap:address location="http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/custcompanycodeservice.svc"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/custcompanycodeservice.svc?wsdl=wsdl0</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://tempuri.org" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:tns="http://tempuri.org" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:i0="http://schemas.microsoft.com/dynamics/2008/01/services" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsp:Policy wsu:Id="BasicHttpBinding_CustCompanyCodeService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <http:NegotiateAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http"/>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:import namespace="http://schemas.microsoft.com/dynamics/2008/01/services" location="http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/custcompanycodeservice.svc?wsdl"/>
+  <wsdl:types/>
+  <wsdl:binding name="BasicHttpBinding_CustCompanyCodeService" type="i0:CustCompanyCodeService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_CustCompanyCodeService_policy"/>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="delete">
+      <soap:operation soapAction="http://schemas.microsoft.com/dynamics/2008/01/services/CustCompanyCodeService/delete" style="document"/>
+      <wsdl:input name="CustCompanyCodeServiceDeleteRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault name="AifFaultFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="create">
+      <soap:operation soapAction="http://schemas.microsoft.com/dynamics/2008/01/services/CustCompanyCodeService/create" style="document"/>
+      <wsdl:input name="CustCompanyCodeServiceCreateRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="CustCompanyCodeServiceCreateResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault name="AifFaultFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="find">
+      <soap:operation soapAction="http://schemas.microsoft.com/dynamics/2008/01/services/CustCompanyCodeService/find" style="document"/>
+      <wsdl:input name="CustCompanyCodeServiceFindRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="CustCompanyCodeServiceFindResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault name="AifFaultFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="read">
+      <soap:operation soapAction="http://schemas.microsoft.com/dynamics/2008/01/services/CustCompanyCodeService/read" style="document"/>
+      <wsdl:input name="CustCompanyCodeServiceReadRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="CustCompanyCodeServiceReadResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault name="AifFaultFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="update">
+      <soap:operation soapAction="http://schemas.microsoft.com/dynamics/2008/01/services/CustCompanyCodeService/update" style="document"/>
+      <wsdl:input name="CustCompanyCodeServiceUpdateRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault name="AifFaultFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/custcompanycodeservice.svc?xsd=xsd0</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/dynamics/2008/01/services" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/dynamics/2008/01/services">
+  <xs:import schemaLocation="http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/custcompanycodeservice.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList"/>
+  <xs:import schemaLocation="http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/custcompanycodeservice.svc?xsd=xsd6" namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/CustCompanyCode"/>
+  <xs:import schemaLocation="http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/custcompanycodeservice.svc?xsd=xsd7" namespace="http://schemas.microsoft.com/dynamics/2006/02/documents/QueryCriteria"/>
+  <xs:element name="CustCompanyCodeServiceDeleteRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="q1:EntityKeyList" xmlns:q1="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CustCompanyCodeServiceCreateRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="q2:CustCompanyCode" xmlns:q2="http://schemas.microsoft.com/dynamics/2008/01/documents/CustCompanyCode"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CustCompanyCodeServiceCreateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="q3:EntityKeyList" xmlns:q3="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CustCompanyCodeServiceFindRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="q4:QueryCriteria" xmlns:q4="http://schemas.microsoft.com/dynamics/2006/02/documents/QueryCriteria"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CustCompanyCodeServiceFindResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="q5:CustCompanyCode" xmlns:q5="http://schemas.microsoft.com/dynamics/2008/01/documents/CustCompanyCode"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CustCompanyCodeServiceReadRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="q6:EntityKeyList" xmlns:q6="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CustCompanyCodeServiceReadResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="q7:CustCompanyCode" xmlns:q7="http://schemas.microsoft.com/dynamics/2008/01/documents/CustCompanyCode"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CustCompanyCodeServiceUpdateRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="q8:EntityKeyList" xmlns:q8="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList"/>
+        <xs:element minOccurs="0" ref="q9:CustCompanyCode" xmlns:q9="http://schemas.microsoft.com/dynamics/2008/01/documents/CustCompanyCode"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/custcompanycodeservice.svc?xsd=xsd2</con:url><con:content><![CDATA[<xsd:schema elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList" xmlns:ek="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKey">
+  <xsd:import schemaLocation="http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/custcompanycodeservice.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKey"/>
+  <xsd:element name="EntityKeyList" type="EntityKeyList"/>
+  <xsd:complexType name="EntityKeyList">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" ref="ek:EntityKey"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/custcompanycodeservice.svc?xsd=xsd3</con:url><con:content><![CDATA[<xsd:schema elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKey" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKey">
+  <xsd:element name="EntityKey" type="EntityKey"/>
+  <xsd:complexType name="EntityKey">
+    <xsd:sequence>
+      <xsd:element name="KeyData" type="KeyData"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="KeyData">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" name="KeyField" type="KeyField"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="KeyField">
+    <xsd:sequence>
+      <xsd:element name="Field" type="xsd:string"/>
+      <xsd:element name="Value" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/custcompanycodeservice.svc?xsd=xsd6</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/dynamics/2008/01/documents/CustCompanyCode" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/dynamics/2008/01/documents/CustCompanyCode">
+  <xs:element name="CustCompanyCode" type="AxdCustCompanyCode"/>
+  <xs:complexType name="AxdCustCompanyCode">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DocPurpose" nillable="true" type="AxdEnum_XMLDocPurpose"/>
+      <xs:element minOccurs="0" name="SenderId" nillable="true" type="AxdExtType_dataAreaId"/>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="bhnCustCompanyTable" type="AxdEntity_bhnCustCompanyTable"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="AxdEnum_XMLDocPurpose">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Product:Product</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Original"/>
+      <xs:enumeration value="Duplicate"/>
+      <xs:enumeration value="Proforma"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_dataAreaId">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Company:ID for an area of data</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="4"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdEnum_AxdEntityAction">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">AxdEntityAction:AxdEntityAction</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="create"/>
+      <xs:enumeration value="update"/>
+      <xs:enumeration value="replace"/>
+      <xs:enumeration value="delete"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="AxdEntity_bhnCustCompanyTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="_DocumentHash" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="AcquirerType" nillable="true" type="AxdExtType_bhnAcquirerTypeId"/>
+      <xs:element minOccurs="0" name="AdditionalInfo" nillable="true" type="AxdExtType_bhnAdditionalInfo"/>
+      <xs:element minOccurs="0" name="BhnGUID" nillable="true" type="AxdExtType_bhnGUID"/>
+      <xs:element minOccurs="0" name="BhnSetupComplete" nillable="true" type="AxdExtType_NoYesId"/>
+      <xs:element minOccurs="0" name="Comments" nillable="true" type="AxdExtType_Comments"/>
+      <xs:element minOccurs="1" name="CompanyCode" type="AxdExtType_bhnCustCompanyCode"/>
+      <xs:element minOccurs="0" name="ContractComplete" nillable="true" type="AxdEnum_NoYes"/>
+      <xs:element minOccurs="0" name="ContractExpDate" nillable="true" type="AxdExtType_bhnContractExpDate"/>
+      <xs:element minOccurs="0" name="CorporateName" nillable="true" type="AxdUnion_AxdType_Str_AxdType_ExtCodeValue"/>
+      <xs:element minOccurs="1" name="Country" type="AxdUnion_AxdExtType_AddressCountryRegionId_AxdType_ExtCodeValue"/>
+      <xs:element minOccurs="0" name="Inactive" nillable="true" type="AxdExtType_Inactive"/>
+      <xs:element minOccurs="0" name="LegalEntityCode" nillable="true" type="AxdExtType_BhnLegalEntityCode"/>
+      <xs:element minOccurs="0" name="MerchRecordNumber" nillable="true" type="AxdExtType_MerchRecordNumber"/>
+      <xs:element minOccurs="1" name="Name" type="AxdExtType_Name"/>
+      <xs:element minOccurs="0" name="PartnerProfileId" nillable="true" type="AxdExtType_bhnGUID"/>
+      <xs:element minOccurs="0" name="ProcessorType" nillable="true" type="AxdExtType_bhnProcessorTypeId"/>
+      <xs:element minOccurs="0" name="RecId" nillable="true" type="AxdExtType_recId"/>
+      <xs:element minOccurs="0" name="RecVersion" nillable="true" type="AxdExtType_recVersion"/>
+      <xs:element minOccurs="0" name="SideLetterReq" nillable="true" type="AxdEnum_NoYes"/>
+      <xs:element minOccurs="0" name="TestDateReq" nillable="true" type="AxdEnum_NoYes"/>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="bhnOnlineCompanyAttributes" type="AxdEntity_bhnOnlineCompanyAttributes"/>
+    </xs:sequence>
+    <xs:attribute fixed="entity" name="class" use="required"/>
+    <xs:attribute name="action" type="AxdEnum_AxdEntityAction"/>
+  </xs:complexType>
+  <xs:simpleType name="AxdExtType_bhnAcquirerTypeId">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Acquirer type:Type of acquiring institution.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="15"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_bhnAdditionalInfo">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Additional info:</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="250"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_bhnGUID">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">BHN GUID:</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="40"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_NoYesId">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">:</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="No"/>
+      <xs:enumeration value="Yes"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_Comments">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Comments:</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="100"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_bhnCustCompanyCode">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Company code:The company code related to a customer or product.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="10"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdEnum_NoYes">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">:</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="No"/>
+      <xs:enumeration value="Yes"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_bhnContractExpDate">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Contract expiration date:Day when company contract expires</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:date"/>
+  </xs:simpleType>
+  <xs:simpleType name="AxdType_ExtCodeValue">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Value:Actual value of the related record according to the selected external code type.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="50"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdUnion_AxdType_Str_AxdType_ExtCodeValue">
+    <xs:union memberTypes="AxdType_Str AxdType_ExtCodeValue"/>
+  </xs:simpleType>
+  <xs:simpleType name="AxdType_Str">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Corporate name:</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="100"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdUnion_AxdExtType_AddressCountryRegionId_AxdType_ExtCodeValue">
+    <xs:union memberTypes="AxdExtType_AddressCountryRegionId AxdType_ExtCodeValue"/>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_AddressCountryRegionId">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Country/region:Specifies default native country/region in connection with addresses.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="10"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_Inactive">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Inactive:</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="No"/>
+      <xs:enumeration value="Yes"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_BhnLegalEntityCode">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Entity Code:</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="20"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_MerchRecordNumber">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Service Now Merchant Record Number:</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="10"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_Name">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Name:Name.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="60"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_bhnProcessorTypeId">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Processor type:Type of processor.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="30"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_recId">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Record-ID:Unique ID for the record in the database</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="AxdType_Int64"/>
+  </xs:simpleType>
+  <xs:simpleType name="AxdType_Int64">
+    <xs:restriction base="xs:long">
+      <xs:minInclusive value="-9223372036854775808"/>
+      <xs:maxInclusive value="9223372036854775807"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_recVersion">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Record Version:Version of the record in the database</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="AxdType_Integer"/>
+  </xs:simpleType>
+  <xs:simpleType name="AxdType_Integer">
+    <xs:restriction base="xs:int">
+      <xs:minInclusive value="-2147483648"/>
+      <xs:maxInclusive value="2147483647"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="AxdEntity_bhnOnlineCompanyAttributes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CompanyAddressLine1" nillable="true" type="AxdExtType_AddressStreet"/>
+      <xs:element minOccurs="0" name="CompanyAddressLine2" nillable="true" type="AxdExtType_AddressStreet"/>
+      <xs:element minOccurs="0" name="Companycity" nillable="true" type="AxdExtType_AddressCity"/>
+      <xs:element minOccurs="1" name="CompanyCode" type="AxdExtType_bhnCustCompanyCode"/>
+      <xs:element minOccurs="0" name="CompanyContractTerm" nillable="true" type="AxdUnion_AxdType_Str_AxdType_ExtCodeValue"/>
+      <xs:element minOccurs="0" name="CompanyMerchantCategoryCode" nillable="true" type="AxdUnion_AxdType_Str_AxdType_ExtCodeValue"/>
+      <xs:element minOccurs="0" name="CompanyPrimaryContactBusinessTitle" nillable="true" type="AxdExtType_Name"/>
+      <xs:element minOccurs="0" name="CompanyPrimaryContactEmail" nillable="true" type="AxdExtType_Email"/>
+      <xs:element minOccurs="0" name="CompanyPrimaryContactFirstName" nillable="true" type="AxdExtType_bhnMegatronName"/>
+      <xs:element minOccurs="0" name="CompanyPrimaryContactLastName" nillable="true" type="AxdExtType_bhnMegatronName"/>
+      <xs:element minOccurs="0" name="CompanyPrimaryPhoneNumber" nillable="true" type="AxdExtType_Phone"/>
+      <xs:element minOccurs="0" name="CompanyPrimaryPhoneNumberExt" nillable="true" type="AxdUnion_AxdType_Str_AxdType_ExtCodeValue"/>
+      <xs:element minOccurs="0" name="CompanyState" nillable="true" type="AxdExtType_AddressStateId"/>
+      <xs:element minOccurs="0" name="CompanyWebSiteURL" nillable="true" type="AxdExtType_WebSiteURL"/>
+      <xs:element minOccurs="0" name="CompanyZipPostalCode" nillable="true" type="AxdUnion_AxdExtType_AddressZipCodeId_AxdType_ExtCodeValue"/>
+      <xs:element minOccurs="0" name="LegalEntityStateOfIncorporation" nillable="true" type="AxdUnion_AxdType_Str_AxdType_ExtCodeValue"/>
+      <xs:element minOccurs="0" name="RecId" nillable="true" type="AxdExtType_recId"/>
+      <xs:element minOccurs="0" name="RecVersion" nillable="true" type="AxdExtType_recVersion"/>
+    </xs:sequence>
+    <xs:attribute fixed="entity" name="class" use="required"/>
+    <xs:attribute name="action" type="AxdEnum_AxdEntityAction"/>
+  </xs:complexType>
+  <xs:simpleType name="AxdExtType_AddressStreet">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Street name:Enter the street name of the address.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="250"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_AddressCity">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">City:City for ZIP/postal Code.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="60"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_Email">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">E-mail:Internet e-mail address.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="80"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_bhnMegatronName">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">:</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="100"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_Phone">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Telephone:Telephone number.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="20"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_AddressStateId">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">State:Identification of state.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="10"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_WebSiteURL">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Internet address:WWW address for Internet homepage.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="255"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdUnion_AxdExtType_AddressZipCodeId_AxdType_ExtCodeValue">
+    <xs:union memberTypes="AxdExtType_AddressZipCodeId AxdType_ExtCodeValue"/>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_AddressZipCodeId">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">ZIP/postal Code:Identify ZIP/postal Code district.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="10"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/custcompanycodeservice.svc?xsd=xsd7</con:url><con:content><![CDATA[<xsd:schema elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/dynamics/2006/02/documents/QueryCriteria" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/dynamics/2006/02/documents/QueryCriteria">
+  <xsd:element name="QueryCriteria" type="QueryCriteria"/>
+  <xsd:complexType name="QueryCriteria">
+    <xsd:sequence minOccurs="1" maxOccurs="unbounded">
+      <xsd:element name="CriteriaElement" type="CriteriaElement"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CriteriaElement">
+    <xsd:sequence>
+      <xsd:element name="DataSourceName" type="xsd:string"/>
+      <xsd:element name="FieldName" type="xsd:string"/>
+      <xsd:element name="Operator" type="Operator"/>
+      <xsd:element name="Value1" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="Value2" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="Operator">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Equal"/>
+      <xsd:enumeration value="NotEqual"/>
+      <xsd:enumeration value="Greater"/>
+      <xsd:enumeration value="GreaterOrEqual"/>
+      <xsd:enumeration value="Less"/>
+      <xsd:enumeration value="LessOrEqual"/>
+      <xsd:enumeration value="Range"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/custcompanycodeservice.svc?xsd=xsd5</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault">
+  <xs:complexType name="AifFault">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustomDetailXml" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="FaultMessageListArray" nillable="true" type="tns:ArrayOfFaultMessageList"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AifFault" nillable="true" type="tns:AifFault"/>
+  <xs:complexType name="ArrayOfFaultMessageList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FaultMessageList" nillable="true" type="tns:FaultMessageList"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFaultMessageList" nillable="true" type="tns:ArrayOfFaultMessageList"/>
+  <xs:complexType name="FaultMessageList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Document" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="DocumentOperation" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="FaultMessageArray" nillable="true" type="tns:ArrayOfFaultMessage"/>
+      <xs:element minOccurs="0" name="Field" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Service" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ServiceOperation" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ServiceOperationParameter" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="XPath" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="XmlLine" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="XmlPosition" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FaultMessageList" nillable="true" type="tns:FaultMessageList"/>
+  <xs:complexType name="ArrayOfFaultMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FaultMessage" nillable="true" type="tns:FaultMessage"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFaultMessage" nillable="true" type="tns:ArrayOfFaultMessage"/>
+  <xs:complexType name="FaultMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FaultMessage" nillable="true" type="tns:FaultMessage"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/custcompanycodeservice.svc?xsd=xsd1</con:url><con:content><![CDATA[<xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/">
+  <xs:element name="anyType" nillable="true" type="xs:anyType"/>
+  <xs:element name="anyURI" nillable="true" type="xs:anyURI"/>
+  <xs:element name="base64Binary" nillable="true" type="xs:base64Binary"/>
+  <xs:element name="boolean" nillable="true" type="xs:boolean"/>
+  <xs:element name="byte" nillable="true" type="xs:byte"/>
+  <xs:element name="dateTime" nillable="true" type="xs:dateTime"/>
+  <xs:element name="decimal" nillable="true" type="xs:decimal"/>
+  <xs:element name="double" nillable="true" type="xs:double"/>
+  <xs:element name="float" nillable="true" type="xs:float"/>
+  <xs:element name="int" nillable="true" type="xs:int"/>
+  <xs:element name="long" nillable="true" type="xs:long"/>
+  <xs:element name="QName" nillable="true" type="xs:QName"/>
+  <xs:element name="short" nillable="true" type="xs:short"/>
+  <xs:element name="string" nillable="true" type="xs:string"/>
+  <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte"/>
+  <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt"/>
+  <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong"/>
+  <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort"/>
+  <xs:element name="char" nillable="true" type="tns:char"/>
+  <xs:simpleType name="char">
+    <xs:restriction base="xs:int"/>
+  </xs:simpleType>
+  <xs:element name="duration" nillable="true" type="tns:duration"/>
+  <xs:simpleType name="duration">
+    <xs:restriction base="xs:duration">
+      <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/>
+      <xs:minInclusive value="-P10675199DT2H48M5.4775808S"/>
+      <xs:maxInclusive value="P10675199DT2H48M5.4775807S"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="guid" nillable="true" type="tns:guid"/>
+  <xs:simpleType name="guid">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:attribute name="FactoryType" type="xs:QName"/>
+  <xs:attribute name="Id" type="xs:ID"/>
+  <xs:attribute name="Ref" type="xs:IDREF"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/custcompanycodeservice.svc?xsd=xsd4</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/custcompanycodeservice.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList"/>
+  <xs:import schemaLocation="http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/custcompanycodeservice.svc?xsd=xsd6" namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/CustCompanyCode"/>
+  <xs:import schemaLocation="http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/custcompanycodeservice.svc?xsd=xsd7" namespace="http://schemas.microsoft.com/dynamics/2006/02/documents/QueryCriteria"/>
+  <xs:element name="EntityKeyList" type="q1:EntityKeyList" xmlns:q1="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList"/>
+  <xs:element name="AxdCustCompanyCode" type="q2:AxdCustCompanyCode" xmlns:q2="http://schemas.microsoft.com/dynamics/2008/01/documents/CustCompanyCode"/>
+  <xs:element name="QueryCriteria" type="q3:QueryCriteria" xmlns:q3="http://schemas.microsoft.com/dynamics/2006/02/documents/QueryCriteria"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/custcompanycodeservice.svc</con:endpoint></con:endpoints><con:operation isOneWay="false" action="http://schemas.microsoft.com/dynamics/2008/01/services/CustCompanyCodeService/create" name="create" bindingOperationName="create" type="Request-Response" outputName="CustCompanyCodeServiceCreateResponse" inputName="CustCompanyCodeServiceCreateRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/custcompanycodeservice.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://schemas.microsoft.com/dynamics/2008/01/services" xmlns:cus="http://schemas.microsoft.com/dynamics/2008/01/documents/CustCompanyCode">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:CustCompanyCodeServiceCreateRequest>
+         <!--Optional:-->
+         <cus:CustCompanyCode>
+            <!--Optional:-->
+            <cus:DocPurpose>Original</cus:DocPurpose>
+            <!--Optional:-->
+            <cus:SenderId></cus:SenderId>
+            <!--Zero or more repetitions:-->
+            <cus:bhnCustCompanyTable class="entity">
+               <!--Optional:-->
+               <cus:_DocumentHash></cus:_DocumentHash>
+               <!--Optional:-->
+               <cus:AcquirerType></cus:AcquirerType>
+               <!--Optional:-->
+               <cus:AdditionalInfo></cus:AdditionalInfo>
+               <!--Optional:-->
+               <cus:BhnGUID></cus:BhnGUID>
+               <!--Optional:-->
+               <cus:BhnSetupComplete>No</cus:BhnSetupComplete>
+               <!--Optional:-->
+               <cus:Comments></cus:Comments>
+               <cus:CompanyCode>DEVQA</cus:CompanyCode>
+               <!--Optional:-->
+               <cus:ContractComplete>No</cus:ContractComplete>
+               <!--Optional:-->
+               <cus:ContractExpDate>2014-05-05</cus:ContractExpDate>
+               <!--Optional:-->
+               <cus:CorporateName></cus:CorporateName>
+               <cus:Country>US</cus:Country>
+               <!--Optional:-->
+               <cus:Inactive>No</cus:Inactive>
+               <!--Optional:-->
+               <cus:LegalEntityCode></cus:LegalEntityCode>
+               <!--Optional:-->
+               <cus:MerchRecordNumber></cus:MerchRecordNumber>
+               <cus:Name>DEVQA</cus:Name>
+               <!--Optional:-->
+               <cus:PartnerProfileId></cus:PartnerProfileId>
+               <!--Optional:-->
+               <cus:ProcessorType></cus:ProcessorType>
+               <!--Optional:-->
+               <cus:RecId>123455</cus:RecId>
+               <!--Optional:-->
+               <cus:RecVersion>654321678</cus:RecVersion>
+               <!--Optional:-->
+               <cus:SideLetterReq>No</cus:SideLetterReq>
+               <!--Optional:-->
+               <cus:TestDateReq>No</cus:TestDateReq>
+               <!--Zero or more repetitions:-->
+               <cus:bhnOnlineCompanyAttributes class="entity">
+                  <!--Optional:-->
+                  <cus:CompanyAddressLine1></cus:CompanyAddressLine1>
+                  <!--Optional:-->
+                  <cus:CompanyAddressLine2></cus:CompanyAddressLine2>
+                  <!--Optional:-->
+                  <cus:Companycity></cus:Companycity>
+                  <cus:CompanyCode>DEVQA</cus:CompanyCode>
+                  <!--Optional:-->
+                  <cus:CompanyContractTerm></cus:CompanyContractTerm>
+                  <!--Optional:-->
+                  <cus:CompanyMerchantCategoryCode></cus:CompanyMerchantCategoryCode>
+                  <!--Optional:-->
+                  <cus:CompanyPrimaryContactBusinessTitle></cus:CompanyPrimaryContactBusinessTitle>
+                  <!--Optional:-->
+                  <cus:CompanyPrimaryContactEmail></cus:CompanyPrimaryContactEmail>
+                  <!--Optional:-->
+                  <cus:CompanyPrimaryContactFirstName></cus:CompanyPrimaryContactFirstName>
+                  <!--Optional:-->
+                  <cus:CompanyPrimaryContactLastName></cus:CompanyPrimaryContactLastName>
+                  <!--Optional:-->
+                  <cus:CompanyPrimaryPhoneNumber></cus:CompanyPrimaryPhoneNumber>
+                  <!--Optional:-->
+                  <cus:CompanyPrimaryPhoneNumberExt></cus:CompanyPrimaryPhoneNumberExt>
+                  <!--Optional:-->
+                  <cus:CompanyState></cus:CompanyState>
+                  <!--Optional:-->
+                  <cus:CompanyWebSiteURL></cus:CompanyWebSiteURL>
+                  <!--Optional:-->
+                  <cus:CompanyZipPostalCode></cus:CompanyZipPostalCode>
+                  <!--Optional:-->
+                  <cus:LegalEntityStateOfIncorporation>?</cus:LegalEntityStateOfIncorporation>
+                  <!--Optional:-->
+                  <cus:RecId>123456</cus:RecId>
+                  <!--Optional:-->
+                  <cus:RecVersion>765432658</cus:RecVersion>
+               </cus:bhnOnlineCompanyAttributes>
+            </cus:bhnCustCompanyTable>
+         </cus:CustCompanyCode>
+      </ser:CustCompanyCodeServiceCreateRequest>
+   </soapenv:Body>
+</soapenv:Envelope>
+]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/dynamics/2008/01/services/CustCompanyCodeService/create"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="http://schemas.microsoft.com/dynamics/2008/01/services/CustCompanyCodeService/delete" name="delete" bindingOperationName="delete" type="Request-Response" inputName="CustCompanyCodeServiceDeleteRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/custcompanycodeservice.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://schemas.microsoft.com/dynamics/2008/01/services" xmlns:ent="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList" xmlns:ent1="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKey">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:CustCompanyCodeServiceDeleteRequest>
+         <!--Optional:-->
+         <ent:EntityKeyList>
+            <!--Zero or more repetitions:-->
+            <ent1:EntityKey>
+               <ent1:KeyData>
+                  <!--1 or more repetitions:-->
+                  <ent1:KeyField>
+                     <ent1:Field>CompanyCode</ent1:Field>
+                     <ent1:Value>DEVQA</ent1:Value>
+                  </ent1:KeyField>
+               </ent1:KeyData>
+            </ent1:EntityKey>
+         </ent:EntityKeyList>
+      </ser:CustCompanyCodeServiceDeleteRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/dynamics/2008/01/services/CustCompanyCodeService/delete"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="http://schemas.microsoft.com/dynamics/2008/01/services/CustCompanyCodeService/find" name="find" bindingOperationName="find" type="Request-Response" outputName="CustCompanyCodeServiceFindResponse" inputName="CustCompanyCodeServiceFindRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/custcompanycodeservice.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://schemas.microsoft.com/dynamics/2008/01/services" xmlns:quer="http://schemas.microsoft.com/dynamics/2006/02/documents/QueryCriteria">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:CustCompanyCodeServiceFindRequest>
+         <!--Optional:-->
+         <quer:QueryCriteria>
+            <quer:CriteriaElement>
+               <quer:DataSourceName>?</quer:DataSourceName>
+               <quer:FieldName>?</quer:FieldName>
+               <quer:Operator>?</quer:Operator>
+               <quer:Value1>?</quer:Value1>
+               <!--Optional:-->
+               <quer:Value2>?</quer:Value2>
+            </quer:CriteriaElement>
+         </quer:QueryCriteria>
+      </ser:CustCompanyCodeServiceFindRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/dynamics/2008/01/services/CustCompanyCodeService/find"/></con:call></con:operation><con:operation isOneWay="false" action="http://schemas.microsoft.com/dynamics/2008/01/services/CustCompanyCodeService/read" name="read" bindingOperationName="read" type="Request-Response" outputName="CustCompanyCodeServiceReadResponse" inputName="CustCompanyCodeServiceReadRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/custcompanycodeservice.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://schemas.microsoft.com/dynamics/2008/01/services" xmlns:ent="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList" xmlns:ent1="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKey">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:CustCompanyCodeServiceReadRequest>
+         <!--Optional:-->
+         <ent:EntityKeyList>
+            <!--Zero or more repetitions:-->
+            <ent1:EntityKey>
+               <ent1:KeyData>
+                  <!--1 or more repetitions:-->
+                  <ent1:KeyField>
+                     <ent1:Field>?</ent1:Field>
+                     <ent1:Value>?</ent1:Value>
+                  </ent1:KeyField>
+               </ent1:KeyData>
+            </ent1:EntityKey>
+         </ent:EntityKeyList>
+      </ser:CustCompanyCodeServiceReadRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/dynamics/2008/01/services/CustCompanyCodeService/read"/></con:call></con:operation><con:operation isOneWay="false" action="http://schemas.microsoft.com/dynamics/2008/01/services/CustCompanyCodeService/update" name="update" bindingOperationName="update" type="Request-Response" inputName="CustCompanyCodeServiceUpdateRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/custcompanycodeservice.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://schemas.microsoft.com/dynamics/2008/01/services" xmlns:ent="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList" xmlns:ent1="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKey" xmlns:cus="http://schemas.microsoft.com/dynamics/2008/01/documents/CustCompanyCode">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:CustCompanyCodeServiceUpdateRequest>
+         <!--Optional:-->
+         <ent:EntityKeyList>
+            <!--Zero or more repetitions:-->
+            <ent1:EntityKey>
+               <ent1:KeyData>
+                  <!--1 or more repetitions:-->
+                  <ent1:KeyField>
+                     <ent1:Field>?</ent1:Field>
+                     <ent1:Value>?</ent1:Value>
+                  </ent1:KeyField>
+               </ent1:KeyData>
+            </ent1:EntityKey>
+         </ent:EntityKeyList>
+         <!--Optional:-->
+         <cus:CustCompanyCode>
+            <!--Optional:-->
+            <cus:DocPurpose>?</cus:DocPurpose>
+            <!--Optional:-->
+            <cus:SenderId>?</cus:SenderId>
+            <!--Zero or more repetitions:-->
+            <cus:bhnCustCompanyTable class="entity" action="?">
+               <!--Optional:-->
+               <cus:_DocumentHash>?</cus:_DocumentHash>
+               <!--Optional:-->
+               <cus:AcquirerType>?</cus:AcquirerType>
+               <!--Optional:-->
+               <cus:AdditionalInfo>?</cus:AdditionalInfo>
+               <!--Optional:-->
+               <cus:BhnGUID>?</cus:BhnGUID>
+               <!--Optional:-->
+               <cus:BhnSetupComplete>?</cus:BhnSetupComplete>
+               <!--Optional:-->
+               <cus:Comments>?</cus:Comments>
+               <cus:CompanyCode>?</cus:CompanyCode>
+               <!--Optional:-->
+               <cus:ContractComplete>?</cus:ContractComplete>
+               <!--Optional:-->
+               <cus:ContractExpDate>?</cus:ContractExpDate>
+               <!--Optional:-->
+               <cus:CorporateName>?</cus:CorporateName>
+               <cus:Country>?</cus:Country>
+               <!--Optional:-->
+               <cus:Inactive>?</cus:Inactive>
+               <!--Optional:-->
+               <cus:LegalEntityCode>?</cus:LegalEntityCode>
+               <!--Optional:-->
+               <cus:MerchRecordNumber>?</cus:MerchRecordNumber>
+               <cus:Name>?</cus:Name>
+               <!--Optional:-->
+               <cus:PartnerProfileId>?</cus:PartnerProfileId>
+               <!--Optional:-->
+               <cus:ProcessorType>?</cus:ProcessorType>
+               <!--Optional:-->
+               <cus:RecId>?</cus:RecId>
+               <!--Optional:-->
+               <cus:RecVersion>?</cus:RecVersion>
+               <!--Optional:-->
+               <cus:SideLetterReq>?</cus:SideLetterReq>
+               <!--Optional:-->
+               <cus:TestDateReq>?</cus:TestDateReq>
+               <!--Zero or more repetitions:-->
+               <cus:bhnOnlineCompanyAttributes class="entity" action="?">
+                  <!--Optional:-->
+                  <cus:CompanyAddressLine1>?</cus:CompanyAddressLine1>
+                  <!--Optional:-->
+                  <cus:CompanyAddressLine2>?</cus:CompanyAddressLine2>
+                  <!--Optional:-->
+                  <cus:Companycity>?</cus:Companycity>
+                  <cus:CompanyCode>?</cus:CompanyCode>
+                  <!--Optional:-->
+                  <cus:CompanyContractTerm>?</cus:CompanyContractTerm>
+                  <!--Optional:-->
+                  <cus:CompanyMerchantCategoryCode>?</cus:CompanyMerchantCategoryCode>
+                  <!--Optional:-->
+                  <cus:CompanyPrimaryContactBusinessTitle>?</cus:CompanyPrimaryContactBusinessTitle>
+                  <!--Optional:-->
+                  <cus:CompanyPrimaryContactEmail>?</cus:CompanyPrimaryContactEmail>
+                  <!--Optional:-->
+                  <cus:CompanyPrimaryContactFirstName>?</cus:CompanyPrimaryContactFirstName>
+                  <!--Optional:-->
+                  <cus:CompanyPrimaryContactLastName>?</cus:CompanyPrimaryContactLastName>
+                  <!--Optional:-->
+                  <cus:CompanyPrimaryPhoneNumber>?</cus:CompanyPrimaryPhoneNumber>
+                  <!--Optional:-->
+                  <cus:CompanyPrimaryPhoneNumberExt>?</cus:CompanyPrimaryPhoneNumberExt>
+                  <!--Optional:-->
+                  <cus:CompanyState>?</cus:CompanyState>
+                  <!--Optional:-->
+                  <cus:CompanyWebSiteURL>?</cus:CompanyWebSiteURL>
+                  <!--Optional:-->
+                  <cus:CompanyZipPostalCode>?</cus:CompanyZipPostalCode>
+                  <!--Optional:-->
+                  <cus:LegalEntityStateOfIncorporation>?</cus:LegalEntityStateOfIncorporation>
+                  <!--Optional:-->
+                  <cus:RecId>?</cus:RecId>
+                  <!--Optional:-->
+                  <cus:RecVersion>?</cus:RecVersion>
+               </cus:bhnOnlineCompanyAttributes>
+            </cus:bhnCustCompanyTable>
+         </cus:CustCompanyCode>
+      </ser:CustCompanyCodeServiceUpdateRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/dynamics/2008/01/services/CustCompanyCodeService/update"/></con:call></con:operation></con:interface><con:endpointStrategy xsi:type="con:DefaultEndpointStrategy" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:endpoint mode="COMPLEMENT" username="rvenu00-dev" password="Ammu1234" domain="devqa">http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/custcompanycodeservice.svc</con:endpoint></con:endpointStrategy><con:properties/><con:wssContainer/><con:databaseConnectionContainer/></con:soapui-project>

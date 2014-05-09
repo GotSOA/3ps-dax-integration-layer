@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://tempuri.org" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:tns="http://tempuri.org" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:i0="http://schemas.microsoft.com/dynamics/2008/01/services" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsp:Policy wsu:Id="BasicHttpBinding_CustCompanyCodeService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <http:NegotiateAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http"/>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:import namespace="http://schemas.microsoft.com/dynamics/2008/01/services" location="custcompanycodeservice_1.wsdl"/>
+  <wsdl:types/>
+  <wsdl:binding name="BasicHttpBinding_CustCompanyCodeService" type="i0:CustCompanyCodeService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_CustCompanyCodeService_policy"/>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="delete">
+      <soap:operation soapAction="http://schemas.microsoft.com/dynamics/2008/01/services/CustCompanyCodeService/delete" style="document"/>
+      <wsdl:input name="CustCompanyCodeServiceDeleteRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault name="AifFaultFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="create">
+      <soap:operation soapAction="http://schemas.microsoft.com/dynamics/2008/01/services/CustCompanyCodeService/create" style="document"/>
+      <wsdl:input name="CustCompanyCodeServiceCreateRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="CustCompanyCodeServiceCreateResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault name="AifFaultFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="find">
+      <soap:operation soapAction="http://schemas.microsoft.com/dynamics/2008/01/services/CustCompanyCodeService/find" style="document"/>
+      <wsdl:input name="CustCompanyCodeServiceFindRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="CustCompanyCodeServiceFindResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault name="AifFaultFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="read">
+      <soap:operation soapAction="http://schemas.microsoft.com/dynamics/2008/01/services/CustCompanyCodeService/read" style="document"/>
+      <wsdl:input name="CustCompanyCodeServiceReadRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="CustCompanyCodeServiceReadResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault name="AifFaultFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="update">
+      <soap:operation soapAction="http://schemas.microsoft.com/dynamics/2008/01/services/CustCompanyCodeService/update" style="document"/>
+      <wsdl:input name="CustCompanyCodeServiceUpdateRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault name="AifFaultFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+</wsdl:definitions>

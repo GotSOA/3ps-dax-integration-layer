@@ -81,10 +81,10 @@ http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/m
     <flow name="DAX-step1-flow" doc:name="DAX-step1-flow">
         <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-step1" path="Q.step1" />
         <logger level="INFO" doc:name="Canon-to-CompanyRequest" />
-        <set-payload value="#[new org.tempuri.CustCompanyCodeServiceCreateRequest()]" doc:name="Set Payload" />
+        <set-payload value="#[new com.microsoft.schemas.dynamics._2008._01.services.CustCompanyCodeServiceCreateRequest()]" doc:name="Set Payload" />
         <!-- <custom-transformer class="" doc:name="Canon-to-CompanyRequest"/> -->
         <!-- <enricher doc:name="Enricher - Company svc"> -->
-        <cxf:jaxws-client doc:name="SOAP" clientClass="org.tempuri.CustCompanyCodeService_Service" operation="create" port="BasicHttpBinding_CustCompanyCodeService" />
+        <cxf:jaxws-client doc:name="SOAP" clientClass="com.microsoft.schemas.dynamics._2008._01.services.CustCompanyCodeService_Service" operation="create" port="BasicHttpBinding_CustCompanyCodeService" />
         <expression-component doc:name="Expression">flowVars['username']='${dax.username}'; flowVars['password']='${dax.password}'; flowVars['domain']='${dax.domain}'; flowVars['realm']='${dax.realm}' ;</expression-component>
         <http:outbound-endpoint exchange-pattern="request-response" transformer-refs="objectToByteArrayTransformer" method="POST" doc:name="HTTP" path="MicrosoftDynamicsAXAif50/custcompanycodeservice.svc" host="${dax.http.host}" port="${dax.http.port}" />
         <!-- </enricher> -->
