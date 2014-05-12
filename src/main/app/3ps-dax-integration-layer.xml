@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:apikit="http://www.mulesoft.org/schema/mule/apikit" xmlns:context="http://www.springframework.org/schema/context" xmlns:core="http://www.mulesoft.org/schema/mule/core" xmlns:cxf="http://www.mulesoft.org/schema/mule/cxf" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:spring="http://www.springframework.org/schema/beans" xmlns:tracking="http://www.mulesoft.org/schema/mule/ee/tracking" xmlns:vm="http://www.mulesoft.org/schema/mule/vm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="EE-3.4.1" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+<mule xmlns:json="http://www.mulesoft.org/schema/mule/json" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:apikit="http://www.mulesoft.org/schema/mule/apikit" xmlns:context="http://www.springframework.org/schema/context" xmlns:core="http://www.mulesoft.org/schema/mule/core" xmlns:cxf="http://www.mulesoft.org/schema/mule/cxf" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:spring="http://www.springframework.org/schema/beans" xmlns:tracking="http://www.mulesoft.org/schema/mule/ee/tracking" xmlns:vm="http://www.mulesoft.org/schema/mule/vm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="EE-3.4.1" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
 http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
 http://www.mulesoft.org/schema/mule/apikit http://www.mulesoft.org/schema/mule/apikit/current/mule-apikit.xsd
 http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
 http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
 http://www.mulesoft.org/schema/mule/vm http://www.mulesoft.org/schema/mule/vm/current/mule-vm.xsd
 http://www.mulesoft.org/schema/mule/cxf http://www.mulesoft.org/schema/mule/cxf/current/mule-cxf.xsd
-http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/mule/ee/tracking/current/mule-tracking-ee.xsd">
+http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/mule/ee/tracking/current/mule-tracking-ee.xsd
+http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/json/current/mule-json.xsd">
     <http:connector name="httpConnector" doc:name="HTTP\HTTPS">
         <service-overrides sessionHandler="org.mule.session.NullSessionHandler" dispatcherFactory="org.mule.transport.http.NTLMv2HttpClientMessageDispatcherFactor" />
     </http:connector>
@@ -46,16 +47,21 @@ http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/m
         <exception-strategy ref="apiKitGlobalExceptionMapping" doc:name="Reference Exception Strategy" />
     </flow>
     <flow name="post:/3ps-dax-int:apiConfig" doc:name="post:/3ps-dax-int:apiConfig">
+        <object-to-byte-array-transformer doc:name="Object to Byte Array"/>
+        <json:object-to-json-transformer doc:name="Object to JSON"/>
         <logger level="INFO" doc:name="TODO Validation" />
-        <set-payload value="{   &quot;status&quot;: &quot;ACK&quot; }" doc:name="Send ACK" />
-        <async doc:name="Async">
-            <vm:outbound-endpoint exchange-pattern="one-way" doc:name="VM-transforms" path="Q.transform" />
-        </async>
+        <all doc:name="All">
+            <set-payload value="{   &quot;status&quot;: &quot;ACK&quot; }" doc:name="Send ACK"/>
+            <async doc:name="Async">
+                <vm:outbound-endpoint exchange-pattern="one-way" path="Q.transform" doc:name="VM-transforms"/>
+            </async>
+        </all>
+
     </flow>
     <flow name="data-transformation-flow" doc:name="data-transformation-flow">
         <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-transforms" path="Q.transform" />
         <logger level="INFO" doc:name="TODO 3ps-Canonical" />
-        <logger level="INFO" doc:name="Idempotent Service here?" />
+
         <!-- <json:json-to-object-transformer doc:name="JSON to Object (canon)"/> -->
         <!-- <flow-ref name="" doc:name="Idempotent Service"/>
         <choice doc:name="Choice">
@@ -81,15 +87,17 @@ http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/m
     <flow name="DAX-step1-flow" doc:name="DAX-step1-flow">
         <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-step1" path="Q.step1" />
         <custom-transformer class="com.bhnetwork.integration.transformer.CanonicalToDAXCustCompanyCodeServiceCreateRequest" doc:name="Canon-to-CompanyRequest"/>
-        <logger level="INFO" doc:name="Canon-to-CompanyRequest" />
-        <flow-ref name="dax-companyservice" doc:name="Flow Reference"/>
+        <enricher doc:name="Message Enricher">
+            <flow-ref name="daxCompanyWebServiceClient" doc:name="Invoke Dax Compony Webservice"/>
+            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[0].value]" target="#[variable:companyCode]"/>
+        </enricher>
         <!-- <set-payload value="#[new com.microsoft.schemas.dynamics._2008._01.services.CustCompanyCodeServiceCreateRequest()]" doc:name="Set Payload" /> -->
         <!-- <custom-transformer class="" doc:name="Canon-to-CompanyRequest"/> -->
         <!-- <enricher doc:name="Enricher - Company svc"> -->
         <!-- </enricher> -->
         <logger level="INFO" doc:name="Enrich-Canonical-w-DAX-values" />
         <!-- <custom-transformer class="" doc:name="Enrich-Canonical-w-DAX-values"/> -->
-        <logger level="INFO" doc:name="Log CompanyGUID sessionProp" message="CompanyGUID = #[payload.entityKeyList.entityKey[0].keyData.keyField[0].value]"/>
+        <logger level="INFO" doc:name="Log CompanyGUID" message="CompanyGUID=#[companyCode]"/>
         <!-- <choice doc:name="Choice">
             <when expression="">
                 <logger level="INFO" doc:name="step1-error"/>
@@ -103,10 +111,10 @@ http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/m
             </otherwise>
         </choice> -->
     </flow>
-    <sub-flow name="dax-companyservice" doc:name="dax-companyservice">
-    	<cxf:jaxws-client doc:name="SOAP" clientClass="com.microsoft.schemas.dynamics._2008._01.services.CustCompanyCodeService_Service" operation="create" port="BasicHttpBinding_CustCompanyCodeService" />
-        <expression-component doc:name="Expression">flowVars['username']='${dax.username}'; flowVars['password']='${dax.password}'; flowVars['domain']='${dax.domain}'; flowVars['realm']='${dax.realm}' ;</expression-component>
-        <http:outbound-endpoint exchange-pattern="request-response" transformer-refs="objectToByteArrayTransformer" method="POST" doc:name="HTTP" path="MicrosoftDynamicsAXAif50/custcompanycodeservice.svc" host="${dax.http.host}" port="${dax.http.port}" />
+    <sub-flow name="daxCompanyWebServiceClient" doc:name="daxCompanyWebServiceClient">
+        <cxf:jaxws-client operation="create" clientClass="com.microsoft.schemas.dynamics._2008._01.services.CustCompanyCodeService_Service" port="BasicHttpBinding_CustCompanyCodeService" doc:name="SOAP"/>
+        <expression-component doc:name="NTLM credentials"><![CDATA[flowVars['username']='${dax.username}'; flowVars['password']='${dax.password}'; flowVars['domain']='${dax.domain}'; flowVars['realm']='${dax.realm}' ;]]></expression-component>
+        <http:outbound-endpoint exchange-pattern="request-response" host="${dax.http.host}" port="${dax.http.port}" path="MicrosoftDynamicsAXAif50/custcompanycodeservice.svc" method="POST" transformer-refs="objectToByteArrayTransformer" doc:name="HTTP"/>
     </sub-flow>
     <!-- <flow name="DAX-step2-flow" doc:name="DAX-step2-flow">
         <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-step2" path="Q.step2"/>
