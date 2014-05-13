@@ -14,15 +14,15 @@ import java.util.List;
  */
 
 public class Company {
-	// per spec 3.2 company tab, DAX column
 	private String bhnGUID;
-	private Boolean isBhnSetupComplete;
 	private String companyAddressLine1;
 	private String companyAddressLine2;
+	private Boolean companyBHNSetupComplete;
 	private String companyCity;
 	private String companyCode;
 	private String companyContractTerm;
 	private String companyCountry;
+	private Boolean companyIsContractComplete;
 	private String companyLegalName;
 	private String companyMerchantCategoryCode;
 	private String companyPrimaryContactBusinessTitle;
@@ -34,25 +34,17 @@ public class Company {
 	private String companyState;
 	private String companyWebSiteURL;
 	private String companyZipPostalCode;
-	private Integer contractComplete;
 	private Date contractExpDate;
 	
-	// for Megatron: single division
-	private List<Division> cpDivision;
+	private List<Division> cpDivision;	
+	
 	private String legalEntityCode;
 	private String legalEntityStateOfIncorporation;
-	
 	public String getBhnGUID() {
 		return bhnGUID;
 	}
 	public void setBhnGUID(String bhnGUID) {
 		this.bhnGUID = bhnGUID;
-	}
-	public Boolean getIsBhnSetupComplete() {
-		return isBhnSetupComplete;
-	}
-	public void setIsBhnSetupComplete(Boolean isBhnSetupComplete) {
-		this.isBhnSetupComplete = isBhnSetupComplete;
 	}
 	public String getCompanyAddressLine1() {
 		return companyAddressLine1;
@@ -65,6 +57,12 @@ public class Company {
 	}
 	public void setCompanyAddressLine2(String companyAddressLine2) {
 		this.companyAddressLine2 = companyAddressLine2;
+	}
+	public Boolean getCompanyBHNSetupComplete() {
+		return companyBHNSetupComplete;
+	}
+	public void setCompanyBHNSetupComplete(Boolean companyBHNSetupComplete) {
+		this.companyBHNSetupComplete = companyBHNSetupComplete;
 	}
 	public String getCompanyCity() {
 		return companyCity;
@@ -89,6 +87,12 @@ public class Company {
 	}
 	public void setCompanyCountry(String companyCountry) {
 		this.companyCountry = companyCountry;
+	}
+	public Boolean getCompanyIsContractComplete() {
+		return companyIsContractComplete;
+	}
+	public void setCompanyIsContractComplete(Boolean companyIsContractComplete) {
+		this.companyIsContractComplete = companyIsContractComplete;
 	}
 	public String getCompanyLegalName() {
 		return companyLegalName;
@@ -159,12 +163,6 @@ public class Company {
 	public void setCompanyZipPostalCode(String companyZipPostalCode) {
 		this.companyZipPostalCode = companyZipPostalCode;
 	}
-	public Integer getContractComplete() {
-		return contractComplete;
-	}
-	public void setContractComplete(Integer contractComplete) {
-		this.contractComplete = contractComplete;
-	}
 	public Date getContractExpDate() {
 		return contractExpDate;
 	}
@@ -191,4 +189,5 @@ public class Company {
 		this.legalEntityStateOfIncorporation = legalEntityStateOfIncorporation;
 	}
 	
+			
 }

@@ -14,6 +14,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
 import org.mule.api.transformer.TransformerException;
 import org.mule.transformer.AbstractTransformer;
 
+import com.bhnetwork.integration.pppstodax.canonical.Company;
 import com.microsoft.schemas.dynamics._2008._01.documents.custcompanycode.AxdCustCompanyCode;
 import com.microsoft.schemas.dynamics._2008._01.documents.custcompanycode.AxdEntityBhnCustCompanyTable;
 import com.microsoft.schemas.dynamics._2008._01.documents.custcompanycode.AxdEntityBhnOnlineCompanyAttributes;
@@ -30,6 +31,7 @@ public class CanonicalToDAXCustCompanyCodeServiceCreateRequest extends AbstractT
 			throws TransformerException {
 		
 		//TODO real transformation.
+		Company companyObj = (Company) src;		
 		
 		CustCompanyCodeServiceCreateRequest req= new CustCompanyCodeServiceCreateRequest();
 		
