@@ -700,7 +700,7 @@
   <xs:element name="EntityKeyList" type="q1:EntityKeyList" xmlns:q1="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList"/>
   <xs:element name="AxdCustCompanyCode" type="q2:AxdCustCompanyCode" xmlns:q2="http://schemas.microsoft.com/dynamics/2008/01/documents/CustCompanyCode"/>
   <xs:element name="QueryCriteria" type="q3:QueryCriteria" xmlns:q3="http://schemas.microsoft.com/dynamics/2006/02/documents/QueryCriteria"/>
-</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/custcompanycodeservice.svc</con:endpoint><con:endpoint>http://LWBHN00000390:8088/mockBasicHttpBinding_CustCompanyCodeService</con:endpoint></con:endpoints><con:operation isOneWay="false" action="http://schemas.microsoft.com/dynamics/2008/01/services/CustCompanyCodeService/create" name="create" bindingOperationName="create" type="Request-Response" outputName="CustCompanyCodeServiceCreateResponse" inputName="CustCompanyCodeServiceCreateRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/custcompanycodeservice.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://schemas.microsoft.com/dynamics/2008/01/services" xmlns:cus="http://schemas.microsoft.com/dynamics/2008/01/documents/CustCompanyCode">
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/custcompanycodeservice.svc</con:endpoint><con:endpoint>http://LWBHN00000390:8088/mockBasicHttpBinding_CustCompanyCodeService</con:endpoint></con:endpoints><con:operation isOneWay="false" action="http://schemas.microsoft.com/dynamics/2008/01/services/CustCompanyCodeService/create" name="create" bindingOperationName="create" type="Request-Response" outputName="CustCompanyCodeServiceCreateResponse" inputName="CustCompanyCodeServiceCreateRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request1 (DAX Team)"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/custcompanycodeservice.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://schemas.microsoft.com/dynamics/2008/01/services" xmlns:cus="http://schemas.microsoft.com/dynamics/2008/01/documents/CustCompanyCode">
    <soapenv:Header/>
    <soapenv:Body>
       <ser:CustCompanyCodeServiceCreateRequest>
@@ -709,40 +709,40 @@
             <!--Optional:-->
             <cus:DocPurpose>Original</cus:DocPurpose>
             <!--Optional:-->
-            <cus:SenderId></cus:SenderId>
+            <cus:SenderId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
             <!--Zero or more repetitions:-->
             <cus:bhnCustCompanyTable class="entity">
                <!--Optional:-->
-               <cus:_DocumentHash></cus:_DocumentHash>
+               <cus:_DocumentHash xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                <!--Optional:-->
-               <cus:AcquirerType></cus:AcquirerType>
+               <cus:AcquirerType xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                <!--Optional:-->
-               <cus:AdditionalInfo></cus:AdditionalInfo>
+               <cus:AdditionalInfo xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                <!--Optional:-->
-               <cus:BhnGUID></cus:BhnGUID>
+               <cus:BhnGUID xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                <!--Optional:-->
                <cus:BhnSetupComplete>No</cus:BhnSetupComplete>
                <!--Optional:-->
-               <cus:Comments></cus:Comments>
+               <cus:Comments xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                <cus:CompanyCode>DEVQA</cus:CompanyCode>
                <!--Optional:-->
                <cus:ContractComplete>No</cus:ContractComplete>
                <!--Optional:-->
                <cus:ContractExpDate>2014-05-05</cus:ContractExpDate>
                <!--Optional:-->
-               <cus:CorporateName></cus:CorporateName>
+               <cus:CorporateName xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                <cus:Country>US</cus:Country>
                <!--Optional:-->
                <cus:Inactive>No</cus:Inactive>
                <!--Optional:-->
-               <cus:LegalEntityCode></cus:LegalEntityCode>
+               <cus:LegalEntityCode xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                <!--Optional:-->
-               <cus:MerchRecordNumber></cus:MerchRecordNumber>
+               <cus:MerchRecordNumber xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                <cus:Name>DEVQA</cus:Name>
                <!--Optional:-->
-               <cus:PartnerProfileId></cus:PartnerProfileId>
+               <cus:PartnerProfileId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                <!--Optional:-->
-               <cus:ProcessorType></cus:ProcessorType>
+               <cus:ProcessorType xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                <!--Optional:-->
                <cus:RecId>123455</cus:RecId>
                <!--Optional:-->
@@ -754,34 +754,34 @@
                <!--Zero or more repetitions:-->
                <cus:bhnOnlineCompanyAttributes class="entity">
                   <!--Optional:-->
-                  <cus:CompanyAddressLine1></cus:CompanyAddressLine1>
+                  <cus:CompanyAddressLine1 xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                   <!--Optional:-->
-                  <cus:CompanyAddressLine2></cus:CompanyAddressLine2>
+                  <cus:CompanyAddressLine2 xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                   <!--Optional:-->
-                  <cus:Companycity></cus:Companycity>
+                  <cus:Companycity xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                   <cus:CompanyCode>DEVQA</cus:CompanyCode>
                   <!--Optional:-->
-                  <cus:CompanyContractTerm></cus:CompanyContractTerm>
+                  <cus:CompanyContractTerm xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                   <!--Optional:-->
-                  <cus:CompanyMerchantCategoryCode></cus:CompanyMerchantCategoryCode>
+                  <cus:CompanyMerchantCategoryCode xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                   <!--Optional:-->
-                  <cus:CompanyPrimaryContactBusinessTitle></cus:CompanyPrimaryContactBusinessTitle>
+                  <cus:CompanyPrimaryContactBusinessTitle xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                   <!--Optional:-->
-                  <cus:CompanyPrimaryContactEmail></cus:CompanyPrimaryContactEmail>
+                  <cus:CompanyPrimaryContactEmail xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                   <!--Optional:-->
-                  <cus:CompanyPrimaryContactFirstName></cus:CompanyPrimaryContactFirstName>
+                  <cus:CompanyPrimaryContactFirstName xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                   <!--Optional:-->
-                  <cus:CompanyPrimaryContactLastName></cus:CompanyPrimaryContactLastName>
+                  <cus:CompanyPrimaryContactLastName xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                   <!--Optional:-->
-                  <cus:CompanyPrimaryPhoneNumber></cus:CompanyPrimaryPhoneNumber>
+                  <cus:CompanyPrimaryPhoneNumber xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                   <!--Optional:-->
-                  <cus:CompanyPrimaryPhoneNumberExt></cus:CompanyPrimaryPhoneNumberExt>
+                  <cus:CompanyPrimaryPhoneNumberExt xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                   <!--Optional:-->
-                  <cus:CompanyState></cus:CompanyState>
+                  <cus:CompanyState xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                   <!--Optional:-->
-                  <cus:CompanyWebSiteURL></cus:CompanyWebSiteURL>
+                  <cus:CompanyWebSiteURL xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                   <!--Optional:-->
-                  <cus:CompanyZipPostalCode></cus:CompanyZipPostalCode>
+                  <cus:CompanyZipPostalCode xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                   <!--Optional:-->
                   <cus:LegalEntityStateOfIncorporation>?</cus:LegalEntityStateOfIncorporation>
                   <!--Optional:-->
@@ -793,8 +793,7 @@
          </cus:CustCompanyCode>
       </ser:CustCompanyCodeServiceCreateRequest>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/dynamics/2008/01/services/CustCompanyCodeService/create"/><con:wsrmConfig version="1.2"/></con:call><con:call name="MuleGeneratedRequest"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/custcompanycodeservice.svc</con:endpoint><con:request><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
-<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/dynamics/2008/01/services/CustCompanyCodeService/create"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Request (Mule Generated)"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/custcompanycodeservice.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
    <soap:Header>
       <mule:header xmlns:mule="http://www.muleumo.org/providers/soap/1.0">
          <mule:MULE_CORRELATION_ID>80aed58e-db1e-11e3-b7af-e1234f4774fe</mule:MULE_CORRELATION_ID>
@@ -805,15 +804,15 @@
    <soap:Body>
       <ns2:CustCompanyCodeServiceCreateRequest xmlns:ns2="http://schemas.microsoft.com/dynamics/2008/01/services" xmlns:ns3="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKey" xmlns:ns4="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList" xmlns:ns5="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" xmlns:ns6="http://schemas.microsoft.com/dynamics/2006/02/documents/QueryCriteria" xmlns:ns7="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:ns8="http://schemas.microsoft.com/dynamics/2008/01/documents/CustCompanyCode">
          <ns8:CustCompanyCode>
-            <ns8:DocPurpose xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true" />
-            <ns8:SenderId xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true" />
+            <ns8:DocPurpose xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns8:SenderId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
             <ns8:bhnCustCompanyTable class="entity">
-               <ns8:_DocumentHash xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true" />
-               <ns8:AcquirerType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true" />
-               <ns8:AdditionalInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true" />
-               <ns8:BhnGUID xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true" />
+               <ns8:_DocumentHash xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <ns8:AcquirerType xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <ns8:AdditionalInfo xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <ns8:BhnGUID xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                <ns8:BhnSetupComplete>Yes</ns8:BhnSetupComplete>
-               <ns8:Comments xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true" />
+               <ns8:Comments xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                <ns8:CompanyCode>SWY</ns8:CompanyCode>
                <ns8:ContractComplete>Yes</ns8:ContractComplete>
                <ns8:ContractExpDate>2013-12-31</ns8:ContractExpDate>
@@ -821,14 +820,14 @@
                <ns8:Country>US</ns8:Country>
                <ns8:Inactive>No</ns8:Inactive>
                <ns8:LegalEntityCode>LE-003736</ns8:LegalEntityCode>
-               <ns8:MerchRecordNumber xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true" />
+               <ns8:MerchRecordNumber xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                <ns8:Name>SWY</ns8:Name>
-               <ns8:PartnerProfileId xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true" />
-               <ns8:ProcessorType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true" />
-               <ns8:RecId xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true" />
-               <ns8:RecVersion xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true" />
-               <ns8:SideLetterReq xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true" />
-               <ns8:TestDateReq xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true" />
+               <ns8:PartnerProfileId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <ns8:ProcessorType xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <ns8:RecId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <ns8:RecVersion xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <ns8:SideLetterReq xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <ns8:TestDateReq xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                <ns8:bhnOnlineCompanyAttributes class="entity">
                   <ns8:CompanyAddressLine1>221 Main Street</ns8:CompanyAddressLine1>
                   <ns8:CompanyAddressLine2>Suite 1200</ns8:CompanyAddressLine2>
@@ -846,8 +845,8 @@
                   <ns8:CompanyWebSiteURL>blackhawknetwork.com</ns8:CompanyWebSiteURL>
                   <ns8:CompanyZipPostalCode>94107</ns8:CompanyZipPostalCode>
                   <ns8:LegalEntityStateOfIncorporation>DE</ns8:LegalEntityStateOfIncorporation>
-                  <ns8:RecId xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true" />
-                  <ns8:RecVersion xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true" />
+                  <ns8:RecId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <ns8:RecVersion xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                </ns8:bhnOnlineCompanyAttributes>
             </ns8:bhnCustCompanyTable>
          </ns8:CustCompanyCode>
@@ -1014,7 +1013,7 @@
          </cus:CustCompanyCode>
       </ser:CustCompanyCodeServiceUpdateRequest>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/dynamics/2008/01/services/CustCompanyCodeService/update"/></con:call></con:operation></con:interface><con:mockService port="8088" path="/mockBasicHttpBinding_CustCompanyCodeService" host="LWBHN00000390" name="BasicHttpBinding_CustCompanyCodeService MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:mockOperation name="create" interface="BasicHttpBinding_CustCompanyCodeService" operation="create"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/dynamics/2008/01/services/CustCompanyCodeService/update"/></con:call></con:operation></con:interface><con:mockService port="8088" path="/mockBasicHttpBinding_CustCompanyCodeService" host="LWBHN00000390" name="BasicHttpBinding_CustCompanyCodeService MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-version">false</con:setting></con:settings><con:mockOperation name="create" interface="BasicHttpBinding_CustCompanyCodeService" operation="create"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
    <s:Body>
       <CustCompanyCodeServiceCreateResponse xmlns="http://schemas.microsoft.com/dynamics/2008/01/services">
          <EntityKeyList xmlns="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList">
@@ -1033,4 +1032,47 @@
          </EntityKeyList>
       </CustCompanyCodeServiceCreateResponse>
    </s:Body>
-</s:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/dynamics/2008/01/services/CustCompanyCodeService/create"/></con:response><con:dispatchConfig/></con:mockOperation><con:properties/></con:mockService><con:endpointStrategy xsi:type="con:DefaultEndpointStrategy" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:endpoint mode="COMPLEMENT" username="rvenu00-dev" password="Ammu1234" domain="devqa">http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/custcompanycodeservice.svc</con:endpoint></con:endpointStrategy><con:properties/><con:wssContainer/><con:databaseConnectionContainer/><con:reporting><con:xmlTemplates/><con:parameters/></con:reporting></con:soapui-project>
+</s:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/dynamics/2008/01/services/CustCompanyCodeService/create"/></con:response><con:response name="Fault Response (CustCompanyCode could not be created)" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+   <s:Body>
+      <s:Fault>
+         <faultcode>s:Client</faultcode>
+         <faultstring xml:lang="en-US">Document CustCompanyCode could not be created</faultstring>
+         <detail>
+            <AifFault xmlns="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+               <CustomDetailXml i:nil="true"/>
+               <FaultMessageListArray i:nil="true"/>
+            </AifFault>
+         </detail>
+      </s:Fault>
+   </s:Body>
+</s:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/dynamics/2008/01/services/CustCompanyCodeService/create"/></con:response><con:response name="Fault Response (401 - Unauthorized)" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+      <title>401 - Unauthorized: Access is denied due to invalid credentials.</title>
+      <style type="text/css">
+         <!--body{margin:0;font-size:.7em;font-family:Verdana, Arial, Helvetica, sans-serif;background:#EEEEEE;}
+fieldset{padding:0 15px 10px 15px;} 
+h1{font-size:2.4em;margin:0;color:#FFF;}
+h2{font-size:1.7em;margin:0;color:#CC0000;} 
+h3{font-size:1.2em;margin:10px 0 0 0;color:#000000;} 
+#header{width:96%;margin:0 0 0 0;padding:6px 2% 6px 2%;font-family:"trebuchet MS", Verdana, sans-serif;color:#FFF;
+background-color:#555555;}
+#content{margin:0 0 0 2%;position:relative;}
+.content-container{background:#FFF;width:96%;margin-top:8px;padding:10px;position:relative;}-->
+      </style>
+   </head>
+   <body>
+      <div id="header">
+         <h1>Server Error</h1>
+      </div>
+      <div id="content">
+         <div class="content-container">
+            <fieldset>
+               <h2>401 - Unauthorized: Access is denied due to invalid credentials.</h2>
+               <h3>You do not have permission to view this directory or page using the credentials that you supplied.</h3>
+            </fieldset>
+         </div>
+      </div>
+   </body>
+</html>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/dynamics/2008/01/services/CustCompanyCodeService/create"/></con:response><con:dispatchConfig/></con:mockOperation><con:properties/></con:mockService><con:endpointStrategy xsi:type="con:DefaultEndpointStrategy" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:endpoint mode="COMPLEMENT" username="rvenu00-dev" password="Ammu1234" domain="devqa">http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/custcompanycodeservice.svc</con:endpoint></con:endpointStrategy><con:properties/><con:wssContainer/><con:databaseConnectionContainer/><con:reporting><con:xmlTemplates/><con:parameters/></con:reporting></con:soapui-project>
