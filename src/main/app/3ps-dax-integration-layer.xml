@@ -10,7 +10,7 @@ http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/m
 http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/json/current/mule-json.xsd
 http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schema/mule/ee/data-mapper/current/mule-data-mapper.xsd">
      <http:connector name="httpConnector" doc:name="HTTP\HTTPS">
-        <!-- <service-overrides sessionHandler="org.mule.session.NullSessionHandler" dispatcherFactory="org.mule.transport.http.NTLMv2HttpClientMessageDispatcherFactor" /> -->
+        <service-overrides sessionHandler="org.mule.session.NullSessionHandler" dispatcherFactory="org.mule.transport.http.NTLMv2HttpClientMessageDispatcherFactor" />
     </http:connector> 
     <object-to-byte-array-transformer name="objectToByteArrayTransformer" doc:name="Object to Byte Array" />
     <context:property-placeholder location="classpath:3ps-dax-int.properties, file:///${app.properties.override.location}" />
@@ -118,7 +118,18 @@ http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schem
         </choice> -->
     </flow>
     <sub-flow name="daxCompanyWebServiceClient" doc:name="daxCompanyWebServiceClient">
-        <cxf:jaxws-client operation="create" clientClass="com.microsoft.schemas.dynamics._2008._01.services.CustCompanyCodeService_Service" port="BasicHttpBinding_CustCompanyCodeService" doc:name="SOAP"/>
+        <cxf:jaxws-client operation="create" clientClass="com.microsoft.schemas.dynamics._2008._01.services.CustCompanyCodeService_Service" port="BasicHttpBinding_CustCompanyCodeService" doc:name="SOAP">
+            <cxf:inInterceptors>
+            	<spring:bean class="org.apache.cxf.interceptor.LoggingInInterceptor">
+                	<spring:property name="prettyLogging" value="true" />
+               	</spring:bean>
+            </cxf:inInterceptors>
+            <cxf:outInterceptors>
+            	<spring:bean class="org.apache.cxf.interceptor.LoggingOutInterceptor">
+                    <spring:property name="prettyLogging" value="true" />
+                </spring:bean>
+            </cxf:outInterceptors>
+        </cxf:jaxws-client>
         <expression-component doc:name="NTLM credentials"><![CDATA[flowVars['username']='${dax.username}'; flowVars['password']='${dax.password}'; flowVars['domain']='${dax.domain}'; flowVars['realm']='${dax.realm}' ;]]></expression-component>
         <http:outbound-endpoint exchange-pattern="request-response" host="${dax.http.host}" port="${dax.http.port}" path="${dax.http.path}" method="POST" transformer-refs="objectToByteArrayTransformer" doc:name="HTTP"/>
     </sub-flow>
