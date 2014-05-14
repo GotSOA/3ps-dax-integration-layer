@@ -21,10 +21,10 @@ public class Store {
 		private	String	companyPhysicalStoreCountry;
 		private	String	County;
 		private	String	Currency;
-		private	Boolean	isSearchText;
-		private	Boolean	isStoreBlocked;
 		private	String	NameAlias;
 		private	String	productLanguage;
+		private	Boolean	searchText;
+		private	Boolean	storeBlocked;
 		private	String	storeBHNCustLevel;
 		private	String	storeBHNStoreCode;
 		private	String	storeChannelDimension;
@@ -107,18 +107,6 @@ public class Store {
 		public void setCurrency(String currency) {
 			Currency = currency;
 		}
-		public Boolean getIsSearchText() {
-			return isSearchText;
-		}
-		public void setIsSearchText(Boolean isSearchText) {
-			this.isSearchText = isSearchText;
-		}
-		public Boolean getIsStoreBlocked() {
-			return isStoreBlocked;
-		}
-		public void setIsStoreBlocked(Boolean isStoreBlocked) {
-			this.isStoreBlocked = isStoreBlocked;
-		}
 		public String getNameAlias() {
 			return NameAlias;
 		}
@@ -130,6 +118,18 @@ public class Store {
 		}
 		public void setProductLanguage(String productLanguage) {
 			this.productLanguage = productLanguage;
+		}
+		public Boolean getSearchText() {
+			return searchText;
+		}
+		public void setSearchText(Boolean searchText) {
+			this.searchText = searchText;
+		}
+		public Boolean getStoreBlocked() {
+			return storeBlocked;
+		}
+		public void setStoreBlocked(Boolean storeBlocked) {
+			this.storeBlocked = storeBlocked;
 		}
 		public String getStoreBHNCustLevel() {
 			return storeBHNCustLevel;
@@ -223,6 +223,5 @@ public class Store {
 		public void setStorePriceToleranceGroup(String storePriceToleranceGroup) {
 			this.storePriceToleranceGroup = storePriceToleranceGroup;
 		}
-		
-		
+				
 }
