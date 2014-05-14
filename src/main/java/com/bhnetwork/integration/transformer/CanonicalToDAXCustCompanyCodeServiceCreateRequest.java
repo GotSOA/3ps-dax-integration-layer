@@ -1,7 +1,6 @@
 package com.bhnetwork.integration.transformer;
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -30,20 +29,18 @@ public class CanonicalToDAXCustCompanyCodeServiceCreateRequest extends AbstractT
 	protected Object doTransform(Object src, String enc)
 			throws TransformerException {
 		
-		//TODO real transformation.
 		Company companyObj = (Company) src;		
 		
 		CustCompanyCodeServiceCreateRequest req= new CustCompanyCodeServiceCreateRequest();
 		
 		AxdCustCompanyCode custCompanyCode = new AxdCustCompanyCode();
-		custCompanyCode.setDocPurpose(AxdEnumXMLDocPurpose.ORIGINAL);
-	
+		
 		AxdEntityBhnCustCompanyTable bhnCustCompanyTable1 = new AxdEntityBhnCustCompanyTable();
-		bhnCustCompanyTable1.setBhnSetupComplete(AxdExtTypeNoYesId.NO);
-		bhnCustCompanyTable1.setCompanyCode("DEVQA");
-		bhnCustCompanyTable1.setContractComplete(AxdEnumNoYes.NO);
+		bhnCustCompanyTable1.setBhnSetupComplete(companyObj.getCompanyBHNSetupComplete()? AxdExtTypeNoYesId.YES:AxdExtTypeNoYesId.NO);
+		bhnCustCompanyTable1.setCompanyCode(companyObj.getCompanyCode());
+		bhnCustCompanyTable1.setContractComplete(companyObj.getCompanyIsContractComplete()? AxdEnumNoYes.YES: AxdEnumNoYes.NO);
 		try {
-			bhnCustCompanyTable1.setContractExpDate(stringToXMLGregorianCalendar("2014-05-05"));
+			bhnCustCompanyTable1.setContractExpDate(dateToXMLGregorianCalendar(companyObj.getContractExpDate()));
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -51,22 +48,35 @@ public class CanonicalToDAXCustCompanyCodeServiceCreateRequest extends AbstractT
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		bhnCustCompanyTable1.setCountry("US");
+		bhnCustCompanyTable1.setCorporateName(companyObj.getCompanyLegalName());
+		bhnCustCompanyTable1.setCountry(companyObj.getCompanyCountry());
 		bhnCustCompanyTable1.setInactive(AxdExtTypeInactive.NO);
-		bhnCustCompanyTable1.setName("DEVQA");
-		bhnCustCompanyTable1.setRecId(123455L);
-		bhnCustCompanyTable1.setRecVersion(654321678);
-		bhnCustCompanyTable1.setSideLetterReq(AxdEnumNoYes.NO);
-		bhnCustCompanyTable1.setTestDateReq(AxdEnumNoYes.NO);
+		bhnCustCompanyTable1.setLegalEntityCode(companyObj.getLegalEntityCode());
+		bhnCustCompanyTable1.setName(companyObj.getCompanyCode());
 		
-		bhnCustCompanyTable1.setClazz("entity");
+		//XML Attribute required
+		bhnCustCompanyTable1.setClazz("entity");//TODO Not in SPEC
 		
 		AxdEntityBhnOnlineCompanyAttributes bhnOnlineCompanyAttributes1 = new AxdEntityBhnOnlineCompanyAttributes();
-		bhnOnlineCompanyAttributes1.setCompanyCode("DEVQA");
-		bhnOnlineCompanyAttributes1.setRecId(123456L);
-		bhnOnlineCompanyAttributes1.setRecVersion(765432658);
+		bhnOnlineCompanyAttributes1.setCompanyAddressLine1(companyObj.getCompanyAddressLine1());
+		bhnOnlineCompanyAttributes1.setCompanyAddressLine2(companyObj.getCompanyAddressLine2());
+		bhnOnlineCompanyAttributes1.setCompanycity(companyObj.getCompanyCity());
+		bhnOnlineCompanyAttributes1.setCompanyCode(companyObj.getCompanyCode());
+		bhnOnlineCompanyAttributes1.setCompanyContractTerm(companyObj.getCompanyContractTerm());
+		bhnOnlineCompanyAttributes1.setCompanyMerchantCategoryCode(companyObj.getCompanyMerchantCategoryCode());
+		bhnOnlineCompanyAttributes1.setCompanyPrimaryContactBusinessTitle(companyObj.getCompanyPrimaryContactBusinessTitle());
+		bhnOnlineCompanyAttributes1.setCompanyPrimaryContactEmail(companyObj.getCompanyPrimaryContactEmail());
+		bhnOnlineCompanyAttributes1.setCompanyPrimaryContactFirstName(companyObj.getCompanyPrimaryContactFirstName());
+		bhnOnlineCompanyAttributes1.setCompanyPrimaryContactLastName(companyObj.getCompanyPrimaryContactLastName());
+		bhnOnlineCompanyAttributes1.setCompanyPrimaryPhoneNumber(companyObj.getCompanyPrimaryPhoneNumber());
+		bhnOnlineCompanyAttributes1.setCompanyPrimaryPhoneNumberExt(companyObj.getCompanyPrimaryPhoneNumberExt());
+		bhnOnlineCompanyAttributes1.setCompanyState(companyObj.getCompanyState());
+		bhnOnlineCompanyAttributes1.setCompanyWebSiteURL(companyObj.getCompanyWebSiteURL());
+		bhnOnlineCompanyAttributes1.setCompanyZipPostalCode(companyObj.getCompanyZipPostalCode());
+		bhnOnlineCompanyAttributes1.setLegalEntityStateOfIncorporation(companyObj.getLegalEntityStateOfIncorporation());
 		
-		bhnOnlineCompanyAttributes1.setClazz("entity");
+		//XML Attribute required
+		bhnOnlineCompanyAttributes1.setClazz("entity");//TODO Not in SPEC
 		
 		bhnCustCompanyTable1.getBhnOnlineCompanyAttributes().add(bhnOnlineCompanyAttributes1);
 		custCompanyCode.getBhnCustCompanyTable().add(bhnCustCompanyTable1);
@@ -75,22 +85,18 @@ public class CanonicalToDAXCustCompanyCodeServiceCreateRequest extends AbstractT
 		return req;
 	}
 
-	 private XMLGregorianCalendar stringToXMLGregorianCalendar(String s) 
-		     throws ParseException, 
-		            DatatypeConfigurationException
-		 {
-		 XMLGregorianCalendar result = null;
-		 Date date;
-		 SimpleDateFormat simpleDateFormat;
-		 GregorianCalendar gregorianCalendar;
-		 
-		 simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-		                date = simpleDateFormat.parse(s);        
-		                gregorianCalendar = 
-		                    (GregorianCalendar)GregorianCalendar.getInstance();
-		                gregorianCalendar.setTime(date);
-		                //result = DatatypeFactory.newInstance().newXMLGregorianCalendar(gregorianCalendar);
-		                result = DatatypeFactory.newInstance().newXMLGregorianCalendarDate(gregorianCalendar.get(Calendar.YEAR), gregorianCalendar.get(Calendar.MONTH)+1, gregorianCalendar.get(Calendar.DAY_OF_MONTH), DatatypeConstants.FIELD_UNDEFINED);
-		                return result; 
-		 }
+	private XMLGregorianCalendar dateToXMLGregorianCalendar(Date date)
+			throws ParseException, DatatypeConfigurationException {
+		XMLGregorianCalendar result = null;
+		GregorianCalendar gregorianCalendar;
+
+		gregorianCalendar = (GregorianCalendar) GregorianCalendar.getInstance();
+		gregorianCalendar.setTime(date);
+		result = DatatypeFactory.newInstance().newXMLGregorianCalendarDate(
+				gregorianCalendar.get(Calendar.YEAR),
+				gregorianCalendar.get(Calendar.MONTH) + 1,
+				gregorianCalendar.get(Calendar.DAY_OF_MONTH),
+				DatatypeConstants.FIELD_UNDEFINED);
+		return result;
+	}
 }

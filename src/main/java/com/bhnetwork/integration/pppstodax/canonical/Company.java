@@ -40,6 +40,7 @@ public class Company {
 	
 	private String legalEntityCode;
 	private String legalEntityStateOfIncorporation;
+	private String recId;
 	public String getBhnGUID() {
 		return bhnGUID;
 	}
@@ -188,6 +189,11 @@ public class Company {
 			String legalEntityStateOfIncorporation) {
 		this.legalEntityStateOfIncorporation = legalEntityStateOfIncorporation;
 	}
-	
+	public String getRecId() {
+		return recId;
+	}
+	public void setRecId(String recId) {
+		this.recId = recId;
+	}	
 			
 }

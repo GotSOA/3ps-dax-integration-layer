@@ -9,9 +9,9 @@ http://www.mulesoft.org/schema/mule/cxf http://www.mulesoft.org/schema/mule/cxf/
 http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/mule/ee/tracking/current/mule-tracking-ee.xsd
 http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/json/current/mule-json.xsd
 http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schema/mule/ee/data-mapper/current/mule-data-mapper.xsd">
-    <http:connector name="httpConnector" doc:name="HTTP\HTTPS">
-        <service-overrides sessionHandler="org.mule.session.NullSessionHandler" dispatcherFactory="org.mule.transport.http.NTLMv2HttpClientMessageDispatcherFactor" />
-    </http:connector>
+     <http:connector name="httpConnector" doc:name="HTTP\HTTPS">
+        <!-- <service-overrides sessionHandler="org.mule.session.NullSessionHandler" dispatcherFactory="org.mule.transport.http.NTLMv2HttpClientMessageDispatcherFactor" /> -->
+    </http:connector> 
     <object-to-byte-array-transformer name="objectToByteArrayTransformer" doc:name="Object to Byte Array" />
     <context:property-placeholder location="classpath:3ps-dax-int.properties, file:///${app.properties.override.location}" />
     <apikit:config name="apiConfig" raml="3ps-dax-int.raml" consoleEnabled="true" consolePath="console" doc:name="Router" />
@@ -63,7 +63,6 @@ http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schem
     <flow name="data-transformation-flow" doc:name="data-transformation-flow">
         <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-transforms" path="Q.transform" />
         <data-mapper:transform config-ref="json_to_pojo" doc:name="3PS-Canonical"/>
-        <set-session-variable variableName="canonical" value="#[payload]" doc:name="Session Variable"/>
 
 
         <!-- <json:json-to-object-transformer doc:name="JSON to Object (canon)"/> -->
@@ -90,18 +89,21 @@ http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schem
     </flow>
     <flow name="DAX-step1-flow" doc:name="DAX-step1-flow">
         <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-step1" path="Q.step1" />
+        <set-variable variableName="canon" value="#[payload]" doc:name="Canonincal"/>
         <custom-transformer class="com.bhnetwork.integration.transformer.CanonicalToDAXCustCompanyCodeServiceCreateRequest" doc:name="Canon-to-CompanyRequest"/>
-        <enricher doc:name="Message Enricher">
-            <flow-ref name="daxCompanyWebServiceClient" doc:name="Invoke Dax Compony Webservice"/>
-            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[0].value]" target="#[variable:companyCode]"/>
+        <enricher doc:name="Enrich-Canonical-w-DAX-values ">
+
+            <flow-ref name="daxCompanyWebServiceClient" doc:name="Invoke Dax Company Webservice"/>
+            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[0].value]" target="#[canon.bhnGUID]"/>
+            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[1].value]" target="#[canon.recId]"/>
         </enricher>
         <!-- <set-payload value="#[new com.microsoft.schemas.dynamics._2008._01.services.CustCompanyCodeServiceCreateRequest()]" doc:name="Set Payload" /> -->
         <!-- <custom-transformer class="" doc:name="Canon-to-CompanyRequest"/> -->
         <!-- <enricher doc:name="Enricher - Company svc"> -->
         <!-- </enricher> -->
-        <logger level="INFO" doc:name="Enrich-Canonical-w-DAX-values" />
+
         <!-- <custom-transformer class="" doc:name="Enrich-Canonical-w-DAX-values"/> -->
-        <logger level="INFO" doc:name="Log CompanyGUID" message="CompanyGUID=#[companyCode]"/>
+        <logger level="INFO" doc:name="Log bhnGUID and recId" message="bhnGUID=#[canon.bhnGUID] and recId=#[canon.recId]"/>
         <!-- <choice doc:name="Choice">
             <when expression="">
                 <logger level="INFO" doc:name="step1-error"/>
@@ -118,7 +120,7 @@ http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schem
     <sub-flow name="daxCompanyWebServiceClient" doc:name="daxCompanyWebServiceClient">
         <cxf:jaxws-client operation="create" clientClass="com.microsoft.schemas.dynamics._2008._01.services.CustCompanyCodeService_Service" port="BasicHttpBinding_CustCompanyCodeService" doc:name="SOAP"/>
         <expression-component doc:name="NTLM credentials"><![CDATA[flowVars['username']='${dax.username}'; flowVars['password']='${dax.password}'; flowVars['domain']='${dax.domain}'; flowVars['realm']='${dax.realm}' ;]]></expression-component>
-        <http:outbound-endpoint exchange-pattern="request-response" host="${dax.http.host}" port="${dax.http.port}" path="MicrosoftDynamicsAXAif50/custcompanycodeservice.svc" method="POST" transformer-refs="objectToByteArrayTransformer" doc:name="HTTP"/>
+        <http:outbound-endpoint exchange-pattern="request-response" host="${dax.http.host}" port="${dax.http.port}" path="${dax.http.path}" method="POST" transformer-refs="objectToByteArrayTransformer" doc:name="HTTP"/>
     </sub-flow>
     <!-- <flow name="DAX-step2-flow" doc:name="DAX-step2-flow">
         <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-step2" path="Q.step2"/>
