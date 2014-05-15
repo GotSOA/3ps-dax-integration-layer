@@ -45,7 +45,7 @@ public class Product {
 	private Boolean	isProductCheckMinMax;
 	private String	productClass;
 	private String	productCurrency;
-	private String	productDefaultId;
+	private String	productDefaultID;
 	private String	productDenomination;
 	private String	productDimensionCode;
 	private String	productDimensionGroup;
@@ -335,12 +335,12 @@ public class Product {
 		this.productCurrency = productCurrency;
 	}
 
-	public String getProductDefaultId() {
-		return productDefaultId;
+	public String getProductDefaultID() {
+		return productDefaultID;
 	}
 
-	public void setProductDefaultId(String productDefaultId) {
-		this.productDefaultId = productDefaultId;
+	public void setProductDefaultID(String productDefaultID) {
+		this.productDefaultID = productDefaultID;
 	}
 
 	public String getProductDenomination() {

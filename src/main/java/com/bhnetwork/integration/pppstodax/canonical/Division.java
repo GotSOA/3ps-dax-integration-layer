@@ -36,7 +36,6 @@ public class Division {
 	private	String	divisionRedemptionInformation;
 	private	String	divisionRedemptionLine1;
 	private	String	divisionRedemptionLine2;
-	private	String	divisionRedemptionMethod;
 	private	String	divisionRedemptionMethods;
 	private	String	divisionTandCTextForPhysical;
 	private	Boolean	isBhnSetupComplete;
@@ -245,14 +244,6 @@ public class Division {
 
 	public void setDivisionRedemptionLine2(String divisionRedemptionLine2) {
 		this.divisionRedemptionLine2 = divisionRedemptionLine2;
-	}
-
-	public String getDivisionRedemptionMethod() {
-		return divisionRedemptionMethod;
-	}
-
-	public void setDivisionRedemptionMethod(String divisionRedemptionMethod) {
-		this.divisionRedemptionMethod = divisionRedemptionMethod;
 	}
 
 	public String getDivisionRedemptionMethods() {
