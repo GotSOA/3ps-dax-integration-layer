@@ -35,6 +35,7 @@
     },
     "cpDivision": {
         "accountType": "",
+        "divisionCode":"",
         "divisionCustomerSupportContactFirstName": "",
         "divisionCustomerSupportContactLastName": "",
         "divisionCustomerSupportEmail": "",
@@ -103,6 +104,7 @@
         "divisionIsBarcodeFormat1D-C128": "",
         "division1D-C128Expression": "",
         "divisionIsBarcodeFormat2D-PDF417": "",
+        "divisionIsContractComplete" : true,
         "division2D-PDF417Expression": "",
         "divisionIsBarcodeFormat2D-QRCODE": "",
         "division2D-QRCODEExpression": "",
@@ -115,7 +117,8 @@
         "divisionCardImageFront2URL": "",
         "divisionCardImageFront3URL": "",
         "divisionCardImageFront5URL": "",
-        "divisionisBarcodeScanSupported": ""
+        "divisionisBarcodeScanSupported": "",
+        "name": ""
     },
     "processorInformation": {
         "processorContactFirstName": "",

@@ -15,8 +15,8 @@ public class Division {
 
 	private	String	accountType;
 	private	String	bhnGUID;
-	private	String	bhnlocalpartner;
-	private	String	bhnpartnerportalsource;
+	private	String	divisionLocalPartner;
+	private	String	divisionLocalPartnerSource;
 	private	String	companyCode;
 	private	String	divisionCashierInstructions;
 	private	String	divisionCode;
@@ -38,8 +38,7 @@ public class Division {
 	private	String	divisionRedemptionLine2;
 	private	String	divisionRedemptionMethods;
 	private	String	divisionTandCTextForPhysical;
-	private	Boolean	isBhnSetupComplete;
-	private	Boolean	isContractComplete;
+	private	Boolean	divisionIsContractComplete;
 	private	String	name;
 	private	String	processorCode;
 	private	String	processorContactFirstName;
@@ -47,11 +46,10 @@ public class Division {
 	private	String	processorContactPhoneNumber;
 	private	String	processorContactPhoneNumberExt;
 	private	String	processorHasRealTimeIssuance;
-	private	String	processorType;
-	private	String	relationCode;
 	
 	// 1 or multiple products (UPCs)
 	private List<Product> products;
+	private String recId;
 	
 	// somehow on the latest API 1.6 spec, the stores are part of division
 	private List<Store> stores;
@@ -72,20 +70,20 @@ public class Division {
 		this.bhnGUID = bhnGUID;
 	}
 
-	public String getBhnlocalpartner() {
-		return bhnlocalpartner;
+	public String getDivisionLocalPartner() {
+		return divisionLocalPartner;
 	}
 
-	public void setBhnlocalpartner(String bhnlocalpartner) {
-		this.bhnlocalpartner = bhnlocalpartner;
+	public void setDivisionLocalPartner(String divisionLocalPartner) {
+		this.divisionLocalPartner = divisionLocalPartner;
 	}
 
-	public String getBhnpartnerportalsource() {
-		return bhnpartnerportalsource;
+	public String getDivisionLocalPartnerSource() {
+		return divisionLocalPartnerSource;
 	}
 
-	public void setBhnpartnerportalsource(String bhnpartnerportalsource) {
-		this.bhnpartnerportalsource = bhnpartnerportalsource;
+	public void setDivisionLocalPartnerSource(String divisionLocalPartnerSource) {
+		this.divisionLocalPartnerSource = divisionLocalPartnerSource;
 	}
 
 	public String getCompanyCode() {
@@ -262,20 +260,12 @@ public class Division {
 		this.divisionTandCTextForPhysical = divisionTandCTextForPhysical;
 	}
 
-	public Boolean getIsBhnSetupComplete() {
-		return isBhnSetupComplete;
+	public Boolean getDivisionIsContractComplete() {
+		return divisionIsContractComplete;
 	}
 
-	public void setIsBhnSetupComplete(Boolean isBhnSetupComplete) {
-		this.isBhnSetupComplete = isBhnSetupComplete;
-	}
-
-	public Boolean getIsContractComplete() {
-		return isContractComplete;
-	}
-
-	public void setIsContractComplete(Boolean isContractComplete) {
-		this.isContractComplete = isContractComplete;
+	public void setDivisionIsContractComplete(Boolean divisionIsContractComplete) {
+		this.divisionIsContractComplete = divisionIsContractComplete;
 	}
 
 	public String getName() {
@@ -335,22 +325,6 @@ public class Division {
 		this.processorHasRealTimeIssuance = processorHasRealTimeIssuance;
 	}
 
-	public String getProcessorType() {
-		return processorType;
-	}
-
-	public void setProcessorType(String processorType) {
-		this.processorType = processorType;
-	}
-
-	public String getRelationCode() {
-		return relationCode;
-	}
-
-	public void setRelationCode(String relationCode) {
-		this.relationCode = relationCode;
-	}
-
 	public List<Product> getProducts() {
 		return products;
 	}
@@ -359,13 +333,20 @@ public class Division {
 		this.products = products;
 	}
 
+	public String getRecId() {
+		return recId;
+	}
+
+	public void setRecId(String recId) {
+		this.recId = recId;
+	}
+
 	public List<Store> getStores() {
 		return stores;
 	}
 
 	public void setStores(List<Store> stores) {
 		this.stores = stores;
-	}
+	}	
 
-	
 }
