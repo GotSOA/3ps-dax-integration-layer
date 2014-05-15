@@ -2919,6 +2919,50 @@
          </upc:UPCSubGroupTable>
       </tem:UPCSubGroupTableServiceCreateRequest>
    </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/UPCSubGroupTableService/create"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Default Request"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/upcsubgrouptableservice.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org" xmlns:upc="http://schemas.microsoft.com/dynamics/2008/01/documents/UPCSubGroupTable">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:UPCSubGroupTableServiceCreateRequest>
+         <!--Optional:-->
+         <upc:UPCSubGroupTable>
+            <!--Optional:-->
+            <upc:DocPurpose>?</upc:DocPurpose>
+            <!--Optional:-->
+            <upc:SenderId>?</upc:SenderId>
+            <!--Zero or more repetitions:-->
+            <upc:bhnUPCSubGroupTable_1 class="entity" action="?">
+               <!--Optional:-->
+               <upc:_DocumentHash>?</upc:_DocumentHash>
+               <upc:BhnDivisionCode>?</upc:BhnDivisionCode>
+               <!--Optional:-->
+               <upc:BhnGUID>?</upc:BhnGUID>
+               <!--Optional:-->
+               <upc:BhnUPCParentSubGroup>?</upc:BhnUPCParentSubGroup>
+               <upc:CardDisplayDesc>?</upc:CardDisplayDesc>
+               <!--Optional:-->
+               <upc:MerchRecordNumber>?</upc:MerchRecordNumber>
+               <upc:Name>?</upc:Name>
+               <!--Optional:-->
+               <upc:PartnerProfileId>?</upc:PartnerProfileId>
+               <upc:POGCategory1>?</upc:POGCategory1>
+               <!--Optional:-->
+               <upc:POGCategory2>?</upc:POGCategory2>
+               <!--Optional:-->
+               <upc:POGCategory3>?</upc:POGCategory3>
+               <!--Optional:-->
+               <upc:POGDimension>?</upc:POGDimension>
+               <upc:PortalDisplayName>?</upc:PortalDisplayName>
+               <!--Optional:-->
+               <upc:RecId>?</upc:RecId>
+               <!--Optional:-->
+               <upc:RecVersion>?</upc:RecVersion>
+               <!--Optional:-->
+               <upc:ShipperUPC>?</upc:ShipperUPC>
+               <upc:SubGroupId>?</upc:SubGroupId>
+            </upc:bhnUPCSubGroupTable_1>
+         </upc:UPCSubGroupTable>
+      </tem:UPCSubGroupTableServiceCreateRequest>
+   </soapenv:Body>
 </soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/UPCSubGroupTableService/create"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="http://tempuri.org/UPCSubGroupTableService/delete" name="delete" bindingOperationName="delete" type="Request-Response" inputName="UPCSubGroupTableServiceDeleteRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/upcsubgrouptableservice.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org" xmlns:ent="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList" xmlns:ent1="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKey">
    <soapenv:Header/>
    <soapenv:Body>

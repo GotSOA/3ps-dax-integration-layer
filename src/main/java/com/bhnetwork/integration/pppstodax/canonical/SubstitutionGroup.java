@@ -11,23 +11,21 @@ package com.bhnetwork.integration.pppstodax.canonical;
 
 public class SubstitutionGroup {
 	
-	private	String	brandDenomDescription;
+	private	String	substitutionBrandDenomDescription;
 	private	String	brandRecId;
-	private	String	cardDisplayDesc;
-	private	String	category1POG;
-	private	String	category2POG;
-	private	String	category3POG;
-	private	String	dimensionPOG;
-	private	String	divisionCode;
 	private	String	guid;
-	private	String	portalDisplayName;
-	private	String	shipperUPC;
+	private	String	substitutionCardDisplayDesc;
+	private	String	substitutionPOG1Category;
+	private	String	substitutionPOG2Category;
+	private	String	substitutionPOG3Category;
+	private	String	substitutionPortalDisplayName;
 	private	String	subGroupId;
-	public String getBrandDenomDescription() {
-		return brandDenomDescription;
+	public String getSubstitutionBrandDenomDescription() {
+		return substitutionBrandDenomDescription;
 	}
-	public void setBrandDenomDescription(String brandDenomDescription) {
-		this.brandDenomDescription = brandDenomDescription;
+	public void setSubstitutionBrandDenomDescription(
+			String substitutionBrandDenomDescription) {
+		this.substitutionBrandDenomDescription = substitutionBrandDenomDescription;
 	}
 	public String getBrandRecId() {
 		return brandRecId;
@@ -35,59 +33,42 @@ public class SubstitutionGroup {
 	public void setBrandRecId(String brandRecId) {
 		this.brandRecId = brandRecId;
 	}
-	public String getCardDisplayDesc() {
-		return cardDisplayDesc;
-	}
-	public void setCardDisplayDesc(String cardDisplayDesc) {
-		this.cardDisplayDesc = cardDisplayDesc;
-	}
-	public String getCategory1POG() {
-		return category1POG;
-	}
-	public void setCategory1POG(String category1pog) {
-		category1POG = category1pog;
-	}
-	public String getCategory2POG() {
-		return category2POG;
-	}
-	public void setCategory2POG(String category2pog) {
-		category2POG = category2pog;
-	}
-	public String getCategory3POG() {
-		return category3POG;
-	}
-	public void setCategory3POG(String category3pog) {
-		category3POG = category3pog;
-	}
-	public String getDimensionPOG() {
-		return dimensionPOG;
-	}
-	public void setDimensionPOG(String dimensionPOG) {
-		this.dimensionPOG = dimensionPOG;
-	}
-	public String getDivisionCode() {
-		return divisionCode;
-	}
-	public void setDivisionCode(String divisionCode) {
-		this.divisionCode = divisionCode;
-	}
 	public String getGuid() {
 		return guid;
 	}
 	public void setGuid(String guid) {
 		this.guid = guid;
 	}
-	public String getPortalDisplayName() {
-		return portalDisplayName;
+	public String getSubstitutionCardDisplayDesc() {
+		return substitutionCardDisplayDesc;
 	}
-	public void setPortalDisplayName(String portalDisplayName) {
-		this.portalDisplayName = portalDisplayName;
+	public void setSubstitutionCardDisplayDesc(String substitutionCardDisplayDesc) {
+		this.substitutionCardDisplayDesc = substitutionCardDisplayDesc;
 	}
-	public String getShipperUPC() {
-		return shipperUPC;
+	public String getSubstitutionPOG1Category() {
+		return substitutionPOG1Category;
 	}
-	public void setShipperUPC(String shipperUPC) {
-		this.shipperUPC = shipperUPC;
+	public void setSubstitutionPOG1Category(String substitutionPOG1Category) {
+		this.substitutionPOG1Category = substitutionPOG1Category;
+	}
+	public String getSubstitutionPOG2Category() {
+		return substitutionPOG2Category;
+	}
+	public void setSubstitutionPOG2Category(String substitutionPOG2Category) {
+		this.substitutionPOG2Category = substitutionPOG2Category;
+	}
+	public String getSubstitutionPOG3Category() {
+		return substitutionPOG3Category;
+	}
+	public void setSubstitutionPOG3Category(String substitutionPOG3Category) {
+		this.substitutionPOG3Category = substitutionPOG3Category;
+	}
+	public String getSubstitutionPortalDisplayName() {
+		return substitutionPortalDisplayName;
+	}
+	public void setSubstitutionPortalDisplayName(
+			String substitutionPortalDisplayName) {
+		this.substitutionPortalDisplayName = substitutionPortalDisplayName;
 	}
 	public String getSubGroupId() {
 		return subGroupId;
@@ -95,6 +76,5 @@ public class SubstitutionGroup {
 	public void setSubGroupId(String subGroupId) {
 		this.subGroupId = subGroupId;
 	}
-	
 	
 }
