@@ -50,6 +50,7 @@ http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schem
     </flow>
     <flow name="post:/3ps-dax-int:apiConfig" doc:name="post:/3ps-dax-int:apiConfig">
         <object-to-byte-array-transformer doc:name="Object to Byte Array"/>
+        <set-session-variable variableName="partnerProfileId" value="#[json:entityId]" doc:name="Session Variable"/>
 
         <logger level="INFO" doc:name="TODO Validation" />
         <all doc:name="All">

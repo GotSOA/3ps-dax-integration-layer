@@ -10,26 +10,27 @@ import javax.xml.datatype.DatatypeConstants;
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
 
+import org.mule.api.MuleMessage;
 import org.mule.api.transformer.TransformerException;
-import org.mule.transformer.AbstractTransformer;
+import org.mule.api.transport.PropertyScope;
+import org.mule.transformer.AbstractMessageTransformer;
 
 import com.bhnetwork.integration.pppstodax.canonical.Company;
 import com.microsoft.schemas.dynamics._2008._01.documents.custcompanycode.AxdCustCompanyCode;
 import com.microsoft.schemas.dynamics._2008._01.documents.custcompanycode.AxdEntityBhnCustCompanyTable;
 import com.microsoft.schemas.dynamics._2008._01.documents.custcompanycode.AxdEntityBhnOnlineCompanyAttributes;
 import com.microsoft.schemas.dynamics._2008._01.documents.custcompanycode.AxdEnumNoYes;
-import com.microsoft.schemas.dynamics._2008._01.documents.custcompanycode.AxdEnumXMLDocPurpose;
 import com.microsoft.schemas.dynamics._2008._01.documents.custcompanycode.AxdExtTypeInactive;
 import com.microsoft.schemas.dynamics._2008._01.documents.custcompanycode.AxdExtTypeNoYesId;
 import com.microsoft.schemas.dynamics._2008._01.services.CustCompanyCodeServiceCreateRequest;
 
-public class CanonicalToDAXCustCompanyCodeServiceCreateRequest extends AbstractTransformer{
+public class CanonicalToDAXCustCompanyCodeServiceCreateRequest extends AbstractMessageTransformer{
 
 	@Override
-	protected Object doTransform(Object src, String enc)
+	public Object transformMessage(MuleMessage message, String outputEncoding)
 			throws TransformerException {
 		
-		Company companyObj = (Company) src;		
+		Company companyObj = (Company) message.getPayload();		
 		
 		CustCompanyCodeServiceCreateRequest req= new CustCompanyCodeServiceCreateRequest();
 		
@@ -53,8 +54,7 @@ public class CanonicalToDAXCustCompanyCodeServiceCreateRequest extends AbstractT
 		bhnCustCompanyTable1.setInactive(AxdExtTypeInactive.NO);
 		bhnCustCompanyTable1.setLegalEntityCode(companyObj.getLegalEntityCode());
 		bhnCustCompanyTable1.setName(companyObj.getCompanyCode());
-		
-		bhnCustCompanyTable1.setPartnerProfileId("partner_profile_id_12345");
+		bhnCustCompanyTable1.setPartnerProfileId(message.getProperty("partnerProfileId", PropertyScope.SESSION).toString());
 		
 		//XML Attribute required
 		bhnCustCompanyTable1.setClazz("entity");//TODO Not in SPEC
@@ -101,4 +101,5 @@ public class CanonicalToDAXCustCompanyCodeServiceCreateRequest extends AbstractT
 				DatatypeConstants.FIELD_UNDEFINED);
 		return result;
 	}
+
 }
