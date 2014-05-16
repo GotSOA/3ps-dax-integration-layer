@@ -6631,7 +6631,7 @@ Affiliate:Affiliate number.</xs:documentation>
                <!--Optional:-->
                <bhn:Message xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                <!--Optional:-->
-               <bhn:PartnerprofileId>EntityId123</bhn:PartnerprofileId>
+               <bhn:PartnerprofileId>partner_profile_id_12345</bhn:PartnerprofileId>
                <!--Optional:-->
                <!--<bhn:RecId>1234</bhn:RecId>-->
                <!--Optional:-->
@@ -8493,7 +8493,7 @@ Affiliate:Affiliate number.</xs:documentation>
   <xs:import schemaLocation="http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhnupcattributes3psservice.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList"/>
   <xs:element name="AxdbhnUPCAttributes3PS" type="q1:AxdbhnUPCAttributes3PS" xmlns:q1="http://schemas.microsoft.com/dynamics/2008/01/documents/bhnUPCAttributes3PS"/>
   <xs:element name="EntityKeyList" type="q2:EntityKeyList" xmlns:q2="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList"/>
-</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhnupcattributes3psservice.svc</con:endpoint><con:endpoint>http://LWBHN00000390:8088/mockBasicHttpBinding_bhnUPCAttributes3PSService</con:endpoint></con:endpoints><con:operation isOneWay="false" action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnUPCAttributes3PSService/create" name="create" bindingOperationName="create" type="Request-Response" outputName="bhnUPCAttributes3PSServiceCreateResponse" inputName="bhnUPCAttributes3PSServiceCreateRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhnupcattributes3psservice.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://schemas.microsoft.com/dynamics/2008/01/services" xmlns:bhn="http://schemas.microsoft.com/dynamics/2008/01/documents/bhnUPCAttributes3PS">
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhnupcattributes3psservice.svc</con:endpoint><con:endpoint>http://LWBHN00000390:8088/mockBasicHttpBinding_bhnUPCAttributes3PSService</con:endpoint></con:endpoints><con:operation isOneWay="false" action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnUPCAttributes3PSService/create" name="create" bindingOperationName="create" type="Request-Response" outputName="bhnUPCAttributes3PSServiceCreateResponse" inputName="bhnUPCAttributes3PSServiceCreateRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="default request"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhnupcattributes3psservice.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://schemas.microsoft.com/dynamics/2008/01/services" xmlns:bhn="http://schemas.microsoft.com/dynamics/2008/01/documents/bhnUPCAttributes3PS">
    <soapenv:Header/>
    <soapenv:Body>
       <ser:bhnUPCAttributes3PSServiceCreateRequest>
@@ -8882,6 +8882,790 @@ Affiliate:Affiliate number.</xs:documentation>
                   <bhn:ReloadMaxAmount>?</bhn:ReloadMaxAmount>
                   <!--Optional:-->
                   <bhn:ReloadMinAmount>?</bhn:ReloadMinAmount>
+               </bhn:bhnUPCAttr2>
+            </bhn:InventTable>
+         </bhn:bhnUPCAttributes3PS>
+      </ser:bhnUPCAttributes3PSServiceCreateRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnUPCAttributes3PSService/create"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Request (dax team)"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhnupcattributes3psservice.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://schemas.microsoft.com/dynamics/2008/01/services" xmlns:bhn="http://schemas.microsoft.com/dynamics/2008/01/documents/bhnUPCAttributes3PS">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:bhnUPCAttributes3PSServiceCreateRequest>
+         <!--Optional:-->
+         <bhn:bhnUPCAttributes3PS>
+            <!--Optional:-->
+            <bhn:DocPurpose>Original</bhn:DocPurpose>
+           
+            <!--Zero or more repetitions:-->
+            <bhn:InventTable class="entity">
+               <!--Optional:-->
+               <bhn:_DocumentHash xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:ABCContributionMargin>A</bhn:ABCContributionMargin>
+               <!--Optional:-->
+               <bhn:ABCRevenue>A</bhn:ABCRevenue>
+               <!--Optional:-->
+               <bhn:ABCTieUp>A</bhn:ABCTieUp>
+               <!--Optional:-->
+               <bhn:ABCValue>A</bhn:ABCValue>
+               <!--Optional:-->
+               <bhn:AltItemId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:AutoReportFinished>No</bhn:AutoReportFinished>
+               <!--Optional:-->
+               <bhn:BatchNumGroupId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:BhnBarcodeType>Blank</bhn:BhnBarcodeType>
+               <!--Optional:-->
+               <bhn:BhnBIN>0</bhn:BhnBIN>
+               <!--Optional:-->
+               <bhn:BhnBINrange xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:BhnCheckDigit>2</bhn:BhnCheckDigit>
+               <!--Optional:-->
+               <bhn:bhnCompany xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:BhnComplete>No</bhn:BhnComplete>
+               <!--Optional:-->
+               <bhn:BhnContentSKU xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:bhnDivision xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:BhnGenerateproxycardnum>No</bhn:BhnGenerateproxycardnum>
+               <!--Optional:-->
+               <bhn:BhnGenerationtype>Sequential</bhn:BhnGenerationtype>
+               <!--Optional:-->
+               <bhn:BhnGUID xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:BhnIsEANUPC>No</bhn:BhnIsEANUPC>
+               <!--Optional:-->
+               <bhn:BhnLastReturnDate>2014-06-06</bhn:BhnLastReturnDate>
+               <!--Optional:-->
+               <bhn:BhnNonpersonalizedCard>No</bhn:BhnNonpersonalizedCard>
+               <!--Optional:-->
+               <bhn:BhnNotes xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:BhnPaygoCTID>111</bhn:BhnPaygoCTID>
+               <!--Optional:-->
+               <bhn:Bhnproxybin>12</bhn:Bhnproxybin>
+               <!--Optional:-->
+               <bhn:Bhnproxybinrange xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:BhnproxyCardlength>12</bhn:BhnproxyCardlength>
+               <!--Optional:-->
+               <bhn:BhnServicecode>12</bhn:BhnServicecode>
+              
+               <!--Optional:-->
+               <bhn:BhnSetupCompletedBy xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:BhnStatus>Active</bhn:BhnStatus>
+               <!--Optional:-->
+               <bhn:BhnStopBossApproval>No</bhn:BhnStopBossApproval>
+               <!--Optional:-->
+               <bhn:bhnSubGroup xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:BOMCalcGroupId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:BOMLevel>1</bhn:BOMLevel>
+               <!--Optional:-->
+               <bhn:BOMManualReceipt>No</bhn:BOMManualReceipt>
+               <!--Optional:-->
+               <bhn:BOMUnitId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:CommissionGroupId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:CostGroupId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:CostModel>No</bhn:CostModel>
+               <!--Optional:-->
+               <bhn:Density>0</bhn:Density>
+               <!--Optional:-->
+               <bhn:Depth>0</bhn:Depth>
+               <!--Optional:-->
+               <bhn:Dimension>
+                  <bhn:element/>
+                  <bhn:element/>
+                  <bhn:element/>
+                  <bhn:element/>
+                  <bhn:element/>
+                  <bhn:element/>
+                  <bhn:element/>
+               </bhn:Dimension>
+               <bhn:DimGroupId>OTHER</bhn:DimGroupId>
+               <!--Optional:-->
+               <bhn:DiscoReasonCode xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:EPCManager>0</bhn:EPCManager>
+               <!--Optional:-->
+               <bhn:grossDepth>0</bhn:grossDepth>
+               <!--Optional:-->
+               <bhn:grossHeight>0</bhn:grossHeight>
+               <!--Optional:-->
+               <bhn:grossWidth>0</bhn:grossWidth>
+               <!--Optional:-->
+               <bhn:Height>0</bhn:Height>
+               <!--Optional:-->
+               <bhn:Intracode xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:IntraUnit>0</bhn:IntraUnit>
+               <!--Optional:-->
+               <bhn:ItemBuyerGroupId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:ItemDimCombinationAutoCreate>Yes</bhn:ItemDimCombinationAutoCreate>
+               <!--Optional:-->
+               <bhn:ItemDimCostPrice>No</bhn:ItemDimCostPrice>
+               <bhn:ItemGroupId>INV_CP</bhn:ItemGroupId>
+
+			
+             
+               <!--Optional:-->
+               <bhn:ItemIdCompany xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:ItemName xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:ItemPriceToleranceGroupId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:ItemType>Item</bhn:ItemType>
+               <!--Optional:-->
+               <bhn:JsSearchText xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:jsSellEndDate>2014-10-10</bhn:jsSellEndDate>
+               <!--Optional:-->
+               <bhn:jsSellStartDate>2014-10-01</bhn:jsSellStartDate>
+               <!--Optional:-->
+               <bhn:MerchRecordNumber xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <bhn:ModelGroupId>INV_IMG</bhn:ModelGroupId>
+               <!--Optional:-->
+               <bhn:NameAlias xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:NetWeight>0</bhn:NetWeight>
+               <!--Optional:-->
+               <bhn:OrigCountryRegionId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:OrigStateId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:PackagingGroupId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:PartnerProfileId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:PBAAutoStart>No</bhn:PBAAutoStart>
+               <!--Optional:-->
+               <bhn:PBAHideApproval>No</bhn:PBAHideApproval>
+               <!--Optional:-->
+               <bhn:PBAHideDialog>No</bhn:PBAHideDialog>
+               <!--Optional:-->
+               <bhn:PBAInventItemGroupId></bhn:PBAInventItemGroupId>
+               <!--Optional:-->
+               <bhn:PBAItemAutoGenerated>No</bhn:PBAItemAutoGenerated>
+               <!--Optional:-->
+               <bhn:PBAItemConfigurable>No</bhn:PBAItemConfigurable>
+               <!--Optional:-->
+               <bhn:PBAMandatoryConfig>No</bhn:PBAMandatoryConfig>
+               <!--Optional:-->
+               <bhn:Phantom>No</bhn:Phantom>
+               <!--Optional:-->
+               <bhn:PrimaryVendorId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:ProdFlushingPrincip>Start</bhn:ProdFlushingPrincip>
+               <!--Optional:-->
+               <bhn:ProdGroupId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:ProdPoolId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:projCategoryId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:PurchModel>No</bhn:PurchModel>
+               <!--Optional:-->
+               <bhn:RecId>0</bhn:RecId>
+               <!--Optional:-->
+               <bhn:RecVersion>0</bhn:RecVersion>
+               <!--Optional:-->
+               <bhn:ReqGroupId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:SalesContributionRatio>0</bhn:SalesContributionRatio>
+               <!--Optional:-->
+               <bhn:SalesModel>None</bhn:SalesModel>
+               <!--Optional:-->
+               <bhn:SalesPercentMarkup>0</bhn:SalesPercentMarkup>
+               <!--Optional:-->
+               <bhn:SalesPriceModelBasic>CostPrice</bhn:SalesPriceModelBasic>
+               <!--Optional:-->
+               <bhn:ScrapConst>0</bhn:ScrapConst>
+               <!--Optional:-->
+               <bhn:ScrapVar>0</bhn:ScrapVar>
+               <!--Optional:-->
+               <bhn:SerialNumGroupId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:sortCode>0</bhn:sortCode>
+               <!--Optional:-->
+               <bhn:StatisticsFactor>0</bhn:StatisticsFactor>
+               <!--Optional:-->
+               <bhn:StopExplode>No</bhn:StopExplode>
+               <!--Optional:-->
+               <bhn:TaraWeight>0</bhn:TaraWeight>
+               <!--Optional:-->
+               <bhn:TaxPackagingQty>0</bhn:TaxPackagingQty>
+               <!--Optional:-->
+               <bhn:UnitVolume>0</bhn:UnitVolume>
+               <!--Optional:-->
+               <bhn:UseAltItemId>Never</bhn:UseAltItemId>
+               <!--Optional:-->
+               <bhn:Width>0</bhn:Width>
+               <!--Optional:-->
+               <bhn:WMSArrivalHandlingTime>00:00:00</bhn:WMSArrivalHandlingTime>
+               <!--Zero or more repetitions:-->
+               <bhn:bhnUPCAttr1 class="entity">
+                  <!--Optional:-->
+                  <bhn:BatchDelay xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:BhnItemVoidSupport>Systematic</bhn:BhnItemVoidSupport>
+                  <!--Optional:-->
+                  <bhn:BhnLotVersion>0</bhn:BhnLotVersion>
+                  <!--Optional:-->
+                  <bhn:BhnOriginalUPCEAN>No</bhn:BhnOriginalUPCEAN>
+                  <!--Optional:-->
+                  <bhn:BhnRedemptionDelay xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:BhnTaxAmount>0</bhn:BhnTaxAmount>
+                  <!--Optional:-->
+                  <bhn:BhnTaxPercent>0</bhn:BhnTaxPercent>
+                  <!--Optional:-->
+                  <bhn:BhnUOMKitCount>0</bhn:BhnUOMKitCount>
+                  <!--Optional:-->
+                  <bhn:BhnVariableMax>0</bhn:BhnVariableMax>
+                  <!--Optional:-->
+                  <bhn:BhnVariableMaxold>0</bhn:BhnVariableMaxold>
+                  <!--Optional:-->
+                  <bhn:BhnVariableMin>0</bhn:BhnVariableMin>
+                  <!--Optional:-->
+                  <bhn:BhnVariableMinold>0</bhn:BhnVariableMinold>
+                  <!--Optional:-->
+                  <bhn:CardAttributeID xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:CheckMinMax>No</bhn:CheckMinMax>
+                  <!--Optional:-->
+                  <bhn:Currency>USD</bhn:Currency>
+                  <!--Optional:-->
+                  <bhn:Denomination>0</bhn:Denomination>
+                  <!--Optional:-->
+                  <bhn:ExclusionIndicator>No</bhn:ExclusionIndicator>
+                  <!--Optional:-->
+                  <bhn:FacingsNum>0</bhn:FacingsNum>
+                  <!--Optional:-->
+                  <bhn:Fee>0</bhn:Fee>
+                  <!--Optional:-->
+                  <bhn:FeeStrippingFlag>No</bhn:FeeStrippingFlag>
+                  <!--Optional:-->
+                  <bhn:IssuerCompanyCode xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <bhn:ItemId/>
+                  <!--Optional:-->
+                  <bhn:LastActiveDate>2014-10-10</bhn:LastActiveDate>
+                  <!--Optional:-->
+                  <bhn:LaunchDate>2014-10-10</bhn:LaunchDate>
+                  <!--Optional:-->
+                  <bhn:LoadValueType xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:MagstripeUseTrackNum xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:MulticardIndicator xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:OwnershipType>NonOwned</bhn:OwnershipType>
+                  <!--Optional:-->
+                  <bhn:PanLength>0</bhn:PanLength>
+                  <!--Optional:-->
+                  <bhn:PaygoCTID>0</bhn:PaygoCTID>
+                  <!--Optional:-->
+                  <bhn:PostReversalIndicator>No</bhn:PostReversalIndicator>
+                  <!--Optional:-->
+                  <bhn:ProcessorType xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:ProductCatalogName xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:ProductCatalogProducts xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:ProductClass xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:ProductGroup xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:ProductType xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:ReasonCode xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:RecId>0</bhn:RecId>
+                  <!--Optional:-->
+                  <bhn:RecVersion>0</bhn:RecVersion>
+                  <!--Optional:-->
+                  <bhn:RedeemLocationIndicator>No</bhn:RedeemLocationIndicator>
+                  <!--Optional:-->
+                  <bhn:ReloadIndicator>No</bhn:ReloadIndicator>
+                  <!--Optional:-->
+                  <bhn:ReversibleIndicator>No</bhn:ReversibleIndicator>
+                  <!--Optional:-->
+                  <bhn:SendToBOSS>No</bhn:SendToBOSS>
+                  <!--Optional:-->
+                  <bhn:SendToMDM>No</bhn:SendToMDM>
+                  <!--Optional:-->
+                  <bhn:ServiceProvider xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:SKUKey xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:SKUSwipeOffset>100</bhn:SKUSwipeOffset>
+                  <!--Optional:-->
+                  <bhn:SKUSwipePrefix>10</bhn:SKUSwipePrefix>
+                  <!--Optional:-->
+                  <bhn:SKUSwipeType xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:SKUTotalLength>1</bhn:SKUTotalLength>
+                  <!--Optional:-->
+                  <bhn:SKUUPC>0</bhn:SKUUPC>
+                  <!--Optional:-->
+                  <bhn:SpecificToAP>STPL</bhn:SpecificToAP>
+                  <!--Optional:-->
+                  <bhn:TaxIncluded>No</bhn:TaxIncluded>
+                  <!--Optional:-->
+                  <bhn:Theme xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:VariableIndicator>No</bhn:VariableIndicator>
+                  <!--Optional:-->
+                  <bhn:Warehouse xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:WholeDollarValue>No</bhn:WholeDollarValue>
+               </bhn:bhnUPCAttr1>
+               <!--Zero or more repetitions:-->
+               <bhn:bhnUPCAttr2 class="entity">
+                  <!--Optional:-->
+                  <bhn:CustomtemplatepathURL xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                 
+                  <!--Optional:-->
+                  <bhn:ProductAccountInquiryBIN xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:ProductAccountTopupBIN xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:ProductActivationInstructions xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:ProductBackCardTemplate>0</bhn:ProductBackCardTemplate>
+                  <!--Optional:-->
+                  <bhn:ProductBINForDARTransaction xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:ProductDefaultIID>No</bhn:ProductDefaultIID>
+                  <!--Optional:-->
+                  <bhn:ProductExpdate>2014-10-10</bhn:ProductExpdate>
+                  <!--Optional:-->
+                  <bhn:ProductExpLength>1</bhn:ProductExpLength>
+                  <!--Optional:-->
+                  <bhn:ProductInventorySource>None</bhn:ProductInventorySource>
+                  <!--Optional:-->
+                  <bhn:ProductIsActivationRequired>No</bhn:ProductIsActivationRequired>
+                  <!--Optional:-->
+                  <bhn:ProductIsReloadable>No</bhn:ProductIsReloadable>
+                  <!--Optional:-->
+                  <bhn:ProductIsTaxable>No</bhn:ProductIsTaxable>
+                  <!--Optional:-->
+                  <bhn:ProductTermsandConditions xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:ProductTypeID>None</bhn:ProductTypeID>
+                  <!--Optional:-->
+                  <bhn:ProductUseStandardDesignTemplate>No</bhn:ProductUseStandardDesignTemplate>
+                  <!--Optional:-->
+                  <bhn:RecId>0</bhn:RecId>
+                  <!--Optional:-->
+                  <bhn:RecVersion>0</bhn:RecVersion>
+                  <!--Optional:-->
+                  <bhn:ReloadMaxAmount>100</bhn:ReloadMaxAmount>
+                  <!--Optional:-->
+                  <bhn:ReloadMinAmount>10</bhn:ReloadMinAmount>
+               </bhn:bhnUPCAttr2>
+            </bhn:InventTable>
+         </bhn:bhnUPCAttributes3PS>
+      </ser:bhnUPCAttributes3PSServiceCreateRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnUPCAttributes3PSService/create"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Copy of Request (dax team)"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhnupcattributes3psservice.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://schemas.microsoft.com/dynamics/2008/01/services" xmlns:bhn="http://schemas.microsoft.com/dynamics/2008/01/documents/bhnUPCAttributes3PS">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:bhnUPCAttributes3PSServiceCreateRequest>
+         <!--Optional:-->
+         <bhn:bhnUPCAttributes3PS>
+            <!--Optional:-->
+            <bhn:DocPurpose>Original</bhn:DocPurpose>
+           
+            <!--Zero or more repetitions:-->
+            <bhn:InventTable class="entity">
+               <!--Optional:-->
+               <bhn:_DocumentHash xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:ABCContributionMargin>A</bhn:ABCContributionMargin>
+               <!--Optional:-->
+               <bhn:ABCRevenue>A</bhn:ABCRevenue>
+               <!--Optional:-->
+               <bhn:ABCTieUp>A</bhn:ABCTieUp>
+               <!--Optional:-->
+               <bhn:ABCValue>A</bhn:ABCValue>
+               <!--Optional:-->
+               <bhn:AltItemId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:AutoReportFinished>No</bhn:AutoReportFinished>
+               <!--Optional:-->
+               <bhn:BatchNumGroupId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:BhnBarcodeType>Blank</bhn:BhnBarcodeType>
+               <!--Optional:-->
+               <bhn:BhnBIN>0</bhn:BhnBIN>
+               <!--Optional:-->
+               <bhn:BhnBINrange xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:BhnCheckDigit>2</bhn:BhnCheckDigit>
+               <!--Optional:-->
+               <bhn:bhnCompany xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:BhnComplete>No</bhn:BhnComplete>
+               <!--Optional:-->
+               <bhn:BhnContentSKU xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:bhnDivision xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:BhnGenerateproxycardnum>No</bhn:BhnGenerateproxycardnum>
+               <!--Optional:-->
+               <bhn:BhnGenerationtype>Sequential</bhn:BhnGenerationtype>
+               <!--Optional:-->
+               <bhn:BhnGUID xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:BhnIsEANUPC>No</bhn:BhnIsEANUPC>
+               <!--Optional:-->
+               <bhn:BhnLastReturnDate>2014-06-06</bhn:BhnLastReturnDate>
+               <!--Optional:-->
+               <bhn:BhnNonpersonalizedCard>No</bhn:BhnNonpersonalizedCard>
+               <!--Optional:-->
+               <bhn:BhnNotes xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:BhnPaygoCTID>111</bhn:BhnPaygoCTID>
+               <!--Optional:-->
+               <bhn:Bhnproxybin>12</bhn:Bhnproxybin>
+               <!--Optional:-->
+               <bhn:Bhnproxybinrange xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:BhnproxyCardlength>12</bhn:BhnproxyCardlength>
+               <!--Optional:-->
+               <bhn:BhnServicecode>12</bhn:BhnServicecode>
+              
+               <!--Optional:-->
+               <bhn:BhnSetupCompletedBy xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:BhnStatus>Active</bhn:BhnStatus>
+               <!--Optional:-->
+               <bhn:BhnStopBossApproval>No</bhn:BhnStopBossApproval>
+               <!--Optional:-->
+               <bhn:bhnSubGroup xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:BOMCalcGroupId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:BOMLevel>1</bhn:BOMLevel>
+               <!--Optional:-->
+               <bhn:BOMManualReceipt>No</bhn:BOMManualReceipt>
+               <!--Optional:-->
+               <bhn:BOMUnitId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:CommissionGroupId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:CostGroupId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:CostModel>No</bhn:CostModel>
+               <!--Optional:-->
+               <bhn:Density>0</bhn:Density>
+               <!--Optional:-->
+               <bhn:Depth>0</bhn:Depth>
+               <!--Optional:-->
+               <bhn:Dimension>
+                  <bhn:element/>
+                  <bhn:element/>
+                  <bhn:element/>
+                  <bhn:element/>
+                  <bhn:element/>
+                  <bhn:element/>
+                  <bhn:element/>
+               </bhn:Dimension>
+               <bhn:DimGroupId>OTHER</bhn:DimGroupId>
+               <!--Optional:-->
+               <bhn:DiscoReasonCode xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:EPCManager>0</bhn:EPCManager>
+               <!--Optional:-->
+               <bhn:grossDepth>0</bhn:grossDepth>
+               <!--Optional:-->
+               <bhn:grossHeight>0</bhn:grossHeight>
+               <!--Optional:-->
+               <bhn:grossWidth>0</bhn:grossWidth>
+               <!--Optional:-->
+               <bhn:Height>0</bhn:Height>
+               <!--Optional:-->
+               <bhn:Intracode xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:IntraUnit>0</bhn:IntraUnit>
+               <!--Optional:-->
+               <bhn:ItemBuyerGroupId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:ItemDimCombinationAutoCreate>Yes</bhn:ItemDimCombinationAutoCreate>
+               <!--Optional:-->
+               <bhn:ItemDimCostPrice>No</bhn:ItemDimCostPrice>
+               <bhn:ItemGroupId>INV_CP</bhn:ItemGroupId>
+
+			
+             
+               <!--Optional:-->
+               <bhn:ItemIdCompany xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:ItemName xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:ItemPriceToleranceGroupId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:ItemType>Item</bhn:ItemType>
+               <!--Optional:-->
+               <bhn:JsSearchText xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:jsSellEndDate>2014-10-10</bhn:jsSellEndDate>
+               <!--Optional:-->
+               <bhn:jsSellStartDate>2014-10-01</bhn:jsSellStartDate>
+               <!--Optional:-->
+               <bhn:MerchRecordNumber xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <bhn:ModelGroupId>INV_IMG</bhn:ModelGroupId>
+               <!--Optional:-->
+               <bhn:NameAlias xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:NetWeight>0</bhn:NetWeight>
+               <!--Optional:-->
+               <bhn:OrigCountryRegionId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:OrigStateId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:PackagingGroupId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:PartnerProfileId xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">partner_profile_id_12345</bhn:PartnerProfileId>
+               <!--Optional:-->
+               <bhn:PBAAutoStart>No</bhn:PBAAutoStart>
+               <!--Optional:-->
+               <bhn:PBAHideApproval>No</bhn:PBAHideApproval>
+               <!--Optional:-->
+               <bhn:PBAHideDialog>No</bhn:PBAHideDialog>
+               <!--Optional:-->
+               <bhn:PBAInventItemGroupId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:PBAItemAutoGenerated>No</bhn:PBAItemAutoGenerated>
+               <!--Optional:-->
+               <bhn:PBAItemConfigurable>No</bhn:PBAItemConfigurable>
+               <!--Optional:-->
+               <bhn:PBAMandatoryConfig>No</bhn:PBAMandatoryConfig>
+               <!--Optional:-->
+               <bhn:Phantom>No</bhn:Phantom>
+               <!--Optional:-->
+               <bhn:PrimaryVendorId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:ProdFlushingPrincip>Start</bhn:ProdFlushingPrincip>
+               <!--Optional:-->
+               <bhn:ProdGroupId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:ProdPoolId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:projCategoryId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:PurchModel>No</bhn:PurchModel>
+               <!--Optional:-->
+               <bhn:RecId>0</bhn:RecId>
+               <!--Optional:-->
+               <bhn:RecVersion>0</bhn:RecVersion>
+               <!--Optional:-->
+               <bhn:ReqGroupId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:SalesContributionRatio>0</bhn:SalesContributionRatio>
+               <!--Optional:-->
+               <bhn:SalesModel>None</bhn:SalesModel>
+               <!--Optional:-->
+               <bhn:SalesPercentMarkup>0</bhn:SalesPercentMarkup>
+               <!--Optional:-->
+               <bhn:SalesPriceModelBasic>CostPrice</bhn:SalesPriceModelBasic>
+               <!--Optional:-->
+               <bhn:ScrapConst>0</bhn:ScrapConst>
+               <!--Optional:-->
+               <bhn:ScrapVar>0</bhn:ScrapVar>
+               <!--Optional:-->
+               <bhn:SerialNumGroupId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:sortCode>0</bhn:sortCode>
+               <!--Optional:-->
+               <bhn:StatisticsFactor>0</bhn:StatisticsFactor>
+               <!--Optional:-->
+               <bhn:StopExplode>No</bhn:StopExplode>
+               <!--Optional:-->
+               <bhn:TaraWeight>0</bhn:TaraWeight>
+               <!--Optional:-->
+               <bhn:TaxPackagingQty>0</bhn:TaxPackagingQty>
+               <!--Optional:-->
+               <bhn:UnitVolume>0</bhn:UnitVolume>
+               <!--Optional:-->
+               <bhn:UseAltItemId>Never</bhn:UseAltItemId>
+               <!--Optional:-->
+               <bhn:Width>0</bhn:Width>
+               <!--Optional:-->
+               <bhn:WMSArrivalHandlingTime>00:00:00</bhn:WMSArrivalHandlingTime>
+               <!--Zero or more repetitions:-->
+               <bhn:bhnUPCAttr1 class="entity">
+                  <!--Optional:-->
+                  <bhn:BatchDelay xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:BhnItemVoidSupport>Systematic</bhn:BhnItemVoidSupport>
+                  <!--Optional:-->
+                  <bhn:BhnLotVersion>0</bhn:BhnLotVersion>
+                  <!--Optional:-->
+                  <bhn:BhnOriginalUPCEAN>No</bhn:BhnOriginalUPCEAN>
+                  <!--Optional:-->
+                  <bhn:BhnRedemptionDelay xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:BhnTaxAmount>0</bhn:BhnTaxAmount>
+                  <!--Optional:-->
+                  <bhn:BhnTaxPercent>0</bhn:BhnTaxPercent>
+                  <!--Optional:-->
+                  <bhn:BhnUOMKitCount>0</bhn:BhnUOMKitCount>
+                  <!--Optional:-->
+                  <bhn:BhnVariableMax>0</bhn:BhnVariableMax>
+                  <!--Optional:-->
+                  <bhn:BhnVariableMaxold>0</bhn:BhnVariableMaxold>
+                  <!--Optional:-->
+                  <bhn:BhnVariableMin>0</bhn:BhnVariableMin>
+                  <!--Optional:-->
+                  <bhn:BhnVariableMinold>0</bhn:BhnVariableMinold>
+                  <!--Optional:-->
+                  <bhn:CardAttributeID xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:CheckMinMax>No</bhn:CheckMinMax>
+                  <!--Optional:-->
+                  <bhn:Currency>USD</bhn:Currency>
+                  <!--Optional:-->
+                  <bhn:Denomination>0</bhn:Denomination>
+                  <!--Optional:-->
+                  <bhn:ExclusionIndicator>No</bhn:ExclusionIndicator>
+                  <!--Optional:-->
+                  <bhn:FacingsNum>0</bhn:FacingsNum>
+                  <!--Optional:-->
+                  <bhn:Fee>0</bhn:Fee>
+                  <!--Optional:-->
+                  <bhn:FeeStrippingFlag>No</bhn:FeeStrippingFlag>
+                  <!--Optional:-->
+                  <bhn:IssuerCompanyCode xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <bhn:ItemId/>
+                  <!--Optional:-->
+                  <bhn:LastActiveDate>2014-10-10</bhn:LastActiveDate>
+                  <!--Optional:-->
+                  <bhn:LaunchDate>2014-10-10</bhn:LaunchDate>
+                  <!--Optional:-->
+                  <bhn:LoadValueType xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:MagstripeUseTrackNum xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:MulticardIndicator xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:OwnershipType>NonOwned</bhn:OwnershipType>
+                  <!--Optional:-->
+                  <bhn:PanLength>0</bhn:PanLength>
+                  <!--Optional:-->
+                  <bhn:PaygoCTID>0</bhn:PaygoCTID>
+                  <!--Optional:-->
+                  <bhn:PostReversalIndicator>No</bhn:PostReversalIndicator>
+                  <!--Optional:-->
+                  <bhn:ProcessorType xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:ProductCatalogName xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:ProductCatalogProducts xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:ProductClass xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:ProductGroup xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:ProductType xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:ReasonCode xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:RecId>0</bhn:RecId>
+                  <!--Optional:-->
+                  <bhn:RecVersion>0</bhn:RecVersion>
+                  <!--Optional:-->
+                  <bhn:RedeemLocationIndicator>No</bhn:RedeemLocationIndicator>
+                  <!--Optional:-->
+                  <bhn:ReloadIndicator>No</bhn:ReloadIndicator>
+                  <!--Optional:-->
+                  <bhn:ReversibleIndicator>No</bhn:ReversibleIndicator>
+                  <!--Optional:-->
+                  <bhn:SendToBOSS>No</bhn:SendToBOSS>
+                  <!--Optional:-->
+                  <bhn:SendToMDM>No</bhn:SendToMDM>
+                  <!--Optional:-->
+                  <bhn:ServiceProvider xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:SKUKey xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:SKUSwipeOffset>100</bhn:SKUSwipeOffset>
+                  <!--Optional:-->
+                  <bhn:SKUSwipePrefix>10</bhn:SKUSwipePrefix>
+                  <!--Optional:-->
+                  <bhn:SKUSwipeType xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:SKUTotalLength>1</bhn:SKUTotalLength>
+                  <!--Optional:-->
+                  <bhn:SKUUPC>0</bhn:SKUUPC>
+                  <!--Optional:-->
+                  <bhn:SpecificToAP>STPL</bhn:SpecificToAP>
+                  <!--Optional:-->
+                  <bhn:TaxIncluded>No</bhn:TaxIncluded>
+                  <!--Optional:-->
+                  <bhn:Theme xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:VariableIndicator>No</bhn:VariableIndicator>
+                  <!--Optional:-->
+                  <bhn:Warehouse xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:WholeDollarValue>No</bhn:WholeDollarValue>
+               </bhn:bhnUPCAttr1>
+               <!--Zero or more repetitions:-->
+               <bhn:bhnUPCAttr2 class="entity">
+                  <!--Optional:-->
+                  <bhn:CustomtemplatepathURL xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                 
+                  <!--Optional:-->
+                  <bhn:ProductAccountInquiryBIN xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:ProductAccountTopupBIN xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:ProductActivationInstructions xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:ProductBackCardTemplate>0</bhn:ProductBackCardTemplate>
+                  <!--Optional:-->
+                  <bhn:ProductBINForDARTransaction xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:ProductDefaultIID>No</bhn:ProductDefaultIID>
+                  <!--Optional:-->
+                  <bhn:ProductExpdate>2014-10-10</bhn:ProductExpdate>
+                  <!--Optional:-->
+                  <bhn:ProductExpLength>1</bhn:ProductExpLength>
+                  <!--Optional:-->
+                  <bhn:ProductInventorySource>None</bhn:ProductInventorySource>
+                  <!--Optional:-->
+                  <bhn:ProductIsActivationRequired>No</bhn:ProductIsActivationRequired>
+                  <!--Optional:-->
+                  <bhn:ProductIsReloadable>No</bhn:ProductIsReloadable>
+                  <!--Optional:-->
+                  <bhn:ProductIsTaxable>No</bhn:ProductIsTaxable>
+                  <!--Optional:-->
+                  <bhn:ProductTermsandConditions xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:ProductTypeID>None</bhn:ProductTypeID>
+                  <!--Optional:-->
+                  <bhn:ProductUseStandardDesignTemplate>No</bhn:ProductUseStandardDesignTemplate>
+                  <!--Optional:-->
+                  <bhn:RecId>0</bhn:RecId>
+                  <!--Optional:-->
+                  <bhn:RecVersion>0</bhn:RecVersion>
+                  <!--Optional:-->
+                  <bhn:ReloadMaxAmount>100</bhn:ReloadMaxAmount>
+                  <!--Optional:-->
+                  <bhn:ReloadMinAmount>10</bhn:ReloadMinAmount>
                </bhn:bhnUPCAttr2>
             </bhn:InventTable>
          </bhn:bhnUPCAttributes3PS>
@@ -10425,22 +11209,22 @@ Affiliate:Affiliate number.</xs:documentation>
             <!--Optional:-->
             <bhn:DocPurpose>Original</bhn:DocPurpose>   
             <!--Zero or more repetitions:-->
-            <bhn:bhnCustDivisionTable class="entity" >
+            <bhn:bhnCustDivisionTable class="entity">
                <!--Optional:-->
-               <bhn:_DocumentHash></bhn:_DocumentHash>
+               <bhn:_DocumentHash xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                <!--Optional:-->
-               <bhn:AcquirerCode></bhn:AcquirerCode>
+               <bhn:AcquirerCode xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                <!--Optional:-->
-               <bhn:AcquirerType></bhn:AcquirerType>
+               <bhn:AcquirerType xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                <!--Optional:-->
-               <bhn:AdditionalInfo></bhn:AdditionalInfo>
+               <bhn:AdditionalInfo xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                <!--Optional:-->
                <bhn:BankAuthorizationRequired>No</bhn:BankAuthorizationRequired>
                
                <!--Optional:-->
                <bhn:BhnLocalPartner>No</bhn:BhnLocalPartner>
                <!--Optional:-->
-               <bhn:BhnPartnerPortalSource></bhn:BhnPartnerPortalSource>
+               <bhn:BhnPartnerPortalSource xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                <!--Optional:-->
                <bhn:BhnSetupComplete>No</bhn:BhnSetupComplete>
                <!--Optional:-->
@@ -10450,11 +11234,11 @@ Affiliate:Affiliate number.</xs:documentation>
                <!--Optional:-->
                <bhn:BhnVoidSupport>Systematic</bhn:BhnVoidSupport>
                <!--Optional:-->
-               <bhn:BillingSourceCode></bhn:BillingSourceCode>
+               <bhn:BillingSourceCode xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                <!--Optional:-->
-               <bhn:BusChannel></bhn:BusChannel>
+               <bhn:BusChannel xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                <!--Optional:-->
-               <bhn:Comments></bhn:Comments>
+               <bhn:Comments xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                <bhn:CompanyCode>AH</bhn:CompanyCode>
                <!--Optional:-->
                <bhn:ContractComplete>No</bhn:ContractComplete>
@@ -10472,16 +11256,16 @@ Affiliate:Affiliate number.</xs:documentation>
                <!--Optional:-->
                <bhn:Inactive>Yes</bhn:Inactive>
                <!--Optional:-->
-               <bhn:MerchRecordNumber></bhn:MerchRecordNumber>
+               <bhn:MerchRecordNumber xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                <bhn:Name>Test Division2</bhn:Name>
                <!--Optional:-->
-               <bhn:PartnerProfileId></bhn:PartnerProfileId>
+               <bhn:PartnerProfileId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                <!--Optional:-->
                <bhn:PartnerRecId>0</bhn:PartnerRecId>
                <!--Optional:-->
-               <bhn:ProcessorCode></bhn:ProcessorCode>
+               <bhn:ProcessorCode xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                <!--Optional:-->
-               <bhn:ProcessorType></bhn:ProcessorType>
+               <bhn:ProcessorType xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                <!--Optional:-->
                <bhn:RecId>0</bhn:RecId>
                <!--Optional:-->
@@ -10490,13 +11274,13 @@ Affiliate:Affiliate number.</xs:documentation>
                <bhn:RegulatedProducts>No</bhn:RegulatedProducts>
                <bhn:RelationCode>AP</bhn:RelationCode>
                <!--Optional:-->
-               <bhn:SideLetter></bhn:SideLetter>
+               <bhn:SideLetter xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                <!--Optional:-->
                <bhn:SideLetterReq>No</bhn:SideLetterReq>
                <!--Optional:-->
-               <bhn:WebSite></bhn:WebSite>
+               <bhn:WebSite xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                <!--Zero or more repetitions:-->
-               <bhn:bhnDivisionAttributes class="entity" >
+               <bhn:bhnDivisionAttributes class="entity">
                   <!--Optional:-->
                   <bhn:BalanceLockTimeFrame>0</bhn:BalanceLockTimeFrame>
                   <!--Optional:-->
@@ -10506,9 +11290,9 @@ Affiliate:Affiliate number.</xs:documentation>
                   <!--Optional:-->
                   <bhn:Division2DQRCODEExpression>No</bhn:Division2DQRCODEExpression>
                   <!--Optional:-->
-                  <bhn:DivisionAccessCode></bhn:DivisionAccessCode>
+                  <bhn:DivisionAccessCode xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                   <!--Optional:-->
-                  <bhn:DivisionAccountNumberLabel></bhn:DivisionAccountNumberLabel>
+                  <bhn:DivisionAccountNumberLabel xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                   <!--Optional:-->
                   <bhn:DivisionAccountType>None</bhn:DivisionAccountType>
                   <!--Optional:-->
@@ -10516,52 +11300,52 @@ Affiliate:Affiliate number.</xs:documentation>
                   <!--Optional:-->
                   <bhn:DivisionBalanceMerges>No</bhn:DivisionBalanceMerges>
                   <!--Optional:-->
-                  <bhn:DivisionBins></bhn:DivisionBins>
+                  <bhn:DivisionBins xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                   <!--Optional:-->
                   <bhn:DivisionCanCardExpire>No</bhn:DivisionCanCardExpire>
                   <!--Optional:-->
-                  <bhn:DivisionCardImageBack1URL></bhn:DivisionCardImageBack1URL>
+                  <bhn:DivisionCardImageBack1URL xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                   <!--Optional:-->
-                  <bhn:DivisionCardImageBack2URL></bhn:DivisionCardImageBack2URL>
+                  <bhn:DivisionCardImageBack2URL xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                   <!--Optional:-->
-                  <bhn:DivisionCardImageBack3URL></bhn:DivisionCardImageBack3URL>
+                  <bhn:DivisionCardImageBack3URL xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                   <!--Optional:-->
-                  <bhn:DivisionCardImageBack4URL></bhn:DivisionCardImageBack4URL>
+                  <bhn:DivisionCardImageBack4URL xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                   <!--Optional:-->
-                  <bhn:DivisionCardImageBack5URL></bhn:DivisionCardImageBack5URL>
+                  <bhn:DivisionCardImageBack5URL xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                   <!--Optional:-->
-                  <bhn:DivisionCardImageFront1URL></bhn:DivisionCardImageFront1URL>
+                  <bhn:DivisionCardImageFront1URL xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                   <!--Optional:-->
-                  <bhn:DivisionCardImageFront2URL></bhn:DivisionCardImageFront2URL>
+                  <bhn:DivisionCardImageFront2URL xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                   <!--Optional:-->
-                  <bhn:DivisionCardImageFront3URL></bhn:DivisionCardImageFront3URL>
+                  <bhn:DivisionCardImageFront3URL xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                   <!--Optional:-->
-                  <bhn:DivisionCardImageFront4URL></bhn:DivisionCardImageFront4URL>
+                  <bhn:DivisionCardImageFront4URL xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                   <!--Optional:-->
-                  <bhn:DivisionCardImageFront5URL></bhn:DivisionCardImageFront5URL>
+                  <bhn:DivisionCardImageFront5URL xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                   <!--Optional:-->
                   <bhn:DivisionCardPinLocation>None</bhn:DivisionCardPinLocation>
                   <!--Optional:-->
                   <bhn:DivisionCardPinType>None</bhn:DivisionCardPinType>
                   <!--Optional:-->
-                  <bhn:DivisionCashierInstructions></bhn:DivisionCashierInstructions>
-                  <bhn:DivisionCode></bhn:DivisionCode>
+                  <bhn:DivisionCashierInstructions xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <bhn:DivisionCode/>
                   <!--Optional:-->
-                  <bhn:DivisionCustomerSupportContactFirstN></bhn:DivisionCustomerSupportContactFirstN>
+                  <bhn:DivisionCustomerSupportContactFirstN xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                   <!--Optional:-->
-                  <bhn:DivisionCustomerSupportContactLastNa></bhn:DivisionCustomerSupportContactLastNa>
+                  <bhn:DivisionCustomerSupportContactLastNa xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                   <!--Optional:-->
-                  <bhn:DivisionCustomerSupportEmail></bhn:DivisionCustomerSupportEmail>
+                  <bhn:DivisionCustomerSupportEmail xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                   <!--Optional:-->
-                  <bhn:DivisionCustomerSupportPhone></bhn:DivisionCustomerSupportPhone>
+                  <bhn:DivisionCustomerSupportPhone xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                   <!--Optional:-->
-                  <bhn:DivisionCustomerSupportURL></bhn:DivisionCustomerSupportURL>
+                  <bhn:DivisionCustomerSupportURL xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                   <!--Optional:-->
                   <bhn:DivisionHasPhoneSupportAtPOS>No</bhn:DivisionHasPhoneSupportAtPOS>
                   <!--Optional:-->
                   <bhn:DivisionHasUniversalBISupport>No</bhn:DivisionHasUniversalBISupport>
                   <!--Optional:-->
-                  <bhn:DivisionInStoreRedemptionInstruction></bhn:DivisionInStoreRedemptionInstruction>
+                  <bhn:DivisionInStoreRedemptionInstruction xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                   <!--Optional:-->
                   <bhn:DivisionIsBarcodeFormat1DC128>No</bhn:DivisionIsBarcodeFormat1DC128>
                   <!--Optional:-->
@@ -10593,31 +11377,31 @@ Affiliate:Affiliate number.</xs:documentation>
                   <!--Optional:-->
                   <bhn:DivisionLocale>None</bhn:DivisionLocale>
                   <!--Optional:-->
-                  <bhn:DivisionLogoURL></bhn:DivisionLogoURL>
+                  <bhn:DivisionLogoURL xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                   <!--Optional:-->
-                  <bhn:DivisionLostStolenPolicyText></bhn:DivisionLostStolenPolicyText>
+                  <bhn:DivisionLostStolenPolicyText xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                   <!--Optional:-->
-                  <bhn:DivisionManualEntryFormat></bhn:DivisionManualEntryFormat>
+                  <bhn:DivisionManualEntryFormat xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                   <!--Optional:-->
                   <bhn:DivisionMaximumReloadAmount>100</bhn:DivisionMaximumReloadAmount>
                   <!--Optional:-->
                   <bhn:DivisionMinimumReloadAmount>10</bhn:DivisionMinimumReloadAmount>
                   <!--Optional:-->
-                  <bhn:DivisionOnlineRedemptionInstructions></bhn:DivisionOnlineRedemptionInstructions>
+                  <bhn:DivisionOnlineRedemptionInstructions xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                   <!--Optional:-->
-                  <bhn:DivisionOnlineStoreURL></bhn:DivisionOnlineStoreURL>
+                  <bhn:DivisionOnlineStoreURL xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                   <!--Optional:-->
                   <bhn:DivisionPaymentNetworkType>None</bhn:DivisionPaymentNetworkType>
                   <!--Optional:-->
-                  <bhn:DivisionPinLabel></bhn:DivisionPinLabel>
+                  <bhn:DivisionPinLabel xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                   <!--Optional:-->
-                  <bhn:DivisionProgramDescription></bhn:DivisionProgramDescription>
+                  <bhn:DivisionProgramDescription xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                   <!--Optional:-->
-                  <bhn:DivisionRedemptionInformation></bhn:DivisionRedemptionInformation>
+                  <bhn:DivisionRedemptionInformation xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                   <!--Optional:-->
-                  <bhn:DivisionRedemptionLine1></bhn:DivisionRedemptionLine1>
+                  <bhn:DivisionRedemptionLine1 xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                   <!--Optional:-->
-                  <bhn:DivisionRedemptionLine2></bhn:DivisionRedemptionLine2>
+                  <bhn:DivisionRedemptionLine2 xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                   <!--Optional:-->
                   <bhn:DivisionRedemptionMethod>None</bhn:DivisionRedemptionMethod>
                   <!--Optional:-->
@@ -10641,23 +11425,280 @@ Affiliate:Affiliate number.</xs:documentation>
                   <!--Optional:-->
                   <bhn:DivisionSupportsVoidReload>No</bhn:DivisionSupportsVoidReload>
                   <!--Optional:-->
-                  <bhn:DivisionTandCTextForPhysical></bhn:DivisionTandCTextForPhysical>
+                  <bhn:DivisionTandCTextForPhysical xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                   <!--Optional:-->
-                  <bhn:DivisionTrack1Format></bhn:DivisionTrack1Format>
+                  <bhn:DivisionTrack1Format xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                   <!--Optional:-->
-                  <bhn:DivisionTrack2Format></bhn:DivisionTrack2Format>
+                  <bhn:DivisionTrack2Format xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                   <!--Optional:-->
-                  <bhn:DivisionTrack3Format></bhn:DivisionTrack3Format>
+                  <bhn:DivisionTrack3Format xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                   <!--Optional:-->
-                  <bhn:LostStolenPolicyPhone></bhn:LostStolenPolicyPhone>
+                  <bhn:LostStolenPolicyPhone xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                   <!--Optional:-->
-                  <bhn:ProcessorContactFirstName></bhn:ProcessorContactFirstName>
+                  <bhn:ProcessorContactFirstName xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                   <!--Optional:-->
-                  <bhn:ProcessorContactLastName></bhn:ProcessorContactLastName>
+                  <bhn:ProcessorContactLastName xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                   <!--Optional:-->
-                  <bhn:ProcessorContactPhoneNumber></bhn:ProcessorContactPhoneNumber>
+                  <bhn:ProcessorContactPhoneNumber xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                   <!--Optional:-->
-                  <bhn:ProcessorContactPhoneNumberExt></bhn:ProcessorContactPhoneNumberExt>
+                  <bhn:ProcessorContactPhoneNumberExt xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:ProcessorHasRealTimeIssuance>No</bhn:ProcessorHasRealTimeIssuance>
+                  <!--Optional:-->
+                  <bhn:RecId>0</bhn:RecId>
+                  <!--Optional:-->
+                  <bhn:RecVersion>0</bhn:RecVersion>
+                  <!--Optional:-->
+                  <bhn:SupportsRegift>No</bhn:SupportsRegift>
+                  <!--Optional:-->
+                  <bhn:SupportsTransactionHistory>No</bhn:SupportsTransactionHistory>
+               </bhn:bhnDivisionAttributes>
+            </bhn:bhnCustDivisionTable>
+         </bhn:bhnDivision3PS>
+      </ser:bhnDivision3PSServiceCreateRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnDivision3PSService/create"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Copy of Request (DAX Team)"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhndivision3psservice.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://schemas.microsoft.com/dynamics/2008/01/services" xmlns:bhn="http://schemas.microsoft.com/dynamics/2008/01/documents/bhnDivision3PS">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:bhnDivision3PSServiceCreateRequest>
+         <!--Optional:-->
+         <bhn:bhnDivision3PS>
+            <!--Optional:-->
+            <bhn:DocPurpose>Original</bhn:DocPurpose>   
+            <!--Zero or more repetitions:-->
+            <bhn:bhnCustDivisionTable class="entity">
+               <!--Optional:-->
+               <bhn:_DocumentHash xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:AcquirerCode xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:AcquirerType xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:AdditionalInfo xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:BankAuthorizationRequired>No</bhn:BankAuthorizationRequired>
+               
+               <!--Optional:-->
+               <bhn:BhnLocalPartner>No</bhn:BhnLocalPartner>
+               <!--Optional:-->
+               <bhn:BhnPartnerPortalSource xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:BhnSetupComplete>No</bhn:BhnSetupComplete>
+               <!--Optional:-->
+               <bhn:BhnStandInCSR>No</bhn:BhnStandInCSR>
+               <!--Optional:-->
+               <bhn:BhnValidateTxn>No</bhn:BhnValidateTxn>
+               <!--Optional:-->
+               <bhn:BhnVoidSupport>Systematic</bhn:BhnVoidSupport>
+               <!--Optional:-->
+               <bhn:BillingSourceCode xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:BusChannel xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:Comments xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <bhn:CompanyCode>AH</bhn:CompanyCode>
+               <!--Optional:-->
+               <bhn:ContractComplete>No</bhn:ContractComplete>
+               <!--Optional:-->
+               <bhn:DisabledDate>2014-05-30</bhn:DisabledDate>
+               <!--Optional:-->
+               <bhn:DivisionAID>1000</bhn:DivisionAID>
+               <bhn:DivisionCode>rohi8</bhn:DivisionCode>
+               <!--Optional:-->
+               <bhn:DivisionMID>00002</bhn:DivisionMID>
+               <!--Optional:-->
+               <bhn:EnabledDate>2014-05-30</bhn:EnabledDate>
+               <!--Optional:-->
+               <bhn:ExpiryDate>2014-05-30</bhn:ExpiryDate>
+               <!--Optional:-->
+               <bhn:Inactive>Yes</bhn:Inactive>
+               <!--Optional:-->
+               <bhn:MerchRecordNumber xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <bhn:Name>Test Division2</bhn:Name>
+               <!--Optional:-->
+               <bhn:PartnerProfileId xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">partner_profile_id_12345</bhn:PartnerProfileId>
+               <!--Optional:-->
+               <bhn:PartnerRecId>0</bhn:PartnerRecId>
+               <!--Optional:-->
+               <bhn:ProcessorCode xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:ProcessorType xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:RecId>0</bhn:RecId>
+               <!--Optional:-->
+               <bhn:RecVersion>0</bhn:RecVersion>
+               <!--Optional:-->
+               <bhn:RegulatedProducts>No</bhn:RegulatedProducts>
+               <bhn:RelationCode>AP</bhn:RelationCode>
+               <!--Optional:-->
+               <bhn:SideLetter xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <bhn:SideLetterReq>No</bhn:SideLetterReq>
+               <!--Optional:-->
+               <bhn:WebSite xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Zero or more repetitions:-->
+               <bhn:bhnDivisionAttributes class="entity">
+                  <!--Optional:-->
+                  <bhn:BalanceLockTimeFrame>0</bhn:BalanceLockTimeFrame>
+                  <!--Optional:-->
+                  <bhn:Division1DC128Expression>No</bhn:Division1DC128Expression>
+                  <!--Optional:-->
+                  <bhn:Division2DPDF417Expression>No</bhn:Division2DPDF417Expression>
+                  <!--Optional:-->
+                  <bhn:Division2DQRCODEExpression>No</bhn:Division2DQRCODEExpression>
+                  <!--Optional:-->
+                  <bhn:DivisionAccessCode xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:DivisionAccountNumberLabel xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:DivisionAccountType>None</bhn:DivisionAccountType>
+                  <!--Optional:-->
+                  <bhn:DivisionAreBalancesTransferable>No</bhn:DivisionAreBalancesTransferable>
+                  <!--Optional:-->
+                  <bhn:DivisionBalanceMerges>No</bhn:DivisionBalanceMerges>
+                  <!--Optional:-->
+                  <bhn:DivisionBins xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:DivisionCanCardExpire>No</bhn:DivisionCanCardExpire>
+                  <!--Optional:-->
+                  <bhn:DivisionCardImageBack1URL xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:DivisionCardImageBack2URL xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:DivisionCardImageBack3URL xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:DivisionCardImageBack4URL xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:DivisionCardImageBack5URL xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:DivisionCardImageFront1URL xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:DivisionCardImageFront2URL xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:DivisionCardImageFront3URL xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:DivisionCardImageFront4URL xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:DivisionCardImageFront5URL xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:DivisionCardPinLocation>None</bhn:DivisionCardPinLocation>
+                  <!--Optional:-->
+                  <bhn:DivisionCardPinType>None</bhn:DivisionCardPinType>
+                  <!--Optional:-->
+                  <bhn:DivisionCashierInstructions xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <bhn:DivisionCode/>
+                  <!--Optional:-->
+                  <bhn:DivisionCustomerSupportContactFirstN xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:DivisionCustomerSupportContactLastNa xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:DivisionCustomerSupportEmail xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:DivisionCustomerSupportPhone xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:DivisionCustomerSupportURL xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:DivisionHasPhoneSupportAtPOS>No</bhn:DivisionHasPhoneSupportAtPOS>
+                  <!--Optional:-->
+                  <bhn:DivisionHasUniversalBISupport>No</bhn:DivisionHasUniversalBISupport>
+                  <!--Optional:-->
+                  <bhn:DivisionInStoreRedemptionInstruction xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:DivisionIsBarcodeFormat1DC128>No</bhn:DivisionIsBarcodeFormat1DC128>
+                  <!--Optional:-->
+                  <bhn:DivisionIsBarcodeFormat2DPDF417>No</bhn:DivisionIsBarcodeFormat2DPDF417>
+                  <!--Optional:-->
+                  <bhn:DivisionIsBarcodeFormat2DQRCODE>No</bhn:DivisionIsBarcodeFormat2DQRCODE>
+                  <!--Optional:-->
+                  <bhn:DivisionisBarcodeScanSupported>No</bhn:DivisionisBarcodeScanSupported>
+                  <!--Optional:-->
+                  <bhn:DivisionIsBISystemBLAST>No</bhn:DivisionIsBISystemBLAST>
+                  <!--Optional:-->
+                  <bhn:DivisionIsBISystemCAPTCHA>No</bhn:DivisionIsBISystemCAPTCHA>
+                  <!--Optional:-->
+                  <bhn:DivisionIsBISystemCardpool>No</bhn:DivisionIsBISystemCardpool>
+                  <!--Optional:-->
+                  <bhn:DivisionIsBISystemScreenScraped>No</bhn:DivisionIsBISystemScreenScraped>
+                  <!--Optional:-->
+                  <bhn:DivisionIsBISystemUserEntered>No</bhn:DivisionIsBISystemUserEntered>
+                  <!--Optional:-->
+                  <bhn:DivisionIsCardReplaceable>No</bhn:DivisionIsCardReplaceable>
+                  <!--Optional:-->
+                  <bhn:DivisionIsCardTransferable>No</bhn:DivisionIsCardTransferable>
+                  <!--Optional:-->
+                  <bhn:DivisionisLostStolenPolicyAutomated>No</bhn:DivisionisLostStolenPolicyAutomated>
+                  <!--Optional:-->
+                  <bhn:DivisionIsPinRequiredForBI>No</bhn:DivisionIsPinRequiredForBI>
+                  <!--Optional:-->
+                  <bhn:DivisionIsPinRequiredForRedemption>No</bhn:DivisionIsPinRequiredForRedemption>
+                  <!--Optional:-->
+                  <bhn:DivisionLocale>None</bhn:DivisionLocale>
+                  <!--Optional:-->
+                  <bhn:DivisionLogoURL xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:DivisionLostStolenPolicyText xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:DivisionManualEntryFormat xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:DivisionMaximumReloadAmount>100</bhn:DivisionMaximumReloadAmount>
+                  <!--Optional:-->
+                  <bhn:DivisionMinimumReloadAmount>10</bhn:DivisionMinimumReloadAmount>
+                  <!--Optional:-->
+                  <bhn:DivisionOnlineRedemptionInstructions xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:DivisionOnlineStoreURL xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:DivisionPaymentNetworkType>None</bhn:DivisionPaymentNetworkType>
+                  <!--Optional:-->
+                  <bhn:DivisionPinLabel xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:DivisionProgramDescription xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:DivisionRedemptionInformation xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:DivisionRedemptionLine1 xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:DivisionRedemptionLine2 xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:DivisionRedemptionMethod>None</bhn:DivisionRedemptionMethod>
+                  <!--Optional:-->
+                  <bhn:DivisionRedemptionMethods>None</bhn:DivisionRedemptionMethods>
+                  <!--Optional:-->
+                  <bhn:DivisionSupportsAddQRCode>No</bhn:DivisionSupportsAddQRCode>
+                  <!--Optional:-->
+                  <bhn:DivisionSupportsBalanceInquiry>No</bhn:DivisionSupportsBalanceInquiry>
+                  <!--Optional:-->
+                  <bhn:DivisionSupportsPartialBalanceInquir>No</bhn:DivisionSupportsPartialBalanceInquir>
+                  <!--Optional:-->
+                  <bhn:DivisionSupportsPhysicalCards>No</bhn:DivisionSupportsPhysicalCards>
+                  <!--Optional:-->
+                  <bhn:DivisionSupportsRedemption>No</bhn:DivisionSupportsRedemption>
+                  <!--Optional:-->
+                  <bhn:DivisionSupportsVirtualCard>No</bhn:DivisionSupportsVirtualCard>
+                  <!--Optional:-->
+                  <bhn:DivisionSupportsVoidActivation>No</bhn:DivisionSupportsVoidActivation>
+                  <!--Optional:-->
+                  <bhn:DivisionSupportsVoidRedemption>No</bhn:DivisionSupportsVoidRedemption>
+                  <!--Optional:-->
+                  <bhn:DivisionSupportsVoidReload>No</bhn:DivisionSupportsVoidReload>
+                  <!--Optional:-->
+                  <bhn:DivisionTandCTextForPhysical xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:DivisionTrack1Format xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:DivisionTrack2Format xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:DivisionTrack3Format xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:LostStolenPolicyPhone xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:ProcessorContactFirstName xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:ProcessorContactLastName xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:ProcessorContactPhoneNumber xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <!--Optional:-->
+                  <bhn:ProcessorContactPhoneNumberExt xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                   <!--Optional:-->
                   <bhn:ProcessorHasRealTimeIssuance>No</bhn:ProcessorHasRealTimeIssuance>
                   <!--Optional:-->
@@ -14420,26 +15461,65 @@ background-color:#555555;}
          </detail>
       </s:Fault>
    </s:Body>
-</s:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/bhnCleanUpMegatronService/create"/></con:response><con:dispatchConfig/></con:mockOperation><con:properties/></con:mockService><con:mockService port="8088" path="/mockBasicHttpBinding_bhnUPCAttributes3PSService" host="LWBHN00000390" name="BasicHttpBinding_bhnUPCAttributes3PSService MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:mockOperation name="create" interface="BasicHttpBinding_bhnUPCAttributes3PSService" operation="create"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://schemas.microsoft.com/dynamics/2008/01/services" xmlns:ent="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList" xmlns:ent1="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKey">
-   <soapenv:Header/>
-   <soapenv:Body>
-      <ser:bhnUPCAttributes3PSServiceCreateResponse>
-         <!--Optional:-->
-         <ent:EntityKeyList>
-            <!--Zero or more repetitions:-->
-            <ent1:EntityKey>
-               <ent1:KeyData>
-                  <!--1 or more repetitions:-->
-                  <ent1:KeyField>
-                     <ent1:Field>?</ent1:Field>
-                     <ent1:Value>?</ent1:Value>
-                  </ent1:KeyField>
-               </ent1:KeyData>
-            </ent1:EntityKey>
-         </ent:EntityKeyList>
-      </ser:bhnUPCAttributes3PSServiceCreateResponse>
-   </soapenv:Body>
-</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnUPCAttributes3PSService/create"/></con:response><con:dispatchConfig/></con:mockOperation><con:properties/></con:mockService><con:mockService port="8088" path="/mockBasicHttpBinding_bhnDivision3PSService" host="LWBHN00000390" name="BasicHttpBinding_bhnDivision3PSService MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:mockOperation name="create" interface="BasicHttpBinding_bhnDivision3PSService" operation="create"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+</s:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/bhnCleanUpMegatronService/create"/></con:response><con:dispatchConfig/></con:mockOperation><con:properties/></con:mockService><con:mockService port="8088" path="/mockBasicHttpBinding_bhnUPCAttributes3PSService" host="LWBHN00000390" name="BasicHttpBinding_bhnUPCAttributes3PSService MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:mockOperation name="create" interface="BasicHttpBinding_bhnUPCAttributes3PSService" operation="create"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+   <s:Body>
+      <bhnUPCAttributes3PSServiceCreateResponse xmlns="http://schemas.microsoft.com/dynamics/2008/01/services">
+         <EntityKeyList xmlns="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList">
+            <EntityKey xmlns="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKey">
+               <KeyData>
+                  <KeyField>
+                     <Field>ItemId</Field>
+                     <Value>69947026211</Value>
+                  </KeyField>
+                  <KeyField>
+                     <Field>bhnCheckDigit</Field>
+                     <Value>0</Value>
+                  </KeyField>
+                  <KeyField>
+                     <Field>bhnIsEANUPC</Field>
+                     <Value>No</Value>
+                  </KeyField>
+                  <KeyField>
+                     <Field>bhnGUID</Field>
+                     <Value>J8889AXSWLSDNTCSTGDR26YN1T</Value>
+                  </KeyField>
+               </KeyData>
+            </EntityKey>
+         </EntityKeyList>
+      </bhnUPCAttributes3PSServiceCreateResponse>
+   </s:Body>
+</s:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnUPCAttributes3PSService/create"/></con:response><con:response name="fault response (schema validation failed)" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+   <s:Body>
+      <s:Fault>
+         <faultcode>s:SchemaValidationFailed</faultcode>
+         <faultstring xml:lang="en-US">Invalid document schema. The following error was returned: The 'http://schemas.microsoft.com/dynamics/2008/01/documents/bhnUPCAttributes3PS:ProductIsReloadable' element is invalid - The value '' is invalid according to its datatype 'http://schemas.microsoft.com/dynamics/2008/01/documents/bhnUPCAttributes3PS:AxdEnum_NoYes' - The Enumeration constraint failed.</faultstring>
+         <detail>
+            <AifFault xmlns="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+               <CustomDetailXml i:nil="true"/>
+               <FaultMessageListArray>
+                  <FaultMessageList>
+                     <Document i:nil="true"/>
+                     <DocumentOperation i:nil="true"/>
+                     <FaultMessageArray>
+                        <FaultMessage>
+                           <Code>SchemaValidationFailed</Code>
+                           <Message>Invalid document schema. The following error was returned: The 'http://schemas.microsoft.com/dynamics/2008/01/documents/bhnUPCAttributes3PS:ProductIsReloadable' element is invalid - The value '' is invalid according to its datatype 'http://schemas.microsoft.com/dynamics/2008/01/documents/bhnUPCAttributes3PS:AxdEnum_NoYes' - The Enumeration constraint failed.</Message>
+                        </FaultMessage>
+                     </FaultMessageArray>
+                     <Field i:nil="true"/>
+                     <Service>bhnUPCAttributes3PSService</Service>
+                     <ServiceOperation>create</ServiceOperation>
+                     <ServiceOperationParameter>_bhnUPCAttributes3PS</ServiceOperationParameter>
+                     <XPath i:nil="true"/>
+                     <XmlLine i:nil="true"/>
+                     <XmlPosition i:nil="true"/>
+                  </FaultMessageList>
+               </FaultMessageListArray>
+            </AifFault>
+         </detail>
+      </s:Fault>
+   </s:Body>
+</s:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnUPCAttributes3PSService/create"/></con:response><con:dispatchConfig/></con:mockOperation><con:properties/></con:mockService><con:mockService port="8088" path="/mockBasicHttpBinding_bhnDivision3PSService" host="LWBHN00000390" name="BasicHttpBinding_bhnDivision3PSService MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:mockOperation name="create" interface="BasicHttpBinding_bhnDivision3PSService" operation="create"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
    <s:Body>
       <bhnDivision3PSServiceCreateResponse xmlns="http://schemas.microsoft.com/dynamics/2008/01/services">
          <EntityKeyList xmlns="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList">
@@ -14606,4 +15686,4 @@ background-color:#555555;}
          </detail>
       </s:Fault>
    </s:Body>
-</s:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnSetUpComp3PSService/create"/></con:response><con:dispatchConfig/></con:mockOperation><con:properties/></con:mockService><con:endpointStrategy xsi:type="con:DefaultEndpointStrategy" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:endpoint mode="COMPLEMENT" username="rvenu00-dev" password="Ammu1234" domain="devqa">http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/custcompanycodeservice.svc</con:endpoint><con:endpoint mode="COMPLEMENT" username="rvenu00-dev" password="Ammu1234" domain="devqa">http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhniidattributesservice.svc</con:endpoint><con:endpoint mode="COMPLEMENT" username="rvenu00-dev" password="Ammu1234" domain="devqa">http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/upcsubgrouptableservice.svc</con:endpoint><con:endpoint mode="COMPLEMENT" username="rvenu00-dev" password="Ammu1234" domain="devqa">http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/customerservice.svc</con:endpoint><con:endpoint mode="COMPLEMENT" username="rvenu00-dev" password="Ammu1234" domain="devqa">http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhncleanupmegatronservice.svc</con:endpoint><con:endpoint mode="COMPLEMENT" username="rvenu00" password="Ammu1234" domain="devqa">http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhndivision3psservice.svc</con:endpoint><con:endpoint mode="COMPLEMENT" username="rvenu00-dev" password="Ammu1234" domain="devqa">http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhndivision3psservice.svc</con:endpoint><con:endpoint mode="COMPLEMENT" username="rvenu00-dev" password="Ammu1234" domain="devqa">http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/vendtableservice.svc</con:endpoint><con:endpoint mode="COMPLEMENT" username="rvenu00-dev" password="Ammu1234" domain="devqa">http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhnsetupcomp3psservice.svc</con:endpoint></con:endpointStrategy><con:properties/><con:wssContainer/><con:databaseConnectionContainer/><con:reporting><con:xmlTemplates/><con:parameters/></con:reporting></con:soapui-project>
+</s:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnSetUpComp3PSService/create"/></con:response><con:dispatchConfig/></con:mockOperation><con:properties/></con:mockService><con:endpointStrategy xsi:type="con:DefaultEndpointStrategy" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:endpoint mode="COMPLEMENT" username="rvenu00-dev" password="Ammu1234" domain="devqa">http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/custcompanycodeservice.svc</con:endpoint><con:endpoint mode="COMPLEMENT" username="rvenu00-dev" password="Ammu1234" domain="devqa">http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhniidattributesservice.svc</con:endpoint><con:endpoint mode="COMPLEMENT" username="rvenu00-dev" password="Ammu1234" domain="devqa">http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/upcsubgrouptableservice.svc</con:endpoint><con:endpoint mode="COMPLEMENT" username="rvenu00-dev" password="Ammu1234" domain="devqa">http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/customerservice.svc</con:endpoint><con:endpoint mode="COMPLEMENT" username="rvenu00-dev" password="Ammu1234" domain="devqa">http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhncleanupmegatronservice.svc</con:endpoint><con:endpoint mode="COMPLEMENT" username="rvenu00" password="Ammu1234" domain="devqa">http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhndivision3psservice.svc</con:endpoint><con:endpoint mode="COMPLEMENT" username="rvenu00-dev" password="Ammu1234" domain="devqa">http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhndivision3psservice.svc</con:endpoint><con:endpoint mode="COMPLEMENT" username="rvenu00-dev" password="Ammu1234" domain="devqa">http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/vendtableservice.svc</con:endpoint><con:endpoint mode="COMPLEMENT" username="rvenu00-dev" password="Ammu1234" domain="devqa">http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhnsetupcomp3psservice.svc</con:endpoint><con:endpoint mode="COMPLEMENT" username="rvenu00-dev" password="Ammu1234" domain="devqa">http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhnupcattributes3psservice.svc</con:endpoint></con:endpointStrategy><con:properties/><con:wssContainer/><con:databaseConnectionContainer/><con:reporting><con:xmlTemplates/><con:parameters/></con:reporting></con:soapui-project>

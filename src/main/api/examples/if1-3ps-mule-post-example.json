@@ -10,7 +10,7 @@
         "isTest": false
     },
     "company": {
-        "companyCode": "SWY",
+        "companyCode": "SWY123",
         "companyCountry": "US",
         "companyLegalName": "Safeway Inc.",
         "companyIsContractComplete": true,

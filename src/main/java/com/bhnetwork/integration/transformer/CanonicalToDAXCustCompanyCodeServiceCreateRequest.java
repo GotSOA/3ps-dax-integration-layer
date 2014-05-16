@@ -54,6 +54,8 @@ public class CanonicalToDAXCustCompanyCodeServiceCreateRequest extends AbstractT
 		bhnCustCompanyTable1.setLegalEntityCode(companyObj.getLegalEntityCode());
 		bhnCustCompanyTable1.setName(companyObj.getCompanyCode());
 		
+		bhnCustCompanyTable1.setPartnerProfileId("partner_profile_id_12345");
+		
 		//XML Attribute required
 		bhnCustCompanyTable1.setClazz("entity");//TODO Not in SPEC
 		
