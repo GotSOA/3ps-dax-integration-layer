@@ -13,27 +13,15 @@ import java.util.Date;
 
 public class Product {
 	
-	private String	bhnBarcodeType;
-	private String	bhnCheckDigit;
-	private Boolean	bhnComplete;
 	private String	bhnGUID;
 	private Boolean	bhnIsEANUPC;
-	private Date	bhnSetupCompleteDate;
-	private String	bhnSetupCompletedBy;
-	private String	bhnStatus;
 	private String	companyCode;
 	private String	customTemplatePathURL;
 	private String	divisionCode;
 	private Boolean	isActivationRequired;
 	private Boolean	isProductDenominationVariable;
 	private Boolean	isReloadable;
-	private String	ItemId;
-	private String	ItemPriceToleranceGroupId;
-	private String	ItemType;
-	private Boolean	isSearchText;
-	private String	NameAlias;
 	private String	processorCode;
-	private String	ProcessorType;
 	private String	productAccountInquiryBIN;
 	private String	productAccountTopupBIN;
 	private String	productActivationInstructions;
@@ -42,33 +30,33 @@ public class Product {
 	private String	productBINForDARTransaction;
 	private String	productBuyerGroup;
 	private String	productChannelDimension;
-	private Boolean	isProductCheckMinMax;
-	private String	productClass;
+	private Boolean	productIsCheckMinMax;
+	private String	productClassification;
 	private String	productCurrency;
-	private String	productDefaultID;
+	private String	productDefaultIID;
 	private String	productDenomination;
 	private String	productDimensionCode;
 	private String	productDimensionGroup;
 	private Date	productExpDate;
 	private Integer	productExpLength;
 	private String	productGroup;
-	private String	productInventorySourceId;
+	private String	productInventorySource;
 	private String	productIssuerCompanyCode;
-	private Boolean	isProductTaxable;
+	private Boolean	productIsTaxable;
 	private String	productItemGroupId;
 	private String	productItemName;
 	private Double	productMaximumFaceValue;
 	private Double	productMinimumFaceValue;
 	private String	productModelGroupId;
-	private Boolean	IsProductMultiCardIndicator;
+	private Boolean	productMultiCardIndicator;
 	private String	productNewUPCReason;
 	private String	productOwnershipType;
 	private String	productSubstitutionGroup;
-	private Boolean	IsProductTaxIncluded;
+	private Boolean	productTaxIncluded;
 	private String	productTermsAndConditions;
 	private String	productType;
 	private String	productTypeId;
-	private Boolean	isProductUsingStandardDesignTemplate;
+	private Boolean	productIsUsingStandardDesign;
 	private Double	reloadMaxAmount;
 	private Double	reloadMinAmount;
 	
@@ -76,30 +64,6 @@ public class Product {
 	private ItemID iid;
 	
 	private SubstitutionGroup substGrp;
-
-	public String getBhnBarcodeType() {
-		return bhnBarcodeType;
-	}
-
-	public void setBhnBarcodeType(String bhnBarcodeType) {
-		this.bhnBarcodeType = bhnBarcodeType;
-	}
-
-	public String getBhnCheckDigit() {
-		return bhnCheckDigit;
-	}
-
-	public void setBhnCheckDigit(String bhnCheckDigit) {
-		this.bhnCheckDigit = bhnCheckDigit;
-	}
-
-	public Boolean getBhnComplete() {
-		return bhnComplete;
-	}
-
-	public void setBhnComplete(Boolean bhnComplete) {
-		this.bhnComplete = bhnComplete;
-	}
 
 	public String getBhnGUID() {
 		return bhnGUID;
@@ -115,30 +79,6 @@ public class Product {
 
 	public void setBhnIsEANUPC(Boolean bhnIsEANUPC) {
 		this.bhnIsEANUPC = bhnIsEANUPC;
-	}
-
-	public Date getBhnSetupCompleteDate() {
-		return bhnSetupCompleteDate;
-	}
-
-	public void setBhnSetupCompleteDate(Date bhnSetupCompleteDate) {
-		this.bhnSetupCompleteDate = bhnSetupCompleteDate;
-	}
-
-	public String getBhnSetupCompletedBy() {
-		return bhnSetupCompletedBy;
-	}
-
-	public void setBhnSetupCompletedBy(String bhnSetupCompletedBy) {
-		this.bhnSetupCompletedBy = bhnSetupCompletedBy;
-	}
-
-	public String getBhnStatus() {
-		return bhnStatus;
-	}
-
-	public void setBhnStatus(String bhnStatus) {
-		this.bhnStatus = bhnStatus;
 	}
 
 	public String getCompanyCode() {
@@ -190,60 +130,12 @@ public class Product {
 		this.isReloadable = isReloadable;
 	}
 
-	public String getItemId() {
-		return ItemId;
-	}
-
-	public void setItemId(String itemId) {
-		ItemId = itemId;
-	}
-
-	public String getItemPriceToleranceGroupId() {
-		return ItemPriceToleranceGroupId;
-	}
-
-	public void setItemPriceToleranceGroupId(String itemPriceToleranceGroupId) {
-		ItemPriceToleranceGroupId = itemPriceToleranceGroupId;
-	}
-
-	public String getItemType() {
-		return ItemType;
-	}
-
-	public void setItemType(String itemType) {
-		ItemType = itemType;
-	}
-
-	public Boolean getIsSearchText() {
-		return isSearchText;
-	}
-
-	public void setIsSearchText(Boolean isSearchText) {
-		this.isSearchText = isSearchText;
-	}
-
-	public String getNameAlias() {
-		return NameAlias;
-	}
-
-	public void setNameAlias(String nameAlias) {
-		NameAlias = nameAlias;
-	}
-
 	public String getProcessorCode() {
 		return processorCode;
 	}
 
 	public void setProcessorCode(String processorCode) {
 		this.processorCode = processorCode;
-	}
-
-	public String getProcessorType() {
-		return ProcessorType;
-	}
-
-	public void setProcessorType(String processorType) {
-		ProcessorType = processorType;
 	}
 
 	public String getProductAccountInquiryBIN() {
@@ -311,20 +203,20 @@ public class Product {
 		this.productChannelDimension = productChannelDimension;
 	}
 
-	public Boolean getIsProductCheckMinMax() {
-		return isProductCheckMinMax;
+	public Boolean getProductIsCheckMinMax() {
+		return productIsCheckMinMax;
 	}
 
-	public void setIsProductCheckMinMax(Boolean isProductCheckMinMax) {
-		this.isProductCheckMinMax = isProductCheckMinMax;
+	public void setProductIsCheckMinMax(Boolean productIsCheckMinMax) {
+		this.productIsCheckMinMax = productIsCheckMinMax;
 	}
 
-	public String getProductClass() {
-		return productClass;
+	public String getProductClassification() {
+		return productClassification;
 	}
 
-	public void setProductClass(String productClass) {
-		this.productClass = productClass;
+	public void setProductClassification(String productClassification) {
+		this.productClassification = productClassification;
 	}
 
 	public String getProductCurrency() {
@@ -335,12 +227,12 @@ public class Product {
 		this.productCurrency = productCurrency;
 	}
 
-	public String getProductDefaultID() {
-		return productDefaultID;
+	public String getProductDefaultIID() {
+		return productDefaultIID;
 	}
 
-	public void setProductDefaultID(String productDefaultID) {
-		this.productDefaultID = productDefaultID;
+	public void setProductDefaultIID(String productDefaultIID) {
+		this.productDefaultIID = productDefaultIID;
 	}
 
 	public String getProductDenomination() {
@@ -391,12 +283,12 @@ public class Product {
 		this.productGroup = productGroup;
 	}
 
-	public String getProductInventorySourceId() {
-		return productInventorySourceId;
+	public String getProductInventorySource() {
+		return productInventorySource;
 	}
 
-	public void setProductInventorySourceId(String productInventorySourceId) {
-		this.productInventorySourceId = productInventorySourceId;
+	public void setProductInventorySource(String productInventorySource) {
+		this.productInventorySource = productInventorySource;
 	}
 
 	public String getProductIssuerCompanyCode() {
@@ -407,12 +299,12 @@ public class Product {
 		this.productIssuerCompanyCode = productIssuerCompanyCode;
 	}
 
-	public Boolean getIsProductTaxable() {
-		return isProductTaxable;
+	public Boolean getProductIsTaxable() {
+		return productIsTaxable;
 	}
 
-	public void setIsProductTaxable(Boolean isProductTaxable) {
-		this.isProductTaxable = isProductTaxable;
+	public void setProductIsTaxable(Boolean productIsTaxable) {
+		this.productIsTaxable = productIsTaxable;
 	}
 
 	public String getProductItemGroupId() {
@@ -455,12 +347,12 @@ public class Product {
 		this.productModelGroupId = productModelGroupId;
 	}
 
-	public Boolean getIsProductMultiCardIndicator() {
-		return IsProductMultiCardIndicator;
+	public Boolean getProductMultiCardIndicator() {
+		return productMultiCardIndicator;
 	}
 
-	public void setIsProductMultiCardIndicator(Boolean isProductMultiCardIndicator) {
-		IsProductMultiCardIndicator = isProductMultiCardIndicator;
+	public void setProductMultiCardIndicator(Boolean productMultiCardIndicator) {
+		this.productMultiCardIndicator = productMultiCardIndicator;
 	}
 
 	public String getProductNewUPCReason() {
@@ -487,12 +379,12 @@ public class Product {
 		this.productSubstitutionGroup = productSubstitutionGroup;
 	}
 
-	public Boolean getIsProductTaxIncluded() {
-		return IsProductTaxIncluded;
+	public Boolean getProductTaxIncluded() {
+		return productTaxIncluded;
 	}
 
-	public void setIsProductTaxIncluded(Boolean isProductTaxIncluded) {
-		IsProductTaxIncluded = isProductTaxIncluded;
+	public void setProductTaxIncluded(Boolean productTaxIncluded) {
+		this.productTaxIncluded = productTaxIncluded;
 	}
 
 	public String getProductTermsAndConditions() {
@@ -519,13 +411,12 @@ public class Product {
 		this.productTypeId = productTypeId;
 	}
 
-	public Boolean getIsProductUsingStandardDesignTemplate() {
-		return isProductUsingStandardDesignTemplate;
+	public Boolean getProductIsUsingStandardDesign() {
+		return productIsUsingStandardDesign;
 	}
 
-	public void setIsProductUsingStandardDesignTemplate(
-			Boolean isProductUsingStandardDesignTemplate) {
-		this.isProductUsingStandardDesignTemplate = isProductUsingStandardDesignTemplate;
+	public void setProductIsUsingStandardDesign(Boolean productIsUsingStandardDesign) {
+		this.productIsUsingStandardDesign = productIsUsingStandardDesign;
 	}
 
 	public Double getReloadMaxAmount() {
@@ -559,6 +450,6 @@ public class Product {
 	public void setSubstGrp(SubstitutionGroup substGrp) {
 		this.substGrp = substGrp;
 	}
-	
+
 	
 }
