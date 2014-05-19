@@ -14,16 +14,9 @@ public class Store {
 		private	String	bhnCompanyCode;
 		private	String	bhnDivisionCode;
 		private	String	bhnGUID;
-		private	String	bhnPartyType;
-		private	String	bhnSyncEntityId;
-		private	String	bhnSyncVersion;
 		private	String	companyPhysicalStoreAddressLine1;
 		private	String	companyPhysicalStoreCountry;
-		private	String	County;
-		private	String	Currency;
-		private	String	NameAlias;
 		private	String	productLanguage;
-		private	Boolean	searchText;
 		private	Boolean	storeBlocked;
 		private	String	storeBHNCustLevel;
 		private	String	storeBHNStoreCode;
@@ -64,24 +57,6 @@ public class Store {
 		public void setBhnGUID(String bhnGUID) {
 			this.bhnGUID = bhnGUID;
 		}
-		public String getBhnPartyType() {
-			return bhnPartyType;
-		}
-		public void setBhnPartyType(String bhnPartyType) {
-			this.bhnPartyType = bhnPartyType;
-		}
-		public String getBhnSyncEntityId() {
-			return bhnSyncEntityId;
-		}
-		public void setBhnSyncEntityId(String bhnSyncEntityId) {
-			this.bhnSyncEntityId = bhnSyncEntityId;
-		}
-		public String getBhnSyncVersion() {
-			return bhnSyncVersion;
-		}
-		public void setBhnSyncVersion(String bhnSyncVersion) {
-			this.bhnSyncVersion = bhnSyncVersion;
-		}
 		public String getCompanyPhysicalStoreAddressLine1() {
 			return companyPhysicalStoreAddressLine1;
 		}
@@ -95,35 +70,11 @@ public class Store {
 		public void setCompanyPhysicalStoreCountry(String companyPhysicalStoreCountry) {
 			this.companyPhysicalStoreCountry = companyPhysicalStoreCountry;
 		}
-		public String getCounty() {
-			return County;
-		}
-		public void setCounty(String county) {
-			County = county;
-		}
-		public String getCurrency() {
-			return Currency;
-		}
-		public void setCurrency(String currency) {
-			Currency = currency;
-		}
-		public String getNameAlias() {
-			return NameAlias;
-		}
-		public void setNameAlias(String nameAlias) {
-			NameAlias = nameAlias;
-		}
 		public String getProductLanguage() {
 			return productLanguage;
 		}
 		public void setProductLanguage(String productLanguage) {
 			this.productLanguage = productLanguage;
-		}
-		public Boolean getSearchText() {
-			return searchText;
-		}
-		public void setSearchText(Boolean searchText) {
-			this.searchText = searchText;
 		}
 		public Boolean getStoreBlocked() {
 			return storeBlocked;
@@ -223,5 +174,5 @@ public class Store {
 		public void setStorePriceToleranceGroup(String storePriceToleranceGroup) {
 			this.storePriceToleranceGroup = storePriceToleranceGroup;
 		}
-				
+						
 }

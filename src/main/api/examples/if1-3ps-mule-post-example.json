@@ -141,7 +141,7 @@
             "storePhysicalStoreAddressLine1": "",
             "storePhysicalStoreAddressLine2": "",
             "storeContactPhoneNumber": "",
-            "storeBlocked": "",
+            "storeBlocked": true,
             "storeChannelDimension": "",
             "storeDimensionPAC": "",
             "storeDimensionRegion": "",

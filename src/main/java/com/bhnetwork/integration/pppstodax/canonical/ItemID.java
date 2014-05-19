@@ -10,50 +10,28 @@ package com.bhnetwork.integration.pppstodax.canonical;
  *
  */
 public class ItemID {
-	private String activationType;
 	private String bhnGUID;
-	private String caseCount;
-	private String country;
-	private String description;
 	private String divisionBrandName;
 	private String divisionCode;
 	private String divisionCardImageURL;
 	private String language;
 	private String name;
 	private String newIidReasonCode;
-	private String packSize;
-	private String prodPackType;
-	private String useStdUnitConvert;   // or boolean?
-	private String Iid;
-	public String getActivationType() {
-		return activationType;
-	}
-	public void setActivationType(String activationType) {
-		this.activationType = activationType;
-	}
+	private String iidActivationType;
+	private String iidCaseCount;
+	private String iidCountry;
+	private String iidDescription;
+	private String iidPackSize;
+	private String iidProdPackType;
+	private String inventBatchId;
+	private String itemId;
+	private String recId;
+	private Boolean useStdUnitConvert;
 	public String getBhnGUID() {
 		return bhnGUID;
 	}
 	public void setBhnGUID(String bhnGUID) {
 		this.bhnGUID = bhnGUID;
-	}
-	public String getCaseCount() {
-		return caseCount;
-	}
-	public void setCaseCount(String caseCount) {
-		this.caseCount = caseCount;
-	}
-	public String getCountry() {
-		return country;
-	}
-	public void setCountry(String country) {
-		this.country = country;
-	}
-	public String getDescription() {
-		return description;
-	}
-	public void setDescription(String description) {
-		this.description = description;
 	}
 	public String getDivisionBrandName() {
 		return divisionBrandName;
@@ -91,30 +69,65 @@ public class ItemID {
 	public void setNewIidReasonCode(String newIidReasonCode) {
 		this.newIidReasonCode = newIidReasonCode;
 	}
-	public String getPackSize() {
-		return packSize;
+	public String getIidActivationType() {
+		return iidActivationType;
 	}
-	public void setPackSize(String packSize) {
-		this.packSize = packSize;
+	public void setIidActivationType(String iidActivationType) {
+		this.iidActivationType = iidActivationType;
 	}
-	public String getProdPackType() {
-		return prodPackType;
+	public String getIidCaseCount() {
+		return iidCaseCount;
 	}
-	public void setProdPackType(String prodPackType) {
-		this.prodPackType = prodPackType;
+	public void setIidCaseCount(String iidCaseCount) {
+		this.iidCaseCount = iidCaseCount;
 	}
-	public String getUseStdUnitConvert() {
+	public String getIidCountry() {
+		return iidCountry;
+	}
+	public void setIidCountry(String iidCountry) {
+		this.iidCountry = iidCountry;
+	}
+	public String getIidDescription() {
+		return iidDescription;
+	}
+	public void setIidDescription(String iidDescription) {
+		this.iidDescription = iidDescription;
+	}
+	public String getIidPackSize() {
+		return iidPackSize;
+	}
+	public void setIidPackSize(String iidPackSize) {
+		this.iidPackSize = iidPackSize;
+	}
+	public String getIidProdPackType() {
+		return iidProdPackType;
+	}
+	public void setIidProdPackType(String iidProdPackType) {
+		this.iidProdPackType = iidProdPackType;
+	}
+	public String getInventBatchId() {
+		return inventBatchId;
+	}
+	public void setInventBatchId(String inventBatchId) {
+		this.inventBatchId = inventBatchId;
+	}
+	public String getItemId() {
+		return itemId;
+	}
+	public void setItemId(String itemId) {
+		this.itemId = itemId;
+	}
+	public String getRecId() {
+		return recId;
+	}
+	public void setRecId(String recId) {
+		this.recId = recId;
+	}
+	public Boolean getUseStdUnitConvert() {
 		return useStdUnitConvert;
 	}
-	public void setUseStdUnitConvert(String useStdUnitConvert) {
+	public void setUseStdUnitConvert(Boolean useStdUnitConvert) {
 		this.useStdUnitConvert = useStdUnitConvert;
 	}
-	public String getIid() {
-		return Iid;
-	}
-	public void setIid(String iid) {
-		Iid = iid;
-	}
-	
 	
 }
