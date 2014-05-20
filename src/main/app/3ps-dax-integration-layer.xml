@@ -14,6 +14,15 @@ http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schem
     </http:connector> 
     <object-to-byte-array-transformer name="objectToByteArrayTransformer" doc:name="Object to Byte Array" />
     <context:property-placeholder location="classpath:3ps-dax-int.properties, file:///${app.properties.override.location}" />
+    <spring:beans>
+        <spring:bean name="loggingIn" class="org.apache.cxf.interceptor.LoggingInInterceptor">
+            <spring:property name="prettyLogging" value="true"/>
+        </spring:bean>
+        <spring:bean name="loggingOut" class="org.apache.cxf.interceptor.LoggingOutInterceptor">
+            <spring:property name="prettyLogging" value="true"/>
+        </spring:bean>
+    </spring:beans>
+
     <apikit:config name="apiConfig" raml="3ps-dax-int.raml" consoleEnabled="true" consolePath="console" doc:name="Router" />
     <apikit:mapping-exception-strategy name="apiKitGlobalExceptionMapping">
         <apikit:mapping statusCode="404">
@@ -122,14 +131,10 @@ http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schem
     <sub-flow name="daxCompanyWebServiceClient" doc:name="daxCompanyWebServiceClient">
         <cxf:jaxws-client operation="create" clientClass="com.microsoft.schemas.dynamics._2008._01.services.CustCompanyCodeService_Service" port="BasicHttpBinding_CustCompanyCodeService" doc:name="SOAP">
             <cxf:inInterceptors>
-            	<spring:bean class="org.apache.cxf.interceptor.LoggingInInterceptor">
-                	<spring:property name="prettyLogging" value="true" />
-               	</spring:bean>
+                <spring:ref bean="loggingIn"/>
             </cxf:inInterceptors>
             <cxf:outInterceptors>
-            	<spring:bean class="org.apache.cxf.interceptor.LoggingOutInterceptor">
-                    <spring:property name="prettyLogging" value="true" />
-                </spring:bean>
+                <spring:ref bean="loggingOut"/>
             </cxf:outInterceptors>
         </cxf:jaxws-client>
         <expression-component doc:name="NTLM credentials"><![CDATA[flowVars['username']='${dax.username}'; flowVars['password']='${dax.password}'; flowVars['domain']='${dax.domain}'; flowVars['realm']='${dax.realm}' ;]]></expression-component>
@@ -175,14 +180,10 @@ http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schem
     <sub-flow name="daxCleanupWebServiceClient" doc:name="daxCleanupWebServiceClient">
         <cxf:jaxws-client operation="create" clientClass="org.tempuri.BhnCleanUpMegatronService_Service" port="BasicHttpBinding_bhnCleanUpMegatronService" doc:name="SOAP">
             <cxf:inInterceptors>
-            	<spring:bean class="org.apache.cxf.interceptor.LoggingInInterceptor">
-                	<spring:property name="prettyLogging" value="true" />
-               	</spring:bean>
+                <spring:ref bean="loggingIn"/>
             </cxf:inInterceptors>
             <cxf:outInterceptors>
-            	<spring:bean class="org.apache.cxf.interceptor.LoggingOutInterceptor">
-                    <spring:property name="prettyLogging" value="true" />
-                </spring:bean>
+                <spring:ref bean="loggingOut"/>
             </cxf:outInterceptors>
         </cxf:jaxws-client>
         <expression-component doc:name="NTLM credentials"><![CDATA[flowVars['username']='${dax.username}'; flowVars['password']='${dax.password}'; flowVars['domain']='${dax.domain}'; flowVars['realm']='${dax.realm}' ;]]></expression-component>
