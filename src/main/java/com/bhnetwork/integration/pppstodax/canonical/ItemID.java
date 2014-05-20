@@ -1,5 +1,7 @@
 package com.bhnetwork.integration.pppstodax.canonical;
 
+import java.io.Serializable;
+
 
 /**
  * 
@@ -9,7 +11,8 @@ package com.bhnetwork.integration.pppstodax.canonical;
  * @author Stephane Rata - Got SOA?
  *
  */
-public class ItemID {
+public class ItemID implements Serializable {
+	private static final long serialVersionUID = 1L;
 	private String bhnGUID;
 	private String divisionBrandName;
 	private String divisionCode;

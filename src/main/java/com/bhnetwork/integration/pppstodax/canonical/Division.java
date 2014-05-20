@@ -1,5 +1,6 @@
 package com.bhnetwork.integration.pppstodax.canonical;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -11,7 +12,8 @@ import java.util.List;
  *
  */
 
-public class Division {
+public class Division implements Serializable {
+	private static final long serialVersionUID = 1L;
 
 	private	String	accountType;
 	private	String	bhnGUID;

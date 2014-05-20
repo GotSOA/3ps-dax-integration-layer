@@ -1,5 +1,7 @@
 package com.bhnetwork.integration.pppstodax.canonical;
 
+import java.io.Serializable;
+
 /**
  * 
  * BHN Integration canonical model for Substitution Group
@@ -9,7 +11,8 @@ package com.bhnetwork.integration.pppstodax.canonical;
  *
  */
 
-public class SubstitutionGroup {
+public class SubstitutionGroup implements Serializable {
+	private static final long serialVersionUID = 1L; 
 	
 	private	String	substitutionBrandDenomDescription;
 	private	String	brandRecId;

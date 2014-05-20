@@ -1,5 +1,6 @@
 package com.bhnetwork.integration.pppstodax.canonical;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -11,7 +12,8 @@ import java.util.Date;
  *
  */
 
-public class Product {
+public class Product implements Serializable {
+	private static final long serialVersionUID = 1L;
 	
 	private String	bhnGUID;
 	private Boolean	bhnIsEANUPC;

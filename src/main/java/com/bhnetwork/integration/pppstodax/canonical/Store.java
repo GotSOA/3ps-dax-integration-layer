@@ -1,5 +1,7 @@
 package com.bhnetwork.integration.pppstodax.canonical;
 
+import java.io.Serializable;
+
 /**
  * 
  * BHN Integration canonical model for Store (aka customer store)
@@ -8,7 +10,8 @@ package com.bhnetwork.integration.pppstodax.canonical;
  * @author Stephane Rata - Got SOA?
  *
  */
-public class Store {
+public class Store implements Serializable {
+		private static final long serialVersionUID = 1L;
 	    // bhn fields are DAX specific and may not need to be exposed in the json
 		private	String	AccountNum;
 		private	String	bhnCompanyCode;

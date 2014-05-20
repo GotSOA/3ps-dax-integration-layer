@@ -1,5 +1,6 @@
 package com.bhnetwork.integration.pppstodax.canonical;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import java.util.List;
@@ -13,7 +14,8 @@ import java.util.List;
  *
  */
 
-public class Company {
+public class Company implements Serializable {
+	private static final long serialVersionUID = 1L;
 	private String bhnGUID;
 	private String companyAddressLine1;
 	private String companyAddressLine2;

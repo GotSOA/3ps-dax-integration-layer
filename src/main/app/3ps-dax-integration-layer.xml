@@ -92,6 +92,7 @@ http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schem
     </flow>
     <flow name="send-data-to-DAX-flow" doc:name="send-data-to-DAX-flow">
         <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-continue" path="Q.continue" />
+        <set-session-variable variableName="canon" value="#[payload]" doc:name="Persist canonical in session"/>
         <logger level="INFO" doc:name="Log Orchestration startTime" />
         <tracking:custom-event event-name="bizEvent: OrchestrationStartTime" doc:name="bizEvent: OrchestrationStartTime" />
         <message-properties-transformer doc:name="set DaxStep=1" overwrite="true" scope="session" />
@@ -99,13 +100,14 @@ http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schem
     </flow>
     <flow name="DAX-step1-flow" doc:name="DAX-step1-flow">
         <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-step1" path="Q.step1" />
-        <set-variable variableName="canon" value="#[payload]" doc:name="Canonincal"/>
+        <set-payload value="#[sessionVars.canon]" doc:name="Canonical Payload from Session"/>
+
         <custom-transformer class="com.bhnetwork.integration.transformer.CanonicalToDAXCustCompanyCodeServiceCreateRequest" doc:name="Canon-to-CompanyRequest"/>
         <enricher doc:name="Enrich-Canonical-w-DAX-values ">
 
             <flow-ref name="daxCompanyWebServiceClient" doc:name="Invoke Dax Company Webservice"/>
-            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[0].value]" target="#[canon.bhnGUID]"/>
-            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[1].value]" target="#[canon.recId]"/>
+            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[0].value]" target="#[sessionVars.canon.company.bhnGUID]"/>
+            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[1].value]" target="#[sessionVars.canon.company.recId]"/>
         </enricher>
         <!-- <set-payload value="#[new com.microsoft.schemas.dynamics._2008._01.services.CustCompanyCodeServiceCreateRequest()]" doc:name="Set Payload" /> -->
         <!-- <custom-transformer class="" doc:name="Canon-to-CompanyRequest"/> -->
@@ -113,7 +115,7 @@ http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schem
         <!-- </enricher> -->
 
         <!-- <custom-transformer class="" doc:name="Enrich-Canonical-w-DAX-values"/> -->
-        <logger level="INFO" doc:name="Log bhnGUID and recId" message="bhnGUID=#[canon.bhnGUID] and recId=#[canon.recId]"/>
+        <logger level="INFO" doc:name="Log bhnGUID and recId" message="bhnGUID=#[sessionVars.canon.company.bhnGUID] and recId=#[sessionVars.canon.company.recId]"/>
         <vm:outbound-endpoint exchange-pattern="one-way" path="Q.error" doc:name="TO_BE_DELETED VM-error"/>
         <!-- <choice doc:name="Choice">
             <when expression="">

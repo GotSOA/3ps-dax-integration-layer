@@ -16,6 +16,7 @@ import org.mule.api.transport.PropertyScope;
 import org.mule.transformer.AbstractMessageTransformer;
 
 import com.bhnetwork.integration.pppstodax.canonical.Company;
+import com.bhnetwork.integration.pppstodax.canonical.PartnerProfile;
 import com.microsoft.schemas.dynamics._2008._01.documents.custcompanycode.AxdCustCompanyCode;
 import com.microsoft.schemas.dynamics._2008._01.documents.custcompanycode.AxdEntityBhnCustCompanyTable;
 import com.microsoft.schemas.dynamics._2008._01.documents.custcompanycode.AxdEntityBhnOnlineCompanyAttributes;
@@ -30,7 +31,7 @@ public class CanonicalToDAXCustCompanyCodeServiceCreateRequest extends AbstractM
 	public Object transformMessage(MuleMessage message, String outputEncoding)
 			throws TransformerException {
 		
-		Company companyObj = (Company) message.getPayload();		
+		Company companyObj = ((PartnerProfile) message.getPayload()).getCompany();		
 		
 		CustCompanyCodeServiceCreateRequest req= new CustCompanyCodeServiceCreateRequest();
 		

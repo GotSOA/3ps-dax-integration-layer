@@ -1,5 +1,7 @@
 package com.bhnetwork.integration.pppstodax.canonical;
 
+import java.io.Serializable;
+
 
 /**
  * 
@@ -10,7 +12,8 @@ package com.bhnetwork.integration.pppstodax.canonical;
  *
  */
 
-public class Vendor {
+public class Vendor implements Serializable {
+	private static final long serialVersionUID = 1L; 
 	// spec 3.3
 	private String	AccountNum;
 	private String	companyLegalName;
