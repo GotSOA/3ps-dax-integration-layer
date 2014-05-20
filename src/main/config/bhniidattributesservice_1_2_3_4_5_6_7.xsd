@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="bhniidattributesservice_1.xsd" namespace="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList"/>
+  <xs:import schemaLocation="bhniidattributesservice_1_2_3.xsd" namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/BhnIIDAttributes"/>
+  <xs:import schemaLocation="bhniidattributesservice_1_2_3_4.xsd" namespace="http://schemas.microsoft.com/dynamics/2006/02/documents/QueryCriteria"/>
+  <xs:element name="EntityKeyList" type="q1:EntityKeyList" xmlns:q1="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList"/>
+  <xs:element name="AxdBhnIIDAttributes" type="q2:AxdBhnIIDAttributes" xmlns:q2="http://schemas.microsoft.com/dynamics/2008/01/documents/BhnIIDAttributes"/>
+  <xs:element name="QueryCriteria" type="q3:QueryCriteria" xmlns:q3="http://schemas.microsoft.com/dynamics/2006/02/documents/QueryCriteria"/>
+</xs:schema>

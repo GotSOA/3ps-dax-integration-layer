@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/dynamics/2008/01/documents/BhnIIDAttributes" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/dynamics/2008/01/documents/BhnIIDAttributes">
+  <xs:element name="BhnIIDAttributes" type="AxdBhnIIDAttributes"/>
+  <xs:complexType name="AxdBhnIIDAttributes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DocPurpose" nillable="true" type="AxdEnum_XMLDocPurpose"/>
+      <xs:element minOccurs="0" name="SenderId" nillable="true" type="AxdExtType_dataAreaId"/>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InventBatch" type="AxdEntity_InventBatch"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="AxdEnum_XMLDocPurpose">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Product:Product</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Original"/>
+      <xs:enumeration value="Duplicate"/>
+      <xs:enumeration value="Proforma"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_dataAreaId">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Company:ID for an area of data</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="4"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdEnum_AxdEntityAction">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">AxdEntityAction:AxdEntityAction</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="create"/>
+      <xs:enumeration value="update"/>
+      <xs:enumeration value="replace"/>
+      <xs:enumeration value="delete"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="AxdEntity_InventBatch">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="_DocumentHash" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="BhnDivCode" nillable="true" type="AxdExtType_bhnCustDivisionCode"/>
+      <xs:element minOccurs="0" name="BhnDivDescription" nillable="true" type="AxdExtType_Name"/>
+      <xs:element minOccurs="0" name="BhnGUID" nillable="true" type="AxdExtType_bhnGUID"/>
+      <xs:element minOccurs="0" name="BhnNotes" nillable="true" type="AxdExtType_bhnNotes"/>
+      <xs:element minOccurs="0" name="BhnSetupComplete" nillable="true" type="AxdExtType_NoYesId"/>
+      <xs:element minOccurs="0" name="BhnSetupCompleteDate" nillable="true" type="AxdExtType_ApprovedDateTime"/>
+      <xs:element minOccurs="0" name="BhnSetupCompletedBy" nillable="true" type="AxdExtType_userId"/>
+      <xs:element minOccurs="0" name="BhnStatus" nillable="true" type="AxdEnum_bhnStatus"/>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="AxdExtType_InventBatchTxt"/>
+      <xs:element minOccurs="0" name="ExpDate" nillable="true" type="AxdExtType_InventBatchExpDate"/>
+      <xs:element minOccurs="1" name="InventBatchId" type="AxdExtType_InventBatchId"/>
+      <xs:element minOccurs="1" name="ItemId" type="AxdUnion_AxdExtType_ItemId_AxdType_ExtCodeValue"/>
+      <xs:element minOccurs="0" name="MerchRecordNumber" nillable="true" type="AxdExtType_MerchRecordNumber"/>
+      <xs:element minOccurs="0" name="PartnerProfileId" nillable="true" type="AxdExtType_bhnGUID"/>
+      <xs:element minOccurs="0" name="RecId" nillable="true" type="AxdExtType_recId"/>
+      <xs:element minOccurs="0" name="RecVersion" nillable="true" type="AxdExtType_recVersion"/>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="bhnIIDAttributes" type="AxdEntity_bhnIIDAttributes"/>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="bhnOnlineIIDAttributes" type="AxdEntity_bhnOnlineIIDAttributes"/>
+    </xs:sequence>
+    <xs:attribute fixed="entity" name="class" use="required"/>
+    <xs:attribute name="action" type="AxdEnum_AxdEntityAction"/>
+  </xs:complexType>
+  <xs:simpleType name="AxdExtType_bhnCustDivisionCode">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Division code:The division code related to a customer or product.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="5"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_Name">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Name:Name.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="60"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_bhnGUID">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">BHN GUID:</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="40"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_bhnNotes">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Notes:</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_NoYesId">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">:</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="No"/>
+      <xs:enumeration value="Yes"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="AxdType_DateTime">
+    <xs:simpleContent>
+      <xs:extension base="xs:dateTime">
+        <xs:attribute name="localDateTime" type="xs:dateTime"/>
+        <xs:attribute name="timezone" type="AxdEnum_Timezone"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="AxdEnum_Timezone">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">:</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="GMTMINUS1200INTERNATIONALDATELINEWEST"/>
+      <xs:enumeration value="GMTMINUS1100MIDWAYISLAND_SAMOA"/>
+      <xs:enumeration value="GMTMINUS1000HAWAII"/>
+      <xs:enumeration value="GMTMINUS0900ALASKA"/>
+      <xs:enumeration value="GMTMINUS0800PACIFICTIME"/>
+      <xs:enumeration value="GMTMINUS0800TIJUANA_BAJACALIFORNIA"/>
+      <xs:enumeration value="GMTMINUS0700ARIZONA"/>
+      <xs:enumeration value="GMTMINUS0700MOUNTAINTIME"/>
+      <xs:enumeration value="GMTMINUS0700CHIHUAHUA_LAPAZ_MAZATLAN"/>
+      <xs:enumeration value="GMTMINUS0600CENTRALAMERICA"/>
+      <xs:enumeration value="GMTMINUS0600CENTRALTIME"/>
+      <xs:enumeration value="GMTMINUS0600GUADALAJARA_MEXICOCITY"/>
+      <xs:enumeration value="GMTMINUS0600SASKATCHEWAN"/>
+      <xs:enumeration value="GMTMINUS0500BOGOTA_LIMA_QUITO_RIOBRANCO"/>
+      <xs:enumeration value="GMTMINUS0500EASTERNTIME"/>
+      <xs:enumeration value="GMTMINUS0500INDIANA"/>
+      <xs:enumeration value="GMTMINUS0400ATLANTICTIME"/>
+      <xs:enumeration value="GMTMINUS0400LAPAZ"/>
+      <xs:enumeration value="GMTMINUS0400MANAUS"/>
+      <xs:enumeration value="GMTMINUS0400SANTIAGO"/>
+      <xs:enumeration value="GMTMINUS0430CARACAS"/>
+      <xs:enumeration value="GMTMINUS0330NEWFOUNDLAND"/>
+      <xs:enumeration value="GMTMINUS0300BRASILIA"/>
+      <xs:enumeration value="GMTMINUS0300BUENOSAIRES_GEORGETOWN"/>
+      <xs:enumeration value="GMTMINUS0300GREENLAND"/>
+      <xs:enumeration value="GMTMINUS0300MONTEVIDEO"/>
+      <xs:enumeration value="GMTMINUS0200MIDATLANTIC"/>
+      <xs:enumeration value="GMTMINUS0100AZORES"/>
+      <xs:enumeration value="GMTMINUS0100CAPEVERDIS"/>
+      <xs:enumeration value="GMT_CASABLANCA_MONTROVIA_REYKJAVIK"/>
+      <xs:enumeration value="GMT_DUBLIN_EDINBURGH_LISBON_LONDON"/>
+      <xs:enumeration value="GMTPLUS0100_AMSTERDAM_BERLIN_BERN_ROME"/>
+      <xs:enumeration value="GMTPLUS0100BELGRADE_BRATISLAVA_BUDAPEST"/>
+      <xs:enumeration value="GMTPLUS0100BRUSSELS_COPENHAGEN_MADRID"/>
+      <xs:enumeration value="GMTPLUS0100SARAJEVO_SKOPJE_WARSAW_ZAGREB"/>
+      <xs:enumeration value="GMTPLUS0100WESTCENTRALAFRICA"/>
+      <xs:enumeration value="GMTPLUS0200AMMAN"/>
+      <xs:enumeration value="GMTPLUS0200ATHENS_BUCHAREST_ISTANBUL"/>
+      <xs:enumeration value="GMTPLUS0200BEIRUT"/>
+      <xs:enumeration value="GMTPLUS0200MINSK"/>
+      <xs:enumeration value="GMTPLUS0200CAIRO"/>
+      <xs:enumeration value="GMTPLUS0200HARARE_PRETORIA"/>
+      <xs:enumeration value="GMTPLUS0200HELSINKI_KYIV_RIGA_VILNIUS"/>
+      <xs:enumeration value="GMTPLUS0200JERUSALEM"/>
+      <xs:enumeration value="GMTPLUS0200WINDHOEK"/>
+      <xs:enumeration value="GMTPLUS0300BAGHDAD"/>
+      <xs:enumeration value="GMTPLUS0300KUWAIT_RIYADH"/>
+      <xs:enumeration value="GMTPLUS0300MOSCOW_STPETERSBURG_VOLGOGRAD"/>
+      <xs:enumeration value="GMTPLUS0300NAIROBI"/>
+      <xs:enumeration value="GMTPLUS0300TBILISI"/>
+      <xs:enumeration value="GMTPLUS0330TEHRAN"/>
+      <xs:enumeration value="GMTPLUS0400ABUDHABI_MUSCAT"/>
+      <xs:enumeration value="GMTPLUS0400BAKU"/>
+      <xs:enumeration value="GMTPLUS0400CAUCASUSSTANDARDTIME"/>
+      <xs:enumeration value="GMTPLUS0400YEREVAN"/>
+      <xs:enumeration value="GMTPLUS0430KABUL"/>
+      <xs:enumeration value="GMTPLUS0500EKATERINBURG"/>
+      <xs:enumeration value="GMTPLUS0500ISLAMABAD_KARACHI_TASHKENT"/>
+      <xs:enumeration value="GMTPLUS0530CHENNAI_KOLKATA_MUMBAI"/>
+      <xs:enumeration value="GMTPLUS0530SRIJAYAWARDENEPURA"/>
+      <xs:enumeration value="GMTPLUS0545KATHMANDU"/>
+      <xs:enumeration value="GMTPLUS0600ALMATY_NOVOSIBIRSK"/>
+      <xs:enumeration value="GMTPLUS0600ASTANA_DHAKA"/>
+      <xs:enumeration value="GMTPLUS0630_YANGON"/>
+      <xs:enumeration value="GMTPLUS0700_BANGKOK_HANOI_JAKARTA"/>
+      <xs:enumeration value="GMTPLUS0700KRASNOYARSK"/>
+      <xs:enumeration value="GMTPLUS0800BEIJING_CHONGQING_HONGKONG"/>
+      <xs:enumeration value="GMTPLUS0800IRKUTSK_ULAANBATAAR"/>
+      <xs:enumeration value="GMTPLUS0800KUALALUMPUR_SINGAPORE"/>
+      <xs:enumeration value="GMTPLUS0800PERTH"/>
+      <xs:enumeration value="GMTPLUS0800TAIPEI"/>
+      <xs:enumeration value="GMTPLUS0900OSAKA_SAPPORO_TOKYO"/>
+      <xs:enumeration value="GMTPLUS0900SEOUL"/>
+      <xs:enumeration value="GMTPLUS0900YAKUTSK"/>
+      <xs:enumeration value="GMTPLUS0930ADELAIDE"/>
+      <xs:enumeration value="GMTPLUS0930DARWIN"/>
+      <xs:enumeration value="GMTPLUS1000BRISBANE"/>
+      <xs:enumeration value="GMTPLUS1000CANBERRA_MELBOURNE_SYDNEY"/>
+      <xs:enumeration value="GMTPLUS1000GUAM_PORTMORESBY"/>
+      <xs:enumeration value="GMTPLUS1000HOBART"/>
+      <xs:enumeration value="GMTPLUS1000VLADIVOSTOK"/>
+      <xs:enumeration value="GMTPLUS1100MAGADAN_SOLOMONIS"/>
+      <xs:enumeration value="GMTPLUS1200AUCKLAND_WELLINGTON"/>
+      <xs:enumeration value="GMTPLUS1200FIJI_KAMCHATKA_MARSHALLIS"/>
+      <xs:enumeration value="GMTPLUS1300NUKU_ALOFA"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="AxdExtType_ApprovedDateTime">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Approved date:Date of transaction approval.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="AxdType_DateTime"/>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="AxdExtType_userId">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">User ID:ID for the user</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="5"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdEnum_bhnStatus">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Status:Status</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Inactive"/>
+      <xs:enumeration value="Active"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_InventBatchTxt">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Text:Description of the batch</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_InventBatchExpDate">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Expiry date:Expiry date of the current batch</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:date"/>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_InventBatchId">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">IID:IID dimension</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="20"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdType_ExtCodeValue">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Value:Actual value of the related record according to the selected external code type.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="50"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdUnion_AxdExtType_ItemId_AxdType_ExtCodeValue">
+    <xs:union memberTypes="AxdExtType_ItemId AxdType_ExtCodeValue"/>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_ItemId">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Product code:Identify product code.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="20"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_MerchRecordNumber">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Service Now Merchant Record Number:</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="10"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_recId">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Record-ID:Unique ID for the record in the database</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="AxdType_Int64"/>
+  </xs:simpleType>
+  <xs:simpleType name="AxdType_Int64">
+    <xs:restriction base="xs:long">
+      <xs:minInclusive value="-9223372036854775808"/>
+      <xs:maxInclusive value="9223372036854775807"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_recVersion">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Record Version:Version of the record in the database</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="AxdType_Integer"/>
+  </xs:simpleType>
+  <xs:simpleType name="AxdType_Integer">
+    <xs:restriction base="xs:int">
+      <xs:minInclusive value="-2147483648"/>
+      <xs:maxInclusive value="2147483647"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="AxdEntity_bhnIIDAttributes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActivationType" nillable="true" type="AxdEnum_bhnActivationType"/>
+      <xs:element minOccurs="0" name="CaseCount" nillable="true" type="AxdExtType_bhnIIDCaseCount"/>
+      <xs:element minOccurs="0" name="Country" nillable="true" type="AxdUnion_AxdExtType_AddressCountryRegionId_AxdType_ExtCodeValue"/>
+      <xs:element minOccurs="0" name="DiscoReasonCode" nillable="true" type="AxdExtType_DiscoReasonCode"/>
+      <xs:element minOccurs="0" name="FirstShipDate" nillable="true" type="AxdExtType_bhnIIDFirstShipDate"/>
+      <xs:element minOccurs="1" name="InventBatchId" type="AxdExtType_InventBatchId"/>
+      <xs:element minOccurs="1" name="ItemId" type="AxdUnion_AxdExtType_ItemId_AxdType_ExtCodeValue"/>
+      <xs:element minOccurs="0" name="Language" nillable="true" type="AxdExtType_bhnIIDLanguage"/>
+      <xs:element minOccurs="0" name="LastShipDate" nillable="true" type="AxdExtType_bhnIIDLastShipDate"/>
+      <xs:element minOccurs="0" name="NewIIDReasonCode" nillable="true" type="AxdExtType_bhnIIDReasonCode"/>
+      <xs:element minOccurs="0" name="PackSize" nillable="true" type="AxdExtType_bhnIIDPackSize"/>
+      <xs:element minOccurs="0" name="ProdPackType" nillable="true" type="AxdExtType_bhnIIDProdPackType"/>
+      <xs:element minOccurs="0" name="RecId" nillable="true" type="AxdExtType_recId"/>
+      <xs:element minOccurs="0" name="RecVersion" nillable="true" type="AxdExtType_recVersion"/>
+      <xs:element minOccurs="0" name="RestrictedIID" nillable="true" type="AxdEnum_NoYes"/>
+      <xs:element minOccurs="0" name="UnitId1" nillable="true" type="AxdUnion_AxdExtType_UnitID_AxdType_ExtCodeValue"/>
+      <xs:element minOccurs="0" name="UnitId2" nillable="true" type="AxdUnion_AxdExtType_UnitID_AxdType_ExtCodeValue"/>
+      <xs:element minOccurs="0" name="UseStdUnitConvert" nillable="true" type="AxdExtType_NoYesId"/>
+    </xs:sequence>
+    <xs:attribute fixed="entity" name="class" use="required"/>
+    <xs:attribute name="action" type="AxdEnum_AxdEntityAction"/>
+  </xs:complexType>
+  <xs:simpleType name="AxdEnum_bhnActivationType">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Activation type:Activation type</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="hybrid"/>
+      <xs:enumeration value="onestep"/>
+      <xs:enumeration value="twostep"/>
+      <xs:enumeration value="Blank"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_bhnIIDCaseCount">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Case count:IID case count</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="AxdType_Integer"/>
+  </xs:simpleType>
+  <xs:simpleType name="AxdUnion_AxdExtType_AddressCountryRegionId_AxdType_ExtCodeValue">
+    <xs:union memberTypes="AxdExtType_AddressCountryRegionId AxdType_ExtCodeValue"/>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_AddressCountryRegionId">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Country/region:Specifies default native country/region in connection with addresses.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="10"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_DiscoReasonCode">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Discontinued reason code:</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="10"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_bhnIIDFirstShipDate">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">First customer ship date:Cards cannot be ordered prior to this date.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:date"/>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_bhnIIDLanguage">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Language:IID language</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="15"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_bhnIIDLastShipDate">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Last customer ship date:Cards cannot be ordered after this date.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:date"/>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_bhnIIDReasonCode">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">New IID reason code:Reason code for why a new IID is necessary.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="15"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_bhnIIDPackSize">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Pack size:IID pack size</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="AxdType_Integer"/>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_bhnIIDProdPackType">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Product packaging type:IID product packaging type</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="10"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdEnum_NoYes">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">:</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="No"/>
+      <xs:enumeration value="Yes"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdUnion_AxdExtType_UnitID_AxdType_ExtCodeValue">
+    <xs:union memberTypes="AxdExtType_UnitID AxdType_ExtCodeValue"/>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_UnitID">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Unit:Unit identification.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="10"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="AxdEntity_bhnOnlineIIDAttributes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DivisionCardImageURL" nillable="true" type="AxdUnion_AxdType_Str_AxdType_ExtCodeValue"/>
+      <xs:element minOccurs="0" name="DivisionPrintReadyFrontImageURL" nillable="true" type="AxdUnion_AxdType_Str_AxdType_ExtCodeValue"/>
+      <xs:element minOccurs="0" name="DivisionPrintReadyTandCURL" nillable="true" type="AxdUnion_AxdType_Str_AxdType_ExtCodeValue"/>
+      <xs:element minOccurs="0" name="GCMIIDDescription" nillable="true" type="AxdUnion_AxdType_Str_AxdType_ExtCodeValue"/>
+      <xs:element minOccurs="0" name="IIDName" nillable="true" type="AxdUnion_AxdType_Str_AxdType_ExtCodeValue"/>
+      <xs:element minOccurs="1" name="InventBatchId" type="AxdExtType_InventBatchId"/>
+      <xs:element minOccurs="0" name="IsDefaultIID" nillable="true" type="AxdEnum_NoYes"/>
+      <xs:element minOccurs="1" name="ItemId" type="AxdUnion_AxdExtType_ItemId_AxdType_ExtCodeValue"/>
+      <xs:element minOccurs="0" name="RecId" nillable="true" type="AxdExtType_recId"/>
+      <xs:element minOccurs="0" name="RecVersion" nillable="true" type="AxdExtType_recVersion"/>
+    </xs:sequence>
+    <xs:attribute fixed="entity" name="class" use="required"/>
+    <xs:attribute name="action" type="AxdEnum_AxdEntityAction"/>
+  </xs:complexType>
+  <xs:simpleType name="AxdUnion_AxdType_Str_AxdType_ExtCodeValue">
+    <xs:union memberTypes="AxdType_Str AxdType_ExtCodeValue"/>
+  </xs:simpleType>
+  <xs:simpleType name="AxdType_Str">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Card Image:</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="255"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

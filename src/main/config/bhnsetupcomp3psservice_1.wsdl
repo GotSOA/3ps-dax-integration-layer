@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="bhnSetUpComp3PSService" targetNamespace="http://schemas.microsoft.com/dynamics/2008/01/services" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:tns="http://schemas.microsoft.com/dynamics/2008/01/services" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsp:Policy wsu:Id="BasicHttpBinding_bhnSetUpComp3PSService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <http:NegotiateAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http"/>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://schemas.microsoft.com/dynamics/2008/01/services/Imports">
+      <xsd:import schemaLocation="bhnsetupcomp3psservice.xsd" namespace="http://schemas.microsoft.com/dynamics/2008/01/services"/>
+      <xsd:import schemaLocation="bhnsetupcomp3psservice_1_2_3_4.xsd" namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault"/>
+      <xsd:import schemaLocation="bhnsetupcomp3psservice_1_2_3_4_5.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+      <xsd:import schemaLocation="bhnsetupcomp3psservice_1.xsd" namespace="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList"/>
+      <xsd:import schemaLocation="bhnsetupcomp3psservice_1_2.xsd" namespace="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKey"/>
+      <xsd:import schemaLocation="bhnsetupcomp3psservice_1_2_3_4_5_6.xsd"/>
+      <xsd:import schemaLocation="bhnsetupcomp3psservice_1_2_3.xsd" namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/bhnSetUpComp3PS"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="bhnSetUpComp3PSServiceDeleteRequest">
+    <wsdl:part name="parameters" element="tns:bhnSetUpComp3PSServiceDeleteRequest"/>
+  </wsdl:message>
+  <wsdl:message name="bhnSetUpComp3PSService_delete_OutputMessage"/>
+  <wsdl:message name="bhnSetUpComp3PSService_delete_AifFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q1:AifFault" xmlns:q1="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault"/>
+  </wsdl:message>
+  <wsdl:message name="bhnSetUpComp3PSServiceCreateRequest">
+    <wsdl:part name="parameters" element="tns:bhnSetUpComp3PSServiceCreateRequest"/>
+  </wsdl:message>
+  <wsdl:message name="bhnSetUpComp3PSServiceCreateResponse">
+    <wsdl:part name="parameters" element="tns:bhnSetUpComp3PSServiceCreateResponse"/>
+  </wsdl:message>
+  <wsdl:message name="bhnSetUpComp3PSService_create_AifFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q2:AifFault" xmlns:q2="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault"/>
+  </wsdl:message>
+  <wsdl:message name="bhnSetUpComp3PSServiceUpdateRequest">
+    <wsdl:part name="parameters" element="tns:bhnSetUpComp3PSServiceUpdateRequest"/>
+  </wsdl:message>
+  <wsdl:message name="bhnSetUpComp3PSService_update_OutputMessage"/>
+  <wsdl:message name="bhnSetUpComp3PSService_update_AifFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q3:AifFault" xmlns:q3="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault"/>
+  </wsdl:message>
+  <wsdl:message name="bhnSetUpComp3PSServiceReadRequest">
+    <wsdl:part name="parameters" element="tns:bhnSetUpComp3PSServiceReadRequest"/>
+  </wsdl:message>
+  <wsdl:message name="bhnSetUpComp3PSServiceReadResponse">
+    <wsdl:part name="parameters" element="tns:bhnSetUpComp3PSServiceReadResponse"/>
+  </wsdl:message>
+  <wsdl:message name="bhnSetUpComp3PSService_read_AifFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q4:AifFault" xmlns:q4="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault"/>
+  </wsdl:message>
+  <wsdl:portType name="bhnSetUpComp3PSService">
+    <wsdl:operation name="delete">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnSetUpComp3PSService/delete" name="bhnSetUpComp3PSServiceDeleteRequest" message="tns:bhnSetUpComp3PSServiceDeleteRequest"/>
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnSetUpComp3PSService/deleteResponse" message="tns:bhnSetUpComp3PSService_delete_OutputMessage"/>
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnSetUpComp3PSService/deleteAifFaultFault" name="AifFaultFault" message="tns:bhnSetUpComp3PSService_delete_AifFaultFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="create">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnSetUpComp3PSService/create" name="bhnSetUpComp3PSServiceCreateRequest" message="tns:bhnSetUpComp3PSServiceCreateRequest"/>
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnSetUpComp3PSService/createResponse" name="bhnSetUpComp3PSServiceCreateResponse" message="tns:bhnSetUpComp3PSServiceCreateResponse"/>
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnSetUpComp3PSService/createAifFaultFault" name="AifFaultFault" message="tns:bhnSetUpComp3PSService_create_AifFaultFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="update">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnSetUpComp3PSService/update" name="bhnSetUpComp3PSServiceUpdateRequest" message="tns:bhnSetUpComp3PSServiceUpdateRequest"/>
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnSetUpComp3PSService/updateResponse" message="tns:bhnSetUpComp3PSService_update_OutputMessage"/>
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnSetUpComp3PSService/updateAifFaultFault" name="AifFaultFault" message="tns:bhnSetUpComp3PSService_update_AifFaultFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="read">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnSetUpComp3PSService/read" name="bhnSetUpComp3PSServiceReadRequest" message="tns:bhnSetUpComp3PSServiceReadRequest"/>
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnSetUpComp3PSService/readResponse" name="bhnSetUpComp3PSServiceReadResponse" message="tns:bhnSetUpComp3PSServiceReadResponse"/>
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnSetUpComp3PSService/readAifFaultFault" name="AifFaultFault" message="tns:bhnSetUpComp3PSService_read_AifFaultFault_FaultMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_bhnSetUpComp3PSService" type="tns:bhnSetUpComp3PSService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_bhnSetUpComp3PSService_policy"/>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="delete">
+      <soap:operation soapAction="http://schemas.microsoft.com/dynamics/2008/01/services/bhnSetUpComp3PSService/delete" style="document"/>
+      <wsdl:input name="bhnSetUpComp3PSServiceDeleteRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault name="AifFaultFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="create">
+      <soap:operation soapAction="http://schemas.microsoft.com/dynamics/2008/01/services/bhnSetUpComp3PSService/create" style="document"/>
+      <wsdl:input name="bhnSetUpComp3PSServiceCreateRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="bhnSetUpComp3PSServiceCreateResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault name="AifFaultFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="update">
+      <soap:operation soapAction="http://schemas.microsoft.com/dynamics/2008/01/services/bhnSetUpComp3PSService/update" style="document"/>
+      <wsdl:input name="bhnSetUpComp3PSServiceUpdateRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault name="AifFaultFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="read">
+      <soap:operation soapAction="http://schemas.microsoft.com/dynamics/2008/01/services/bhnSetUpComp3PSService/read" style="document"/>
+      <wsdl:input name="bhnSetUpComp3PSServiceReadRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="bhnSetUpComp3PSServiceReadResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault name="AifFaultFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="bhnSetUpComp3PSService">
+    <wsdl:port name="BasicHttpBinding_bhnSetUpComp3PSService" binding="tns:BasicHttpBinding_bhnSetUpComp3PSService">
+      <soap:address location="http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhnsetupcomp3psservice.svc"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

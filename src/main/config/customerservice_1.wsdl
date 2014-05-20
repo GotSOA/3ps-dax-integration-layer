@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="CustomerService" targetNamespace="http://schemas.microsoft.com/dynamics/2008/01/services" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:tns="http://schemas.microsoft.com/dynamics/2008/01/services" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsp:Policy wsu:Id="BasicHttpBinding_CustomerService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <http:NegotiateAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http"/>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://schemas.microsoft.com/dynamics/2008/01/services/Imports">
+      <xsd:import schemaLocation="customerservice.xsd" namespace="http://schemas.microsoft.com/dynamics/2008/01/services"/>
+      <xsd:import schemaLocation="customerservice_1_2_3_4_5.xsd" namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault"/>
+      <xsd:import schemaLocation="customerservice_1_2_3_4_5_6.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+      <xsd:import schemaLocation="customerservice_1.xsd" namespace="http://schemas.microsoft.com/dynamics/2006/02/documents/QueryCriteria"/>
+      <xsd:import schemaLocation="customerservice_1_2_3_4_5_6_7.xsd"/>
+      <xsd:import schemaLocation="customerservice_1_2.xsd" namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/Customer"/>
+      <xsd:import schemaLocation="customerservice_1_2_3.xsd" namespace="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList"/>
+      <xsd:import schemaLocation="customerservice_1_2_3_4.xsd" namespace="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKey"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="CustomerServiceFindRequest">
+    <wsdl:part name="parameters" element="tns:CustomerServiceFindRequest"/>
+  </wsdl:message>
+  <wsdl:message name="CustomerServiceFindResponse">
+    <wsdl:part name="parameters" element="tns:CustomerServiceFindResponse"/>
+  </wsdl:message>
+  <wsdl:message name="CustomerService_find_AifFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q1:AifFault" xmlns:q1="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault"/>
+  </wsdl:message>
+  <wsdl:message name="CustomerServiceUpdateRequest">
+    <wsdl:part name="parameters" element="tns:CustomerServiceUpdateRequest"/>
+  </wsdl:message>
+  <wsdl:message name="CustomerService_update_OutputMessage"/>
+  <wsdl:message name="CustomerService_update_AifFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q2:AifFault" xmlns:q2="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault"/>
+  </wsdl:message>
+  <wsdl:message name="CustomerServiceReadRequest">
+    <wsdl:part name="parameters" element="tns:CustomerServiceReadRequest"/>
+  </wsdl:message>
+  <wsdl:message name="CustomerServiceReadResponse">
+    <wsdl:part name="parameters" element="tns:CustomerServiceReadResponse"/>
+  </wsdl:message>
+  <wsdl:message name="CustomerService_read_AifFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q3:AifFault" xmlns:q3="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault"/>
+  </wsdl:message>
+  <wsdl:message name="CustomerServiceDeleteRequest">
+    <wsdl:part name="parameters" element="tns:CustomerServiceDeleteRequest"/>
+  </wsdl:message>
+  <wsdl:message name="CustomerService_delete_OutputMessage"/>
+  <wsdl:message name="CustomerService_delete_AifFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q4:AifFault" xmlns:q4="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault"/>
+  </wsdl:message>
+  <wsdl:message name="CustomerServiceCreateRequest">
+    <wsdl:part name="parameters" element="tns:CustomerServiceCreateRequest"/>
+  </wsdl:message>
+  <wsdl:message name="CustomerServiceCreateResponse">
+    <wsdl:part name="parameters" element="tns:CustomerServiceCreateResponse"/>
+  </wsdl:message>
+  <wsdl:message name="CustomerService_create_AifFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q5:AifFault" xmlns:q5="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault"/>
+  </wsdl:message>
+  <wsdl:message name="CustomerServiceFindKeysRequest">
+    <wsdl:part name="parameters" element="tns:CustomerServiceFindKeysRequest"/>
+  </wsdl:message>
+  <wsdl:message name="CustomerServiceFindKeysResponse">
+    <wsdl:part name="parameters" element="tns:CustomerServiceFindKeysResponse"/>
+  </wsdl:message>
+  <wsdl:message name="CustomerService_findKeys_AifFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q6:AifFault" xmlns:q6="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault"/>
+  </wsdl:message>
+  <wsdl:portType name="CustomerService">
+    <wsdl:operation name="find">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/CustomerService/find" name="CustomerServiceFindRequest" message="tns:CustomerServiceFindRequest"/>
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/CustomerService/findResponse" name="CustomerServiceFindResponse" message="tns:CustomerServiceFindResponse"/>
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/CustomerService/findAifFaultFault" name="AifFaultFault" message="tns:CustomerService_find_AifFaultFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="update">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/CustomerService/update" name="CustomerServiceUpdateRequest" message="tns:CustomerServiceUpdateRequest"/>
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/CustomerService/updateResponse" message="tns:CustomerService_update_OutputMessage"/>
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/CustomerService/updateAifFaultFault" name="AifFaultFault" message="tns:CustomerService_update_AifFaultFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="read">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/CustomerService/read" name="CustomerServiceReadRequest" message="tns:CustomerServiceReadRequest"/>
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/CustomerService/readResponse" name="CustomerServiceReadResponse" message="tns:CustomerServiceReadResponse"/>
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/CustomerService/readAifFaultFault" name="AifFaultFault" message="tns:CustomerService_read_AifFaultFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/CustomerService/delete" name="CustomerServiceDeleteRequest" message="tns:CustomerServiceDeleteRequest"/>
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/CustomerService/deleteResponse" message="tns:CustomerService_delete_OutputMessage"/>
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/CustomerService/deleteAifFaultFault" name="AifFaultFault" message="tns:CustomerService_delete_AifFaultFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="create">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/CustomerService/create" name="CustomerServiceCreateRequest" message="tns:CustomerServiceCreateRequest"/>
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/CustomerService/createResponse" name="CustomerServiceCreateResponse" message="tns:CustomerServiceCreateResponse"/>
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/CustomerService/createAifFaultFault" name="AifFaultFault" message="tns:CustomerService_create_AifFaultFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="findKeys">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/CustomerService/findKeys" name="CustomerServiceFindKeysRequest" message="tns:CustomerServiceFindKeysRequest"/>
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/CustomerService/findKeysResponse" name="CustomerServiceFindKeysResponse" message="tns:CustomerServiceFindKeysResponse"/>
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/CustomerService/findKeysAifFaultFault" name="AifFaultFault" message="tns:CustomerService_findKeys_AifFaultFault_FaultMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_CustomerService" type="tns:CustomerService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_CustomerService_policy"/>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="find">
+      <soap:operation soapAction="http://schemas.microsoft.com/dynamics/2008/01/services/CustomerService/find" style="document"/>
+      <wsdl:input name="CustomerServiceFindRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="CustomerServiceFindResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault name="AifFaultFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="update">
+      <soap:operation soapAction="http://schemas.microsoft.com/dynamics/2008/01/services/CustomerService/update" style="document"/>
+      <wsdl:input name="CustomerServiceUpdateRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault name="AifFaultFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="read">
+      <soap:operation soapAction="http://schemas.microsoft.com/dynamics/2008/01/services/CustomerService/read" style="document"/>
+      <wsdl:input name="CustomerServiceReadRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="CustomerServiceReadResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault name="AifFaultFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <soap:operation soapAction="http://schemas.microsoft.com/dynamics/2008/01/services/CustomerService/delete" style="document"/>
+      <wsdl:input name="CustomerServiceDeleteRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault name="AifFaultFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="create">
+      <soap:operation soapAction="http://schemas.microsoft.com/dynamics/2008/01/services/CustomerService/create" style="document"/>
+      <wsdl:input name="CustomerServiceCreateRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="CustomerServiceCreateResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault name="AifFaultFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findKeys">
+      <soap:operation soapAction="http://schemas.microsoft.com/dynamics/2008/01/services/CustomerService/findKeys" style="document"/>
+      <wsdl:input name="CustomerServiceFindKeysRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="CustomerServiceFindKeysResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault name="AifFaultFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CustomerService">
+    <wsdl:port name="BasicHttpBinding_CustomerService" binding="tns:BasicHttpBinding_CustomerService">
+      <soap:address location="http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/customerservice.svc"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

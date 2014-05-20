@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="bhnCleanUpMegatronService" targetNamespace="http://tempuri.org" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:tns="http://tempuri.org" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsp:Policy wsu:Id="BasicHttpBinding_bhnCleanUpMegatronService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <http:NegotiateAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http"/>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="bhncleanupmegatronservice.xsd" namespace="http://tempuri.org"/>
+      <xsd:import schemaLocation="bhncleanupmegatronservice_1_2_3_4_5.xsd" namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault"/>
+      <xsd:import schemaLocation="bhncleanupmegatronservice_1_2_3_4_5_6.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+      <xsd:import schemaLocation="bhncleanupmegatronservice_1.xsd" namespace="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList"/>
+      <xsd:import schemaLocation="bhncleanupmegatronservice_1_2.xsd" namespace="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKey"/>
+      <xsd:import schemaLocation="bhncleanupmegatronservice_1_2_3_4_5_6_7.xsd"/>
+      <xsd:import schemaLocation="bhncleanupmegatronservice_1_2_3.xsd" namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/bhnCleanUpMegatron"/>
+      <xsd:import schemaLocation="bhncleanupmegatronservice_1_2_3_4.xsd" namespace="http://schemas.microsoft.com/dynamics/2006/02/documents/QueryCriteria"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="bhnCleanUpMegatronServiceDeleteRequest">
+    <wsdl:part name="parameters" element="tns:bhnCleanUpMegatronServiceDeleteRequest"/>
+  </wsdl:message>
+  <wsdl:message name="bhnCleanUpMegatronService_delete_OutputMessage"/>
+  <wsdl:message name="bhnCleanUpMegatronService_delete_AifFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q1:AifFault" xmlns:q1="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault"/>
+  </wsdl:message>
+  <wsdl:message name="bhnCleanUpMegatronServiceUpdateRequest">
+    <wsdl:part name="parameters" element="tns:bhnCleanUpMegatronServiceUpdateRequest"/>
+  </wsdl:message>
+  <wsdl:message name="bhnCleanUpMegatronService_update_OutputMessage"/>
+  <wsdl:message name="bhnCleanUpMegatronService_update_AifFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q2:AifFault" xmlns:q2="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault"/>
+  </wsdl:message>
+  <wsdl:message name="bhnCleanUpMegatronServiceReadRequest">
+    <wsdl:part name="parameters" element="tns:bhnCleanUpMegatronServiceReadRequest"/>
+  </wsdl:message>
+  <wsdl:message name="bhnCleanUpMegatronServiceReadResponse">
+    <wsdl:part name="parameters" element="tns:bhnCleanUpMegatronServiceReadResponse"/>
+  </wsdl:message>
+  <wsdl:message name="bhnCleanUpMegatronService_read_AifFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q3:AifFault" xmlns:q3="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault"/>
+  </wsdl:message>
+  <wsdl:message name="bhnCleanUpMegatronServiceCreateRequest">
+    <wsdl:part name="parameters" element="tns:bhnCleanUpMegatronServiceCreateRequest"/>
+  </wsdl:message>
+  <wsdl:message name="bhnCleanUpMegatronServiceCreateResponse">
+    <wsdl:part name="parameters" element="tns:bhnCleanUpMegatronServiceCreateResponse"/>
+  </wsdl:message>
+  <wsdl:message name="bhnCleanUpMegatronService_create_AifFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q4:AifFault" xmlns:q4="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault"/>
+  </wsdl:message>
+  <wsdl:message name="bhnCleanUpMegatronServiceFindRequest">
+    <wsdl:part name="parameters" element="tns:bhnCleanUpMegatronServiceFindRequest"/>
+  </wsdl:message>
+  <wsdl:message name="bhnCleanUpMegatronServiceFindResponse">
+    <wsdl:part name="parameters" element="tns:bhnCleanUpMegatronServiceFindResponse"/>
+  </wsdl:message>
+  <wsdl:message name="bhnCleanUpMegatronService_find_AifFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q5:AifFault" xmlns:q5="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault"/>
+  </wsdl:message>
+  <wsdl:portType name="bhnCleanUpMegatronService">
+    <wsdl:operation name="delete">
+      <wsdl:input wsaw:Action="http://tempuri.org/bhnCleanUpMegatronService/delete" name="bhnCleanUpMegatronServiceDeleteRequest" message="tns:bhnCleanUpMegatronServiceDeleteRequest"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/bhnCleanUpMegatronService/deleteResponse" message="tns:bhnCleanUpMegatronService_delete_OutputMessage"/>
+      <wsdl:fault wsaw:Action="http://tempuri.org/bhnCleanUpMegatronService/deleteAifFaultFault" name="AifFaultFault" message="tns:bhnCleanUpMegatronService_delete_AifFaultFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="update">
+      <wsdl:input wsaw:Action="http://tempuri.org/bhnCleanUpMegatronService/update" name="bhnCleanUpMegatronServiceUpdateRequest" message="tns:bhnCleanUpMegatronServiceUpdateRequest"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/bhnCleanUpMegatronService/updateResponse" message="tns:bhnCleanUpMegatronService_update_OutputMessage"/>
+      <wsdl:fault wsaw:Action="http://tempuri.org/bhnCleanUpMegatronService/updateAifFaultFault" name="AifFaultFault" message="tns:bhnCleanUpMegatronService_update_AifFaultFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="read">
+      <wsdl:input wsaw:Action="http://tempuri.org/bhnCleanUpMegatronService/read" name="bhnCleanUpMegatronServiceReadRequest" message="tns:bhnCleanUpMegatronServiceReadRequest"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/bhnCleanUpMegatronService/readResponse" name="bhnCleanUpMegatronServiceReadResponse" message="tns:bhnCleanUpMegatronServiceReadResponse"/>
+      <wsdl:fault wsaw:Action="http://tempuri.org/bhnCleanUpMegatronService/readAifFaultFault" name="AifFaultFault" message="tns:bhnCleanUpMegatronService_read_AifFaultFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="create">
+      <wsdl:input wsaw:Action="http://tempuri.org/bhnCleanUpMegatronService/create" name="bhnCleanUpMegatronServiceCreateRequest" message="tns:bhnCleanUpMegatronServiceCreateRequest"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/bhnCleanUpMegatronService/createResponse" name="bhnCleanUpMegatronServiceCreateResponse" message="tns:bhnCleanUpMegatronServiceCreateResponse"/>
+      <wsdl:fault wsaw:Action="http://tempuri.org/bhnCleanUpMegatronService/createAifFaultFault" name="AifFaultFault" message="tns:bhnCleanUpMegatronService_create_AifFaultFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="find">
+      <wsdl:input wsaw:Action="http://tempuri.org/bhnCleanUpMegatronService/find" name="bhnCleanUpMegatronServiceFindRequest" message="tns:bhnCleanUpMegatronServiceFindRequest"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/bhnCleanUpMegatronService/findResponse" name="bhnCleanUpMegatronServiceFindResponse" message="tns:bhnCleanUpMegatronServiceFindResponse"/>
+      <wsdl:fault wsaw:Action="http://tempuri.org/bhnCleanUpMegatronService/findAifFaultFault" name="AifFaultFault" message="tns:bhnCleanUpMegatronService_find_AifFaultFault_FaultMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_bhnCleanUpMegatronService" type="tns:bhnCleanUpMegatronService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_bhnCleanUpMegatronService_policy"/>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="delete">
+      <soap:operation soapAction="http://tempuri.org/bhnCleanUpMegatronService/delete" style="document"/>
+      <wsdl:input name="bhnCleanUpMegatronServiceDeleteRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault name="AifFaultFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="update">
+      <soap:operation soapAction="http://tempuri.org/bhnCleanUpMegatronService/update" style="document"/>
+      <wsdl:input name="bhnCleanUpMegatronServiceUpdateRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault name="AifFaultFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="read">
+      <soap:operation soapAction="http://tempuri.org/bhnCleanUpMegatronService/read" style="document"/>
+      <wsdl:input name="bhnCleanUpMegatronServiceReadRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="bhnCleanUpMegatronServiceReadResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault name="AifFaultFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="create">
+      <soap:operation soapAction="http://tempuri.org/bhnCleanUpMegatronService/create" style="document"/>
+      <wsdl:input name="bhnCleanUpMegatronServiceCreateRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="bhnCleanUpMegatronServiceCreateResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault name="AifFaultFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="find">
+      <soap:operation soapAction="http://tempuri.org/bhnCleanUpMegatronService/find" style="document"/>
+      <wsdl:input name="bhnCleanUpMegatronServiceFindRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="bhnCleanUpMegatronServiceFindResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault name="AifFaultFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="bhnCleanUpMegatronService">
+    <wsdl:port name="BasicHttpBinding_bhnCleanUpMegatronService" binding="tns:BasicHttpBinding_bhnCleanUpMegatronService">
+      <soap:address location="http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhncleanupmegatronservice.svc"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

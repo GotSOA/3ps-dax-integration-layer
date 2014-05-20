@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="bhnIIDAttributesService" targetNamespace="http://tempuri.org" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:tns="http://tempuri.org" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsp:Policy wsu:Id="BasicHttpBinding_bhnIIDAttributesService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <http:NegotiateAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http"/>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="bhniidattributesservice.xsd" namespace="http://tempuri.org"/>
+      <xsd:import schemaLocation="bhniidattributesservice_1_2_3_4_5.xsd" namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault"/>
+      <xsd:import schemaLocation="bhniidattributesservice_1_2_3_4_5_6.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+      <xsd:import schemaLocation="bhniidattributesservice_1.xsd" namespace="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList"/>
+      <xsd:import schemaLocation="bhniidattributesservice_1_2.xsd" namespace="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKey"/>
+      <xsd:import schemaLocation="bhniidattributesservice_1_2_3_4_5_6_7.xsd"/>
+      <xsd:import schemaLocation="bhniidattributesservice_1_2_3.xsd" namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/BhnIIDAttributes"/>
+      <xsd:import schemaLocation="bhniidattributesservice_1_2_3_4.xsd" namespace="http://schemas.microsoft.com/dynamics/2006/02/documents/QueryCriteria"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="bhnIIDAttributesServiceUpdateRequest">
+    <wsdl:part name="parameters" element="tns:bhnIIDAttributesServiceUpdateRequest"/>
+  </wsdl:message>
+  <wsdl:message name="bhnIIDAttributesService_update_OutputMessage"/>
+  <wsdl:message name="bhnIIDAttributesService_update_AifFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q1:AifFault" xmlns:q1="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault"/>
+  </wsdl:message>
+  <wsdl:message name="bhnIIDAttributesServiceCreateRequest">
+    <wsdl:part name="parameters" element="tns:bhnIIDAttributesServiceCreateRequest"/>
+  </wsdl:message>
+  <wsdl:message name="bhnIIDAttributesServiceCreateResponse">
+    <wsdl:part name="parameters" element="tns:bhnIIDAttributesServiceCreateResponse"/>
+  </wsdl:message>
+  <wsdl:message name="bhnIIDAttributesService_create_AifFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q2:AifFault" xmlns:q2="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault"/>
+  </wsdl:message>
+  <wsdl:message name="bhnIIDAttributesServiceFindRequest">
+    <wsdl:part name="parameters" element="tns:bhnIIDAttributesServiceFindRequest"/>
+  </wsdl:message>
+  <wsdl:message name="bhnIIDAttributesServiceFindResponse">
+    <wsdl:part name="parameters" element="tns:bhnIIDAttributesServiceFindResponse"/>
+  </wsdl:message>
+  <wsdl:message name="bhnIIDAttributesService_find_AifFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q3:AifFault" xmlns:q3="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault"/>
+  </wsdl:message>
+  <wsdl:message name="bhnIIDAttributesServiceReadRequest">
+    <wsdl:part name="parameters" element="tns:bhnIIDAttributesServiceReadRequest"/>
+  </wsdl:message>
+  <wsdl:message name="bhnIIDAttributesServiceReadResponse">
+    <wsdl:part name="parameters" element="tns:bhnIIDAttributesServiceReadResponse"/>
+  </wsdl:message>
+  <wsdl:message name="bhnIIDAttributesService_read_AifFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q4:AifFault" xmlns:q4="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault"/>
+  </wsdl:message>
+  <wsdl:message name="bhnIIDAttributesServiceDeleteRequest">
+    <wsdl:part name="parameters" element="tns:bhnIIDAttributesServiceDeleteRequest"/>
+  </wsdl:message>
+  <wsdl:message name="bhnIIDAttributesService_delete_OutputMessage"/>
+  <wsdl:message name="bhnIIDAttributesService_delete_AifFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q5:AifFault" xmlns:q5="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault"/>
+  </wsdl:message>
+  <wsdl:portType name="bhnIIDAttributesService">
+    <wsdl:operation name="update">
+      <wsdl:input wsaw:Action="http://tempuri.org/bhnIIDAttributesService/update" name="bhnIIDAttributesServiceUpdateRequest" message="tns:bhnIIDAttributesServiceUpdateRequest"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/bhnIIDAttributesService/updateResponse" message="tns:bhnIIDAttributesService_update_OutputMessage"/>
+      <wsdl:fault wsaw:Action="http://tempuri.org/bhnIIDAttributesService/updateAifFaultFault" name="AifFaultFault" message="tns:bhnIIDAttributesService_update_AifFaultFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="create">
+      <wsdl:input wsaw:Action="http://tempuri.org/bhnIIDAttributesService/create" name="bhnIIDAttributesServiceCreateRequest" message="tns:bhnIIDAttributesServiceCreateRequest"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/bhnIIDAttributesService/createResponse" name="bhnIIDAttributesServiceCreateResponse" message="tns:bhnIIDAttributesServiceCreateResponse"/>
+      <wsdl:fault wsaw:Action="http://tempuri.org/bhnIIDAttributesService/createAifFaultFault" name="AifFaultFault" message="tns:bhnIIDAttributesService_create_AifFaultFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="find">
+      <wsdl:input wsaw:Action="http://tempuri.org/bhnIIDAttributesService/find" name="bhnIIDAttributesServiceFindRequest" message="tns:bhnIIDAttributesServiceFindRequest"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/bhnIIDAttributesService/findResponse" name="bhnIIDAttributesServiceFindResponse" message="tns:bhnIIDAttributesServiceFindResponse"/>
+      <wsdl:fault wsaw:Action="http://tempuri.org/bhnIIDAttributesService/findAifFaultFault" name="AifFaultFault" message="tns:bhnIIDAttributesService_find_AifFaultFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="read">
+      <wsdl:input wsaw:Action="http://tempuri.org/bhnIIDAttributesService/read" name="bhnIIDAttributesServiceReadRequest" message="tns:bhnIIDAttributesServiceReadRequest"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/bhnIIDAttributesService/readResponse" name="bhnIIDAttributesServiceReadResponse" message="tns:bhnIIDAttributesServiceReadResponse"/>
+      <wsdl:fault wsaw:Action="http://tempuri.org/bhnIIDAttributesService/readAifFaultFault" name="AifFaultFault" message="tns:bhnIIDAttributesService_read_AifFaultFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <wsdl:input wsaw:Action="http://tempuri.org/bhnIIDAttributesService/delete" name="bhnIIDAttributesServiceDeleteRequest" message="tns:bhnIIDAttributesServiceDeleteRequest"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/bhnIIDAttributesService/deleteResponse" message="tns:bhnIIDAttributesService_delete_OutputMessage"/>
+      <wsdl:fault wsaw:Action="http://tempuri.org/bhnIIDAttributesService/deleteAifFaultFault" name="AifFaultFault" message="tns:bhnIIDAttributesService_delete_AifFaultFault_FaultMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_bhnIIDAttributesService" type="tns:bhnIIDAttributesService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_bhnIIDAttributesService_policy"/>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="update">
+      <soap:operation soapAction="http://tempuri.org/bhnIIDAttributesService/update" style="document"/>
+      <wsdl:input name="bhnIIDAttributesServiceUpdateRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault name="AifFaultFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="create">
+      <soap:operation soapAction="http://tempuri.org/bhnIIDAttributesService/create" style="document"/>
+      <wsdl:input name="bhnIIDAttributesServiceCreateRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="bhnIIDAttributesServiceCreateResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault name="AifFaultFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="find">
+      <soap:operation soapAction="http://tempuri.org/bhnIIDAttributesService/find" style="document"/>
+      <wsdl:input name="bhnIIDAttributesServiceFindRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="bhnIIDAttributesServiceFindResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault name="AifFaultFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="read">
+      <soap:operation soapAction="http://tempuri.org/bhnIIDAttributesService/read" style="document"/>
+      <wsdl:input name="bhnIIDAttributesServiceReadRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="bhnIIDAttributesServiceReadResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault name="AifFaultFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <soap:operation soapAction="http://tempuri.org/bhnIIDAttributesService/delete" style="document"/>
+      <wsdl:input name="bhnIIDAttributesServiceDeleteRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault name="AifFaultFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="bhnIIDAttributesService">
+    <wsdl:port name="BasicHttpBinding_bhnIIDAttributesService" binding="tns:BasicHttpBinding_bhnIIDAttributesService">
+      <soap:address location="http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhniidattributesservice.svc"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

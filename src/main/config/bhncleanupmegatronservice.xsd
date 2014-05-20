@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org">
+  <xs:import schemaLocation="bhncleanupmegatronservice_1.xsd" namespace="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList"/>
+  <xs:import schemaLocation="bhncleanupmegatronservice_1_2_3.xsd" namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/bhnCleanUpMegatron"/>
+  <xs:import schemaLocation="bhncleanupmegatronservice_1_2_3_4.xsd" namespace="http://schemas.microsoft.com/dynamics/2006/02/documents/QueryCriteria"/>
+  <xs:element name="bhnCleanUpMegatronServiceDeleteRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="q1:EntityKeyList" xmlns:q1="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="bhnCleanUpMegatronServiceUpdateRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="q2:EntityKeyList" xmlns:q2="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList"/>
+        <xs:element minOccurs="0" ref="q3:bhnCleanUpMegatron" xmlns:q3="http://schemas.microsoft.com/dynamics/2008/01/documents/bhnCleanUpMegatron"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="bhnCleanUpMegatronServiceReadRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="q4:EntityKeyList" xmlns:q4="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="bhnCleanUpMegatronServiceReadResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="q5:bhnCleanUpMegatron" xmlns:q5="http://schemas.microsoft.com/dynamics/2008/01/documents/bhnCleanUpMegatron"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="bhnCleanUpMegatronServiceCreateRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="q6:bhnCleanUpMegatron" xmlns:q6="http://schemas.microsoft.com/dynamics/2008/01/documents/bhnCleanUpMegatron"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="bhnCleanUpMegatronServiceCreateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="q7:EntityKeyList" xmlns:q7="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="bhnCleanUpMegatronServiceFindRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="q8:QueryCriteria" xmlns:q8="http://schemas.microsoft.com/dynamics/2006/02/documents/QueryCriteria"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="bhnCleanUpMegatronServiceFindResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="q9:bhnCleanUpMegatron" xmlns:q9="http://schemas.microsoft.com/dynamics/2008/01/documents/bhnCleanUpMegatron"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

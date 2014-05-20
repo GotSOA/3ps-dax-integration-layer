@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="UPCSubGroupTableService" targetNamespace="http://tempuri.org" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:tns="http://tempuri.org" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsp:Policy wsu:Id="BasicHttpBinding_UPCSubGroupTableService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <http:NegotiateAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http"/>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="upcsubgrouptableservice.xsd" namespace="http://tempuri.org"/>
+      <xsd:import schemaLocation="upcsubgrouptableservice_1_2_3_4_5.xsd" namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault"/>
+      <xsd:import schemaLocation="upcsubgrouptableservice_1_2_3_4_5_6.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+      <xsd:import schemaLocation="upcsubgrouptableservice_1.xsd" namespace="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList"/>
+      <xsd:import schemaLocation="upcsubgrouptableservice_1_2.xsd" namespace="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKey"/>
+      <xsd:import schemaLocation="upcsubgrouptableservice_1_2_3_4_5_6_7.xsd"/>
+      <xsd:import schemaLocation="upcsubgrouptableservice_1_2_3.xsd" namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/UPCSubGroupTable"/>
+      <xsd:import schemaLocation="upcsubgrouptableservice_1_2_3_4.xsd" namespace="http://schemas.microsoft.com/dynamics/2006/02/documents/QueryCriteria"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="UPCSubGroupTableServiceUpdateRequest">
+    <wsdl:part name="parameters" element="tns:UPCSubGroupTableServiceUpdateRequest"/>
+  </wsdl:message>
+  <wsdl:message name="UPCSubGroupTableService_update_OutputMessage"/>
+  <wsdl:message name="UPCSubGroupTableService_update_AifFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q1:AifFault" xmlns:q1="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault"/>
+  </wsdl:message>
+  <wsdl:message name="UPCSubGroupTableServiceDeleteRequest">
+    <wsdl:part name="parameters" element="tns:UPCSubGroupTableServiceDeleteRequest"/>
+  </wsdl:message>
+  <wsdl:message name="UPCSubGroupTableService_delete_OutputMessage"/>
+  <wsdl:message name="UPCSubGroupTableService_delete_AifFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q2:AifFault" xmlns:q2="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault"/>
+  </wsdl:message>
+  <wsdl:message name="UPCSubGroupTableServiceReadRequest">
+    <wsdl:part name="parameters" element="tns:UPCSubGroupTableServiceReadRequest"/>
+  </wsdl:message>
+  <wsdl:message name="UPCSubGroupTableServiceReadResponse">
+    <wsdl:part name="parameters" element="tns:UPCSubGroupTableServiceReadResponse"/>
+  </wsdl:message>
+  <wsdl:message name="UPCSubGroupTableService_read_AifFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q3:AifFault" xmlns:q3="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault"/>
+  </wsdl:message>
+  <wsdl:message name="UPCSubGroupTableServiceFindRequest">
+    <wsdl:part name="parameters" element="tns:UPCSubGroupTableServiceFindRequest"/>
+  </wsdl:message>
+  <wsdl:message name="UPCSubGroupTableServiceFindResponse">
+    <wsdl:part name="parameters" element="tns:UPCSubGroupTableServiceFindResponse"/>
+  </wsdl:message>
+  <wsdl:message name="UPCSubGroupTableService_find_AifFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q4:AifFault" xmlns:q4="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault"/>
+  </wsdl:message>
+  <wsdl:message name="UPCSubGroupTableServiceCreateRequest">
+    <wsdl:part name="parameters" element="tns:UPCSubGroupTableServiceCreateRequest"/>
+  </wsdl:message>
+  <wsdl:message name="UPCSubGroupTableServiceCreateResponse">
+    <wsdl:part name="parameters" element="tns:UPCSubGroupTableServiceCreateResponse"/>
+  </wsdl:message>
+  <wsdl:message name="UPCSubGroupTableService_create_AifFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q5:AifFault" xmlns:q5="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault"/>
+  </wsdl:message>
+  <wsdl:message name="UPCSubGroupTableServiceFindKeysRequest">
+    <wsdl:part name="parameters" element="tns:UPCSubGroupTableServiceFindKeysRequest"/>
+  </wsdl:message>
+  <wsdl:message name="UPCSubGroupTableServiceFindKeysResponse">
+    <wsdl:part name="parameters" element="tns:UPCSubGroupTableServiceFindKeysResponse"/>
+  </wsdl:message>
+  <wsdl:message name="UPCSubGroupTableService_findKeys_AifFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q6:AifFault" xmlns:q6="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault"/>
+  </wsdl:message>
+  <wsdl:portType name="UPCSubGroupTableService">
+    <wsdl:operation name="update">
+      <wsdl:input wsaw:Action="http://tempuri.org/UPCSubGroupTableService/update" name="UPCSubGroupTableServiceUpdateRequest" message="tns:UPCSubGroupTableServiceUpdateRequest"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/UPCSubGroupTableService/updateResponse" message="tns:UPCSubGroupTableService_update_OutputMessage"/>
+      <wsdl:fault wsaw:Action="http://tempuri.org/UPCSubGroupTableService/updateAifFaultFault" name="AifFaultFault" message="tns:UPCSubGroupTableService_update_AifFaultFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <wsdl:input wsaw:Action="http://tempuri.org/UPCSubGroupTableService/delete" name="UPCSubGroupTableServiceDeleteRequest" message="tns:UPCSubGroupTableServiceDeleteRequest"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/UPCSubGroupTableService/deleteResponse" message="tns:UPCSubGroupTableService_delete_OutputMessage"/>
+      <wsdl:fault wsaw:Action="http://tempuri.org/UPCSubGroupTableService/deleteAifFaultFault" name="AifFaultFault" message="tns:UPCSubGroupTableService_delete_AifFaultFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="read">
+      <wsdl:input wsaw:Action="http://tempuri.org/UPCSubGroupTableService/read" name="UPCSubGroupTableServiceReadRequest" message="tns:UPCSubGroupTableServiceReadRequest"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/UPCSubGroupTableService/readResponse" name="UPCSubGroupTableServiceReadResponse" message="tns:UPCSubGroupTableServiceReadResponse"/>
+      <wsdl:fault wsaw:Action="http://tempuri.org/UPCSubGroupTableService/readAifFaultFault" name="AifFaultFault" message="tns:UPCSubGroupTableService_read_AifFaultFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="find">
+      <wsdl:input wsaw:Action="http://tempuri.org/UPCSubGroupTableService/find" name="UPCSubGroupTableServiceFindRequest" message="tns:UPCSubGroupTableServiceFindRequest"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/UPCSubGroupTableService/findResponse" name="UPCSubGroupTableServiceFindResponse" message="tns:UPCSubGroupTableServiceFindResponse"/>
+      <wsdl:fault wsaw:Action="http://tempuri.org/UPCSubGroupTableService/findAifFaultFault" name="AifFaultFault" message="tns:UPCSubGroupTableService_find_AifFaultFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="create">
+      <wsdl:input wsaw:Action="http://tempuri.org/UPCSubGroupTableService/create" name="UPCSubGroupTableServiceCreateRequest" message="tns:UPCSubGroupTableServiceCreateRequest"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/UPCSubGroupTableService/createResponse" name="UPCSubGroupTableServiceCreateResponse" message="tns:UPCSubGroupTableServiceCreateResponse"/>
+      <wsdl:fault wsaw:Action="http://tempuri.org/UPCSubGroupTableService/createAifFaultFault" name="AifFaultFault" message="tns:UPCSubGroupTableService_create_AifFaultFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="findKeys">
+      <wsdl:input wsaw:Action="http://tempuri.org/UPCSubGroupTableService/findKeys" name="UPCSubGroupTableServiceFindKeysRequest" message="tns:UPCSubGroupTableServiceFindKeysRequest"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/UPCSubGroupTableService/findKeysResponse" name="UPCSubGroupTableServiceFindKeysResponse" message="tns:UPCSubGroupTableServiceFindKeysResponse"/>
+      <wsdl:fault wsaw:Action="http://tempuri.org/UPCSubGroupTableService/findKeysAifFaultFault" name="AifFaultFault" message="tns:UPCSubGroupTableService_findKeys_AifFaultFault_FaultMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_UPCSubGroupTableService" type="tns:UPCSubGroupTableService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_UPCSubGroupTableService_policy"/>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="update">
+      <soap:operation soapAction="http://tempuri.org/UPCSubGroupTableService/update" style="document"/>
+      <wsdl:input name="UPCSubGroupTableServiceUpdateRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault name="AifFaultFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <soap:operation soapAction="http://tempuri.org/UPCSubGroupTableService/delete" style="document"/>
+      <wsdl:input name="UPCSubGroupTableServiceDeleteRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault name="AifFaultFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="read">
+      <soap:operation soapAction="http://tempuri.org/UPCSubGroupTableService/read" style="document"/>
+      <wsdl:input name="UPCSubGroupTableServiceReadRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="UPCSubGroupTableServiceReadResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault name="AifFaultFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="find">
+      <soap:operation soapAction="http://tempuri.org/UPCSubGroupTableService/find" style="document"/>
+      <wsdl:input name="UPCSubGroupTableServiceFindRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="UPCSubGroupTableServiceFindResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault name="AifFaultFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="create">
+      <soap:operation soapAction="http://tempuri.org/UPCSubGroupTableService/create" style="document"/>
+      <wsdl:input name="UPCSubGroupTableServiceCreateRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="UPCSubGroupTableServiceCreateResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault name="AifFaultFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findKeys">
+      <soap:operation soapAction="http://tempuri.org/UPCSubGroupTableService/findKeys" style="document"/>
+      <wsdl:input name="UPCSubGroupTableServiceFindKeysRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="UPCSubGroupTableServiceFindKeysResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault name="AifFaultFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UPCSubGroupTableService">
+    <wsdl:port name="BasicHttpBinding_UPCSubGroupTableService" binding="tns:BasicHttpBinding_UPCSubGroupTableService">
+      <soap:address location="http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/upcsubgrouptableservice.svc"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

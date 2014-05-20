@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="bhnupcattributes3psservice_1.xsd" namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/bhnUPCAttributes3PS"/>
+  <xs:import schemaLocation="bhnupcattributes3psservice_1_2.xsd" namespace="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList"/>
+  <xs:element name="AxdbhnUPCAttributes3PS" type="q1:AxdbhnUPCAttributes3PS" xmlns:q1="http://schemas.microsoft.com/dynamics/2008/01/documents/bhnUPCAttributes3PS"/>
+  <xs:element name="EntityKeyList" type="q2:EntityKeyList" xmlns:q2="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList"/>
+</xs:schema>

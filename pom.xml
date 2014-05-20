@@ -225,6 +225,30 @@
 			                    <wsdlOption>
 			                        <wsdl>${basedir}/src/main/config/custcompanycodeservice_1.wsdl</wsdl>
 			                    </wsdlOption>
+			                    <wsdlOption>
+			                        <wsdl>${basedir}/src/main/config/bhndivision3psservice_1.wsdl</wsdl>
+			                    </wsdlOption>
+			                    <wsdlOption>
+			                        <wsdl>${basedir}/src/main/config/upcsubgrouptableservice_1.wsdl</wsdl>
+			                    </wsdlOption>
+			                    <wsdlOption>
+			                        <wsdl>${basedir}/src/main/config/bhnupcattributes3psservice_1.wsdl</wsdl>
+			                    </wsdlOption>
+			                    <wsdlOption>
+			                        <wsdl>${basedir}/src/main/config/bhniidattributesservice_1.wsdl</wsdl>
+			                    </wsdlOption>
+			                    <wsdlOption>
+			                        <wsdl>${basedir}/src/main/config/customerservice_1.wsdl</wsdl>
+			                    </wsdlOption>
+			                    <wsdlOption>
+			                        <wsdl>${basedir}/src/main/config/vendtableservice_1.wsdl</wsdl>
+			                    </wsdlOption>
+			                    <wsdlOption>
+			                        <wsdl>${basedir}/src/main/config/bhnsetupcomp3psservice_1.wsdl</wsdl>
+			                    </wsdlOption>
+			                    <wsdlOption>
+			                        <wsdl>${basedir}/src/main/config/bhncleanupmegatronservice_1.wsdl</wsdl>
+			                    </wsdlOption>
 			                </wsdlOptions>
 			            </configuration>
 			            <goals>

@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/dynamics/2008/01/documents/UPCSubGroupTable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/dynamics/2008/01/documents/UPCSubGroupTable">
+  <xs:element name="UPCSubGroupTable" type="AxdUPCSubGroupTable"/>
+  <xs:complexType name="AxdUPCSubGroupTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DocPurpose" nillable="true" type="AxdEnum_XMLDocPurpose"/>
+      <xs:element minOccurs="0" name="SenderId" nillable="true" type="AxdExtType_dataAreaId"/>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="bhnUPCSubGroupTable_1" type="AxdEntity_bhnUPCSubGroupTable_1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="AxdEnum_XMLDocPurpose">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Product:Product</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Original"/>
+      <xs:enumeration value="Duplicate"/>
+      <xs:enumeration value="Proforma"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_dataAreaId">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Company:ID for an area of data</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="4"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdEnum_AxdEntityAction">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">AxdEntityAction:AxdEntityAction</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="create"/>
+      <xs:enumeration value="update"/>
+      <xs:enumeration value="replace"/>
+      <xs:enumeration value="delete"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="AxdEntity_bhnUPCSubGroupTable_1">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="_DocumentHash" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="1" name="BhnDivisionCode" type="AxdExtType_bhnDivisionCode"/>
+      <xs:element minOccurs="0" name="BhnGUID" nillable="true" type="AxdExtType_bhnGUID"/>
+      <xs:element minOccurs="0" name="BhnUPCParentSubGroup" nillable="true" type="AxdExtType_bhnUPCParentSubGroup"/>
+      <xs:element minOccurs="1" name="CardDisplayDesc" type="AxdExtType_bhnUPCCardDisplayDesc"/>
+      <xs:element minOccurs="0" name="MerchRecordNumber" nillable="true" type="AxdExtType_MerchRecordNumber"/>
+      <xs:element minOccurs="1" name="Name" type="AxdExtType_Name"/>
+      <xs:element minOccurs="0" name="PartnerProfileId" nillable="true" type="AxdExtType_bhnGUID"/>
+      <xs:element minOccurs="1" name="POGCategory1" type="AxdExtType_bhnUPCPogCategory1"/>
+      <xs:element minOccurs="0" name="POGCategory2" nillable="true" type="AxdExtType_bhnUPCPogCategory2"/>
+      <xs:element minOccurs="0" name="POGCategory3" nillable="true" type="AxdExtType_bhnUPCPogCategory3"/>
+      <xs:element minOccurs="0" name="POGDimension" nillable="true" type="AxdExtType_bhnUPCPOGDimension"/>
+      <xs:element minOccurs="1" name="PortalDisplayName" type="AxdExtType_PortalDisplayName"/>
+      <xs:element minOccurs="0" name="RecId" nillable="true" type="AxdExtType_recId"/>
+      <xs:element minOccurs="0" name="RecVersion" nillable="true" type="AxdExtType_recVersion"/>
+      <xs:element minOccurs="0" name="ShipperUPC" nillable="true" type="AxdEnum_NoYes"/>
+      <xs:element minOccurs="1" name="SubGroupId" type="AxdExtType_bhnUPCSubGroup"/>
+    </xs:sequence>
+    <xs:attribute fixed="entity" name="class" use="required"/>
+    <xs:attribute name="action" type="AxdEnum_AxdEntityAction"/>
+  </xs:complexType>
+  <xs:simpleType name="AxdExtType_bhnDivisionCode">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Division code:</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="10"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_bhnGUID">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">BHN GUID:</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="40"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_bhnUPCParentSubGroup">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Parent substitution group:UPC substitution group</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="10"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_bhnUPCCardDisplayDesc">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Card display description:UPC card display description</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="250"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_MerchRecordNumber">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Service Now Merchant Record Number:</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="10"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_Name">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Name:Name.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="60"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_bhnUPCPogCategory1">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Business Unit:Business Unit</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="25"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_bhnUPCPogCategory2">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Category:Category</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="25"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_bhnUPCPogCategory3">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Sub Category:Sub Category</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="25"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_bhnUPCPOGDimension">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">POG dimension:UPC POG dimension</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="10"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_PortalDisplayName">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Portal display name:</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="100"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_recId">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Record-ID:Unique ID for the record in the database</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="AxdType_Int64"/>
+  </xs:simpleType>
+  <xs:simpleType name="AxdType_Int64">
+    <xs:restriction base="xs:long">
+      <xs:minInclusive value="-9223372036854775808"/>
+      <xs:maxInclusive value="9223372036854775807"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_recVersion">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Record Version:Version of the record in the database</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="AxdType_Integer"/>
+  </xs:simpleType>
+  <xs:simpleType name="AxdType_Integer">
+    <xs:restriction base="xs:int">
+      <xs:minInclusive value="-2147483648"/>
+      <xs:maxInclusive value="2147483647"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdEnum_NoYes">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">:</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="No"/>
+      <xs:enumeration value="Yes"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdExtType_bhnUPCSubGroup">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Substitution group:UPC substitution group</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="10"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
