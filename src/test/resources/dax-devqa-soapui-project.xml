@@ -2098,6 +2098,112 @@
          </bhn:BhnIIDAttributes>
       </tem:bhnIIDAttributesServiceCreateRequest>
    </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/bhnIIDAttributesService/create"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Default Request"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhniidattributesservice.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org" xmlns:bhn="http://schemas.microsoft.com/dynamics/2008/01/documents/BhnIIDAttributes">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:bhnIIDAttributesServiceCreateRequest>
+         <!--Optional:-->
+         <bhn:BhnIIDAttributes>
+            <!--Optional:-->
+            <bhn:DocPurpose>?</bhn:DocPurpose>
+            <!--Optional:-->
+            <bhn:SenderId>?</bhn:SenderId>
+            <!--Zero or more repetitions:-->
+            <bhn:InventBatch class="entity" action="?">
+               <!--Optional:-->
+               <bhn:_DocumentHash>?</bhn:_DocumentHash>
+               <!--Optional:-->
+               <bhn:BhnDivCode>?</bhn:BhnDivCode>
+               <!--Optional:-->
+               <bhn:BhnDivDescription>?</bhn:BhnDivDescription>
+               <!--Optional:-->
+               <bhn:BhnGUID>?</bhn:BhnGUID>
+               <!--Optional:-->
+               <bhn:BhnNotes>?</bhn:BhnNotes>
+               <!--Optional:-->
+               <bhn:BhnSetupComplete>?</bhn:BhnSetupComplete>
+               <!--Optional:-->
+               <bhn:BhnSetupCompleteDate localDateTime="?" timezone="?">?</bhn:BhnSetupCompleteDate>
+               <!--Optional:-->
+               <bhn:BhnSetupCompletedBy>?</bhn:BhnSetupCompletedBy>
+               <!--Optional:-->
+               <bhn:BhnStatus>?</bhn:BhnStatus>
+               <!--Optional:-->
+               <bhn:Description>?</bhn:Description>
+               <!--Optional:-->
+               <bhn:ExpDate>?</bhn:ExpDate>
+               <bhn:InventBatchId>?</bhn:InventBatchId>
+               <bhn:ItemId>?</bhn:ItemId>
+               <!--Optional:-->
+               <bhn:MerchRecordNumber>?</bhn:MerchRecordNumber>
+               <!--Optional:-->
+               <bhn:PartnerProfileId>?</bhn:PartnerProfileId>
+               <!--Optional:-->
+               <bhn:RecId>?</bhn:RecId>
+               <!--Optional:-->
+               <bhn:RecVersion>?</bhn:RecVersion>
+               <!--Zero or more repetitions:-->
+               <bhn:bhnIIDAttributes class="entity" action="?">
+                  <!--Optional:-->
+                  <bhn:ActivationType>?</bhn:ActivationType>
+                  <!--Optional:-->
+                  <bhn:CaseCount>?</bhn:CaseCount>
+                  <!--Optional:-->
+                  <bhn:Country>?</bhn:Country>
+                  <!--Optional:-->
+                  <bhn:DiscoReasonCode>?</bhn:DiscoReasonCode>
+                  <!--Optional:-->
+                  <bhn:FirstShipDate>?</bhn:FirstShipDate>
+                  <bhn:InventBatchId>?</bhn:InventBatchId>
+                  <bhn:ItemId>?</bhn:ItemId>
+                  <!--Optional:-->
+                  <bhn:Language>?</bhn:Language>
+                  <!--Optional:-->
+                  <bhn:LastShipDate>?</bhn:LastShipDate>
+                  <!--Optional:-->
+                  <bhn:NewIIDReasonCode>?</bhn:NewIIDReasonCode>
+                  <!--Optional:-->
+                  <bhn:PackSize>?</bhn:PackSize>
+                  <!--Optional:-->
+                  <bhn:ProdPackType>?</bhn:ProdPackType>
+                  <!--Optional:-->
+                  <bhn:RecId>?</bhn:RecId>
+                  <!--Optional:-->
+                  <bhn:RecVersion>?</bhn:RecVersion>
+                  <!--Optional:-->
+                  <bhn:RestrictedIID>?</bhn:RestrictedIID>
+                  <!--Optional:-->
+                  <bhn:UnitId1>?</bhn:UnitId1>
+                  <!--Optional:-->
+                  <bhn:UnitId2>?</bhn:UnitId2>
+                  <!--Optional:-->
+                  <bhn:UseStdUnitConvert>?</bhn:UseStdUnitConvert>
+               </bhn:bhnIIDAttributes>
+               <!--Zero or more repetitions:-->
+               <bhn:bhnOnlineIIDAttributes class="entity" action="?">
+                  <!--Optional:-->
+                  <bhn:DivisionCardImageURL>?</bhn:DivisionCardImageURL>
+                  <!--Optional:-->
+                  <bhn:DivisionPrintReadyFrontImageURL>?</bhn:DivisionPrintReadyFrontImageURL>
+                  <!--Optional:-->
+                  <bhn:DivisionPrintReadyTandCURL>?</bhn:DivisionPrintReadyTandCURL>
+                  <!--Optional:-->
+                  <bhn:GCMIIDDescription>?</bhn:GCMIIDDescription>
+                  <!--Optional:-->
+                  <bhn:IIDName>?</bhn:IIDName>
+                  <bhn:InventBatchId>?</bhn:InventBatchId>
+                  <!--Optional:-->
+                  <bhn:IsDefaultIID>?</bhn:IsDefaultIID>
+                  <bhn:ItemId>?</bhn:ItemId>
+                  <!--Optional:-->
+                  <bhn:RecId>?</bhn:RecId>
+                  <!--Optional:-->
+                  <bhn:RecVersion>?</bhn:RecVersion>
+               </bhn:bhnOnlineIIDAttributes>
+            </bhn:InventBatch>
+         </bhn:BhnIIDAttributes>
+      </tem:bhnIIDAttributesServiceCreateRequest>
+   </soapenv:Body>
 </soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/bhnIIDAttributesService/create"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="http://tempuri.org/bhnIIDAttributesService/delete" name="delete" bindingOperationName="delete" type="Request-Response" inputName="bhnIIDAttributesServiceDeleteRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhniidattributesservice.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org" xmlns:ent="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList" xmlns:ent1="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKey">
    <soapenv:Header/>
    <soapenv:Body>
@@ -6642,7 +6748,32 @@ Affiliate:Affiliate number.</xs:documentation>
          </bhn:bhnCleanUpMegatron>
       </tem:bhnCleanUpMegatronServiceCreateRequest>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/bhnCleanUpMegatronService/create"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="http://tempuri.org/bhnCleanUpMegatronService/delete" name="delete" bindingOperationName="delete" type="Request-Response" inputName="bhnCleanUpMegatronServiceDeleteRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhncleanupmegatronservice.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org" xmlns:ent="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList" xmlns:ent1="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKey">
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/bhnCleanUpMegatronService/create"/><con:wsrmConfig version="1.2"/></con:call><con:call name="MuleRequest"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhncleanupmegatronservice.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Header>
+    <mule:header xmlns:mule="http://www.muleumo.org/providers/soap/1.0">
+      <mule:MULE_CORRELATION_ID>b323b56f-e03f-11e3-9310-bd0f47a1e457</mule:MULE_CORRELATION_ID>
+      <mule:MULE_CORRELATION_GROUP_SIZE>2</mule:MULE_CORRELATION_GROUP_SIZE>
+      <mule:MULE_CORRELATION_SEQUENCE>-1</mule:MULE_CORRELATION_SEQUENCE>
+    </mule:header>
+  </soap:Header>
+  <soap:Body>
+    <ns2:bhnCleanUpMegatronServiceCreateRequest xmlns:ns2="http://tempuri.org" xmlns:ns3="http://schemas.microsoft.com/dynamics/2008/01/documents/bhnCleanUpMegatron" xmlns:ns4="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" xmlns:ns5="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKey" xmlns:ns6="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList" xmlns:ns7="http://schemas.microsoft.com/dynamics/2006/02/documents/QueryCriteria" xmlns:ns8="http://schemas.microsoft.com/2003/10/Serialization/">
+      <ns3:bhnCleanUpMegatron>
+        <ns3:DocPurpose xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+        <ns3:SenderId xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+        <ns3:bhnCleanUpMegatron class="entity">
+          <ns3:_DocumentHash xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+          <ns3:Guid xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+          <ns3:Message xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+          <ns3:PartnerprofileId>94QGMK5KV5ABPYP5A7X4KC32JR</ns3:PartnerprofileId>
+          <ns3:RecId xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+          <ns3:RecVersion xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+          <ns3:TableName xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+        </ns3:bhnCleanUpMegatron>
+      </ns3:bhnCleanUpMegatron>
+    </ns2:bhnCleanUpMegatronServiceCreateRequest>
+  </soap:Body>
+</soap:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/bhnCleanUpMegatronService/create"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="http://tempuri.org/bhnCleanUpMegatronService/delete" name="delete" bindingOperationName="delete" type="Request-Response" inputName="bhnCleanUpMegatronServiceDeleteRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhncleanupmegatronservice.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org" xmlns:ent="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList" xmlns:ent1="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKey">
    <soapenv:Header/>
    <soapenv:Body>
       <tem:bhnCleanUpMegatronServiceDeleteRequest>
@@ -9054,7 +9185,7 @@ Affiliate:Affiliate number.</xs:documentation>
                <!--Optional:-->
                <bhn:PBAHideDialog>No</bhn:PBAHideDialog>
                <!--Optional:-->
-               <bhn:PBAInventItemGroupId></bhn:PBAInventItemGroupId>
+               <bhn:PBAInventItemGroupId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                <!--Optional:-->
                <bhn:PBAItemAutoGenerated>No</bhn:PBAItemAutoGenerated>
                <!--Optional:-->
@@ -15064,7 +15195,7 @@ Affiliate:Affiliate number.</xs:documentation>
          </bhn:bhnSetUpComp3PS>
       </ser:bhnSetUpComp3PSServiceCreateRequest>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnSetUpComp3PSService/create"/></con:call><con:call name="Request (Dax Team)"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhnsetupcomp3psservice.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://schemas.microsoft.com/dynamics/2008/01/services" xmlns:bhn="http://schemas.microsoft.com/dynamics/2008/01/documents/bhnSetUpComp3PS">
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnSetUpComp3PSService/create"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Request (Dax Team)"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhnsetupcomp3psservice.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://schemas.microsoft.com/dynamics/2008/01/services" xmlns:bhn="http://schemas.microsoft.com/dynamics/2008/01/documents/bhnSetUpComp3PS">
    <soapenv:Header/>
    <soapenv:Body>
       <ser:bhnSetUpComp3PSServiceCreateRequest>
@@ -15073,15 +15204,15 @@ Affiliate:Affiliate number.</xs:documentation>
             <!--Optional:-->
             <bhn:DocPurpose>Original</bhn:DocPurpose>
             <!--Optional:-->
-            <bhn:SenderId></bhn:SenderId>
+            <bhn:SenderId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
             <!--Zero or more repetitions:-->
-            <bhn:bhnSetupComp3PS class="entity" >
+            <bhn:bhnSetupComp3PS class="entity">
                <!--Optional:-->
-               <bhn:_DocumentHash></bhn:_DocumentHash>
+               <bhn:_DocumentHash xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                <!--Optional:-->
                <bhn:MerchRecordNumber>123456</bhn:MerchRecordNumber>
                <!--Optional:-->
-               <bhn:Message></bhn:Message>
+               <bhn:Message xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                <!--Optional:-->
                <bhn:PartnerProfileId>1j2533hj5666</bhn:PartnerProfileId>
                <!--Optional:-->

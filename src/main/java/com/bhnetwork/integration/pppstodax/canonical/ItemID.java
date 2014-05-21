@@ -2,14 +2,13 @@ package com.bhnetwork.integration.pppstodax.canonical;
 
 import java.io.Serializable;
 
-
 /**
  * 
- * BHN Integration canonical model for ItemId (also known as IID)
- * per spec 3.3, doc ref: MasterDataGapAnalysisGROUP 3PS v 3_3 .xlsx 
+ * BHN Integration canonical model for ItemId (also known as IID) per spec 3.3,
+ * doc ref: MasterDataGapAnalysisGROUP 3PS v 3_3 .xlsx
  * 
  * @author Stephane Rata - Got SOA?
- *
+ * 
  */
 public class ItemID implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -21,15 +20,15 @@ public class ItemID implements Serializable {
 	private String name;
 	private String newIidReasonCode;
 	private String iidActivationType;
-	private String iidCaseCount;
+	private Integer iidCaseCount;
 	private String iidCountry;
 	private String iidDescription;
-	private String iidPackSize;
+	private Integer iidPackSize;
 	private String iidProdPackType;
+	private Boolean iidUseStdUnitConvert;
 	private String inventBatchId;
 	private String itemId;
 	private String recId;
-	private Boolean useStdUnitConvert;
 	public String getBhnGUID() {
 		return bhnGUID;
 	}
@@ -78,10 +77,10 @@ public class ItemID implements Serializable {
 	public void setIidActivationType(String iidActivationType) {
 		this.iidActivationType = iidActivationType;
 	}
-	public String getIidCaseCount() {
+	public Integer getIidCaseCount() {
 		return iidCaseCount;
 	}
-	public void setIidCaseCount(String iidCaseCount) {
+	public void setIidCaseCount(Integer iidCaseCount) {
 		this.iidCaseCount = iidCaseCount;
 	}
 	public String getIidCountry() {
@@ -96,10 +95,10 @@ public class ItemID implements Serializable {
 	public void setIidDescription(String iidDescription) {
 		this.iidDescription = iidDescription;
 	}
-	public String getIidPackSize() {
+	public Integer getIidPackSize() {
 		return iidPackSize;
 	}
-	public void setIidPackSize(String iidPackSize) {
+	public void setIidPackSize(Integer iidPackSize) {
 		this.iidPackSize = iidPackSize;
 	}
 	public String getIidProdPackType() {
@@ -107,6 +106,12 @@ public class ItemID implements Serializable {
 	}
 	public void setIidProdPackType(String iidProdPackType) {
 		this.iidProdPackType = iidProdPackType;
+	}
+	public Boolean getIidUseStdUnitConvert() {
+		return iidUseStdUnitConvert;
+	}
+	public void setIidUseStdUnitConvert(Boolean iidUseStdUnitConvert) {
+		this.iidUseStdUnitConvert = iidUseStdUnitConvert;
 	}
 	public String getInventBatchId() {
 		return inventBatchId;
@@ -126,11 +131,8 @@ public class ItemID implements Serializable {
 	public void setRecId(String recId) {
 		this.recId = recId;
 	}
-	public Boolean getUseStdUnitConvert() {
-		return useStdUnitConvert;
-	}
-	public void setUseStdUnitConvert(Boolean useStdUnitConvert) {
-		this.useStdUnitConvert = useStdUnitConvert;
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 	
 }

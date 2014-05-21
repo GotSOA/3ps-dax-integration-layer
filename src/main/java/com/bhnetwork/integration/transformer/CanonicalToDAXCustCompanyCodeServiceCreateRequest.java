@@ -17,6 +17,7 @@ import org.mule.transformer.AbstractMessageTransformer;
 
 import com.bhnetwork.integration.pppstodax.canonical.Company;
 import com.bhnetwork.integration.pppstodax.canonical.PartnerProfile;
+import com.bhnnetwork.util.CalendarUtil;
 import com.microsoft.schemas.dynamics._2008._01.documents.custcompanycode.AxdCustCompanyCode;
 import com.microsoft.schemas.dynamics._2008._01.documents.custcompanycode.AxdEntityBhnCustCompanyTable;
 import com.microsoft.schemas.dynamics._2008._01.documents.custcompanycode.AxdEntityBhnOnlineCompanyAttributes;
@@ -42,7 +43,7 @@ public class CanonicalToDAXCustCompanyCodeServiceCreateRequest extends AbstractM
 		bhnCustCompanyTable1.setCompanyCode(companyObj.getCompanyCode());
 		bhnCustCompanyTable1.setContractComplete(companyObj.getCompanyIsContractComplete()? AxdEnumNoYes.YES: AxdEnumNoYes.NO);
 		try {
-			bhnCustCompanyTable1.setContractExpDate(dateToXMLGregorianCalendar(companyObj.getContractExpDate()));
+			bhnCustCompanyTable1.setContractExpDate(CalendarUtil.dateToXMLGregorianCalendar(companyObj.getContractExpDate()));
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -87,20 +88,5 @@ public class CanonicalToDAXCustCompanyCodeServiceCreateRequest extends AbstractM
 		
 		return req;
 	}
-
-	private XMLGregorianCalendar dateToXMLGregorianCalendar(Date date)
-			throws ParseException, DatatypeConfigurationException {
-		XMLGregorianCalendar result = null;
-		GregorianCalendar gregorianCalendar;
-
-		gregorianCalendar = (GregorianCalendar) GregorianCalendar.getInstance();
-		gregorianCalendar.setTime(date);
-		result = DatatypeFactory.newInstance().newXMLGregorianCalendarDate(
-				gregorianCalendar.get(Calendar.YEAR),
-				gregorianCalendar.get(Calendar.MONTH) + 1,
-				gregorianCalendar.get(Calendar.DAY_OF_MONTH),
-				DatatypeConstants.FIELD_UNDEFINED);
-		return result;
-	}
-
+	
 }

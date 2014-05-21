@@ -116,7 +116,7 @@ http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schem
 
         <!-- <custom-transformer class="" doc:name="Enrich-Canonical-w-DAX-values"/> -->
         <logger level="INFO" doc:name="Log bhnGUID and recId" message="bhnGUID=#[sessionVars.canon.company.bhnGUID] and recId=#[sessionVars.canon.company.recId]"/>
-        <vm:outbound-endpoint exchange-pattern="one-way" path="Q.error" doc:name="TO_BE_DELETED VM-error"/>
+        <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step5" doc:name="TO_BE_DELETED Q.step5"/>
         <!-- <choice doc:name="Choice">
             <when expression="">
                 <logger level="INFO" doc:name="step1-error"/>
@@ -141,6 +141,34 @@ http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schem
         </cxf:jaxws-client>
         <expression-component doc:name="NTLM credentials"><![CDATA[flowVars['username']='${dax.username}'; flowVars['password']='${dax.password}'; flowVars['domain']='${dax.domain}'; flowVars['realm']='${dax.realm}' ;]]></expression-component>
         <http:outbound-endpoint exchange-pattern="request-response" host="${dax.http.host}" port="${dax.http.port}" path="${dax.http.company.path}" method="POST" transformer-refs="objectToByteArrayTransformer" doc:name="HTTP"/>
+    </sub-flow>
+    <flow name="DAX-step5-flow" doc:name="DAX-step5-flow">
+        <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-step5" path="Q.step5" />
+        <set-payload value="#[sessionVars.canon]" doc:name="Canonical Payload from Session"/>
+
+        <custom-transformer class="com.bhnetwork.integration.transformer.CanonicalToBhnIIDAttributesServiceCreateRequest" doc:name="Canon-to-IIDRequest"/>
+        <enricher doc:name="Enrich-Canonical-w-DAX-values ">
+
+            <flow-ref name="daxIIDWebServiceClient" doc:name="Invoke Dax IID Webservice"/>
+            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[0].value]" target="#[sessionVars.canon.company.cpDivision[0].products[0].iid.inventBatchId]"/>
+            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[1].value]" target="#[sessionVars.canon.company.cpDivision[0].products[0].iid.itemId]"/>
+            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[2].value]" target="#[sessionVars.canon.company.cpDivision[0].products[0].iid.bhnGUID]"/>
+            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[3].value]" target="#[sessionVars.canon.company.cpDivision[0].products[0].iid.recId]"/>
+        </enricher>
+        <logger level="INFO" doc:name="Log bhnGUID and recId" message="bhnGUID=#[sessionVars.canon.company.cpDivision[0].products[0].iid.bhnGUID] and recId=#[sessionVars.canon.company.cpDivision[0].products[0].iid.recId]"/>
+        <vm:outbound-endpoint exchange-pattern="one-way" path="Q.error" doc:name="TO_BE_DELETED VM-error"/>
+    </flow>
+    <sub-flow name="daxIIDWebServiceClient" doc:name="daxIIDWebServiceClient">
+        <cxf:jaxws-client operation="create" clientClass="org.tempuri.BhnIIDAttributesService_Service" port="BasicHttpBinding_bhnIIDAttributesService" doc:name="SOAP">
+            <cxf:inInterceptors>
+                <spring:ref bean="loggingIn"/>
+            </cxf:inInterceptors>
+            <cxf:outInterceptors>
+                <spring:ref bean="loggingOut"/>
+            </cxf:outInterceptors>
+        </cxf:jaxws-client>
+        <expression-component doc:name="NTLM credentials"><![CDATA[flowVars['username']='${dax.username}'; flowVars['password']='${dax.password}'; flowVars['domain']='${dax.domain}'; flowVars['realm']='${dax.realm}' ;]]></expression-component>
+        <http:outbound-endpoint exchange-pattern="request-response" host="${dax.http.host}" port="${dax.http.port}" path="${dax.http.iid.path}" method="POST" transformer-refs="objectToByteArrayTransformer" doc:name="HTTP"/>
     </sub-flow>
     <flow name="DAX-error-flow" doc:name="DAX-error-flow">
         <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-error" path="Q.error"/>

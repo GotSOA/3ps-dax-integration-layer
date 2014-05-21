@@ -311,15 +311,15 @@
 <Field __index="189" __sourcePath="{}/object/ProductInformation/substitutionPortalDisplayName" containerType="SINGLE" label="substitutionPortalDisplayName" name="substitutionPortalDisplayName" type="string"/>
 <Field __index="190" __sourcePath="{}/object/ProductInformation/iid/divisionCardImageURL" containerType="SINGLE" label="divisionCardImageURL" name="divisionCardImageURL" type="string"/>
 <Field __index="191" __sourcePath="{}/object/ProductInformation/iid/iidActivationType" containerType="SINGLE" label="iidActivationType" name="iidActivationType" type="string"/>
-<Field __index="192" __sourcePath="{}/object/ProductInformation/iid/iidCaseCount" containerType="SINGLE" label="iidCaseCount" name="iidCaseCount" type="string"/>
+<Field __index="192" __sourcePath="{}/object/ProductInformation/iid/iidCaseCount" containerType="SINGLE" label="iidCaseCount" name="iidCaseCount" type="number"/>
 <Field __index="193" __sourcePath="{}/object/ProductInformation/iid/iidCountry" containerType="SINGLE" label="iidCountry" name="iidCountry" type="string"/>
 <Field __index="194" __sourcePath="{}/object/ProductInformation/iid/iidDescription" containerType="SINGLE" label="iidDescription" name="iidDescription" type="string"/>
-<Field __index="195" __sourcePath="{}/object/ProductInformation/iid/iidPackSize" containerType="SINGLE" label="iidPackSize" name="iidPackSize" type="string"/>
+<Field __index="195" __sourcePath="{}/object/ProductInformation/iid/iidPackSize" containerType="SINGLE" label="iidPackSize" name="iidPackSize" type="number"/>
 <Field __index="196" __sourcePath="{}/object/ProductInformation/iid/iidProdPackType" containerType="SINGLE" label="iidProdPackType" name="iidProdPackType" type="string"/>
 <Field __index="197" __sourcePath="{}/object/ProductInformation/iid/name" containerType="SINGLE" label="name" name="name" type="string"/>
 <Field __index="198" __sourcePath="{}/object/ProductInformation/iid/language" containerType="SINGLE" label="language" name="language" type="string"/>
 <Field __index="199" __sourcePath="{}/object/ProductInformation/iid/newIIDReasonCode" containerType="SINGLE" label="newIIDReasonCode" name="newIIDReasonCode" type="string"/>
-<Field __index="200" __sourcePath="{}/object/ProductInformation/iid/useStdUnitConvert" containerType="SINGLE" label="useStdUnitConvert" name="useStdUnitConvert" type="boolean"/>
+<Field __index="200" __sourcePath="{}/object/ProductInformation/iid/iidUseStdUnitConvert" containerType="SINGLE" label="iidUseStdUnitConvert" name="iidUseStdUnitConvert" type="boolean"/>
 </Record>
 </Metadata>
 <Metadata __index="54" __referenceCounter="1" __sourcePath="{}/object/company/cpDivision/products" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _metadataParentId="d9358f29-0f11-40da-9f1a-fbe2df974bd6" _parent_id="__parent_id" _type="Output" id="8f2a44d4-84ea-46c8-b58d-c6c2219d162a">
@@ -336,18 +336,18 @@
 <Field __index="61" __sourcePath="{}/object/company/cpDivision/products/iid/divisionCardImageURL" containerType="SINGLE" label="divisionCardImageURL" name="divisionCardImageURL" type="string"/>
 <Field __index="62" __sourcePath="{}/object/company/cpDivision/products/iid/divisionCode" containerType="SINGLE" label="divisionCode" name="divisionCode_1" type="string"/>
 <Field __index="63" __sourcePath="{}/object/company/cpDivision/products/iid/iidActivationType" containerType="SINGLE" label="iidActivationType" name="iidActivationType" type="string"/>
-<Field __index="64" __sourcePath="{}/object/company/cpDivision/products/iid/iidCaseCount" containerType="SINGLE" label="iidCaseCount" name="iidCaseCount" type="string"/>
+<Field __index="64" __sourcePath="{}/object/company/cpDivision/products/iid/iidCaseCount" containerType="SINGLE" label="iidCaseCount" name="iidCaseCount" type="integer"/>
 <Field __index="65" __sourcePath="{}/object/company/cpDivision/products/iid/iidCountry" containerType="SINGLE" label="iidCountry" name="iidCountry" type="string"/>
 <Field __index="66" __sourcePath="{}/object/company/cpDivision/products/iid/iidDescription" containerType="SINGLE" label="iidDescription" name="iidDescription" type="string"/>
-<Field __index="67" __sourcePath="{}/object/company/cpDivision/products/iid/iidPackSize" containerType="SINGLE" label="iidPackSize" name="iidPackSize" type="string"/>
+<Field __index="67" __sourcePath="{}/object/company/cpDivision/products/iid/iidPackSize" containerType="SINGLE" label="iidPackSize" name="iidPackSize" type="integer"/>
 <Field __index="68" __sourcePath="{}/object/company/cpDivision/products/iid/iidProdPackType" containerType="SINGLE" label="iidProdPackType" name="iidProdPackType" type="string"/>
-<Field __index="69" __sourcePath="{}/object/company/cpDivision/products/iid/inventBatchId" containerType="SINGLE" label="inventBatchId" name="inventBatchId" type="string"/>
-<Field __index="70" __sourcePath="{}/object/company/cpDivision/products/iid/itemId" containerType="SINGLE" label="itemId" name="itemId" type="string"/>
-<Field __index="71" __sourcePath="{}/object/company/cpDivision/products/iid/language" containerType="SINGLE" label="language" name="language" type="string"/>
-<Field __index="72" __sourcePath="{}/object/company/cpDivision/products/iid/name" containerType="SINGLE" label="name" name="name" type="string"/>
-<Field __index="73" __sourcePath="{}/object/company/cpDivision/products/iid/newIidReasonCode" containerType="SINGLE" label="newIidReasonCode" name="newIidReasonCode" type="string"/>
-<Field __index="74" __sourcePath="{}/object/company/cpDivision/products/iid/recId" containerType="SINGLE" label="recId" name="recId" type="string"/>
-<Field __index="75" __sourcePath="{}/object/company/cpDivision/products/iid/useStdUnitConvert" containerType="SINGLE" label="useStdUnitConvert" name="useStdUnitConvert" type="boolean"/>
+<Field __index="69" __sourcePath="{}/object/company/cpDivision/products/iid/iidUseStdUnitConvert" containerType="SINGLE" label="iidUseStdUnitConvert" name="iidUseStdUnitConvert" type="boolean"/>
+<Field __index="70" __sourcePath="{}/object/company/cpDivision/products/iid/inventBatchId" containerType="SINGLE" label="inventBatchId" name="inventBatchId" type="string"/>
+<Field __index="71" __sourcePath="{}/object/company/cpDivision/products/iid/itemId" containerType="SINGLE" label="itemId" name="itemId" type="string"/>
+<Field __index="72" __sourcePath="{}/object/company/cpDivision/products/iid/language" containerType="SINGLE" label="language" name="language" type="string"/>
+<Field __index="73" __sourcePath="{}/object/company/cpDivision/products/iid/name" containerType="SINGLE" label="name" name="name" type="string"/>
+<Field __index="74" __sourcePath="{}/object/company/cpDivision/products/iid/newIidReasonCode" containerType="SINGLE" label="newIidReasonCode" name="newIidReasonCode" type="string"/>
+<Field __index="75" __sourcePath="{}/object/company/cpDivision/products/iid/recId" containerType="SINGLE" label="recId" name="recId" type="string"/>
 <Field __index="76" __sourcePath="{}/object/company/cpDivision/products/isActivationRequired" containerType="SINGLE" label="isActivationRequired" name="isActivationRequired" type="boolean"/>
 <Field __index="77" __sourcePath="{}/object/company/cpDivision/products/isProductDenominationVariable" containerType="SINGLE" label="isProductDenominationVariable" name="isProductDenominationVariable" type="boolean"/>
 <Field __index="78" __sourcePath="{}/object/company/cpDivision/products/isReloadable" containerType="SINGLE" label="isReloadable" name="isReloadable" type="boolean"/>
@@ -437,29 +437,29 @@
 <Phase number="0">
 <Node cacheInMemory="true" enabled="enabled" fileURL="dict:outputPayload" guiName="Pojo WRITER" guiX="900" guiY="20" id="BEAN_WRITER0" type="BEAN_WRITER">
 <attr name="mapping"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
-<object xmlns:clover="http://www.cloveretl.com/ns/xmlmapping" clover:inPort="3">
+<object xmlns:clover="http://www.cloveretl.com/ns/xmlmapping" clover:inPort="2">
   <company>
-    <bhnGUID>$3.bhnGUID</bhnGUID>
-    <companyAddressLine1>$3.companyAddressLine1</companyAddressLine1>
-    <companyAddressLine2>$3.companyAddressLine2</companyAddressLine2>
-    <companyBHNSetupComplete>$3.companyBHNSetupComplete</companyBHNSetupComplete>
-    <companyCity>$3.companyCity</companyCity>
-    <companyCode>$3.companyCode</companyCode>
-    <companyContractTerm>$3.companyContractTerm</companyContractTerm>
-    <companyCountry>$3.companyCountry</companyCountry>
-    <companyIsContractComplete>$3.companyIsContractComplete</companyIsContractComplete>
-    <companyLegalName>$3.companyLegalName</companyLegalName>
-    <companyMerchantCategoryCode>$3.companyMerchantCategoryCode</companyMerchantCategoryCode>
-    <companyPrimaryContactBusinessTitle>$3.companyPrimaryContactBusinessTitle</companyPrimaryContactBusinessTitle>
-    <companyPrimaryContactEmail>$3.companyPrimaryContactEmail</companyPrimaryContactEmail>
-    <companyPrimaryContactFirstName>$3.companyPrimaryContactFirstName</companyPrimaryContactFirstName>
-    <companyPrimaryContactLastName>$3.companyPrimaryContactLastName</companyPrimaryContactLastName>
-    <companyPrimaryPhoneNumber>$3.companyPrimaryPhoneNumber</companyPrimaryPhoneNumber>
-    <companyPrimaryPhoneNumberExt>$3.companyPrimaryPhoneNumberExt</companyPrimaryPhoneNumberExt>
-    <companyState>$3.companyState</companyState>
-    <companyWebSiteURL>$3.companyWebSiteURL</companyWebSiteURL>
-    <companyZipPostalCode>$3.companyZipPostalCode</companyZipPostalCode>
-    <contractExpDate>$3.contractExpDate</contractExpDate>
+    <bhnGUID>$2.bhnGUID</bhnGUID>
+    <companyAddressLine1>$2.companyAddressLine1</companyAddressLine1>
+    <companyAddressLine2>$2.companyAddressLine2</companyAddressLine2>
+    <companyBHNSetupComplete>$2.companyBHNSetupComplete</companyBHNSetupComplete>
+    <companyCity>$2.companyCity</companyCity>
+    <companyCode>$2.companyCode</companyCode>
+    <companyContractTerm>$2.companyContractTerm</companyContractTerm>
+    <companyCountry>$2.companyCountry</companyCountry>
+    <companyIsContractComplete>$2.companyIsContractComplete</companyIsContractComplete>
+    <companyLegalName>$2.companyLegalName</companyLegalName>
+    <companyMerchantCategoryCode>$2.companyMerchantCategoryCode</companyMerchantCategoryCode>
+    <companyPrimaryContactBusinessTitle>$2.companyPrimaryContactBusinessTitle</companyPrimaryContactBusinessTitle>
+    <companyPrimaryContactEmail>$2.companyPrimaryContactEmail</companyPrimaryContactEmail>
+    <companyPrimaryContactFirstName>$2.companyPrimaryContactFirstName</companyPrimaryContactFirstName>
+    <companyPrimaryContactLastName>$2.companyPrimaryContactLastName</companyPrimaryContactLastName>
+    <companyPrimaryPhoneNumber>$2.companyPrimaryPhoneNumber</companyPrimaryPhoneNumber>
+    <companyPrimaryPhoneNumberExt>$2.companyPrimaryPhoneNumberExt</companyPrimaryPhoneNumberExt>
+    <companyState>$2.companyState</companyState>
+    <companyWebSiteURL>$2.companyWebSiteURL</companyWebSiteURL>
+    <companyZipPostalCode>$2.companyZipPostalCode</companyZipPostalCode>
+    <contractExpDate>$2.contractExpDate</contractExpDate>
     <clover:collection clover:name="cpDivision">
       <item clover:inPort="0" clover:key="__parent_id" clover:parentKey="__id">
         <accountType>$0.accountType</accountType>
@@ -496,144 +496,144 @@
         <processorContactPhoneNumberExt>$0.processorContactPhoneNumberExt</processorContactPhoneNumberExt>
         <processorHasRealTimeIssuance>$0.processorHasRealTimeIssuance</processorHasRealTimeIssuance>
         <clover:collection clover:name="products">
-          <item clover:inPort="1" clover:key="__parent_id" clover:parentKey="__id">
-            <bhnGUID>$1.bhnGUID</bhnGUID>
-            <bhnIsEANUPC>$1.bhnIsEANUPC</bhnIsEANUPC>
-            <companyCode>$1.companyCode</companyCode>
-            <customTemplatePathURL>$1.customTemplatePathURL</customTemplatePathURL>
-            <divisionCode>$1.divisionCode</divisionCode>
+          <item clover:inPort="3" clover:key="__parent_id" clover:parentKey="__id">
+            <bhnGUID>$3.bhnGUID</bhnGUID>
+            <bhnIsEANUPC>$3.bhnIsEANUPC</bhnIsEANUPC>
+            <companyCode>$3.companyCode</companyCode>
+            <customTemplatePathURL>$3.customTemplatePathURL</customTemplatePathURL>
+            <divisionCode>$3.divisionCode</divisionCode>
             <iid>
-              <bhnGUID>$1.bhnGUID_1</bhnGUID>
-              <divisionBrandName>$1.divisionBrandName</divisionBrandName>
-              <divisionCardImageURL>$1.divisionCardImageURL</divisionCardImageURL>
-              <divisionCode>$1.divisionCode_1</divisionCode>
-              <iidActivationType>$1.iidActivationType</iidActivationType>
-              <iidCaseCount>$1.iidCaseCount</iidCaseCount>
-              <iidCountry>$1.iidCountry</iidCountry>
-              <iidDescription>$1.iidDescription</iidDescription>
-              <iidPackSize>$1.iidPackSize</iidPackSize>
-              <iidProdPackType>$1.iidProdPackType</iidProdPackType>
-              <inventBatchId>$1.inventBatchId</inventBatchId>
-              <itemId>$1.itemId</itemId>
-              <language>$1.language</language>
-              <name>$1.name</name>
-              <newIidReasonCode>$1.newIidReasonCode</newIidReasonCode>
-              <recId>$1.recId</recId>
-              <useStdUnitConvert>$1.useStdUnitConvert</useStdUnitConvert>
+              <bhnGUID>$3.bhnGUID_1</bhnGUID>
+              <divisionBrandName>$3.divisionBrandName</divisionBrandName>
+              <divisionCardImageURL>$3.divisionCardImageURL</divisionCardImageURL>
+              <divisionCode>$3.divisionCode_1</divisionCode>
+              <iidActivationType>$3.iidActivationType</iidActivationType>
+              <iidCaseCount>$3.iidCaseCount</iidCaseCount>
+              <iidCountry>$3.iidCountry</iidCountry>
+              <iidDescription>$3.iidDescription</iidDescription>
+              <iidPackSize>$3.iidPackSize</iidPackSize>
+              <iidProdPackType>$3.iidProdPackType</iidProdPackType>
+              <iidUseStdUnitConvert>$3.iidUseStdUnitConvert</iidUseStdUnitConvert>
+              <inventBatchId>$3.inventBatchId</inventBatchId>
+              <itemId>$3.itemId</itemId>
+              <language>$3.language</language>
+              <name>$3.name</name>
+              <newIidReasonCode>$3.newIidReasonCode</newIidReasonCode>
+              <recId>$3.recId</recId>
             </iid>
-            <isActivationRequired>$1.isActivationRequired</isActivationRequired>
-            <isProductDenominationVariable>$1.isProductDenominationVariable</isProductDenominationVariable>
-            <isReloadable>$1.isReloadable</isReloadable>
-            <processorCode>$1.processorCode</processorCode>
-            <productAccountInquiryBIN>$1.productAccountInquiryBIN</productAccountInquiryBIN>
-            <productAccountTopupBIN>$1.productAccountTopupBIN</productAccountTopupBIN>
-            <productActivationInstructions>$1.productActivationInstructions</productActivationInstructions>
-            <productBHNNotes>$1.productBHNNotes</productBHNNotes>
-            <productBINForDARTransaction>$1.productBINForDARTransaction</productBINForDARTransaction>
-            <productBackCardTemplateId>$1.productBackCardTemplateId</productBackCardTemplateId>
-            <productBuyerGroup>$1.productBuyerGroup</productBuyerGroup>
-            <productChannelDimension>$1.productChannelDimension</productChannelDimension>
-            <productClassification>$1.productClassification</productClassification>
-            <productCurrency>$1.productCurrency</productCurrency>
-            <productDefaultIID>$1.productDefaultIID</productDefaultIID>
-            <productDenomination>$1.productDenomination</productDenomination>
-            <productDimensionCode>$1.productDimensionCode</productDimensionCode>
-            <productDimensionGroup>$1.productDimensionGroup</productDimensionGroup>
-            <productExpDate>$1.productExpDate</productExpDate>
-            <productExpLength>$1.productExpLength</productExpLength>
-            <productGroup>$1.productGroup</productGroup>
-            <productInventorySource>$1.productInventorySource</productInventorySource>
-            <productIsCheckMinMax>$1.productIsCheckMinMax</productIsCheckMinMax>
-            <productIsTaxable>$1.productIsTaxable</productIsTaxable>
-            <productIsUsingStandardDesign>$1.productIsUsingStandardDesign</productIsUsingStandardDesign>
-            <productIssuerCompanyCode>$1.productIssuerCompanyCode</productIssuerCompanyCode>
-            <productItemGroupId>$1.productItemGroupId</productItemGroupId>
-            <productItemName>$1.productItemName</productItemName>
-            <productMaximumFaceValue>$1.productMaximumFaceValue</productMaximumFaceValue>
-            <productMinimumFaceValue>$1.productMinimumFaceValue</productMinimumFaceValue>
-            <productModelGroupId>$1.productModelGroupId</productModelGroupId>
-            <productMultiCardIndicator>$1.productMultiCardIndicator</productMultiCardIndicator>
-            <productNewUPCReason>$1.productNewUPCReason</productNewUPCReason>
-            <productOwnershipType>$1.productOwnershipType</productOwnershipType>
-            <productSubstitutionGroup>$1.productSubstitutionGroup</productSubstitutionGroup>
-            <productTaxIncluded>$1.productTaxIncluded</productTaxIncluded>
-            <productTermsAndConditions>$1.productTermsAndConditions</productTermsAndConditions>
-            <productType>$1.productType</productType>
-            <productTypeId>$1.productTypeId</productTypeId>
-            <reloadMaxAmount>$1.reloadMaxAmount</reloadMaxAmount>
-            <reloadMinAmount>$1.reloadMinAmount</reloadMinAmount>
+            <isActivationRequired>$3.isActivationRequired</isActivationRequired>
+            <isProductDenominationVariable>$3.isProductDenominationVariable</isProductDenominationVariable>
+            <isReloadable>$3.isReloadable</isReloadable>
+            <processorCode>$3.processorCode</processorCode>
+            <productAccountInquiryBIN>$3.productAccountInquiryBIN</productAccountInquiryBIN>
+            <productAccountTopupBIN>$3.productAccountTopupBIN</productAccountTopupBIN>
+            <productActivationInstructions>$3.productActivationInstructions</productActivationInstructions>
+            <productBHNNotes>$3.productBHNNotes</productBHNNotes>
+            <productBINForDARTransaction>$3.productBINForDARTransaction</productBINForDARTransaction>
+            <productBackCardTemplateId>$3.productBackCardTemplateId</productBackCardTemplateId>
+            <productBuyerGroup>$3.productBuyerGroup</productBuyerGroup>
+            <productChannelDimension>$3.productChannelDimension</productChannelDimension>
+            <productClassification>$3.productClassification</productClassification>
+            <productCurrency>$3.productCurrency</productCurrency>
+            <productDefaultIID>$3.productDefaultIID</productDefaultIID>
+            <productDenomination>$3.productDenomination</productDenomination>
+            <productDimensionCode>$3.productDimensionCode</productDimensionCode>
+            <productDimensionGroup>$3.productDimensionGroup</productDimensionGroup>
+            <productExpDate>$3.productExpDate</productExpDate>
+            <productExpLength>$3.productExpLength</productExpLength>
+            <productGroup>$3.productGroup</productGroup>
+            <productInventorySource>$3.productInventorySource</productInventorySource>
+            <productIsCheckMinMax>$3.productIsCheckMinMax</productIsCheckMinMax>
+            <productIsTaxable>$3.productIsTaxable</productIsTaxable>
+            <productIsUsingStandardDesign>$3.productIsUsingStandardDesign</productIsUsingStandardDesign>
+            <productIssuerCompanyCode>$3.productIssuerCompanyCode</productIssuerCompanyCode>
+            <productItemGroupId>$3.productItemGroupId</productItemGroupId>
+            <productItemName>$3.productItemName</productItemName>
+            <productMaximumFaceValue>$3.productMaximumFaceValue</productMaximumFaceValue>
+            <productMinimumFaceValue>$3.productMinimumFaceValue</productMinimumFaceValue>
+            <productModelGroupId>$3.productModelGroupId</productModelGroupId>
+            <productMultiCardIndicator>$3.productMultiCardIndicator</productMultiCardIndicator>
+            <productNewUPCReason>$3.productNewUPCReason</productNewUPCReason>
+            <productOwnershipType>$3.productOwnershipType</productOwnershipType>
+            <productSubstitutionGroup>$3.productSubstitutionGroup</productSubstitutionGroup>
+            <productTaxIncluded>$3.productTaxIncluded</productTaxIncluded>
+            <productTermsAndConditions>$3.productTermsAndConditions</productTermsAndConditions>
+            <productType>$3.productType</productType>
+            <productTypeId>$3.productTypeId</productTypeId>
+            <reloadMaxAmount>$3.reloadMaxAmount</reloadMaxAmount>
+            <reloadMinAmount>$3.reloadMinAmount</reloadMinAmount>
             <substGrp>
-              <brandRecId>$1.brandRecId</brandRecId>
-              <guid>$1.guid</guid>
-              <subGroupId>$1.subGroupId</subGroupId>
-              <substitutionBrandDenomDescription>$1.substitutionBrandDenomDescription</substitutionBrandDenomDescription>
-              <substitutionCardDisplayDesc>$1.substitutionCardDisplayDesc</substitutionCardDisplayDesc>
-              <substitutionPOG1Category>$1.substitutionPOG1Category</substitutionPOG1Category>
-              <substitutionPOG2Category>$1.substitutionPOG2Category</substitutionPOG2Category>
-              <substitutionPOG3Category>$1.substitutionPOG3Category</substitutionPOG3Category>
-              <substitutionPortalDisplayName>$1.substitutionPortalDisplayName</substitutionPortalDisplayName>
+              <brandRecId>$3.brandRecId</brandRecId>
+              <guid>$3.guid</guid>
+              <subGroupId>$3.subGroupId</subGroupId>
+              <substitutionBrandDenomDescription>$3.substitutionBrandDenomDescription</substitutionBrandDenomDescription>
+              <substitutionCardDisplayDesc>$3.substitutionCardDisplayDesc</substitutionCardDisplayDesc>
+              <substitutionPOG1Category>$3.substitutionPOG1Category</substitutionPOG1Category>
+              <substitutionPOG2Category>$3.substitutionPOG2Category</substitutionPOG2Category>
+              <substitutionPOG3Category>$3.substitutionPOG3Category</substitutionPOG3Category>
+              <substitutionPortalDisplayName>$3.substitutionPortalDisplayName</substitutionPortalDisplayName>
             </substGrp>
           </item>
         </clover:collection>
         <recId>$0.recId</recId>
         <clover:collection clover:name="stores">
-          <item clover:inPort="2" clover:key="__parent_id" clover:parentKey="__id">
-            <accountNum>$2.accountNum</accountNum>
-            <bhnCompanyCode>$2.bhnCompanyCode</bhnCompanyCode>
-            <bhnDivisionCode>$2.bhnDivisionCode</bhnDivisionCode>
-            <bhnGUID>$2.bhnGUID</bhnGUID>
-            <companyPhysicalStoreAddressLine1>$2.companyPhysicalStoreAddressLine1</companyPhysicalStoreAddressLine1>
-            <companyPhysicalStoreCountry>$2.companyPhysicalStoreCountry</companyPhysicalStoreCountry>
-            <productLanguage>$2.productLanguage</productLanguage>
-            <storeBHNCustLevel>$2.storeBHNCustLevel</storeBHNCustLevel>
-            <storeBHNStoreCode>$2.storeBHNStoreCode</storeBHNStoreCode>
-            <storeBlocked>$2.storeBlocked</storeBlocked>
-            <storeChannelDimension>$2.storeChannelDimension</storeChannelDimension>
-            <storeContactPhoneNumber>$2.storeContactPhoneNumber</storeContactPhoneNumber>
-            <storeCountryRegionId>$2.storeCountryRegionId</storeCountryRegionId>
-            <storeCustGroup>$2.storeCustGroup</storeCustGroup>
-            <storeDimensionPAC>$2.storeDimensionPAC</storeDimensionPAC>
-            <storeDimensionRegion>$2.storeDimensionRegion</storeDimensionRegion>
-            <storePhysicalStoreAddressLine1>$2.storePhysicalStoreAddressLine1</storePhysicalStoreAddressLine1>
-            <storePhysicalStoreAddressLine2>$2.storePhysicalStoreAddressLine2</storePhysicalStoreAddressLine2>
-            <storePhysicalStoreCity>$2.storePhysicalStoreCity</storePhysicalStoreCity>
-            <storePhysicalStoreName>$2.storePhysicalStoreName</storePhysicalStoreName>
-            <storePhysicalStorePostalCode>$2.storePhysicalStorePostalCode</storePhysicalStorePostalCode>
-            <storePhysicalStoreState>$2.storePhysicalStoreState</storePhysicalStoreState>
-            <storePriceToleranceGroup>$2.storePriceToleranceGroup</storePriceToleranceGroup>
+          <item clover:inPort="1" clover:key="__parent_id" clover:parentKey="__id">
+            <accountNum>$1.accountNum</accountNum>
+            <bhnCompanyCode>$1.bhnCompanyCode</bhnCompanyCode>
+            <bhnDivisionCode>$1.bhnDivisionCode</bhnDivisionCode>
+            <bhnGUID>$1.bhnGUID</bhnGUID>
+            <companyPhysicalStoreAddressLine1>$1.companyPhysicalStoreAddressLine1</companyPhysicalStoreAddressLine1>
+            <companyPhysicalStoreCountry>$1.companyPhysicalStoreCountry</companyPhysicalStoreCountry>
+            <productLanguage>$1.productLanguage</productLanguage>
+            <storeBHNCustLevel>$1.storeBHNCustLevel</storeBHNCustLevel>
+            <storeBHNStoreCode>$1.storeBHNStoreCode</storeBHNStoreCode>
+            <storeBlocked>$1.storeBlocked</storeBlocked>
+            <storeChannelDimension>$1.storeChannelDimension</storeChannelDimension>
+            <storeContactPhoneNumber>$1.storeContactPhoneNumber</storeContactPhoneNumber>
+            <storeCountryRegionId>$1.storeCountryRegionId</storeCountryRegionId>
+            <storeCustGroup>$1.storeCustGroup</storeCustGroup>
+            <storeDimensionPAC>$1.storeDimensionPAC</storeDimensionPAC>
+            <storeDimensionRegion>$1.storeDimensionRegion</storeDimensionRegion>
+            <storePhysicalStoreAddressLine1>$1.storePhysicalStoreAddressLine1</storePhysicalStoreAddressLine1>
+            <storePhysicalStoreAddressLine2>$1.storePhysicalStoreAddressLine2</storePhysicalStoreAddressLine2>
+            <storePhysicalStoreCity>$1.storePhysicalStoreCity</storePhysicalStoreCity>
+            <storePhysicalStoreName>$1.storePhysicalStoreName</storePhysicalStoreName>
+            <storePhysicalStorePostalCode>$1.storePhysicalStorePostalCode</storePhysicalStorePostalCode>
+            <storePhysicalStoreState>$1.storePhysicalStoreState</storePhysicalStoreState>
+            <storePriceToleranceGroup>$1.storePriceToleranceGroup</storePriceToleranceGroup>
           </item>
         </clover:collection>
       </item>
     </clover:collection>
-    <legalEntityCode>$3.legalEntityCode</legalEntityCode>
-    <legalEntityStateOfIncorporation>$3.legalEntityStateOfIncorporation</legalEntityStateOfIncorporation>
-    <recId>$3.recId</recId>
+    <legalEntityCode>$2.legalEntityCode</legalEntityCode>
+    <legalEntityStateOfIncorporation>$2.legalEntityStateOfIncorporation</legalEntityStateOfIncorporation>
+    <recId>$2.recId</recId>
   </company>
   <vendor>
-    <accountNum>$3.accountNum</accountNum>
-    <companyLegalName>$3.companyLegalName_1</companyLegalName>
-    <divisionBrandName>$3.divisionBrandName</divisionBrandName>
-    <recId>$3.recId_1</recId>
-    <vendorAddress>$3.vendorAddress</vendorAddress>
-    <vendorBlocked>$3.vendorBlocked</vendorBlocked>
-    <vendorCity>$3.vendorCity</vendorCity>
-    <vendorCountryRegionId>$3.vendorCountryRegionId</vendorCountryRegionId>
-    <vendorCounty>$3.vendorCounty</vendorCounty>
-    <vendorCurrency>$3.vendorCurrency</vendorCurrency>
-    <vendorEmail>$3.vendorEmail</vendorEmail>
-    <vendorForeignEntityIndicator>$3.vendorForeignEntityIndicator</vendorForeignEntityIndicator>
-    <vendorGroup>$3.vendorGroup</vendorGroup>
-    <vendorLanguageId>$3.vendorLanguageId</vendorLanguageId>
-    <vendorPaymMode>$3.vendorPaymMode</vendorPaymMode>
-    <vendorPaymentTermsId>$3.vendorPaymentTermsId</vendorPaymentTermsId>
-    <vendorPhone>$3.vendorPhone</vendorPhone>
-    <vendorState>$3.vendorState</vendorState>
-    <vendorTax1099NameChoice>$3.vendorTax1099NameChoice</vendorTax1099NameChoice>
-    <vendorTax1099Reports>$3.vendorTax1099Reports</vendorTax1099Reports>
-    <vendorTaxIDNumber>$3.vendorTaxIDNumber</vendorTaxIDNumber>
-    <vendorW9>$3.vendorW9</vendorW9>
-    <vendorZipCode>$3.vendorZipCode</vendorZipCode>
-    <vendorstreet>$3.vendorstreet</vendorstreet>
+    <accountNum>$2.accountNum</accountNum>
+    <companyLegalName>$2.companyLegalName_1</companyLegalName>
+    <divisionBrandName>$2.divisionBrandName</divisionBrandName>
+    <recId>$2.recId_1</recId>
+    <vendorAddress>$2.vendorAddress</vendorAddress>
+    <vendorBlocked>$2.vendorBlocked</vendorBlocked>
+    <vendorCity>$2.vendorCity</vendorCity>
+    <vendorCountryRegionId>$2.vendorCountryRegionId</vendorCountryRegionId>
+    <vendorCounty>$2.vendorCounty</vendorCounty>
+    <vendorCurrency>$2.vendorCurrency</vendorCurrency>
+    <vendorEmail>$2.vendorEmail</vendorEmail>
+    <vendorForeignEntityIndicator>$2.vendorForeignEntityIndicator</vendorForeignEntityIndicator>
+    <vendorGroup>$2.vendorGroup</vendorGroup>
+    <vendorLanguageId>$2.vendorLanguageId</vendorLanguageId>
+    <vendorPaymMode>$2.vendorPaymMode</vendorPaymMode>
+    <vendorPaymentTermsId>$2.vendorPaymentTermsId</vendorPaymentTermsId>
+    <vendorPhone>$2.vendorPhone</vendorPhone>
+    <vendorState>$2.vendorState</vendorState>
+    <vendorTax1099NameChoice>$2.vendorTax1099NameChoice</vendorTax1099NameChoice>
+    <vendorTax1099Reports>$2.vendorTax1099Reports</vendorTax1099Reports>
+    <vendorTaxIDNumber>$2.vendorTaxIDNumber</vendorTaxIDNumber>
+    <vendorW9>$2.vendorW9</vendorW9>
+    <vendorZipCode>$2.vendorZipCode</vendorZipCode>
+    <vendorstreet>$2.vendorstreet</vendorstreet>
   </vendor>
 </object>]]></attr>
 <attr name="_data_format"><![CDATA[JAVA]]></attr>
@@ -675,18 +675,18 @@
     <typed-object-ref name="divisionCardImageURL" type-ref="java.lang.String"/>
     <typed-object-ref name="divisionCode" type-ref="java.lang.String"/>
     <typed-object-ref name="iidActivationType" type-ref="java.lang.String"/>
-    <typed-object-ref name="iidCaseCount" type-ref="java.lang.String"/>
+    <typed-object-ref name="iidCaseCount" type-ref="java.lang.Integer"/>
     <typed-object-ref name="iidCountry" type-ref="java.lang.String"/>
     <typed-object-ref name="iidDescription" type-ref="java.lang.String"/>
-    <typed-object-ref name="iidPackSize" type-ref="java.lang.String"/>
+    <typed-object-ref name="iidPackSize" type-ref="java.lang.Integer"/>
     <typed-object-ref name="iidProdPackType" type-ref="java.lang.String"/>
+    <typed-object-ref name="iidUseStdUnitConvert" type-ref="java.lang.Boolean"/>
     <typed-object-ref name="inventBatchId" type-ref="java.lang.String"/>
     <typed-object-ref name="itemId" type-ref="java.lang.String"/>
     <typed-object-ref name="language" type-ref="java.lang.String"/>
     <typed-object-ref name="name" type-ref="java.lang.String"/>
     <typed-object-ref name="newIidReasonCode" type-ref="java.lang.String"/>
     <typed-object-ref name="recId" type-ref="java.lang.String"/>
-    <typed-object-ref name="useStdUnitConvert" type-ref="java.lang.Boolean"/>
   </typed-object>
   <typed-object type="java.lang.Boolean"/>
   <typed-object type="com.bhnetwork.integration.pppstodax.canonical.Vendor">
@@ -957,13 +957,13 @@ output.vendorTax1099NameChoice = input.vendorTax1099NameChoice;
 output.vendorW9 = (isnull(input.vendorW9) ? null : str2bool(input.vendorW9));
 ]]></attr>
 </Node>
-<Node enabled="enabled" guiName="Foreach 'ProductInformation' -&gt; 'products'" guiX="460" guiY="220" id="FOREACH_PRODUCT_INFORMATION_PRODUCTS" transformClass="com.mulesoft.datamapper.transform.MelRecordTransform" type="REFORMAT">
+<Node enabled="enabled" guiName="Foreach 'ProductInformation' -&gt; 'products'" guiX="460" guiY="320" id="FOREACH_PRODUCT_INFORMATION_PRODUCTS" transformClass="com.mulesoft.datamapper.transform.MelRecordTransform" type="REFORMAT">
 <attr name="melScript"><![CDATA[//MEL
 //START -> DO NOT REMOVE
 output.__id = input.__id;
 output.__parent_id = input.__parent_id;
 //END -> DO NOT REMOVE
-output.productBuyerGroup = input.productBuyerGroup;
+output.productBuyerGroup = input.productBuyerGroup + input.productBuyerGroup;
 output.productClassification = input.productClassification;
 output.productCurrency = input.productCurrency;
 output.productDenomination = input.productDenomination;
@@ -1011,15 +1011,15 @@ output.substitutionPOG3Category = input.substitutionPOG3Category;
 output.substitutionPortalDisplayName = input.substitutionPortalDisplayName;
 output.divisionCardImageURL = input.divisionCardImageURL;
 output.iidActivationType = input.iidActivationType;
-output.iidCaseCount = input.iidCaseCount;
+output.iidCaseCount = (isnull(input.iidCaseCount) ? null : double2integer(input.iidCaseCount));
 output.iidCountry = input.iidCountry;
 output.iidDescription = input.iidDescription;
-output.iidPackSize = input.iidPackSize;
+output.iidPackSize = (isnull(input.iidPackSize) ? null : double2integer(input.iidPackSize));
 output.iidProdPackType = input.iidProdPackType;
 output.name = input.name;
 output.language = input.language;
 output.newIidReasonCode = input.newIIDReasonCode;
-output.useStdUnitConvert = input.useStdUnitConvert;
+output.iidUseStdUnitConvert = input.iidUseStdUnitConvert;
 ]]></attr>
 </Node>
 <Node charset="UTF-8" enabled="enabled" fileURL="dict:inputPayload" guiName="JSON READER" guiX="20" guiY="20" id="JSON_READER0" type="JSON_READER">
@@ -1164,7 +1164,7 @@ output.useStdUnitConvert = input.useStdUnitConvert;
       <Mapping cloverField="vendorTax1099NameChoice" trim="true" xpath="vendorInformation/vendorTax1099NameChoice"/>
       <Mapping cloverField="vendorW9" trim="true" xpath="vendorInformation/vendorW9"/>
     </Context>
-    <Context outPort="3" sequenceField="__id" xpath="object">
+    <Context outPort="2" sequenceField="__id" xpath="object">
       <Mapping cloverField="createdTimestamp" trim="true" xpath="createdTimestamp"/>
       <Mapping cloverField="creatorId" trim="true" xpath="creatorId"/>
       <Mapping cloverField="entityId" trim="true" xpath="entityId"/>
@@ -1301,7 +1301,7 @@ output.useStdUnitConvert = input.useStdUnitConvert;
       <Mapping cloverField="divisionBrandName" trim="true" xpath="vendorInformation/divisionBrandName"/>
       <Mapping cloverField="vendorTax1099NameChoice" trim="true" xpath="vendorInformation/vendorTax1099NameChoice"/>
       <Mapping cloverField="vendorW9" trim="true" xpath="vendorInformation/vendorW9"/>
-      <Context generatedKey="__parent_id" outPort="2" parentKey="__id" sequenceField="__id" xpath="CustomerStore">
+      <Context generatedKey="__parent_id" outPort="1" parentKey="__id" sequenceField="__id" xpath="CustomerStore">
         <Mapping cloverField="productLanguage" trim="true" xpath="productLanguage"/>
         <Mapping cloverField="storeBHNStoreCode" trim="true" xpath="storeBHNStoreCode"/>
         <Mapping cloverField="storeCustGroup" trim="true" xpath="storeCustGroup"/>
@@ -1322,7 +1322,7 @@ output.useStdUnitConvert = input.useStdUnitConvert;
         <Mapping cloverField="companyPhysicalStoreCountry" trim="true" xpath="companyPhysicalStoreCountry"/>
         <Mapping cloverField="storeBHNCustLevel" trim="true" xpath="storeBHNCustLevel"/>
       </Context>
-      <Context generatedKey="__parent_id" outPort="1" parentKey="__id" sequenceField="__id" xpath="ProductInformation">
+      <Context generatedKey="__parent_id" outPort="3" parentKey="__id" sequenceField="__id" xpath="ProductInformation">
         <Mapping cloverField="productBuyerGroup" trim="true" xpath="productBuyerGroup"/>
         <Mapping cloverField="productClassification" trim="true" xpath="productClassification"/>
         <Mapping cloverField="productCurrency" trim="true" xpath="productCurrency"/>
@@ -1379,7 +1379,7 @@ output.useStdUnitConvert = input.useStdUnitConvert;
         <Mapping cloverField="name" trim="true" xpath="iid/name"/>
         <Mapping cloverField="language" trim="true" xpath="iid/language"/>
         <Mapping cloverField="newIIDReasonCode" trim="true" xpath="iid/newIIDReasonCode"/>
-        <Mapping cloverField="useStdUnitConvert" trim="true" xpath="iid/useStdUnitConvert"/>
+        <Mapping cloverField="iidUseStdUnitConvert" trim="true" xpath="iid/iidUseStdUnitConvert"/>
       </Context>
     </Context>
   </Context>
@@ -1388,13 +1388,13 @@ output.useStdUnitConvert = input.useStdUnitConvert;
 <attr name="_data_format"><![CDATA[JSON]]></attr>
 <attr name="jsonSchemaURL"><![CDATA[.\src\main\api\examples\if1-3ps-mule-post-example.json]]></attr>
 </Node>
-<Edge debugMode="true" fromNode="FOREACH_CUSTOMER_STORE_STORES:0" guiBendpoints="" id="Edge7" inPort="Port 2 (in)" metadata="2199f073-f747-40db-8533-1122c4785e57" outPort="Port 0 (out)" toNode="BEAN_WRITER0:2"/>
+<Edge debugMode="true" fromNode="FOREACH_CUSTOMER_STORE_STORES:0" guiBendpoints="" id="Edge7" inPort="Port 1 (in)" metadata="2199f073-f747-40db-8533-1122c4785e57" outPort="Port 0 (out)" toNode="BEAN_WRITER0:1"/>
 <Edge debugMode="true" fromNode="FOREACH_OBJECT_CP_DIVISION:0" guiBendpoints="" id="Edge3" inPort="Port 0 (in)" metadata="d9358f29-0f11-40da-9f1a-fbe2df974bd6" outPort="Port 0 (out)" toNode="BEAN_WRITER0:0"/>
-<Edge debugMode="true" fromNode="FOREACH_OBJECT_OBJECT:0" guiBendpoints="" id="Edge1" inPort="Port 3 (in)" metadata="0e52744c-449f-4603-912e-9e129a31f276" outPort="Port 0 (out)" toNode="BEAN_WRITER0:3"/>
-<Edge debugMode="true" fromNode="FOREACH_PRODUCT_INFORMATION_PRODUCTS:0" guiBendpoints="" id="Edge5" inPort="Port 1 (in)" metadata="8f2a44d4-84ea-46c8-b58d-c6c2219d162a" outPort="Port 0 (out)" toNode="BEAN_WRITER0:1"/>
+<Edge debugMode="true" fromNode="FOREACH_OBJECT_OBJECT:0" guiBendpoints="" id="Edge1" inPort="Port 2 (in)" metadata="0e52744c-449f-4603-912e-9e129a31f276" outPort="Port 0 (out)" toNode="BEAN_WRITER0:2"/>
+<Edge debugMode="true" fromNode="FOREACH_PRODUCT_INFORMATION_PRODUCTS:0" guiBendpoints="" id="Edge5" inPort="Port 3 (in)" metadata="8f2a44d4-84ea-46c8-b58d-c6c2219d162a" outPort="Port 0 (out)" toNode="BEAN_WRITER0:3"/>
 <Edge debugMode="true" fromNode="JSON_READER0:0" guiBendpoints="" id="Edge2" inPort="Port 0 (in)" metadata="62ddf0bf-09b2-4348-9449-fe3657d6dcbb" outPort="Port 0 (out)" toNode="FOREACH_OBJECT_CP_DIVISION:0"/>
-<Edge debugMode="true" fromNode="JSON_READER0:1" guiBendpoints="" id="Edge4" inPort="Port 0 (in)" metadata="82f6040f-421a-461d-99cf-c5a238fd3384" outPort="Port 1 (out)" toNode="FOREACH_PRODUCT_INFORMATION_PRODUCTS:0"/>
-<Edge debugMode="true" fromNode="JSON_READER0:2" guiBendpoints="" id="Edge6" inPort="Port 0 (in)" metadata="ed363cca-8b21-4d79-8723-ec2e58cbb341" outPort="Port 2 (out)" toNode="FOREACH_CUSTOMER_STORE_STORES:0"/>
-<Edge debugMode="true" fromNode="JSON_READER0:3" guiBendpoints="" id="Edge0" inPort="Port 0 (in)" metadata="62ddf0bf-09b2-4348-9449-fe3657d6dcbb" outPort="Port 3 (out)" toNode="FOREACH_OBJECT_OBJECT:0"/>
+<Edge debugMode="true" fromNode="JSON_READER0:1" guiBendpoints="" id="Edge6" inPort="Port 0 (in)" metadata="ed363cca-8b21-4d79-8723-ec2e58cbb341" outPort="Port 1 (out)" toNode="FOREACH_CUSTOMER_STORE_STORES:0"/>
+<Edge debugMode="true" fromNode="JSON_READER0:2" guiBendpoints="" id="Edge0" inPort="Port 0 (in)" metadata="62ddf0bf-09b2-4348-9449-fe3657d6dcbb" outPort="Port 2 (out)" toNode="FOREACH_OBJECT_OBJECT:0"/>
+<Edge debugMode="true" fromNode="JSON_READER0:3" guiBendpoints="" id="Edge4" inPort="Port 0 (in)" metadata="82f6040f-421a-461d-99cf-c5a238fd3384" outPort="Port 3 (out)" toNode="FOREACH_PRODUCT_INFORMATION_PRODUCTS:0"/>
 </Phase>
 </Graph>
