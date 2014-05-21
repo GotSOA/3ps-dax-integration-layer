@@ -2,52 +2,47 @@ package com.bhnetwork.integration.pppstodax.canonical;
 
 import java.io.Serializable;
 
-
 /**
  * 
- * BHN Integration canonical model for Vendor
- * per spec 3.3, doc ref: MasterDataGapAnalysisGROUP 3PS v 3_3 .xlsx 
+ * BHN Integration canonical model for Vendor per spec 3.3, doc ref:
+ * MasterDataGapAnalysisGROUP 3PS v 3_3 .xlsx
  * 
  * @author Stephane Rata - Got SOA?
- *
+ * 
  */
 
 public class Vendor implements Serializable {
-	private static final long serialVersionUID = 1L; 
+	private static final long serialVersionUID = 1L;
 	// spec 3.3
-	private String	AccountNum;
-	private String	companyLegalName;
-	private String	divisionBrandName;
-	private String	InvoiceAccount;
-	private String	NameAlias;
-	private String	OffsetAccountType;
-	private String	PartyType;
-	private String	vendorAddress;
-	private Boolean	isVendorBlocked;
-	private String	vendorCity;
-	private String	vendorCountryRegionId;
-	private String	vendorCounty;
-	private String	vendorCurrency;
-	private String	vendorEmail;
-	private Boolean	isVendorForeignEntity;
-	private String	vendorGroup;
-	private String	vendorLanguageId;
-	private String	vendorPartyID;
-	private String	vendorPaymentMode;
-	private String	vendorPaymentTermsId;
-	private String	vendorPhone;
-	private String	vendorState;
-	private String	vendorstreet;
-	private String	vendorTax1099NameChoice;
-	private String	vendorTax1099Reports;
-	private String	vendorTaxIdNumber;
-	private String	vendorW9;
-	private String	vendorZipCode;
+	private String accountNum;
+	private String companyLegalName;
+	private String divisionBrandName;
+	private String recId;
+	private String vendorAddress;
+	private Boolean vendorBlocked;
+	private String vendorCity;
+	private String vendorCountryRegionId;
+	private String vendorCounty;
+	private String vendorCurrency;
+	private String vendorEmail;
+	private Boolean vendorForeignEntityIndicator;
+	private String vendorGroup;
+	private String vendorLanguageId;
+	private String vendorPaymentTermsId;
+	private String vendorPaymMode;
+	private String vendorPhone;
+	private String vendorState;
+	private String vendorstreet;
+	private String vendorTax1099NameChoice;
+	private String vendorTax1099Reports;
+	private String vendorTaxIDNumber;
+	private Boolean vendorW9;
+	private String vendorZipCode;
 	public String getAccountNum() {
-		return AccountNum;
+		return accountNum;
 	}
 	public void setAccountNum(String accountNum) {
-		AccountNum = accountNum;
+		this.accountNum = accountNum;
 	}
 	public String getCompanyLegalName() {
 		return companyLegalName;
@@ -61,29 +56,11 @@ public class Vendor implements Serializable {
 	public void setDivisionBrandName(String divisionBrandName) {
 		this.divisionBrandName = divisionBrandName;
 	}
-	public String getInvoiceAccount() {
-		return InvoiceAccount;
+	public String getRecId() {
+		return recId;
 	}
-	public void setInvoiceAccount(String invoiceAccount) {
-		InvoiceAccount = invoiceAccount;
-	}
-	public String getNameAlias() {
-		return NameAlias;
-	}
-	public void setNameAlias(String nameAlias) {
-		NameAlias = nameAlias;
-	}
-	public String getOffsetAccountType() {
-		return OffsetAccountType;
-	}
-	public void setOffsetAccountType(String offsetAccountType) {
-		OffsetAccountType = offsetAccountType;
-	}
-	public String getPartyType() {
-		return PartyType;
-	}
-	public void setPartyType(String partyType) {
-		PartyType = partyType;
+	public void setRecId(String recId) {
+		this.recId = recId;
 	}
 	public String getVendorAddress() {
 		return vendorAddress;
@@ -91,11 +68,11 @@ public class Vendor implements Serializable {
 	public void setVendorAddress(String vendorAddress) {
 		this.vendorAddress = vendorAddress;
 	}
-	public Boolean getIsVendorBlocked() {
-		return isVendorBlocked;
+	public Boolean getVendorBlocked() {
+		return vendorBlocked;
 	}
-	public void setIsVendorBlocked(Boolean isVendorBlocked) {
-		this.isVendorBlocked = isVendorBlocked;
+	public void setVendorBlocked(Boolean vendorBlocked) {
+		this.vendorBlocked = vendorBlocked;
 	}
 	public String getVendorCity() {
 		return vendorCity;
@@ -127,11 +104,11 @@ public class Vendor implements Serializable {
 	public void setVendorEmail(String vendorEmail) {
 		this.vendorEmail = vendorEmail;
 	}
-	public Boolean getIsVendorForeignEntity() {
-		return isVendorForeignEntity;
+	public Boolean getVendorForeignEntityIndicator() {
+		return vendorForeignEntityIndicator;
 	}
-	public void setIsVendorForeignEntity(Boolean isVendorForeignEntity) {
-		this.isVendorForeignEntity = isVendorForeignEntity;
+	public void setVendorForeignEntityIndicator(Boolean vendorForeignEntityIndicator) {
+		this.vendorForeignEntityIndicator = vendorForeignEntityIndicator;
 	}
 	public String getVendorGroup() {
 		return vendorGroup;
@@ -145,23 +122,17 @@ public class Vendor implements Serializable {
 	public void setVendorLanguageId(String vendorLanguageId) {
 		this.vendorLanguageId = vendorLanguageId;
 	}
-	public String getVendorPartyID() {
-		return vendorPartyID;
-	}
-	public void setVendorPartyID(String vendorPartyID) {
-		this.vendorPartyID = vendorPartyID;
-	}
-	public String getVendorPaymentMode() {
-		return vendorPaymentMode;
-	}
-	public void setVendorPaymentMode(String vendorPaymentMode) {
-		this.vendorPaymentMode = vendorPaymentMode;
-	}
 	public String getVendorPaymentTermsId() {
 		return vendorPaymentTermsId;
 	}
 	public void setVendorPaymentTermsId(String vendorPaymentTermsId) {
 		this.vendorPaymentTermsId = vendorPaymentTermsId;
+	}
+	public String getVendorPaymMode() {
+		return vendorPaymMode;
+	}
+	public void setVendorPaymMode(String vendorPaymMode) {
+		this.vendorPaymMode = vendorPaymMode;
 	}
 	public String getVendorPhone() {
 		return vendorPhone;
@@ -193,16 +164,16 @@ public class Vendor implements Serializable {
 	public void setVendorTax1099Reports(String vendorTax1099Reports) {
 		this.vendorTax1099Reports = vendorTax1099Reports;
 	}
-	public String getVendorTaxIdNumber() {
-		return vendorTaxIdNumber;
+	public String getVendorTaxIDNumber() {
+		return vendorTaxIDNumber;
 	}
-	public void setVendorTaxIdNumber(String vendorTaxIdNumber) {
-		this.vendorTaxIdNumber = vendorTaxIdNumber;
+	public void setVendorTaxIDNumber(String vendorTaxIDNumber) {
+		this.vendorTaxIDNumber = vendorTaxIDNumber;
 	}
-	public String getVendorW9() {
+	public Boolean getVendorW9() {
 		return vendorW9;
 	}
-	public void setVendorW9(String vendorW9) {
+	public void setVendorW9(Boolean vendorW9) {
 		this.vendorW9 = vendorW9;
 	}
 	public String getVendorZipCode() {
@@ -211,6 +182,10 @@ public class Vendor implements Serializable {
 	public void setVendorZipCode(String vendorZipCode) {
 		this.vendorZipCode = vendorZipCode;
 	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
 	
 	
+
 }
