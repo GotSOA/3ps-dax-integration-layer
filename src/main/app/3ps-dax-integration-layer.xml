@@ -96,7 +96,8 @@ http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schem
         <logger level="INFO" doc:name="Log Orchestration startTime" />
         <tracking:custom-event event-name="bizEvent: OrchestrationStartTime" doc:name="bizEvent: OrchestrationStartTime" />
         <message-properties-transformer doc:name="set DaxStep=1" overwrite="true" scope="session" />
-        <vm:outbound-endpoint exchange-pattern="one-way" doc:name="VM-step1" path="Q.step1" />
+        <!-- <vm:outbound-endpoint exchange-pattern="one-way" doc:name="VM-step1" path="Q.step1" /> -->
+        <vm:outbound-endpoint exchange-pattern="one-way" path="Q.error" doc:name="TO_BE_DELETED VM-error"/>
     </flow>
     <flow name="DAX-step1-flow" doc:name="DAX-step1-flow">
         <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-step1" path="Q.step1" />
