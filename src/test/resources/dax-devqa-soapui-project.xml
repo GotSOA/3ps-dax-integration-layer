@@ -2204,7 +2204,74 @@
          </bhn:BhnIIDAttributes>
       </tem:bhnIIDAttributesServiceCreateRequest>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/bhnIIDAttributesService/create"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="http://tempuri.org/bhnIIDAttributesService/delete" name="delete" bindingOperationName="delete" type="Request-Response" inputName="bhnIIDAttributesServiceDeleteRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhniidattributesservice.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org" xmlns:ent="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList" xmlns:ent1="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKey">
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/bhnIIDAttributesService/create"/><con:wsrmConfig version="1.2"/></con:call><con:call name="MuleRequest"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhniidattributesservice.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Header>
+    <mule:header xmlns:mule="http://www.muleumo.org/providers/soap/1.0">
+      <mule:MULE_CORRELATION_ID>d4e77780-e1bb-11e3-b097-77557564e23e</mule:MULE_CORRELATION_ID>
+      <mule:MULE_CORRELATION_GROUP_SIZE>2</mule:MULE_CORRELATION_GROUP_SIZE>
+      <mule:MULE_CORRELATION_SEQUENCE>-1</mule:MULE_CORRELATION_SEQUENCE>
+    </mule:header>
+  </soap:Header>
+  <soap:Body>
+    <ns2:bhnIIDAttributesServiceCreateRequest xmlns:ns2="http://tempuri.org" xmlns:ns3="http://schemas.microsoft.com/dynamics/2008/01/documents/BhnIIDAttributes" xmlns:ns4="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" xmlns:ns5="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKey" xmlns:ns6="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList" xmlns:ns7="http://schemas.microsoft.com/dynamics/2008/01/documents/bhnCleanUpMegatron" xmlns:ns8="http://schemas.microsoft.com/dynamics/2006/02/documents/QueryCriteria" xmlns:ns9="http://schemas.microsoft.com/2003/10/Serialization/">
+      <ns3:BhnIIDAttributes>
+        <ns3:DocPurpose xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+        <ns3:SenderId xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+        <ns3:InventBatch class="entity">
+          <ns3:_DocumentHash xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+          <ns3:BhnDivCode xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+          <ns3:BhnDivDescription xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+          <ns3:BhnGUID xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+          <ns3:BhnNotes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+          <ns3:BhnSetupComplete xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+          <ns3:BhnSetupCompleteDate xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+          <ns3:BhnSetupCompletedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+          <ns3:BhnStatus xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+          <ns3:Description>UPC DESCRIPTION</ns3:Description>
+          <ns3:ExpDate xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+          <ns3:InventBatchId>0123</ns3:InventBatchId>
+          <ns3:ItemId>01035002875</ns3:ItemId>
+          <ns3:MerchRecordNumber xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+          <ns3:PartnerProfileId xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+          <ns3:RecId xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+          <ns3:RecVersion xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+          <ns3:bhnIIDAttributes class="entity">
+            <ns3:ActivationType>hybrid</ns3:ActivationType>
+            <ns3:CaseCount>100</ns3:CaseCount>
+            <ns3:Country>US</ns3:Country>
+            <ns3:DiscoReasonCode xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:FirstShipDate xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:InventBatchId>0123</ns3:InventBatchId>
+            <ns3:ItemId>01035002875</ns3:ItemId>
+            <ns3:Language>EN</ns3:Language>
+            <ns3:LastShipDate xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:NewIIDReasonCode xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:PackSize>10</ns3:PackSize>
+            <ns3:ProdPackType>i1</ns3:ProdPackType>
+            <ns3:RecId xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:RecVersion xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:RestrictedIID xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:UnitId1 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:UnitId2 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:UseStdUnitConvert>Yes</ns3:UseStdUnitConvert>
+          </ns3:bhnIIDAttributes>
+          <ns3:bhnOnlineIIDAttributes class="entity">
+            <ns3:DivisionCardImageURL xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:DivisionPrintReadyFrontImageURL xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:DivisionPrintReadyTandCURL xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:GCMIIDDescription>UPC DESCRIPTION</ns3:GCMIIDDescription>
+            <ns3:IIDName xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:InventBatchId>0123</ns3:InventBatchId>
+            <ns3:IsDefaultIID xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:ItemId>01035002875</ns3:ItemId>
+            <ns3:RecId xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:RecVersion xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+          </ns3:bhnOnlineIIDAttributes>
+        </ns3:InventBatch>
+      </ns3:BhnIIDAttributes>
+    </ns2:bhnIIDAttributesServiceCreateRequest>
+  </soap:Body>
+</soap:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/bhnIIDAttributesService/create"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="http://tempuri.org/bhnIIDAttributesService/delete" name="delete" bindingOperationName="delete" type="Request-Response" inputName="bhnIIDAttributesServiceDeleteRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhniidattributesservice.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org" xmlns:ent="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList" xmlns:ent1="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKey">
    <soapenv:Header/>
    <soapenv:Body>
       <tem:bhnIIDAttributesServiceDeleteRequest>

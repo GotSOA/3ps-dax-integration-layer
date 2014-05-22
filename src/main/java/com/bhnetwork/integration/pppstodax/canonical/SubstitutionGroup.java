@@ -14,15 +14,17 @@ import java.io.Serializable;
 public class SubstitutionGroup implements Serializable {
 	private static final long serialVersionUID = 1L; 
 	
-	private	String	substitutionBrandDenomDescription;
-	private	String	brandRecId;
-	private	String	guid;
-	private	String	substitutionCardDisplayDesc;
-	private	String	substitutionPOG1Category;
-	private	String	substitutionPOG2Category;
-	private	String	substitutionPOG3Category;
-	private	String	substitutionPortalDisplayName;
-	private	String	subGroupId;
+	private String substitutionBrandDenomDescription;
+	private String brandRecId;
+	private String guid;
+	private String substitutionCardDisplayDesc;
+	private String substitutionPOG1Category;
+	private String substitutionPOG2Category;
+	private String substitutionPOG3Category;
+	private String substitutionPortalDisplayName;
+	private String substitutionPOGDimension;
+	private String substitutionShipperUPC;
+	private String subGroupId;
 	public String getSubstitutionBrandDenomDescription() {
 		return substitutionBrandDenomDescription;
 	}
@@ -73,11 +75,26 @@ public class SubstitutionGroup implements Serializable {
 			String substitutionPortalDisplayName) {
 		this.substitutionPortalDisplayName = substitutionPortalDisplayName;
 	}
+	public String getSubstitutionPOGDimension() {
+		return substitutionPOGDimension;
+	}
+	public void setSubstitutionPOGDimension(String substitutionPOGDimension) {
+		this.substitutionPOGDimension = substitutionPOGDimension;
+	}
+	public String getSubstitutionShipperUPC() {
+		return substitutionShipperUPC;
+	}
+	public void setSubstitutionShipperUPC(String substitutionShipperUPC) {
+		this.substitutionShipperUPC = substitutionShipperUPC;
+	}
 	public String getSubGroupId() {
 		return subGroupId;
 	}
 	public void setSubGroupId(String subGroupId) {
 		this.subGroupId = subGroupId;
+	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 	
 }

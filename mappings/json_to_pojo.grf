@@ -37,7 +37,7 @@
 <Field __index="51" __sourcePath="{}/object/company/cpDivision/processorContactPhoneNumber" containerType="SINGLE" label="processorContactPhoneNumber" name="processorContactPhoneNumber" type="string"/>
 <Field __index="52" __sourcePath="{}/object/company/cpDivision/processorContactPhoneNumberExt" containerType="SINGLE" label="processorContactPhoneNumberExt" name="processorContactPhoneNumberExt" type="string"/>
 <Field __index="53" __sourcePath="{}/object/company/cpDivision/processorHasRealTimeIssuance" containerType="SINGLE" label="processorHasRealTimeIssuance" name="processorHasRealTimeIssuance" type="string"/>
-<Field __index="126" __sourcePath="{}/object/company/cpDivision/recId" containerType="SINGLE" label="recId" name="recId" type="string"/>
+<Field __index="128" __sourcePath="{}/object/company/cpDivision/recId" containerType="SINGLE" label="recId" name="recId" type="string"/>
 </Record>
 </Metadata>
 <Metadata __index="125" __referenceCounter="1" __sourcePath="{}/object/CustomerStore" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _metadataParentId="62ddf0bf-09b2-4348-9449-fe3657d6dcbb" _parent_id="__parent_id" _type="Input" id="ed363cca-8b21-4d79-8723-ec2e58cbb341">
@@ -193,17 +193,17 @@
 <Field __index="122" __sourcePath="{}/object/processorInformation/processorSupportsVoids" containerType="SINGLE" label="processorSupportsVoids" name="processorSupportsVoids" type="string"/>
 <Field __index="123" __sourcePath="{}/object/processorInformation/cardProductionCostPerCard" containerType="SINGLE" label="cardProductionCostPerCard" name="cardProductionCostPerCard" type="string"/>
 <Field __index="124" __sourcePath="{}/object/processorInformation/cardProductionQuantity" containerType="SINGLE" label="cardProductionQuantity" name="cardProductionQuantity" type="string"/>
-<Field __index="201" __sourcePath="{}/object/vendorInformation/vendorCompanyLegalName" containerType="SINGLE" label="vendorCompanyLegalName" name="vendorCompanyLegalName" type="string"/>
-<Field __index="202" __sourcePath="{}/object/vendorInformation/vendorGroup" containerType="SINGLE" label="vendorGroup" name="vendorGroup" type="string"/>
-<Field __index="203" __sourcePath="{}/object/vendorInformation/vendorCurrency" containerType="SINGLE" label="vendorCurrency" name="vendorCurrency" type="string"/>
-<Field __index="204" __sourcePath="{}/object/vendorInformation/vendorIsBlocked" containerType="SINGLE" label="vendorIsBlocked" name="vendorIsBlocked" type="string"/>
-<Field __index="205" __sourcePath="{}/object/vendorInformation/vendorLanguageId" containerType="SINGLE" label="vendorLanguageId" name="vendorLanguageId" type="string"/>
-<Field __index="206" __sourcePath="{}/object/vendorInformation/vendorCity" containerType="SINGLE" label="vendorCity" name="vendorCity" type="string"/>
-<Field __index="207" __sourcePath="{}/object/vendorInformation/vendorstreet" containerType="SINGLE" label="vendorstreet" name="vendorstreet" type="string"/>
-<Field __index="208" __sourcePath="{}/object/vendorInformation/vendorIsForeignEntityIndicator" containerType="SINGLE" label="vendorIsForeignEntityIndicator" name="vendorIsForeignEntityIndicator" type="boolean"/>
-<Field __index="209" __sourcePath="{}/object/vendorInformation/divisionBrandName" containerType="SINGLE" label="divisionBrandName" name="divisionBrandName" type="string"/>
-<Field __index="210" __sourcePath="{}/object/vendorInformation/vendorTax1099NameChoice" containerType="SINGLE" label="vendorTax1099NameChoice" name="vendorTax1099NameChoice" type="string"/>
-<Field __index="211" __sourcePath="{}/object/vendorInformation/vendorW9" containerType="SINGLE" label="vendorW9" name="vendorW9" type="string"/>
+<Field __index="203" __sourcePath="{}/object/vendorInformation/vendorCompanyLegalName" containerType="SINGLE" label="vendorCompanyLegalName" name="vendorCompanyLegalName" type="string"/>
+<Field __index="204" __sourcePath="{}/object/vendorInformation/vendorGroup" containerType="SINGLE" label="vendorGroup" name="vendorGroup" type="string"/>
+<Field __index="205" __sourcePath="{}/object/vendorInformation/vendorCurrency" containerType="SINGLE" label="vendorCurrency" name="vendorCurrency" type="string"/>
+<Field __index="206" __sourcePath="{}/object/vendorInformation/vendorIsBlocked" containerType="SINGLE" label="vendorIsBlocked" name="vendorIsBlocked" type="string"/>
+<Field __index="207" __sourcePath="{}/object/vendorInformation/vendorLanguageId" containerType="SINGLE" label="vendorLanguageId" name="vendorLanguageId" type="string"/>
+<Field __index="208" __sourcePath="{}/object/vendorInformation/vendorCity" containerType="SINGLE" label="vendorCity" name="vendorCity" type="string"/>
+<Field __index="209" __sourcePath="{}/object/vendorInformation/vendorstreet" containerType="SINGLE" label="vendorstreet" name="vendorstreet" type="string"/>
+<Field __index="210" __sourcePath="{}/object/vendorInformation/vendorIsForeignEntityIndicator" containerType="SINGLE" label="vendorIsForeignEntityIndicator" name="vendorIsForeignEntityIndicator" type="boolean"/>
+<Field __index="211" __sourcePath="{}/object/vendorInformation/divisionBrandName" containerType="SINGLE" label="divisionBrandName" name="divisionBrandName" type="string"/>
+<Field __index="212" __sourcePath="{}/object/vendorInformation/vendorTax1099NameChoice" containerType="SINGLE" label="vendorTax1099NameChoice" name="vendorTax1099NameChoice" type="string"/>
+<Field __index="213" __sourcePath="{}/object/vendorInformation/vendorW9" containerType="SINGLE" label="vendorW9" name="vendorW9" type="string"/>
 </Record>
 </Metadata>
 <Metadata __index="0" __referenceCounter="1" __sourcePath="{}/object" _dataStructure="OBJECT" _id="__id" _type="Output" id="0e52744c-449f-4603-912e-9e129a31f276">
@@ -230,33 +230,33 @@
 <Field __index="18" __sourcePath="{}/object/company/companyWebSiteURL" containerType="SINGLE" label="companyWebSiteURL" name="companyWebSiteURL" type="string"/>
 <Field __index="19" __sourcePath="{}/object/company/companyZipPostalCode" containerType="SINGLE" label="companyZipPostalCode" name="companyZipPostalCode" type="string"/>
 <Field __index="20" __sourcePath="{}/object/company/contractExpDate" containerType="SINGLE" label="contractExpDate" name="contractExpDate" type="date"/>
-<Field __index="150" __sourcePath="{}/object/company/legalEntityCode" containerType="SINGLE" label="legalEntityCode" name="legalEntityCode" type="string"/>
-<Field __index="151" __sourcePath="{}/object/company/legalEntityStateOfIncorporation" containerType="SINGLE" label="legalEntityStateOfIncorporation" name="legalEntityStateOfIncorporation" type="string"/>
-<Field __index="152" __sourcePath="{}/object/company/recId" containerType="SINGLE" label="recId" name="recId" type="string"/>
-<Field __index="153" __sourcePath="{}/object/vendor/accountNum" containerType="SINGLE" label="accountNum" name="accountNum" type="string"/>
-<Field __index="154" __sourcePath="{}/object/vendor/companyLegalName" containerType="SINGLE" label="companyLegalName" name="companyLegalName_1" type="string"/>
-<Field __index="155" __sourcePath="{}/object/vendor/divisionBrandName" containerType="SINGLE" label="divisionBrandName" name="divisionBrandName" type="string"/>
-<Field __index="156" __sourcePath="{}/object/vendor/recId" containerType="SINGLE" label="recId" name="recId_1" type="string"/>
-<Field __index="157" __sourcePath="{}/object/vendor/vendorAddress" containerType="SINGLE" label="vendorAddress" name="vendorAddress" type="string"/>
-<Field __index="158" __sourcePath="{}/object/vendor/vendorBlocked" containerType="SINGLE" label="vendorBlocked" name="vendorBlocked" type="boolean"/>
-<Field __index="159" __sourcePath="{}/object/vendor/vendorCity" containerType="SINGLE" label="vendorCity" name="vendorCity" type="string"/>
-<Field __index="160" __sourcePath="{}/object/vendor/vendorCountryRegionId" containerType="SINGLE" label="vendorCountryRegionId" name="vendorCountryRegionId" type="string"/>
-<Field __index="161" __sourcePath="{}/object/vendor/vendorCounty" containerType="SINGLE" label="vendorCounty" name="vendorCounty" type="string"/>
-<Field __index="162" __sourcePath="{}/object/vendor/vendorCurrency" containerType="SINGLE" label="vendorCurrency" name="vendorCurrency" type="string"/>
-<Field __index="163" __sourcePath="{}/object/vendor/vendorEmail" containerType="SINGLE" label="vendorEmail" name="vendorEmail" type="string"/>
-<Field __index="164" __sourcePath="{}/object/vendor/vendorForeignEntityIndicator" containerType="SINGLE" label="vendorForeignEntityIndicator" name="vendorForeignEntityIndicator" type="boolean"/>
-<Field __index="165" __sourcePath="{}/object/vendor/vendorGroup" containerType="SINGLE" label="vendorGroup" name="vendorGroup" type="string"/>
-<Field __index="166" __sourcePath="{}/object/vendor/vendorLanguageId" containerType="SINGLE" label="vendorLanguageId" name="vendorLanguageId" type="string"/>
-<Field __index="167" __sourcePath="{}/object/vendor/vendorPaymMode" containerType="SINGLE" label="vendorPaymMode" name="vendorPaymMode" type="string"/>
-<Field __index="168" __sourcePath="{}/object/vendor/vendorPaymentTermsId" containerType="SINGLE" label="vendorPaymentTermsId" name="vendorPaymentTermsId" type="string"/>
-<Field __index="169" __sourcePath="{}/object/vendor/vendorPhone" containerType="SINGLE" label="vendorPhone" name="vendorPhone" type="string"/>
-<Field __index="170" __sourcePath="{}/object/vendor/vendorState" containerType="SINGLE" label="vendorState" name="vendorState" type="string"/>
-<Field __index="171" __sourcePath="{}/object/vendor/vendorTax1099NameChoice" containerType="SINGLE" label="vendorTax1099NameChoice" name="vendorTax1099NameChoice" type="string"/>
-<Field __index="172" __sourcePath="{}/object/vendor/vendorTax1099Reports" containerType="SINGLE" label="vendorTax1099Reports" name="vendorTax1099Reports" type="string"/>
-<Field __index="173" __sourcePath="{}/object/vendor/vendorTaxIDNumber" containerType="SINGLE" label="vendorTaxIDNumber" name="vendorTaxIDNumber" type="string"/>
-<Field __index="174" __sourcePath="{}/object/vendor/vendorW9" containerType="SINGLE" label="vendorW9" name="vendorW9" type="boolean"/>
-<Field __index="175" __sourcePath="{}/object/vendor/vendorZipCode" containerType="SINGLE" label="vendorZipCode" name="vendorZipCode" type="string"/>
-<Field __index="176" __sourcePath="{}/object/vendor/vendorstreet" containerType="SINGLE" label="vendorstreet" name="vendorstreet" type="string"/>
+<Field __index="152" __sourcePath="{}/object/company/legalEntityCode" containerType="SINGLE" label="legalEntityCode" name="legalEntityCode" type="string"/>
+<Field __index="153" __sourcePath="{}/object/company/legalEntityStateOfIncorporation" containerType="SINGLE" label="legalEntityStateOfIncorporation" name="legalEntityStateOfIncorporation" type="string"/>
+<Field __index="154" __sourcePath="{}/object/company/recId" containerType="SINGLE" label="recId" name="recId" type="string"/>
+<Field __index="155" __sourcePath="{}/object/vendor/accountNum" containerType="SINGLE" label="accountNum" name="accountNum" type="string"/>
+<Field __index="156" __sourcePath="{}/object/vendor/companyLegalName" containerType="SINGLE" label="companyLegalName" name="companyLegalName_1" type="string"/>
+<Field __index="157" __sourcePath="{}/object/vendor/divisionBrandName" containerType="SINGLE" label="divisionBrandName" name="divisionBrandName" type="string"/>
+<Field __index="158" __sourcePath="{}/object/vendor/recId" containerType="SINGLE" label="recId" name="recId_1" type="string"/>
+<Field __index="159" __sourcePath="{}/object/vendor/vendorAddress" containerType="SINGLE" label="vendorAddress" name="vendorAddress" type="string"/>
+<Field __index="160" __sourcePath="{}/object/vendor/vendorBlocked" containerType="SINGLE" label="vendorBlocked" name="vendorBlocked" type="boolean"/>
+<Field __index="161" __sourcePath="{}/object/vendor/vendorCity" containerType="SINGLE" label="vendorCity" name="vendorCity" type="string"/>
+<Field __index="162" __sourcePath="{}/object/vendor/vendorCountryRegionId" containerType="SINGLE" label="vendorCountryRegionId" name="vendorCountryRegionId" type="string"/>
+<Field __index="163" __sourcePath="{}/object/vendor/vendorCounty" containerType="SINGLE" label="vendorCounty" name="vendorCounty" type="string"/>
+<Field __index="164" __sourcePath="{}/object/vendor/vendorCurrency" containerType="SINGLE" label="vendorCurrency" name="vendorCurrency" type="string"/>
+<Field __index="165" __sourcePath="{}/object/vendor/vendorEmail" containerType="SINGLE" label="vendorEmail" name="vendorEmail" type="string"/>
+<Field __index="166" __sourcePath="{}/object/vendor/vendorForeignEntityIndicator" containerType="SINGLE" label="vendorForeignEntityIndicator" name="vendorForeignEntityIndicator" type="boolean"/>
+<Field __index="167" __sourcePath="{}/object/vendor/vendorGroup" containerType="SINGLE" label="vendorGroup" name="vendorGroup" type="string"/>
+<Field __index="168" __sourcePath="{}/object/vendor/vendorLanguageId" containerType="SINGLE" label="vendorLanguageId" name="vendorLanguageId" type="string"/>
+<Field __index="169" __sourcePath="{}/object/vendor/vendorPaymMode" containerType="SINGLE" label="vendorPaymMode" name="vendorPaymMode" type="string"/>
+<Field __index="170" __sourcePath="{}/object/vendor/vendorPaymentTermsId" containerType="SINGLE" label="vendorPaymentTermsId" name="vendorPaymentTermsId" type="string"/>
+<Field __index="171" __sourcePath="{}/object/vendor/vendorPhone" containerType="SINGLE" label="vendorPhone" name="vendorPhone" type="string"/>
+<Field __index="172" __sourcePath="{}/object/vendor/vendorState" containerType="SINGLE" label="vendorState" name="vendorState" type="string"/>
+<Field __index="173" __sourcePath="{}/object/vendor/vendorTax1099NameChoice" containerType="SINGLE" label="vendorTax1099NameChoice" name="vendorTax1099NameChoice" type="string"/>
+<Field __index="174" __sourcePath="{}/object/vendor/vendorTax1099Reports" containerType="SINGLE" label="vendorTax1099Reports" name="vendorTax1099Reports" type="string"/>
+<Field __index="175" __sourcePath="{}/object/vendor/vendorTaxIDNumber" containerType="SINGLE" label="vendorTaxIDNumber" name="vendorTaxIDNumber" type="string"/>
+<Field __index="176" __sourcePath="{}/object/vendor/vendorW9" containerType="SINGLE" label="vendorW9" name="vendorW9" type="boolean"/>
+<Field __index="177" __sourcePath="{}/object/vendor/vendorZipCode" containerType="SINGLE" label="vendorZipCode" name="vendorZipCode" type="string"/>
+<Field __index="178" __sourcePath="{}/object/vendor/vendorstreet" containerType="SINGLE" label="vendorstreet" name="vendorstreet" type="string"/>
 </Record>
 </Metadata>
 <Metadata __index="144" __referenceCounter="1" __sourcePath="{}/object/ProductInformation" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _metadataParentId="62ddf0bf-09b2-4348-9449-fe3657d6dcbb" _parent_id="__parent_id" _type="Input" id="82f6040f-421a-461d-99cf-c5a238fd3384">
@@ -309,17 +309,19 @@
 <Field __index="187" __sourcePath="{}/object/ProductInformation/substitutionPOG2Category" containerType="SINGLE" label="substitutionPOG2Category" name="substitutionPOG2Category" type="string"/>
 <Field __index="188" __sourcePath="{}/object/ProductInformation/substitutionPOG3Category" containerType="SINGLE" label="substitutionPOG3Category" name="substitutionPOG3Category" type="string"/>
 <Field __index="189" __sourcePath="{}/object/ProductInformation/substitutionPortalDisplayName" containerType="SINGLE" label="substitutionPortalDisplayName" name="substitutionPortalDisplayName" type="string"/>
-<Field __index="190" __sourcePath="{}/object/ProductInformation/iid/divisionCardImageURL" containerType="SINGLE" label="divisionCardImageURL" name="divisionCardImageURL" type="string"/>
-<Field __index="191" __sourcePath="{}/object/ProductInformation/iid/iidActivationType" containerType="SINGLE" label="iidActivationType" name="iidActivationType" type="string"/>
-<Field __index="192" __sourcePath="{}/object/ProductInformation/iid/iidCaseCount" containerType="SINGLE" label="iidCaseCount" name="iidCaseCount" type="number"/>
-<Field __index="193" __sourcePath="{}/object/ProductInformation/iid/iidCountry" containerType="SINGLE" label="iidCountry" name="iidCountry" type="string"/>
-<Field __index="194" __sourcePath="{}/object/ProductInformation/iid/iidDescription" containerType="SINGLE" label="iidDescription" name="iidDescription" type="string"/>
-<Field __index="195" __sourcePath="{}/object/ProductInformation/iid/iidPackSize" containerType="SINGLE" label="iidPackSize" name="iidPackSize" type="number"/>
-<Field __index="196" __sourcePath="{}/object/ProductInformation/iid/iidProdPackType" containerType="SINGLE" label="iidProdPackType" name="iidProdPackType" type="string"/>
-<Field __index="197" __sourcePath="{}/object/ProductInformation/iid/name" containerType="SINGLE" label="name" name="name" type="string"/>
-<Field __index="198" __sourcePath="{}/object/ProductInformation/iid/language" containerType="SINGLE" label="language" name="language" type="string"/>
-<Field __index="199" __sourcePath="{}/object/ProductInformation/iid/newIIDReasonCode" containerType="SINGLE" label="newIIDReasonCode" name="newIIDReasonCode" type="string"/>
-<Field __index="200" __sourcePath="{}/object/ProductInformation/iid/iidUseStdUnitConvert" containerType="SINGLE" label="iidUseStdUnitConvert" name="iidUseStdUnitConvert" type="boolean"/>
+<Field __index="190" __sourcePath="{}/object/ProductInformation/substitutionPOGDimension" containerType="SINGLE" label="substitutionPOGDimension" name="substitutionPOGDimension" type="string"/>
+<Field __index="191" __sourcePath="{}/object/ProductInformation/substitutionShipperUPC" containerType="SINGLE" label="substitutionShipperUPC" name="substitutionShipperUPC" type="string"/>
+<Field __index="192" __sourcePath="{}/object/ProductInformation/iid/divisionCardImageURL" containerType="SINGLE" label="divisionCardImageURL" name="divisionCardImageURL" type="string"/>
+<Field __index="193" __sourcePath="{}/object/ProductInformation/iid/iidActivationType" containerType="SINGLE" label="iidActivationType" name="iidActivationType" type="string"/>
+<Field __index="194" __sourcePath="{}/object/ProductInformation/iid/iidCaseCount" containerType="SINGLE" label="iidCaseCount" name="iidCaseCount" type="number"/>
+<Field __index="195" __sourcePath="{}/object/ProductInformation/iid/iidCountry" containerType="SINGLE" label="iidCountry" name="iidCountry" type="string"/>
+<Field __index="196" __sourcePath="{}/object/ProductInformation/iid/iidDescription" containerType="SINGLE" label="iidDescription" name="iidDescription" type="string"/>
+<Field __index="197" __sourcePath="{}/object/ProductInformation/iid/iidPackSize" containerType="SINGLE" label="iidPackSize" name="iidPackSize" type="number"/>
+<Field __index="198" __sourcePath="{}/object/ProductInformation/iid/iidProdPackType" containerType="SINGLE" label="iidProdPackType" name="iidProdPackType" type="string"/>
+<Field __index="199" __sourcePath="{}/object/ProductInformation/iid/name" containerType="SINGLE" label="name" name="name" type="string"/>
+<Field __index="200" __sourcePath="{}/object/ProductInformation/iid/language" containerType="SINGLE" label="language" name="language" type="string"/>
+<Field __index="201" __sourcePath="{}/object/ProductInformation/iid/newIIDReasonCode" containerType="SINGLE" label="newIIDReasonCode" name="newIIDReasonCode" type="string"/>
+<Field __index="202" __sourcePath="{}/object/ProductInformation/iid/iidUseStdUnitConvert" containerType="SINGLE" label="iidUseStdUnitConvert" name="iidUseStdUnitConvert" type="boolean"/>
 </Record>
 </Metadata>
 <Metadata __index="54" __referenceCounter="1" __sourcePath="{}/object/company/cpDivision/products" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _metadataParentId="d9358f29-0f11-40da-9f1a-fbe2df974bd6" _parent_id="__parent_id" _type="Output" id="8f2a44d4-84ea-46c8-b58d-c6c2219d162a">
@@ -397,36 +399,38 @@
 <Field __index="122" __sourcePath="{}/object/company/cpDivision/products/substGrp/substitutionPOG1Category" containerType="SINGLE" label="substitutionPOG1Category" name="substitutionPOG1Category" type="string"/>
 <Field __index="123" __sourcePath="{}/object/company/cpDivision/products/substGrp/substitutionPOG2Category" containerType="SINGLE" label="substitutionPOG2Category" name="substitutionPOG2Category" type="string"/>
 <Field __index="124" __sourcePath="{}/object/company/cpDivision/products/substGrp/substitutionPOG3Category" containerType="SINGLE" label="substitutionPOG3Category" name="substitutionPOG3Category" type="string"/>
-<Field __index="125" __sourcePath="{}/object/company/cpDivision/products/substGrp/substitutionPortalDisplayName" containerType="SINGLE" label="substitutionPortalDisplayName" name="substitutionPortalDisplayName" type="string"/>
+<Field __index="125" __sourcePath="{}/object/company/cpDivision/products/substGrp/substitutionPOGDimension" containerType="SINGLE" label="substitutionPOGDimension" name="substitutionPOGDimension" type="string"/>
+<Field __index="126" __sourcePath="{}/object/company/cpDivision/products/substGrp/substitutionPortalDisplayName" containerType="SINGLE" label="substitutionPortalDisplayName" name="substitutionPortalDisplayName" type="string"/>
+<Field __index="127" __sourcePath="{}/object/company/cpDivision/products/substGrp/substitutionShipperUPC" containerType="SINGLE" label="substitutionShipperUPC" name="substitutionShipperUPC" type="string"/>
 </Record>
 </Metadata>
-<Metadata __index="127" __referenceCounter="1" __sourcePath="{}/object/company/cpDivision/stores" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _metadataParentId="d9358f29-0f11-40da-9f1a-fbe2df974bd6" _parent_id="__parent_id" _type="Output" id="2199f073-f747-40db-8533-1122c4785e57">
+<Metadata __index="129" __referenceCounter="1" __sourcePath="{}/object/company/cpDivision/stores" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _metadataParentId="d9358f29-0f11-40da-9f1a-fbe2df974bd6" _parent_id="__parent_id" _type="Output" id="2199f073-f747-40db-8533-1122c4785e57">
 <Record fieldDelimiter="," name="stores" recordDelimiter="\n\\|\r\n\\|\r" type="delimited">
 <Field __artificialType="_id" __systemManaged="true" name="__id" type="string"/>
 <Field __artificialType="_parent_id" __systemManaged="true" name="__parent_id" type="string"/>
-<Field __index="127" __sourcePath="{}/object/company/cpDivision/stores/accountNum" containerType="SINGLE" label="accountNum" name="accountNum" type="string"/>
-<Field __index="128" __sourcePath="{}/object/company/cpDivision/stores/bhnCompanyCode" containerType="SINGLE" label="bhnCompanyCode" name="bhnCompanyCode" type="string"/>
-<Field __index="129" __sourcePath="{}/object/company/cpDivision/stores/bhnDivisionCode" containerType="SINGLE" label="bhnDivisionCode" name="bhnDivisionCode" type="string"/>
-<Field __index="130" __sourcePath="{}/object/company/cpDivision/stores/bhnGUID" containerType="SINGLE" label="bhnGUID" name="bhnGUID" type="string"/>
-<Field __index="131" __sourcePath="{}/object/company/cpDivision/stores/companyPhysicalStoreAddressLine1" containerType="SINGLE" label="companyPhysicalStoreAddressLine1" name="companyPhysicalStoreAddressLine1" type="string"/>
-<Field __index="132" __sourcePath="{}/object/company/cpDivision/stores/companyPhysicalStoreCountry" containerType="SINGLE" label="companyPhysicalStoreCountry" name="companyPhysicalStoreCountry" type="string"/>
-<Field __index="133" __sourcePath="{}/object/company/cpDivision/stores/productLanguage" containerType="SINGLE" label="productLanguage" name="productLanguage" type="string"/>
-<Field __index="134" __sourcePath="{}/object/company/cpDivision/stores/storeBHNCustLevel" containerType="SINGLE" label="storeBHNCustLevel" name="storeBHNCustLevel" type="string"/>
-<Field __index="135" __sourcePath="{}/object/company/cpDivision/stores/storeBHNStoreCode" containerType="SINGLE" label="storeBHNStoreCode" name="storeBHNStoreCode" type="string"/>
-<Field __index="136" __sourcePath="{}/object/company/cpDivision/stores/storeBlocked" containerType="SINGLE" label="storeBlocked" name="storeBlocked" type="boolean"/>
-<Field __index="137" __sourcePath="{}/object/company/cpDivision/stores/storeChannelDimension" containerType="SINGLE" label="storeChannelDimension" name="storeChannelDimension" type="string"/>
-<Field __index="138" __sourcePath="{}/object/company/cpDivision/stores/storeContactPhoneNumber" containerType="SINGLE" label="storeContactPhoneNumber" name="storeContactPhoneNumber" type="string"/>
-<Field __index="139" __sourcePath="{}/object/company/cpDivision/stores/storeCountryRegionId" containerType="SINGLE" label="storeCountryRegionId" name="storeCountryRegionId" type="string"/>
-<Field __index="140" __sourcePath="{}/object/company/cpDivision/stores/storeCustGroup" containerType="SINGLE" label="storeCustGroup" name="storeCustGroup" type="string"/>
-<Field __index="141" __sourcePath="{}/object/company/cpDivision/stores/storeDimensionPAC" containerType="SINGLE" label="storeDimensionPAC" name="storeDimensionPAC" type="string"/>
-<Field __index="142" __sourcePath="{}/object/company/cpDivision/stores/storeDimensionRegion" containerType="SINGLE" label="storeDimensionRegion" name="storeDimensionRegion" type="string"/>
-<Field __index="143" __sourcePath="{}/object/company/cpDivision/stores/storePhysicalStoreAddressLine1" containerType="SINGLE" label="storePhysicalStoreAddressLine1" name="storePhysicalStoreAddressLine1" type="string"/>
-<Field __index="144" __sourcePath="{}/object/company/cpDivision/stores/storePhysicalStoreAddressLine2" containerType="SINGLE" label="storePhysicalStoreAddressLine2" name="storePhysicalStoreAddressLine2" type="string"/>
-<Field __index="145" __sourcePath="{}/object/company/cpDivision/stores/storePhysicalStoreCity" containerType="SINGLE" label="storePhysicalStoreCity" name="storePhysicalStoreCity" type="string"/>
-<Field __index="146" __sourcePath="{}/object/company/cpDivision/stores/storePhysicalStoreName" containerType="SINGLE" label="storePhysicalStoreName" name="storePhysicalStoreName" type="string"/>
-<Field __index="147" __sourcePath="{}/object/company/cpDivision/stores/storePhysicalStorePostalCode" containerType="SINGLE" label="storePhysicalStorePostalCode" name="storePhysicalStorePostalCode" type="string"/>
-<Field __index="148" __sourcePath="{}/object/company/cpDivision/stores/storePhysicalStoreState" containerType="SINGLE" label="storePhysicalStoreState" name="storePhysicalStoreState" type="string"/>
-<Field __index="149" __sourcePath="{}/object/company/cpDivision/stores/storePriceToleranceGroup" containerType="SINGLE" label="storePriceToleranceGroup" name="storePriceToleranceGroup" type="string"/>
+<Field __index="129" __sourcePath="{}/object/company/cpDivision/stores/accountNum" containerType="SINGLE" label="accountNum" name="accountNum" type="string"/>
+<Field __index="130" __sourcePath="{}/object/company/cpDivision/stores/bhnCompanyCode" containerType="SINGLE" label="bhnCompanyCode" name="bhnCompanyCode" type="string"/>
+<Field __index="131" __sourcePath="{}/object/company/cpDivision/stores/bhnDivisionCode" containerType="SINGLE" label="bhnDivisionCode" name="bhnDivisionCode" type="string"/>
+<Field __index="132" __sourcePath="{}/object/company/cpDivision/stores/bhnGUID" containerType="SINGLE" label="bhnGUID" name="bhnGUID" type="string"/>
+<Field __index="133" __sourcePath="{}/object/company/cpDivision/stores/companyPhysicalStoreAddressLine1" containerType="SINGLE" label="companyPhysicalStoreAddressLine1" name="companyPhysicalStoreAddressLine1" type="string"/>
+<Field __index="134" __sourcePath="{}/object/company/cpDivision/stores/companyPhysicalStoreCountry" containerType="SINGLE" label="companyPhysicalStoreCountry" name="companyPhysicalStoreCountry" type="string"/>
+<Field __index="135" __sourcePath="{}/object/company/cpDivision/stores/productLanguage" containerType="SINGLE" label="productLanguage" name="productLanguage" type="string"/>
+<Field __index="136" __sourcePath="{}/object/company/cpDivision/stores/storeBHNCustLevel" containerType="SINGLE" label="storeBHNCustLevel" name="storeBHNCustLevel" type="string"/>
+<Field __index="137" __sourcePath="{}/object/company/cpDivision/stores/storeBHNStoreCode" containerType="SINGLE" label="storeBHNStoreCode" name="storeBHNStoreCode" type="string"/>
+<Field __index="138" __sourcePath="{}/object/company/cpDivision/stores/storeBlocked" containerType="SINGLE" label="storeBlocked" name="storeBlocked" type="boolean"/>
+<Field __index="139" __sourcePath="{}/object/company/cpDivision/stores/storeChannelDimension" containerType="SINGLE" label="storeChannelDimension" name="storeChannelDimension" type="string"/>
+<Field __index="140" __sourcePath="{}/object/company/cpDivision/stores/storeContactPhoneNumber" containerType="SINGLE" label="storeContactPhoneNumber" name="storeContactPhoneNumber" type="string"/>
+<Field __index="141" __sourcePath="{}/object/company/cpDivision/stores/storeCountryRegionId" containerType="SINGLE" label="storeCountryRegionId" name="storeCountryRegionId" type="string"/>
+<Field __index="142" __sourcePath="{}/object/company/cpDivision/stores/storeCustGroup" containerType="SINGLE" label="storeCustGroup" name="storeCustGroup" type="string"/>
+<Field __index="143" __sourcePath="{}/object/company/cpDivision/stores/storeDimensionPAC" containerType="SINGLE" label="storeDimensionPAC" name="storeDimensionPAC" type="string"/>
+<Field __index="144" __sourcePath="{}/object/company/cpDivision/stores/storeDimensionRegion" containerType="SINGLE" label="storeDimensionRegion" name="storeDimensionRegion" type="string"/>
+<Field __index="145" __sourcePath="{}/object/company/cpDivision/stores/storePhysicalStoreAddressLine1" containerType="SINGLE" label="storePhysicalStoreAddressLine1" name="storePhysicalStoreAddressLine1" type="string"/>
+<Field __index="146" __sourcePath="{}/object/company/cpDivision/stores/storePhysicalStoreAddressLine2" containerType="SINGLE" label="storePhysicalStoreAddressLine2" name="storePhysicalStoreAddressLine2" type="string"/>
+<Field __index="147" __sourcePath="{}/object/company/cpDivision/stores/storePhysicalStoreCity" containerType="SINGLE" label="storePhysicalStoreCity" name="storePhysicalStoreCity" type="string"/>
+<Field __index="148" __sourcePath="{}/object/company/cpDivision/stores/storePhysicalStoreName" containerType="SINGLE" label="storePhysicalStoreName" name="storePhysicalStoreName" type="string"/>
+<Field __index="149" __sourcePath="{}/object/company/cpDivision/stores/storePhysicalStorePostalCode" containerType="SINGLE" label="storePhysicalStorePostalCode" name="storePhysicalStorePostalCode" type="string"/>
+<Field __index="150" __sourcePath="{}/object/company/cpDivision/stores/storePhysicalStoreState" containerType="SINGLE" label="storePhysicalStoreState" name="storePhysicalStoreState" type="string"/>
+<Field __index="151" __sourcePath="{}/object/company/cpDivision/stores/storePriceToleranceGroup" containerType="SINGLE" label="storePriceToleranceGroup" name="storePriceToleranceGroup" type="string"/>
 </Record>
 </Metadata>
 <Dictionary>
@@ -571,7 +575,9 @@
               <substitutionPOG1Category>$3.substitutionPOG1Category</substitutionPOG1Category>
               <substitutionPOG2Category>$3.substitutionPOG2Category</substitutionPOG2Category>
               <substitutionPOG3Category>$3.substitutionPOG3Category</substitutionPOG3Category>
+              <substitutionPOGDimension>$3.substitutionPOGDimension</substitutionPOGDimension>
               <substitutionPortalDisplayName>$3.substitutionPortalDisplayName</substitutionPortalDisplayName>
+              <substitutionShipperUPC>$3.substitutionShipperUPC</substitutionShipperUPC>
             </substGrp>
           </item>
         </clover:collection>
@@ -768,7 +774,9 @@
     <typed-object-ref name="substitutionPOG1Category" type-ref="java.lang.String"/>
     <typed-object-ref name="substitutionPOG2Category" type-ref="java.lang.String"/>
     <typed-object-ref name="substitutionPOG3Category" type-ref="java.lang.String"/>
+    <typed-object-ref name="substitutionPOGDimension" type-ref="java.lang.String"/>
     <typed-object-ref name="substitutionPortalDisplayName" type-ref="java.lang.String"/>
+    <typed-object-ref name="substitutionShipperUPC" type-ref="java.lang.String"/>
   </typed-object>
   <typed-object type="com.bhnetwork.integration.pppstodax.canonical.Company">
     <typed-object-ref name="bhnGUID" type-ref="java.lang.String"/>
@@ -1020,7 +1028,8 @@ output.name = input.name;
 output.language = input.language;
 output.newIidReasonCode = input.newIIDReasonCode;
 output.iidUseStdUnitConvert = input.iidUseStdUnitConvert;
-]]></attr>
+output.substitutionPOGDimension = input.substitutionPOGDimension;
+output.substitutionShipperUPC = input.substitutionShipperUPC;]]></attr>
 </Node>
 <Node charset="UTF-8" enabled="enabled" fileURL="dict:inputPayload" guiName="JSON READER" guiX="20" guiY="20" id="JSON_READER0" type="JSON_READER">
 <attr name="mapping"><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="no"?>
@@ -1369,6 +1378,8 @@ output.iidUseStdUnitConvert = input.iidUseStdUnitConvert;
         <Mapping cloverField="substitutionPOG2Category" trim="true" xpath="substitutionPOG2Category"/>
         <Mapping cloverField="substitutionPOG3Category" trim="true" xpath="substitutionPOG3Category"/>
         <Mapping cloverField="substitutionPortalDisplayName" trim="true" xpath="substitutionPortalDisplayName"/>
+        <Mapping cloverField="substitutionPOGDimension" trim="true" xpath="substitutionPOGDimension"/>
+        <Mapping cloverField="substitutionShipperUPC" trim="true" xpath="substitutionShipperUPC"/>
         <Mapping cloverField="divisionCardImageURL" trim="true" xpath="iid/divisionCardImageURL"/>
         <Mapping cloverField="iidActivationType" trim="true" xpath="iid/iidActivationType"/>
         <Mapping cloverField="iidCaseCount" trim="true" xpath="iid/iidCaseCount"/>
