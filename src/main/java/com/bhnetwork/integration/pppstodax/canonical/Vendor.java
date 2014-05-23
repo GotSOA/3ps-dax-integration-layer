@@ -36,8 +36,10 @@ public class Vendor implements Serializable {
 	private String vendorTax1099NameChoice;
 	private String vendorTax1099Reports;
 	private String vendorTaxIDNumber;
+	private String vendorTaxIdType;
 	private Boolean vendorW9;
 	private String vendorZipCode;
+	
 	public String getAccountNum() {
 		return accountNum;
 	}
@@ -170,6 +172,12 @@ public class Vendor implements Serializable {
 	public void setVendorTaxIDNumber(String vendorTaxIDNumber) {
 		this.vendorTaxIDNumber = vendorTaxIDNumber;
 	}
+	public String getVendorTaxIdType() {
+		return vendorTaxIdType;
+	}
+	public void setVendorTaxIdType(String vendorTaxIdType) {
+		this.vendorTaxIdType = vendorTaxIdType;
+	}	
 	public Boolean getVendorW9() {
 		return vendorW9;
 	}

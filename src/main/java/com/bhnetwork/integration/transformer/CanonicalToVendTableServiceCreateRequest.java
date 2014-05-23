@@ -4,6 +4,7 @@ import java.text.ParseException;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.List;
 
 import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeConstants;
@@ -22,7 +23,14 @@ import com.microsoft.schemas.dynamics._2008._01.documents.vendtable.AxdEntityVen
 import com.microsoft.schemas.dynamics._2008._01.documents.vendtable.AxdEntityVendorAddress;
 import com.microsoft.schemas.dynamics._2008._01.documents.vendtable.AxdArrayAxdExtTypeDimension;
 import com.microsoft.schemas.dynamics._2008._01.documents.vendtable.AxdEnumNoYes;
-import com.microsoft.schemas.dynamics._2008._01.documents.vendtable.AxdExtTypeNoYesId;
+//import com.microsoft.schemas.dynamics._2008._01.documents.vendtable.AxdExtTypeNoYesId;
+import com.microsoft.schemas.dynamics._2008._01.documents.vendtable.AxdExtTypeVendBlocked;
+import com.microsoft.schemas.dynamics._2008._01.documents.vendtable.AxdExtTypeTax1099ForeignEntityIndicator;
+import com.microsoft.schemas.dynamics._2008._01.documents.vendtable.AxdEnumTax1099NameChoice;
+import com.microsoft.schemas.dynamics._2008._01.documents.vendtable.AxdExtTypeTax1099Reporting;
+import com.microsoft.schemas.dynamics._2008._01.documents.vendtable.AxdEnumTaxIDType;
+import com.microsoft.schemas.dynamics._2008._01.documents.vendtable.AxdExtTypeVendW9;
+
 import com.microsoft.schemas.dynamics._2008._01.services.VendTableServiceCreateRequest;
 
 public class CanonicalToVendTableServiceCreateRequest extends
@@ -36,45 +44,24 @@ public class CanonicalToVendTableServiceCreateRequest extends
 		Vendor vendorObj = ((PartnerProfile) message.getPayload()).getVendor();	
 		
 		VendTableServiceCreateRequest req= new VendTableServiceCreateRequest();
-		
-		// companyCode is the pkey for company, what's the equivalent for Vendor?
-		// AxdCustCompanyCode custCompanyCode = new AxdCustCompanyCode();
-		
+	
+		//child object
 		AxdEntityVendTable bhnVendorTable1 = new AxdEntityVendTable();
+		//parent object
+		AxdVendTable vendTable = new AxdVendTable();
+		// vendTable is a List<AxdEntityVendTable>
 		
-		private String accountNum;
-		private String companyLegalName;
-		private String divisionBrandName;
-		private String recId;
-		private String vendorAddress;
-		private Boolean vendorBlocked;
-		private String vendorCity;
-		private String vendorCountryRegionId;
-		private String vendorCounty;
-		private String vendorCurrency;
-		private String vendorEmail;
-		private Boolean vendorForeignEntityIndicator;
-		private String vendorGroup;
-		private String vendorLanguageId;
-		private String vendorPaymentTermsId;
-		private String vendorPaymMode;
-		private String vendorPhone;
-		private String vendorState;
-		private String vendorstreet;
-		private String vendorTax1099NameChoice;
-		private String vendorTax1099Reports;
-		private String vendorTaxIDNumber;			// not sure how to map this one
-		private Boolean vendorW9;
-		private String vendorZipCode;
-		
-		bhnVendorTable1.setAccountNum(vendorObj.getAccountNum());
+		// DAX sets the accountNum
+		//bhnVendorTable1.setAccountNum(vendorObj.getAccountNum());
 		//bhnVendorTable1.setAction(value);
 		bhnVendorTable1.setAddress(vendorObj.getVendorAddress());
 		//bhnVendorTable1.setBankAccount(value);
 		//bhnVendorTable1.setBankCentralBankPurposeCode(value);
 		//bhnVendorTable1.setBankCentralBankPurposeText(value);
 		//bhnVendorTable1.setBidOnly(value);
-		bhnVendorTable1.setBlocked(vendorObj.getVendorBlocked());
+
+		bhnVendorTable1.setBlocked(vendorObj.getVendorBlocked()? AxdExtTypeVendBlocked.INVOICE:AxdExtTypeVendBlocked.NO);
+		
 		//bhnVendorTable1.setCashDisc(value);
 		//bhnVendorTable1.setCellularPhone(value);
 		bhnVendorTable1.setCity(vendorObj.getVendorCity());
@@ -96,7 +83,8 @@ public class CanonicalToVendTableServiceCreateRequest extends
 		//bhnVendorTable1.setDocumentHash(value);
 		bhnVendorTable1.setEmail(vendorObj.getVendorEmail());
 		//bhnVendorTable1.setEndDisc(value);
-		bhnVendorTable1.setForeignEntityIndicator(vendorObj.getVendorForeignEntityIndicator());
+		// ... AxdExtTypeTax1099ForeignEntityIndicator
+		bhnVendorTable1.setForeignEntityIndicator(vendorObj.getVendorForeignEntityIndicator()? AxdExtTypeTax1099ForeignEntityIndicator.YES:AxdExtTypeTax1099ForeignEntityIndicator.NO);
 		//bhnVendorTable1.setFreightZone(value);
 		//bhnVendorTable1.setInclTax(value);
 		//bhnVendorTable1.setInventLocation(value);
@@ -111,7 +99,7 @@ public class CanonicalToVendTableServiceCreateRequest extends
 		//bhnVendorTable1.setMemo(value);
 		//bhnVendorTable1.setMerchRecordNumber(value);
 		//bhnVendorTable1.setMultiLineDisc(value);
-		bhnVendorTable1.setName(value);			// may be missing in canonical???
+		bhnVendorTable1.setName(vendorObj.getCompanyLegalName());	
 		//bhnVendorTable1.setNameAlias(value);
 		//bhnVendorTable1.setNameControl(value);
 		//bhnVendorTable1.setNumberSequenceGroup(value);
@@ -143,11 +131,20 @@ public class CanonicalToVendTableServiceCreateRequest extends
 		//bhnVendorTable1.setSubsegmentId(value);
 		//bhnVendorTable1.setSuppItemGroupId(value);
 		//bhnVendorTable1.setTax1099Box(value);
-		bhnVendorTable1.setTax1099NameChoice(vendorObj.getVendorTax1099NameChoice());
+		// TODO: review what default should be - also STRING vs. Boolean issue
+		bhnVendorTable1.setTax1099NameChoice(vendorObj.getVendorTax1099NameChoice()==""? AxdEnumTax1099NameChoice.DBA:AxdEnumTax1099NameChoice.VENDOR_NAME);
+		
+		// NOTE: arbitrary mapping to vendorTaxIDNumber
 		bhnVendorTable1.setTax1099RegNum(vendorObj.getVendorTaxIDNumber());
-		bhnVendorTable1.setTax1099Reports(vendorObj.getVendorTax1099Reports());
+		
+		// // TODO: review what default should be - also STRING vs. Boolean issue
+		bhnVendorTable1.setTax1099Reports(vendorObj.getVendorTax1099Reports()==""? AxdExtTypeTax1099Reporting.YES:AxdExtTypeTax1099Reporting.NO);
 		//bhnVendorTable1.setTaxGroup(value);
-		bhnVendorTable1.setTaxIDType(value);				// is it for individual vs. corporate ?
+		
+		bhnVendorTable1.setTaxIDType(vendorObj.getVendorTaxIdType()==""? AxdEnumTaxIDType.SSN:AxdEnumTaxIDType.EIN);
+		// enum values are: UnKnown, EIN, SSN, ITIN, ATIN
+		 
+		
 		//bhnVendorTable1.setTaxWithholdCalculate(value);
 		//bhnVendorTable1.setTaxWithholdGroup(value);
 		//bhnVendorTable1.setTeleFax(value);
@@ -157,31 +154,21 @@ public class CanonicalToVendTableServiceCreateRequest extends
 		bhnVendorTable1.setVendGroup(vendorObj.getVendorGroup());
 		//bhnVendorTable1.setVendItemGroupId(value);
 		//bhnVendorTable1.setVendPriceToleranceGroupId(value);
-		bhnVendorTable1.setW9(vendorObj.getVendorW9());
+		// ... AxdExtTypeVendW9
+		bhnVendorTable1.setW9(vendorObj.getVendorW9()? AxdExtTypeVendW9.YES:AxdExtTypeVendW9.NO);
+		
 		//bhnVendorTable1.setYourAccountNum(value);
 		bhnVendorTable1.setZipCode(vendorObj.getVendorZipCode());
 		
-		// 137 -45 + 1 = 93 fields
+		// 93 fields in DAX, we map only 23 fields
 		
 		// sample code to handle ENUMS
 		//bhnCustCompanyTable1.setBhnSetupComplete(companyObj.getCompanyBHNSetupComplete()? AxdExtTypeNoYesId.YES:AxdExtTypeNoYesId.NO);
 		//bhnCustCompanyTable1.setCompanyCode(companyObj.getCompanyCode());
+		vendTable.getVendTable().add(bhnVendorTable1);
+		
+		req.setVendTable(vendTable);
 		
 		return req;
-	}
-	
-	private XMLGregorianCalendar dateToXMLGregorianCalendar(Date date)
-			throws ParseException, DatatypeConfigurationException {
-		XMLGregorianCalendar result = null;
-		GregorianCalendar gregorianCalendar;
-
-		gregorianCalendar = (GregorianCalendar) GregorianCalendar.getInstance();
-		gregorianCalendar.setTime(date);
-		result = DatatypeFactory.newInstance().newXMLGregorianCalendarDate(
-				gregorianCalendar.get(Calendar.YEAR),
-				gregorianCalendar.get(Calendar.MONTH) + 1,
-				gregorianCalendar.get(Calendar.DAY_OF_MONTH),
-				DatatypeConstants.FIELD_UNDEFINED);
-		return result;
 	}
 }
