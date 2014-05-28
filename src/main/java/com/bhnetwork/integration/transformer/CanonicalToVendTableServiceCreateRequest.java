@@ -41,6 +41,11 @@ public class CanonicalToVendTableServiceCreateRequest extends
 			throws TransformerException {
 		
 		
+		// see successful sample SOAP request to create a new vendor
+		// be aware that no uniqueness constraint or rule is being enforced on DAX side
+		// not the w9regnum not the vendor name either
+		// it is a little too flexible
+		
 		Vendor vendorObj = ((PartnerProfile) message.getPayload()).getVendor();	
 		
 		VendTableServiceCreateRequest req= new VendTableServiceCreateRequest();

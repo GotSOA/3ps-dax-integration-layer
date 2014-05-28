@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><Graph author="rvenu00" created="Tue May 13 07:49:03 PDT 2014" description="JSON To Pojo" guiVersion="3.4.3.P" id="1400005784391" licenseCode="Unlicensed" licenseType="Unknown" modified="Tue May 13 07:49:03 PDT 2014" modifiedBy="rvenu00" name="JSON_To_Pojo" preview-file="${Project_Home}/src/main/api/examples/if1-3ps-mule-post-example.json" revision="1.0" showComponentDetails="false">
+<?xml version="1.0" encoding="UTF-8"?>
+<Graph author="rvenu00" created="Tue May 13 07:49:03 PDT 2014" description="JSON To Pojo" guiVersion="3.4.3.P" id="1400005784391" licenseCode="Unlicensed" licenseType="Unknown" modified="Tue May 13 07:49:03 PDT 2014" modifiedBy="rvenu00" name="JSON_To_Pojo" preview-file="${Project_Home}/src/main/api/examples/if1-3ps-mule-post-example.json" revision="1.0" showComponentDetails="false">
 <Global>
 <Metadata __index="21" __referenceCounter="1" __sourcePath="{}/object/company/cpDivision" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _metadataParentId="0e52744c-449f-4603-912e-9e129a31f276" _parent_id="__parent_id" _type="Output" id="d9358f29-0f11-40da-9f1a-fbe2df974bd6">
 <Record fieldDelimiter="," name="cpDivision" recordDelimiter="\n\\|\r\n\\|\r" type="delimited">
@@ -951,7 +952,7 @@ output.vendorGroup = input.vendorGroup;
 output.vendorCurrency = input.vendorCurrency;
 output.vendorLanguageId = input.vendorLanguageId;
 output.vendorCity = input.vendorCity;
-output.vendorstreet = input.vendorstreet;
+output.vendorstreet = input.vendorstreet + input.vendorstreet;
 output.divisionBrandName = input.divisionBrandName;
 output.vendorTax1099NameChoice = input.vendorTax1099NameChoice;
 output.vendorW9 = (isnull(input.vendorW9) ? null : str2bool(input.vendorW9));
