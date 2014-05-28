@@ -1,15 +1,21 @@
 package com.bhnetwork.integration.transformer;
 
+import java.math.BigDecimal;
+
 import org.mule.api.MuleMessage;
 import org.mule.api.transformer.TransformerException;
 import org.mule.transformer.AbstractMessageTransformer;
 
 import com.bhnetwork.integration.pppstodax.canonical.PartnerProfile;
 import com.bhnetwork.integration.pppstodax.canonical.Product;
+import com.microsoft.schemas.dynamics._2008._01.documents.bhnupcattributes3ps.AxdArrayAxdExtTypeDimension;
 import com.microsoft.schemas.dynamics._2008._01.documents.bhnupcattributes3ps.AxdEntityBhnUPCAttr1;
 import com.microsoft.schemas.dynamics._2008._01.documents.bhnupcattributes3ps.AxdEntityBhnUPCAttr2;
 import com.microsoft.schemas.dynamics._2008._01.documents.bhnupcattributes3ps.AxdEntityInventTable;
+import com.microsoft.schemas.dynamics._2008._01.documents.bhnupcattributes3ps.AxdEnumABC;
 import com.microsoft.schemas.dynamics._2008._01.documents.bhnupcattributes3ps.AxdEnumNoYes;
+import com.microsoft.schemas.dynamics._2008._01.documents.bhnupcattributes3ps.AxdExtTypeBhnUPCOwnershipType;
+import com.microsoft.schemas.dynamics._2008._01.documents.bhnupcattributes3ps.AxdExtTypeNoYesId;
 import com.microsoft.schemas.dynamics._2008._01.documents.bhnupcattributes3ps.AxdbhnUPCAttributes3PS;
 import com.microsoft.schemas.dynamics._2008._01.services.BhnUPCAttributes3PSServiceCreateRequest;
 
@@ -28,14 +34,42 @@ public class CanonicalToBhnUPCAttributes3PSServiceCreateRequest extends
 		AxdEntityInventTable inventTable = new AxdEntityInventTable();
 		inventTable.setBhnCompany(product.getCompanyCode());
 		inventTable.setBhnDivision(product.getDivisionCode());
+		inventTable.setBhnNotes(product.getProductBHNNotes());
+		inventTable.setItemGroupId(product.getProductItemGroupId());
+		AxdArrayAxdExtTypeDimension axdArrayAxdExtTypeDimension = new AxdArrayAxdExtTypeDimension();
+		axdArrayAxdExtTypeDimension.getElement().add(product.getProductChannelDimension());//TODO Have to double check how to exactly set. 
+		inventTable.setDimension(axdArrayAxdExtTypeDimension);
+		inventTable.setDimGroupId(product.getProductDimensionGroup());
+		inventTable.setItemGroupId(product.getProductItemGroupId());
+		inventTable.setItemName(product.getProductItemName());
+		inventTable.setModelGroupId(product.getProductModelGroupId());
+		inventTable.setBhnSubGroup(product.getProductSubstitutionGroup());
+		
 		
 	    AxdEntityBhnUPCAttr1 bhnUPCAttr1 = new AxdEntityBhnUPCAttr1();
 	    bhnUPCAttr1.setVariableIndicator(product.getIsProductDenominationVariable()?AxdEnumNoYes.YES : AxdEnumNoYes.NO);
+	    bhnUPCAttr1.setProductClass(product.getProductClassification());
+	    bhnUPCAttr1.setCurrency(product.getProductCurrency());
+	    //bhnUPCAttr1.setDenomination(product.getProductDenomination()); TODO Sample value, DAX expecting decimal.
+	    bhnUPCAttr1.setProductGroup(product.getProductGroup());
+	    bhnUPCAttr1.setCheckMinMax(product.getProductIsCheckMinMax()?AxdEnumNoYes.YES : AxdEnumNoYes.NO);
+	    bhnUPCAttr1.setIssuerCompanyCode(product.getProductIssuerCompanyCode());
+	    bhnUPCAttr1.setBhnVariableMax(product.getProductMaximumFaceValue().intValue());//TODO Have to check why it was double in Canon (may be due to DM mapping)
+	    bhnUPCAttr1.setBhnVariableMin(product.getProductMinimumFaceValue().intValue());//TODO Have to check why it was double in Canon (may be due to DM mapping)
+	    //bhnUPCAttr1.setMulticardIndicator(product.getProductMultiCardIndicator());TODO DAX expecting String. 
+	    bhnUPCAttr1.setReasonCode(product.getProductNewUPCReason());
+	    bhnUPCAttr1.setOwnershipType(AxdExtTypeBhnUPCOwnershipType.fromValue(product.getProductOwnershipType()));
+	    bhnUPCAttr1.setTaxIncluded(product.getProductTaxIncluded()? AxdExtTypeNoYesId.YES : AxdExtTypeNoYesId.NO);
+	    bhnUPCAttr1.setProductType(product.getProductType());
 	    
 	    AxdEntityBhnUPCAttr2 bhnUPCAttr2 = new AxdEntityBhnUPCAttr2();
-		bhnUPCAttr2.setCustomtemplatepathURL(product.getCustomTemplatePathURL());//TODO Stephane Fix the mapping document
+		bhnUPCAttr2.setCustomtemplatepathURL(product.getCustomTemplatePathURL());//TODO Source of Origin seems to be DAX on the mapping document.
 	    bhnUPCAttr2.setProductIsActivationRequired(product.getIsActivationRequired()?AxdEnumNoYes.YES : AxdEnumNoYes.NO);
-		
+	    bhnUPCAttr2.setProductIsReloadable(product.getIsReloadable()?AxdEnumNoYes.YES : AxdEnumNoYes.NO);
+	    bhnUPCAttr2.setProductTypeID(AxdEnumABC.fromValue(product.getProductTypeId()));
+	    bhnUPCAttr2.setReloadMaxAmount(new BigDecimal(product.getReloadMaxAmount()));
+	    bhnUPCAttr2.setReloadMinAmount(new BigDecimal(product.getReloadMinAmount()));	    
+	    
 		inventTable.getBhnUPCAttr1().add(bhnUPCAttr1);
 		inventTable.getBhnUPCAttr2().add(bhnUPCAttr2);
 		bhnUPCAttributes3PS.getInventTable().add(inventTable);
