@@ -104,8 +104,8 @@ http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schem
             <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[1].value]" target="#[sessionVars.canon.company.recId]"/>
         </enricher>
         <logger level="INFO" doc:name="Log bhnGUID and recId" message="bhnGUID=#[sessionVars.canon.company.bhnGUID] and recId=#[sessionVars.canon.company.recId]"/>
-        <vm:outbound-endpoint exchange-pattern="one-way" path="Q.error" doc:name="TO_BE_DELETED VM-error"/>
-        <!-- <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step2" doc:name="Q.step2"/> --> 
+        <!-- <vm:outbound-endpoint exchange-pattern="one-way" path="Q.error" doc:name="TO_BE_DELETED VM-error"/> -->
+        <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step2" doc:name="Q.step2"/>
     </flow>
     <flow name="DAX-step2-flow" doc:name="DAX-step2-flow">
         <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-step2" path="Q.step2" />
