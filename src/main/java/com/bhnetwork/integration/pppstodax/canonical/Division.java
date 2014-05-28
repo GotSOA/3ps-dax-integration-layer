@@ -15,44 +15,45 @@ import java.util.List;
 public class Division implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	private	String	accountType;
-	private	String	bhnGUID;
-	private	String	divisionLocalPartner;
-	private	String	divisionLocalPartnerSource;
-	private	String	companyCode;
-	private	String	divisionCashierInstructions;
-	private	String	divisionCode;
-	private	String	divisionCustomerSupportContactFirstName;
-	private	String	divisionCustomerSupportContactLastName;
-	private	String	divisionCustomerSupportEmail;
-	private	String	divisionCustomerSupportPhone;
-	private	String	divisionCustomerSupportURL;
-	private	String	divisionInStoreRedemptionInstructions;
-	private	String	divisionIsPinRequiredForBI;
-	private	String	divisionIsPinRequiredForRedemption;
-	private	String	divisionLocale;
-	private	String	divisionLogoURL;
-	private	String	divisionOnlineRedemptionInstructions;
-	private	String	divisionOnlineStoreURL;
-	private	String	divisionProgramDescription;
-	private	String	divisionRedemptionInformation;
-	private	String	divisionRedemptionLine1;
-	private	String	divisionRedemptionLine2;
-	private	String	divisionRedemptionMethods;
-	private	String	divisionTandCTextForPhysical;
-	private	Boolean	divisionIsContractComplete;
-	private	String	name;
-	private	String	processorCode;
-	private	String	processorContactFirstName;
-	private	String	processorContactLastName;
-	private	String	processorContactPhoneNumber;
-	private	String	processorContactPhoneNumberExt;
-	private	String	processorHasRealTimeIssuance;
-	
+	private String accountType;
+	private String bhnGUID;
+	private Boolean divisionLocalPartner;
+	private String divisionLocalPartnerSource;
+	private String companyCode;
+	private String divisionCashierInstructions;
+	private String divisionCode;
+	private String divisionCustomerSupportContactFirstName;
+	private String divisionCustomerSupportContactLastName;
+	private String divisionCustomerSupportEmail;
+	private String divisionCustomerSupportPhone;
+	private String divisionCustomerSupportURL;
+	private String divisionInStoreRedemptionInstructions;
+	private String divisionIsPinRequiredForBI;
+	private String divisionIsPinRequiredForRedemption;
+	private String divisionLocale;
+	private String divisionLogoURL;
+	private String divisionOnlineRedemptionInstructions;
+	private String divisionOnlineStoreURL;
+	private String divisionProcessorCode;
+	private String divisionProgramDescription;
+	private String divisionRedemptionInformation;
+	private String divisionRedemptionLine1;
+	private String divisionRedemptionLine2;
+	private String divisionRedemptionMethods;
+	private String divisionTandCTextForPhysical;
+	private Boolean divisionIsContractComplete;
+	private String name;
+	private String processorCode;
+	private String processorContactFirstName;
+	private String processorContactLastName;
+	private String processorContactPhoneNumber;
+	private String processorContactPhoneNumberExt;
+	private String processorHasRealTimeIssuance;
+
 	// 1 or multiple products (UPCs)
 	private List<Product> products;
 	private String recId;
-	
+
 	// somehow on the latest API 1.6 spec, the stores are part of division
 	private List<Store> stores;
 
@@ -72,11 +73,11 @@ public class Division implements Serializable {
 		this.bhnGUID = bhnGUID;
 	}
 
-	public String getDivisionLocalPartner() {
+	public Boolean getDivisionLocalPartner() {
 		return divisionLocalPartner;
 	}
 
-	public void setDivisionLocalPartner(String divisionLocalPartner) {
+	public void setDivisionLocalPartner(Boolean divisionLocalPartner) {
 		this.divisionLocalPartner = divisionLocalPartner;
 	}
 
@@ -211,6 +212,14 @@ public class Division implements Serializable {
 
 	public void setDivisionOnlineStoreURL(String divisionOnlineStoreURL) {
 		this.divisionOnlineStoreURL = divisionOnlineStoreURL;
+	}
+
+	public String getDivisionProcessorCode() {
+		return divisionProcessorCode;
+	}
+
+	public void setDivisionProcessorCode(String divisionProcessorCode) {
+		this.divisionProcessorCode = divisionProcessorCode;
 	}
 
 	public String getDivisionProgramDescription() {
@@ -349,6 +358,10 @@ public class Division implements Serializable {
 
 	public void setStores(List<Store> stores) {
 		this.stores = stores;
-	}	
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
 
 }
