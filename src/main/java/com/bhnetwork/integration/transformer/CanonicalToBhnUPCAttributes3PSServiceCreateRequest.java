@@ -37,15 +37,17 @@ public class CanonicalToBhnUPCAttributes3PSServiceCreateRequest extends
 		inventTable.setBhnDivision(product.getDivisionCode());
 		inventTable.setBhnNotes(product.getProductBHNNotes());
 		inventTable.setItemGroupId(product.getProductItemGroupId());
-		AxdArrayAxdExtTypeDimension axdArrayAxdExtTypeDimension = new AxdArrayAxdExtTypeDimension();
+		//TODO
+		/*AxdArrayAxdExtTypeDimension axdArrayAxdExtTypeDimension = new AxdArrayAxdExtTypeDimension();
 		axdArrayAxdExtTypeDimension.getElement().add(product.getProductChannelDimension());//TODO Have to double check how to exactly set. 
-		inventTable.setDimension(axdArrayAxdExtTypeDimension);
+		inventTable.setDimension(axdArrayAxdExtTypeDimension);*/
 		inventTable.setDimGroupId(product.getProductDimensionGroup());
 		inventTable.setItemGroupId(product.getProductItemGroupId());
 		inventTable.setItemName(product.getProductItemName());
 		inventTable.setModelGroupId(product.getProductModelGroupId());
 		inventTable.setBhnSubGroup(product.getProductSubstitutionGroup());
 		inventTable.setPartnerProfileId(message.getProperty("partnerProfileId", PropertyScope.SESSION).toString());
+		inventTable.setClazz("entity");
 		
 		
 	    AxdEntityBhnUPCAttr1 bhnUPCAttr1 = new AxdEntityBhnUPCAttr1();
@@ -58,19 +60,23 @@ public class CanonicalToBhnUPCAttributes3PSServiceCreateRequest extends
 	    bhnUPCAttr1.setIssuerCompanyCode(product.getProductIssuerCompanyCode());
 	    bhnUPCAttr1.setBhnVariableMax(product.getProductMaximumFaceValue().intValue());//TODO Have to check why it was double in Canon (may be due to DM mapping)
 	    bhnUPCAttr1.setBhnVariableMin(product.getProductMinimumFaceValue().intValue());//TODO Have to check why it was double in Canon (may be due to DM mapping)
+	    bhnUPCAttr1.setItemId("DEFAULT");
 	    //bhnUPCAttr1.setMulticardIndicator(product.getProductMultiCardIndicator());TODO DAX expecting String. 
 	    bhnUPCAttr1.setReasonCode(product.getProductNewUPCReason());
 	    bhnUPCAttr1.setOwnershipType(AxdExtTypeBhnUPCOwnershipType.fromValue(product.getProductOwnershipType()));
 	    bhnUPCAttr1.setTaxIncluded(product.getProductTaxIncluded()? AxdExtTypeNoYesId.YES : AxdExtTypeNoYesId.NO);
 	    bhnUPCAttr1.setProductType(product.getProductType());
+	    bhnUPCAttr1.setClazz("entity");
 	    
 	    AxdEntityBhnUPCAttr2 bhnUPCAttr2 = new AxdEntityBhnUPCAttr2();
 		bhnUPCAttr2.setCustomtemplatepathURL(product.getCustomTemplatePathURL());//TODO Source of Origin seems to be DAX on the mapping document.
 	    bhnUPCAttr2.setProductIsActivationRequired(product.getIsActivationRequired()?AxdEnumNoYes.YES : AxdEnumNoYes.NO);
 	    bhnUPCAttr2.setProductIsReloadable(product.getIsReloadable()?AxdEnumNoYes.YES : AxdEnumNoYes.NO);
-	    bhnUPCAttr2.setProductTypeID(AxdEnumABC.fromValue(product.getProductTypeId()));
+	    //bhnUPCAttr2.setProductTypeID(AxdEnumABC.fromValue(product.getProductTypeId()));TODO Enum mismatch
+	    bhnUPCAttr2.setProductTypeID(AxdEnumABC.NONE);
 	    bhnUPCAttr2.setReloadMaxAmount(new BigDecimal(product.getReloadMaxAmount()));
 	    bhnUPCAttr2.setReloadMinAmount(new BigDecimal(product.getReloadMinAmount()));	    
+	    bhnUPCAttr2.setClazz("entity");
 	    
 		inventTable.getBhnUPCAttr1().add(bhnUPCAttr1);
 		inventTable.getBhnUPCAttr2().add(bhnUPCAttr2);
