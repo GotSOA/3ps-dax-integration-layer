@@ -15,8 +15,8 @@ public class Vendor implements Serializable {
 	private static final long serialVersionUID = 1L;
 	// spec 3.3
 	private String accountNum;
-	private String companyLegalName;
-	private String divisionBrandName;
+	//private String companyLegalName;
+	//private String divisionBrandName;
 	private String recId;
 	private String vendorAddress;
 	private Boolean vendorBlocked;
@@ -26,8 +26,10 @@ public class Vendor implements Serializable {
 	private String vendorCurrency;
 	private String vendorEmail;
 	private Boolean vendorForeignEntityIndicator;
-	private String vendorGroup;
+	private String vendorGroup;      // seems not used
 	private String vendorLanguageId;
+	private String vendorName;		// added lately
+	// partyType missing
 	private String vendorPaymentTermsId;
 	private String vendorPaymMode;
 	private String vendorPhone;
@@ -35,7 +37,8 @@ public class Vendor implements Serializable {
 	private String vendorstreet;
 	private String vendorTax1099NameChoice;
 	private String vendorTax1099Reports;
-	private String vendorTaxIDNumber;
+	// taxGroup missing
+	private String vendorTaxIDNumber;		// maps to Tax1099RegNum
 	private String vendorTaxIdType;
 	private Boolean vendorW9;
 	private String vendorZipCode;
@@ -46,18 +49,27 @@ public class Vendor implements Serializable {
 	public void setAccountNum(String accountNum) {
 		this.accountNum = accountNum;
 	}
-	public String getCompanyLegalName() {
-		return companyLegalName;
+//	public String getCompanyLegalName() {
+//		return companyLegalName;
+//	}
+//	public void setCompanyLegalName(String companyLegalName) {
+//		this.companyLegalName = companyLegalName;
+//	}
+//	public String getDivisionBrandName() {
+//		return divisionBrandName;
+//	}
+//	public void setDivisionBrandName(String divisionBrandName) {
+//		this.divisionBrandName = divisionBrandName;
+//	}
+	
+	public String getVendorName() {
+		return vendorName;
 	}
-	public void setCompanyLegalName(String companyLegalName) {
-		this.companyLegalName = companyLegalName;
+	
+	public void setVendorName(String vendorName) {
+		this.vendorName = vendorName;
 	}
-	public String getDivisionBrandName() {
-		return divisionBrandName;
-	}
-	public void setDivisionBrandName(String divisionBrandName) {
-		this.divisionBrandName = divisionBrandName;
-	}
+	
 	public String getRecId() {
 		return recId;
 	}
