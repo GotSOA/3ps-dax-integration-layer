@@ -3139,31 +3139,34 @@
 </soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/UPCSubGroupTableService/create"/><con:wsrmConfig version="1.2"/></con:call><con:call name="MuleRequest"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/upcsubgrouptableservice.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
   <soap:Header>
     <mule:header xmlns:mule="http://www.muleumo.org/providers/soap/1.0">
-      <mule:MULE_CORRELATION_ID>9e99190a-e1c4-11e3-ab62-41ec32b62343</mule:MULE_CORRELATION_ID>
+      <mule:MULE_CORRELATION_ID>60c3000d-e757-11e3-91e1-878c9740837d</mule:MULE_CORRELATION_ID>
       <mule:MULE_CORRELATION_GROUP_SIZE>2</mule:MULE_CORRELATION_GROUP_SIZE>
       <mule:MULE_CORRELATION_SEQUENCE>-1</mule:MULE_CORRELATION_SEQUENCE>
     </mule:header>
   </soap:Header>
   <soap:Body>
-    <ns2:UPCSubGroupTableServiceCreateRequest xmlns:ns2="http://tempuri.org" xmlns:ns3="http://schemas.microsoft.com/dynamics/2008/01/documents/UPCSubGroupTable" xmlns:ns4="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" xmlns:ns5="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKey" xmlns:ns6="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList" xmlns:ns7="http://schemas.microsoft.com/dynamics/2008/01/documents/bhnCleanUpMegatron" xmlns:ns8="http://schemas.microsoft.com/dynamics/2006/02/documents/QueryCriteria" xmlns:ns9="http://schemas.microsoft.com/2003/10/Serialization/">
+    <ns2:UPCSubGroupTableServiceCreateRequest xmlns:ns2="http://tempuri.org" xmlns:ns3="http://schemas.microsoft.com/dynamics/2008/01/documents/UPCSubGroupTable" xmlns:ns4="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" xmlns:ns5="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKey" xmlns:ns6="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList" xmlns:ns7="http://schemas.microsoft.com/dynamics/2008/01/documents/bhnCleanUpMegatron" xmlns:ns8="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:ns9="http://schemas.microsoft.com/dynamics/2006/02/documents/QueryCriteria">
       <ns3:UPCSubGroupTable>
         <ns3:DocPurpose xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
         <ns3:SenderId xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
         <ns3:bhnUPCSubGroupTable_1 class="entity">
           <ns3:_DocumentHash xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+          <ns3:BhnDivisionCode>TBD</ns3:BhnDivisionCode>
           <ns3:BhnGUID xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
           <ns3:BhnUPCParentSubGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
           <ns3:CardDisplayDesc>h1</ns3:CardDisplayDesc>
           <ns3:MerchRecordNumber xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-          <ns3:PartnerProfileId xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-          <ns3:POGCategory1>b1</ns3:POGCategory1>
-          <ns3:POGCategory2>c1</ns3:POGCategory2>
-          <ns3:POGCategory3>d1</ns3:POGCategory3>
+          <ns3:Name>DEFAULT</ns3:Name>
+          <ns3:PartnerProfileId>94QGMK5KV5ABPYP5A7X4KC32JR</ns3:PartnerProfileId>
+          <ns3:POGCategory1>TELE</ns3:POGCategory1>
+          <ns3:POGCategory2>WIRE</ns3:POGCategory2>
+          <ns3:POGCategory3>NA</ns3:POGCategory3>
           <ns3:POGDimension xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
           <ns3:PortalDisplayName>i1</ns3:PortalDisplayName>
           <ns3:RecId xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
           <ns3:RecVersion xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
           <ns3:ShipperUPC>No</ns3:ShipperUPC>
+          <ns3:SubGroupId>DEFAULT</ns3:SubGroupId>
         </ns3:bhnUPCSubGroupTable_1>
       </ns3:UPCSubGroupTable>
     </ns2:UPCSubGroupTableServiceCreateRequest>
@@ -6858,16 +6861,16 @@ Affiliate:Affiliate number.</xs:documentation>
   <soap:Body>
     <ns2:bhnCleanUpMegatronServiceCreateRequest xmlns:ns2="http://tempuri.org" xmlns:ns3="http://schemas.microsoft.com/dynamics/2008/01/documents/bhnCleanUpMegatron" xmlns:ns4="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" xmlns:ns5="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKey" xmlns:ns6="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList" xmlns:ns7="http://schemas.microsoft.com/dynamics/2006/02/documents/QueryCriteria" xmlns:ns8="http://schemas.microsoft.com/2003/10/Serialization/">
       <ns3:bhnCleanUpMegatron>
-        <ns3:DocPurpose xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-        <ns3:SenderId xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+        <ns3:DocPurpose xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        <ns3:SenderId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         <ns3:bhnCleanUpMegatron class="entity">
-          <ns3:_DocumentHash xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-          <ns3:Guid xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-          <ns3:Message xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+          <ns3:_DocumentHash xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+          <ns3:Guid xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+          <ns3:Message xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
           <ns3:PartnerprofileId>94QGMK5KV5ABPYP5A7X4KC32JR</ns3:PartnerprofileId>
-          <ns3:RecId xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-          <ns3:RecVersion xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-          <ns3:TableName xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+          <ns3:RecId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+          <ns3:RecVersion xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+          <ns3:TableName xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </ns3:bhnCleanUpMegatron>
       </ns3:bhnCleanUpMegatron>
     </ns2:bhnCleanUpMegatronServiceCreateRequest>
