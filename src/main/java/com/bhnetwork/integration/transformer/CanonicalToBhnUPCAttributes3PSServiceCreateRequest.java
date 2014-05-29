@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 
 import org.mule.api.MuleMessage;
 import org.mule.api.transformer.TransformerException;
+import org.mule.api.transport.PropertyScope;
 import org.mule.transformer.AbstractMessageTransformer;
 
 import com.bhnetwork.integration.pppstodax.canonical.PartnerProfile;
@@ -44,6 +45,7 @@ public class CanonicalToBhnUPCAttributes3PSServiceCreateRequest extends
 		inventTable.setItemName(product.getProductItemName());
 		inventTable.setModelGroupId(product.getProductModelGroupId());
 		inventTable.setBhnSubGroup(product.getProductSubstitutionGroup());
+		inventTable.setPartnerProfileId(message.getProperty("partnerProfileId", PropertyScope.SESSION).toString());
 		
 		
 	    AxdEntityBhnUPCAttr1 bhnUPCAttr1 = new AxdEntityBhnUPCAttr1();

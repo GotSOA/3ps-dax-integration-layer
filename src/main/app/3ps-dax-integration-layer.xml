@@ -117,8 +117,8 @@ http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schem
             <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[1].value]" target="#[sessionVars.canon.company.cpDivision[0].recId]"/>
         </enricher>
         <logger level="INFO" doc:name="Log bhnGUID and recId" message="guid=#[sessionVars.canon.company.cpDivision[0].bhnGUID] and RecId=#[sessionVars.canon.company.cpDivision[0].recId]"/>
-        <vm:outbound-endpoint exchange-pattern="one-way" path="Q.error" doc:name="TO_BE_DELETED VM-error"/> 
-        <!-- <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step3" doc:name="Q.step3"/> -->
+        <!-- <vm:outbound-endpoint exchange-pattern="one-way" path="Q.error" doc:name="TO_BE_DELETED VM-error"/> --> 
+        <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step3" doc:name="Q.step3"/> 
     </flow>
     <flow name="DAX-step3-flow" doc:name="DAX-step3-flow">
         <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-step3" path="Q.step3" />
@@ -132,8 +132,8 @@ http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schem
             <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[3].value]" target="#[sessionVars.canon.company.cpDivision[0].products[0].substGrp.brandRecId]"/>
         </enricher>
         <logger level="INFO" doc:name="Log bhnGUID and recId" message="guid=#[sessionVars.canon.company.cpDivision[0].products[0].substGrp.guid] and brandRecId=#[sessionVars.canon.company.cpDivision[0].products[0].substGrp.brandRecId]"/>
-        <!-- <vm:outbound-endpoint exchange-pattern="one-way" path="Q.error" doc:name="TO_BE_DELETED VM-error"/> --> 
-        <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step4" doc:name="Q.step4"/>
+        <vm:outbound-endpoint exchange-pattern="one-way" path="Q.error" doc:name="TO_BE_DELETED VM-error"/> 
+        <!-- <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step4" doc:name="Q.step4"/> -->
     </flow>
     <flow name="DAX-step4-flow" doc:name="DAX-step4-flow">
         <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-step4" path="Q.step4" />

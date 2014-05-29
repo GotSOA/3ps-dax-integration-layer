@@ -2,6 +2,7 @@ package com.bhnetwork.integration.transformer;
 
 import org.mule.api.MuleMessage;
 import org.mule.api.transformer.TransformerException;
+import org.mule.api.transport.PropertyScope;
 import org.mule.transformer.AbstractMessageTransformer;
 import org.tempuri.BhnIIDAttributesServiceCreateRequest;
 
@@ -34,6 +35,7 @@ public class CanonicalToBhnIIDAttributesServiceCreateRequest extends
 		//inventBatch.setExpDate(CalendarUtil.dateToXMLGregorianCalendar(iid.getIidExpiryDate);TODO In Spec but not in Canonical POJO and JSON
 		inventBatch.setInventBatchId("0123");//TODO Hard coded
 		inventBatch.setItemId("01035002875");//TODO Hard coded
+		inventBatch.setPartnerProfileId(message.getProperty("partnerProfileId", PropertyScope.SESSION).toString());
 		inventBatch.setClazz("entity");
 	
 		iid.getIidActivationType();
