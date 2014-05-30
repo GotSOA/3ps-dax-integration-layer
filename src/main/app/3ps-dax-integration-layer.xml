@@ -141,14 +141,14 @@ http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schem
         <custom-transformer class="com.bhnetwork.integration.transformer.CanonicalToBhnUPCAttributes3PSServiceCreateRequest" doc:name="Canon-to-UPCRequest"/>
         <enricher doc:name="Enrich-Canonical-w-DAX-values ">
             <flow-ref name="daxUPCWebServiceClient" doc:name="Invoke Dax UPC Webservice"/>
-            <!-- <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[0].value]" target="#[sessionVars.canon.company.cpDivision[0].products[0].xxx]"/> -->
+            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[0].value]" target="#[sessionVars.canon.company.cpDivision[0].products[0].iid.itemId]"/>
             <!-- <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[1].value]" target="#[sessionVars.canon.company.cpDivision[0].products[0].xxx]"/> -->
             <!-- <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[2].value]" target="#[sessionVars.canon.company.cpDivision[0].products[0].xxx]"/> -->
             <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[3].value]" target="#[sessionVars.canon.company.cpDivision[0].products[0].bhnGUID]"/>
         </enricher>
         <logger level="INFO" doc:name="Log bhnGUID " message="guid=#[sessionVars.canon.company.cpDivision[0].products[0].bhnGUID]"/>
-        <vm:outbound-endpoint exchange-pattern="one-way" path="Q.error" doc:name="TO_BE_DELETED VM-error"/> 
-        <!-- <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step5" doc:name="Q.step5"/> -->
+        <!-- <vm:outbound-endpoint exchange-pattern="one-way" path="Q.error" doc:name="TO_BE_DELETED VM-error"/> --> 
+        <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step5" doc:name="Q.step5"/>
     </flow>
     <flow name="DAX-step5-flow" doc:name="DAX-step5-flow">
         <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-step5" path="Q.step5" />

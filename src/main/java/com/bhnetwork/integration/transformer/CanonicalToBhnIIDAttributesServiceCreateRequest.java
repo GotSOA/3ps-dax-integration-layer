@@ -34,7 +34,7 @@ public class CanonicalToBhnIIDAttributesServiceCreateRequest extends
 		inventBatch.setDescription(iid.getIidDescription());
 		//inventBatch.setExpDate(CalendarUtil.dateToXMLGregorianCalendar(iid.getIidExpiryDate);TODO In Spec but not in Canonical POJO and JSON
 		inventBatch.setInventBatchId("0123");//TODO Hard coded
-		inventBatch.setItemId("01035002875");//TODO Hard coded
+		inventBatch.setItemId(iid.getItemId());
 		inventBatch.setPartnerProfileId(message.getProperty("partnerProfileId", PropertyScope.SESSION).toString());
 		inventBatch.setClazz("entity");
 	
@@ -51,14 +51,14 @@ public class CanonicalToBhnIIDAttributesServiceCreateRequest extends
 		entityBhnIIDAttributes.setProdPackType(iid.getIidProdPackType());
 		entityBhnIIDAttributes.setUseStdUnitConvert(iid.getIidUseStdUnitConvert() ? AxdExtTypeNoYesId.YES : AxdExtTypeNoYesId.NO);
 		entityBhnIIDAttributes.setInventBatchId("0123");//TODO Hard coded
-		entityBhnIIDAttributes.setItemId("01035002875");//TODO Hard coded
+		entityBhnIIDAttributes.setItemId(iid.getItemId());
 		entityBhnIIDAttributes.setClazz("entity");
 	    
 		AxdEntityBhnOnlineIIDAttributes bhnOnlineIIDAttributes = new AxdEntityBhnOnlineIIDAttributes();
 	    bhnOnlineIIDAttributes.setDivisionCardImageURL(iid.getDivisionCardImageURL());
 	    bhnOnlineIIDAttributes.setGCMIIDDescription(iid.getIidDescription());
 	    bhnOnlineIIDAttributes.setInventBatchId("0123");//TODO Hard coded
-	    bhnOnlineIIDAttributes.setItemId("01035002875");//TODO Hard coded
+	    bhnOnlineIIDAttributes.setItemId(iid.getItemId());
 	    bhnOnlineIIDAttributes.setClazz("entity");
 	    
 	    inventBatch.getBhnIIDAttributes().add(entityBhnIIDAttributes);
