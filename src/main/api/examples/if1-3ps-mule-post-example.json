@@ -4,7 +4,7 @@
     "entityId": "94QGMK5KV5ABPYP5A7X4KC32JR",
     "updatedTimestamp": "2014-03-26T22:12:56.954+0000",
     "updaterId": "SF0TJQDX2XSLKDAMA062J373LW",
-    "version": "0.16",
+    "version": "0.17",
     "source": {
         "partnerProfileSource": "PARTNER_SERVICE_PORTAL",
         "isTest": false
@@ -212,7 +212,7 @@
                 "iidCountry": "US",
                 "iidDescription": "UPC DESCRIPTION",
                 "iidPackSize": 10,
-                "iidProdPackType": "i1",
+                "iidProdPackType": "COCCDA",
                 "name": "",
                 "language": "EN",
                 "newIIDReasonCode": "",
