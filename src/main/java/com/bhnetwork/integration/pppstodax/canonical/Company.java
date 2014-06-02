@@ -37,9 +37,9 @@ public class Company implements Serializable {
 	private String companyWebSiteURL;
 	private String companyZipPostalCode;
 	private Date contractExpDate;
-	
+
 	private List<Division> cpDivision;	
-	
+
 	private String legalEntityCode;
 	private String legalEntityStateOfIncorporation;
 	private String recId;
@@ -197,5 +197,5 @@ public class Company implements Serializable {
 	public void setRecId(String recId) {
 		this.recId = recId;
 	}	
-			
+
 }

@@ -13,7 +13,7 @@ import java.io.Serializable;
 
 public class SubstitutionGroup implements Serializable {
 	private static final long serialVersionUID = 1L; 
-	
+
 	private String substitutionBrandDenomDescription;
 	private String brandRecId;
 	private String guid;
@@ -96,5 +96,5 @@ public class SubstitutionGroup implements Serializable {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-	
+
 }

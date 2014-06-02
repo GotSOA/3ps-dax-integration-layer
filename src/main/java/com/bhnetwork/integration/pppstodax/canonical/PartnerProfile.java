@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class PartnerProfile implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	private Company company;
 	private Vendor vendor;
 	public Company getCompany() {
@@ -20,5 +20,5 @@ public class PartnerProfile implements Serializable {
 	public void setVendor(Vendor vendor) {
 		this.vendor = vendor;
 	}
-	
+
 }

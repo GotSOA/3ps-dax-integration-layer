@@ -14,7 +14,7 @@ import java.util.Date;
 
 public class Product implements Serializable {
 	private static final long serialVersionUID = 1L;
-	
+
 	private String	bhnGUID;
 	private Boolean	bhnIsEANUPC;
 	private String	companyCode;
@@ -61,10 +61,10 @@ public class Product implements Serializable {
 	private Boolean	productIsUsingStandardDesign;
 	private Double	reloadMaxAmount;
 	private Double	reloadMinAmount;
-	
+
 	// we expect 1 IID per product
 	private ItemID iid;
-	
+
 	private SubstitutionGroup substGrp;
 
 	public String getBhnGUID() {
@@ -453,5 +453,5 @@ public class Product implements Serializable {
 		this.substGrp = substGrp;
 	}
 
-	
+
 }
