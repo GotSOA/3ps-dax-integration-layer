@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:soapui-project activeEnvironment="Default" name="dax-devqa" soapui-version="4.5.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="BasicHttpBinding_CustCompanyCodeService" type="wsdl" bindingName="{http://tempuri.org}BasicHttpBinding_CustCompanyCodeService" soapVersion="1_1" anonymous="optional" definition="http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/custcompanycodeservice.svc?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/custcompanycodeservice.svc?wsdl"><con:part><con:url>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/custcompanycodeservice.svc?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="CustCompanyCodeService" targetNamespace="http://schemas.microsoft.com/dynamics/2008/01/services" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:tns="http://schemas.microsoft.com/dynamics/2008/01/services" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:i0="http://tempuri.org" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+<con:soapui-project activeEnvironment="Default" name="dax-devqa" soapui-version="5.0.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="BasicHttpBinding_CustCompanyCodeService" type="wsdl" bindingName="{http://tempuri.org}BasicHttpBinding_CustCompanyCodeService" soapVersion="1_1" anonymous="optional" definition="http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/custcompanycodeservice.svc?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/custcompanycodeservice.svc?wsdl"><con:part><con:url>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/custcompanycodeservice.svc?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="CustCompanyCodeService" targetNamespace="http://schemas.microsoft.com/dynamics/2008/01/services" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:tns="http://schemas.microsoft.com/dynamics/2008/01/services" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:i0="http://tempuri.org" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
   <wsdl:import namespace="http://tempuri.org" location="http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/custcompanycodeservice.svc?wsdl=wsdl0"/>
   <wsdl:types>
     <xsd:schema targetNamespace="http://schemas.microsoft.com/dynamics/2008/01/services/Imports">
@@ -700,7 +700,7 @@
   <xs:element name="EntityKeyList" type="q1:EntityKeyList" xmlns:q1="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList"/>
   <xs:element name="AxdCustCompanyCode" type="q2:AxdCustCompanyCode" xmlns:q2="http://schemas.microsoft.com/dynamics/2008/01/documents/CustCompanyCode"/>
   <xs:element name="QueryCriteria" type="q3:QueryCriteria" xmlns:q3="http://schemas.microsoft.com/dynamics/2006/02/documents/QueryCriteria"/>
-</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/custcompanycodeservice.svc</con:endpoint><con:endpoint>http://LWBHN00000390:8088/mockBasicHttpBinding_CustCompanyCodeService</con:endpoint></con:endpoints><con:operation isOneWay="false" action="http://schemas.microsoft.com/dynamics/2008/01/services/CustCompanyCodeService/create" name="create" bindingOperationName="create" type="Request-Response" outputName="CustCompanyCodeServiceCreateResponse" inputName="CustCompanyCodeServiceCreateRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request1 (DAX Team)"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/custcompanycodeservice.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://schemas.microsoft.com/dynamics/2008/01/services" xmlns:cus="http://schemas.microsoft.com/dynamics/2008/01/documents/CustCompanyCode">
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://LWBHN00000390:8088/mockBasicHttpBinding_CustCompanyCodeService</con:endpoint><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/custcompanycodeservice.svc</con:endpoint></con:endpoints><con:operation isOneWay="false" action="http://schemas.microsoft.com/dynamics/2008/01/services/CustCompanyCodeService/create" name="create" bindingOperationName="create" type="Request-Response" outputName="CustCompanyCodeServiceCreateResponse" inputName="CustCompanyCodeServiceCreateRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request1 (DAX Team)"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/custcompanycodeservice.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://schemas.microsoft.com/dynamics/2008/01/services" xmlns:cus="http://schemas.microsoft.com/dynamics/2008/01/documents/CustCompanyCode">
    <soapenv:Header/>
    <soapenv:Body>
       <ser:CustCompanyCodeServiceCreateRequest>
@@ -1992,7 +1992,7 @@
   <xs:element name="EntityKeyList" type="q1:EntityKeyList" xmlns:q1="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList"/>
   <xs:element name="AxdBhnIIDAttributes" type="q2:AxdBhnIIDAttributes" xmlns:q2="http://schemas.microsoft.com/dynamics/2008/01/documents/BhnIIDAttributes"/>
   <xs:element name="QueryCriteria" type="q3:QueryCriteria" xmlns:q3="http://schemas.microsoft.com/dynamics/2006/02/documents/QueryCriteria"/>
-</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhniidattributesservice.svc</con:endpoint><con:endpoint>http://LWBHN00000390:8088/mockBasicHttpBinding_bhnIIDAttributesService</con:endpoint></con:endpoints><con:operation isOneWay="false" action="http://tempuri.org/bhnIIDAttributesService/create" name="create" bindingOperationName="create" type="Request-Response" outputName="bhnIIDAttributesServiceCreateResponse" inputName="bhnIIDAttributesServiceCreateRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1 (DAX Team)"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhniidattributesservice.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org" xmlns:bhn="http://schemas.microsoft.com/dynamics/2008/01/documents/BhnIIDAttributes">
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://LWBHN00000390:8088/mockBasicHttpBinding_bhnIIDAttributesService</con:endpoint><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhniidattributesservice.svc</con:endpoint></con:endpoints><con:operation isOneWay="false" action="http://tempuri.org/bhnIIDAttributesService/create" name="create" bindingOperationName="create" type="Request-Response" outputName="bhnIIDAttributesServiceCreateResponse" inputName="bhnIIDAttributesServiceCreateRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1 (DAX Team)"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhniidattributesservice.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org" xmlns:bhn="http://schemas.microsoft.com/dynamics/2008/01/documents/BhnIIDAttributes">
    <soapenv:Header/>
    <soapenv:Body>
       <tem:bhnIIDAttributesServiceCreateRequest>
@@ -2098,7 +2098,180 @@
          </bhn:BhnIIDAttributes>
       </tem:bhnIIDAttributesServiceCreateRequest>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/bhnIIDAttributesService/create"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="http://tempuri.org/bhnIIDAttributesService/delete" name="delete" bindingOperationName="delete" type="Request-Response" inputName="bhnIIDAttributesServiceDeleteRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhniidattributesservice.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org" xmlns:ent="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList" xmlns:ent1="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKey">
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/bhnIIDAttributesService/create"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Default Request"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhniidattributesservice.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org" xmlns:bhn="http://schemas.microsoft.com/dynamics/2008/01/documents/BhnIIDAttributes">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:bhnIIDAttributesServiceCreateRequest>
+         <!--Optional:-->
+         <bhn:BhnIIDAttributes>
+            <!--Optional:-->
+            <bhn:DocPurpose>?</bhn:DocPurpose>
+            <!--Optional:-->
+            <bhn:SenderId>?</bhn:SenderId>
+            <!--Zero or more repetitions:-->
+            <bhn:InventBatch class="entity" action="?">
+               <!--Optional:-->
+               <bhn:_DocumentHash>?</bhn:_DocumentHash>
+               <!--Optional:-->
+               <bhn:BhnDivCode>?</bhn:BhnDivCode>
+               <!--Optional:-->
+               <bhn:BhnDivDescription>?</bhn:BhnDivDescription>
+               <!--Optional:-->
+               <bhn:BhnGUID>?</bhn:BhnGUID>
+               <!--Optional:-->
+               <bhn:BhnNotes>?</bhn:BhnNotes>
+               <!--Optional:-->
+               <bhn:BhnSetupComplete>?</bhn:BhnSetupComplete>
+               <!--Optional:-->
+               <bhn:BhnSetupCompleteDate localDateTime="?" timezone="?">?</bhn:BhnSetupCompleteDate>
+               <!--Optional:-->
+               <bhn:BhnSetupCompletedBy>?</bhn:BhnSetupCompletedBy>
+               <!--Optional:-->
+               <bhn:BhnStatus>?</bhn:BhnStatus>
+               <!--Optional:-->
+               <bhn:Description>?</bhn:Description>
+               <!--Optional:-->
+               <bhn:ExpDate>?</bhn:ExpDate>
+               <bhn:InventBatchId>?</bhn:InventBatchId>
+               <bhn:ItemId>?</bhn:ItemId>
+               <!--Optional:-->
+               <bhn:MerchRecordNumber>?</bhn:MerchRecordNumber>
+               <!--Optional:-->
+               <bhn:PartnerProfileId>?</bhn:PartnerProfileId>
+               <!--Optional:-->
+               <bhn:RecId>?</bhn:RecId>
+               <!--Optional:-->
+               <bhn:RecVersion>?</bhn:RecVersion>
+               <!--Zero or more repetitions:-->
+               <bhn:bhnIIDAttributes class="entity" action="?">
+                  <!--Optional:-->
+                  <bhn:ActivationType>?</bhn:ActivationType>
+                  <!--Optional:-->
+                  <bhn:CaseCount>?</bhn:CaseCount>
+                  <!--Optional:-->
+                  <bhn:Country>?</bhn:Country>
+                  <!--Optional:-->
+                  <bhn:DiscoReasonCode>?</bhn:DiscoReasonCode>
+                  <!--Optional:-->
+                  <bhn:FirstShipDate>?</bhn:FirstShipDate>
+                  <bhn:InventBatchId>?</bhn:InventBatchId>
+                  <bhn:ItemId>?</bhn:ItemId>
+                  <!--Optional:-->
+                  <bhn:Language>?</bhn:Language>
+                  <!--Optional:-->
+                  <bhn:LastShipDate>?</bhn:LastShipDate>
+                  <!--Optional:-->
+                  <bhn:NewIIDReasonCode>?</bhn:NewIIDReasonCode>
+                  <!--Optional:-->
+                  <bhn:PackSize>?</bhn:PackSize>
+                  <!--Optional:-->
+                  <bhn:ProdPackType>?</bhn:ProdPackType>
+                  <!--Optional:-->
+                  <bhn:RecId>?</bhn:RecId>
+                  <!--Optional:-->
+                  <bhn:RecVersion>?</bhn:RecVersion>
+                  <!--Optional:-->
+                  <bhn:RestrictedIID>?</bhn:RestrictedIID>
+                  <!--Optional:-->
+                  <bhn:UnitId1>?</bhn:UnitId1>
+                  <!--Optional:-->
+                  <bhn:UnitId2>?</bhn:UnitId2>
+                  <!--Optional:-->
+                  <bhn:UseStdUnitConvert>?</bhn:UseStdUnitConvert>
+               </bhn:bhnIIDAttributes>
+               <!--Zero or more repetitions:-->
+               <bhn:bhnOnlineIIDAttributes class="entity" action="?">
+                  <!--Optional:-->
+                  <bhn:DivisionCardImageURL>?</bhn:DivisionCardImageURL>
+                  <!--Optional:-->
+                  <bhn:DivisionPrintReadyFrontImageURL>?</bhn:DivisionPrintReadyFrontImageURL>
+                  <!--Optional:-->
+                  <bhn:DivisionPrintReadyTandCURL>?</bhn:DivisionPrintReadyTandCURL>
+                  <!--Optional:-->
+                  <bhn:GCMIIDDescription>?</bhn:GCMIIDDescription>
+                  <!--Optional:-->
+                  <bhn:IIDName>?</bhn:IIDName>
+                  <bhn:InventBatchId>?</bhn:InventBatchId>
+                  <!--Optional:-->
+                  <bhn:IsDefaultIID>?</bhn:IsDefaultIID>
+                  <bhn:ItemId>?</bhn:ItemId>
+                  <!--Optional:-->
+                  <bhn:RecId>?</bhn:RecId>
+                  <!--Optional:-->
+                  <bhn:RecVersion>?</bhn:RecVersion>
+               </bhn:bhnOnlineIIDAttributes>
+            </bhn:InventBatch>
+         </bhn:BhnIIDAttributes>
+      </tem:bhnIIDAttributesServiceCreateRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/bhnIIDAttributesService/create"/><con:wsrmConfig version="1.2"/></con:call><con:call name="MuleRequest"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhniidattributesservice.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Header>
+    <mule:header xmlns:mule="http://www.muleumo.org/providers/soap/1.0">
+      <mule:MULE_CORRELATION_ID>d4e77780-e1bb-11e3-b097-77557564e23e</mule:MULE_CORRELATION_ID>
+      <mule:MULE_CORRELATION_GROUP_SIZE>2</mule:MULE_CORRELATION_GROUP_SIZE>
+      <mule:MULE_CORRELATION_SEQUENCE>-1</mule:MULE_CORRELATION_SEQUENCE>
+    </mule:header>
+  </soap:Header>
+  <soap:Body>
+    <ns2:bhnIIDAttributesServiceCreateRequest xmlns:ns2="http://tempuri.org" xmlns:ns3="http://schemas.microsoft.com/dynamics/2008/01/documents/BhnIIDAttributes" xmlns:ns4="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" xmlns:ns5="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKey" xmlns:ns6="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList" xmlns:ns7="http://schemas.microsoft.com/dynamics/2008/01/documents/bhnCleanUpMegatron" xmlns:ns8="http://schemas.microsoft.com/dynamics/2006/02/documents/QueryCriteria" xmlns:ns9="http://schemas.microsoft.com/2003/10/Serialization/">
+      <ns3:BhnIIDAttributes>
+        <ns3:DocPurpose xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+        <ns3:SenderId xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+        <ns3:InventBatch class="entity">
+          <ns3:_DocumentHash xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+          <ns3:BhnDivCode xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+          <ns3:BhnDivDescription xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+          <ns3:BhnGUID xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+          <ns3:BhnNotes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+          <ns3:BhnSetupComplete xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+          <ns3:BhnSetupCompleteDate xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+          <ns3:BhnSetupCompletedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+          <ns3:BhnStatus xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+          <ns3:Description>UPC DESCRIPTION</ns3:Description>
+          <ns3:ExpDate xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+          <ns3:InventBatchId>0123</ns3:InventBatchId>
+          <ns3:ItemId>01035002875</ns3:ItemId>
+          <ns3:MerchRecordNumber xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+          <ns3:PartnerProfileId xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+          <ns3:RecId xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+          <ns3:RecVersion xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+          <ns3:bhnIIDAttributes class="entity">
+            <ns3:ActivationType>hybrid</ns3:ActivationType>
+            <ns3:CaseCount>100</ns3:CaseCount>
+            <ns3:Country>US</ns3:Country>
+            <ns3:DiscoReasonCode xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:FirstShipDate xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:InventBatchId>0123</ns3:InventBatchId>
+            <ns3:ItemId>01035002875</ns3:ItemId>
+            <ns3:Language>EN</ns3:Language>
+            <ns3:LastShipDate xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:NewIIDReasonCode xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:PackSize>10</ns3:PackSize>
+            <ns3:ProdPackType>i1</ns3:ProdPackType>
+            <ns3:RecId xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:RecVersion xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:RestrictedIID xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:UnitId1 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:UnitId2 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:UseStdUnitConvert>Yes</ns3:UseStdUnitConvert>
+          </ns3:bhnIIDAttributes>
+          <ns3:bhnOnlineIIDAttributes class="entity">
+            <ns3:DivisionCardImageURL xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:DivisionPrintReadyFrontImageURL xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:DivisionPrintReadyTandCURL xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:GCMIIDDescription>UPC DESCRIPTION</ns3:GCMIIDDescription>
+            <ns3:IIDName xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:InventBatchId>0123</ns3:InventBatchId>
+            <ns3:IsDefaultIID xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:ItemId>01035002875</ns3:ItemId>
+            <ns3:RecId xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:RecVersion xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+          </ns3:bhnOnlineIIDAttributes>
+        </ns3:InventBatch>
+      </ns3:BhnIIDAttributes>
+    </ns2:bhnIIDAttributesServiceCreateRequest>
+  </soap:Body>
+</soap:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/bhnIIDAttributesService/create"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="http://tempuri.org/bhnIIDAttributesService/delete" name="delete" bindingOperationName="delete" type="Request-Response" inputName="bhnIIDAttributesServiceDeleteRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhniidattributesservice.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org" xmlns:ent="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList" xmlns:ent1="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKey">
    <soapenv:Header/>
    <soapenv:Body>
       <tem:bhnIIDAttributesServiceDeleteRequest>
@@ -2875,7 +3048,7 @@
   <xs:element name="EntityKeyList" type="q1:EntityKeyList" xmlns:q1="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList"/>
   <xs:element name="AxdUPCSubGroupTable" type="q2:AxdUPCSubGroupTable" xmlns:q2="http://schemas.microsoft.com/dynamics/2008/01/documents/UPCSubGroupTable"/>
   <xs:element name="QueryCriteria" type="q3:QueryCriteria" xmlns:q3="http://schemas.microsoft.com/dynamics/2006/02/documents/QueryCriteria"/>
-</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/upcsubgrouptableservice.svc</con:endpoint><con:endpoint>http://LWBHN00000390:8088/mockBasicHttpBinding_UPCSubGroupTableService</con:endpoint></con:endpoints><con:operation isOneWay="false" action="http://tempuri.org/UPCSubGroupTableService/create" name="create" bindingOperationName="create" type="Request-Response" outputName="UPCSubGroupTableServiceCreateResponse" inputName="UPCSubGroupTableServiceCreateRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1 (DAX Team)"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/upcsubgrouptableservice.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org" xmlns:upc="http://schemas.microsoft.com/dynamics/2008/01/documents/UPCSubGroupTable">
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://LWBHN00000390:8088/mockBasicHttpBinding_UPCSubGroupTableService</con:endpoint><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/upcsubgrouptableservice.svc</con:endpoint></con:endpoints><con:operation isOneWay="false" action="http://tempuri.org/UPCSubGroupTableService/create" name="create" bindingOperationName="create" type="Request-Response" outputName="UPCSubGroupTableServiceCreateResponse" inputName="UPCSubGroupTableServiceCreateRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1 (DAX Team)"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/upcsubgrouptableservice.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org" xmlns:upc="http://schemas.microsoft.com/dynamics/2008/01/documents/UPCSubGroupTable">
    <soapenv:Header/>
    <soapenv:Body>
       <tem:UPCSubGroupTableServiceCreateRequest>
@@ -5218,7 +5391,7 @@ Affiliate:Affiliate number.</xs:documentation>
   <xs:element name="QueryCriteria" type="q1:QueryCriteria" xmlns:q1="http://schemas.microsoft.com/dynamics/2006/02/documents/QueryCriteria"/>
   <xs:element name="AxdCustomer" type="q2:AxdCustomer" xmlns:q2="http://schemas.microsoft.com/dynamics/2008/01/documents/Customer"/>
   <xs:element name="EntityKeyList" type="q3:EntityKeyList" xmlns:q3="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList"/>
-</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/customerservice.svc</con:endpoint><con:endpoint>http://LWBHN00000390:8088/mockBasicHttpBinding_CustomerService</con:endpoint></con:endpoints><con:operation isOneWay="false" action="http://schemas.microsoft.com/dynamics/2008/01/services/CustomerService/create" name="create" bindingOperationName="create" type="Request-Response" outputName="CustomerServiceCreateResponse" inputName="CustomerServiceCreateRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/customerservice.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://schemas.microsoft.com/dynamics/2008/01/services" xmlns:cus="http://schemas.microsoft.com/dynamics/2008/01/documents/Customer">
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://LWBHN00000390:8088/mockBasicHttpBinding_CustomerService</con:endpoint><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/customerservice.svc</con:endpoint></con:endpoints><con:operation isOneWay="false" action="http://schemas.microsoft.com/dynamics/2008/01/services/CustomerService/create" name="create" bindingOperationName="create" type="Request-Response" outputName="CustomerServiceCreateResponse" inputName="CustomerServiceCreateRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/customerservice.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://schemas.microsoft.com/dynamics/2008/01/services" xmlns:cus="http://schemas.microsoft.com/dynamics/2008/01/documents/Customer">
    <soapenv:Header/>
    <soapenv:Body>
       <ser:CustomerServiceCreateRequest>
@@ -6582,7 +6755,7 @@ Affiliate:Affiliate number.</xs:documentation>
   <xs:element name="EntityKeyList" type="q1:EntityKeyList" xmlns:q1="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList"/>
   <xs:element name="AxdbhnCleanUpMegatron" type="q2:AxdbhnCleanUpMegatron" xmlns:q2="http://schemas.microsoft.com/dynamics/2008/01/documents/bhnCleanUpMegatron"/>
   <xs:element name="QueryCriteria" type="q3:QueryCriteria" xmlns:q3="http://schemas.microsoft.com/dynamics/2006/02/documents/QueryCriteria"/>
-</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhncleanupmegatronservice.svc</con:endpoint><con:endpoint>http://LWBHN00000390:8088/mockBasicHttpBinding_bhnCleanUpMegatronService</con:endpoint></con:endpoints><con:operation isOneWay="false" action="http://tempuri.org/bhnCleanUpMegatronService/create" name="create" bindingOperationName="create" type="Request-Response" outputName="bhnCleanUpMegatronServiceCreateResponse" inputName="bhnCleanUpMegatronServiceCreateRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhncleanupmegatronservice.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org" xmlns:bhn="http://schemas.microsoft.com/dynamics/2008/01/documents/bhnCleanUpMegatron">
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://LWBHN00000390:8088/mockBasicHttpBinding_bhnCleanUpMegatronService</con:endpoint><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhncleanupmegatronservice.svc</con:endpoint></con:endpoints><con:operation isOneWay="false" action="http://tempuri.org/bhnCleanUpMegatronService/create" name="create" bindingOperationName="create" type="Request-Response" outputName="bhnCleanUpMegatronServiceCreateResponse" inputName="bhnCleanUpMegatronServiceCreateRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhncleanupmegatronservice.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org" xmlns:bhn="http://schemas.microsoft.com/dynamics/2008/01/documents/bhnCleanUpMegatron">
    <soapenv:Header/>
    <soapenv:Body>
       <tem:bhnCleanUpMegatronServiceCreateRequest>
@@ -6642,7 +6815,32 @@ Affiliate:Affiliate number.</xs:documentation>
          </bhn:bhnCleanUpMegatron>
       </tem:bhnCleanUpMegatronServiceCreateRequest>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/bhnCleanUpMegatronService/create"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="http://tempuri.org/bhnCleanUpMegatronService/delete" name="delete" bindingOperationName="delete" type="Request-Response" inputName="bhnCleanUpMegatronServiceDeleteRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhncleanupmegatronservice.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org" xmlns:ent="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList" xmlns:ent1="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKey">
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/bhnCleanUpMegatronService/create"/><con:wsrmConfig version="1.2"/></con:call><con:call name="MuleRequest"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhncleanupmegatronservice.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Header>
+    <mule:header xmlns:mule="http://www.muleumo.org/providers/soap/1.0">
+      <mule:MULE_CORRELATION_ID>b323b56f-e03f-11e3-9310-bd0f47a1e457</mule:MULE_CORRELATION_ID>
+      <mule:MULE_CORRELATION_GROUP_SIZE>2</mule:MULE_CORRELATION_GROUP_SIZE>
+      <mule:MULE_CORRELATION_SEQUENCE>-1</mule:MULE_CORRELATION_SEQUENCE>
+    </mule:header>
+  </soap:Header>
+  <soap:Body>
+    <ns2:bhnCleanUpMegatronServiceCreateRequest xmlns:ns2="http://tempuri.org" xmlns:ns3="http://schemas.microsoft.com/dynamics/2008/01/documents/bhnCleanUpMegatron" xmlns:ns4="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" xmlns:ns5="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKey" xmlns:ns6="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList" xmlns:ns7="http://schemas.microsoft.com/dynamics/2006/02/documents/QueryCriteria" xmlns:ns8="http://schemas.microsoft.com/2003/10/Serialization/">
+      <ns3:bhnCleanUpMegatron>
+        <ns3:DocPurpose xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+        <ns3:SenderId xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+        <ns3:bhnCleanUpMegatron class="entity">
+          <ns3:_DocumentHash xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+          <ns3:Guid xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+          <ns3:Message xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+          <ns3:PartnerprofileId>94QGMK5KV5ABPYP5A7X4KC32JR</ns3:PartnerprofileId>
+          <ns3:RecId xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+          <ns3:RecVersion xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+          <ns3:TableName xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+        </ns3:bhnCleanUpMegatron>
+      </ns3:bhnCleanUpMegatron>
+    </ns2:bhnCleanUpMegatronServiceCreateRequest>
+  </soap:Body>
+</soap:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/bhnCleanUpMegatronService/create"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="http://tempuri.org/bhnCleanUpMegatronService/delete" name="delete" bindingOperationName="delete" type="Request-Response" inputName="bhnCleanUpMegatronServiceDeleteRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhncleanupmegatronservice.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org" xmlns:ent="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList" xmlns:ent1="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKey">
    <soapenv:Header/>
    <soapenv:Body>
       <tem:bhnCleanUpMegatronServiceDeleteRequest>
@@ -8493,7 +8691,7 @@ Affiliate:Affiliate number.</xs:documentation>
   <xs:import schemaLocation="http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhnupcattributes3psservice.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList"/>
   <xs:element name="AxdbhnUPCAttributes3PS" type="q1:AxdbhnUPCAttributes3PS" xmlns:q1="http://schemas.microsoft.com/dynamics/2008/01/documents/bhnUPCAttributes3PS"/>
   <xs:element name="EntityKeyList" type="q2:EntityKeyList" xmlns:q2="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList"/>
-</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhnupcattributes3psservice.svc</con:endpoint><con:endpoint>http://LWBHN00000390:8088/mockBasicHttpBinding_bhnUPCAttributes3PSService</con:endpoint></con:endpoints><con:operation isOneWay="false" action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnUPCAttributes3PSService/create" name="create" bindingOperationName="create" type="Request-Response" outputName="bhnUPCAttributes3PSServiceCreateResponse" inputName="bhnUPCAttributes3PSServiceCreateRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="default request"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhnupcattributes3psservice.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://schemas.microsoft.com/dynamics/2008/01/services" xmlns:bhn="http://schemas.microsoft.com/dynamics/2008/01/documents/bhnUPCAttributes3PS">
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://LWBHN00000390:8088/mockBasicHttpBinding_bhnUPCAttributes3PSService</con:endpoint><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhnupcattributes3psservice.svc</con:endpoint></con:endpoints><con:operation isOneWay="false" action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnUPCAttributes3PSService/create" name="create" bindingOperationName="create" type="Request-Response" outputName="bhnUPCAttributes3PSServiceCreateResponse" inputName="bhnUPCAttributes3PSServiceCreateRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="default request"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhnupcattributes3psservice.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://schemas.microsoft.com/dynamics/2008/01/services" xmlns:bhn="http://schemas.microsoft.com/dynamics/2008/01/documents/bhnUPCAttributes3PS">
    <soapenv:Header/>
    <soapenv:Body>
       <ser:bhnUPCAttributes3PSServiceCreateRequest>
@@ -9054,7 +9252,7 @@ Affiliate:Affiliate number.</xs:documentation>
                <!--Optional:-->
                <bhn:PBAHideDialog>No</bhn:PBAHideDialog>
                <!--Optional:-->
-               <bhn:PBAInventItemGroupId></bhn:PBAInventItemGroupId>
+               <bhn:PBAInventItemGroupId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                <!--Optional:-->
                <bhn:PBAItemAutoGenerated>No</bhn:PBAItemAutoGenerated>
                <!--Optional:-->
@@ -10940,7 +11138,7 @@ Affiliate:Affiliate number.</xs:documentation>
   <xs:import schemaLocation="http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhndivision3psservice.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/bhnDivision3PS"/>
   <xs:element name="EntityKeyList" type="q1:EntityKeyList" xmlns:q1="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList"/>
   <xs:element name="AxdbhnDivision3PS" type="q2:AxdbhnDivision3PS" xmlns:q2="http://schemas.microsoft.com/dynamics/2008/01/documents/bhnDivision3PS"/>
-</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhndivision3psservice.svc</con:endpoint><con:endpoint>http://LWBHN00000390:8088/mockBasicHttpBinding_bhnDivision3PSService</con:endpoint></con:endpoints><con:operation isOneWay="false" action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnDivision3PSService/create" name="create" bindingOperationName="create" type="Request-Response" outputName="bhnDivision3PSServiceCreateResponse" inputName="bhnDivision3PSServiceCreateRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Default Request"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhndivision3psservice.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://schemas.microsoft.com/dynamics/2008/01/services" xmlns:bhn="http://schemas.microsoft.com/dynamics/2008/01/documents/bhnDivision3PS">
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://LWBHN00000390:8088/mockBasicHttpBinding_bhnDivision3PSService</con:endpoint><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhndivision3psservice.svc</con:endpoint></con:endpoints><con:operation isOneWay="false" action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnDivision3PSService/create" name="create" bindingOperationName="create" type="Request-Response" outputName="bhnDivision3PSServiceCreateResponse" inputName="bhnDivision3PSServiceCreateRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Default Request"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhndivision3psservice.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://schemas.microsoft.com/dynamics/2008/01/services" xmlns:bhn="http://schemas.microsoft.com/dynamics/2008/01/documents/bhnDivision3PS">
    <soapenv:Header/>
    <soapenv:Body>
       <ser:bhnDivision3PSServiceCreateRequest>
@@ -13780,7 +13978,7 @@ Affiliate:Affiliate number.</xs:documentation>
   <xs:element name="QueryCriteria" type="q1:QueryCriteria" xmlns:q1="http://schemas.microsoft.com/dynamics/2006/02/documents/QueryCriteria"/>
   <xs:element name="AxdVendTable" type="q2:AxdVendTable" xmlns:q2="http://schemas.microsoft.com/dynamics/2008/01/documents/VendTable"/>
   <xs:element name="EntityKeyList" type="q3:EntityKeyList" xmlns:q3="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList"/>
-</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/vendtableservice.svc</con:endpoint><con:endpoint>http://LWBHN00000390:8088/mockBasicHttpBinding_VendTableService</con:endpoint></con:endpoints><con:operation isOneWay="false" action="http://schemas.microsoft.com/dynamics/2008/01/services/VendTableService/create" name="create" bindingOperationName="create" type="Request-Response" outputName="VendTableServiceCreateResponse" inputName="VendTableServiceCreateRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Default Request"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/vendtableservice.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://schemas.microsoft.com/dynamics/2008/01/services" xmlns:ven="http://schemas.microsoft.com/dynamics/2008/01/documents/VendTable">
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://LWBHN00000390:8088/mockBasicHttpBinding_VendTableService</con:endpoint><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/vendtableservice.svc</con:endpoint></con:endpoints><con:operation isOneWay="false" action="http://schemas.microsoft.com/dynamics/2008/01/services/VendTableService/create" name="create" bindingOperationName="create" type="Request-Response" outputName="VendTableServiceCreateResponse" inputName="VendTableServiceCreateRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Default Request"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/vendtableservice.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://schemas.microsoft.com/dynamics/2008/01/services" xmlns:ven="http://schemas.microsoft.com/dynamics/2008/01/documents/VendTable">
    <soapenv:Header/>
    <soapenv:Body>
       <ser:VendTableServiceCreateRequest>
@@ -14074,203 +14272,36 @@ Affiliate:Affiliate number.</xs:documentation>
    <soapenv:Header/>
    <soapenv:Body>
       <ser:VendTableServiceCreateRequest>
-         <!--Optional:-->
          <ven:VendTable>
-            <!--Optional:-->
-            <ven:DocPurpose>Original</ven:DocPurpose>
-          
-            <!--Zero or more repetitions:-->
-            <ven:VendTable class="entity">
-               <!--Optional:-->
-               <ven:_DocumentHash xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-               <!--Optional:-->
-               <ven:BankAccount xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-               <!--Optional:-->
-               <ven:BankCentralBankPurposeCode xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-               <!--Optional:-->
-               <ven:BankCentralBankPurposeText xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-               <!--Optional:-->
-               <ven:BidOnly>No</ven:BidOnly>
-               <!--Optional:-->
+            <ven:VendTable class="entity" action="?">
+               <ven:AccountNum>123451234512345</ven:AccountNum>
+               <ven:Address>123 Foo Street</ven:Address>
                <ven:Blocked>No</ven:Blocked>
-               <!--Optional:-->
-               <ven:CashDisc xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-               <!--Optional:-->
-               <ven:CellularPhone xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-               <!--Optional:-->
-               <ven:City xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-               <!--Optional:-->
-               <ven:ClearingPeriod xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-               <!--Optional:-->
-               <ven:CompanyChainId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-               <!--Optional:-->
-               <ven:ContactPersonId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-               <!--Optional:-->
-               <ven:CountryRegionId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-               <!--Optional:-->
-               <ven:County xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-               <!--Optional:-->
-               <ven:CreditMax>1000</ven:CreditMax>
-               <!--Optional:-->
-               <ven:CreditRating xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <ven:City>Foo City</ven:City>
+               <ven:CountryRegionId>1</ven:CountryRegionId>
+               <ven:County>Marin</ven:County>
                <ven:Currency>USD</ven:Currency>
-               <!--Optional:-->
-               <ven:CustAccount xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-               <!--Optional:-->
-               <ven:DBA xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-               <!--Optional:-->
-               <ven:DestinationCodeId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-               <!--Optional:-->
-               <ven:Dimension>
-                  <ven:element/>
-                  <ven:element/>
-                  <ven:element/>
-                  <ven:element/>
-                  <ven:element/>
-                  <ven:element/>
-                  <ven:element/>
-               </ven:Dimension>
-               <!--Optional:-->
-               <ven:DlvMode xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-               <!--Optional:-->
-               <ven:DlvTerm xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-               <!--Optional:-->
-               <ven:Email xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-               <!--Optional:-->
-               <ven:EndDisc xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-               <!--Optional:-->
+               <ven:Email>foo@foo.com</ven:Email>
                <ven:ForeignEntityIndicator>No</ven:ForeignEntityIndicator>
-               <!--Optional:-->
-               <ven:FreightZone xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-               <!--Optional:-->
-               <ven:InclTax>No</ven:InclTax>
-               <!--Optional:-->
-               <ven:InventLocation xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-               <!--Optional:-->
-               <ven:InventSiteId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-               <!--Optional:-->
-               <ven:InvoiceAccount xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-               <!--Optional:-->
-               <ven:ItemBuyerGroupId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-               <ven:LanguageId>en-us</ven:LanguageId>
-               <!--Optional:-->
-               <ven:LineDisc xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-               <!--Optional:-->
-               <ven:LineOfBusinessId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-               <!--Optional:-->
-               <ven:LocallyOwned>No</ven:LocallyOwned>
-               <!--Optional:-->
-               <ven:MainContactId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-               <!--Optional:-->
-               <ven:MarkupGroup xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-               <!--Optional:-->
-               <ven:Memo xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-               <!--Optional:-->
-               <ven:MerchRecordNumber xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-               <!--Optional:-->
-               <ven:MultiLineDisc xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-               <!--Optional:-->
-               <ven:Name>Test vendor megatron</ven:Name>
-               <!--Optional:-->
-               <ven:NameAlias xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-               <!--Optional:-->
-               <ven:NameControl xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-               <!--Optional:-->
-               <ven:numberSequenceGroup xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-               <!--Optional:-->
-               <ven:OffsetAccount xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-               <!--Optional:-->
-               <ven:OffsetAccountType>Vend</ven:OffsetAccountType>
-               <!--Optional:-->
-               <ven:OneTimeVendor>No</ven:OneTimeVendor>
-               <!--Optional:-->
-               <ven:Pager xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-               <!--Optional:-->
-               <ven:PartnerProfileId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-              
-               <ven:PartyType>Person</ven:PartyType>
-               <!--Optional:-->
-               <ven:PaymDayId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-               <!--Optional:-->
-               <ven:PaymId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-               <!--Optional:-->
-               <ven:PaymMode xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-               <!--Optional:-->
-               <ven:PaymSched xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-               <!--Optional:-->
-               <ven:PaymSpec xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-               <!--Optional:-->
-               <ven:PaymTermId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-               <!--Optional:-->
-               <ven:Phone xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-               <!--Optional:-->
-               <ven:PhoneLocal xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-               <!--Optional:-->
-               <ven:PriceGroup xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-               <!--Optional:-->
-               <ven:PurchAmountPurchaseOrder>No</ven:PurchAmountPurchaseOrder>
-               <!--Optional:-->
-               <ven:PurchCalendarId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-               <!--Optional:-->
-               <ven:PurchPoolId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-               <!--Optional:-->
-               <ven:SecondTIN>No</ven:SecondTIN>
-               <!--Optional:-->
-               <ven:SegmentId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-               <!--Optional:-->
-               <ven:SmallBusiness>No</ven:SmallBusiness>
-               <!--Optional:-->
-               <ven:SMS xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-               <!--Optional:-->
-               <ven:State xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-               <!--Optional:-->
-               <ven:Street xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-               <!--Optional:-->
-               <ven:SubsegmentId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-               <!--Optional:-->
-               <ven:SuppItemGroupId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-               <!--Optional:-->
-               <ven:Tax1099Box xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-               <!--Optional:-->
+               <ven:Name>Foo Vendor</ven:Name>
+               <ven:PaymMode>ACH</ven:PaymMode>
+               <ven:PaymTermId>30</ven:PaymTermId>
+               <ven:Phone>987654321</ven:Phone>
+               <ven:State>WA</ven:State>
+               <ven:Street>Foo</ven:Street>
                <ven:Tax1099NameChoice>DBA</ven:Tax1099NameChoice>
-               <!--Optional:-->
-               <ven:Tax1099RegNum xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-               <!--Optional:-->
-               <ven:Tax1099Reports>No</ven:Tax1099Reports>
-               <!--Optional:-->
-               <ven:TaxGroup xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-               <!--Optional:-->
-               <ven:TaxIDType>Unknown</ven:TaxIDType>
-               <!--Optional:-->
-               <ven:TaxWithholdCalculate>No</ven:TaxWithholdCalculate>
-               <!--Optional:-->
-               <ven:TaxWithholdGroup xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-               <!--Optional:-->
-               <ven:TeleFax xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-               <!--Optional:-->
-               <ven:Telex xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-               <!--Optional:-->
-               <ven:URL xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-               <!--Optional:-->
-               <ven:VATNum xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-               <ven:VendGroup>Trade_Ref</ven:VendGroup>
-               <!--Optional:-->
-               <ven:VendItemGroupId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-               <!--Optional:-->
-               <ven:VendPriceToleranceGroupId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-               <!--Optional:-->
-               <ven:W9>No</ven:W9>
-               <!--Optional:-->
-               <ven:YourAccountNum xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-               <!--Optional:-->
-               <ven:ZipCode xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-               <!--Zero or more repetitions:-->
-               
+               <ven:Tax1099RegNum>W9W9W9W9W9W9</ven:Tax1099RegNum>
+               <ven:Tax1099Reports>Yes</ven:Tax1099Reports>
+               <ven:TaxGroup>CORPS</ven:TaxGroup>
+               <ven:TaxIDType>EIN</ven:TaxIDType>
+               <ven:URL>?</ven:URL>
+               <ven:W9>w9w9w9w9w9w9w9</ven:W9>
+               <ven:ZipCode>99999</ven:ZipCode>
             </ven:VendTable>
          </ven:VendTable>
       </ser:VendTableServiceCreateRequest>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/dynamics/2008/01/services/VendTableService/create"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="http://schemas.microsoft.com/dynamics/2008/01/services/VendTableService/delete" name="delete" bindingOperationName="delete" type="Request-Response" inputName="VendTableServiceDeleteRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/vendtableservice.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://schemas.microsoft.com/dynamics/2008/01/services" xmlns:ent="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList" xmlns:ent1="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKey">
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/dynamics/2008/01/services/VendTableService/create"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="http://schemas.microsoft.com/dynamics/2008/01/services/VendTableService/delete" name="delete" bindingOperationName="delete" type="Request-Response" inputName="VendTableServiceDeleteRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/vendtableservice.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://schemas.microsoft.com/dynamics/2008/01/services" xmlns:ent="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList" xmlns:ent1="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKey">
    <soapenv:Header/>
    <soapenv:Body>
       <ser:VendTableServiceDeleteRequest>
@@ -15036,7 +15067,7 @@ Affiliate:Affiliate number.</xs:documentation>
   <xs:import schemaLocation="http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhnsetupcomp3psservice.svc?xsd=xsd6" namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/bhnSetUpComp3PS"/>
   <xs:element name="EntityKeyList" type="q1:EntityKeyList" xmlns:q1="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList"/>
   <xs:element name="AxdbhnSetUpComp3PS" type="q2:AxdbhnSetUpComp3PS" xmlns:q2="http://schemas.microsoft.com/dynamics/2008/01/documents/bhnSetUpComp3PS"/>
-</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhnsetupcomp3psservice.svc</con:endpoint><con:endpoint>http://LWBHN00000390:8088/mockBasicHttpBinding_bhnSetUpComp3PSService</con:endpoint></con:endpoints><con:operation isOneWay="false" action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnSetUpComp3PSService/create" name="create" bindingOperationName="create" type="Request-Response" outputName="bhnSetUpComp3PSServiceCreateResponse" inputName="bhnSetUpComp3PSServiceCreateRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Default Request"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhnsetupcomp3psservice.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://schemas.microsoft.com/dynamics/2008/01/services" xmlns:bhn="http://schemas.microsoft.com/dynamics/2008/01/documents/bhnSetUpComp3PS">
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://LWBHN00000390:8088/mockBasicHttpBinding_bhnSetUpComp3PSService</con:endpoint><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhnsetupcomp3psservice.svc</con:endpoint></con:endpoints><con:operation isOneWay="false" action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnSetUpComp3PSService/create" name="create" bindingOperationName="create" type="Request-Response" outputName="bhnSetUpComp3PSServiceCreateResponse" inputName="bhnSetUpComp3PSServiceCreateRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Default Request"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhnsetupcomp3psservice.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://schemas.microsoft.com/dynamics/2008/01/services" xmlns:bhn="http://schemas.microsoft.com/dynamics/2008/01/documents/bhnSetUpComp3PS">
    <soapenv:Header/>
    <soapenv:Body>
       <ser:bhnSetUpComp3PSServiceCreateRequest>
@@ -15064,7 +15095,7 @@ Affiliate:Affiliate number.</xs:documentation>
          </bhn:bhnSetUpComp3PS>
       </ser:bhnSetUpComp3PSServiceCreateRequest>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnSetUpComp3PSService/create"/></con:call><con:call name="Request (Dax Team)"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhnsetupcomp3psservice.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://schemas.microsoft.com/dynamics/2008/01/services" xmlns:bhn="http://schemas.microsoft.com/dynamics/2008/01/documents/bhnSetUpComp3PS">
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnSetUpComp3PSService/create"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Request (Dax Team)"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhnsetupcomp3psservice.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://schemas.microsoft.com/dynamics/2008/01/services" xmlns:bhn="http://schemas.microsoft.com/dynamics/2008/01/documents/bhnSetUpComp3PS">
    <soapenv:Header/>
    <soapenv:Body>
       <ser:bhnSetUpComp3PSServiceCreateRequest>
@@ -15073,15 +15104,15 @@ Affiliate:Affiliate number.</xs:documentation>
             <!--Optional:-->
             <bhn:DocPurpose>Original</bhn:DocPurpose>
             <!--Optional:-->
-            <bhn:SenderId></bhn:SenderId>
+            <bhn:SenderId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
             <!--Zero or more repetitions:-->
-            <bhn:bhnSetupComp3PS class="entity" >
+            <bhn:bhnSetupComp3PS class="entity">
                <!--Optional:-->
-               <bhn:_DocumentHash></bhn:_DocumentHash>
+               <bhn:_DocumentHash xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                <!--Optional:-->
                <bhn:MerchRecordNumber>123456</bhn:MerchRecordNumber>
                <!--Optional:-->
-               <bhn:Message></bhn:Message>
+               <bhn:Message xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                <!--Optional:-->
                <bhn:PartnerProfileId>1j2533hj5666</bhn:PartnerProfileId>
                <!--Optional:-->
@@ -15171,7 +15202,7 @@ Affiliate:Affiliate number.</xs:documentation>
          </bhn:bhnSetUpComp3PS>
       </ser:bhnSetUpComp3PSServiceUpdateRequest>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnSetUpComp3PSService/update"/></con:call></con:operation></con:interface><con:mockService port="8088" path="/mockBasicHttpBinding_CustCompanyCodeService" host="LWBHN00000390" name="BasicHttpBinding_CustCompanyCodeService MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-version">false</con:setting></con:settings><con:mockOperation name="create" interface="BasicHttpBinding_CustCompanyCodeService" operation="create"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnSetUpComp3PSService/update"/></con:call></con:operation></con:interface><con:mockService port="8088" path="/mockBasicHttpBinding_CustCompanyCodeService" host="LWBHN00000390" name="BasicHttpBinding_CustCompanyCodeService MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-version">false</con:setting></con:settings><con:mockOperation name="create" interface="BasicHttpBinding_CustCompanyCodeService" operation="create"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8" httpResponseStatus="200"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
    <s:Body>
       <CustCompanyCodeServiceCreateResponse xmlns="http://schemas.microsoft.com/dynamics/2008/01/services">
          <EntityKeyList xmlns="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList">
@@ -15190,7 +15221,7 @@ Affiliate:Affiliate number.</xs:documentation>
          </EntityKeyList>
       </CustCompanyCodeServiceCreateResponse>
    </s:Body>
-</s:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/dynamics/2008/01/services/CustCompanyCodeService/create"/></con:response><con:response name="Fault Response (CustCompanyCode could not be created)" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+</s:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/dynamics/2008/01/services/CustCompanyCodeService/create"/></con:response><con:response name="Fault Response (CustCompanyCode could not be created)" encoding="UTF-8" httpResponseStatus="200"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
    <s:Body>
       <s:Fault>
          <faultcode>s:Client</faultcode>
@@ -15203,7 +15234,7 @@ Affiliate:Affiliate number.</xs:documentation>
          </detail>
       </s:Fault>
    </s:Body>
-</s:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/dynamics/2008/01/services/CustCompanyCodeService/create"/></con:response><con:response name="Fault Response (401 - Unauthorized)" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+</s:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/dynamics/2008/01/services/CustCompanyCodeService/create"/></con:response><con:response name="Fault Response (401 - Unauthorized)" encoding="UTF-8" httpResponseStatus="200"><con:settings/><con:responseContent><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
@@ -15233,7 +15264,7 @@ background-color:#555555;}
          </div>
       </div>
    </body>
-</html>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/dynamics/2008/01/services/CustCompanyCodeService/create"/></con:response><con:dispatchConfig/></con:mockOperation><con:properties/></con:mockService><con:mockService port="8088" path="/mockBasicHttpBinding_bhnIIDAttributesService" host="LWBHN00000390" name="BasicHttpBinding_bhnIIDAttributesService MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:mockOperation name="create" interface="BasicHttpBinding_bhnIIDAttributesService" operation="create"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+</html>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/dynamics/2008/01/services/CustCompanyCodeService/create"/></con:response><con:dispatchConfig/></con:mockOperation><con:properties/></con:mockService><con:mockService port="8088" path="/mockBasicHttpBinding_bhnIIDAttributesService" host="LWBHN00000390" name="BasicHttpBinding_bhnIIDAttributesService MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:mockOperation name="create" interface="BasicHttpBinding_bhnIIDAttributesService" operation="create"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8" httpResponseStatus="200"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
    <s:Body>
       <bhnIIDAttributesServiceCreateResponse xmlns="http://tempuri.org">
          <EntityKeyList xmlns="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList">
@@ -15260,7 +15291,7 @@ background-color:#555555;}
          </EntityKeyList>
       </bhnIIDAttributesServiceCreateResponse>
    </s:Body>
-</s:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/bhnIIDAttributesService/create"/></con:response><con:response name="Fault Response (bhnIIDAttributes could not be created)" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+</s:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/bhnIIDAttributesService/create"/></con:response><con:response name="Fault Response (bhnIIDAttributes could not be created)" encoding="UTF-8" httpResponseStatus="200"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
    <s:Body>
       <s:Fault>
          <faultcode>s:Client</faultcode>
@@ -15273,7 +15304,7 @@ background-color:#555555;}
          </detail>
       </s:Fault>
    </s:Body>
-</s:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/bhnIIDAttributesService/create"/></con:response><con:dispatchConfig/></con:mockOperation><con:properties/></con:mockService><con:mockService port="8088" path="/mockBasicHttpBinding_UPCSubGroupTableService" host="LWBHN00000390" name="BasicHttpBinding_UPCSubGroupTableService MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:mockOperation name="create" interface="BasicHttpBinding_UPCSubGroupTableService" operation="create"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+</s:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/bhnIIDAttributesService/create"/></con:response><con:dispatchConfig/></con:mockOperation><con:properties/></con:mockService><con:mockService port="8088" path="/mockBasicHttpBinding_UPCSubGroupTableService" host="LWBHN00000390" name="BasicHttpBinding_UPCSubGroupTableService MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:mockOperation name="create" interface="BasicHttpBinding_UPCSubGroupTableService" operation="create"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8" httpResponseStatus="200"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
    <s:Body>
       <UPCSubGroupTableServiceCreateResponse xmlns="http://tempuri.org">
          <EntityKeyList xmlns="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList">
@@ -15300,7 +15331,7 @@ background-color:#555555;}
          </EntityKeyList>
       </UPCSubGroupTableServiceCreateResponse>
    </s:Body>
-</s:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/UPCSubGroupTableService/create"/></con:response><con:response name="Fault Response (Schema Validation failed)" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+</s:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/UPCSubGroupTableService/create"/></con:response><con:response name="Fault Response (Schema Validation failed)" encoding="UTF-8" httpResponseStatus="200"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
    <s:Body>
       <s:Fault>
          <faultcode>s:SchemaValidationFailed</faultcode>
@@ -15331,7 +15362,7 @@ background-color:#555555;}
          </detail>
       </s:Fault>
    </s:Body>
-</s:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/UPCSubGroupTableService/create"/></con:response><con:response name="Fault Response (UPCSubGroupTable coud not be created)" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+</s:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/UPCSubGroupTableService/create"/></con:response><con:response name="Fault Response (UPCSubGroupTable coud not be created)" encoding="UTF-8" httpResponseStatus="200"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
    <s:Body>
       <s:Fault>
          <faultcode>s:Client</faultcode>
@@ -15344,7 +15375,7 @@ background-color:#555555;}
          </detail>
       </s:Fault>
    </s:Body>
-</s:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/UPCSubGroupTableService/create"/></con:response><con:dispatchConfig/></con:mockOperation><con:properties/></con:mockService><con:mockService port="8088" path="/mockBasicHttpBinding_CustomerService" host="LWBHN00000390" name="BasicHttpBinding_CustomerService MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:mockOperation name="create" interface="BasicHttpBinding_CustomerService" operation="create"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+</s:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/UPCSubGroupTableService/create"/></con:response><con:dispatchConfig/></con:mockOperation><con:properties/></con:mockService><con:mockService port="8088" path="/mockBasicHttpBinding_CustomerService" host="LWBHN00000390" name="BasicHttpBinding_CustomerService MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:mockOperation name="create" interface="BasicHttpBinding_CustomerService" operation="create"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8" httpResponseStatus="200"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
    <s:Body>
       <CustomerServiceCreateResponse xmlns="http://schemas.microsoft.com/dynamics/2008/01/services">
          <EntityKeyList xmlns="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList">
@@ -15371,7 +15402,7 @@ background-color:#555555;}
          </EntityKeyList>
       </CustomerServiceCreateResponse>
    </s:Body>
-</s:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/dynamics/2008/01/services/CustomerService/create"/></con:response><con:response name="Fault Response (Schema validation failed)" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+</s:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/dynamics/2008/01/services/CustomerService/create"/></con:response><con:response name="Fault Response (Schema validation failed)" encoding="UTF-8" httpResponseStatus="200"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
    <s:Body>
       <s:Fault>
          <faultcode>s:SchemaValidationFailed</faultcode>
@@ -15402,7 +15433,7 @@ background-color:#555555;}
          </detail>
       </s:Fault>
    </s:Body>
-</s:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/dynamics/2008/01/services/CustomerService/create"/></con:response><con:dispatchConfig/></con:mockOperation><con:properties/></con:mockService><con:mockService port="8088" path="/mockBasicHttpBinding_bhnCleanUpMegatronService" host="LWBHN00000390" name="BasicHttpBinding_bhnCleanUpMegatronService MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:mockOperation name="create" interface="BasicHttpBinding_bhnCleanUpMegatronService" operation="create"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+</s:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/dynamics/2008/01/services/CustomerService/create"/></con:response><con:dispatchConfig/></con:mockOperation><con:properties/></con:mockService><con:mockService port="8088" path="/mockBasicHttpBinding_bhnCleanUpMegatronService" host="LWBHN00000390" name="BasicHttpBinding_bhnCleanUpMegatronService MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:mockOperation name="create" interface="BasicHttpBinding_bhnCleanUpMegatronService" operation="create"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8" httpResponseStatus="200"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
    <s:Body>
       <bhnCleanUpMegatronServiceCreateResponse xmlns="http://tempuri.org">
          <EntityKeyList xmlns="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList">
@@ -15417,7 +15448,7 @@ background-color:#555555;}
          </EntityKeyList>
       </bhnCleanUpMegatronServiceCreateResponse>
    </s:Body>
-</s:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/bhnCleanUpMegatronService/create"/></con:response><con:response name="Fault Response (bhnCleanUpMegatron could not be created)" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+</s:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/bhnCleanUpMegatronService/create"/></con:response><con:response name="Fault Response (bhnCleanUpMegatron could not be created)" encoding="UTF-8" httpResponseStatus="200"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
    <s:Body>
       <s:Fault>
          <faultcode>s:Client</faultcode>
@@ -15430,7 +15461,7 @@ background-color:#555555;}
          </detail>
       </s:Fault>
    </s:Body>
-</s:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/bhnCleanUpMegatronService/create"/></con:response><con:response name="Fault Response (Schema Validation Failed)" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+</s:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/bhnCleanUpMegatronService/create"/></con:response><con:response name="Fault Response (Schema Validation Failed)" encoding="UTF-8" httpResponseStatus="200"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
    <s:Body>
       <s:Fault>
          <faultcode>s:SchemaValidationFailed</faultcode>
@@ -15461,7 +15492,7 @@ background-color:#555555;}
          </detail>
       </s:Fault>
    </s:Body>
-</s:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/bhnCleanUpMegatronService/create"/></con:response><con:dispatchConfig/></con:mockOperation><con:properties/></con:mockService><con:mockService port="8088" path="/mockBasicHttpBinding_bhnUPCAttributes3PSService" host="LWBHN00000390" name="BasicHttpBinding_bhnUPCAttributes3PSService MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:mockOperation name="create" interface="BasicHttpBinding_bhnUPCAttributes3PSService" operation="create"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+</s:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/bhnCleanUpMegatronService/create"/></con:response><con:dispatchConfig/></con:mockOperation><con:properties/></con:mockService><con:mockService port="8088" path="/mockBasicHttpBinding_bhnUPCAttributes3PSService" host="LWBHN00000390" name="BasicHttpBinding_bhnUPCAttributes3PSService MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:mockOperation name="create" interface="BasicHttpBinding_bhnUPCAttributes3PSService" operation="create"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8" httpResponseStatus="200"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
    <s:Body>
       <bhnUPCAttributes3PSServiceCreateResponse xmlns="http://schemas.microsoft.com/dynamics/2008/01/services">
          <EntityKeyList xmlns="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList">
@@ -15488,7 +15519,7 @@ background-color:#555555;}
          </EntityKeyList>
       </bhnUPCAttributes3PSServiceCreateResponse>
    </s:Body>
-</s:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnUPCAttributes3PSService/create"/></con:response><con:response name="fault response (schema validation failed)" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+</s:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnUPCAttributes3PSService/create"/></con:response><con:response name="fault response (schema validation failed)" encoding="UTF-8" httpResponseStatus="200"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
    <s:Body>
       <s:Fault>
          <faultcode>s:SchemaValidationFailed</faultcode>
@@ -15519,7 +15550,7 @@ background-color:#555555;}
          </detail>
       </s:Fault>
    </s:Body>
-</s:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnUPCAttributes3PSService/create"/></con:response><con:dispatchConfig/></con:mockOperation><con:properties/></con:mockService><con:mockService port="8088" path="/mockBasicHttpBinding_bhnDivision3PSService" host="LWBHN00000390" name="BasicHttpBinding_bhnDivision3PSService MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:mockOperation name="create" interface="BasicHttpBinding_bhnDivision3PSService" operation="create"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+</s:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnUPCAttributes3PSService/create"/></con:response><con:dispatchConfig/></con:mockOperation><con:properties/></con:mockService><con:mockService port="8088" path="/mockBasicHttpBinding_bhnDivision3PSService" host="LWBHN00000390" name="BasicHttpBinding_bhnDivision3PSService MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:mockOperation name="create" interface="BasicHttpBinding_bhnDivision3PSService" operation="create"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8" httpResponseStatus="200"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
    <s:Body>
       <bhnDivision3PSServiceCreateResponse xmlns="http://schemas.microsoft.com/dynamics/2008/01/services">
          <EntityKeyList xmlns="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList">
@@ -15538,7 +15569,7 @@ background-color:#555555;}
          </EntityKeyList>
       </bhnDivision3PSServiceCreateResponse>
    </s:Body>
-</s:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnDivision3PSService/create"/></con:response><con:response name="Fault Response (Schema Validation Failed)" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+</s:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnDivision3PSService/create"/></con:response><con:response name="Fault Response (Schema Validation Failed)" encoding="UTF-8" httpResponseStatus="200"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
    <s:Body>
       <s:Fault>
          <faultcode>s:SchemaValidationFailed</faultcode>
@@ -15569,7 +15600,7 @@ background-color:#555555;}
          </detail>
       </s:Fault>
    </s:Body>
-</s:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnDivision3PSService/create"/></con:response><con:response name="Fault Response (Could not be created)" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+</s:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnDivision3PSService/create"/></con:response><con:response name="Fault Response (Could not be created)" encoding="UTF-8" httpResponseStatus="200"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
    <s:Body>
       <s:Fault>
          <faultcode>s:Client</faultcode>
@@ -15582,7 +15613,7 @@ background-color:#555555;}
          </detail>
       </s:Fault>
    </s:Body>
-</s:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnDivision3PSService/create"/></con:response><con:dispatchConfig/></con:mockOperation><con:properties/></con:mockService><con:mockService port="8088" path="/mockBasicHttpBinding_VendTableService" host="LWBHN00000390" name="BasicHttpBinding_VendTableService MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:mockOperation name="create" interface="BasicHttpBinding_VendTableService" operation="create"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+</s:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnDivision3PSService/create"/></con:response><con:dispatchConfig/></con:mockOperation><con:properties/></con:mockService><con:mockService port="8088" path="/mockBasicHttpBinding_VendTableService" host="LWBHN00000390" name="BasicHttpBinding_VendTableService MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:mockOperation name="create" interface="BasicHttpBinding_VendTableService" operation="create"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8" httpResponseStatus="200"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
    <s:Body>
       <VendTableServiceCreateResponse xmlns="http://schemas.microsoft.com/dynamics/2008/01/services">
          <EntityKeyList xmlns="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList">
@@ -15601,7 +15632,7 @@ background-color:#555555;}
          </EntityKeyList>
       </VendTableServiceCreateResponse>
    </s:Body>
-</s:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/dynamics/2008/01/services/VendTableService/create"/></con:response><con:response name="Fault Response (Schema Validation Failed)" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+</s:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/dynamics/2008/01/services/VendTableService/create"/></con:response><con:response name="Fault Response (Schema Validation Failed)" encoding="UTF-8" httpResponseStatus="200"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
    <s:Body>
       <s:Fault>
          <faultcode>s:SchemaValidationFailed</faultcode>
@@ -15632,7 +15663,7 @@ background-color:#555555;}
          </detail>
       </s:Fault>
    </s:Body>
-</s:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/dynamics/2008/01/services/VendTableService/create"/></con:response><con:dispatchConfig/></con:mockOperation><con:properties/></con:mockService><con:mockService port="8088" path="/mockBasicHttpBinding_bhnSetUpComp3PSService" host="LWBHN00000390" name="BasicHttpBinding_bhnSetUpComp3PSService MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:mockOperation name="create" interface="BasicHttpBinding_bhnSetUpComp3PSService" operation="create"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+</s:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/dynamics/2008/01/services/VendTableService/create"/></con:response><con:dispatchConfig/></con:mockOperation><con:properties/></con:mockService><con:mockService port="8088" path="/mockBasicHttpBinding_bhnSetUpComp3PSService" host="LWBHN00000390" name="BasicHttpBinding_bhnSetUpComp3PSService MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:mockOperation name="create" interface="BasicHttpBinding_bhnSetUpComp3PSService" operation="create"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8" httpResponseStatus="200"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
    <s:Body>
       <bhnSetUpComp3PSServiceCreateResponse xmlns="http://schemas.microsoft.com/dynamics/2008/01/services">
          <EntityKeyList xmlns="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList">
@@ -15655,7 +15686,7 @@ background-color:#555555;}
          </EntityKeyList>
       </bhnSetUpComp3PSServiceCreateResponse>
    </s:Body>
-</s:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnSetUpComp3PSService/create"/></con:response><con:response name="Fault Response (Schema Validation failed)" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+</s:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnSetUpComp3PSService/create"/></con:response><con:response name="Fault Response (Schema Validation failed)" encoding="UTF-8" httpResponseStatus="200"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
    <s:Body>
       <s:Fault>
          <faultcode>s:SchemaValidationFailed</faultcode>
@@ -15686,4 +15717,4 @@ background-color:#555555;}
          </detail>
       </s:Fault>
    </s:Body>
-</s:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnSetUpComp3PSService/create"/></con:response><con:dispatchConfig/></con:mockOperation><con:properties/></con:mockService><con:endpointStrategy xsi:type="con:DefaultEndpointStrategy" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:endpoint mode="COMPLEMENT" username="rvenu00-dev" password="Ammu1234" domain="devqa">http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/custcompanycodeservice.svc</con:endpoint><con:endpoint mode="COMPLEMENT" username="rvenu00-dev" password="Ammu1234" domain="devqa">http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhniidattributesservice.svc</con:endpoint><con:endpoint mode="COMPLEMENT" username="rvenu00-dev" password="Ammu1234" domain="devqa">http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/upcsubgrouptableservice.svc</con:endpoint><con:endpoint mode="COMPLEMENT" username="rvenu00-dev" password="Ammu1234" domain="devqa">http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/customerservice.svc</con:endpoint><con:endpoint mode="COMPLEMENT" username="rvenu00-dev" password="Ammu1234" domain="devqa">http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhncleanupmegatronservice.svc</con:endpoint><con:endpoint mode="COMPLEMENT" username="rvenu00" password="Ammu1234" domain="devqa">http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhndivision3psservice.svc</con:endpoint><con:endpoint mode="COMPLEMENT" username="rvenu00-dev" password="Ammu1234" domain="devqa">http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhndivision3psservice.svc</con:endpoint><con:endpoint mode="COMPLEMENT" username="rvenu00-dev" password="Ammu1234" domain="devqa">http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/vendtableservice.svc</con:endpoint><con:endpoint mode="COMPLEMENT" username="rvenu00-dev" password="Ammu1234" domain="devqa">http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhnsetupcomp3psservice.svc</con:endpoint><con:endpoint mode="COMPLEMENT" username="rvenu00-dev" password="Ammu1234" domain="devqa">http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhnupcattributes3psservice.svc</con:endpoint></con:endpointStrategy><con:properties/><con:wssContainer/><con:databaseConnectionContainer/><con:reporting><con:xmlTemplates/><con:parameters/></con:reporting></con:soapui-project>
+</s:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnSetUpComp3PSService/create"/></con:response><con:dispatchConfig/></con:mockOperation><con:properties/></con:mockService><con:endpointStrategy xsi:type="con:DefaultEndpointStrategy" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:endpoint mode="COMPLEMENT" username="rvenu00-dev" password="Ammu1234" domain="devqa">http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/custcompanycodeservice.svc</con:endpoint><con:endpoint mode="COMPLEMENT" username="rvenu00-dev" password="Ammu1234" domain="devqa">http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhniidattributesservice.svc</con:endpoint><con:endpoint mode="COMPLEMENT" username="rvenu00-dev" password="Ammu1234" domain="devqa">http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/upcsubgrouptableservice.svc</con:endpoint><con:endpoint mode="COMPLEMENT" username="rvenu00-dev" password="Ammu1234" domain="devqa">http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/customerservice.svc</con:endpoint><con:endpoint mode="COMPLEMENT" username="rvenu00-dev" password="Ammu1234" domain="devqa">http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhncleanupmegatronservice.svc</con:endpoint><con:endpoint mode="COMPLEMENT" username="rvenu00" password="Ammu1234" domain="devqa">http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhndivision3psservice.svc</con:endpoint><con:endpoint mode="COMPLEMENT" username="rvenu00-dev" password="Ammu1234" domain="devqa">http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhndivision3psservice.svc</con:endpoint><con:endpoint mode="COMPLEMENT" username="rvenk00-dev" password="Qwerty$123" domain="devqa" wssType="">http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/vendtableservice.svc</con:endpoint><con:endpoint mode="COMPLEMENT" username="rvenu00-dev" password="Ammu1234" domain="devqa">http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhnsetupcomp3psservice.svc</con:endpoint><con:endpoint mode="COMPLEMENT" username="rvenu00-dev" password="Ammu1234" domain="devqa">http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhnupcattributes3psservice.svc</con:endpoint></con:endpointStrategy><con:properties/><con:wssContainer/><con:databaseConnectionContainer/><con:oAuth2ProfileContainer/><con:reporting><con:xmlTemplates/><con:parameters/></con:reporting></con:soapui-project>

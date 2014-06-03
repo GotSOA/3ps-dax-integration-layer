@@ -24,6 +24,9 @@ import com.microsoft.schemas.dynamics._2008._01.documents.vendtable.AxdArrayAxdE
 import com.microsoft.schemas.dynamics._2008._01.documents.vendtable.AxdEnumNoYes;
 import com.microsoft.schemas.dynamics._2008._01.documents.vendtable.AxdExtTypeNoYesId;
 import com.microsoft.schemas.dynamics._2008._01.services.VendTableServiceCreateRequest;
+import com.microsoft.schemas.dynamics._2008._01.services.AxdEnumTaxIdType;
+
+
 
 public class CanonicalToVendTableServiceCreateRequest extends
 		AbstractMessageTransformer {
@@ -42,6 +45,7 @@ public class CanonicalToVendTableServiceCreateRequest extends
 		
 		AxdEntityVendTable bhnVendorTable1 = new AxdEntityVendTable();
 		
+		/* fields of the canonical
 		private String accountNum;
 		private String companyLegalName;
 		private String divisionBrandName;
@@ -66,6 +70,7 @@ public class CanonicalToVendTableServiceCreateRequest extends
 		private String vendorTaxIDNumber;			// not sure how to map this one
 		private Boolean vendorW9;
 		private String vendorZipCode;
+		*/
 		
 		bhnVendorTable1.setAccountNum(vendorObj.getAccountNum());
 		//bhnVendorTable1.setAction(value);
@@ -111,7 +116,7 @@ public class CanonicalToVendTableServiceCreateRequest extends
 		//bhnVendorTable1.setMemo(value);
 		//bhnVendorTable1.setMerchRecordNumber(value);
 		//bhnVendorTable1.setMultiLineDisc(value);
-		bhnVendorTable1.setName(value);			// may be missing in canonical???
+		bhnVendorTable1.setName(vendorObj.getCompanyLegalName());
 		//bhnVendorTable1.setNameAlias(value);
 		//bhnVendorTable1.setNameControl(value);
 		//bhnVendorTable1.setNumberSequenceGroup(value);

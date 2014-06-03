@@ -4,7 +4,7 @@
     "entityId": "94QGMK5KV5ABPYP5A7X4KC32JR",
     "updatedTimestamp": "2014-03-26T22:12:56.954+0000",
     "updaterId": "SF0TJQDX2XSLKDAMA062J373LW",
-    "version": "0.13",
+    "version": "0.12",
     "source": {
         "partnerProfileSource": "PARTNER_SERVICE_PORTAL",
         "isTest": false
@@ -203,8 +203,6 @@
             "substitutionPOG2Category": "c1",
             "substitutionPOG3Category": "d1",
             "substitutionPortalDisplayName": "i1",
-            "substitutionPOGDimension": "",
-            "substitutionShipperUPC": "",
             "iid": {
                 "divisionCardImageURL": "",
                 "iidActivationType": "HYBRID",
