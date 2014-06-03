@@ -13,6 +13,7 @@ documentation:
     description: json payload from 3ps
     body:
       application/json:
+        schema: !include schemas/partner-profile-schema.json
         example: !include examples/if1-3ps-mule-post-example.json
     responses:
       200:

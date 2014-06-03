@@ -9,7 +9,7 @@ http://www.mulesoft.org/schema/mule/cxf http://www.mulesoft.org/schema/mule/cxf/
 http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/mule/ee/tracking/current/mule-tracking-ee.xsd
 http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/json/current/mule-json.xsd
 http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schema/mule/ee/data-mapper/current/mule-data-mapper.xsd">
-     <http:connector name="httpConnector" doc:name="HTTP\HTTPS">
+    <http:connector name="httpConnector" doc:name="HTTP\HTTPS">
         <service-overrides sessionHandler="org.mule.session.NullSessionHandler" dispatcherFactory="org.mule.transport.http.NTLMv2HttpClientMessageDispatcherFactor" />
     </http:connector> 
     <object-to-byte-array-transformer name="objectToByteArrayTransformer" doc:name="Object to Byte Array" />
@@ -21,6 +21,7 @@ http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schem
         <spring:bean name="loggingOut" class="org.apache.cxf.interceptor.LoggingOutInterceptor">
             <spring:property name="prettyLogging" value="true"/>
         </spring:bean>
+        <spring:bean id="canonicalCalidator" class="com.bhnetwork.integration.component.CanonicalValidation"/>
     </spring:beans>
 
     <apikit:config name="apiConfig" raml="3ps-dax-int.raml" consoleEnabled="true" consolePath="console" doc:name="Router" />
@@ -48,6 +49,7 @@ http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schem
         <apikit:mapping statusCode="400">
             <apikit:exception value="org.mule.module.apikit.exception.BadRequestException" />
             <set-property propertyName="Content-Type" value="application/json" />
+            <logger level="ERROR" message="#[groovy:message.getExceptionPayload().getMessage()]" /> 
             <set-payload value="{ &quot;message&quot;: &quot;Bad request&quot; }" />
         </apikit:mapping>
     </apikit:mapping-exception-strategy>
@@ -71,6 +73,7 @@ http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schem
     <flow name="data-transformation-flow" doc:name="data-transformation-flow">
         <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-transforms" path="Q.transform" />
         <data-mapper:transform config-ref="json_to_pojo" doc:name="3PS-Canonical"/>
+        <component class="com.bhnetwork.integration.component.CanonicalValidation" doc:name="Canonical Validator"/>
         <!-- <json:json-to-object-transformer doc:name="JSON to Object (canon)"/> -->
         <!-- <flow-ref name="" doc:name="Idempotent Service"/>
         <choice doc:name="Choice">
