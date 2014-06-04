@@ -44,7 +44,7 @@
         "divisionLogoURL": "",
         "divisionProcessorCode": "e1",
         "divisionRedemptionLocationType": "",
-        "divisionLocalPartner": "",
+        "divisionLocalPartner": true,
         "divisionLocalPartnerSource": "",
         "processorContactPhoneNumberExt": "",
         "divisionInStoreRedemptionInstructions": "",

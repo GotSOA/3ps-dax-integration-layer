@@ -177,5 +177,5 @@ public class Store implements Serializable {
 		public void setStorePriceToleranceGroup(String storePriceToleranceGroup) {
 			this.storePriceToleranceGroup = storePriceToleranceGroup;
 		}
-						
+
 }
