@@ -30,10 +30,8 @@ import com.microsoft.schemas.dynamics._2008._01.documents.vendtable.AxdEnumTax10
 import com.microsoft.schemas.dynamics._2008._01.documents.vendtable.AxdExtTypeTax1099Reporting;
 import com.microsoft.schemas.dynamics._2008._01.documents.vendtable.AxdEnumTaxIDType;
 import com.microsoft.schemas.dynamics._2008._01.documents.vendtable.AxdExtTypeVendW9;
-
+import com.microsoft.schemas.dynamics._2008._01.documents.vendtable.AxdEnumDirPartyType;
 import com.microsoft.schemas.dynamics._2008._01.services.VendTableServiceCreateRequest;
-
-
 
 public class CanonicalToVendTableServiceCreateRequest extends
 		AbstractMessageTransformer {
@@ -57,6 +55,9 @@ public class CanonicalToVendTableServiceCreateRequest extends
 		//parent object
 		AxdVendTable vendTable = new AxdVendTable();
 		// vendTable is a List<AxdEntityVendTable>
+		
+		//XML Attribute required
+		bhnVendorTable1.setClazz("entity");//TODO Not in SPEC
 				
 		// DAX sets the accountNum
 		//bhnVendorTable1.setAccountNum(vendorObj.getAccountNum());
@@ -68,7 +69,7 @@ public class CanonicalToVendTableServiceCreateRequest extends
 		//bhnVendorTable1.setBidOnly(value);
 
 		//System.out.println("vendorObj.getVendorBlocked(): " + vendorObj.getVendorBlocked());
-		bhnVendorTable1.setBlocked(vendorObj.getVendorBlocked()? AxdExtTypeVendBlocked.INVOICE:AxdExtTypeVendBlocked.NO);
+		bhnVendorTable1.setBlocked(vendorObj.getVendorBlocked()==false? AxdExtTypeVendBlocked.NO:AxdExtTypeVendBlocked.INVOICE);
 		
 		//bhnVendorTable1.setCashDisc(value);
 		//bhnVendorTable1.setCellularPhone(value);
@@ -119,7 +120,7 @@ public class CanonicalToVendTableServiceCreateRequest extends
 		//bhnVendorTable1.setPager(value);
 		//bhnVendorTable1.setPartnerProfileId(value);
 		//bhnVendorTable1.setPartyId(value);
-		//bhnVendorTable1.setPartyType(value);
+		bhnVendorTable1.setPartyType(vendorObj.getVendorPartyType()!=""? AxdEnumDirPartyType.ORGANIZATION:AxdEnumDirPartyType.PERSON);
 		//bhnVendorTable1.setPaymDayId(value);
 		//bhnVendorTable1.setPaymId(value);
 		bhnVendorTable1.setPaymMode(vendorObj.getVendorPaymMode());
@@ -137,19 +138,20 @@ public class CanonicalToVendTableServiceCreateRequest extends
 		//bhnVendorTable1.setSmallBusiness(value);
 		//bhnVendorTable1.setSMS(value);
 		bhnVendorTable1.setState(vendorObj.getVendorState());
-		bhnVendorTable1.setStreet(vendorObj.getVendorStreet());
+		// uncomment once we establish that json and canonical supports the vendorStreet field
+		//bhnVendorTable1.setStreet(vendorObj.getVendorStreet());
 		//bhnVendorTable1.setSubsegmentId(value);
 		//bhnVendorTable1.setSuppItemGroupId(value);
 		//bhnVendorTable1.setTax1099Box(value);
 		// TODO: review what default should be - also STRING vs. Boolean issue
-		bhnVendorTable1.setTax1099NameChoice(vendorObj.getVendorTax1099NameChoice()==""? AxdEnumTax1099NameChoice.DBA:AxdEnumTax1099NameChoice.VENDOR_NAME);
+		bhnVendorTable1.setTax1099NameChoice(vendorObj.getVendorTax1099NameChoice()==null? AxdEnumTax1099NameChoice.DBA:AxdEnumTax1099NameChoice.VENDOR_NAME);
 		
 		// NOTE: arbitrary mapping to vendorTaxIDNumber
 		bhnVendorTable1.setTax1099RegNum(vendorObj.getVendorTaxIDNumber());
 		
 		// // TODO: review what default should be - also STRING vs. Boolean issue
 		bhnVendorTable1.setTax1099Reports(vendorObj.getVendorTax1099Reports()==""? AxdExtTypeTax1099Reporting.YES:AxdExtTypeTax1099Reporting.NO);
-		//bhnVendorTable1.setTaxGroup(value);
+		bhnVendorTable1.setTaxGroup(vendorObj.getVendorTaxGroup());
 		
 		bhnVendorTable1.setTaxIDType(vendorObj.getVendorTaxIdType()==""? AxdEnumTaxIDType.SSN:AxdEnumTaxIDType.EIN);
 		// enum values are: UnKnown, EIN, SSN, ITIN, ATIN
@@ -159,7 +161,7 @@ public class CanonicalToVendTableServiceCreateRequest extends
 		//bhnVendorTable1.setTaxWithholdGroup(value);
 		//bhnVendorTable1.setTeleFax(value);
 		//bhnVendorTable1.setTelex(value);
-		//bhnVendorTable1.setURL(value);
+		bhnVendorTable1.setURL(vendorObj.getVendorURL());
 		//bhnVendorTable1.setVATNum(value);
 		bhnVendorTable1.setVendGroup(vendorObj.getVendorGroup());
 		//bhnVendorTable1.setVendItemGroupId(value);

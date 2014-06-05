@@ -292,7 +292,9 @@ http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schem
                 <spring:ref bean="loggingOut"/>
             </cxf:outInterceptors>
         </cxf:jaxws-client>
+        <logger level="INFO" message="In subflow daxVendorWebServiceClient: before NTLM" doc:name="test"/>
         <expression-component doc:name="NTLM credentials"><![CDATA[flowVars['username']='${dax.username}'; flowVars['password']='${dax.password}'; flowVars['domain']='${dax.domain}'; flowVars['realm']='${dax.realm}' ;]]></expression-component>
+        <logger level="INFO" message="In subflow daxVendorWebServiceClient: before Vendor service call" doc:name="test"/>
         <http:outbound-endpoint exchange-pattern="request-response" host="${dax.http.host}" port="${dax.http.port}" path="${dax.http.vendor.path}" method="POST" transformer-refs="objectToByteArrayTransformer" doc:name="HTTP"/>
 	</sub-flow>
 	    
@@ -307,6 +309,7 @@ http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schem
     <flow name="DAX-step7-flow" doc:name="DAX-step7-flow">
         <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-step7" path="Q.step7"/>
         <custom-transformer class="com.bhnetwork.integration.transformer.CanonicalToVendTableServiceCreateRequest" doc:name="Canon-to-VendorRequest"/>
+        <logger level="INFO" message="In step7-flow, payload after CanonicalToVendTableServiceCreateRequest transformer: #[payload]" doc:name="test"/>
 		<!-- TODO: future
 			Right now we don't have the proper json that implements multiple vendors
 			need to implement a foreach to deal with multiple vendors
@@ -319,7 +322,7 @@ http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schem
             <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[1].value]" target="#[sessionVars.canon.vendor.recId]"/>
         </enricher>
         <logger level="INFO" doc:name="Log AccountNum and recId" message="AccountNum=#[sessionVars.canon.vendor.AccountNum] and recId=#[sessionVars.canon.vendor.recId]"/>
-        <vm:outbound-endpoint exchange-pattern="one-way" path="Q.error" doc:name="TO_BE_DELETED VM-error"/>
+        <!-- <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step8" doc:name="VM-step8 (Setup Complete)"/> -->
         <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy"/>
     </flow>
 

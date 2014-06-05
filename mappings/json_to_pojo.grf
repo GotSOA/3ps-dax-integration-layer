@@ -920,7 +920,22 @@ output.storePhysicalStoreState = input.storePhysicalStoreState;
 output.storePhysicalStoreCity = input.storePhysicalStoreCity;
 output.companyPhysicalStoreAddressLine1 = input.companyPhysicalStoreAddressLine1;
 output.companyPhysicalStoreCountry = input.companyPhysicalStoreCountry;
-output.storeBHNCustLevel = input.storeBHNCustLevel;
+output.storeBHNStoreCode=input.storeBHNStoreCode;
+output.storeCustGroup=input.storeCustGroup;
+output.storePhysicalStoreName=input.storePhysicalStoreName;
+output.companyPhysicalStoreAddressLine1=input.storePhysicalStoreAddressLine1;
+output.storeContactPhoneNumber=input.storeContactPhoneNumber;
+output.storeBlocked=input.storeBlocked: true;
+output.storeChannelDimension=input.storeChannelDimension;
+output.storeDimensionPAC=input.storeDimensionPAC;     
+output.storeDimensionRegion=input.storeDimensionRegion;
+output.storePriceToleranceGroup=input.storePriceToleranceGroup;
+output.storeCountryRegionId=input.storeCountryRegionId;
+output.storePhysicalStorePostalCode=input.storePhysicalStorePostalCode;
+output.storePhysicalStoreState=input.storePhysicalStoreState;
+output.storePhysicalStoreCity=input.storePhysicalStoreCity;
+output.storeBHNCustLevel=input.storeBHNCustLevel;
+output.companyPhysicalStoreCountry=input.companyPhysicalStoreCountry;
 ]]></attr>
 </Node>
 <Node enabled="enabled" guiName="Foreach 'object' -&gt; 'cpDivision'" guiX="460" guiY="120" id="FOREACH_OBJECT_CP_DIVISION" transformClass="com.mulesoft.datamapper.transform.MelRecordTransform" type="REFORMAT">
@@ -1014,6 +1029,8 @@ output.vendorURL=input.vendorURL;
 output.vendorZipCode=input.vendorZipCode;
 output.vendorW9 = (isnull(input.vendorW9) ? null : input.vendorW9);
 output.vendorBlocked = (isnull(input.vendorBlocked) ? null : input.vendorBlocked);
+output.vendorTax1099NameChoice=(isnull(input.vendorTax1099NameChoice) ? "DBA" : input.vendorTax1099NameChoice);
+
 ]]></attr>
 </Node>
 <Node enabled="enabled" guiName="Foreach 'ProductInformation' -&gt; 'products'" guiX="460" guiY="320" id="FOREACH_PRODUCT_INFORMATION_PRODUCTS" transformClass="com.mulesoft.datamapper.transform.MelRecordTransform" type="REFORMAT">
