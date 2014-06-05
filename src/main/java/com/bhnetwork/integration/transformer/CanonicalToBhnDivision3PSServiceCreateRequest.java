@@ -10,7 +10,6 @@ import com.bhnetwork.integration.pppstodax.canonical.PartnerProfile;
 import com.microsoft.schemas.dynamics._2008._01.documents.bhndivision3ps.AxdEntityBhnCustDivisionTable;
 import com.microsoft.schemas.dynamics._2008._01.documents.bhndivision3ps.AxdEntityBhnDivisionAttributes;
 import com.microsoft.schemas.dynamics._2008._01.documents.bhndivision3ps.AxdEnumDivisionAccountType;
-import com.microsoft.schemas.dynamics._2008._01.documents.bhndivision3ps.AxdEnumDivisionLocale;
 import com.microsoft.schemas.dynamics._2008._01.documents.bhndivision3ps.AxdEnumNoYes;
 import com.microsoft.schemas.dynamics._2008._01.documents.bhndivision3ps.AxdbhnDivision3PS;
 import com.microsoft.schemas.dynamics._2008._01.services.BhnDivision3PSServiceCreateRequest;

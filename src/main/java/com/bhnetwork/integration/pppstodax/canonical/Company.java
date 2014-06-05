@@ -5,6 +5,8 @@ import java.util.Date;
 
 import java.util.List;
 
+import javax.validation.constraints.NotNull;
+
 /**
  * 
  * BHN Integration canonical model for Company
@@ -21,8 +23,10 @@ public class Company implements Serializable {
 	private String companyAddressLine2;
 	private Boolean companyBHNSetupComplete;
 	private String companyCity;
+	@NotNull
 	private String companyCode;
 	private String companyContractTerm;
+	@NotNull
 	private String companyCountry;
 	private Boolean companyIsContractComplete;
 	private String companyLegalName;
