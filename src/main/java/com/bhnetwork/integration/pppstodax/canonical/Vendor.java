@@ -35,7 +35,7 @@ public class Vendor implements Serializable {
 	private String vendorPaymMode;
 	private String vendorPhone;
 	private String vendorState;
-	private String vendorstreet;
+	private String vendorStreet;
 	private String vendorTax1099NameChoice;
 	private String vendorTax1099Reports;
 	private String vendorTaxGroup; 		// optional e.g. STOUSCA
@@ -171,11 +171,11 @@ public class Vendor implements Serializable {
 	public void setVendorState(String vendorState) {
 		this.vendorState = vendorState;
 	}
-	public String getVendorstreet() {
-		return vendorstreet;
+	public String getVendorStreet() {
+		return vendorStreet;
 	}
-	public void setVendorstreet(String vendorstreet) {
-		this.vendorstreet = vendorstreet;
+	public void setVendorStreet(String vendorStreet) {
+		this.vendorStreet = vendorStreet;
 	}
 	public String getVendorTax1099NameChoice() {
 		return vendorTax1099NameChoice;

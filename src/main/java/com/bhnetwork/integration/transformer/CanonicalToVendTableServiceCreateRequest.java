@@ -67,6 +67,7 @@ public class CanonicalToVendTableServiceCreateRequest extends
 		//bhnVendorTable1.setBankCentralBankPurposeText(value);
 		//bhnVendorTable1.setBidOnly(value);
 
+		//System.out.println("vendorObj.getVendorBlocked(): " + vendorObj.getVendorBlocked());
 		bhnVendorTable1.setBlocked(vendorObj.getVendorBlocked()? AxdExtTypeVendBlocked.INVOICE:AxdExtTypeVendBlocked.NO);
 		
 		//bhnVendorTable1.setCashDisc(value);
@@ -136,7 +137,7 @@ public class CanonicalToVendTableServiceCreateRequest extends
 		//bhnVendorTable1.setSmallBusiness(value);
 		//bhnVendorTable1.setSMS(value);
 		bhnVendorTable1.setState(vendorObj.getVendorState());
-		bhnVendorTable1.setStreet(vendorObj.getVendorstreet());
+		bhnVendorTable1.setStreet(vendorObj.getVendorStreet());
 		//bhnVendorTable1.setSubsegmentId(value);
 		//bhnVendorTable1.setSuppItemGroupId(value);
 		//bhnVendorTable1.setTax1099Box(value);
