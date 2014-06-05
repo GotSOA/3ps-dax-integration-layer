@@ -107,7 +107,6 @@ http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schem
             <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[1].value]" target="#[sessionVars.canon.company.recId]"/>
         </enricher>
         <logger level="INFO" doc:name="Log bhnGUID and recId" message="bhnGUID=#[sessionVars.canon.company.bhnGUID] and recId=#[sessionVars.canon.company.recId]"/>
-        <!-- <vm:outbound-endpoint exchange-pattern="one-way" path="Q.error" doc:name="TO_BE_DELETED VM-error"/> -->
         <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step2" doc:name="Q.step2"/>
     </flow>
     <flow name="DAX-step2-flow" doc:name="DAX-step2-flow">
@@ -120,7 +119,6 @@ http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schem
             <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[1].value]" target="#[sessionVars.canon.company.cpDivision[0].recId]"/>
         </enricher>
         <logger level="INFO" doc:name="Log bhnGUID and recId" message="guid=#[sessionVars.canon.company.cpDivision[0].bhnGUID] and RecId=#[sessionVars.canon.company.cpDivision[0].recId]"/>
-        <!-- <vm:outbound-endpoint exchange-pattern="one-way" path="Q.error" doc:name="TO_BE_DELETED VM-error"/> --> 
         <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step3" doc:name="Q.step3"/> 
     </flow>
     <flow name="DAX-step3-flow" doc:name="DAX-step3-flow">
@@ -135,7 +133,6 @@ http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schem
             <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[3].value]" target="#[sessionVars.canon.company.cpDivision[0].products[0].substGrp.brandRecId]"/>
         </enricher>
         <logger level="INFO" doc:name="Log bhnGUID and recId" message="guid=#[sessionVars.canon.company.cpDivision[0].products[0].substGrp.guid] and brandRecId=#[sessionVars.canon.company.cpDivision[0].products[0].substGrp.brandRecId]"/>
-        <!-- <vm:outbound-endpoint exchange-pattern="one-way" path="Q.error" doc:name="TO_BE_DELETED VM-error"/> --> 
         <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step4" doc:name="Q.step4"/>
     </flow>
     <flow name="DAX-step4-flow" doc:name="DAX-step4-flow">
@@ -150,7 +147,6 @@ http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schem
             <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[3].value]" target="#[sessionVars.canon.company.cpDivision[0].products[0].bhnGUID]"/>
         </enricher>
         <logger level="INFO" doc:name="Log bhnGUID " message="guid=#[sessionVars.canon.company.cpDivision[0].products[0].bhnGUID]"/>
-        <!-- <vm:outbound-endpoint exchange-pattern="one-way" path="Q.error" doc:name="TO_BE_DELETED VM-error"/> --> 
         <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step5" doc:name="Q.step5"/>
     </flow>
     <flow name="DAX-step5-flow" doc:name="DAX-step5-flow">
@@ -172,7 +168,7 @@ http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schem
         <set-payload value="#[sessionVars.canon]" doc:name="Canonical Payload from Session"/>
         <custom-transformer class="com.bhnetwork.integration.transformer.CanonicalToBhnSetUpComp3PSServiceCreateRequest" doc:name="Canon-to-SetupCompRequest"/>
         <flow-ref name="daxSetupCompWebServiceClient" doc:name="Invoke Dax SetupComp Webservice"/>
-        <!-- <vm:outbound-endpoint exchange-pattern="one-way" path="Q.error" doc:name="TO_BE_DELETED VM-error"/> -->
+        <logger level="INFO" doc:name="SetupComplete-success" message="SetupComplete-success partnerProfileId=#[payload.entityKeyList.entityKey[0].keyData.keyField[0].value]"/>
     </flow>
     <flow name="DAX-error-flow" doc:name="DAX-error-flow">
         <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-error" path="Q.error"/>
