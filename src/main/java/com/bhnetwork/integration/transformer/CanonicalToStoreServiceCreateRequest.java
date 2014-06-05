@@ -30,7 +30,7 @@ import com.microsoft.schemas.dynamics._2008._01.documents.customer.AxdExtTypeCus
 
 import com.microsoft.schemas.dynamics._2008._01.services.CustomerServiceCreateRequest;
 
-public class CanonicalToStoreTableServiceCreateRequest extends
+public class CanonicalToStoreServiceCreateRequest extends
 		AbstractMessageTransformer {
 
 	@Override
@@ -52,6 +52,9 @@ public class CanonicalToStoreTableServiceCreateRequest extends
 		//parent object
 		AxdCustomer storeTable = new AxdCustomer();
 		// storeTable is a List<AxdEntityCustTable>
+		
+		//XML Attribute required
+		bhnStoreTable1.setClazz("entity");
 				
 		// List of fields to map
 //		private	String	companyPhysicalStoreAddressLine1;

@@ -57,7 +57,7 @@ public class CanonicalToVendTableServiceCreateRequest extends
 		// vendTable is a List<AxdEntityVendTable>
 		
 		//XML Attribute required
-		bhnVendorTable1.setClazz("entity");//TODO Not in SPEC
+		bhnVendorTable1.setClazz("entity");
 				
 		// DAX sets the accountNum
 		//bhnVendorTable1.setAccountNum(vendorObj.getAccountNum());
