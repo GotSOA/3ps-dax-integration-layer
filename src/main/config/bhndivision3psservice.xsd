@@ -2,16 +2,10 @@
 <xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/dynamics/2008/01/services" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/dynamics/2008/01/services">
   <xs:import schemaLocation="bhndivision3psservice_1.xsd" namespace="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList"/>
   <xs:import schemaLocation="bhndivision3psservice_1_2_3.xsd" namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/bhnDivision3PS"/>
-  <xs:element name="bhnDivision3PSServiceReadRequest">
+  <xs:element name="bhnDivision3PSServiceUpdateRequest">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" ref="q1:EntityKeyList" xmlns:q1="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList"/>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="bhnDivision3PSServiceReadResponse">
-    <xs:complexType>
-      <xs:sequence>
         <xs:element minOccurs="0" ref="q2:bhnDivision3PS" xmlns:q2="http://schemas.microsoft.com/dynamics/2008/01/documents/bhnDivision3PS"/>
       </xs:sequence>
     </xs:complexType>
@@ -37,10 +31,16 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="bhnDivision3PSServiceUpdateRequest">
+  <xs:element name="bhnDivision3PSServiceReadRequest">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" ref="q6:EntityKeyList" xmlns:q6="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="bhnDivision3PSServiceReadResponse">
+    <xs:complexType>
+      <xs:sequence>
         <xs:element minOccurs="0" ref="q7:bhnDivision3PS" xmlns:q7="http://schemas.microsoft.com/dynamics/2008/01/documents/bhnDivision3PS"/>
       </xs:sequence>
     </xs:complexType>

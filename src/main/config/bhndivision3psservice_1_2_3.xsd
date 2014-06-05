@@ -76,6 +76,7 @@
       <xs:element minOccurs="1" name="RelationCode" type="AxdExtType_bhnCompRelationCode"/>
       <xs:element minOccurs="0" name="SideLetter" nillable="true" type="AxdExtType_SideLetterType"/>
       <xs:element minOccurs="0" name="SideLetterReq" nillable="true" type="AxdEnum_NoYes"/>
+      <xs:element minOccurs="0" name="SideLetterReq1" nillable="true" type="AxdEnum_NoYes"/>
       <xs:element minOccurs="0" name="WebSite" nillable="true" type="AxdUnion_AxdType_Str_AxdType_ExtCodeValue"/>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="bhnDivisionAttributes" type="AxdEntity_bhnDivisionAttributes"/>
     </xs:sequence>
@@ -343,10 +344,10 @@
   </xs:simpleType>
   <xs:complexType name="AxdEntity_bhnDivisionAttributes">
     <xs:sequence>
-      <xs:element minOccurs="0" name="BalanceLockTimeFrame" nillable="true" type="AxdExtType_Integer"/>
-      <xs:element minOccurs="0" name="Division1DC128Expression" nillable="true" type="AxdEnum_NoYes"/>
-      <xs:element minOccurs="0" name="Division2DPDF417Expression" nillable="true" type="AxdEnum_NoYes"/>
-      <xs:element minOccurs="0" name="Division2DQRCODEExpression" nillable="true" type="AxdEnum_NoYes"/>
+      <xs:element minOccurs="0" name="BalanceLockTimeFrame" nillable="true" type="AxdEnum_NoYes"/>
+      <xs:element minOccurs="0" name="Division1DC128Expression" nillable="true" type="AxdUnion_AxdType_Str_AxdType_ExtCodeValue"/>
+      <xs:element minOccurs="0" name="Division2DPDF417Expression" nillable="true" type="AxdUnion_AxdType_Str_AxdType_ExtCodeValue"/>
+      <xs:element minOccurs="0" name="Division2DQRCODEExpression" nillable="true" type="AxdUnion_AxdType_Str_AxdType_ExtCodeValue"/>
       <xs:element minOccurs="0" name="DivisionAccessCode" nillable="true" type="AxdUnion_AxdType_Str_AxdType_ExtCodeValue"/>
       <xs:element minOccurs="0" name="DivisionAccountNumberLabel" nillable="true" type="AxdUnion_AxdType_Str_AxdType_ExtCodeValue"/>
       <xs:element minOccurs="0" name="DivisionAccountType" nillable="true" type="AxdEnum_divisionAccountType"/>
@@ -379,7 +380,7 @@
       <xs:element minOccurs="0" name="DivisionIsBarcodeFormat1DC128" nillable="true" type="AxdEnum_NoYes"/>
       <xs:element minOccurs="0" name="DivisionIsBarcodeFormat2DPDF417" nillable="true" type="AxdEnum_NoYes"/>
       <xs:element minOccurs="0" name="DivisionIsBarcodeFormat2DQRCODE" nillable="true" type="AxdEnum_NoYes"/>
-      <xs:element minOccurs="0" name="DivisionisBarcodeScanSupported" nillable="true" type="AxdUnion_AxdType_Str_AxdType_ExtCodeValue"/>
+      <xs:element minOccurs="0" name="DivisionisBarcodeScanSupported" nillable="true" type="AxdEnum_NoYes"/>
       <xs:element minOccurs="0" name="DivisionIsBISystemBLAST" nillable="true" type="AxdEnum_NoYes"/>
       <xs:element minOccurs="0" name="DivisionIsBISystemCAPTCHA" nillable="true" type="AxdEnum_NoYes"/>
       <xs:element minOccurs="0" name="DivisionIsBISystemCardpool" nillable="true" type="AxdEnum_NoYes"/>
@@ -399,7 +400,7 @@
       <xs:element minOccurs="0" name="DivisionOnlineRedemptionInstructions" nillable="true" type="AxdUnion_AxdType_Str_AxdType_ExtCodeValue"/>
       <xs:element minOccurs="0" name="DivisionOnlineStoreURL" nillable="true" type="AxdExtType_bhnMegatronURL"/>
       <xs:element minOccurs="0" name="DivisionPaymentNetworkType" nillable="true" type="AxdEnum_divisionPaymentNetworkType"/>
-      <xs:element minOccurs="0" name="DivisionPinLabel" nillable="true" type="AxdUnion_AxdType_Str_AxdType_ExtCodeValue"/>
+      <xs:element minOccurs="0" name="DivisionPinLable" nillable="true" type="AxdEnum_ABC"/>
       <xs:element minOccurs="0" name="DivisionProgramDescription" nillable="true" type="AxdUnion_AxdType_Str_AxdType_ExtCodeValue"/>
       <xs:element minOccurs="0" name="DivisionRedemptionInformation" nillable="true" type="AxdUnion_AxdType_Str_AxdType_ExtCodeValue"/>
       <xs:element minOccurs="0" name="DivisionRedemptionLine1" nillable="true" type="AxdUnion_AxdType_Str_AxdType_ExtCodeValue"/>
@@ -427,24 +428,25 @@
       <xs:element minOccurs="0" name="ProcessorHasRealTimeIssuance" nillable="true" type="AxdEnum_NoYes"/>
       <xs:element minOccurs="0" name="RecId" nillable="true" type="AxdExtType_recId"/>
       <xs:element minOccurs="0" name="RecVersion" nillable="true" type="AxdExtType_recVersion"/>
+      <xs:element minOccurs="0" name="RedemptionAdditionalDataLabel" nillable="true" type="AxdUnion_AxdType_Str_AxdType_ExtCodeValue"/>
+      <xs:element minOccurs="0" name="SupportsPartialBalanceInquiry" nillable="true" type="AxdEnum_NoYes"/>
       <xs:element minOccurs="0" name="SupportsRegift" nillable="true" type="AxdEnum_NoYes"/>
+      <xs:element minOccurs="0" name="SupportsReload" nillable="true" type="AxdEnum_NoYes"/>
       <xs:element minOccurs="0" name="SupportsTransactionHistory" nillable="true" type="AxdEnum_NoYes"/>
     </xs:sequence>
     <xs:attribute fixed="entity" name="class" use="required"/>
     <xs:attribute name="action" type="AxdEnum_AxdEntityAction"/>
   </xs:complexType>
-  <xs:simpleType name="AxdExtType_Integer">
-    <xs:annotation>
-      <xs:documentation xml:lang="EN-US">Integer:Integer.</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="AxdType_Integer"/>
-  </xs:simpleType>
   <xs:simpleType name="AxdEnum_divisionAccountType">
     <xs:annotation>
       <xs:documentation xml:lang="EN-US">Account Type:Account Type</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
       <xs:enumeration value="None"/>
+      <xs:enumeration value="CREDIT_CARD"/>
+      <xs:enumeration value="GIFT_CARD"/>
+      <xs:enumeration value="LOYALTY_CARD"/>
+      <xs:enumeration value="PHONE_CARD"/>
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="AxdExtType_bhnMegatronURL">
@@ -462,6 +464,16 @@
     </xs:annotation>
     <xs:restriction base="xs:string">
       <xs:enumeration value="None"/>
+      <xs:enumeration value="en_US"/>
+      <xs:enumeration value="en_CA"/>
+      <xs:enumeration value="fr_CA"/>
+      <xs:enumeration value="en_UK"/>
+      <xs:enumeration value="en_AU"/>
+      <xs:enumeration value="en_MX"/>
+      <xs:enumeration value="es_MX"/>
+      <xs:enumeration value="en_FR"/>
+      <xs:enumeration value="fr_FR"/>
+      <xs:enumeration value="en_ZA"/>
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="AxdEnum_divisionCardPinType">
@@ -470,6 +482,8 @@
     </xs:annotation>
     <xs:restriction base="xs:string">
       <xs:enumeration value="None"/>
+      <xs:enumeration value="FRONT"/>
+      <xs:enumeration value="BACK"/>
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="AxdExtType_bhnMegatronName">
@@ -513,14 +527,10 @@
     </xs:annotation>
     <xs:restriction base="xs:string">
       <xs:enumeration value="None"/>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:simpleType name="AxdEnum_divisionRedemptionMethod">
-    <xs:annotation>
-      <xs:documentation xml:lang="EN-US">Redemption Location Type:Redemption Location Type</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="None"/>
+      <xs:enumeration value="VISA"/>
+      <xs:enumeration value="MASTERCARD"/>
+      <xs:enumeration value="DISCOVER"/>
+      <xs:enumeration value="AMEX"/>
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="AxdEnum_ABC">
@@ -532,6 +542,20 @@
       <xs:enumeration value="A"/>
       <xs:enumeration value="B"/>
       <xs:enumeration value="C"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdEnum_divisionRedemptionMethod">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Redemption Location Type:Redemption Location Type</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None"/>
+      <xs:enumeration value="REDEMPTION_INFORMATION"/>
+      <xs:enumeration value="IN_STORE_INSTRUCTIONS"/>
+      <xs:enumeration value="ON_LINE_INSTRUCTIONS"/>
+      <xs:enumeration value="REDEMPTION_LINE_1"/>
+      <xs:enumeration value="REDEMPTION_LNE_2"/>
+      <xs:enumeration value="SALES_ASSOCIATE_INSTRUCTIONS"/>
     </xs:restriction>
   </xs:simpleType>
 </xs:schema>

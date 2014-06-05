@@ -10368,13 +10368,11 @@ Affiliate:Affiliate number.</xs:documentation>
       <xsd:import schemaLocation="http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhndivision3psservice.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/bhnDivision3PS"/>
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="bhnDivision3PSServiceReadRequest">
-    <wsdl:part name="parameters" element="tns:bhnDivision3PSServiceReadRequest"/>
+  <wsdl:message name="bhnDivision3PSServiceUpdateRequest">
+    <wsdl:part name="parameters" element="tns:bhnDivision3PSServiceUpdateRequest"/>
   </wsdl:message>
-  <wsdl:message name="bhnDivision3PSServiceReadResponse">
-    <wsdl:part name="parameters" element="tns:bhnDivision3PSServiceReadResponse"/>
-  </wsdl:message>
-  <wsdl:message name="bhnDivision3PSService_read_AifFaultFault_FaultMessage">
+  <wsdl:message name="bhnDivision3PSService_update_OutputMessage"/>
+  <wsdl:message name="bhnDivision3PSService_update_AifFaultFault_FaultMessage">
     <wsdl:part name="detail" element="q1:AifFault" xmlns:q1="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault"/>
   </wsdl:message>
   <wsdl:message name="bhnDivision3PSServiceDeleteRequest">
@@ -10393,18 +10391,20 @@ Affiliate:Affiliate number.</xs:documentation>
   <wsdl:message name="bhnDivision3PSService_create_AifFaultFault_FaultMessage">
     <wsdl:part name="detail" element="q3:AifFault" xmlns:q3="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault"/>
   </wsdl:message>
-  <wsdl:message name="bhnDivision3PSServiceUpdateRequest">
-    <wsdl:part name="parameters" element="tns:bhnDivision3PSServiceUpdateRequest"/>
+  <wsdl:message name="bhnDivision3PSServiceReadRequest">
+    <wsdl:part name="parameters" element="tns:bhnDivision3PSServiceReadRequest"/>
   </wsdl:message>
-  <wsdl:message name="bhnDivision3PSService_update_OutputMessage"/>
-  <wsdl:message name="bhnDivision3PSService_update_AifFaultFault_FaultMessage">
+  <wsdl:message name="bhnDivision3PSServiceReadResponse">
+    <wsdl:part name="parameters" element="tns:bhnDivision3PSServiceReadResponse"/>
+  </wsdl:message>
+  <wsdl:message name="bhnDivision3PSService_read_AifFaultFault_FaultMessage">
     <wsdl:part name="detail" element="q4:AifFault" xmlns:q4="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault"/>
   </wsdl:message>
   <wsdl:portType name="bhnDivision3PSService">
-    <wsdl:operation name="read">
-      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnDivision3PSService/read" name="bhnDivision3PSServiceReadRequest" message="tns:bhnDivision3PSServiceReadRequest"/>
-      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnDivision3PSService/readResponse" name="bhnDivision3PSServiceReadResponse" message="tns:bhnDivision3PSServiceReadResponse"/>
-      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnDivision3PSService/readAifFaultFault" name="AifFaultFault" message="tns:bhnDivision3PSService_read_AifFaultFault_FaultMessage"/>
+    <wsdl:operation name="update">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnDivision3PSService/update" name="bhnDivision3PSServiceUpdateRequest" message="tns:bhnDivision3PSServiceUpdateRequest"/>
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnDivision3PSService/updateResponse" message="tns:bhnDivision3PSService_update_OutputMessage"/>
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnDivision3PSService/updateAifFaultFault" name="AifFaultFault" message="tns:bhnDivision3PSService_update_AifFaultFault_FaultMessage"/>
     </wsdl:operation>
     <wsdl:operation name="delete">
       <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnDivision3PSService/delete" name="bhnDivision3PSServiceDeleteRequest" message="tns:bhnDivision3PSServiceDeleteRequest"/>
@@ -10416,21 +10416,21 @@ Affiliate:Affiliate number.</xs:documentation>
       <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnDivision3PSService/createResponse" name="bhnDivision3PSServiceCreateResponse" message="tns:bhnDivision3PSServiceCreateResponse"/>
       <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnDivision3PSService/createAifFaultFault" name="AifFaultFault" message="tns:bhnDivision3PSService_create_AifFaultFault_FaultMessage"/>
     </wsdl:operation>
-    <wsdl:operation name="update">
-      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnDivision3PSService/update" name="bhnDivision3PSServiceUpdateRequest" message="tns:bhnDivision3PSServiceUpdateRequest"/>
-      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnDivision3PSService/updateResponse" message="tns:bhnDivision3PSService_update_OutputMessage"/>
-      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnDivision3PSService/updateAifFaultFault" name="AifFaultFault" message="tns:bhnDivision3PSService_update_AifFaultFault_FaultMessage"/>
+    <wsdl:operation name="read">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnDivision3PSService/read" name="bhnDivision3PSServiceReadRequest" message="tns:bhnDivision3PSServiceReadRequest"/>
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnDivision3PSService/readResponse" name="bhnDivision3PSServiceReadResponse" message="tns:bhnDivision3PSServiceReadResponse"/>
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnDivision3PSService/readAifFaultFault" name="AifFaultFault" message="tns:bhnDivision3PSService_read_AifFaultFault_FaultMessage"/>
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_bhnDivision3PSService" type="tns:bhnDivision3PSService">
     <wsp:PolicyReference URI="#BasicHttpBinding_bhnDivision3PSService_policy"/>
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
-    <wsdl:operation name="read">
-      <soap:operation soapAction="http://schemas.microsoft.com/dynamics/2008/01/services/bhnDivision3PSService/read" style="document"/>
-      <wsdl:input name="bhnDivision3PSServiceReadRequest">
+    <wsdl:operation name="update">
+      <soap:operation soapAction="http://schemas.microsoft.com/dynamics/2008/01/services/bhnDivision3PSService/update" style="document"/>
+      <wsdl:input name="bhnDivision3PSServiceUpdateRequest">
         <soap:body use="literal"/>
       </wsdl:input>
-      <wsdl:output name="bhnDivision3PSServiceReadResponse">
+      <wsdl:output>
         <soap:body use="literal"/>
       </wsdl:output>
       <wsdl:fault name="AifFaultFault">
@@ -10461,12 +10461,12 @@ Affiliate:Affiliate number.</xs:documentation>
         <soap:fault name="AifFaultFault" use="literal"/>
       </wsdl:fault>
     </wsdl:operation>
-    <wsdl:operation name="update">
-      <soap:operation soapAction="http://schemas.microsoft.com/dynamics/2008/01/services/bhnDivision3PSService/update" style="document"/>
-      <wsdl:input name="bhnDivision3PSServiceUpdateRequest">
+    <wsdl:operation name="read">
+      <soap:operation soapAction="http://schemas.microsoft.com/dynamics/2008/01/services/bhnDivision3PSService/read" style="document"/>
+      <wsdl:input name="bhnDivision3PSServiceReadRequest">
         <soap:body use="literal"/>
       </wsdl:input>
-      <wsdl:output>
+      <wsdl:output name="bhnDivision3PSServiceReadResponse">
         <soap:body use="literal"/>
       </wsdl:output>
       <wsdl:fault name="AifFaultFault">
@@ -10482,16 +10482,10 @@ Affiliate:Affiliate number.</xs:documentation>
 </wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhndivision3psservice.svc?xsd=xsd0</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/dynamics/2008/01/services" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/dynamics/2008/01/services">
   <xs:import schemaLocation="http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhndivision3psservice.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList"/>
   <xs:import schemaLocation="http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhndivision3psservice.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/bhnDivision3PS"/>
-  <xs:element name="bhnDivision3PSServiceReadRequest">
+  <xs:element name="bhnDivision3PSServiceUpdateRequest">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" ref="q1:EntityKeyList" xmlns:q1="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList"/>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="bhnDivision3PSServiceReadResponse">
-    <xs:complexType>
-      <xs:sequence>
         <xs:element minOccurs="0" ref="q2:bhnDivision3PS" xmlns:q2="http://schemas.microsoft.com/dynamics/2008/01/documents/bhnDivision3PS"/>
       </xs:sequence>
     </xs:complexType>
@@ -10517,10 +10511,16 @@ Affiliate:Affiliate number.</xs:documentation>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="bhnDivision3PSServiceUpdateRequest">
+  <xs:element name="bhnDivision3PSServiceReadRequest">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" ref="q6:EntityKeyList" xmlns:q6="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="bhnDivision3PSServiceReadResponse">
+    <xs:complexType>
+      <xs:sequence>
         <xs:element minOccurs="0" ref="q7:bhnDivision3PS" xmlns:q7="http://schemas.microsoft.com/dynamics/2008/01/documents/bhnDivision3PS"/>
       </xs:sequence>
     </xs:complexType>
@@ -10628,6 +10628,7 @@ Affiliate:Affiliate number.</xs:documentation>
       <xs:element minOccurs="1" name="RelationCode" type="AxdExtType_bhnCompRelationCode"/>
       <xs:element minOccurs="0" name="SideLetter" nillable="true" type="AxdExtType_SideLetterType"/>
       <xs:element minOccurs="0" name="SideLetterReq" nillable="true" type="AxdEnum_NoYes"/>
+      <xs:element minOccurs="0" name="SideLetterReq1" nillable="true" type="AxdEnum_NoYes"/>
       <xs:element minOccurs="0" name="WebSite" nillable="true" type="AxdUnion_AxdType_Str_AxdType_ExtCodeValue"/>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="bhnDivisionAttributes" type="AxdEntity_bhnDivisionAttributes"/>
     </xs:sequence>
@@ -10895,10 +10896,10 @@ Affiliate:Affiliate number.</xs:documentation>
   </xs:simpleType>
   <xs:complexType name="AxdEntity_bhnDivisionAttributes">
     <xs:sequence>
-      <xs:element minOccurs="0" name="BalanceLockTimeFrame" nillable="true" type="AxdExtType_Integer"/>
-      <xs:element minOccurs="0" name="Division1DC128Expression" nillable="true" type="AxdEnum_NoYes"/>
-      <xs:element minOccurs="0" name="Division2DPDF417Expression" nillable="true" type="AxdEnum_NoYes"/>
-      <xs:element minOccurs="0" name="Division2DQRCODEExpression" nillable="true" type="AxdEnum_NoYes"/>
+      <xs:element minOccurs="0" name="BalanceLockTimeFrame" nillable="true" type="AxdEnum_NoYes"/>
+      <xs:element minOccurs="0" name="Division1DC128Expression" nillable="true" type="AxdUnion_AxdType_Str_AxdType_ExtCodeValue"/>
+      <xs:element minOccurs="0" name="Division2DPDF417Expression" nillable="true" type="AxdUnion_AxdType_Str_AxdType_ExtCodeValue"/>
+      <xs:element minOccurs="0" name="Division2DQRCODEExpression" nillable="true" type="AxdUnion_AxdType_Str_AxdType_ExtCodeValue"/>
       <xs:element minOccurs="0" name="DivisionAccessCode" nillable="true" type="AxdUnion_AxdType_Str_AxdType_ExtCodeValue"/>
       <xs:element minOccurs="0" name="DivisionAccountNumberLabel" nillable="true" type="AxdUnion_AxdType_Str_AxdType_ExtCodeValue"/>
       <xs:element minOccurs="0" name="DivisionAccountType" nillable="true" type="AxdEnum_divisionAccountType"/>
@@ -10931,7 +10932,7 @@ Affiliate:Affiliate number.</xs:documentation>
       <xs:element minOccurs="0" name="DivisionIsBarcodeFormat1DC128" nillable="true" type="AxdEnum_NoYes"/>
       <xs:element minOccurs="0" name="DivisionIsBarcodeFormat2DPDF417" nillable="true" type="AxdEnum_NoYes"/>
       <xs:element minOccurs="0" name="DivisionIsBarcodeFormat2DQRCODE" nillable="true" type="AxdEnum_NoYes"/>
-      <xs:element minOccurs="0" name="DivisionisBarcodeScanSupported" nillable="true" type="AxdUnion_AxdType_Str_AxdType_ExtCodeValue"/>
+      <xs:element minOccurs="0" name="DivisionisBarcodeScanSupported" nillable="true" type="AxdEnum_NoYes"/>
       <xs:element minOccurs="0" name="DivisionIsBISystemBLAST" nillable="true" type="AxdEnum_NoYes"/>
       <xs:element minOccurs="0" name="DivisionIsBISystemCAPTCHA" nillable="true" type="AxdEnum_NoYes"/>
       <xs:element minOccurs="0" name="DivisionIsBISystemCardpool" nillable="true" type="AxdEnum_NoYes"/>
@@ -10951,7 +10952,7 @@ Affiliate:Affiliate number.</xs:documentation>
       <xs:element minOccurs="0" name="DivisionOnlineRedemptionInstructions" nillable="true" type="AxdUnion_AxdType_Str_AxdType_ExtCodeValue"/>
       <xs:element minOccurs="0" name="DivisionOnlineStoreURL" nillable="true" type="AxdExtType_bhnMegatronURL"/>
       <xs:element minOccurs="0" name="DivisionPaymentNetworkType" nillable="true" type="AxdEnum_divisionPaymentNetworkType"/>
-      <xs:element minOccurs="0" name="DivisionPinLabel" nillable="true" type="AxdUnion_AxdType_Str_AxdType_ExtCodeValue"/>
+      <xs:element minOccurs="0" name="DivisionPinLable" nillable="true" type="AxdEnum_ABC"/>
       <xs:element minOccurs="0" name="DivisionProgramDescription" nillable="true" type="AxdUnion_AxdType_Str_AxdType_ExtCodeValue"/>
       <xs:element minOccurs="0" name="DivisionRedemptionInformation" nillable="true" type="AxdUnion_AxdType_Str_AxdType_ExtCodeValue"/>
       <xs:element minOccurs="0" name="DivisionRedemptionLine1" nillable="true" type="AxdUnion_AxdType_Str_AxdType_ExtCodeValue"/>
@@ -10979,24 +10980,25 @@ Affiliate:Affiliate number.</xs:documentation>
       <xs:element minOccurs="0" name="ProcessorHasRealTimeIssuance" nillable="true" type="AxdEnum_NoYes"/>
       <xs:element minOccurs="0" name="RecId" nillable="true" type="AxdExtType_recId"/>
       <xs:element minOccurs="0" name="RecVersion" nillable="true" type="AxdExtType_recVersion"/>
+      <xs:element minOccurs="0" name="RedemptionAdditionalDataLabel" nillable="true" type="AxdUnion_AxdType_Str_AxdType_ExtCodeValue"/>
+      <xs:element minOccurs="0" name="SupportsPartialBalanceInquiry" nillable="true" type="AxdEnum_NoYes"/>
       <xs:element minOccurs="0" name="SupportsRegift" nillable="true" type="AxdEnum_NoYes"/>
+      <xs:element minOccurs="0" name="SupportsReload" nillable="true" type="AxdEnum_NoYes"/>
       <xs:element minOccurs="0" name="SupportsTransactionHistory" nillable="true" type="AxdEnum_NoYes"/>
     </xs:sequence>
     <xs:attribute fixed="entity" name="class" use="required"/>
     <xs:attribute name="action" type="AxdEnum_AxdEntityAction"/>
   </xs:complexType>
-  <xs:simpleType name="AxdExtType_Integer">
-    <xs:annotation>
-      <xs:documentation xml:lang="EN-US">Integer:Integer.</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="AxdType_Integer"/>
-  </xs:simpleType>
   <xs:simpleType name="AxdEnum_divisionAccountType">
     <xs:annotation>
       <xs:documentation xml:lang="EN-US">Account Type:Account Type</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
       <xs:enumeration value="None"/>
+      <xs:enumeration value="CREDIT_CARD"/>
+      <xs:enumeration value="GIFT_CARD"/>
+      <xs:enumeration value="LOYALTY_CARD"/>
+      <xs:enumeration value="PHONE_CARD"/>
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="AxdExtType_bhnMegatronURL">
@@ -11014,6 +11016,16 @@ Affiliate:Affiliate number.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
       <xs:enumeration value="None"/>
+      <xs:enumeration value="en_US"/>
+      <xs:enumeration value="en_CA"/>
+      <xs:enumeration value="fr_CA"/>
+      <xs:enumeration value="en_UK"/>
+      <xs:enumeration value="en_AU"/>
+      <xs:enumeration value="en_MX"/>
+      <xs:enumeration value="es_MX"/>
+      <xs:enumeration value="en_FR"/>
+      <xs:enumeration value="fr_FR"/>
+      <xs:enumeration value="en_ZA"/>
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="AxdEnum_divisionCardPinType">
@@ -11022,6 +11034,8 @@ Affiliate:Affiliate number.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
       <xs:enumeration value="None"/>
+      <xs:enumeration value="FRONT"/>
+      <xs:enumeration value="BACK"/>
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="AxdExtType_bhnMegatronName">
@@ -11065,14 +11079,10 @@ Affiliate:Affiliate number.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
       <xs:enumeration value="None"/>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:simpleType name="AxdEnum_divisionRedemptionMethod">
-    <xs:annotation>
-      <xs:documentation xml:lang="EN-US">Redemption Location Type:Redemption Location Type</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="None"/>
+      <xs:enumeration value="VISA"/>
+      <xs:enumeration value="MASTERCARD"/>
+      <xs:enumeration value="DISCOVER"/>
+      <xs:enumeration value="AMEX"/>
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="AxdEnum_ABC">
@@ -11084,6 +11094,20 @@ Affiliate:Affiliate number.</xs:documentation>
       <xs:enumeration value="A"/>
       <xs:enumeration value="B"/>
       <xs:enumeration value="C"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AxdEnum_divisionRedemptionMethod">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN-US">Redemption Location Type:Redemption Location Type</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None"/>
+      <xs:enumeration value="REDEMPTION_INFORMATION"/>
+      <xs:enumeration value="IN_STORE_INSTRUCTIONS"/>
+      <xs:enumeration value="ON_LINE_INSTRUCTIONS"/>
+      <xs:enumeration value="REDEMPTION_LINE_1"/>
+      <xs:enumeration value="REDEMPTION_LNE_2"/>
+      <xs:enumeration value="SALES_ASSOCIATE_INSTRUCTIONS"/>
     </xs:restriction>
   </xs:simpleType>
 </xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhndivision3psservice.svc?xsd=xsd6</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault">
@@ -11749,7 +11773,7 @@ Affiliate:Affiliate number.</xs:documentation>
                <bhn:MerchRecordNumber xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                <bhn:Name>Test Division2</bhn:Name>
                <!--Optional:-->
-               <bhn:PartnerProfileId xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">partner_profile_id_12345</bhn:PartnerProfileId>
+               <bhn:PartnerProfileId>partner_profile_id_12345</bhn:PartnerProfileId>
                <!--Optional:-->
                <bhn:PartnerRecId>0</bhn:PartnerRecId>
                <!--Optional:-->
@@ -11950,7 +11974,7 @@ Affiliate:Affiliate number.</xs:documentation>
 </soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnDivision3PSService/create"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Mule Request"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhndivision3psservice.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
   <soap:Header>
     <mule:header xmlns:mule="http://www.muleumo.org/providers/soap/1.0">
-      <mule:MULE_CORRELATION_ID>f8a8c17b-e6a8-11e3-bac9-3735309e6e12</mule:MULE_CORRELATION_ID>
+      <mule:MULE_CORRELATION_ID>d4a106b8-ece7-11e3-897c-c7ce570c343c</mule:MULE_CORRELATION_ID>
       <mule:MULE_CORRELATION_GROUP_SIZE>2</mule:MULE_CORRELATION_GROUP_SIZE>
       <mule:MULE_CORRELATION_SEQUENCE>-1</mule:MULE_CORRELATION_SEQUENCE>
     </mule:header>
@@ -11997,6 +12021,7 @@ Affiliate:Affiliate number.</xs:documentation>
           <ns9:RelationCode>CP</ns9:RelationCode>
           <ns9:SideLetter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
           <ns9:SideLetterReq xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+          <ns9:SideLetterReq1 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
           <ns9:WebSite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
           <ns9:bhnDivisionAttributes class="entity">
             <ns9:BalanceLockTimeFrame xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
@@ -12055,7 +12080,7 @@ Affiliate:Affiliate number.</xs:documentation>
             <ns9:DivisionOnlineRedemptionInstructions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
             <ns9:DivisionOnlineStoreURL xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
             <ns9:DivisionPaymentNetworkType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns9:DivisionPinLabel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns9:DivisionPinLable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
             <ns9:DivisionProgramDescription xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
             <ns9:DivisionRedemptionInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
             <ns9:DivisionRedemptionLine1 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
@@ -12083,15 +12108,17 @@ Affiliate:Affiliate number.</xs:documentation>
             <ns9:ProcessorHasRealTimeIssuance xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
             <ns9:RecId xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
             <ns9:RecVersion xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns9:RedemptionAdditionalDataLabel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns9:SupportsPartialBalanceInquiry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
             <ns9:SupportsRegift xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns9:SupportsReload xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
             <ns9:SupportsTransactionHistory xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
           </ns9:bhnDivisionAttributes>
         </ns9:bhnCustDivisionTable>
       </ns9:bhnDivision3PS>
     </ns2:bhnDivision3PSServiceCreateRequest>
   </soap:Body>
-</soap:Envelope>
-]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnDivision3PSService/create"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnDivision3PSService/delete" name="delete" bindingOperationName="delete" type="Request-Response" inputName="bhnDivision3PSServiceDeleteRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhndivision3psservice.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://schemas.microsoft.com/dynamics/2008/01/services" xmlns:ent="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList" xmlns:ent1="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKey">
+</soap:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnDivision3PSService/create"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="http://schemas.microsoft.com/dynamics/2008/01/services/bhnDivision3PSService/delete" name="delete" bindingOperationName="delete" type="Request-Response" inputName="bhnDivision3PSServiceDeleteRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhndivision3psservice.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://schemas.microsoft.com/dynamics/2008/01/services" xmlns:ent="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList" xmlns:ent1="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKey">
    <soapenv:Header/>
    <soapenv:Body>
       <ser:bhnDivision3PSServiceDeleteRequest>
