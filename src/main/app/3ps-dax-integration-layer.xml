@@ -168,8 +168,6 @@ http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schem
         <enricher doc:name="Enrich-Canonical-w-DAX-values ">
             <flow-ref name="daxUPCWebServiceClient" doc:name="Invoke Dax UPC Webservice"/>
             <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[0].value]" target="#[sessionVars.canon.company.cpDivision[0].products[0].iid.itemId]"/>
-            <!-- <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[1].value]" target="#[sessionVars.canon.company.cpDivision[0].products[0].xxx]"/> -->
-            <!-- <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[2].value]" target="#[sessionVars.canon.company.cpDivision[0].products[0].xxx]"/> -->
             <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[3].value]" target="#[sessionVars.canon.company.cpDivision[0].products[0].bhnGUID]"/>
         </enricher>
         <logger level="INFO" doc:name="Log bhnGUID " message="guid=#[sessionVars.canon.company.cpDivision[0].products[0].bhnGUID]"/>
@@ -193,20 +191,24 @@ http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schem
     </flow>
     <flow name="DAX-step6-flow" doc:name="DAX-step6-flow">
         <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-step6" path="Q.step6"/>
+        <set-payload value="#[sessionVars.canon]" doc:name="Canonical Payload from Session"/>
         <custom-transformer class="com.bhnetwork.integration.transformer.CanonicalToStoreServiceCreateRequest" doc:name="Canon-to-StoreRequest"/>
         <logger level="INFO" message="In step6-flow, payload after CanonicalToStoreServiceCreateRequest transformer: #[payload]" doc:name="test"/>
         <enricher doc:name="Enrich-Canonical-w-DAX-values ">
             <flow-ref name="daxStoreWebServiceClient" doc:name="Invoke Dax Store Webservice"/>
-            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[0].value]" target="#[sessionVars.canon.vendor.AccountNum]"/>
-            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[1].value]" target="#[sessionVars.canon.vendor.recId]"/>
+            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[0].value]" target="#[sessionVars.canon.company.cpDivision[0].stores[0].AccountNum]"/>
+            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[1].value]" target="#[sessionVars.canon.company.cpDivision[0].stores[0].bhnCompanyCode]"/>
+            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[2].value]" target="#[sessionVars.canon.company.cpDivision[0].stores[0].bhnDivisionCode]"/>
+            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[3].value]" target="#[sessionVars.canon.company.cpDivision[0].stores[0].bhnGUID]"/>
         </enricher>
-        <logger level="INFO" doc:name="Log AccountNum and recId" message="AccountNum=#[sessionVars.canon.vendor.AccountNum] and recId=#[sessionVars.canon.vendor.recId]"/>
+        <logger level="INFO" doc:name="Log AccountNum and bhnGUID" message="step6-flow: AccountNum=#[sessionVars.canon.company.cpDivision[0].stores[0].AccountNum] and bhnGUID=#[sessionVars.canon.company.cpDivision[0].stores[0].bhnGUID]"/>
         <!-- next step: Vendor service -->
         <vm:outbound-endpoint exchange-pattern="one-way" doc:name="VM-step7" path="Q.step7"/>
         <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy"/>
     </flow>
     <flow name="DAX-step7-flow" doc:name="DAX-step7-flow">
         <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-step7" path="Q.step7"/>
+        <set-payload value="#[sessionVars.canon]" doc:name="Canonical Payload from Session"/>
         <custom-transformer class="com.bhnetwork.integration.transformer.CanonicalToVendTableServiceCreateRequest" doc:name="Canon-to-VendorRequest"/>
         <logger level="INFO" message="In step7-flow, payload after CanonicalToVendTableServiceCreateRequest transformer: #[payload]" doc:name="test"/>
 		<!-- TODO: future
@@ -222,7 +224,7 @@ http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schem
         </enricher>
         <logger level="INFO" doc:name="Log AccountNum and recId" message="AccountNum=#[sessionVars.canon.vendor.AccountNum] and recId=#[sessionVars.canon.vendor.recId]"/>
          <!-- next step: Setup Complete service -->
-        <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step8" doc:name="VM-step8 (Setup Complete)"/>
+        <!-- <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step8" doc:name="VM-step8 (Setup Complete)"/> -->
         <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy"/>
     </flow>
     <flow name="DAX-step8-flow" doc:name="DAX-step8-flow">
@@ -314,18 +316,6 @@ http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schem
         </cxf:jaxws-client>
         <expression-component doc:name="NTLM credentials"><![CDATA[flowVars['username']='${dax.username}'; flowVars['password']='${dax.password}'; flowVars['domain']='${dax.domain}'; flowVars['realm']='${dax.realm}' ;]]></expression-component>
         <http:outbound-endpoint exchange-pattern="request-response" host="${dax.http.host}" port="${dax.http.port}" path="${dax.http.iid.path}" method="POST" transformer-refs="objectToByteArrayTransformer" doc:name="HTTP"/>
-    </sub-flow>
-    <sub-flow name="daxSetupCompWebServiceClient" doc:name="daxSetupCompWebServiceClient">
-        <cxf:jaxws-client operation="create" clientClass="com.microsoft.schemas.dynamics._2008._01.services.BhnSetUpComp3PSService_Service" port="BasicHttpBinding_bhnSetUpComp3PSService" doc:name="SOAP">
-            <cxf:inInterceptors>
-                <spring:ref bean="loggingIn"/>
-            </cxf:inInterceptors>
-            <cxf:outInterceptors>
-                <spring:ref bean="loggingOut"/>
-            </cxf:outInterceptors>
-        </cxf:jaxws-client>
-        <expression-component doc:name="NTLM credentials"><![CDATA[flowVars['username']='${dax.username}'; flowVars['password']='${dax.password}'; flowVars['domain']='${dax.domain}'; flowVars['realm']='${dax.realm}' ;]]></expression-component>
-        <http:outbound-endpoint exchange-pattern="request-response" host="${dax.http.host}" port="${dax.http.port}" path="${dax.http.setupcomp.path}" method="POST" transformer-refs="objectToByteArrayTransformer" doc:name="HTTP"/>
     </sub-flow>
     <sub-flow name="daxCleanupWebServiceClient" doc:name="daxCleanupWebServiceClient">
         <cxf:jaxws-client operation="create" clientClass="org.tempuri.BhnCleanUpMegatronService_Service" port="BasicHttpBinding_bhnCleanUpMegatronService" doc:name="SOAP">

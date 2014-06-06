@@ -134,14 +134,14 @@
     },
     "CustomerStore": [
         {
-            "productLanguage": "",
+            "productLanguage": "en-us",
             "storeBHNStoreCode": "",
-            "storeCustGroup": "",
-            "storePhysicalStoreName": "",
+            "storeCustGroup": "TRADE",
+            "storePhysicalStoreName": "MuleFooBarTest",
             "storePhysicalStoreAddressLine1": "",
             "storePhysicalStoreAddressLine2": "",
             "storeContactPhoneNumber": "",
-            "storeBlocked": true,
+            "storeBlocked": false,
             "storeChannelDimension": "",
             "storeDimensionPAC": "",
             "storeDimensionRegion": "",
@@ -149,9 +149,9 @@
             "storeCountryRegionId": "",
             "storePhysicalStorePostalCode": "",
             "storePhysicalStoreState": "",
-            "storePhysicalStoreCity": "",
+            "storePhysicalStoreCity": "Timbuktu",
             "companyPhysicalStoreAddressLine1": "",
-            "companyPhysicalStoreCountry": "",
+            "companyPhysicalStoreCountry": "US",
             "storeBHNCustLevel": ""
         }
     ],
