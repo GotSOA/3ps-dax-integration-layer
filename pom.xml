@@ -216,38 +216,47 @@
 			            <configuration>
 		            	  	<defaultOptions>
 						      	<bindingFiles>
-						          	<bindingFile>${basedir}/src/main/config/bindings.xml</bindingFile>
+						          	<bindingFile>${basedir}/src/main/resources/bindings.xml</bindingFile>
 						      	</bindingFiles>
 						      	<noAddressBinding>true</noAddressBinding>
 						  	</defaultOptions>
 			                <sourceRoot>${project.build.directory}/generated/cxf</sourceRoot>
 			                <wsdlOptions>
 			                    <wsdlOption>
-			                        <wsdl>${basedir}/src/main/config/custcompanycodeservice_1.wsdl</wsdl>
+			                        <wsdl>${basedir}/src/main/resources/custcompanycodeservice_1.wsdl</wsdl>
+			                        <wsdlLocation>classpath:custcompanycodeservice_1.wsdl</wsdlLocation>
 			                    </wsdlOption>
 			                    <wsdlOption>
-			                        <wsdl>${basedir}/src/main/config/bhndivision3psservice_1.wsdl</wsdl>
+			                        <wsdl>${basedir}/src/main/resources/bhndivision3psservice_1.wsdl</wsdl>
+			                        <wsdlLocation>classpath:bhndivision3psservice_1.wsdl</wsdlLocation>
 			                    </wsdlOption>
 			                    <wsdlOption>
-			                        <wsdl>${basedir}/src/main/config/upcsubgrouptableservice_1.wsdl</wsdl>
+			                        <wsdl>${basedir}/src/main/resources/upcsubgrouptableservice_1.wsdl</wsdl>
+			                        <wsdlLocation>classpath:upcsubgrouptableservice_1.wsdl</wsdlLocation>
 			                    </wsdlOption>
 			                    <wsdlOption>
-			                        <wsdl>${basedir}/src/main/config/bhnupcattributes3psservice_1.wsdl</wsdl>
+			                        <wsdl>${basedir}/src/main/resources/bhnupcattributes3psservice_1.wsdl</wsdl>
+			                        <wsdlLocation>classpath:bhnupcattributes3psservice_1.wsdl</wsdlLocation>
 			                    </wsdlOption>
 			                    <wsdlOption>
-			                        <wsdl>${basedir}/src/main/config/bhniidattributesservice_1.wsdl</wsdl>
+			                        <wsdl>${basedir}/src/main/resources/bhniidattributesservice_1.wsdl</wsdl>
+			                        <wsdlLocation>classpath:bhniidattributesservice_1.wsdl</wsdlLocation>
 			                    </wsdlOption>
 			                    <wsdlOption>
-			                        <wsdl>${basedir}/src/main/config/customerservice_1.wsdl</wsdl>
+			                        <wsdl>${basedir}/src/main/resources/customerservice_1.wsdl</wsdl>
+			                        <wsdlLocation>classpath:customerservice_1.wsdl</wsdlLocation>
 			                    </wsdlOption>
 			                    <wsdlOption>
-			                        <wsdl>${basedir}/src/main/config/vendtableservice_1.wsdl</wsdl>
+			                        <wsdl>${basedir}/src/main/resources/vendtableservice_1.wsdl</wsdl>
+			                        <wsdlLocation>classpath:vendtableservice_1.wsdl</wsdlLocation>
 			                    </wsdlOption>
 			                    <wsdlOption>
-			                        <wsdl>${basedir}/src/main/config/bhnsetupcomp3psservice_1.wsdl</wsdl>
+			                        <wsdl>${basedir}/src/main/resources/bhnsetupcomp3psservice_1.wsdl</wsdl>
+			                        <wsdlLocation>classpath:bhnsetupcomp3psservice_1.wsdl</wsdlLocation>
 			                    </wsdlOption>
 			                    <wsdlOption>
-			                        <wsdl>${basedir}/src/main/config/bhncleanupmegatronservice_1.wsdl</wsdl>
+			                        <wsdl>${basedir}/src/main/resources/bhncleanupmegatronservice_1.wsdl</wsdl>
+			                        <wsdlLocation>classpath:bhncleanupmegatronservice_1.wsdl</wsdlLocation>
 			                    </wsdlOption>
 			                </wsdlOptions>
 			            </configuration>
