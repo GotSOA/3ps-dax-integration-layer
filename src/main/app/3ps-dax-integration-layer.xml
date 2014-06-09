@@ -104,19 +104,8 @@ http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schem
         <logger level="INFO" doc:name="Log Orchestration startTime" />
         <tracking:custom-event event-name="bizEvent: OrchestrationStartTime" doc:name="bizEvent: OrchestrationStartTime" />
         
-        <!-- uncomment next 2 lines when merging with master for end-to-end testing -->
-        <!-- <message-properties-transformer doc:name="set DaxStep=1" overwrite="true" scope="session" /> -->
-        <!-- <vm:outbound-endpoint exchange-pattern="one-way" doc:name="VM-step1" path="Q.step1" /> -->
-        
-        <!-- Test Store service directly - START -->
-        <message-properties-transformer doc:name="set DaxStep=6" overwrite="true" scope="session" />
-        <vm:outbound-endpoint exchange-pattern="one-way" doc:name="VM-step6" path="Q.step6"/>
-        <!-- Test Store service directly - END -->
-        
-        <!-- Test Vendor service directly - START
-        <message-properties-transformer doc:name="set DaxStep=7" overwrite="true" scope="session" />
-        <vm:outbound-endpoint exchange-pattern="one-way" doc:name="VM-step7" path="Q.step7"/>
-        Test Vendor service directly - END -->
+        <message-properties-transformer doc:name="set DaxStep=1" overwrite="true" scope="session" />
+        <vm:outbound-endpoint exchange-pattern="one-way" doc:name="VM-step1" path="Q.step1" />
         
         <exception-strategy ref="" doc:name="Reference Exception Strategy"/>
     </flow>
@@ -224,7 +213,7 @@ http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schem
         </enricher>
         <logger level="INFO" doc:name="Log AccountNum and recId" message="AccountNum=#[sessionVars.canon.vendor.AccountNum] and recId=#[sessionVars.canon.vendor.recId]"/>
          <!-- next step: Setup Complete service -->
-        <!-- <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step8" doc:name="VM-step8 (Setup Complete)"/> -->
+        <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step8" doc:name="VM-step8 (Setup Complete)"/>
         <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy"/>
     </flow>
     <flow name="DAX-step8-flow" doc:name="DAX-step8-flow">
@@ -233,6 +222,7 @@ http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schem
         <custom-transformer class="com.bhnetwork.integration.transformer.CanonicalToBhnSetUpComp3PSServiceCreateRequest" doc:name="Canon-to-SetupCompRequest"/>
         <flow-ref name="daxSetupCompWebServiceClient" doc:name="Invoke Dax SetupComp Webservice"/>
         <logger level="INFO" doc:name="SetupComplete-success" message="SetupComplete-success partnerProfileId=#[payload.entityKeyList.entityKey[0].keyData.keyField[0].value]"/>
+        <!-- UNCOMMENT NEXT LINE ONCE CALLBACK-3PS -->
         <!-- <vm:outbound-endpoint exchange-pattern="one-way" doc:name="VM-callback-3PS" path="Q.callback"/>  -->
         <exception-strategy ref="" doc:name="Reference Exception Strategy"/>
     </flow>
