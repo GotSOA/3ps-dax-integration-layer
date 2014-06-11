@@ -172,6 +172,9 @@ public class CanonicalToVendTableServiceCreateRequest extends
 		//bhnVendorTable1.setYourAccountNum(value);
 		bhnVendorTable1.setZipCode(vendorObj.getVendorZipCode());
 		
+		// pass the partnerProfileId
+		bhnVendorTable1.setPartnerProfileId(message.getProperty("partnerProfileId", PropertyScope.SESSION).toString());
+		
 		// 93 fields in DAX, we map only 23 fields
 		
 		// sample code to handle ENUMS

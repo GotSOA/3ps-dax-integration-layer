@@ -7,6 +7,7 @@ import java.util.List;
 
 import org.mule.api.MuleMessage;
 import org.mule.api.transformer.TransformerException;
+import org.mule.api.transport.PropertyScope;
 import org.mule.transformer.AbstractMessageTransformer;
 
 import com.bhnetwork.integration.pppstodax.canonical.Store;
@@ -105,6 +106,9 @@ public class CanonicalToStoreServiceCreateRequest extends
 			bhncustomerStoreTable1.setZipCode(curStore.getStorePhysicalStorePostalCode());
 			bhncustomerStoreTable1.setState(curStore.getStorePhysicalStoreState());
 			bhncustomerStoreTable1.setProjPriceGroup(curStore.getStorePriceToleranceGroup());
+			
+			// pass the partnerProfileId
+			bhncustomerStoreTable1.setPartnerProfileId(message.getProperty("partnerProfileId", PropertyScope.SESSION).toString());
 					 
 			customerStore.getCustTable().add(bhncustomerStoreTable1);
 			req.setCustomer(customerStore);

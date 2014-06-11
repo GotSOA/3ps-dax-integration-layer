@@ -169,13 +169,13 @@ http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schem
         <custom-transformer class="com.bhnetwork.integration.transformer.CanonicalToBhnIIDAttributesServiceCreateRequest" doc:name="Canon-to-IIDRequest"/>
         <enricher doc:name="Enrich-Canonical-w-DAX-values ">
             <flow-ref name="daxIIDWebServiceClient" doc:name="Invoke Dax IID Webservice"/>
-            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[0].value]" target="#[sessionVars.canon.vendor[0].inventBatchId]"/>
+            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[0].value]" target="#[sessionVars.canon.company.cpDivision[0].products[0].iid.inventBatchId]"/>
             <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[1].value]" target="#[sessionVars.canon.company.cpDivision[0].products[0].iid.itemId]"/>
             <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[2].value]" target="#[sessionVars.canon.company.cpDivision[0].products[0].iid.bhnGUID]"/>
             <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[3].value]" target="#[sessionVars.canon.company.cpDivision[0].products[0].iid.recId]"/>
         </enricher>
         <logger level="INFO" doc:name="Log bhnGUID and recId" message="bhnGUID=#[sessionVars.canon.company.cpDivision[0].products[0].iid.bhnGUID] and recId=#[sessionVars.canon.company.cpDivision[0].products[0].iid.recId]"/>
-        <vm:outbound-endpoint exchange-pattern="one-way" path="Q.error" doc:name="TO_BE_DELETED VM-error"/>
+        <vm:outbound-endpoint exchange-pattern="one-way" doc:name="VM-step6" path="Q.step6"/>
         <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy"/>
     </flow>
     <flow name="DAX-step6-flow" doc:name="DAX-step6-flow">
@@ -428,12 +428,8 @@ http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schem
         <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy"/>
     </flow>
     <flow name="notification-service" doc:name="notification-service">
-        <custom-transformer class="" doc:name="Based on Notification Level, selects Email Template and Recipient List"/>
-        <all doc:name="All">
-            <smtp:outbound-endpoint host="localhost" responseTimeout="10000" doc:name="SMTP"/>
-            <twilio:add-incoming-phone-number-by-area-code config-ref="" areaCode="" doc:name="Twilio"/>
-        </all>
+        
         <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy"/>
     </flow>
-	-->
+    -->
 </mule>
