@@ -24,7 +24,7 @@ http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schem
 	            </when>
 	            <when expression="#[flowVars['isRetryableException']==false]">
 	                <logger message="Message failed (ABORT) due to: #[exception.cause] #[exception.cause.message]" level="ERROR" doc:name="Logger - Error (for non-retryable issues)"/>
-	                <vm:outbound-endpoint exchange-pattern="one-way" path="Q.Dlq" doc:name="VM-error"/>
+	                <vm:outbound-endpoint exchange-pattern="one-way" path="Q.error" doc:name="VM-error"/>
 	            </when>
 	        </choice>
     </catch-exception-strategy> 
@@ -107,7 +107,7 @@ http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schem
         <message-properties-transformer doc:name="set DaxStep=1" overwrite="true" scope="session" />
         <vm:outbound-endpoint exchange-pattern="one-way" doc:name="VM-step1" path="Q.step1" />
         
-        <exception-strategy ref="" doc:name="Reference Exception Strategy"/>
+        <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy"/>
     </flow>
     <flow name="DAX-step1-flow" doc:name="DAX-step1-flow">
         <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-step1" path="Q.step1" />
@@ -120,7 +120,7 @@ http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schem
         </enricher>
         <logger level="INFO" doc:name="Log bhnGUID and recId" message="bhnGUID=#[sessionVars.canon.company.bhnGUID] and recId=#[sessionVars.canon.company.recId]"/>
         <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step2" doc:name="Q.step2"/>
-        <exception-strategy ref="" doc:name="Reference Exception Strategy"/>
+        <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy"/>
     </flow>
     <flow name="DAX-step2-flow" doc:name="DAX-step2-flow">
         <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-step2" path="Q.step2" />
@@ -133,7 +133,7 @@ http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schem
         </enricher>
         <logger level="INFO" doc:name="Log bhnGUID and recId" message="guid=#[sessionVars.canon.company.cpDivision[0].bhnGUID] and RecId=#[sessionVars.canon.company.cpDivision[0].recId]"/>
         <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step3" doc:name="Q.step3"/> 
-        <exception-strategy ref="" doc:name="Reference Exception Strategy"/>
+        <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy"/>
     </flow>
     <flow name="DAX-step3-flow" doc:name="DAX-step3-flow">
         <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-step3" path="Q.step3" />
@@ -148,7 +148,7 @@ http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schem
         </enricher>
         <logger level="INFO" doc:name="Log bhnGUID and recId" message="guid=#[sessionVars.canon.company.cpDivision[0].products[0].substGrp.guid] and brandRecId=#[sessionVars.canon.company.cpDivision[0].products[0].substGrp.brandRecId]"/>
         <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step4" doc:name="Q.step4"/>
-        <exception-strategy ref="" doc:name="Reference Exception Strategy"/>
+        <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy"/>
     </flow>
     <flow name="DAX-step4-flow" doc:name="DAX-step4-flow">
         <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-step4" path="Q.step4" />
@@ -161,7 +161,7 @@ http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schem
         </enricher>
         <logger level="INFO" doc:name="Log bhnGUID " message="guid=#[sessionVars.canon.company.cpDivision[0].products[0].bhnGUID]"/>
         <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step5" doc:name="Q.step5"/>
-        <exception-strategy ref="" doc:name="Reference Exception Strategy"/>
+        <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy"/>
     </flow>
     <flow name="DAX-step5-flow" doc:name="DAX-step5-flow">
         <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-step5" path="Q.step5" />
@@ -224,7 +224,7 @@ http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schem
         <logger level="INFO" doc:name="SetupComplete-success" message="SetupComplete-success partnerProfileId=#[payload.entityKeyList.entityKey[0].keyData.keyField[0].value]"/>
         <!-- UNCOMMENT NEXT LINE ONCE CALLBACK-3PS -->
         <!-- <vm:outbound-endpoint exchange-pattern="one-way" doc:name="VM-callback-3PS" path="Q.callback"/>  -->
-        <exception-strategy ref="" doc:name="Reference Exception Strategy"/>
+        <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy"/>
     </flow>
     <flow name="DAX-error-flow" doc:name="DAX-error-flow">
         <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-error" path="Q.error"/>
@@ -397,7 +397,7 @@ http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schem
         <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-DLQ" path="Q.dlq"/>
         <!-- <flow-ref name="" doc:name="Notify Ops"/> -->
         <logger level="INFO" doc:name="ABORT log: avoiding circular references when/if cleanup fails"/>
-        <tracking:custom-event event-name="" doc:name="bizEvent: ABORT (unable to cleanup)"/>
+        <tracking:custom-event event-name="bizEvent: ABORT (unable to cleanup)" doc:name="bizEvent: ABORT (unable to cleanup)"/>
         <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy"/>
     </flow>    
     <!-- 
