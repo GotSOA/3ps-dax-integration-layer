@@ -18,26 +18,27 @@
 <Field __index="32" __sourcePath="{}/object/company/cpDivision/divisionIsContractComplete" containerType="SINGLE" label="divisionIsContractComplete" name="divisionIsContractComplete" type="boolean"/>
 <Field __index="33" __sourcePath="{}/object/company/cpDivision/divisionIsPinRequiredForBI" containerType="SINGLE" label="divisionIsPinRequiredForBI" name="divisionIsPinRequiredForBI" type="string"/>
 <Field __index="34" __sourcePath="{}/object/company/cpDivision/divisionIsPinRequiredForRedemption" containerType="SINGLE" label="divisionIsPinRequiredForRedemption" name="divisionIsPinRequiredForRedemption" type="string"/>
-<Field __index="35" __sourcePath="{}/object/company/cpDivision/divisionLocalPartner" containerType="SINGLE" label="divisionLocalPartner" name="divisionLocalPartner" type="string"/>
+<Field __index="35" __sourcePath="{}/object/company/cpDivision/divisionLocalPartner" containerType="SINGLE" label="divisionLocalPartner" name="divisionLocalPartner" type="boolean"/>
 <Field __index="36" __sourcePath="{}/object/company/cpDivision/divisionLocalPartnerSource" containerType="SINGLE" label="divisionLocalPartnerSource" name="divisionLocalPartnerSource" type="string"/>
 <Field __index="37" __sourcePath="{}/object/company/cpDivision/divisionLocale" containerType="SINGLE" label="divisionLocale" name="divisionLocale" type="string"/>
 <Field __index="38" __sourcePath="{}/object/company/cpDivision/divisionLogoURL" containerType="SINGLE" label="divisionLogoURL" name="divisionLogoURL" type="string"/>
 <Field __index="39" __sourcePath="{}/object/company/cpDivision/divisionOnlineRedemptionInstructions" containerType="SINGLE" label="divisionOnlineRedemptionInstructions" name="divisionOnlineRedemptionInstructions" type="string"/>
 <Field __index="40" __sourcePath="{}/object/company/cpDivision/divisionOnlineStoreURL" containerType="SINGLE" label="divisionOnlineStoreURL" name="divisionOnlineStoreURL" type="string"/>
-<Field __index="41" __sourcePath="{}/object/company/cpDivision/divisionProgramDescription" containerType="SINGLE" label="divisionProgramDescription" name="divisionProgramDescription" type="string"/>
-<Field __index="42" __sourcePath="{}/object/company/cpDivision/divisionRedemptionInformation" containerType="SINGLE" label="divisionRedemptionInformation" name="divisionRedemptionInformation" type="string"/>
-<Field __index="43" __sourcePath="{}/object/company/cpDivision/divisionRedemptionLine1" containerType="SINGLE" label="divisionRedemptionLine1" name="divisionRedemptionLine1" type="string"/>
-<Field __index="44" __sourcePath="{}/object/company/cpDivision/divisionRedemptionLine2" containerType="SINGLE" label="divisionRedemptionLine2" name="divisionRedemptionLine2" type="string"/>
-<Field __index="45" __sourcePath="{}/object/company/cpDivision/divisionRedemptionMethods" containerType="SINGLE" label="divisionRedemptionMethods" name="divisionRedemptionMethods" type="string"/>
-<Field __index="46" __sourcePath="{}/object/company/cpDivision/divisionTandCTextForPhysical" containerType="SINGLE" label="divisionTandCTextForPhysical" name="divisionTandCTextForPhysical" type="string"/>
-<Field __index="47" __sourcePath="{}/object/company/cpDivision/name" containerType="SINGLE" label="name" name="name" type="string"/>
-<Field __index="48" __sourcePath="{}/object/company/cpDivision/processorCode" containerType="SINGLE" label="processorCode" name="processorCode" type="string"/>
-<Field __index="49" __sourcePath="{}/object/company/cpDivision/processorContactFirstName" containerType="SINGLE" label="processorContactFirstName" name="processorContactFirstName" type="string"/>
-<Field __index="50" __sourcePath="{}/object/company/cpDivision/processorContactLastName" containerType="SINGLE" label="processorContactLastName" name="processorContactLastName" type="string"/>
-<Field __index="51" __sourcePath="{}/object/company/cpDivision/processorContactPhoneNumber" containerType="SINGLE" label="processorContactPhoneNumber" name="processorContactPhoneNumber" type="string"/>
-<Field __index="52" __sourcePath="{}/object/company/cpDivision/processorContactPhoneNumberExt" containerType="SINGLE" label="processorContactPhoneNumberExt" name="processorContactPhoneNumberExt" type="string"/>
-<Field __index="53" __sourcePath="{}/object/company/cpDivision/processorHasRealTimeIssuance" containerType="SINGLE" label="processorHasRealTimeIssuance" name="processorHasRealTimeIssuance" type="string"/>
-<Field __index="128" __sourcePath="{}/object/company/cpDivision/recId" containerType="SINGLE" label="recId" name="recId" type="string"/>
+<Field __index="41" __sourcePath="{}/object/company/cpDivision/divisionProcessorCode" containerType="SINGLE" label="divisionProcessorCode" name="divisionProcessorCode" type="string"/>
+<Field __index="42" __sourcePath="{}/object/company/cpDivision/divisionProgramDescription" containerType="SINGLE" label="divisionProgramDescription" name="divisionProgramDescription" type="string"/>
+<Field __index="43" __sourcePath="{}/object/company/cpDivision/divisionRedemptionInformation" containerType="SINGLE" label="divisionRedemptionInformation" name="divisionRedemptionInformation" type="string"/>
+<Field __index="44" __sourcePath="{}/object/company/cpDivision/divisionRedemptionLine1" containerType="SINGLE" label="divisionRedemptionLine1" name="divisionRedemptionLine1" type="string"/>
+<Field __index="45" __sourcePath="{}/object/company/cpDivision/divisionRedemptionLine2" containerType="SINGLE" label="divisionRedemptionLine2" name="divisionRedemptionLine2" type="string"/>
+<Field __index="46" __sourcePath="{}/object/company/cpDivision/divisionRedemptionMethods" containerType="SINGLE" label="divisionRedemptionMethods" name="divisionRedemptionMethods" type="string"/>
+<Field __index="47" __sourcePath="{}/object/company/cpDivision/divisionTandCTextForPhysical" containerType="SINGLE" label="divisionTandCTextForPhysical" name="divisionTandCTextForPhysical" type="string"/>
+<Field __index="48" __sourcePath="{}/object/company/cpDivision/name" containerType="SINGLE" label="name" name="name" type="string"/>
+<Field __index="49" __sourcePath="{}/object/company/cpDivision/processorCode" containerType="SINGLE" label="processorCode" name="processorCode" type="string"/>
+<Field __index="50" __sourcePath="{}/object/company/cpDivision/processorContactFirstName" containerType="SINGLE" label="processorContactFirstName" name="processorContactFirstName" type="string"/>
+<Field __index="51" __sourcePath="{}/object/company/cpDivision/processorContactLastName" containerType="SINGLE" label="processorContactLastName" name="processorContactLastName" type="string"/>
+<Field __index="52" __sourcePath="{}/object/company/cpDivision/processorContactPhoneNumber" containerType="SINGLE" label="processorContactPhoneNumber" name="processorContactPhoneNumber" type="string"/>
+<Field __index="53" __sourcePath="{}/object/company/cpDivision/processorContactPhoneNumberExt" containerType="SINGLE" label="processorContactPhoneNumberExt" name="processorContactPhoneNumberExt" type="string"/>
+<Field __index="54" __sourcePath="{}/object/company/cpDivision/processorHasRealTimeIssuance" containerType="SINGLE" label="processorHasRealTimeIssuance" name="processorHasRealTimeIssuance" type="string"/>
+<Field __index="129" __sourcePath="{}/object/company/cpDivision/recId" containerType="SINGLE" label="recId" name="recId" type="string"/>
 </Record>
 </Metadata>
 <Metadata __index="125" __referenceCounter="1" __sourcePath="{}/object/CustomerStore" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _metadataParentId="62ddf0bf-09b2-4348-9449-fe3657d6dcbb" _parent_id="__parent_id" _type="Input" id="ed363cca-8b21-4d79-8723-ec2e58cbb341">
@@ -193,17 +194,31 @@
 <Field __index="122" __sourcePath="{}/object/processorInformation/processorSupportsVoids" containerType="SINGLE" label="processorSupportsVoids" name="processorSupportsVoids" type="string"/>
 <Field __index="123" __sourcePath="{}/object/processorInformation/cardProductionCostPerCard" containerType="SINGLE" label="cardProductionCostPerCard" name="cardProductionCostPerCard" type="string"/>
 <Field __index="124" __sourcePath="{}/object/processorInformation/cardProductionQuantity" containerType="SINGLE" label="cardProductionQuantity" name="cardProductionQuantity" type="string"/>
-<Field __index="203" __sourcePath="{}/object/vendorInformation/vendorCompanyLegalName" containerType="SINGLE" label="vendorCompanyLegalName" name="vendorCompanyLegalName" type="string"/>
+<Field __index="203" __sourcePath="{}/object/vendorInformation/vendorNameFor1099" containerType="SINGLE" label="vendorNameFor1099" name="vendorNameFor1099" type="string"/>
 <Field __index="204" __sourcePath="{}/object/vendorInformation/vendorGroup" containerType="SINGLE" label="vendorGroup" name="vendorGroup" type="string"/>
 <Field __index="205" __sourcePath="{}/object/vendorInformation/vendorCurrency" containerType="SINGLE" label="vendorCurrency" name="vendorCurrency" type="string"/>
-<Field __index="206" __sourcePath="{}/object/vendorInformation/vendorIsBlocked" containerType="SINGLE" label="vendorIsBlocked" name="vendorIsBlocked" type="string"/>
+<Field __index="206" __sourcePath="{}/object/vendorInformation/vendorBlocked" containerType="SINGLE" label="vendorBlocked" name="vendorBlocked" type="boolean"/>
 <Field __index="207" __sourcePath="{}/object/vendorInformation/vendorLanguageId" containerType="SINGLE" label="vendorLanguageId" name="vendorLanguageId" type="string"/>
 <Field __index="208" __sourcePath="{}/object/vendorInformation/vendorCity" containerType="SINGLE" label="vendorCity" name="vendorCity" type="string"/>
-<Field __index="209" __sourcePath="{}/object/vendorInformation/vendorstreet" containerType="SINGLE" label="vendorstreet" name="vendorstreet" type="string"/>
-<Field __index="210" __sourcePath="{}/object/vendorInformation/vendorIsForeignEntityIndicator" containerType="SINGLE" label="vendorIsForeignEntityIndicator" name="vendorIsForeignEntityIndicator" type="boolean"/>
-<Field __index="211" __sourcePath="{}/object/vendorInformation/divisionBrandName" containerType="SINGLE" label="divisionBrandName" name="divisionBrandName" type="string"/>
-<Field __index="212" __sourcePath="{}/object/vendorInformation/vendorTax1099NameChoice" containerType="SINGLE" label="vendorTax1099NameChoice" name="vendorTax1099NameChoice" type="string"/>
-<Field __index="213" __sourcePath="{}/object/vendorInformation/vendorW9" containerType="SINGLE" label="vendorW9" name="vendorW9" type="string"/>
+<Field __index="209" __sourcePath="{}/object/vendorInformation/vendorForeignEntityIndicator" containerType="SINGLE" label="vendorForeignEntityIndicator" name="vendorForeignEntityIndicator" type="boolean"/>
+<Field __index="210" __sourcePath="{}/object/vendorInformation/vendorTax1099NameChoice" containerType="SINGLE" label="vendorTax1099NameChoice" name="vendorTax1099NameChoice" type="string"/>
+<Field __index="211" __sourcePath="{}/object/vendorInformation/vendorW9" containerType="SINGLE" label="vendorW9" name="vendorW9" type="boolean"/>
+<Field __index="212" __sourcePath="{}/object/vendorInformation/vendorAddress" containerType="SINGLE" label="vendorAddress" name="vendorAddress" type="string"/>
+<Field __index="213" __sourcePath="{}/object/vendorInformation/vendorCountryRegionId" containerType="SINGLE" label="vendorCountryRegionId" name="vendorCountryRegionId" type="string"/>
+<Field __index="214" __sourcePath="{}/object/vendorInformation/vendorCounty" containerType="SINGLE" label="vendorCounty" name="vendorCounty" type="string"/>
+<Field __index="215" __sourcePath="{}/object/vendorInformation/vendorEmail" containerType="SINGLE" label="vendorEmail" name="vendorEmail" type="string"/>
+<Field __index="216" __sourcePath="{}/object/vendorInformation/vendorPartyType" containerType="SINGLE" label="vendorPartyType" name="vendorPartyType" type="string"/>
+<Field __index="217" __sourcePath="{}/object/vendorInformation/vendorPaymentMode" containerType="SINGLE" label="vendorPaymentMode" name="vendorPaymentMode" type="string"/>
+<Field __index="218" __sourcePath="{}/object/vendorInformation/vendorPaymentTermsId" containerType="SINGLE" label="vendorPaymentTermsId" name="vendorPaymentTermsId" type="string"/>
+<Field __index="219" __sourcePath="{}/object/vendorInformation/vendorPhone" containerType="SINGLE" label="vendorPhone" name="vendorPhone" type="string"/>
+<Field __index="220" __sourcePath="{}/object/vendorInformation/vendorState" containerType="SINGLE" label="vendorState" name="vendorState" type="string"/>
+<Field __index="221" __sourcePath="{}/object/vendorInformation/vendorTaxIDNumber" containerType="SINGLE" label="vendorTaxIDNumber" name="vendorTaxIDNumber" type="string"/>
+<Field __index="222" __sourcePath="{}/object/vendorInformation/vendorEmployerIdNumber" containerType="SINGLE" label="vendorEmployerIdNumber" name="vendorEmployerIdNumber" type="string"/>
+<Field __index="223" __sourcePath="{}/object/vendorInformation/vendorTax1099Reports" containerType="SINGLE" label="vendorTax1099Reports" name="vendorTax1099Reports" type="boolean"/>
+<Field __index="224" __sourcePath="{}/object/vendorInformation/vendorTaxGroup" containerType="SINGLE" label="vendorTaxGroup" name="vendorTaxGroup" type="string"/>
+<Field __index="225" __sourcePath="{}/object/vendorInformation/vendorTaxIDType" containerType="SINGLE" label="vendorTaxIDType" name="vendorTaxIDType" type="string"/>
+<Field __index="226" __sourcePath="{}/object/vendorInformation/vendorURL" containerType="SINGLE" label="vendorURL" name="vendorURL" type="string"/>
+<Field __index="227" __sourcePath="{}/object/vendorInformation/vendorZipCode" containerType="SINGLE" label="vendorZipCode" name="vendorZipCode" type="string"/>
 </Record>
 </Metadata>
 <Metadata __index="0" __referenceCounter="1" __sourcePath="{}/object" _dataStructure="OBJECT" _id="__id" _type="Output" id="0e52744c-449f-4603-912e-9e129a31f276">
@@ -230,33 +245,39 @@
 <Field __index="18" __sourcePath="{}/object/company/companyWebSiteURL" containerType="SINGLE" label="companyWebSiteURL" name="companyWebSiteURL" type="string"/>
 <Field __index="19" __sourcePath="{}/object/company/companyZipPostalCode" containerType="SINGLE" label="companyZipPostalCode" name="companyZipPostalCode" type="string"/>
 <Field __index="20" __sourcePath="{}/object/company/contractExpDate" containerType="SINGLE" label="contractExpDate" name="contractExpDate" type="date"/>
-<Field __index="152" __sourcePath="{}/object/company/legalEntityCode" containerType="SINGLE" label="legalEntityCode" name="legalEntityCode" type="string"/>
-<Field __index="153" __sourcePath="{}/object/company/legalEntityStateOfIncorporation" containerType="SINGLE" label="legalEntityStateOfIncorporation" name="legalEntityStateOfIncorporation" type="string"/>
-<Field __index="154" __sourcePath="{}/object/company/recId" containerType="SINGLE" label="recId" name="recId" type="string"/>
-<Field __index="155" __sourcePath="{}/object/vendor/accountNum" containerType="SINGLE" label="accountNum" name="accountNum" type="string"/>
-<Field __index="156" __sourcePath="{}/object/vendor/companyLegalName" containerType="SINGLE" label="companyLegalName" name="companyLegalName_1" type="string"/>
-<Field __index="157" __sourcePath="{}/object/vendor/divisionBrandName" containerType="SINGLE" label="divisionBrandName" name="divisionBrandName" type="string"/>
-<Field __index="158" __sourcePath="{}/object/vendor/recId" containerType="SINGLE" label="recId" name="recId_1" type="string"/>
-<Field __index="159" __sourcePath="{}/object/vendor/vendorAddress" containerType="SINGLE" label="vendorAddress" name="vendorAddress" type="string"/>
-<Field __index="160" __sourcePath="{}/object/vendor/vendorBlocked" containerType="SINGLE" label="vendorBlocked" name="vendorBlocked" type="boolean"/>
-<Field __index="161" __sourcePath="{}/object/vendor/vendorCity" containerType="SINGLE" label="vendorCity" name="vendorCity" type="string"/>
-<Field __index="162" __sourcePath="{}/object/vendor/vendorCountryRegionId" containerType="SINGLE" label="vendorCountryRegionId" name="vendorCountryRegionId" type="string"/>
-<Field __index="163" __sourcePath="{}/object/vendor/vendorCounty" containerType="SINGLE" label="vendorCounty" name="vendorCounty" type="string"/>
-<Field __index="164" __sourcePath="{}/object/vendor/vendorCurrency" containerType="SINGLE" label="vendorCurrency" name="vendorCurrency" type="string"/>
-<Field __index="165" __sourcePath="{}/object/vendor/vendorEmail" containerType="SINGLE" label="vendorEmail" name="vendorEmail" type="string"/>
-<Field __index="166" __sourcePath="{}/object/vendor/vendorForeignEntityIndicator" containerType="SINGLE" label="vendorForeignEntityIndicator" name="vendorForeignEntityIndicator" type="boolean"/>
-<Field __index="167" __sourcePath="{}/object/vendor/vendorGroup" containerType="SINGLE" label="vendorGroup" name="vendorGroup" type="string"/>
-<Field __index="168" __sourcePath="{}/object/vendor/vendorLanguageId" containerType="SINGLE" label="vendorLanguageId" name="vendorLanguageId" type="string"/>
-<Field __index="169" __sourcePath="{}/object/vendor/vendorPaymMode" containerType="SINGLE" label="vendorPaymMode" name="vendorPaymMode" type="string"/>
-<Field __index="170" __sourcePath="{}/object/vendor/vendorPaymentTermsId" containerType="SINGLE" label="vendorPaymentTermsId" name="vendorPaymentTermsId" type="string"/>
-<Field __index="171" __sourcePath="{}/object/vendor/vendorPhone" containerType="SINGLE" label="vendorPhone" name="vendorPhone" type="string"/>
-<Field __index="172" __sourcePath="{}/object/vendor/vendorState" containerType="SINGLE" label="vendorState" name="vendorState" type="string"/>
-<Field __index="173" __sourcePath="{}/object/vendor/vendorTax1099NameChoice" containerType="SINGLE" label="vendorTax1099NameChoice" name="vendorTax1099NameChoice" type="string"/>
-<Field __index="174" __sourcePath="{}/object/vendor/vendorTax1099Reports" containerType="SINGLE" label="vendorTax1099Reports" name="vendorTax1099Reports" type="string"/>
-<Field __index="175" __sourcePath="{}/object/vendor/vendorTaxIDNumber" containerType="SINGLE" label="vendorTaxIDNumber" name="vendorTaxIDNumber" type="string"/>
-<Field __index="176" __sourcePath="{}/object/vendor/vendorW9" containerType="SINGLE" label="vendorW9" name="vendorW9" type="boolean"/>
-<Field __index="177" __sourcePath="{}/object/vendor/vendorZipCode" containerType="SINGLE" label="vendorZipCode" name="vendorZipCode" type="string"/>
-<Field __index="178" __sourcePath="{}/object/vendor/vendorstreet" containerType="SINGLE" label="vendorstreet" name="vendorstreet" type="string"/>
+<Field __index="153" __sourcePath="{}/object/company/legalEntityCode" containerType="SINGLE" label="legalEntityCode" name="legalEntityCode" type="string"/>
+<Field __index="154" __sourcePath="{}/object/company/legalEntityStateOfIncorporation" containerType="SINGLE" label="legalEntityStateOfIncorporation" name="legalEntityStateOfIncorporation" type="string"/>
+<Field __index="155" __sourcePath="{}/object/company/recId" containerType="SINGLE" label="recId" name="recId" type="string"/>
+<Field __index="156" __sourcePath="{}/object/vendor/accountNum" containerType="SINGLE" label="accountNum" name="accountNum" type="string"/>
+<Field __index="157" __sourcePath="{}/object/vendor/companyLegalName" containerType="SINGLE" label="companyLegalName" name="companyLegalName_1" type="string"/>
+<Field __index="158" __sourcePath="{}/object/vendor/divisionBrandName" containerType="SINGLE" label="divisionBrandName" name="divisionBrandName" type="string"/>
+<Field __index="159" __sourcePath="{}/object/vendor/recId" containerType="SINGLE" label="recId" name="recId_1" type="string"/>
+<Field __index="160" __sourcePath="{}/object/vendor/vendorAddress" containerType="SINGLE" label="vendorAddress" name="vendorAddress" type="string"/>
+<Field __index="161" __sourcePath="{}/object/vendor/vendorBlocked" containerType="SINGLE" label="vendorBlocked" name="vendorBlocked" type="boolean"/>
+<Field __index="162" __sourcePath="{}/object/vendor/vendorCity" containerType="SINGLE" label="vendorCity" name="vendorCity" type="string"/>
+<Field __index="163" __sourcePath="{}/object/vendor/vendorCountryRegionId" containerType="SINGLE" label="vendorCountryRegionId" name="vendorCountryRegionId" type="string"/>
+<Field __index="164" __sourcePath="{}/object/vendor/vendorCounty" containerType="SINGLE" label="vendorCounty" name="vendorCounty" type="string"/>
+<Field __index="165" __sourcePath="{}/object/vendor/vendorCurrency" containerType="SINGLE" label="vendorCurrency" name="vendorCurrency" type="string"/>
+<Field __index="166" __sourcePath="{}/object/vendor/vendorDBA" containerType="SINGLE" label="vendorDBA" name="vendorDBA" type="string"/>
+<Field __index="167" __sourcePath="{}/object/vendor/vendorEmail" containerType="SINGLE" label="vendorEmail" name="vendorEmail" type="string"/>
+<Field __index="168" __sourcePath="{}/object/vendor/vendorForeignEntityIndicator" containerType="SINGLE" label="vendorForeignEntityIndicator" name="vendorForeignEntityIndicator" type="boolean"/>
+<Field __index="169" __sourcePath="{}/object/vendor/vendorGroup" containerType="SINGLE" label="vendorGroup" name="vendorGroup" type="string"/>
+<Field __index="170" __sourcePath="{}/object/vendor/vendorLanguageId" containerType="SINGLE" label="vendorLanguageId" name="vendorLanguageId" type="string"/>
+<Field __index="171" __sourcePath="{}/object/vendor/vendorName" containerType="SINGLE" label="vendorName" name="vendorName" type="string"/>
+<Field __index="172" __sourcePath="{}/object/vendor/vendorPartyType" containerType="SINGLE" label="vendorPartyType" name="vendorPartyType" type="string"/>
+<Field __index="173" __sourcePath="{}/object/vendor/vendorPaymMode" containerType="SINGLE" label="vendorPaymMode" name="vendorPaymMode" type="string"/>
+<Field __index="174" __sourcePath="{}/object/vendor/vendorPaymentTermsId" containerType="SINGLE" label="vendorPaymentTermsId" name="vendorPaymentTermsId" type="string"/>
+<Field __index="175" __sourcePath="{}/object/vendor/vendorPhone" containerType="SINGLE" label="vendorPhone" name="vendorPhone" type="string"/>
+<Field __index="176" __sourcePath="{}/object/vendor/vendorState" containerType="SINGLE" label="vendorState" name="vendorState" type="string"/>
+<Field __index="177" __sourcePath="{}/object/vendor/vendorStreet" containerType="SINGLE" label="vendorStreet" name="vendorStreet" type="string"/>
+<Field __index="178" __sourcePath="{}/object/vendor/vendorTax1099NameChoice" containerType="SINGLE" label="vendorTax1099NameChoice" name="vendorTax1099NameChoice" type="string"/>
+<Field __index="179" __sourcePath="{}/object/vendor/vendorTax1099Reports" containerType="SINGLE" label="vendorTax1099Reports" name="vendorTax1099Reports" type="string"/>
+<Field __index="180" __sourcePath="{}/object/vendor/vendorTaxGroup" containerType="SINGLE" label="vendorTaxGroup" name="vendorTaxGroup" type="string"/>
+<Field __index="181" __sourcePath="{}/object/vendor/vendorTaxIDNumber" containerType="SINGLE" label="vendorTaxIDNumber" name="vendorTaxIDNumber" type="string"/>
+<Field __index="182" __sourcePath="{}/object/vendor/vendorTaxIdType" containerType="SINGLE" label="vendorTaxIdType" name="vendorTaxIdType" type="string"/>
+<Field __index="183" __sourcePath="{}/object/vendor/vendorURL" containerType="SINGLE" label="vendorURL" name="vendorURL" type="string"/>
+<Field __index="184" __sourcePath="{}/object/vendor/vendorW9" containerType="SINGLE" label="vendorW9" name="vendorW9" type="boolean"/>
+<Field __index="185" __sourcePath="{}/object/vendor/vendorZipCode" containerType="SINGLE" label="vendorZipCode" name="vendorZipCode" type="string"/>
 </Record>
 </Metadata>
 <Metadata __index="144" __referenceCounter="1" __sourcePath="{}/object/ProductInformation" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _metadataParentId="62ddf0bf-09b2-4348-9449-fe3657d6dcbb" _parent_id="__parent_id" _type="Input" id="82f6040f-421a-461d-99cf-c5a238fd3384">
@@ -285,8 +306,8 @@
 <Field __index="163" __sourcePath="{}/object/ProductInformation/productMulticardindicator" containerType="SINGLE" label="productMulticardindicator" name="productMulticardindicator" type="boolean"/>
 <Field __index="164" __sourcePath="{}/object/ProductInformation/isProductDenominationVariable" containerType="SINGLE" label="isProductDenominationVariable" name="isProductDenominationVariable" type="boolean"/>
 <Field __index="165" __sourcePath="{}/object/ProductInformation/productNewUPCReason" containerType="SINGLE" label="productNewUPCReason" name="productNewUPCReason" type="string"/>
-<Field __index="166" __sourcePath="{}/object/ProductInformation/productMinimumFaceValue" containerType="SINGLE" label="productMinimumFaceValue" name="productMinimumFaceValue" type="string"/>
-<Field __index="167" __sourcePath="{}/object/ProductInformation/productMaximumFaceValue" containerType="SINGLE" label="productMaximumFaceValue" name="productMaximumFaceValue" type="string"/>
+<Field __index="166" __sourcePath="{}/object/ProductInformation/productMinimumFaceValue" containerType="SINGLE" label="productMinimumFaceValue" name="productMinimumFaceValue" type="number"/>
+<Field __index="167" __sourcePath="{}/object/ProductInformation/productMaximumFaceValue" containerType="SINGLE" label="productMaximumFaceValue" name="productMaximumFaceValue" type="number"/>
 <Field __index="168" __sourcePath="{}/object/ProductInformation/productTaxIncluded" containerType="SINGLE" label="productTaxIncluded" name="productTaxIncluded" type="boolean"/>
 <Field __index="169" __sourcePath="{}/object/ProductInformation/productIsCheckMinMax" containerType="SINGLE" label="productIsCheckMinMax" name="productIsCheckMinMax" type="boolean"/>
 <Field __index="170" __sourcePath="{}/object/ProductInformation/productIsTaxable" containerType="SINGLE" label="productIsTaxable" name="productIsTaxable" type="boolean"/>
@@ -302,8 +323,8 @@
 <Field __index="180" __sourcePath="{}/object/ProductInformation/customTemplatePathURL" containerType="SINGLE" label="customTemplatePathURL" name="customTemplatePathURL" type="string"/>
 <Field __index="181" __sourcePath="{}/object/ProductInformation/isActivationRequired" containerType="SINGLE" label="isActivationRequired" name="isActivationRequired" type="boolean"/>
 <Field __index="182" __sourcePath="{}/object/ProductInformation/isReloadable" containerType="SINGLE" label="isReloadable" name="isReloadable" type="boolean"/>
-<Field __index="183" __sourcePath="{}/object/ProductInformation/reloadMinAmount" containerType="SINGLE" label="reloadMinAmount" name="reloadMinAmount" type="string"/>
-<Field __index="184" __sourcePath="{}/object/ProductInformation/reloadMaxAmount" containerType="SINGLE" label="reloadMaxAmount" name="reloadMaxAmount" type="string"/>
+<Field __index="183" __sourcePath="{}/object/ProductInformation/reloadMinAmount" containerType="SINGLE" label="reloadMinAmount" name="reloadMinAmount" type="number"/>
+<Field __index="184" __sourcePath="{}/object/ProductInformation/reloadMaxAmount" containerType="SINGLE" label="reloadMaxAmount" name="reloadMaxAmount" type="number"/>
 <Field __index="185" __sourcePath="{}/object/ProductInformation/substitutionCardDisplayDesc" containerType="SINGLE" label="substitutionCardDisplayDesc" name="substitutionCardDisplayDesc" type="string"/>
 <Field __index="186" __sourcePath="{}/object/ProductInformation/substitutionPOG1Category" containerType="SINGLE" label="substitutionPOG1Category" name="substitutionPOG1Category" type="string"/>
 <Field __index="187" __sourcePath="{}/object/ProductInformation/substitutionPOG2Category" containerType="SINGLE" label="substitutionPOG2Category" name="substitutionPOG2Category" type="string"/>
@@ -324,113 +345,113 @@
 <Field __index="202" __sourcePath="{}/object/ProductInformation/iid/iidUseStdUnitConvert" containerType="SINGLE" label="iidUseStdUnitConvert" name="iidUseStdUnitConvert" type="boolean"/>
 </Record>
 </Metadata>
-<Metadata __index="54" __referenceCounter="1" __sourcePath="{}/object/company/cpDivision/products" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _metadataParentId="d9358f29-0f11-40da-9f1a-fbe2df974bd6" _parent_id="__parent_id" _type="Output" id="8f2a44d4-84ea-46c8-b58d-c6c2219d162a">
+<Metadata __index="55" __referenceCounter="1" __sourcePath="{}/object/company/cpDivision/products" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _metadataParentId="d9358f29-0f11-40da-9f1a-fbe2df974bd6" _parent_id="__parent_id" _type="Output" id="8f2a44d4-84ea-46c8-b58d-c6c2219d162a">
 <Record fieldDelimiter="," name="products" recordDelimiter="\n\\|\r\n\\|\r" type="delimited">
 <Field __artificialType="_id" __systemManaged="true" name="__id" type="string"/>
 <Field __artificialType="_parent_id" __systemManaged="true" name="__parent_id" type="string"/>
-<Field __index="54" __sourcePath="{}/object/company/cpDivision/products/bhnGUID" containerType="SINGLE" label="bhnGUID" name="bhnGUID" type="string"/>
-<Field __index="55" __sourcePath="{}/object/company/cpDivision/products/bhnIsEANUPC" containerType="SINGLE" label="bhnIsEANUPC" name="bhnIsEANUPC" type="boolean"/>
-<Field __index="56" __sourcePath="{}/object/company/cpDivision/products/companyCode" containerType="SINGLE" label="companyCode" name="companyCode" type="string"/>
-<Field __index="57" __sourcePath="{}/object/company/cpDivision/products/customTemplatePathURL" containerType="SINGLE" label="customTemplatePathURL" name="customTemplatePathURL" type="string"/>
-<Field __index="58" __sourcePath="{}/object/company/cpDivision/products/divisionCode" containerType="SINGLE" label="divisionCode" name="divisionCode" type="string"/>
-<Field __index="59" __sourcePath="{}/object/company/cpDivision/products/iid/bhnGUID" containerType="SINGLE" label="bhnGUID" name="bhnGUID_1" type="string"/>
-<Field __index="60" __sourcePath="{}/object/company/cpDivision/products/iid/divisionBrandName" containerType="SINGLE" label="divisionBrandName" name="divisionBrandName" type="string"/>
-<Field __index="61" __sourcePath="{}/object/company/cpDivision/products/iid/divisionCardImageURL" containerType="SINGLE" label="divisionCardImageURL" name="divisionCardImageURL" type="string"/>
-<Field __index="62" __sourcePath="{}/object/company/cpDivision/products/iid/divisionCode" containerType="SINGLE" label="divisionCode" name="divisionCode_1" type="string"/>
-<Field __index="63" __sourcePath="{}/object/company/cpDivision/products/iid/iidActivationType" containerType="SINGLE" label="iidActivationType" name="iidActivationType" type="string"/>
-<Field __index="64" __sourcePath="{}/object/company/cpDivision/products/iid/iidCaseCount" containerType="SINGLE" label="iidCaseCount" name="iidCaseCount" type="integer"/>
-<Field __index="65" __sourcePath="{}/object/company/cpDivision/products/iid/iidCountry" containerType="SINGLE" label="iidCountry" name="iidCountry" type="string"/>
-<Field __index="66" __sourcePath="{}/object/company/cpDivision/products/iid/iidDescription" containerType="SINGLE" label="iidDescription" name="iidDescription" type="string"/>
-<Field __index="67" __sourcePath="{}/object/company/cpDivision/products/iid/iidPackSize" containerType="SINGLE" label="iidPackSize" name="iidPackSize" type="integer"/>
-<Field __index="68" __sourcePath="{}/object/company/cpDivision/products/iid/iidProdPackType" containerType="SINGLE" label="iidProdPackType" name="iidProdPackType" type="string"/>
-<Field __index="69" __sourcePath="{}/object/company/cpDivision/products/iid/iidUseStdUnitConvert" containerType="SINGLE" label="iidUseStdUnitConvert" name="iidUseStdUnitConvert" type="boolean"/>
-<Field __index="70" __sourcePath="{}/object/company/cpDivision/products/iid/inventBatchId" containerType="SINGLE" label="inventBatchId" name="inventBatchId" type="string"/>
-<Field __index="71" __sourcePath="{}/object/company/cpDivision/products/iid/itemId" containerType="SINGLE" label="itemId" name="itemId" type="string"/>
-<Field __index="72" __sourcePath="{}/object/company/cpDivision/products/iid/language" containerType="SINGLE" label="language" name="language" type="string"/>
-<Field __index="73" __sourcePath="{}/object/company/cpDivision/products/iid/name" containerType="SINGLE" label="name" name="name" type="string"/>
-<Field __index="74" __sourcePath="{}/object/company/cpDivision/products/iid/newIidReasonCode" containerType="SINGLE" label="newIidReasonCode" name="newIidReasonCode" type="string"/>
-<Field __index="75" __sourcePath="{}/object/company/cpDivision/products/iid/recId" containerType="SINGLE" label="recId" name="recId" type="string"/>
-<Field __index="76" __sourcePath="{}/object/company/cpDivision/products/isActivationRequired" containerType="SINGLE" label="isActivationRequired" name="isActivationRequired" type="boolean"/>
-<Field __index="77" __sourcePath="{}/object/company/cpDivision/products/isProductDenominationVariable" containerType="SINGLE" label="isProductDenominationVariable" name="isProductDenominationVariable" type="boolean"/>
-<Field __index="78" __sourcePath="{}/object/company/cpDivision/products/isReloadable" containerType="SINGLE" label="isReloadable" name="isReloadable" type="boolean"/>
-<Field __index="79" __sourcePath="{}/object/company/cpDivision/products/processorCode" containerType="SINGLE" label="processorCode" name="processorCode" type="string"/>
-<Field __index="80" __sourcePath="{}/object/company/cpDivision/products/productAccountInquiryBIN" containerType="SINGLE" label="productAccountInquiryBIN" name="productAccountInquiryBIN" type="string"/>
-<Field __index="81" __sourcePath="{}/object/company/cpDivision/products/productAccountTopupBIN" containerType="SINGLE" label="productAccountTopupBIN" name="productAccountTopupBIN" type="string"/>
-<Field __index="82" __sourcePath="{}/object/company/cpDivision/products/productActivationInstructions" containerType="SINGLE" label="productActivationInstructions" name="productActivationInstructions" type="string"/>
-<Field __index="83" __sourcePath="{}/object/company/cpDivision/products/productBHNNotes" containerType="SINGLE" label="productBHNNotes" name="productBHNNotes" type="string"/>
-<Field __index="84" __sourcePath="{}/object/company/cpDivision/products/productBINForDARTransaction" containerType="SINGLE" label="productBINForDARTransaction" name="productBINForDARTransaction" type="string"/>
-<Field __index="85" __sourcePath="{}/object/company/cpDivision/products/productBackCardTemplateId" containerType="SINGLE" label="productBackCardTemplateId" name="productBackCardTemplateId" type="string"/>
-<Field __index="86" __sourcePath="{}/object/company/cpDivision/products/productBuyerGroup" containerType="SINGLE" label="productBuyerGroup" name="productBuyerGroup" type="string"/>
-<Field __index="87" __sourcePath="{}/object/company/cpDivision/products/productChannelDimension" containerType="SINGLE" label="productChannelDimension" name="productChannelDimension" type="string"/>
-<Field __index="88" __sourcePath="{}/object/company/cpDivision/products/productClassification" containerType="SINGLE" label="productClassification" name="productClassification" type="string"/>
-<Field __index="89" __sourcePath="{}/object/company/cpDivision/products/productCurrency" containerType="SINGLE" label="productCurrency" name="productCurrency" type="string"/>
-<Field __index="90" __sourcePath="{}/object/company/cpDivision/products/productDefaultIID" containerType="SINGLE" label="productDefaultIID" name="productDefaultIID" type="string"/>
-<Field __index="91" __sourcePath="{}/object/company/cpDivision/products/productDenomination" containerType="SINGLE" label="productDenomination" name="productDenomination" type="string"/>
-<Field __index="92" __sourcePath="{}/object/company/cpDivision/products/productDimensionCode" containerType="SINGLE" label="productDimensionCode" name="productDimensionCode" type="string"/>
-<Field __index="93" __sourcePath="{}/object/company/cpDivision/products/productDimensionGroup" containerType="SINGLE" label="productDimensionGroup" name="productDimensionGroup" type="string"/>
-<Field __index="94" __sourcePath="{}/object/company/cpDivision/products/productExpDate" containerType="SINGLE" label="productExpDate" name="productExpDate" type="date"/>
-<Field __index="95" __sourcePath="{}/object/company/cpDivision/products/productExpLength" containerType="SINGLE" label="productExpLength" name="productExpLength" type="integer"/>
-<Field __index="96" __sourcePath="{}/object/company/cpDivision/products/productGroup" containerType="SINGLE" label="productGroup" name="productGroup" type="string"/>
-<Field __index="97" __sourcePath="{}/object/company/cpDivision/products/productInventorySource" containerType="SINGLE" label="productInventorySource" name="productInventorySource" type="string"/>
-<Field __index="98" __sourcePath="{}/object/company/cpDivision/products/productIsCheckMinMax" containerType="SINGLE" label="productIsCheckMinMax" name="productIsCheckMinMax" type="boolean"/>
-<Field __index="99" __sourcePath="{}/object/company/cpDivision/products/productIsTaxable" containerType="SINGLE" label="productIsTaxable" name="productIsTaxable" type="boolean"/>
-<Field __index="100" __sourcePath="{}/object/company/cpDivision/products/productIsUsingStandardDesign" containerType="SINGLE" label="productIsUsingStandardDesign" name="productIsUsingStandardDesign" type="boolean"/>
-<Field __index="101" __sourcePath="{}/object/company/cpDivision/products/productIssuerCompanyCode" containerType="SINGLE" label="productIssuerCompanyCode" name="productIssuerCompanyCode" type="string"/>
-<Field __index="102" __sourcePath="{}/object/company/cpDivision/products/productItemGroupId" containerType="SINGLE" label="productItemGroupId" name="productItemGroupId" type="string"/>
-<Field __index="103" __sourcePath="{}/object/company/cpDivision/products/productItemName" containerType="SINGLE" label="productItemName" name="productItemName" type="string"/>
-<Field __index="104" __sourcePath="{}/object/company/cpDivision/products/productMaximumFaceValue" containerType="SINGLE" label="productMaximumFaceValue" name="productMaximumFaceValue" type="number"/>
-<Field __index="105" __sourcePath="{}/object/company/cpDivision/products/productMinimumFaceValue" containerType="SINGLE" label="productMinimumFaceValue" name="productMinimumFaceValue" type="number"/>
-<Field __index="106" __sourcePath="{}/object/company/cpDivision/products/productModelGroupId" containerType="SINGLE" label="productModelGroupId" name="productModelGroupId" type="string"/>
-<Field __index="107" __sourcePath="{}/object/company/cpDivision/products/productMultiCardIndicator" containerType="SINGLE" label="productMultiCardIndicator" name="productMultiCardIndicator" type="boolean"/>
-<Field __index="108" __sourcePath="{}/object/company/cpDivision/products/productNewUPCReason" containerType="SINGLE" label="productNewUPCReason" name="productNewUPCReason" type="string"/>
-<Field __index="109" __sourcePath="{}/object/company/cpDivision/products/productOwnershipType" containerType="SINGLE" label="productOwnershipType" name="productOwnershipType" type="string"/>
-<Field __index="110" __sourcePath="{}/object/company/cpDivision/products/productSubstitutionGroup" containerType="SINGLE" label="productSubstitutionGroup" name="productSubstitutionGroup" type="string"/>
-<Field __index="111" __sourcePath="{}/object/company/cpDivision/products/productTaxIncluded" containerType="SINGLE" label="productTaxIncluded" name="productTaxIncluded" type="boolean"/>
-<Field __index="112" __sourcePath="{}/object/company/cpDivision/products/productTermsAndConditions" containerType="SINGLE" label="productTermsAndConditions" name="productTermsAndConditions" type="string"/>
-<Field __index="113" __sourcePath="{}/object/company/cpDivision/products/productType" containerType="SINGLE" label="productType" name="productType" type="string"/>
-<Field __index="114" __sourcePath="{}/object/company/cpDivision/products/productTypeId" containerType="SINGLE" label="productTypeId" name="productTypeId" type="string"/>
-<Field __index="115" __sourcePath="{}/object/company/cpDivision/products/reloadMaxAmount" containerType="SINGLE" label="reloadMaxAmount" name="reloadMaxAmount" type="number"/>
-<Field __index="116" __sourcePath="{}/object/company/cpDivision/products/reloadMinAmount" containerType="SINGLE" label="reloadMinAmount" name="reloadMinAmount" type="number"/>
-<Field __index="117" __sourcePath="{}/object/company/cpDivision/products/substGrp/brandRecId" containerType="SINGLE" label="brandRecId" name="brandRecId" type="string"/>
-<Field __index="118" __sourcePath="{}/object/company/cpDivision/products/substGrp/guid" containerType="SINGLE" label="guid" name="guid" type="string"/>
-<Field __index="119" __sourcePath="{}/object/company/cpDivision/products/substGrp/subGroupId" containerType="SINGLE" label="subGroupId" name="subGroupId" type="string"/>
-<Field __index="120" __sourcePath="{}/object/company/cpDivision/products/substGrp/substitutionBrandDenomDescription" containerType="SINGLE" label="substitutionBrandDenomDescription" name="substitutionBrandDenomDescription" type="string"/>
-<Field __index="121" __sourcePath="{}/object/company/cpDivision/products/substGrp/substitutionCardDisplayDesc" containerType="SINGLE" label="substitutionCardDisplayDesc" name="substitutionCardDisplayDesc" type="string"/>
-<Field __index="122" __sourcePath="{}/object/company/cpDivision/products/substGrp/substitutionPOG1Category" containerType="SINGLE" label="substitutionPOG1Category" name="substitutionPOG1Category" type="string"/>
-<Field __index="123" __sourcePath="{}/object/company/cpDivision/products/substGrp/substitutionPOG2Category" containerType="SINGLE" label="substitutionPOG2Category" name="substitutionPOG2Category" type="string"/>
-<Field __index="124" __sourcePath="{}/object/company/cpDivision/products/substGrp/substitutionPOG3Category" containerType="SINGLE" label="substitutionPOG3Category" name="substitutionPOG3Category" type="string"/>
-<Field __index="125" __sourcePath="{}/object/company/cpDivision/products/substGrp/substitutionPOGDimension" containerType="SINGLE" label="substitutionPOGDimension" name="substitutionPOGDimension" type="string"/>
-<Field __index="126" __sourcePath="{}/object/company/cpDivision/products/substGrp/substitutionPortalDisplayName" containerType="SINGLE" label="substitutionPortalDisplayName" name="substitutionPortalDisplayName" type="string"/>
-<Field __index="127" __sourcePath="{}/object/company/cpDivision/products/substGrp/substitutionShipperUPC" containerType="SINGLE" label="substitutionShipperUPC" name="substitutionShipperUPC" type="string"/>
+<Field __index="55" __sourcePath="{}/object/company/cpDivision/products/bhnGUID" containerType="SINGLE" label="bhnGUID" name="bhnGUID" type="string"/>
+<Field __index="56" __sourcePath="{}/object/company/cpDivision/products/bhnIsEANUPC" containerType="SINGLE" label="bhnIsEANUPC" name="bhnIsEANUPC" type="boolean"/>
+<Field __index="57" __sourcePath="{}/object/company/cpDivision/products/companyCode" containerType="SINGLE" label="companyCode" name="companyCode" type="string"/>
+<Field __index="58" __sourcePath="{}/object/company/cpDivision/products/customTemplatePathURL" containerType="SINGLE" label="customTemplatePathURL" name="customTemplatePathURL" type="string"/>
+<Field __index="59" __sourcePath="{}/object/company/cpDivision/products/divisionCode" containerType="SINGLE" label="divisionCode" name="divisionCode" type="string"/>
+<Field __index="60" __sourcePath="{}/object/company/cpDivision/products/iid/bhnGUID" containerType="SINGLE" label="bhnGUID" name="bhnGUID_1" type="string"/>
+<Field __index="61" __sourcePath="{}/object/company/cpDivision/products/iid/divisionBrandName" containerType="SINGLE" label="divisionBrandName" name="divisionBrandName" type="string"/>
+<Field __index="62" __sourcePath="{}/object/company/cpDivision/products/iid/divisionCardImageURL" containerType="SINGLE" label="divisionCardImageURL" name="divisionCardImageURL" type="string"/>
+<Field __index="63" __sourcePath="{}/object/company/cpDivision/products/iid/divisionCode" containerType="SINGLE" label="divisionCode" name="divisionCode_1" type="string"/>
+<Field __index="64" __sourcePath="{}/object/company/cpDivision/products/iid/iidActivationType" containerType="SINGLE" label="iidActivationType" name="iidActivationType" type="string"/>
+<Field __index="65" __sourcePath="{}/object/company/cpDivision/products/iid/iidCaseCount" containerType="SINGLE" label="iidCaseCount" name="iidCaseCount" type="integer"/>
+<Field __index="66" __sourcePath="{}/object/company/cpDivision/products/iid/iidCountry" containerType="SINGLE" label="iidCountry" name="iidCountry" type="string"/>
+<Field __index="67" __sourcePath="{}/object/company/cpDivision/products/iid/iidDescription" containerType="SINGLE" label="iidDescription" name="iidDescription" type="string"/>
+<Field __index="68" __sourcePath="{}/object/company/cpDivision/products/iid/iidPackSize" containerType="SINGLE" label="iidPackSize" name="iidPackSize" type="integer"/>
+<Field __index="69" __sourcePath="{}/object/company/cpDivision/products/iid/iidProdPackType" containerType="SINGLE" label="iidProdPackType" name="iidProdPackType" type="string"/>
+<Field __index="70" __sourcePath="{}/object/company/cpDivision/products/iid/iidUseStdUnitConvert" containerType="SINGLE" label="iidUseStdUnitConvert" name="iidUseStdUnitConvert" type="boolean"/>
+<Field __index="71" __sourcePath="{}/object/company/cpDivision/products/iid/inventBatchId" containerType="SINGLE" label="inventBatchId" name="inventBatchId" type="string"/>
+<Field __index="72" __sourcePath="{}/object/company/cpDivision/products/iid/itemId" containerType="SINGLE" label="itemId" name="itemId" type="string"/>
+<Field __index="73" __sourcePath="{}/object/company/cpDivision/products/iid/language" containerType="SINGLE" label="language" name="language" type="string"/>
+<Field __index="74" __sourcePath="{}/object/company/cpDivision/products/iid/name" containerType="SINGLE" label="name" name="name" type="string"/>
+<Field __index="75" __sourcePath="{}/object/company/cpDivision/products/iid/newIidReasonCode" containerType="SINGLE" label="newIidReasonCode" name="newIidReasonCode" type="string"/>
+<Field __index="76" __sourcePath="{}/object/company/cpDivision/products/iid/recId" containerType="SINGLE" label="recId" name="recId" type="string"/>
+<Field __index="77" __sourcePath="{}/object/company/cpDivision/products/isActivationRequired" containerType="SINGLE" label="isActivationRequired" name="isActivationRequired" type="boolean"/>
+<Field __index="78" __sourcePath="{}/object/company/cpDivision/products/isProductDenominationVariable" containerType="SINGLE" label="isProductDenominationVariable" name="isProductDenominationVariable" type="boolean"/>
+<Field __index="79" __sourcePath="{}/object/company/cpDivision/products/isReloadable" containerType="SINGLE" label="isReloadable" name="isReloadable" type="boolean"/>
+<Field __index="80" __sourcePath="{}/object/company/cpDivision/products/processorCode" containerType="SINGLE" label="processorCode" name="processorCode" type="string"/>
+<Field __index="81" __sourcePath="{}/object/company/cpDivision/products/productAccountInquiryBIN" containerType="SINGLE" label="productAccountInquiryBIN" name="productAccountInquiryBIN" type="string"/>
+<Field __index="82" __sourcePath="{}/object/company/cpDivision/products/productAccountTopupBIN" containerType="SINGLE" label="productAccountTopupBIN" name="productAccountTopupBIN" type="string"/>
+<Field __index="83" __sourcePath="{}/object/company/cpDivision/products/productActivationInstructions" containerType="SINGLE" label="productActivationInstructions" name="productActivationInstructions" type="string"/>
+<Field __index="84" __sourcePath="{}/object/company/cpDivision/products/productBHNNotes" containerType="SINGLE" label="productBHNNotes" name="productBHNNotes" type="string"/>
+<Field __index="85" __sourcePath="{}/object/company/cpDivision/products/productBINForDARTransaction" containerType="SINGLE" label="productBINForDARTransaction" name="productBINForDARTransaction" type="string"/>
+<Field __index="86" __sourcePath="{}/object/company/cpDivision/products/productBackCardTemplateId" containerType="SINGLE" label="productBackCardTemplateId" name="productBackCardTemplateId" type="string"/>
+<Field __index="87" __sourcePath="{}/object/company/cpDivision/products/productBuyerGroup" containerType="SINGLE" label="productBuyerGroup" name="productBuyerGroup" type="string"/>
+<Field __index="88" __sourcePath="{}/object/company/cpDivision/products/productChannelDimension" containerType="SINGLE" label="productChannelDimension" name="productChannelDimension" type="string"/>
+<Field __index="89" __sourcePath="{}/object/company/cpDivision/products/productClassification" containerType="SINGLE" label="productClassification" name="productClassification" type="string"/>
+<Field __index="90" __sourcePath="{}/object/company/cpDivision/products/productCurrency" containerType="SINGLE" label="productCurrency" name="productCurrency" type="string"/>
+<Field __index="91" __sourcePath="{}/object/company/cpDivision/products/productDefaultIID" containerType="SINGLE" label="productDefaultIID" name="productDefaultIID" type="string"/>
+<Field __index="92" __sourcePath="{}/object/company/cpDivision/products/productDenomination" containerType="SINGLE" label="productDenomination" name="productDenomination" type="string"/>
+<Field __index="93" __sourcePath="{}/object/company/cpDivision/products/productDimensionCode" containerType="SINGLE" label="productDimensionCode" name="productDimensionCode" type="string"/>
+<Field __index="94" __sourcePath="{}/object/company/cpDivision/products/productDimensionGroup" containerType="SINGLE" label="productDimensionGroup" name="productDimensionGroup" type="string"/>
+<Field __index="95" __sourcePath="{}/object/company/cpDivision/products/productExpDate" containerType="SINGLE" label="productExpDate" name="productExpDate" type="date"/>
+<Field __index="96" __sourcePath="{}/object/company/cpDivision/products/productExpLength" containerType="SINGLE" label="productExpLength" name="productExpLength" type="integer"/>
+<Field __index="97" __sourcePath="{}/object/company/cpDivision/products/productGroup" containerType="SINGLE" label="productGroup" name="productGroup" type="string"/>
+<Field __index="98" __sourcePath="{}/object/company/cpDivision/products/productInventorySource" containerType="SINGLE" label="productInventorySource" name="productInventorySource" type="string"/>
+<Field __index="99" __sourcePath="{}/object/company/cpDivision/products/productIsCheckMinMax" containerType="SINGLE" label="productIsCheckMinMax" name="productIsCheckMinMax" type="boolean"/>
+<Field __index="100" __sourcePath="{}/object/company/cpDivision/products/productIsTaxable" containerType="SINGLE" label="productIsTaxable" name="productIsTaxable" type="boolean"/>
+<Field __index="101" __sourcePath="{}/object/company/cpDivision/products/productIsUsingStandardDesign" containerType="SINGLE" label="productIsUsingStandardDesign" name="productIsUsingStandardDesign" type="boolean"/>
+<Field __index="102" __sourcePath="{}/object/company/cpDivision/products/productIssuerCompanyCode" containerType="SINGLE" label="productIssuerCompanyCode" name="productIssuerCompanyCode" type="string"/>
+<Field __index="103" __sourcePath="{}/object/company/cpDivision/products/productItemGroupId" containerType="SINGLE" label="productItemGroupId" name="productItemGroupId" type="string"/>
+<Field __index="104" __sourcePath="{}/object/company/cpDivision/products/productItemName" containerType="SINGLE" label="productItemName" name="productItemName" type="string"/>
+<Field __index="105" __sourcePath="{}/object/company/cpDivision/products/productMaximumFaceValue" containerType="SINGLE" label="productMaximumFaceValue" name="productMaximumFaceValue" type="number"/>
+<Field __index="106" __sourcePath="{}/object/company/cpDivision/products/productMinimumFaceValue" containerType="SINGLE" label="productMinimumFaceValue" name="productMinimumFaceValue" type="number"/>
+<Field __index="107" __sourcePath="{}/object/company/cpDivision/products/productModelGroupId" containerType="SINGLE" label="productModelGroupId" name="productModelGroupId" type="string"/>
+<Field __index="108" __sourcePath="{}/object/company/cpDivision/products/productMultiCardIndicator" containerType="SINGLE" label="productMultiCardIndicator" name="productMultiCardIndicator" type="boolean"/>
+<Field __index="109" __sourcePath="{}/object/company/cpDivision/products/productNewUPCReason" containerType="SINGLE" label="productNewUPCReason" name="productNewUPCReason" type="string"/>
+<Field __index="110" __sourcePath="{}/object/company/cpDivision/products/productOwnershipType" containerType="SINGLE" label="productOwnershipType" name="productOwnershipType" type="string"/>
+<Field __index="111" __sourcePath="{}/object/company/cpDivision/products/productSubstitutionGroup" containerType="SINGLE" label="productSubstitutionGroup" name="productSubstitutionGroup" type="string"/>
+<Field __index="112" __sourcePath="{}/object/company/cpDivision/products/productTaxIncluded" containerType="SINGLE" label="productTaxIncluded" name="productTaxIncluded" type="boolean"/>
+<Field __index="113" __sourcePath="{}/object/company/cpDivision/products/productTermsAndConditions" containerType="SINGLE" label="productTermsAndConditions" name="productTermsAndConditions" type="string"/>
+<Field __index="114" __sourcePath="{}/object/company/cpDivision/products/productType" containerType="SINGLE" label="productType" name="productType" type="string"/>
+<Field __index="115" __sourcePath="{}/object/company/cpDivision/products/productTypeId" containerType="SINGLE" label="productTypeId" name="productTypeId" type="string"/>
+<Field __index="116" __sourcePath="{}/object/company/cpDivision/products/reloadMaxAmount" containerType="SINGLE" label="reloadMaxAmount" name="reloadMaxAmount" type="number"/>
+<Field __index="117" __sourcePath="{}/object/company/cpDivision/products/reloadMinAmount" containerType="SINGLE" label="reloadMinAmount" name="reloadMinAmount" type="number"/>
+<Field __index="118" __sourcePath="{}/object/company/cpDivision/products/substGrp/brandRecId" containerType="SINGLE" label="brandRecId" name="brandRecId" type="string"/>
+<Field __index="119" __sourcePath="{}/object/company/cpDivision/products/substGrp/guid" containerType="SINGLE" label="guid" name="guid" type="string"/>
+<Field __index="120" __sourcePath="{}/object/company/cpDivision/products/substGrp/subGroupId" containerType="SINGLE" label="subGroupId" name="subGroupId" type="string"/>
+<Field __index="121" __sourcePath="{}/object/company/cpDivision/products/substGrp/substitutionBrandDenomDescription" containerType="SINGLE" label="substitutionBrandDenomDescription" name="substitutionBrandDenomDescription" type="string"/>
+<Field __index="122" __sourcePath="{}/object/company/cpDivision/products/substGrp/substitutionCardDisplayDesc" containerType="SINGLE" label="substitutionCardDisplayDesc" name="substitutionCardDisplayDesc" type="string"/>
+<Field __index="123" __sourcePath="{}/object/company/cpDivision/products/substGrp/substitutionPOG1Category" containerType="SINGLE" label="substitutionPOG1Category" name="substitutionPOG1Category" type="string"/>
+<Field __index="124" __sourcePath="{}/object/company/cpDivision/products/substGrp/substitutionPOG2Category" containerType="SINGLE" label="substitutionPOG2Category" name="substitutionPOG2Category" type="string"/>
+<Field __index="125" __sourcePath="{}/object/company/cpDivision/products/substGrp/substitutionPOG3Category" containerType="SINGLE" label="substitutionPOG3Category" name="substitutionPOG3Category" type="string"/>
+<Field __index="126" __sourcePath="{}/object/company/cpDivision/products/substGrp/substitutionPOGDimension" containerType="SINGLE" label="substitutionPOGDimension" name="substitutionPOGDimension" type="string"/>
+<Field __index="127" __sourcePath="{}/object/company/cpDivision/products/substGrp/substitutionPortalDisplayName" containerType="SINGLE" label="substitutionPortalDisplayName" name="substitutionPortalDisplayName" type="string"/>
+<Field __index="128" __sourcePath="{}/object/company/cpDivision/products/substGrp/substitutionShipperUPC" containerType="SINGLE" label="substitutionShipperUPC" name="substitutionShipperUPC" type="string"/>
 </Record>
 </Metadata>
-<Metadata __index="129" __referenceCounter="1" __sourcePath="{}/object/company/cpDivision/stores" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _metadataParentId="d9358f29-0f11-40da-9f1a-fbe2df974bd6" _parent_id="__parent_id" _type="Output" id="2199f073-f747-40db-8533-1122c4785e57">
+<Metadata __index="130" __referenceCounter="1" __sourcePath="{}/object/company/cpDivision/stores" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _metadataParentId="d9358f29-0f11-40da-9f1a-fbe2df974bd6" _parent_id="__parent_id" _type="Output" id="2199f073-f747-40db-8533-1122c4785e57">
 <Record fieldDelimiter="," name="stores" recordDelimiter="\n\\|\r\n\\|\r" type="delimited">
 <Field __artificialType="_id" __systemManaged="true" name="__id" type="string"/>
 <Field __artificialType="_parent_id" __systemManaged="true" name="__parent_id" type="string"/>
-<Field __index="129" __sourcePath="{}/object/company/cpDivision/stores/accountNum" containerType="SINGLE" label="accountNum" name="accountNum" type="string"/>
-<Field __index="130" __sourcePath="{}/object/company/cpDivision/stores/bhnCompanyCode" containerType="SINGLE" label="bhnCompanyCode" name="bhnCompanyCode" type="string"/>
-<Field __index="131" __sourcePath="{}/object/company/cpDivision/stores/bhnDivisionCode" containerType="SINGLE" label="bhnDivisionCode" name="bhnDivisionCode" type="string"/>
-<Field __index="132" __sourcePath="{}/object/company/cpDivision/stores/bhnGUID" containerType="SINGLE" label="bhnGUID" name="bhnGUID" type="string"/>
-<Field __index="133" __sourcePath="{}/object/company/cpDivision/stores/companyPhysicalStoreAddressLine1" containerType="SINGLE" label="companyPhysicalStoreAddressLine1" name="companyPhysicalStoreAddressLine1" type="string"/>
-<Field __index="134" __sourcePath="{}/object/company/cpDivision/stores/companyPhysicalStoreCountry" containerType="SINGLE" label="companyPhysicalStoreCountry" name="companyPhysicalStoreCountry" type="string"/>
-<Field __index="135" __sourcePath="{}/object/company/cpDivision/stores/productLanguage" containerType="SINGLE" label="productLanguage" name="productLanguage" type="string"/>
-<Field __index="136" __sourcePath="{}/object/company/cpDivision/stores/storeBHNCustLevel" containerType="SINGLE" label="storeBHNCustLevel" name="storeBHNCustLevel" type="string"/>
-<Field __index="137" __sourcePath="{}/object/company/cpDivision/stores/storeBHNStoreCode" containerType="SINGLE" label="storeBHNStoreCode" name="storeBHNStoreCode" type="string"/>
-<Field __index="138" __sourcePath="{}/object/company/cpDivision/stores/storeBlocked" containerType="SINGLE" label="storeBlocked" name="storeBlocked" type="boolean"/>
-<Field __index="139" __sourcePath="{}/object/company/cpDivision/stores/storeChannelDimension" containerType="SINGLE" label="storeChannelDimension" name="storeChannelDimension" type="string"/>
-<Field __index="140" __sourcePath="{}/object/company/cpDivision/stores/storeContactPhoneNumber" containerType="SINGLE" label="storeContactPhoneNumber" name="storeContactPhoneNumber" type="string"/>
-<Field __index="141" __sourcePath="{}/object/company/cpDivision/stores/storeCountryRegionId" containerType="SINGLE" label="storeCountryRegionId" name="storeCountryRegionId" type="string"/>
-<Field __index="142" __sourcePath="{}/object/company/cpDivision/stores/storeCustGroup" containerType="SINGLE" label="storeCustGroup" name="storeCustGroup" type="string"/>
-<Field __index="143" __sourcePath="{}/object/company/cpDivision/stores/storeDimensionPAC" containerType="SINGLE" label="storeDimensionPAC" name="storeDimensionPAC" type="string"/>
-<Field __index="144" __sourcePath="{}/object/company/cpDivision/stores/storeDimensionRegion" containerType="SINGLE" label="storeDimensionRegion" name="storeDimensionRegion" type="string"/>
-<Field __index="145" __sourcePath="{}/object/company/cpDivision/stores/storePhysicalStoreAddressLine1" containerType="SINGLE" label="storePhysicalStoreAddressLine1" name="storePhysicalStoreAddressLine1" type="string"/>
-<Field __index="146" __sourcePath="{}/object/company/cpDivision/stores/storePhysicalStoreAddressLine2" containerType="SINGLE" label="storePhysicalStoreAddressLine2" name="storePhysicalStoreAddressLine2" type="string"/>
-<Field __index="147" __sourcePath="{}/object/company/cpDivision/stores/storePhysicalStoreCity" containerType="SINGLE" label="storePhysicalStoreCity" name="storePhysicalStoreCity" type="string"/>
-<Field __index="148" __sourcePath="{}/object/company/cpDivision/stores/storePhysicalStoreName" containerType="SINGLE" label="storePhysicalStoreName" name="storePhysicalStoreName" type="string"/>
-<Field __index="149" __sourcePath="{}/object/company/cpDivision/stores/storePhysicalStorePostalCode" containerType="SINGLE" label="storePhysicalStorePostalCode" name="storePhysicalStorePostalCode" type="string"/>
-<Field __index="150" __sourcePath="{}/object/company/cpDivision/stores/storePhysicalStoreState" containerType="SINGLE" label="storePhysicalStoreState" name="storePhysicalStoreState" type="string"/>
-<Field __index="151" __sourcePath="{}/object/company/cpDivision/stores/storePriceToleranceGroup" containerType="SINGLE" label="storePriceToleranceGroup" name="storePriceToleranceGroup" type="string"/>
+<Field __index="130" __sourcePath="{}/object/company/cpDivision/stores/accountNum" containerType="SINGLE" label="accountNum" name="accountNum" type="string"/>
+<Field __index="131" __sourcePath="{}/object/company/cpDivision/stores/bhnCompanyCode" containerType="SINGLE" label="bhnCompanyCode" name="bhnCompanyCode" type="string"/>
+<Field __index="132" __sourcePath="{}/object/company/cpDivision/stores/bhnDivisionCode" containerType="SINGLE" label="bhnDivisionCode" name="bhnDivisionCode" type="string"/>
+<Field __index="133" __sourcePath="{}/object/company/cpDivision/stores/bhnGUID" containerType="SINGLE" label="bhnGUID" name="bhnGUID" type="string"/>
+<Field __index="134" __sourcePath="{}/object/company/cpDivision/stores/companyPhysicalStoreAddressLine1" containerType="SINGLE" label="companyPhysicalStoreAddressLine1" name="companyPhysicalStoreAddressLine1" type="string"/>
+<Field __index="135" __sourcePath="{}/object/company/cpDivision/stores/companyPhysicalStoreCountry" containerType="SINGLE" label="companyPhysicalStoreCountry" name="companyPhysicalStoreCountry" type="string"/>
+<Field __index="136" __sourcePath="{}/object/company/cpDivision/stores/productLanguage" containerType="SINGLE" label="productLanguage" name="productLanguage" type="string"/>
+<Field __index="137" __sourcePath="{}/object/company/cpDivision/stores/storeBHNCustLevel" containerType="SINGLE" label="storeBHNCustLevel" name="storeBHNCustLevel" type="string"/>
+<Field __index="138" __sourcePath="{}/object/company/cpDivision/stores/storeBHNStoreCode" containerType="SINGLE" label="storeBHNStoreCode" name="storeBHNStoreCode" type="string"/>
+<Field __index="139" __sourcePath="{}/object/company/cpDivision/stores/storeBlocked" containerType="SINGLE" label="storeBlocked" name="storeBlocked" type="boolean"/>
+<Field __index="140" __sourcePath="{}/object/company/cpDivision/stores/storeChannelDimension" containerType="SINGLE" label="storeChannelDimension" name="storeChannelDimension" type="string"/>
+<Field __index="141" __sourcePath="{}/object/company/cpDivision/stores/storeContactPhoneNumber" containerType="SINGLE" label="storeContactPhoneNumber" name="storeContactPhoneNumber" type="string"/>
+<Field __index="142" __sourcePath="{}/object/company/cpDivision/stores/storeCountryRegionId" containerType="SINGLE" label="storeCountryRegionId" name="storeCountryRegionId" type="string"/>
+<Field __index="143" __sourcePath="{}/object/company/cpDivision/stores/storeCustGroup" containerType="SINGLE" label="storeCustGroup" name="storeCustGroup" type="string"/>
+<Field __index="144" __sourcePath="{}/object/company/cpDivision/stores/storeDimensionPAC" containerType="SINGLE" label="storeDimensionPAC" name="storeDimensionPAC" type="string"/>
+<Field __index="145" __sourcePath="{}/object/company/cpDivision/stores/storeDimensionRegion" containerType="SINGLE" label="storeDimensionRegion" name="storeDimensionRegion" type="string"/>
+<Field __index="146" __sourcePath="{}/object/company/cpDivision/stores/storePhysicalStoreAddressLine1" containerType="SINGLE" label="storePhysicalStoreAddressLine1" name="storePhysicalStoreAddressLine1" type="string"/>
+<Field __index="147" __sourcePath="{}/object/company/cpDivision/stores/storePhysicalStoreAddressLine2" containerType="SINGLE" label="storePhysicalStoreAddressLine2" name="storePhysicalStoreAddressLine2" type="string"/>
+<Field __index="148" __sourcePath="{}/object/company/cpDivision/stores/storePhysicalStoreCity" containerType="SINGLE" label="storePhysicalStoreCity" name="storePhysicalStoreCity" type="string"/>
+<Field __index="149" __sourcePath="{}/object/company/cpDivision/stores/storePhysicalStoreName" containerType="SINGLE" label="storePhysicalStoreName" name="storePhysicalStoreName" type="string"/>
+<Field __index="150" __sourcePath="{}/object/company/cpDivision/stores/storePhysicalStorePostalCode" containerType="SINGLE" label="storePhysicalStorePostalCode" name="storePhysicalStorePostalCode" type="string"/>
+<Field __index="151" __sourcePath="{}/object/company/cpDivision/stores/storePhysicalStoreState" containerType="SINGLE" label="storePhysicalStoreState" name="storePhysicalStoreState" type="string"/>
+<Field __index="152" __sourcePath="{}/object/company/cpDivision/stores/storePriceToleranceGroup" containerType="SINGLE" label="storePriceToleranceGroup" name="storePriceToleranceGroup" type="string"/>
 </Record>
 </Metadata>
 <Dictionary>
@@ -486,6 +507,7 @@
         <divisionLogoURL>$0.divisionLogoURL</divisionLogoURL>
         <divisionOnlineRedemptionInstructions>$0.divisionOnlineRedemptionInstructions</divisionOnlineRedemptionInstructions>
         <divisionOnlineStoreURL>$0.divisionOnlineStoreURL</divisionOnlineStoreURL>
+        <divisionProcessorCode>$0.divisionProcessorCode</divisionProcessorCode>
         <divisionProgramDescription>$0.divisionProgramDescription</divisionProgramDescription>
         <divisionRedemptionInformation>$0.divisionRedemptionInformation</divisionRedemptionInformation>
         <divisionRedemptionLine1>$0.divisionRedemptionLine1</divisionRedemptionLine1>
@@ -626,20 +648,26 @@
     <vendorCountryRegionId>$2.vendorCountryRegionId</vendorCountryRegionId>
     <vendorCounty>$2.vendorCounty</vendorCounty>
     <vendorCurrency>$2.vendorCurrency</vendorCurrency>
+    <vendorDBA>$2.vendorDBA</vendorDBA>
     <vendorEmail>$2.vendorEmail</vendorEmail>
     <vendorForeignEntityIndicator>$2.vendorForeignEntityIndicator</vendorForeignEntityIndicator>
     <vendorGroup>$2.vendorGroup</vendorGroup>
     <vendorLanguageId>$2.vendorLanguageId</vendorLanguageId>
+    <vendorName>$2.vendorName</vendorName>
+    <vendorPartyType>$2.vendorPartyType</vendorPartyType>
     <vendorPaymMode>$2.vendorPaymMode</vendorPaymMode>
     <vendorPaymentTermsId>$2.vendorPaymentTermsId</vendorPaymentTermsId>
     <vendorPhone>$2.vendorPhone</vendorPhone>
     <vendorState>$2.vendorState</vendorState>
+    <vendorStreet>$2.vendorStreet</vendorStreet>
     <vendorTax1099NameChoice>$2.vendorTax1099NameChoice</vendorTax1099NameChoice>
     <vendorTax1099Reports>$2.vendorTax1099Reports</vendorTax1099Reports>
+    <vendorTaxGroup>$2.vendorTaxGroup</vendorTaxGroup>
     <vendorTaxIDNumber>$2.vendorTaxIDNumber</vendorTaxIDNumber>
+    <vendorTaxIdType>$2.vendorTaxIdType</vendorTaxIdType>
+    <vendorURL>$2.vendorURL</vendorURL>
     <vendorW9>$2.vendorW9</vendorW9>
     <vendorZipCode>$2.vendorZipCode</vendorZipCode>
-    <vendorstreet>$2.vendorstreet</vendorstreet>
   </vendor>
 </object>]]></attr>
 <attr name="_data_format"><![CDATA[JAVA]]></attr>
@@ -706,20 +734,26 @@
     <typed-object-ref name="vendorCountryRegionId" type-ref="java.lang.String"/>
     <typed-object-ref name="vendorCounty" type-ref="java.lang.String"/>
     <typed-object-ref name="vendorCurrency" type-ref="java.lang.String"/>
+    <typed-object-ref name="vendorDBA" type-ref="java.lang.String"/>
     <typed-object-ref name="vendorEmail" type-ref="java.lang.String"/>
     <typed-object-ref name="vendorForeignEntityIndicator" type-ref="java.lang.Boolean"/>
     <typed-object-ref name="vendorGroup" type-ref="java.lang.String"/>
     <typed-object-ref name="vendorLanguageId" type-ref="java.lang.String"/>
+    <typed-object-ref name="vendorName" type-ref="java.lang.String"/>
+    <typed-object-ref name="vendorPartyType" type-ref="java.lang.String"/>
     <typed-object-ref name="vendorPaymMode" type-ref="java.lang.String"/>
     <typed-object-ref name="vendorPaymentTermsId" type-ref="java.lang.String"/>
     <typed-object-ref name="vendorPhone" type-ref="java.lang.String"/>
     <typed-object-ref name="vendorState" type-ref="java.lang.String"/>
+    <typed-object-ref name="vendorStreet" type-ref="java.lang.String"/>
     <typed-object-ref name="vendorTax1099NameChoice" type-ref="java.lang.String"/>
     <typed-object-ref name="vendorTax1099Reports" type-ref="java.lang.String"/>
+    <typed-object-ref name="vendorTaxGroup" type-ref="java.lang.String"/>
     <typed-object-ref name="vendorTaxIDNumber" type-ref="java.lang.String"/>
+    <typed-object-ref name="vendorTaxIdType" type-ref="java.lang.String"/>
+    <typed-object-ref name="vendorURL" type-ref="java.lang.String"/>
     <typed-object-ref name="vendorW9" type-ref="java.lang.Boolean"/>
     <typed-object-ref name="vendorZipCode" type-ref="java.lang.String"/>
-    <typed-object-ref name="vendorstreet" type-ref="java.lang.String"/>
   </typed-object>
   <typed-object type="java.lang.Integer"/>
   <typed-object type="com.bhnetwork.integration.pppstodax.canonical.Division">
@@ -737,12 +771,13 @@
     <typed-object-ref name="divisionIsContractComplete" type-ref="java.lang.Boolean"/>
     <typed-object-ref name="divisionIsPinRequiredForBI" type-ref="java.lang.String"/>
     <typed-object-ref name="divisionIsPinRequiredForRedemption" type-ref="java.lang.String"/>
-    <typed-object-ref name="divisionLocalPartner" type-ref="java.lang.String"/>
+    <typed-object-ref name="divisionLocalPartner" type-ref="java.lang.Boolean"/>
     <typed-object-ref name="divisionLocalPartnerSource" type-ref="java.lang.String"/>
     <typed-object-ref name="divisionLocale" type-ref="java.lang.String"/>
     <typed-object-ref name="divisionLogoURL" type-ref="java.lang.String"/>
     <typed-object-ref name="divisionOnlineRedemptionInstructions" type-ref="java.lang.String"/>
     <typed-object-ref name="divisionOnlineStoreURL" type-ref="java.lang.String"/>
+    <typed-object-ref name="divisionProcessorCode" type-ref="java.lang.String"/>
     <typed-object-ref name="divisionProgramDescription" type-ref="java.lang.String"/>
     <typed-object-ref name="divisionRedemptionInformation" type-ref="java.lang.String"/>
     <typed-object-ref name="divisionRedemptionLine1" type-ref="java.lang.String"/>
@@ -885,7 +920,22 @@ output.storePhysicalStoreState = input.storePhysicalStoreState;
 output.storePhysicalStoreCity = input.storePhysicalStoreCity;
 output.companyPhysicalStoreAddressLine1 = input.companyPhysicalStoreAddressLine1;
 output.companyPhysicalStoreCountry = input.companyPhysicalStoreCountry;
-output.storeBHNCustLevel = input.storeBHNCustLevel;
+output.storeBHNStoreCode=input.storeBHNStoreCode;
+output.storeCustGroup=input.storeCustGroup;
+output.storePhysicalStoreName=input.storePhysicalStoreName;
+output.companyPhysicalStoreAddressLine1=input.storePhysicalStoreAddressLine1;
+output.storeContactPhoneNumber=input.storeContactPhoneNumber;
+output.storeBlocked=input.storeBlocked: true;
+output.storeChannelDimension=input.storeChannelDimension;
+output.storeDimensionPAC=input.storeDimensionPAC;     
+output.storeDimensionRegion=input.storeDimensionRegion;
+output.storePriceToleranceGroup=input.storePriceToleranceGroup;
+output.storeCountryRegionId=input.storeCountryRegionId;
+output.storePhysicalStorePostalCode=input.storePhysicalStorePostalCode;
+output.storePhysicalStoreState=input.storePhysicalStoreState;
+output.storePhysicalStoreCity=input.storePhysicalStoreCity;
+output.storeBHNCustLevel=input.storeBHNCustLevel;
+output.companyPhysicalStoreCountry=input.companyPhysicalStoreCountry;
 ]]></attr>
 </Node>
 <Node enabled="enabled" guiName="Foreach 'object' -&gt; 'cpDivision'" guiX="460" guiY="120" id="FOREACH_OBJECT_CP_DIVISION" transformClass="com.mulesoft.datamapper.transform.MelRecordTransform" type="REFORMAT">
@@ -959,10 +1009,28 @@ output.vendorGroup = input.vendorGroup;
 output.vendorCurrency = input.vendorCurrency;
 output.vendorLanguageId = input.vendorLanguageId;
 output.vendorCity = input.vendorCity;
-output.vendorstreet = input.vendorstreet;
-output.divisionBrandName = input.divisionBrandName;
 output.vendorTax1099NameChoice = input.vendorTax1099NameChoice;
-output.vendorW9 = (isnull(input.vendorW9) ? null : str2bool(input.vendorW9));
+output.vendorName = input.vendorNameFor1099;
+output.vendorAddress = input.vendorAddress;
+output.vendorForeignEntityIndicator=input.vendorForeignEntityIndicator;
+output.vendorCountryRegionId=input.vendorCountryRegionId;
+output.vendorCounty=input.vendorCounty;
+output.vendorEmail=input.vendorEmail;
+output.vendorPartyType=input.vendorPartyType;
+output.vendorPaymMode=input.vendorPaymentMode;
+output.vendorPaymentTermsId=input.vendorPaymentTermsId;
+output.vendorPhone=input.vendorPhone;
+output.vendorState=input.vendorState;
+output.vendorTaxIDNumber=(isnull(input.vendorTaxIDNumber) ? input.vendorEmployerIdNumber : input.vendorTaxIDNumber);
+output.vendorTax1099Reports=(input.vendorTax1099Reports==true ? "Yes" : "No");
+output.vendorTaxGroup=input.vendorTaxGroup;
+output.vendorTaxIdType=input.vendorTaxIDType;
+output.vendorURL=input.vendorURL;
+output.vendorZipCode=input.vendorZipCode;
+output.vendorW9 = (isnull(input.vendorW9) ? null : input.vendorW9);
+output.vendorBlocked = (isnull(input.vendorBlocked) ? null : input.vendorBlocked);
+output.vendorTax1099NameChoice=(isnull(input.vendorTax1099NameChoice) ? "DBA" : input.vendorTax1099NameChoice);
+
 ]]></attr>
 </Node>
 <Node enabled="enabled" guiName="Foreach 'ProductInformation' -&gt; 'products'" guiX="460" guiY="320" id="FOREACH_PRODUCT_INFORMATION_PRODUCTS" transformClass="com.mulesoft.datamapper.transform.MelRecordTransform" type="REFORMAT">
@@ -971,7 +1039,7 @@ output.vendorW9 = (isnull(input.vendorW9) ? null : str2bool(input.vendorW9));
 output.__id = input.__id;
 output.__parent_id = input.__parent_id;
 //END -> DO NOT REMOVE
-output.productBuyerGroup = input.productBuyerGroup + input.productBuyerGroup;
+output.productBuyerGroup = input.productBuyerGroup;
 output.productClassification = input.productClassification;
 output.productCurrency = input.productCurrency;
 output.productDenomination = input.productDenomination;
@@ -993,8 +1061,8 @@ output.productBHNNotes = input.productBHNNotes;
 output.productMultiCardIndicator = input.productMulticardindicator;
 output.isProductDenominationVariable = input.isProductDenominationVariable;
 output.productNewUPCReason = input.productNewUPCReason;
-output.productMinimumFaceValue = (isnull(input.productMinimumFaceValue) ? null : str2double(input.productMinimumFaceValue));
-output.productMaximumFaceValue = (isnull(input.productMaximumFaceValue) ? null : str2double(input.productMaximumFaceValue));
+output.productMinimumFaceValue = (isnull(input.productMinimumFaceValue) ? null : input.productMinimumFaceValue);
+output.productMaximumFaceValue = (isnull(input.productMaximumFaceValue) ? null : input.productMaximumFaceValue);
 output.productTaxIncluded = input.productTaxIncluded;
 output.productIsCheckMinMax = input.productIsCheckMinMax;
 output.productIsTaxable = input.productIsTaxable;
@@ -1010,8 +1078,8 @@ output.productActivationInstructions = input.productActivationInstructions;
 output.customTemplatePathURL = input.customTemplatePathURL;
 output.isActivationRequired = input.isActivationRequired;
 output.isReloadable = input.isReloadable;
-output.reloadMinAmount = (isnull(input.reloadMinAmount) ? null : str2double(input.reloadMinAmount));
-output.reloadMaxAmount = (isnull(input.reloadMaxAmount) ? null : str2double(input.reloadMaxAmount));
+output.reloadMinAmount = (isnull(input.reloadMinAmount) ? null : input.reloadMinAmount);
+output.reloadMaxAmount = (isnull(input.reloadMaxAmount) ? null : input.reloadMaxAmount);
 output.substitutionCardDisplayDesc = input.substitutionCardDisplayDesc;
 output.substitutionPOG1Category = input.substitutionPOG1Category;
 output.substitutionPOG2Category = input.substitutionPOG2Category;
@@ -1035,144 +1103,6 @@ output.substitutionShipperUPC = input.substitutionShipperUPC;]]></attr>
 <attr name="mapping"><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <Context xpath="/root">
   <Context xpath=".">
-    <Context outPort="0" sequenceField="__id" xpath="object">
-      <Mapping cloverField="createdTimestamp" trim="true" xpath="createdTimestamp"/>
-      <Mapping cloverField="creatorId" trim="true" xpath="creatorId"/>
-      <Mapping cloverField="entityId" trim="true" xpath="entityId"/>
-      <Mapping cloverField="updatedTimestamp" trim="true" xpath="updatedTimestamp"/>
-      <Mapping cloverField="updaterId" trim="true" xpath="updaterId"/>
-      <Mapping cloverField="version" trim="true" xpath="version"/>
-      <Mapping cloverField="partnerProfileSource" trim="true" xpath="source/partnerProfileSource"/>
-      <Mapping cloverField="isTest" trim="true" xpath="source/isTest"/>
-      <Mapping cloverField="companyCode" trim="true" xpath="company/companyCode"/>
-      <Mapping cloverField="companyCountry" trim="true" xpath="company/companyCountry"/>
-      <Mapping cloverField="companyLegalName" trim="true" xpath="company/companyLegalName"/>
-      <Mapping cloverField="companyIsContractComplete" trim="true" xpath="company/companyIsContractComplete"/>
-      <Mapping cloverField="contractExpDate" trim="true" xpath="company/contractExpDate"/>
-      <Mapping cloverField="companyBHNSetupComplete" trim="true" xpath="company/companyBHNSetupComplete"/>
-      <Mapping cloverField="legalEntityCode" trim="true" xpath="company/legalEntityCode"/>
-      <Mapping cloverField="companyPrimaryContactFirstName" trim="true" xpath="company/companyPrimaryContactFirstName"/>
-      <Mapping cloverField="companyPrimaryContactLastName" trim="true" xpath="company/companyPrimaryContactLastName"/>
-      <Mapping cloverField="companyPrimaryContactBusinessTitle" trim="true" xpath="company/companyPrimaryContactBusinessTitle"/>
-      <Mapping cloverField="companyPrimaryPhoneNumber" trim="true" xpath="company/companyPrimaryPhoneNumber"/>
-      <Mapping cloverField="companyPrimaryPhoneNumberExt" trim="true" xpath="company/companyPrimaryPhoneNumberExt"/>
-      <Mapping cloverField="companyPrimaryContactEmail" trim="true" xpath="company/companyPrimaryContactEmail"/>
-      <Mapping cloverField="companyAddressLine1" trim="true" xpath="company/companyAddressLine1"/>
-      <Mapping cloverField="companyAddressLine2" trim="true" xpath="company/companyAddressLine2"/>
-      <Mapping cloverField="companyCity" trim="true" xpath="company/companyCity"/>
-      <Mapping cloverField="companyState" trim="true" xpath="company/companyState"/>
-      <Mapping cloverField="companyZipPostalCode" trim="true" xpath="company/companyZipPostalCode"/>
-      <Mapping cloverField="companyWebSiteURL" trim="true" xpath="company/companyWebSiteURL"/>
-      <Mapping cloverField="companyMerchantCategoryCode" trim="true" xpath="company/companyMerchantCategoryCode"/>
-      <Mapping cloverField="companyContractTerm" trim="true" xpath="company/companyContractTerm"/>
-      <Mapping cloverField="legalEntityStateOfIncorporation" trim="true" xpath="company/legalEntityStateOfIncorporation"/>
-      <Mapping cloverField="accountType" trim="true" xpath="cpDivision/accountType"/>
-      <Mapping cloverField="divisionCode" trim="true" xpath="cpDivision/divisionCode"/>
-      <Mapping cloverField="divisionCustomerSupportContactFirstName" trim="true" xpath="cpDivision/divisionCustomerSupportContactFirstName"/>
-      <Mapping cloverField="divisionCustomerSupportContactLastName" trim="true" xpath="cpDivision/divisionCustomerSupportContactLastName"/>
-      <Mapping cloverField="divisionCustomerSupportEmail" trim="true" xpath="cpDivision/divisionCustomerSupportEmail"/>
-      <Mapping cloverField="divisionCustomerSupportPhone" trim="true" xpath="cpDivision/divisionCustomerSupportPhone"/>
-      <Mapping cloverField="divisionCustomerSupportURL" trim="true" xpath="cpDivision/divisionCustomerSupportURL"/>
-      <Mapping cloverField="divisionLocale" trim="true" xpath="cpDivision/divisionLocale"/>
-      <Mapping cloverField="divisionLogoURL" trim="true" xpath="cpDivision/divisionLogoURL"/>
-      <Mapping cloverField="divisionProcessorCode" trim="true" xpath="cpDivision/divisionProcessorCode"/>
-      <Mapping cloverField="divisionRedemptionLocationType" trim="true" xpath="cpDivision/divisionRedemptionLocationType"/>
-      <Mapping cloverField="divisionLocalPartner" trim="true" xpath="cpDivision/divisionLocalPartner"/>
-      <Mapping cloverField="divisionLocalPartnerSource" trim="true" xpath="cpDivision/divisionLocalPartnerSource"/>
-      <Mapping cloverField="processorContactPhoneNumberExt" trim="true" xpath="cpDivision/processorContactPhoneNumberExt"/>
-      <Mapping cloverField="divisionInStoreRedemptionInstructions" trim="true" xpath="cpDivision/divisionInStoreRedemptionInstructions"/>
-      <Mapping cloverField="divisionCashierInstructions" trim="true" xpath="cpDivision/divisionCashierInstructions"/>
-      <Mapping cloverField="divisionOnlineRedemptionInstructions" trim="true" xpath="cpDivision/divisionOnlineRedemptionInstructions"/>
-      <Mapping cloverField="divisionRedemptionInformation" trim="true" xpath="cpDivision/divisionRedemptionInformation"/>
-      <Mapping cloverField="divisionRedemptionLine1" trim="true" xpath="cpDivision/divisionRedemptionLine1"/>
-      <Mapping cloverField="divisionRedemptionLine2" trim="true" xpath="cpDivision/divisionRedemptionLine2"/>
-      <Mapping cloverField="divisionTandCTextForPhysical" trim="true" xpath="cpDivision/divisionTandCTextForPhysical"/>
-      <Mapping cloverField="divisionRedemptionMethods" trim="true" xpath="cpDivision/divisionRedemptionMethods"/>
-      <Mapping cloverField="divisionIsPinRequiredForRedemption" trim="true" xpath="cpDivision/divisionIsPinRequiredForRedemption"/>
-      <Mapping cloverField="divisionIsPinRequiredForBI" trim="true" xpath="cpDivision/divisionIsPinRequiredForBI"/>
-      <Mapping cloverField="divisionOnlineStoreURL" trim="true" xpath="cpDivision/divisionOnlineStoreURL"/>
-      <Mapping cloverField="divisionProgramDescription" trim="true" xpath="cpDivision/divisionProgramDescription"/>
-      <Mapping cloverField="divisionAccountNumberLabel" trim="true" xpath="cpDivision/divisionAccountNumberLabel"/>
-      <Mapping cloverField="divisionIsReloadable" trim="true" xpath="cpDivision/divisionIsReloadable"/>
-      <Mapping cloverField="divisionMinimumReloadAmount" trim="true" xpath="cpDivision/divisionMinimumReloadAmount"/>
-      <Mapping cloverField="divisionMaximumReloadAmount" trim="true" xpath="cpDivision/divisionMaximumReloadAmount"/>
-      <Mapping cloverField="divisionPaymentNetworkType" trim="true" xpath="cpDivision/divisionPaymentNetworkType"/>
-      <Mapping cloverField="divisionBins" trim="true" xpath="cpDivision/divisionBins"/>
-      <Mapping cloverField="divisionPinLabel" trim="true" xpath="cpDivision/divisionPinLabel"/>
-      <Mapping cloverField="divisionCardPinType" trim="true" xpath="cpDivision/divisionCardPinType"/>
-      <Mapping cloverField="divisionCardPinLocation" trim="true" xpath="cpDivision/divisionCardPinLocation"/>
-      <Mapping cloverField="divisionLostStolenPolicyText" trim="true" xpath="cpDivision/divisionLostStolenPolicyText"/>
-      <Mapping cloverField="divisionLostStolenPolicyPhone" trim="true" xpath="cpDivision/divisionLostStolenPolicyPhone"/>
-      <Mapping cloverField="divisionisLostStolenPolicyAutomated" trim="true" xpath="cpDivision/divisionisLostStolenPolicyAutomated"/>
-      <Mapping cloverField="divisionAccessCode" trim="true" xpath="cpDivision/divisionAccessCode"/>
-      <Mapping cloverField="divisionManualEntryFormat" trim="true" xpath="cpDivision/divisionManualEntryFormat"/>
-      <Mapping cloverField="divisionTrack1Format" trim="true" xpath="cpDivision/divisionTrack1Format"/>
-      <Mapping cloverField="divisionTrack2Format" trim="true" xpath="cpDivision/divisionTrack2Format"/>
-      <Mapping cloverField="divisionTrack3Format" trim="true" xpath="cpDivision/divisionTrack3Format"/>
-      <Mapping cloverField="divisionAreBalancesTransferable" trim="true" xpath="cpDivision/divisionAreBalancesTransferable"/>
-      <Mapping cloverField="divisionBalanceLockTimeFrame" trim="true" xpath="cpDivision/divisionBalanceLockTimeFrame"/>
-      <Mapping cloverField="divisionHasUniversalBISupport" trim="true" xpath="cpDivision/divisionHasUniversalBISupport"/>
-      <Mapping cloverField="divisionBalanceMerges" trim="true" xpath="cpDivision/divisionBalanceMerges"/>
-      <Mapping cloverField="divisionCanCardExpire" trim="true" xpath="cpDivision/divisionCanCardExpire"/>
-      <Mapping cloverField="divisionHasPhoneSupportAtPOS" trim="true" xpath="cpDivision/divisionHasPhoneSupportAtPOS"/>
-      <Mapping cloverField="divisionSupportsPartialBalanceInquiry" trim="true" xpath="cpDivision/divisionSupportsPartialBalanceInquiry"/>
-      <Mapping cloverField="divisionSupportsPhysicalCards" trim="true" xpath="cpDivision/divisionSupportsPhysicalCards"/>
-      <Mapping cloverField="divisionSupportsRedemption" trim="true" xpath="cpDivision/divisionSupportsRedemption"/>
-      <Mapping cloverField="divisionSupportsRegift" trim="true" xpath="cpDivision/divisionSupportsRegift"/>
-      <Mapping cloverField="divisionIsCardReplaceable" trim="true" xpath="cpDivision/divisionIsCardReplaceable"/>
-      <Mapping cloverField="divisionSupportsTransactionHistory" trim="true" xpath="cpDivision/divisionSupportsTransactionHistory"/>
-      <Mapping cloverField="divisionIsCardTransferable" trim="true" xpath="cpDivision/divisionIsCardTransferable"/>
-      <Mapping cloverField="divisionSupportsBalanceInquiry" trim="true" xpath="cpDivision/divisionSupportsBalanceInquiry"/>
-      <Mapping cloverField="divisionSupportsVirtualCard" trim="true" xpath="cpDivision/divisionSupportsVirtualCard"/>
-      <Mapping cloverField="divisionSupportsVoidActivation" trim="true" xpath="cpDivision/divisionSupportsVoidActivation"/>
-      <Mapping cloverField="divisionSupportsVoidRedemption" trim="true" xpath="cpDivision/divisionSupportsVoidRedemption"/>
-      <Mapping cloverField="divisionSupportsVoidReload" trim="true" xpath="cpDivision/divisionSupportsVoidReload"/>
-      <Mapping cloverField="divisionSupportsAddQRCode" trim="true" xpath="cpDivision/divisionSupportsAddQRCode"/>
-      <Mapping cloverField="divisionIsBISystemBLAST" trim="true" xpath="cpDivision/divisionIsBISystemBLAST"/>
-      <Mapping cloverField="divisionIsBISystemCAPTCHA" trim="true" xpath="cpDivision/divisionIsBISystemCAPTCHA"/>
-      <Mapping cloverField="divisionIsBISystemCardpool" trim="true" xpath="cpDivision/divisionIsBISystemCardpool"/>
-      <Mapping cloverField="divisionIsBISystemScreenScraped" trim="true" xpath="cpDivision/divisionIsBISystemScreenScraped"/>
-      <Mapping cloverField="divisionIsBISystemUserEntered" trim="true" xpath="cpDivision/divisionIsBISystemUserEntered"/>
-      <Mapping cloverField="divisionIsBarcodeFormat1D_C128" trim="true" xpath="cpDivision/divisionIsBarcodeFormat1D-C128"/>
-      <Mapping cloverField="division1D_C128Expression" trim="true" xpath="cpDivision/division1D-C128Expression"/>
-      <Mapping cloverField="divisionIsBarcodeFormat2D_PDF417" trim="true" xpath="cpDivision/divisionIsBarcodeFormat2D-PDF417"/>
-      <Mapping cloverField="divisionIsContractComplete" trim="true" xpath="cpDivision/divisionIsContractComplete"/>
-      <Mapping cloverField="division2D_PDF417Expression" trim="true" xpath="cpDivision/division2D-PDF417Expression"/>
-      <Mapping cloverField="divisionIsBarcodeFormat2D_QRCODE" trim="true" xpath="cpDivision/divisionIsBarcodeFormat2D-QRCODE"/>
-      <Mapping cloverField="division2D_QRCODEExpression" trim="true" xpath="cpDivision/division2D-QRCODEExpression"/>
-      <Mapping cloverField="divisionCardImageBack1URL" trim="true" xpath="cpDivision/divisionCardImageBack1URL"/>
-      <Mapping cloverField="divisionCardImageBack2URL" trim="true" xpath="cpDivision/divisionCardImageBack2URL"/>
-      <Mapping cloverField="divisionCardImageBack3URL" trim="true" xpath="cpDivision/divisionCardImageBack3URL"/>
-      <Mapping cloverField="divisionCardImageBack4URL" trim="true" xpath="cpDivision/divisionCardImageBack4URL"/>
-      <Mapping cloverField="divisionCardImageBack5URL" trim="true" xpath="cpDivision/divisionCardImageBack5URL"/>
-      <Mapping cloverField="divisionCardImageFront1URL" trim="true" xpath="cpDivision/divisionCardImageFront1URL"/>
-      <Mapping cloverField="divisionCardImageFront2URL" trim="true" xpath="cpDivision/divisionCardImageFront2URL"/>
-      <Mapping cloverField="divisionCardImageFront3URL" trim="true" xpath="cpDivision/divisionCardImageFront3URL"/>
-      <Mapping cloverField="divisionCardImageFront5URL" trim="true" xpath="cpDivision/divisionCardImageFront5URL"/>
-      <Mapping cloverField="divisionisBarcodeScanSupported" trim="true" xpath="cpDivision/divisionisBarcodeScanSupported"/>
-      <Mapping cloverField="name" trim="true" xpath="cpDivision/name"/>
-      <Mapping cloverField="processorContactFirstName" trim="true" xpath="processorInformation/processorContactFirstName"/>
-      <Mapping cloverField="processorContactLastName" trim="true" xpath="processorInformation/processorContactLastName"/>
-      <Mapping cloverField="processorContactPhoneNumber" trim="true" xpath="processorInformation/processorContactPhoneNumber"/>
-      <Mapping cloverField="processorHasRealTimeIssuance" trim="true" xpath="processorInformation/processorHasRealTimeIssuance"/>
-      <Mapping cloverField="processorCode" trim="true" xpath="processorInformation/processorCode"/>
-      <Mapping cloverField="processorContactPhoneNumberExt_1" trim="true" xpath="processorInformation/processorContactPhoneNumberExt"/>
-      <Mapping cloverField="processorIsRequiredToPrint" trim="true" xpath="processorInformation/processorIsRequiredToPrint"/>
-      <Mapping cloverField="processorSupportsVoids" trim="true" xpath="processorInformation/processorSupportsVoids"/>
-      <Mapping cloverField="cardProductionCostPerCard" trim="true" xpath="processorInformation/cardProductionCostPerCard"/>
-      <Mapping cloverField="cardProductionQuantity" trim="true" xpath="processorInformation/cardProductionQuantity"/>
-      <Mapping cloverField="vendorCompanyLegalName" trim="true" xpath="vendorInformation/vendorCompanyLegalName"/>
-      <Mapping cloverField="vendorGroup" trim="true" xpath="vendorInformation/vendorGroup"/>
-      <Mapping cloverField="vendorCurrency" trim="true" xpath="vendorInformation/vendorCurrency"/>
-      <Mapping cloverField="vendorIsBlocked" trim="true" xpath="vendorInformation/vendorIsBlocked"/>
-      <Mapping cloverField="vendorLanguageId" trim="true" xpath="vendorInformation/vendorLanguageId"/>
-      <Mapping cloverField="vendorCity" trim="true" xpath="vendorInformation/vendorCity"/>
-      <Mapping cloverField="vendorstreet" trim="true" xpath="vendorInformation/vendorstreet"/>
-      <Mapping cloverField="vendorIsForeignEntityIndicator" trim="true" xpath="vendorInformation/vendorIsForeignEntityIndicator"/>
-      <Mapping cloverField="divisionBrandName" trim="true" xpath="vendorInformation/divisionBrandName"/>
-      <Mapping cloverField="vendorTax1099NameChoice" trim="true" xpath="vendorInformation/vendorTax1099NameChoice"/>
-      <Mapping cloverField="vendorW9" trim="true" xpath="vendorInformation/vendorW9"/>
-    </Context>
     <Context outPort="2" sequenceField="__id" xpath="object">
       <Mapping cloverField="createdTimestamp" trim="true" xpath="createdTimestamp"/>
       <Mapping cloverField="creatorId" trim="true" xpath="creatorId"/>
@@ -1299,17 +1229,31 @@ output.substitutionShipperUPC = input.substitutionShipperUPC;]]></attr>
       <Mapping cloverField="processorSupportsVoids" trim="true" xpath="processorInformation/processorSupportsVoids"/>
       <Mapping cloverField="cardProductionCostPerCard" trim="true" xpath="processorInformation/cardProductionCostPerCard"/>
       <Mapping cloverField="cardProductionQuantity" trim="true" xpath="processorInformation/cardProductionQuantity"/>
-      <Mapping cloverField="vendorCompanyLegalName" trim="true" xpath="vendorInformation/vendorCompanyLegalName"/>
+      <Mapping cloverField="vendorNameFor1099" trim="true" xpath="vendorInformation/vendorNameFor1099"/>
       <Mapping cloverField="vendorGroup" trim="true" xpath="vendorInformation/vendorGroup"/>
       <Mapping cloverField="vendorCurrency" trim="true" xpath="vendorInformation/vendorCurrency"/>
-      <Mapping cloverField="vendorIsBlocked" trim="true" xpath="vendorInformation/vendorIsBlocked"/>
+      <Mapping cloverField="vendorBlocked" trim="true" xpath="vendorInformation/vendorBlocked"/>
       <Mapping cloverField="vendorLanguageId" trim="true" xpath="vendorInformation/vendorLanguageId"/>
       <Mapping cloverField="vendorCity" trim="true" xpath="vendorInformation/vendorCity"/>
-      <Mapping cloverField="vendorstreet" trim="true" xpath="vendorInformation/vendorstreet"/>
-      <Mapping cloverField="vendorIsForeignEntityIndicator" trim="true" xpath="vendorInformation/vendorIsForeignEntityIndicator"/>
-      <Mapping cloverField="divisionBrandName" trim="true" xpath="vendorInformation/divisionBrandName"/>
+      <Mapping cloverField="vendorForeignEntityIndicator" trim="true" xpath="vendorInformation/vendorForeignEntityIndicator"/>
       <Mapping cloverField="vendorTax1099NameChoice" trim="true" xpath="vendorInformation/vendorTax1099NameChoice"/>
       <Mapping cloverField="vendorW9" trim="true" xpath="vendorInformation/vendorW9"/>
+      <Mapping cloverField="vendorAddress" trim="true" xpath="vendorInformation/vendorAddress"/>
+      <Mapping cloverField="vendorCountryRegionId" trim="true" xpath="vendorInformation/vendorCountryRegionId"/>
+      <Mapping cloverField="vendorCounty" trim="true" xpath="vendorInformation/vendorCounty"/>
+      <Mapping cloverField="vendorEmail" trim="true" xpath="vendorInformation/vendorEmail"/>
+      <Mapping cloverField="vendorPartyType" trim="true" xpath="vendorInformation/vendorPartyType"/>
+      <Mapping cloverField="vendorPaymentMode" trim="true" xpath="vendorInformation/vendorPaymentMode"/>
+      <Mapping cloverField="vendorPaymentTermsId" trim="true" xpath="vendorInformation/vendorPaymentTermsId"/>
+      <Mapping cloverField="vendorPhone" trim="true" xpath="vendorInformation/vendorPhone"/>
+      <Mapping cloverField="vendorState" trim="true" xpath="vendorInformation/vendorState"/>
+      <Mapping cloverField="vendorTaxIDNumber" trim="true" xpath="vendorInformation/vendorTaxIDNumber"/>
+      <Mapping cloverField="vendorEmployerIdNumber" trim="true" xpath="vendorInformation/vendorEmployerIdNumber"/>
+      <Mapping cloverField="vendorTax1099Reports" trim="true" xpath="vendorInformation/vendorTax1099Reports"/>
+      <Mapping cloverField="vendorTaxGroup" trim="true" xpath="vendorInformation/vendorTaxGroup"/>
+      <Mapping cloverField="vendorTaxIDType" trim="true" xpath="vendorInformation/vendorTaxIDType"/>
+      <Mapping cloverField="vendorURL" trim="true" xpath="vendorInformation/vendorURL"/>
+      <Mapping cloverField="vendorZipCode" trim="true" xpath="vendorInformation/vendorZipCode"/>
       <Context generatedKey="__parent_id" outPort="1" parentKey="__id" sequenceField="__id" xpath="CustomerStore">
         <Mapping cloverField="productLanguage" trim="true" xpath="productLanguage"/>
         <Mapping cloverField="storeBHNStoreCode" trim="true" xpath="storeBHNStoreCode"/>
@@ -1392,6 +1336,158 @@ output.substitutionShipperUPC = input.substitutionShipperUPC;]]></attr>
         <Mapping cloverField="newIIDReasonCode" trim="true" xpath="iid/newIIDReasonCode"/>
         <Mapping cloverField="iidUseStdUnitConvert" trim="true" xpath="iid/iidUseStdUnitConvert"/>
       </Context>
+    </Context>
+    <Context outPort="0" sequenceField="__id" xpath="object">
+      <Mapping cloverField="createdTimestamp" trim="true" xpath="createdTimestamp"/>
+      <Mapping cloverField="creatorId" trim="true" xpath="creatorId"/>
+      <Mapping cloverField="entityId" trim="true" xpath="entityId"/>
+      <Mapping cloverField="updatedTimestamp" trim="true" xpath="updatedTimestamp"/>
+      <Mapping cloverField="updaterId" trim="true" xpath="updaterId"/>
+      <Mapping cloverField="version" trim="true" xpath="version"/>
+      <Mapping cloverField="partnerProfileSource" trim="true" xpath="source/partnerProfileSource"/>
+      <Mapping cloverField="isTest" trim="true" xpath="source/isTest"/>
+      <Mapping cloverField="companyCode" trim="true" xpath="company/companyCode"/>
+      <Mapping cloverField="companyCountry" trim="true" xpath="company/companyCountry"/>
+      <Mapping cloverField="companyLegalName" trim="true" xpath="company/companyLegalName"/>
+      <Mapping cloverField="companyIsContractComplete" trim="true" xpath="company/companyIsContractComplete"/>
+      <Mapping cloverField="contractExpDate" trim="true" xpath="company/contractExpDate"/>
+      <Mapping cloverField="companyBHNSetupComplete" trim="true" xpath="company/companyBHNSetupComplete"/>
+      <Mapping cloverField="legalEntityCode" trim="true" xpath="company/legalEntityCode"/>
+      <Mapping cloverField="companyPrimaryContactFirstName" trim="true" xpath="company/companyPrimaryContactFirstName"/>
+      <Mapping cloverField="companyPrimaryContactLastName" trim="true" xpath="company/companyPrimaryContactLastName"/>
+      <Mapping cloverField="companyPrimaryContactBusinessTitle" trim="true" xpath="company/companyPrimaryContactBusinessTitle"/>
+      <Mapping cloverField="companyPrimaryPhoneNumber" trim="true" xpath="company/companyPrimaryPhoneNumber"/>
+      <Mapping cloverField="companyPrimaryPhoneNumberExt" trim="true" xpath="company/companyPrimaryPhoneNumberExt"/>
+      <Mapping cloverField="companyPrimaryContactEmail" trim="true" xpath="company/companyPrimaryContactEmail"/>
+      <Mapping cloverField="companyAddressLine1" trim="true" xpath="company/companyAddressLine1"/>
+      <Mapping cloverField="companyAddressLine2" trim="true" xpath="company/companyAddressLine2"/>
+      <Mapping cloverField="companyCity" trim="true" xpath="company/companyCity"/>
+      <Mapping cloverField="companyState" trim="true" xpath="company/companyState"/>
+      <Mapping cloverField="companyZipPostalCode" trim="true" xpath="company/companyZipPostalCode"/>
+      <Mapping cloverField="companyWebSiteURL" trim="true" xpath="company/companyWebSiteURL"/>
+      <Mapping cloverField="companyMerchantCategoryCode" trim="true" xpath="company/companyMerchantCategoryCode"/>
+      <Mapping cloverField="companyContractTerm" trim="true" xpath="company/companyContractTerm"/>
+      <Mapping cloverField="legalEntityStateOfIncorporation" trim="true" xpath="company/legalEntityStateOfIncorporation"/>
+      <Mapping cloverField="accountType" trim="true" xpath="cpDivision/accountType"/>
+      <Mapping cloverField="divisionCode" trim="true" xpath="cpDivision/divisionCode"/>
+      <Mapping cloverField="divisionCustomerSupportContactFirstName" trim="true" xpath="cpDivision/divisionCustomerSupportContactFirstName"/>
+      <Mapping cloverField="divisionCustomerSupportContactLastName" trim="true" xpath="cpDivision/divisionCustomerSupportContactLastName"/>
+      <Mapping cloverField="divisionCustomerSupportEmail" trim="true" xpath="cpDivision/divisionCustomerSupportEmail"/>
+      <Mapping cloverField="divisionCustomerSupportPhone" trim="true" xpath="cpDivision/divisionCustomerSupportPhone"/>
+      <Mapping cloverField="divisionCustomerSupportURL" trim="true" xpath="cpDivision/divisionCustomerSupportURL"/>
+      <Mapping cloverField="divisionLocale" trim="true" xpath="cpDivision/divisionLocale"/>
+      <Mapping cloverField="divisionLogoURL" trim="true" xpath="cpDivision/divisionLogoURL"/>
+      <Mapping cloverField="divisionProcessorCode" trim="true" xpath="cpDivision/divisionProcessorCode"/>
+      <Mapping cloverField="divisionRedemptionLocationType" trim="true" xpath="cpDivision/divisionRedemptionLocationType"/>
+      <Mapping cloverField="divisionLocalPartner" trim="true" xpath="cpDivision/divisionLocalPartner"/>
+      <Mapping cloverField="divisionLocalPartnerSource" trim="true" xpath="cpDivision/divisionLocalPartnerSource"/>
+      <Mapping cloverField="processorContactPhoneNumberExt" trim="true" xpath="cpDivision/processorContactPhoneNumberExt"/>
+      <Mapping cloverField="divisionInStoreRedemptionInstructions" trim="true" xpath="cpDivision/divisionInStoreRedemptionInstructions"/>
+      <Mapping cloverField="divisionCashierInstructions" trim="true" xpath="cpDivision/divisionCashierInstructions"/>
+      <Mapping cloverField="divisionOnlineRedemptionInstructions" trim="true" xpath="cpDivision/divisionOnlineRedemptionInstructions"/>
+      <Mapping cloverField="divisionRedemptionInformation" trim="true" xpath="cpDivision/divisionRedemptionInformation"/>
+      <Mapping cloverField="divisionRedemptionLine1" trim="true" xpath="cpDivision/divisionRedemptionLine1"/>
+      <Mapping cloverField="divisionRedemptionLine2" trim="true" xpath="cpDivision/divisionRedemptionLine2"/>
+      <Mapping cloverField="divisionTandCTextForPhysical" trim="true" xpath="cpDivision/divisionTandCTextForPhysical"/>
+      <Mapping cloverField="divisionRedemptionMethods" trim="true" xpath="cpDivision/divisionRedemptionMethods"/>
+      <Mapping cloverField="divisionIsPinRequiredForRedemption" trim="true" xpath="cpDivision/divisionIsPinRequiredForRedemption"/>
+      <Mapping cloverField="divisionIsPinRequiredForBI" trim="true" xpath="cpDivision/divisionIsPinRequiredForBI"/>
+      <Mapping cloverField="divisionOnlineStoreURL" trim="true" xpath="cpDivision/divisionOnlineStoreURL"/>
+      <Mapping cloverField="divisionProgramDescription" trim="true" xpath="cpDivision/divisionProgramDescription"/>
+      <Mapping cloverField="divisionAccountNumberLabel" trim="true" xpath="cpDivision/divisionAccountNumberLabel"/>
+      <Mapping cloverField="divisionIsReloadable" trim="true" xpath="cpDivision/divisionIsReloadable"/>
+      <Mapping cloverField="divisionMinimumReloadAmount" trim="true" xpath="cpDivision/divisionMinimumReloadAmount"/>
+      <Mapping cloverField="divisionMaximumReloadAmount" trim="true" xpath="cpDivision/divisionMaximumReloadAmount"/>
+      <Mapping cloverField="divisionPaymentNetworkType" trim="true" xpath="cpDivision/divisionPaymentNetworkType"/>
+      <Mapping cloverField="divisionBins" trim="true" xpath="cpDivision/divisionBins"/>
+      <Mapping cloverField="divisionPinLabel" trim="true" xpath="cpDivision/divisionPinLabel"/>
+      <Mapping cloverField="divisionCardPinType" trim="true" xpath="cpDivision/divisionCardPinType"/>
+      <Mapping cloverField="divisionCardPinLocation" trim="true" xpath="cpDivision/divisionCardPinLocation"/>
+      <Mapping cloverField="divisionLostStolenPolicyText" trim="true" xpath="cpDivision/divisionLostStolenPolicyText"/>
+      <Mapping cloverField="divisionLostStolenPolicyPhone" trim="true" xpath="cpDivision/divisionLostStolenPolicyPhone"/>
+      <Mapping cloverField="divisionisLostStolenPolicyAutomated" trim="true" xpath="cpDivision/divisionisLostStolenPolicyAutomated"/>
+      <Mapping cloverField="divisionAccessCode" trim="true" xpath="cpDivision/divisionAccessCode"/>
+      <Mapping cloverField="divisionManualEntryFormat" trim="true" xpath="cpDivision/divisionManualEntryFormat"/>
+      <Mapping cloverField="divisionTrack1Format" trim="true" xpath="cpDivision/divisionTrack1Format"/>
+      <Mapping cloverField="divisionTrack2Format" trim="true" xpath="cpDivision/divisionTrack2Format"/>
+      <Mapping cloverField="divisionTrack3Format" trim="true" xpath="cpDivision/divisionTrack3Format"/>
+      <Mapping cloverField="divisionAreBalancesTransferable" trim="true" xpath="cpDivision/divisionAreBalancesTransferable"/>
+      <Mapping cloverField="divisionBalanceLockTimeFrame" trim="true" xpath="cpDivision/divisionBalanceLockTimeFrame"/>
+      <Mapping cloverField="divisionHasUniversalBISupport" trim="true" xpath="cpDivision/divisionHasUniversalBISupport"/>
+      <Mapping cloverField="divisionBalanceMerges" trim="true" xpath="cpDivision/divisionBalanceMerges"/>
+      <Mapping cloverField="divisionCanCardExpire" trim="true" xpath="cpDivision/divisionCanCardExpire"/>
+      <Mapping cloverField="divisionHasPhoneSupportAtPOS" trim="true" xpath="cpDivision/divisionHasPhoneSupportAtPOS"/>
+      <Mapping cloverField="divisionSupportsPartialBalanceInquiry" trim="true" xpath="cpDivision/divisionSupportsPartialBalanceInquiry"/>
+      <Mapping cloverField="divisionSupportsPhysicalCards" trim="true" xpath="cpDivision/divisionSupportsPhysicalCards"/>
+      <Mapping cloverField="divisionSupportsRedemption" trim="true" xpath="cpDivision/divisionSupportsRedemption"/>
+      <Mapping cloverField="divisionSupportsRegift" trim="true" xpath="cpDivision/divisionSupportsRegift"/>
+      <Mapping cloverField="divisionIsCardReplaceable" trim="true" xpath="cpDivision/divisionIsCardReplaceable"/>
+      <Mapping cloverField="divisionSupportsTransactionHistory" trim="true" xpath="cpDivision/divisionSupportsTransactionHistory"/>
+      <Mapping cloverField="divisionIsCardTransferable" trim="true" xpath="cpDivision/divisionIsCardTransferable"/>
+      <Mapping cloverField="divisionSupportsBalanceInquiry" trim="true" xpath="cpDivision/divisionSupportsBalanceInquiry"/>
+      <Mapping cloverField="divisionSupportsVirtualCard" trim="true" xpath="cpDivision/divisionSupportsVirtualCard"/>
+      <Mapping cloverField="divisionSupportsVoidActivation" trim="true" xpath="cpDivision/divisionSupportsVoidActivation"/>
+      <Mapping cloverField="divisionSupportsVoidRedemption" trim="true" xpath="cpDivision/divisionSupportsVoidRedemption"/>
+      <Mapping cloverField="divisionSupportsVoidReload" trim="true" xpath="cpDivision/divisionSupportsVoidReload"/>
+      <Mapping cloverField="divisionSupportsAddQRCode" trim="true" xpath="cpDivision/divisionSupportsAddQRCode"/>
+      <Mapping cloverField="divisionIsBISystemBLAST" trim="true" xpath="cpDivision/divisionIsBISystemBLAST"/>
+      <Mapping cloverField="divisionIsBISystemCAPTCHA" trim="true" xpath="cpDivision/divisionIsBISystemCAPTCHA"/>
+      <Mapping cloverField="divisionIsBISystemCardpool" trim="true" xpath="cpDivision/divisionIsBISystemCardpool"/>
+      <Mapping cloverField="divisionIsBISystemScreenScraped" trim="true" xpath="cpDivision/divisionIsBISystemScreenScraped"/>
+      <Mapping cloverField="divisionIsBISystemUserEntered" trim="true" xpath="cpDivision/divisionIsBISystemUserEntered"/>
+      <Mapping cloverField="divisionIsBarcodeFormat1D_C128" trim="true" xpath="cpDivision/divisionIsBarcodeFormat1D-C128"/>
+      <Mapping cloverField="division1D_C128Expression" trim="true" xpath="cpDivision/division1D-C128Expression"/>
+      <Mapping cloverField="divisionIsBarcodeFormat2D_PDF417" trim="true" xpath="cpDivision/divisionIsBarcodeFormat2D-PDF417"/>
+      <Mapping cloverField="divisionIsContractComplete" trim="true" xpath="cpDivision/divisionIsContractComplete"/>
+      <Mapping cloverField="division2D_PDF417Expression" trim="true" xpath="cpDivision/division2D-PDF417Expression"/>
+      <Mapping cloverField="divisionIsBarcodeFormat2D_QRCODE" trim="true" xpath="cpDivision/divisionIsBarcodeFormat2D-QRCODE"/>
+      <Mapping cloverField="division2D_QRCODEExpression" trim="true" xpath="cpDivision/division2D-QRCODEExpression"/>
+      <Mapping cloverField="divisionCardImageBack1URL" trim="true" xpath="cpDivision/divisionCardImageBack1URL"/>
+      <Mapping cloverField="divisionCardImageBack2URL" trim="true" xpath="cpDivision/divisionCardImageBack2URL"/>
+      <Mapping cloverField="divisionCardImageBack3URL" trim="true" xpath="cpDivision/divisionCardImageBack3URL"/>
+      <Mapping cloverField="divisionCardImageBack4URL" trim="true" xpath="cpDivision/divisionCardImageBack4URL"/>
+      <Mapping cloverField="divisionCardImageBack5URL" trim="true" xpath="cpDivision/divisionCardImageBack5URL"/>
+      <Mapping cloverField="divisionCardImageFront1URL" trim="true" xpath="cpDivision/divisionCardImageFront1URL"/>
+      <Mapping cloverField="divisionCardImageFront2URL" trim="true" xpath="cpDivision/divisionCardImageFront2URL"/>
+      <Mapping cloverField="divisionCardImageFront3URL" trim="true" xpath="cpDivision/divisionCardImageFront3URL"/>
+      <Mapping cloverField="divisionCardImageFront5URL" trim="true" xpath="cpDivision/divisionCardImageFront5URL"/>
+      <Mapping cloverField="divisionisBarcodeScanSupported" trim="true" xpath="cpDivision/divisionisBarcodeScanSupported"/>
+      <Mapping cloverField="name" trim="true" xpath="cpDivision/name"/>
+      <Mapping cloverField="processorContactFirstName" trim="true" xpath="processorInformation/processorContactFirstName"/>
+      <Mapping cloverField="processorContactLastName" trim="true" xpath="processorInformation/processorContactLastName"/>
+      <Mapping cloverField="processorContactPhoneNumber" trim="true" xpath="processorInformation/processorContactPhoneNumber"/>
+      <Mapping cloverField="processorHasRealTimeIssuance" trim="true" xpath="processorInformation/processorHasRealTimeIssuance"/>
+      <Mapping cloverField="processorCode" trim="true" xpath="processorInformation/processorCode"/>
+      <Mapping cloverField="processorContactPhoneNumberExt_1" trim="true" xpath="processorInformation/processorContactPhoneNumberExt"/>
+      <Mapping cloverField="processorIsRequiredToPrint" trim="true" xpath="processorInformation/processorIsRequiredToPrint"/>
+      <Mapping cloverField="processorSupportsVoids" trim="true" xpath="processorInformation/processorSupportsVoids"/>
+      <Mapping cloverField="cardProductionCostPerCard" trim="true" xpath="processorInformation/cardProductionCostPerCard"/>
+      <Mapping cloverField="cardProductionQuantity" trim="true" xpath="processorInformation/cardProductionQuantity"/>
+      <Mapping cloverField="vendorNameFor1099" trim="true" xpath="vendorInformation/vendorNameFor1099"/>
+      <Mapping cloverField="vendorGroup" trim="true" xpath="vendorInformation/vendorGroup"/>
+      <Mapping cloverField="vendorCurrency" trim="true" xpath="vendorInformation/vendorCurrency"/>
+      <Mapping cloverField="vendorBlocked" trim="true" xpath="vendorInformation/vendorBlocked"/>
+      <Mapping cloverField="vendorLanguageId" trim="true" xpath="vendorInformation/vendorLanguageId"/>
+      <Mapping cloverField="vendorCity" trim="true" xpath="vendorInformation/vendorCity"/>
+      <Mapping cloverField="vendorForeignEntityIndicator" trim="true" xpath="vendorInformation/vendorForeignEntityIndicator"/>
+      <Mapping cloverField="vendorTax1099NameChoice" trim="true" xpath="vendorInformation/vendorTax1099NameChoice"/>
+      <Mapping cloverField="vendorW9" trim="true" xpath="vendorInformation/vendorW9"/>
+      <Mapping cloverField="vendorAddress" trim="true" xpath="vendorInformation/vendorAddress"/>
+      <Mapping cloverField="vendorCountryRegionId" trim="true" xpath="vendorInformation/vendorCountryRegionId"/>
+      <Mapping cloverField="vendorCounty" trim="true" xpath="vendorInformation/vendorCounty"/>
+      <Mapping cloverField="vendorEmail" trim="true" xpath="vendorInformation/vendorEmail"/>
+      <Mapping cloverField="vendorPartyType" trim="true" xpath="vendorInformation/vendorPartyType"/>
+      <Mapping cloverField="vendorPaymentMode" trim="true" xpath="vendorInformation/vendorPaymentMode"/>
+      <Mapping cloverField="vendorPaymentTermsId" trim="true" xpath="vendorInformation/vendorPaymentTermsId"/>
+      <Mapping cloverField="vendorPhone" trim="true" xpath="vendorInformation/vendorPhone"/>
+      <Mapping cloverField="vendorState" trim="true" xpath="vendorInformation/vendorState"/>
+      <Mapping cloverField="vendorTaxIDNumber" trim="true" xpath="vendorInformation/vendorTaxIDNumber"/>
+      <Mapping cloverField="vendorEmployerIdNumber" trim="true" xpath="vendorInformation/vendorEmployerIdNumber"/>
+      <Mapping cloverField="vendorTax1099Reports" trim="true" xpath="vendorInformation/vendorTax1099Reports"/>
+      <Mapping cloverField="vendorTaxGroup" trim="true" xpath="vendorInformation/vendorTaxGroup"/>
+      <Mapping cloverField="vendorTaxIDType" trim="true" xpath="vendorInformation/vendorTaxIDType"/>
+      <Mapping cloverField="vendorURL" trim="true" xpath="vendorInformation/vendorURL"/>
+      <Mapping cloverField="vendorZipCode" trim="true" xpath="vendorInformation/vendorZipCode"/>
     </Context>
   </Context>
 </Context>
