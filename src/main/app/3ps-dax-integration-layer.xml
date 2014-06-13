@@ -451,10 +451,10 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
         <object-to-string-transformer doc:name="Object to String"/>
         <choice doc:name="Choice">
             <when expression="#[json:error != empty]">
-                <set-payload value="{&#xA;  &quot;status&quot;: &quot;ROLLBACK&quot;&#xA;}" doc:name="Success"/>
+                <set-payload value="{&#xA;  &quot;status&quot;: &quot;ROLLBACK&quot;&#xA;}" doc:name="3PS Rollback"/>
             </when>
             <otherwise>
-            	<set-payload value="{&#xA;  &quot;status&quot;: &quot;SUCCESS&quot;&#xA;}" doc:name="Rollback"/>
+            	<set-payload value="{&#xA;  &quot;status&quot;: &quot;SUCCESS&quot;&#xA;}" doc:name="3PS Success"/>
             </otherwise>
         </choice>
     </flow>
