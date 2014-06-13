@@ -448,6 +448,14 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
         </choice>
     </flow>
     <flow name="post:/partnerProfileProcessing/v1/partnerProfile/{partnerProfileId}:apiConfig" doc:name="post:/partnerProfileProcessing/v1/partnerProfile/{partnerProfileId}:apiConfig">
-        <set-payload value="{&#xA;  &quot;status&quot;: &quot;SUCCESS&quot;&#xA;}" doc:name="Set Payload"/>
+        <object-to-string-transformer doc:name="Object to String"/>
+        <choice doc:name="Choice">
+            <when expression="#[json:error != empty]">
+                <set-payload value="{&#xA;  &quot;status&quot;: &quot;ROLLBACK&quot;&#xA;}" doc:name="Success"/>
+            </when>
+            <otherwise>
+            	<set-payload value="{&#xA;  &quot;status&quot;: &quot;SUCCESS&quot;&#xA;}" doc:name="Rollback"/>
+            </otherwise>
+        </choice>
     </flow>
 </mule>
