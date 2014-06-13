@@ -28,9 +28,10 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
             </when>
         </choice>
     </catch-exception-strategy>
-    <http:connector name="httpConnector" doc:name="HTTP\HTTPS">
+    <http:connector name="httpDAXConnector" doc:name="HTTP\HTTPS">
         <service-overrides sessionHandler="org.mule.session.NullSessionHandler" dispatcherFactory="org.mule.transport.http.NTLMv2HttpClientMessageDispatcherFactor" />
     </http:connector>
+    <http:connector name="defaultConnector" doc:name="HTTP\HTTPS"/>
     <object-to-byte-array-transformer name="objectToByteArrayTransformer" doc:name="Object to Byte Array" />
     <context:property-placeholder location="classpath:3ps-dax-int.properties, file:///${app.properties.override.location}" />
     <spring:beans>
@@ -73,14 +74,16 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
     </apikit:mapping-exception-strategy>
     <data-mapper:config name="json_to_pojo" transformationGraphPath="json_to_pojo.grf" doc:name="json_to_pojo" />
     <flow name="main" doc:name="main">
-        <http:inbound-endpoint address="http://${http.host}:${http.port}/api" doc:name="HTTP" exchange-pattern="request-response" />
+        <http:inbound-endpoint connector-ref="defaultConnector" address="http://${http.host}:${http.port}/api" doc:name="HTTP" exchange-pattern="request-response" />
         <apikit:router config-ref="apiConfig" doc:name="APIkit Router" />
         <exception-strategy ref="apiKitGlobalExceptionMapping" doc:name="Reference Exception Strategy" />
     </flow>
     <flow name="post:/3ps-dax-int:apiConfig" doc:name="post:/3ps-dax-int:apiConfig">
-        <object-to-byte-array-transformer doc:name="Object to Byte Array" />
+        <object-to-string-transformer doc:name="Object to String"/>
+
         <set-session-variable variableName="partnerProfileId" value="#[json:entityId]" doc:name="Session Variable" />
-        <logger level="INFO" doc:name="TODO Validation" />
+        <set-session-variable variableName="createPartnerRequest" value="#[payload]" doc:name="Session Variable"/>
+
         <all doc:name="All">
             <set-payload value="{   &quot;status&quot;: &quot;ACK&quot; }" doc:name="Send ACK" />
             <async doc:name="Async">
@@ -218,8 +221,8 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
         <custom-transformer class="com.bhnetwork.integration.transformer.CanonicalToBhnSetUpComp3PSServiceCreateRequest" doc:name="Canon-to-SetupCompRequest" />
         <flow-ref name="daxSetupCompWebServiceClient" doc:name="Invoke Dax SetupComp Webservice" />
         <logger level="INFO" doc:name="SetupComplete-success" message="SetupComplete-success partnerProfileId=#[payload.entityKeyList.entityKey[0].keyData.keyField[0].value]" />
-        <!-- UNCOMMENT NEXT LINE ONCE CALLBACK-3PS -->
-        <!-- <vm:outbound-endpoint exchange-pattern="one-way" doc:name="VM-callback-3PS" path="Q.callback"/>  -->
+        <set-payload value="#[null]" doc:name="Set Payload"/>
+        <vm:outbound-endpoint exchange-pattern="one-way" doc:name="VM-callback-3PS" path="Q.callback"/>
         <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy" />
     </flow>
     <flow name="DAX-error-flow" doc:name="DAX-error-flow">
@@ -253,7 +256,7 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
             </cxf:outInterceptors>
         </cxf:jaxws-client>
         <expression-component doc:name="NTLM credentials"><![CDATA[flowVars['username']='${dax.username}'; flowVars['password']='${dax.password}'; flowVars['domain']='${dax.domain}'; flowVars['realm']='${dax.realm}' ;]]></expression-component>
-        <http:outbound-endpoint exchange-pattern="request-response" host="${dax.http.host}" port="${dax.http.port}" path="${dax.http.company.path}" method="POST" transformer-refs="objectToByteArrayTransformer" doc:name="HTTP" />
+        <http:outbound-endpoint connector-ref="httpDAXConnector" exchange-pattern="request-response" host="${dax.http.host}" port="${dax.http.port}" path="${dax.http.company.path}" method="POST" transformer-refs="objectToByteArrayTransformer" doc:name="HTTP" />
     </sub-flow>
     <sub-flow name="daxDivisionWebServiceClient" doc:name="daxDivisionWebServiceClient">
         <cxf:jaxws-client operation="create" clientClass="com.microsoft.schemas.dynamics._2008._01.services.BhnDivision3PSService_Service" port="BasicHttpBinding_bhnDivision3PSService" doc:name="SOAP">
@@ -265,7 +268,7 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
             </cxf:outInterceptors>
         </cxf:jaxws-client>
         <expression-component doc:name="NTLM credentials"><![CDATA[flowVars['username']='${dax.username}'; flowVars['password']='${dax.password}'; flowVars['domain']='${dax.domain}'; flowVars['realm']='${dax.realm}' ;]]></expression-component>
-        <http:outbound-endpoint exchange-pattern="request-response" host="${dax.http.host}" port="${dax.http.port}" path="${dax.http.division.path}" method="POST" transformer-refs="objectToByteArrayTransformer" doc:name="HTTP" />
+        <http:outbound-endpoint connector-ref="httpDAXConnector" exchange-pattern="request-response" host="${dax.http.host}" port="${dax.http.port}" path="${dax.http.division.path}" method="POST" transformer-refs="objectToByteArrayTransformer" doc:name="HTTP" />
     </sub-flow>
     <sub-flow name="daxSubstgroupWebServiceClient" doc:name="daxSubstgroupWebServiceClient">
         <cxf:jaxws-client operation="create" clientClass="org.tempuri.UPCSubGroupTableService_Service" port="BasicHttpBinding_UPCSubGroupTableService" doc:name="SOAP">
@@ -277,7 +280,7 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
             </cxf:outInterceptors>
         </cxf:jaxws-client>
         <expression-component doc:name="NTLM credentials"><![CDATA[flowVars['username']='${dax.username}'; flowVars['password']='${dax.password}'; flowVars['domain']='${dax.domain}'; flowVars['realm']='${dax.realm}' ;]]></expression-component>
-        <http:outbound-endpoint exchange-pattern="request-response" host="${dax.http.host}" port="${dax.http.port}" path="${dax.http.substGrp.path}" method="POST" transformer-refs="objectToByteArrayTransformer" doc:name="HTTP" />
+        <http:outbound-endpoint connector-ref="httpDAXConnector" exchange-pattern="request-response" host="${dax.http.host}" port="${dax.http.port}" path="${dax.http.substGrp.path}" method="POST" transformer-refs="objectToByteArrayTransformer" doc:name="HTTP" />
     </sub-flow>
     <sub-flow name="daxUPCWebServiceClient" doc:name="daxUPCWebServiceClient">
         <cxf:jaxws-client operation="create" clientClass="com.microsoft.schemas.dynamics._2008._01.services.BhnUPCAttributes3PSService_Service" port="BasicHttpBinding_bhnUPCAttributes3PSService" doc:name="SOAP">
@@ -289,7 +292,7 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
             </cxf:outInterceptors>
         </cxf:jaxws-client>
         <expression-component doc:name="NTLM credentials"><![CDATA[flowVars['username']='${dax.username}'; flowVars['password']='${dax.password}'; flowVars['domain']='${dax.domain}'; flowVars['realm']='${dax.realm}' ;]]></expression-component>
-        <http:outbound-endpoint exchange-pattern="request-response" host="${dax.http.host}" port="${dax.http.port}" path="${dax.http.upc.path}" method="POST" transformer-refs="objectToByteArrayTransformer" doc:name="HTTP" />
+        <http:outbound-endpoint connector-ref="httpDAXConnector" exchange-pattern="request-response" host="${dax.http.host}" port="${dax.http.port}" path="${dax.http.upc.path}" method="POST" transformer-refs="objectToByteArrayTransformer" doc:name="HTTP" />
     </sub-flow>
     <sub-flow name="daxIIDWebServiceClient" doc:name="daxIIDWebServiceClient">
         <cxf:jaxws-client operation="create" clientClass="org.tempuri.BhnIIDAttributesService_Service" port="BasicHttpBinding_bhnIIDAttributesService" doc:name="SOAP">
@@ -301,7 +304,7 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
             </cxf:outInterceptors>
         </cxf:jaxws-client>
         <expression-component doc:name="NTLM credentials"><![CDATA[flowVars['username']='${dax.username}'; flowVars['password']='${dax.password}'; flowVars['domain']='${dax.domain}'; flowVars['realm']='${dax.realm}' ;]]></expression-component>
-        <http:outbound-endpoint exchange-pattern="request-response" host="${dax.http.host}" port="${dax.http.port}" path="${dax.http.iid.path}" method="POST" transformer-refs="objectToByteArrayTransformer" doc:name="HTTP" />
+        <http:outbound-endpoint connector-ref="httpDAXConnector" exchange-pattern="request-response" host="${dax.http.host}" port="${dax.http.port}" path="${dax.http.iid.path}" method="POST" transformer-refs="objectToByteArrayTransformer" doc:name="HTTP" />
     </sub-flow>
     <sub-flow name="daxCleanupWebServiceClient" doc:name="daxCleanupWebServiceClient">
         <cxf:jaxws-client operation="create" clientClass="org.tempuri.BhnCleanUpMegatronService_Service" port="BasicHttpBinding_bhnCleanUpMegatronService" doc:name="SOAP">
@@ -313,7 +316,7 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
             </cxf:outInterceptors>
         </cxf:jaxws-client>
         <expression-component doc:name="NTLM credentials"><![CDATA[flowVars['username']='${dax.username}'; flowVars['password']='${dax.password}'; flowVars['domain']='${dax.domain}'; flowVars['realm']='${dax.realm}' ;]]></expression-component>
-        <http:outbound-endpoint exchange-pattern="request-response" host="${dax.http.host}" port="${dax.http.port}" path="${dax.http.cleanup.path}" method="POST" transformer-refs="objectToByteArrayTransformer" doc:name="HTTP" />
+        <http:outbound-endpoint connector-ref="httpDAXConnector" exchange-pattern="request-response" host="${dax.http.host}" port="${dax.http.port}" path="${dax.http.cleanup.path}" method="POST" transformer-refs="objectToByteArrayTransformer" doc:name="HTTP" />
     </sub-flow>
     <sub-flow name="daxVendorWebServiceClient" doc:name="daxVendorWebServiceClient">
         <cxf:jaxws-client operation="create" clientClass="com.microsoft.schemas.dynamics._2008._01.services.VendTableService_Service" port="BasicHttpBinding_VendTableService" doc:name="SOAP">
@@ -327,7 +330,7 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
         <logger level="INFO" message="In subflow daxVendorWebServiceClient: before NTLM" doc:name="test" />
         <expression-component doc:name="NTLM credentials"><![CDATA[flowVars['username']='${dax.username}'; flowVars['password']='${dax.password}'; flowVars['domain']='${dax.domain}'; flowVars['realm']='${dax.realm}' ;]]></expression-component>
         <logger level="INFO" message="In subflow daxVendorWebServiceClient: before Vendor service call" doc:name="test" />
-        <http:outbound-endpoint exchange-pattern="request-response" host="${dax.http.host}" port="${dax.http.port}" path="${dax.http.vendor.path}" method="POST" transformer-refs="objectToByteArrayTransformer" doc:name="HTTP" />
+        <http:outbound-endpoint connector-ref="httpDAXConnector" exchange-pattern="request-response" host="${dax.http.host}" port="${dax.http.port}" path="${dax.http.vendor.path}" method="POST" transformer-refs="objectToByteArrayTransformer" doc:name="HTTP" />
     </sub-flow>
     <sub-flow name="daxStoreWebServiceClient" doc:name="daxStoreWebServiceClient">
         <cxf:jaxws-client operation="create" clientClass="com.microsoft.schemas.dynamics._2008._01.services.CustomerService_Service" port="BasicHttpBinding_CustomerService" doc:name="SOAP">
@@ -341,7 +344,7 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
         <logger level="INFO" message="In subflow daxStoreWebServiceClient: before NTLM" doc:name="test" />
         <expression-component doc:name="NTLM credentials"><![CDATA[flowVars['username']='${dax.username}'; flowVars['password']='${dax.password}'; flowVars['domain']='${dax.domain}'; flowVars['realm']='${dax.realm}' ;]]></expression-component>
         <logger level="INFO" message="In subflow daxStoreWebServiceClient: before Store service call" doc:name="test" />
-        <http:outbound-endpoint exchange-pattern="request-response" host="${dax.http.host}" port="${dax.http.port}" path="${dax.http.store.path}" method="POST" transformer-refs="objectToByteArrayTransformer" doc:name="HTTP" />
+        <http:outbound-endpoint connector-ref="httpDAXConnector" exchange-pattern="request-response" host="${dax.http.host}" port="${dax.http.port}" path="${dax.http.store.path}" method="POST" transformer-refs="objectToByteArrayTransformer" doc:name="HTTP" />
     </sub-flow>
     <sub-flow name="daxSetupCompWebServiceClient" doc:name="daxSetupCompWebServiceClient">
         <cxf:jaxws-client operation="create" clientClass="com.microsoft.schemas.dynamics._2008._01.services.BhnSetUpComp3PSService_Service" port="BasicHttpBinding_bhnSetUpComp3PSService" doc:name="SOAP">
@@ -353,7 +356,7 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
             </cxf:outInterceptors>
         </cxf:jaxws-client>
         <expression-component doc:name="NTLM credentials"><![CDATA[flowVars['username']='${dax.username}'; flowVars['password']='${dax.password}'; flowVars['domain']='${dax.domain}'; flowVars['realm']='${dax.realm}' ;]]></expression-component>
-        <http:outbound-endpoint exchange-pattern="request-response" host="${dax.http.host}" port="${dax.http.port}" path="${dax.http.setupcomp.path}" method="POST" transformer-refs="objectToByteArrayTransformer" doc:name="HTTP" />
+        <http:outbound-endpoint connector-ref="httpDAXConnector" exchange-pattern="request-response" host="${dax.http.host}" port="${dax.http.port}" path="${dax.http.setupcomp.path}" method="POST" transformer-refs="objectToByteArrayTransformer" doc:name="HTTP" />
     </sub-flow>
     <flow name="DAX-retry-flow" doc:name="DAX-retry-flow">
         <vm:inbound-endpoint exchange-pattern="one-way" path="Q.retry" doc:name="VM-retry" />
@@ -396,17 +399,17 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
         <tracking:custom-event event-name="bizEvent: ABORT (unable to cleanup)" doc:name="bizEvent: ABORT (unable to cleanup)" />
         <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy" />
     </flow>
-    <!-- 
     <flow name="3PS-Callback" doc:name="3PS-Callback">
         <composite-source doc:name="Composite Source">
             <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-callback-3PS" path="Q.callback"/>
             <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-reportError-to-3PS" path="Q.errorReportTo3PS"/>
         </composite-source>
-        <enricher doc:name="Enricher - GET-3PS-JSON">
-            <http:outbound-endpoint exchange-pattern="request-response" host="localhost" port="8081" method="POST" doc:name="HTTP-GET"/>
-        </enricher>
-        <logger level="INFO" doc:name="3PS-json-BEFORE"/>
-        <custom-transformer class="" doc:name="JSON-transformer-enrich-from-canonical"/>
+        <!-- <enricher doc:name="Enricher - GET-3PS-JSON"> -->
+            <http:outbound-endpoint connector-ref="defaultConnector" exchange-pattern="request-response" host="${3ps.http.host}" port="${3ps.http.port}" path="${3ps.http.path}/#[sessionVars.partnerProfileId]" method="GET" doc:name="HTTP-GET"/>
+         <object-to-string-transformer doc:name="Object to String"/> 
+        <!-- </enricher> -->
+        <logger level="INFO" message="3PS-json-BEFORE #[payload]" doc:name="3PS-json-BEFORE"/>
+        <!-- <custom-transformer class="" doc:name="JSON-transformer-enrich-from-canonical"/> 
         <logger level="INFO" doc:name="3PS-json-AFTER"/>
         <enricher doc:name="Enricher - POST-3PS-JSON">
             <http:outbound-endpoint exchange-pattern="request-response" host="localhost" port="8081" method="POST" doc:name="HTTP-POST"/>
@@ -420,18 +423,29 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
                 <logger level="INFO" doc:name="SUCCESS: Log Orchestration endTime"/>
                 <tracking:custom-event event-name="" doc:name="bizEvent: OrchestrationEndTime"/>
             </otherwise>
-        </choice>
+        </choice>-->
         <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy"/>
     </flow>
+    <!-- 
+    
     <flow name="notification-service" doc:name="notification-service">
         
         <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy"/>
     </flow>
     -->
     <flow name="get:/partnerProfileProcessing/v1/partnerProfile/{partnerProfileId}:apiConfig" doc:name="get:/partnerProfileProcessing/v1/partnerProfile/{partnerProfileId}:apiConfig">
-		<set-payload value="#[Thread.currentThread().getContextClassLoader().getResourceAsStream('examples/if1-3ps-mule-post-example.json')]" doc:name="Set Payload"/>
-        <object-to-string-transformer doc:name="Object to String"/>
-		
+        <logger message="In 3ps-callback-GET" level="INFO" doc:name="Logger"/>
+        <choice doc:name="Choice">
+            <when expression="#[sessionVars.?createPartnerRequest != empty]">
+                <logger message="Partner profile to be updated is retreived from session createPartnerRequest" level="INFO" doc:name="From Session"/>
+                <set-payload value="#[sessionVars.createPartnerRequest]" doc:name="Set Payload"/>
+            </when>
+            <otherwise>
+                <logger message="Sample Partner to be updated" level="INFO" doc:name="Default from Sample"/>
+            	<set-payload value="#[Thread.currentThread().getContextClassLoader().getResourceAsStream('examples/if1-3ps-mule-post-example.json')]" doc:name="Set Payload"/>
+        		<object-to-string-transformer doc:name="Object to String"/>
+            </otherwise>
+        </choice>
     </flow>
     <flow name="post:/partnerProfileProcessing/v1/partnerProfile/{partnerProfileId}:apiConfig" doc:name="post:/partnerProfileProcessing/v1/partnerProfile/{partnerProfileId}:apiConfig">
         <set-payload value="{&#xA;  &quot;status&quot;: &quot;SUCCESS&quot;&#xA;}" doc:name="Set Payload"/>
