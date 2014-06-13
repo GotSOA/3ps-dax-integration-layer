@@ -25,6 +25,8 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
             </when>
             <when expression="#[flowVars['isRetryableException']==false]">
                 <logger message="Message failed (ABORT) due to: #[exception.cause] #[exception.cause.message]" level="ERROR" doc:name="Logger - Error (for non-retryable issues)" />
+                <!-- TODO Stephane Looks like this will not trigger the 3ps-callback flow to send the error message to 3ps-->
+                <!-- TODO Stephane Please define a session variable "error" with the erro message before passing it to the 3ps callback flow -->
                 <vm:outbound-endpoint exchange-pattern="one-way" path="Q.error" doc:name="VM-error" />
             </when>
         </choice>
@@ -414,24 +416,35 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
         </composite-source>
         <http:outbound-endpoint connector-ref="defaultConnector" exchange-pattern="request-response" host="${3ps.http.host}" port="${3ps.http.port}" path="${3ps.http.path}/#[sessionVars.partnerProfileId]" method="GET" doc:name="HTTP-GET"/>
         <json:json-to-object-transformer returnClass="java.util.LinkedHashMap" doc:name="JSON to Object"/>
-        <enricher doc:name="Message Enricher">
-            <set-payload value="#[sessionVars.canon]" doc:name="Canonical Payload from Session" />
-			<enrich source="#[payload.company.bhnGUID]" target="#[payload.company.bhnGUID]" />
-			<enrich source="#[payload.company.recId]" target="#[payload.company.recId]" />
-			<enrich source="#[payload.company.cpDivision[0].bhnGUID]" target="#[payload.cpDivision.bhnGUID]" />
-			<enrich source="#[payload.company.cpDivision[0].recId]" target="#[payload.cpDivision.recId]" />
-			<enrich source="#[payload.company.cpDivision[0].products[0].substGrp.subGroupId]" target="#[payload.ProductInformation[0].subGroupId]" />
-			<enrich source="#[payload.company.cpDivision[0].products[0].substGrp.substitutionBrandDenomDescription]" target="#[payload.ProductInformation[0].substitutionBrandDenomDescription]" />
-			<enrich source="#[payload.company.cpDivision[0].products[0].substGrp.guid]" target="#[payload.ProductInformation[0].guid]" />
-			<enrich source="#[payload.company.cpDivision[0].products[0].substGrp.brandRecId]" target="#[payload.ProductInformation[0].brandRecId]" />
-			<enrich source="#[payload.company.cpDivision[0].products[0].iid.itemId]" target="#[payload.ProductInformation[0].iid.itemId]" />
-			<enrich source="#[payload.company.cpDivision[0].products[0].bhnGUID]" target="#[payload.ProductInformation[0].bhnGUID]" />
-			<enrich source="#[payload.company.cpDivision[0].products[0].iid.inventBatchId]" target="#[payload.ProductInformation[0].iid.inventBatchId]" />
-			<enrich source="#[payload.company.cpDivision[0].products[0].iid.itemId]" target="#[payload.ProductInformation[0].iid.itemId]" />
-			<enrich source="#[payload.company.cpDivision[0].products[0].iid.bhnGUID]" target="#[payload.ProductInformation[0].iid.bhnGUID]" />
-			<enrich source="#[payload.company.cpDivision[0].products[0].iid.recId]" target="#[payload.ProductInformation[0].iid.recId]" />
-			<!-- TODO Stephane Enrich for Store and Vendor -->
-        </enricher>
+        <!-- Error concept tested by RAJ.Once Stephane add a session Variable "error" with the error message and routes it to this flow -->
+        <!-- <set-session-variable value="Error in Integration" variableName="error" doc:name="Session Variable" /> -->
+        <choice doc:name="Choice">
+            <when expression="#[sessionVars.?error == empty]">
+                <enricher doc:name="Message Enricher">
+                    <set-payload value="#[sessionVars.canon]" doc:name="Canonical Payload from Session"/>
+                    <enrich source="#[payload.company.bhnGUID]" target="#[payload.company.bhnGUID]"/>
+                    <enrich source="#[payload.company.recId]" target="#[payload.company.recId]"/>
+                    <enrich source="#[payload.company.cpDivision[0].bhnGUID]" target="#[payload.cpDivision.bhnGUID]"/>
+                    <enrich source="#[payload.company.cpDivision[0].recId]" target="#[payload.cpDivision.recId]"/>
+                    <enrich source="#[payload.company.cpDivision[0].products[0].substGrp.subGroupId]" target="#[payload.ProductInformation[0].subGroupId]"/>
+                    <enrich source="#[payload.company.cpDivision[0].products[0].substGrp.substitutionBrandDenomDescription]" target="#[payload.ProductInformation[0].substitutionBrandDenomDescription]"/>
+                    <enrich source="#[payload.company.cpDivision[0].products[0].substGrp.guid]" target="#[payload.ProductInformation[0].guid]"/>
+                    <enrich source="#[payload.company.cpDivision[0].products[0].substGrp.brandRecId]" target="#[payload.ProductInformation[0].brandRecId]"/>
+                    <enrich source="#[payload.company.cpDivision[0].products[0].iid.itemId]" target="#[payload.ProductInformation[0].iid.itemId]"/>
+                    <enrich source="#[payload.company.cpDivision[0].products[0].bhnGUID]" target="#[payload.ProductInformation[0].bhnGUID]"/>
+                    <enrich source="#[payload.company.cpDivision[0].products[0].iid.inventBatchId]" target="#[payload.ProductInformation[0].iid.inventBatchId]"/>
+                    <enrich source="#[payload.company.cpDivision[0].products[0].iid.itemId]" target="#[payload.ProductInformation[0].iid.itemId]"/>
+                    <enrich source="#[payload.company.cpDivision[0].products[0].iid.bhnGUID]" target="#[payload.ProductInformation[0].iid.bhnGUID]"/>
+                    <enrich source="#[payload.company.cpDivision[0].products[0].iid.recId]" target="#[payload.ProductInformation[0].iid.recId]"/>
+                </enricher>
+            </when>
+            <otherwise>
+            	<enricher doc:name="Message Enricher">
+            		<set-payload value="#[sessionVars.error]" doc:name="Error Payload from Session"/>
+            		<enrich source="#[payload]" target="#[payload.error]"/>
+            	</enricher>
+            </otherwise>
+        </choice>
         <json:object-to-json-transformer doc:name="Object to JSON"/>
         <logger level="INFO" message="3PS-json-After enrichment #[payload]" doc:name="3PS-json-After"/>
         <http:outbound-endpoint  connector-ref="defaultConnector" exchange-pattern="request-response" host="${3ps.http.host}" port="${3ps.http.port}" path="${3ps.http.path}/#[sessionVars.partnerProfileId]" method="POST" doc:name="HTTP-POST"/>
