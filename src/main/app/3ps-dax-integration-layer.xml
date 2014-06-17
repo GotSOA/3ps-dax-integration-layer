@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mule xmlns:data-mapper="http://www.mulesoft.org/schema/mule/ee/data-mapper" xmlns:json="http://www.mulesoft.org/schema/mule/json" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:apikit="http://www.mulesoft.org/schema/mule/apikit" xmlns:context="http://www.springframework.org/schema/context" xmlns:core="http://www.mulesoft.org/schema/mule/core" xmlns:cxf="http://www.mulesoft.org/schema/mule/cxf" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:spring="http://www.springframework.org/schema/beans" xmlns:tracking="http://www.mulesoft.org/schema/mule/ee/tracking" xmlns:vm="http://www.mulesoft.org/schema/mule/vm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="EE-3.4.1" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+<mule 
+xmlns:data-mapper="http://www.mulesoft.org/schema/mule/ee/data-mapper" 
+xmlns:json="http://www.mulesoft.org/schema/mule/json" 
+xmlns="http://www.mulesoft.org/schema/mule/core" 
+xmlns:apikit="http://www.mulesoft.org/schema/mule/apikit" 
+xmlns:context="http://www.springframework.org/schema/context" 
+xmlns:core="http://www.mulesoft.org/schema/mule/core" 
+xmlns:cxf="http://www.mulesoft.org/schema/mule/cxf" 
+xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" 
+xmlns:http="http://www.mulesoft.org/schema/mule/http" 
+xmlns:spring="http://www.springframework.org/schema/beans" 
+xmlns:tracking="http://www.mulesoft.org/schema/mule/ee/tracking" 
+xmlns:vm="http://www.mulesoft.org/schema/mule/vm" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns:smtp="http://www.mulesoft.org/schema/mule/smtp" 
+xmlns:smtps="http://www.mulesoft.org/schema/mule/smtps"
+version="EE-3.4.1" 
+xsi:schemaLocation="http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
 http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
 http://www.mulesoft.org/schema/mule/apikit http://www.mulesoft.org/schema/mule/apikit/current/mule-apikit.xsd
 http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
@@ -8,7 +25,9 @@ http://www.mulesoft.org/schema/mule/vm http://www.mulesoft.org/schema/mule/vm/cu
 http://www.mulesoft.org/schema/mule/cxf http://www.mulesoft.org/schema/mule/cxf/current/mule-cxf.xsd
 http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/mule/ee/tracking/current/mule-tracking-ee.xsd
 http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/json/current/mule-json.xsd
-http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schema/mule/ee/data-mapper/current/mule-data-mapper.xsd">
+http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schema/mule/ee/data-mapper/current/mule-data-mapper.xsd
+http://www.mulesoft.org/schema/mule/smtp http://www.mulesoft.org/schema/mule/smtp/current/mule-smtp.xsd
+http://www.mulesoft.org/schema/mule/smtps http://www.mulesoft.org/schema/mule/smtps/current/mule-smtps.xsd">
 
 	<!-- global exception strategy -->
 	<catch-exception-strategy name="global-main-exception-strategy">
@@ -29,8 +48,8 @@ http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schem
 	        </choice>
     </catch-exception-strategy> 
     
+     <smtp:gmail-connector name="smtpGmailConnector" doc:name="Gmail"/>
      <http:connector name="httpConnector" doc:name="HTTP\HTTPS">
-
         <service-overrides sessionHandler="org.mule.session.NullSessionHandler" dispatcherFactory="org.mule.transport.http.NTLMv2HttpClientMessageDispatcherFactor" />
     </http:connector> 
     <object-to-byte-array-transformer name="objectToByteArrayTransformer" doc:name="Object to Byte Array" />
@@ -228,7 +247,7 @@ http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schem
     </flow>
     <flow name="DAX-error-flow" doc:name="DAX-error-flow">
         <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-error" path="Q.error"/>
-        <!-- <flow-ref name="" doc:name="Notify Ops"/> -->
+        <flow-ref name="notification-flow" doc:name="Notify Ops"/>
         <logger level="INFO" doc:name="Log Error, failing step &amp; 3PS entityID"/>
         <vm:outbound-endpoint exchange-pattern="one-way" doc:name="VM-DAX-cleanup" path="Q.cleanup"/>
         <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy"/>
@@ -395,41 +414,29 @@ http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schem
     </flow>
     <flow name="DAX-DLQ-flow" doc:name="DAX-DLQ-flow">
         <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-DLQ" path="Q.dlq"/>
-        <!-- <flow-ref name="" doc:name="Notify Ops"/> -->
+        <flow-ref name="notification-flow" doc:name="Notify Ops"/>
         <logger level="INFO" doc:name="ABORT log: avoiding circular references when/if cleanup fails"/>
         <tracking:custom-event event-name="bizEvent: ABORT (unable to cleanup)" doc:name="bizEvent: ABORT (unable to cleanup)"/>
         <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy"/>
     </flow>    
-    <!-- 
-    <flow name="3PS-Callback" doc:name="3PS-Callback">
-        <composite-source doc:name="Composite Source">
-            <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-callback-3PS" path="Q.callback"/>
-            <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-reportError-to-3PS" path="Q.errorReportTo3PS"/>
-        </composite-source>
-        <enricher doc:name="Enricher - GET-3PS-JSON">
-            <http:outbound-endpoint exchange-pattern="request-response" host="localhost" port="8081" method="POST" doc:name="HTTP-GET"/>
-        </enricher>
-        <logger level="INFO" doc:name="3PS-json-BEFORE"/>
-        <custom-transformer class="" doc:name="JSON-transformer-enrich-from-canonical"/>
-        <logger level="INFO" doc:name="3PS-json-AFTER"/>
-        <enricher doc:name="Enricher - POST-3PS-JSON">
-            <http:outbound-endpoint exchange-pattern="request-response" host="localhost" port="8081" method="POST" doc:name="HTTP-POST"/>
-        </enricher>
-        <choice doc:name="Choice">
-            <when expression="">
-                <logger level="INFO" doc:name="ERROR on 3PS Update"/>
-                <vm:outbound-endpoint exchange-pattern="one-way" doc:name="VM-Error" path="Q.error"/>
-            </when>
-            <otherwise>
-                <logger level="INFO" doc:name="SUCCESS: Log Orchestration endTime"/>
-                <tracking:custom-event event-name="" doc:name="bizEvent: OrchestrationEndTime"/>
-            </otherwise>
-        </choice>
-        <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy"/>
+    <flow name="notification-flow" doc:name="smtp Notification Service">
+        <!-- <http:inbound-endpoint exchange-pattern="request-response" host="localhost" port="8081" path="email" doc:name="HTTP"/>  -->
+        <logger message="sending email out..." level="INFO" doc:name="Logger"/>
+        <!-- <set-payload value="This is an email test!" doc:name="Set Payload"/>  -->
+        <!-- TODO: specify Error session variable -->
+        <!-- TODO @Raj: sample email using velocity template? -->
+		<set-payload value="#[sessionVars['Error']]" doc:name="Set Payload"/>
+        <smtp:outbound-endpoint 
+        	connector-ref="smtpGmailConnector"
+        	to="${email.to}" 
+        	from="${email.from}" 
+        	subject="${email.subject}" 
+        	responseTimeout="${email.responseTimeout}" 
+        	host="${email.host}"
+        	port="${email.port}" 
+        	mimeType="${email.mimeType}" 
+        	user="${email.user}"
+        	password="${email.password}"
+        	doc:name="SMTP"/>
     </flow>
-    <flow name="notification-service" doc:name="notification-service">
-        
-        <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy"/>
-    </flow>
-    -->
 </mule>
