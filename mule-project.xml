@@ -4,4 +4,5 @@
     <description></description>
     <muleExtension name="APIkit" qualifier="org.mule.tooling.apikit"/>
     <muleExtension name="APIkit" qualifier="org.mule.tooling.apikit"/>
+    <muleExtension name="Secure Property Placeholder" qualifier="org.mule.tooling.ui.contribution.secure-property-placeholder"/>
 </mule-project>
