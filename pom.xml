@@ -80,6 +80,10 @@
                             <groupId>org.mule.modules</groupId>
                             <artifactId>mule-module-json</artifactId>
                         </inclusion>
+                    <inclusion>
+                            <groupId>org.mule.transports</groupId>
+                            <artifactId>mule-transport-email</artifactId>
+                        </inclusion>
                     </inclusions>
                 </configuration>
 			</plugin>
@@ -506,6 +510,12 @@
 		  <version>4.0.2.GA</version>
 		  <scope>runtime</scope>
 		</dependency>
+    <dependency>
+            <groupId>org.mule.transports</groupId>
+            <artifactId>mule-transport-email</artifactId>
+            <version>${mule.version}</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
 	<repositories>

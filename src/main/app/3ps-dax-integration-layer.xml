@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mule xmlns:scripting="http://www.mulesoft.org/schema/mule/scripting" xmlns:file="http://www.mulesoft.org/schema/mule/file" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:apikit="http://www.mulesoft.org/schema/mule/apikit" xmlns:context="http://www.springframework.org/schema/context" xmlns:core="http://www.mulesoft.org/schema/mule/core" xmlns:cxf="http://www.mulesoft.org/schema/mule/cxf" xmlns:data-mapper="http://www.mulesoft.org/schema/mule/ee/data-mapper" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:json="http://www.mulesoft.org/schema/mule/json" xmlns:spring="http://www.springframework.org/schema/beans" xmlns:tracking="http://www.mulesoft.org/schema/mule/ee/tracking" xmlns:vm="http://www.mulesoft.org/schema/mule/vm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="EE-3.4.1" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+<mule xmlns:scripting="http://www.mulesoft.org/schema/mule/scripting" xmlns:file="http://www.mulesoft.org/schema/mule/file" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:apikit="http://www.mulesoft.org/schema/mule/apikit" xmlns:context="http://www.springframework.org/schema/context" xmlns:core="http://www.mulesoft.org/schema/mule/core" xmlns:cxf="http://www.mulesoft.org/schema/mule/cxf" xmlns:data-mapper="http://www.mulesoft.org/schema/mule/ee/data-mapper" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:json="http://www.mulesoft.org/schema/mule/json" xmlns:spring="http://www.springframework.org/schema/beans" xmlns:tracking="http://www.mulesoft.org/schema/mule/ee/tracking" xmlns:vm="http://www.mulesoft.org/schema/mule/vm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:smtp="http://www.mulesoft.org/schema/mule/smtp" version="EE-3.4.1" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
 http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
 http://www.mulesoft.org/schema/mule/apikit http://www.mulesoft.org/schema/mule/apikit/current/mule-apikit.xsd
 http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
@@ -9,29 +9,32 @@ http://www.mulesoft.org/schema/mule/cxf http://www.mulesoft.org/schema/mule/cxf/
 http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/mule/ee/tracking/current/mule-tracking-ee.xsd
 http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/json/current/mule-json.xsd
 http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schema/mule/ee/data-mapper/current/mule-data-mapper.xsd
-http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/file/current/mule-file.xsd
-http://www.mulesoft.org/schema/mule/scripting http://www.mulesoft.org/schema/mule/scripting/current/mule-scripting.xsd">
-    <!-- global exception strategy -->
-    <catch-exception-strategy name="global-main-exception-strategy">
-        <custom-processor class="com.bhnetwork.integration.msgprocessors.ExceptionEvaluator" doc:name="ExceptionEvaluator" />
-        <choice doc:name="Choice">
+http://www.mulesoft.org/schema/mule/scripting http://www.mulesoft.org/schema/mule/scripting/current/mule-scripting.xsd
+http://www.mulesoft.org/schema/mule/smtp http://www.mulesoft.org/schema/mule/smtp/current/mule-smtp.xsd">
+
+	<!-- global exception strategy -->
+	<catch-exception-strategy name="global-main-exception-strategy">
+	        <custom-processor class="com.bhnetwork.integration.msgprocessors.ExceptionEvaluator" doc:name="ExceptionEvaluator"/>
+	        <choice doc:name="Choice">
         	<!-- TODO Stephane Retryable Exception goes recursively for UnknownHostException (testing the service without vpn enabled) -->
-            <when expression="#[flowVars['isRetryableException']==true]">
-                <logger message="Message failed (RETRY) due to: #[exception.cause] #[exception.cause.message]" level="INFO" doc:name="Logger - Retrying" />
-                <vm:outbound-endpoint exchange-pattern="one-way" path="Q.retry" doc:name="VM-retry" />
-            </when>
-            <when expression="#[sessionVars['DaxStep']=='BEFORE-CLEAN-UP']">
-                <logger level="INFO" doc:name="Logger - Abort (error in clean up should not recurse)" />
-                <vm:outbound-endpoint exchange-pattern="one-way" doc:name="VM - DLQ" path="Q.dlq" />
-            </when>
-            <when expression="#[flowVars['isRetryableException']==false]">
-                <logger message="Message failed (ABORT) due to: #[exception.cause] #[exception.cause.message]" level="ERROR" doc:name="Logger - Error (for non-retryable issues)" />
+	            <when expression="#[flowVars['isRetryableException']==true]">
+	                <logger message="Message failed (RETRY) due to: #[exception.cause] #[exception.cause.message]" level="INFO" doc:name="Logger - Retrying"/>
+	                <vm:outbound-endpoint exchange-pattern="one-way" path="Q.retry" doc:name="VM-retry"/>
+	            </when>
+	            <when expression="#[sessionVars['DaxStep']=='BEFORE-CLEAN-UP']">
+	                <logger level="INFO" doc:name="Logger - Abort (error in clean up should not recurse)"/>
+	                <vm:outbound-endpoint exchange-pattern="one-way"  doc:name="VM - DLQ" path="Q.dlq"/>
+	            </when>
+	            <when expression="#[flowVars['isRetryableException']==false]">
+	                <logger message="Message failed (ABORT) due to: #[exception.cause] #[exception.cause.message]" level="ERROR" doc:name="Logger - Error (for non-retryable issues)"/>
                 <!-- TODO Stephane Looks like this will not trigger the 3ps-callback flow to send the error message to 3ps-->
                 <!-- TODO Stephane Please define a session variable "error" with the erro message before passing it to the 3ps callback flow -->
-                <vm:outbound-endpoint exchange-pattern="one-way" path="Q.error" doc:name="VM-error" />
-            </when>
-        </choice>
-    </catch-exception-strategy>
+	                <vm:outbound-endpoint exchange-pattern="one-way" path="Q.error" doc:name="VM-error"/>
+	            </when>
+	        </choice>
+    </catch-exception-strategy> 
+    
+     <smtp:gmail-connector name="smtpGmailConnector" doc:name="Gmail"/>
     <http:connector name="httpDAXConnector" doc:name="HTTP\HTTPS">
         <service-overrides sessionHandler="org.mule.session.NullSessionHandler" dispatcherFactory="org.mule.transport.http.NTLMv2HttpClientMessageDispatcherFactor" />
     </http:connector>
@@ -241,7 +244,7 @@ http://www.mulesoft.org/schema/mule/scripting http://www.mulesoft.org/schema/mul
     </flow>
     <flow name="DAX-error-flow" doc:name="DAX-error-flow">
         <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-error" path="Q.error" />
-        <!-- <flow-ref name="" doc:name="Notify Ops"/> -->
+        <flow-ref name="notification-flow" doc:name="Notify Ops"/>
         <logger level="INFO" doc:name="Log Error, failing step &amp; 3PS entityID" />
         <vm:outbound-endpoint exchange-pattern="one-way" doc:name="VM-DAX-cleanup" path="Q.cleanup" />
         <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy" />
@@ -408,7 +411,7 @@ http://www.mulesoft.org/schema/mule/scripting http://www.mulesoft.org/schema/mul
     </flow>
     <flow name="DAX-DLQ-flow" doc:name="DAX-DLQ-flow">
         <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-DLQ" path="Q.dlq" />
-        <!-- <flow-ref name="" doc:name="Notify Ops"/> -->
+        <flow-ref name="notification-flow" doc:name="Notify Ops"/>
         <logger level="INFO" doc:name="ABORT log: avoiding circular references when/if cleanup fails" />
         <tracking:custom-event event-name="bizEvent: ABORT (unable to cleanup)" doc:name="bizEvent: ABORT (unable to cleanup)" />
         <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy" />
@@ -468,14 +471,28 @@ http://www.mulesoft.org/schema/mule/scripting http://www.mulesoft.org/schema/mul
         <!-- TODO Stephane Please check whether this global-main-exception-strategy for 3ps callback completes your orchestration specially with retry flow -->
         <!-- <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy"/> --> 
     </flow>
-    <!-- 
-    
-    <flow name="notification-service" doc:name="notification-service">
-        
-        <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy"/>
+
+    <flow name="notification-flow" doc:name="notification-flow">
+        <!-- <http:inbound-endpoint exchange-pattern="request-response" host="localhost" port="8081" path="email" doc:name="HTTP"/>  -->
+        <logger message="sending email out..." level="INFO" doc:name="Logger"/>
+        <!-- <set-payload value="This is an email test!" doc:name="Set Payload"/>  -->
+        <!-- TODO: specify Error session variable -->
+        <!-- TODO @Raj: sample email using velocity template? -->
+		<set-payload value="#[sessionVars['Error']]" doc:name="Set Payload"/>
+
+        <smtp:outbound-endpoint 
+        	connector-ref="smtpGmailConnector"
+        	to="rajasekaran.reddy@gmail.com" 
+        	from="${email.from}" 
+        	subject="${email.subject}" 
+        	responseTimeout="${email.responseTimeout}" 
+        	host="${email.host}"
+        	port="${email.port}" 
+        	mimeType="${email.mimeType}" 
+        	user="${email.user}"
+        	password="${email.password}"
+        	doc:name="SMTP"/>
     </flow>
-    -->
-    
     
     <!-- 3PS Harness Flow. TODO will be removed once the real 3PS service works.-->
     <flow name="get:/partnerProfileProcessing/v1/partnerProfile/{partnerProfileId}:apiConfig" doc:name="get:/partnerProfileProcessing/v1/partnerProfile/{partnerProfileId}:apiConfig">
