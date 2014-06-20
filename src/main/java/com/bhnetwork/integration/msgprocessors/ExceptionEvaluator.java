@@ -3,11 +3,14 @@ package com.bhnetwork.integration.msgprocessors;
 import java.net.ConnectException;
 import java.net.SocketTimeoutException;
 import java.net.UnknownHostException;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.mule.api.ExceptionPayload;
 import org.mule.api.MuleEvent;
 import org.mule.api.MuleException;
 import org.mule.api.processor.LoggerMessageProcessor;
+import org.mule.api.transport.PropertyScope;
 
 /**
  * Search through Exception chain to determine if exception was caused by a connectivity error,
@@ -50,6 +53,12 @@ public class ExceptionEvaluator extends LoggerMessageProcessor {
             }
         }
         muleEvent.getMessage().setInvocationProperty("isRetryableException", isRetryableException);
+        if(!isRetryableException){
+        	Map errorMessage = new HashMap();
+        	errorMessage.put("message", ep.getException().getCause().getMessage());
+        	errorMessage.put("daxStep", muleEvent.getMessage().getProperty("DaxStep", PropertyScope.SESSION).toString());
+        	muleEvent.setSessionVariable("error", errorMessage);
+        }
         // TODO: replace message payload by exceptionPayload?
         return muleEvent;
     }

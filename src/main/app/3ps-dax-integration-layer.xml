@@ -42,6 +42,7 @@ http://www.mulesoft.org/schema/mule/smtp http://www.mulesoft.org/schema/mule/smt
     <object-to-byte-array-transformer name="objectToByteArrayTransformer" doc:name="Object to Byte Array" />
     <context:property-placeholder location="classpath:3ps-dax-int.properties, file:///${app.properties.override.location}" />
     <spring:beans>
+    	<spring:import resource="classpath:spring-beans.xml"/>
         <spring:bean name="loggingIn" class="org.apache.cxf.interceptor.LoggingInInterceptor">
             <spring:property name="prettyLogging" value="true" />
         </spring:bean>
@@ -478,11 +479,13 @@ http://www.mulesoft.org/schema/mule/smtp http://www.mulesoft.org/schema/mule/smt
         <!-- <set-payload value="This is an email test!" doc:name="Set Payload"/>  -->
         <!-- TODO: specify Error session variable -->
         <!-- TODO @Raj: sample email using velocity template? -->
-		<set-payload value="#[sessionVars['Error']]" doc:name="Set Payload"/>
-
+        <component doc:name="EmailBody">
+        	<spring-object bean="EmailBody"/>
+        </component>
+		<!-- <set-payload value="#[sessionVars['Error']]" doc:name="Set Payload"/> -->
         <smtp:outbound-endpoint 
         	connector-ref="smtpGmailConnector"
-        	to="rajasekaran.reddy@gmail.com" 
+        	to="${email.to}" 
         	from="${email.from}" 
         	subject="${email.subject}" 
         	responseTimeout="${email.responseTimeout}" 
