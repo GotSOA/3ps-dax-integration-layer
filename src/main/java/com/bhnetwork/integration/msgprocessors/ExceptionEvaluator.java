@@ -34,14 +34,18 @@ public class ExceptionEvaluator extends LoggerMessageProcessor {
     public MuleEvent process(MuleEvent muleEvent) throws MuleException {
         boolean isRetryableException = false;
         ExceptionPayload ep = muleEvent.getMessage().getExceptionPayload();
+        Map errorMessage = new HashMap();
+        errorMessage.put("system", "DAX");	// will map to systemInError in 3PS error node
         if (ep == null) {
             logger.error("Exception payload is null");
+        	errorMessage.put("message", "Exception payload is null");    // will map to errorDescription in 3PS error node
+        	errorMessage.put("daxStep", muleEvent.getMessage().getProperty("DaxStep", PropertyScope.SESSION).toString()); // will map to errorStep in 3PS error node
+            // set error in session
+        	muleEvent.setSessionVariable("error", errorMessage);              
         } else {
             Throwable cause = ep.getException();
             while (cause != null && !isRetryableException) {
-            	
-            	// TODO: replace the exceptions below to match with inventory of exceptions above
-            	// TODO: determine what exceptions can be considered 'retry-able'
+            	// TODO: extend below the list of retry-able exceptions
                 if (	cause instanceof ConnectException || 
                 		cause instanceof UnknownHostException || 
                 		cause instanceof SocketTimeoutException 
@@ -54,12 +58,18 @@ public class ExceptionEvaluator extends LoggerMessageProcessor {
         }
         muleEvent.getMessage().setInvocationProperty("isRetryableException", isRetryableException);
         if(!isRetryableException){
-        	Map errorMessage = new HashMap();
-        	errorMessage.put("message", ep.getException().getCause().getMessage());
-        	errorMessage.put("daxStep", muleEvent.getMessage().getProperty("DaxStep", PropertyScope.SESSION).toString());
+        	errorMessage.put("message", ep.getException().getCause().getMessage());		// will map to errorDescription in 3PS error node
+        	errorMessage.put("daxStep", muleEvent.getMessage().getProperty("DaxStep", PropertyScope.SESSION).toString());  // will map to errorStep in 3PS error node
+        	// set error in session
         	muleEvent.setSessionVariable("error", errorMessage);
+        	// DEBUGGING
+        	System.out.println("Found non-retryable exception, error: " + errorMessage.toString());
         }
-        // TODO: replace message payload by exceptionPayload?
+        else {
+        	// DEBUGGING
+        	System.out.println("Found retryable exception, error: " + ep.getMessage());
+        	System.out.println("RETRYING... ");
+        }
         return muleEvent;
     }
 

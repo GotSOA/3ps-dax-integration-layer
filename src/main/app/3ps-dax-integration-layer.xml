@@ -14,11 +14,38 @@ http://www.mulesoft.org/schema/mule/smtp http://www.mulesoft.org/schema/mule/smt
 
 	<!-- global exception strategy -->
 	<catch-exception-strategy name="global-main-exception-strategy">
+			<logger message="In CATCH-EXCEPTION-STRATEGY: before exceptionEvaluator" level="INFO" doc:name="debugging"/>
 	        <custom-processor class="com.bhnetwork.integration.msgprocessors.ExceptionEvaluator" doc:name="ExceptionEvaluator"/>
+	        <!-- set the waitTime and the MaximumNumberOfRetries in session from the properties file -->
+	        <logger message="In CATCH-EXCEPTION-STRATEGY: before setting waitTime and MaxNumberRetries" level="INFO" doc:name="debugging"/>
+        	<message-properties-transformer doc:name="set DaxStep=cleanUp (before)" overwrite="true" scope="session">
+            	<add-message-property key="maximumNumberOfRetries" value="${retry.maxNumber}" />
+            	<add-message-property key="waitTimeBetweenRetries" value="${retry.waitTime.millis}"/>
+        	</message-properties-transformer>
+        	<logger message="In CATCH-EXCEPTION-STRATEGY: before first choice" level="INFO" doc:name="debugging"/>
 	        <choice doc:name="Choice">
         	<!-- TODO Stephane Retryable Exception goes recursively for UnknownHostException (testing the service without vpn enabled) -->
 	            <when expression="#[flowVars['isRetryableException']==true]">
-	                <logger message="Message failed (RETRY) due to: #[exception.cause] #[exception.cause.message]" level="INFO" doc:name="Logger - Retrying"/>
+	            	<logger message="In CATCH-EXCEPTION-STRATEGY: before second choice" level="INFO" doc:name="debugging"/>
+	            	<!-- managing numberOfRetries -->
+	            	<choice doc:name="Choice">
+	            		<when expression="#[sessionVars['numberOfRetries']==null]">
+	            			<logger message="numberOfRetries is null" level="INFO" doc:name="numberOfRetries is null"/>
+                        	<expression-transformer expression="#[sessionVars['numberOfRetries']=1]" doc:name="Expression"/>
+	            		</when>
+	            		<when expression="#[sessionVars['numberOfRetries']=='']">
+	            			<logger message="numberOfRetries is empty" level="INFO" doc:name="numberOfRetries is empty"/>
+                        	<expression-transformer expression="#[sessionVars['numberOfRetries']=1]" doc:name="Expression"/>
+	            		</when>
+	            		<when expression="#[sessionVars['numberOfRetries']==0]">
+	            			<logger message="numberOfRetries is 0" level="INFO" doc:name="numberOfRetries is 0"/>
+                        	<expression-transformer expression="#[sessionVars['numberOfRetries']=1]" doc:name="Expression"/>
+	            		</when>
+	            		<when expression="#[sessionVars['numberOfRetries']>0]">
+	            			<logger message="numberOfRetries is >0 ... RETRYING..." level="INFO" doc:name="numberOfRetries is >0"/>
+	            		</when>
+	            	</choice>
+	                <!-- <logger message="Message failed (RETRY) due to: #[exception.cause] #[exception.cause.message]" level="INFO" doc:name="Logger - Retrying"/> -->
 	                <vm:outbound-endpoint exchange-pattern="one-way" path="Q.retry" doc:name="VM-retry"/>
 	            </when>
 	            <when expression="#[sessionVars['DaxStep']=='BEFORE-CLEAN-UP']">
@@ -27,9 +54,17 @@ http://www.mulesoft.org/schema/mule/smtp http://www.mulesoft.org/schema/mule/smt
 	            </when>
 	            <when expression="#[flowVars['isRetryableException']==false]">
 	                <logger message="Message failed (ABORT) due to: #[exception.cause] #[exception.cause.message]" level="ERROR" doc:name="Logger - Error (for non-retryable issues)"/>
-                <!-- TODO Stephane Looks like this will not trigger the 3ps-callback flow to send the error message to 3ps-->
-                <!-- TODO Stephane Please define a session variable "error" with the erro message before passing it to the 3ps callback flow -->
-	                <vm:outbound-endpoint exchange-pattern="one-way" path="Q.error" doc:name="VM-error"/>
+                	
+                	<choice doc:name="Choice">
+		            	<when expression="#[sessionVars['DaxStep']=='3ps-callback']">
+		            		<logger level="INFO" doc:name="Logger - Aborting after 3ps-callback, sending to DLQ"/>
+		            		<vm:outbound-endpoint exchange-pattern="one-way"  doc:name="VM - DLQ" path="Q.dlq"/>
+		                </when>
+		                <otherwise>
+		                	 <!-- the error (in session var) is returned to Q.error, then to Q.cleanup and back to 3ps-callback-->
+		               		 <vm:outbound-endpoint exchange-pattern="one-way" path="Q.error" doc:name="VM-error"/>
+		                </otherwise>
+	   				</choice>
 	            </when>
 	        </choice>
     </catch-exception-strategy> 
@@ -130,6 +165,8 @@ http://www.mulesoft.org/schema/mule/smtp http://www.mulesoft.org/schema/mule/smt
         </enricher>
         <logger level="INFO" doc:name="Log bhnGUID and recId" message="bhnGUID=#[sessionVars.canon.company.bhnGUID] and recId=#[sessionVars.canon.company.recId]" />
         <set-session-variable variableName="DaxStep" value="2" doc:name="DaxStep = 2"/>
+        <!-- reset number of retries -->
+        <expression-transformer expression="#[sessionVars['numberOfRetries']=0]" doc:name="Expression"/>        
         <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step2" doc:name="Q.step2" />
         <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy" />
     </flow>
@@ -144,6 +181,8 @@ http://www.mulesoft.org/schema/mule/smtp http://www.mulesoft.org/schema/mule/smt
         </enricher>
         <logger level="INFO" doc:name="Log bhnGUID and recId" message="guid=#[sessionVars.canon.company.cpDivision[0].bhnGUID] and RecId=#[sessionVars.canon.company.cpDivision[0].recId]" />
         <set-session-variable variableName="DaxStep" value="3" doc:name="DaxStep = 3"/>
+        <!-- reset number of retries -->
+        <expression-transformer expression="#[sessionVars['numberOfRetries']=0]" doc:name="Expression"/>          
         <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step3" doc:name="Q.step3" />
         <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy" />
     </flow>
@@ -160,6 +199,8 @@ http://www.mulesoft.org/schema/mule/smtp http://www.mulesoft.org/schema/mule/smt
         </enricher>
         <logger level="INFO" doc:name="Log bhnGUID and recId" message="guid=#[sessionVars.canon.company.cpDivision[0].products[0].substGrp.guid] and brandRecId=#[sessionVars.canon.company.cpDivision[0].products[0].substGrp.brandRecId]" />
         <set-session-variable variableName="DaxStep" value="4" doc:name="DaxStep = 4"/>
+        <!-- reset number of retries -->
+        <expression-transformer expression="#[sessionVars['numberOfRetries']=0]" doc:name="Expression"/>          
         <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step4" doc:name="Q.step4" />
         <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy" />
     </flow>
@@ -174,6 +215,8 @@ http://www.mulesoft.org/schema/mule/smtp http://www.mulesoft.org/schema/mule/smt
         </enricher>
         <logger level="INFO" doc:name="Log bhnGUID " message="guid=#[sessionVars.canon.company.cpDivision[0].products[0].bhnGUID]" />
         <set-session-variable variableName="DaxStep" value="5" doc:name="DaxStep = 5"/>
+        <!-- reset number of retries -->
+        <expression-transformer expression="#[sessionVars['numberOfRetries']=0]" doc:name="Expression"/>          
         <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step5" doc:name="Q.step5" />
         <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy" />
     </flow>
@@ -190,6 +233,8 @@ http://www.mulesoft.org/schema/mule/smtp http://www.mulesoft.org/schema/mule/smt
         </enricher>
         <logger level="INFO" doc:name="Log bhnGUID and recId" message="bhnGUID=#[sessionVars.canon.company.cpDivision[0].products[0].iid.bhnGUID] and recId=#[sessionVars.canon.company.cpDivision[0].products[0].iid.recId]" />
         <set-session-variable variableName="DaxStep" value="6" doc:name="DaxStep = 6"/>
+        <!-- reset number of retries -->
+        <expression-transformer expression="#[sessionVars['numberOfRetries']=0]" doc:name="Expression"/>          
         <vm:outbound-endpoint exchange-pattern="one-way" doc:name="VM-step6" path="Q.step6" />
         <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy" />
     </flow>
@@ -208,6 +253,8 @@ http://www.mulesoft.org/schema/mule/smtp http://www.mulesoft.org/schema/mule/smt
         <logger level="INFO" doc:name="Log AccountNum and bhnGUID" message="step6-flow: AccountNum=#[sessionVars.canon.company.cpDivision[0].stores[0].AccountNum] and bhnGUID=#[sessionVars.canon.company.cpDivision[0].stores[0].bhnGUID]" />
         <!-- next step: Vendor service -->
         <set-session-variable variableName="DaxStep" value="7" doc:name="DaxStep = 7"/>
+        <!-- reset number of retries -->
+        <expression-transformer expression="#[sessionVars['numberOfRetries']=0]" doc:name="Expression"/>          
         <vm:outbound-endpoint exchange-pattern="one-way" doc:name="VM-step7" path="Q.step7" />
         <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy" />
     </flow>
@@ -230,6 +277,8 @@ http://www.mulesoft.org/schema/mule/smtp http://www.mulesoft.org/schema/mule/smt
         <logger level="INFO" doc:name="Log AccountNum and recId" message="AccountNum=#[sessionVars.canon.vendor.AccountNum] and recId=#[sessionVars.canon.vendor.recId]" />
         <!-- next step: Setup Complete service -->
         <set-session-variable variableName="DaxStep" value="8" doc:name="DaxStep = 8"/>
+        <!-- reset number of retries -->
+        <expression-transformer expression="#[sessionVars['numberOfRetries']=0]" doc:name="Expression"/>          
         <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step8" doc:name="VM-step8 (Setup Complete)" />
         <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy" />
     </flow>
@@ -240,6 +289,8 @@ http://www.mulesoft.org/schema/mule/smtp http://www.mulesoft.org/schema/mule/smt
         <flow-ref name="daxSetupCompWebServiceClient" doc:name="Invoke Dax SetupComp Webservice" />
         <logger level="INFO" doc:name="SetupComplete-success" message="SetupComplete-success partnerProfileId=#[payload.entityKeyList.entityKey[0].keyData.keyField[0].value]" />
         <set-payload value="#[null]" doc:name="Set Payload"/>
+        <!-- reset number of retries -->
+        <expression-transformer expression="#[sessionVars['numberOfRetries']=0]" doc:name="Expression"/>          
         <vm:outbound-endpoint exchange-pattern="one-way" doc:name="VM-callback-3PS" path="Q.callback"/>
         <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy" />
     </flow>
@@ -261,6 +312,13 @@ http://www.mulesoft.org/schema/mule/smtp http://www.mulesoft.org/schema/mule/smt
             <add-message-property key="DaxStep" value="SUCCESS-CLEAN-UP" />
         </message-properties-transformer>
         <logger level="INFO" doc:name="CleanUp-success" message="Cleanup-success partnerProfileId=#[payload.entityKeyList.entityKey[0].keyData.keyField[0].value]" />
+        <set-payload value="#[null]" doc:name="Set Payload"/>
+        
+        <!-- TODO: reset number of retries or not? how do we handle retries when error occurs during cleanup -->
+        <!-- <expression-transformer expression="#[sessionVars['numberOfRetries']=0]" doc:name="Expression"/> -->
+
+        <!-- forward error to 3ps-callback (using the VM dedicated for errors) -->
+        <vm:outbound-endpoint exchange-pattern="one-way" path="Q.errorReportTo3PS" doc:name="VM-reportError-to-3PS"/>        
         <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy" />
     </flow>
     <!-- SUB-FLOWS for web services invocations -->
@@ -378,35 +436,49 @@ http://www.mulesoft.org/schema/mule/smtp http://www.mulesoft.org/schema/mule/smt
     </sub-flow>
     <flow name="DAX-retry-flow" doc:name="DAX-retry-flow">
         <vm:inbound-endpoint exchange-pattern="one-way" path="Q.retry" doc:name="VM-retry" />
-        <logger level="INFO" message="Retry flow #[sessionVars.DaxStep]" doc:name="In Retry flow..." />
-        <choice doc:name="Choice">
-            <when expression="#[sessionVars.DaxStep==1]">
-                <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step1" doc:name="VM-retry-step1" />
-            </when>
-            <when expression="#[sessionVars.DaxStep==2]">
-                <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step2" doc:name="VM-retry-step2" />
-            </when>
-            <when expression="#[sessionVars.DaxStep==3]">
-                <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step3" doc:name="VM-retry-step3" />
-            </when>
-            <when expression="#[sessionVars.DaxStep==4]">
-                <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step4" doc:name="VM-retry-step4" />
-            </when>
-            <when expression="#[sessionVars.DaxStep==5]">
-                <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step5" doc:name="VM-retry-step5" />
-            </when>
-            <when expression="sessionVars.DaxStep==6]">
-                <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step6" doc:name="VM-retry-step6" />
-            </when>
-            <when expression="#[sessionVars.DaxStep==7]">
-                <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step7" doc:name="VM-retry-step7" />
-            </when>
-            <when expression="#[sessionVars.DaxStep==8]">
-                <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step8" doc:name="VM-retry-setupComplete" />
-            </when>
-            <otherwise>
-                <vm:outbound-endpoint exchange-pattern="one-way" path="Q.cleanup" doc:name="VM-retry-cleanup" />
-            </otherwise>
+        <logger level="INFO" message="Retry flow #[sessionVars['DaxStep']]" doc:name="In Retry flow..." />
+
+        <!-- short sleep before retry -->
+        <component class="com.bhnetwork.integration.msgprocessors.SleepBeforeRetry" doc:name="Pause before retry"/>
+        <!-- manage the number of retries to prevent recursing indefinitely -->
+        <choice doc:name="Choice numberOfRetries">
+        	<when expression="#[sessionVars['numberOfRetries']>${retry.maxNumber}]">
+        		<vm:outbound-endpoint exchange-pattern="one-way" doc:name="VM-reportError-to-3PS" path="Q.errorReportTo3PS"/>
+        	</when>
+        	<otherwise>
+        		<choice doc:name="Choice Step in Error">
+		            <when expression="#[sessionVars['DaxStep']==1]">
+		                <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step1" doc:name="VM-retry-step1" />
+		            </when>
+		            <when expression="#[sessionVars['DaxStep']==2]">
+		                <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step2" doc:name="VM-retry-step2" />
+		            </when>
+		            <when expression="#[sessionVars['DaxStep']==3]">
+		                <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step3" doc:name="VM-retry-step3" />
+		            </when>
+		            <when expression="#[sessionVars['DaxStep']==4]">
+		                <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step4" doc:name="VM-retry-step4" />
+		            </when>
+		            <when expression="#[sessionVars['DaxStep']==5]">
+		                <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step5" doc:name="VM-retry-step5" />
+		            </when>
+		            <when expression="sessionVars['DaxStep']==6]">
+		                <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step6" doc:name="VM-retry-step6" />
+		            </when>
+		            <when expression="#[sessionVars['DaxStep']==7]">
+		                <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step7" doc:name="VM-retry-step7" />
+		            </when>
+		            <when expression="#[sessionVars['DaxStep']==8]">
+		                <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step8" doc:name="VM-retry-setupComplete" />
+		            </when>
+		            <when expression="#[sessionVars['DaxStep']==3ps-callback]">
+		                <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step8" doc:name="VM-retry-setupComplete" />
+		            </when>		            
+		            <otherwise>
+		                <vm:outbound-endpoint exchange-pattern="one-way" path="Q.cleanup" doc:name="VM-retry-cleanup" />
+		            </otherwise>
+        		</choice>
+        	</otherwise>
         </choice>
         <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy" />
     </flow>
@@ -418,14 +490,21 @@ http://www.mulesoft.org/schema/mule/smtp http://www.mulesoft.org/schema/mule/smt
         <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy" />
     </flow>
     <flow name="3PS-Callback" doc:name="3PS-Callback">
+       <!-- TODO in the callback flow:
+       reset numberOfRetries to 0
+       because this flow must also be able to retry N times
+       we should use a different exception strategy for this flow (thought?)
+       if this flow causes an exception
+       if 3ps endpoint is unavailable (timeout exception)
+       if num retries is exhausted: must write json return payload to file
+        -->
         <composite-source doc:name="Composite Source">
             <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-callback-3PS" path="Q.callback"/>
             <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-reportError-to-3PS" path="Q.errorReportTo3PS"/>
         </composite-source>
+        <set-session-variable variableName="DaxStep" value="3ps-callback" doc:name="DaxStep = 3ps-callback"/>
         <http:outbound-endpoint connector-ref="defaultConnector" exchange-pattern="request-response" host="${3ps.http.host}" port="${3ps.http.port}" path="${3ps.http.path}/#[sessionVars.partnerProfileId]" method="GET" doc:name="HTTP-GET"/>
         <json:json-to-object-transformer returnClass="java.util.LinkedHashMap" doc:name="JSON to Object"/>
-        <!-- Error concept tested by RAJ.Once Stephane add a session Variable "error" with the error message and routes it to this flow -->
-        <!-- <set-session-variable value="Error in Integration" variableName="error" doc:name="Session Variable" /> -->
         <choice doc:name="Choice">
             <when expression="#[sessionVars.?error == empty]">
                 <enricher doc:name="Message Enricher">
@@ -444,6 +523,9 @@ http://www.mulesoft.org/schema/mule/smtp http://www.mulesoft.org/schema/mule/smt
                     <enrich source="#[payload.company.cpDivision[0].products[0].iid.itemId]" target="#[payload.ProductInformation[0].iid.itemId]"/>
                     <enrich source="#[payload.company.cpDivision[0].products[0].iid.bhnGUID]" target="#[payload.ProductInformation[0].iid.bhnGUID]"/>
                     <enrich source="#[payload.company.cpDivision[0].products[0].iid.recId]" target="#[payload.ProductInformation[0].iid.recId]"/>
+                    <!-- TODO: more enrichment required 
+                    . vendor & store
+                    -->
                 </enricher>
             </when>
             <otherwise>
@@ -459,26 +541,29 @@ http://www.mulesoft.org/schema/mule/smtp http://www.mulesoft.org/schema/mule/smt
         <json:json-to-object-transformer returnClass="java.util.HashMap" doc:name="JSON to Object"/>
         <logger message="3PS Update response #[payload]" level="INFO" doc:name="3PS Update response"/>
         <choice doc:name="Choice">
+        	<!-- to discuss with 3PS team what error status would be sent back upon a parsing error -->
             <when expression="#[payload.status == 'ROLLBACK']">
                 <logger level="INFO" message="ERROR on 3PS Update" doc:name="ERROR on 3PS Update"/>
-                <!-- TODO Stephane Please check your orchestration to see whether it needs to go to Q.error-->
-                <!-- <vm:outbound-endpoint exchange-pattern="one-way" doc:name="VM-Error" path="Q.error"/> -->
+                <vm:outbound-endpoint exchange-pattern="one-way" doc:name="VM-Error" path="Q.dlq"/>
             </when>
             <otherwise>
                 <logger level="INFO" message="3PS Update Success" doc:name="SUCCESS: Log Orchestration endTime"/>
                 <tracking:custom-event event-name="bizEvent: OrchestrationEndTime" doc:name="bizEvent: OrchestrationEndTime"/>
             </otherwise>
         </choice>
-        <!-- TODO Stephane Please check whether this global-main-exception-strategy for 3ps callback completes your orchestration specially with retry flow -->
-        <!-- <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy"/> --> 
+        <!-- a non-retryable exception will be DLQ'ed and not reported back to 3PS
+        	3PS has no notion of SLA. ServiceNow, which is the workflow manager of 3PS will fire off a REST request upon SLA threshold reached.
+        	
+        TODO Raj: save DLQ'ed JSON responses to file when 3PS IF2 endpoint is offline
+        	and have a REST endpoint to read such files and posts them to 3PS when 3PS comes back online
+        	v1: manual, v2: cron'ed browsing for files every hour.
+         -->
+        <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy"/>
     </flow>
 
     <flow name="notification-flow" doc:name="notification-flow">
         <!-- <http:inbound-endpoint exchange-pattern="request-response" host="localhost" port="8081" path="email" doc:name="HTTP"/>  -->
         <logger message="sending email out..." level="INFO" doc:name="Logger"/>
-        <!-- <set-payload value="This is an email test!" doc:name="Set Payload"/>  -->
-        <!-- TODO: specify Error session variable -->
-        <!-- TODO @Raj: sample email using velocity template? -->
         <component doc:name="EmailBody">
         	<spring-object bean="EmailBody"/>
         </component>
@@ -502,7 +587,7 @@ http://www.mulesoft.org/schema/mule/smtp http://www.mulesoft.org/schema/mule/smt
         <logger message="In 3ps-callback-GET" level="INFO" doc:name="Logger"/>
         <choice doc:name="Choice">
             <when expression="#[sessionVars.?createPartnerRequest != empty]">
-                <logger message="Partner profile to be updated is retreived from session createPartnerRequest" level="INFO" doc:name="From Session"/>
+                <logger message="Partner profile to be updated is retrieved from session createPartnerRequest" level="INFO" doc:name="From Session"/>
                 <set-payload value="#[sessionVars.createPartnerRequest]" doc:name="Set Payload"/>
             </when>
             <otherwise>
@@ -516,10 +601,10 @@ http://www.mulesoft.org/schema/mule/smtp http://www.mulesoft.org/schema/mule/smt
         <object-to-string-transformer doc:name="Object to String"/>
         <choice doc:name="Choice">
             <when expression="#[json:error != empty]">
-                <set-payload value="{&#xA;  &quot;status&quot;: &quot;ROLLBACK&quot;&#xA;}" doc:name="3PS Rollback"/>
+                <set-payload value="{&#xA;  &quot;status&quot;: &quot;ACK-ERROR&quot;&#xA;}" doc:name="3PS Error"/>
             </when>
             <otherwise>
-            	<set-payload value="{&#xA;  &quot;status&quot;: &quot;SUCCESS&quot;&#xA;}" doc:name="3PS Success"/>
+            	<set-payload value="{&#xA;  &quot;status&quot;: &quot;ACK-SUCCESS&quot;&#xA;}" doc:name="3PS Success"/>
             </otherwise>
         </choice>
     </flow>
