@@ -563,23 +563,33 @@ http://www.mulesoft.org/schema/mule/smtp http://www.mulesoft.org/schema/mule/smt
 
     <flow name="notification-flow" doc:name="notification-flow">
         <!-- <http:inbound-endpoint exchange-pattern="request-response" host="localhost" port="8081" path="email" doc:name="HTTP"/>  -->
-        <logger message="sending email out..." level="INFO" doc:name="Logger"/>
-        <component doc:name="EmailBody">
-        	<spring-object bean="EmailBody"/>
-        </component>
-		<!-- <set-payload value="#[sessionVars['Error']]" doc:name="Set Payload"/> -->
-        <smtp:outbound-endpoint 
-        	connector-ref="smtpGmailConnector"
-        	to="${email.to}" 
-        	from="${email.from}" 
-        	subject="${email.subject}" 
-        	responseTimeout="${email.responseTimeout}" 
-        	host="${email.host}"
-        	port="${email.port}" 
-        	mimeType="${email.mimeType}" 
-        	user="${email.user}"
-        	password="${email.password}"
-        	doc:name="SMTP"/>
+        <message-properties-transformer doc:name="toggle email forwarding on-off" overwrite="true" scope="invocation">
+            <add-message-property key="sendEmail" value="${email.send}" />
+        </message-properties-transformer>
+        <choice doc:name="Choice Email Send or Not">
+            <when expression="#[flowVars['sendEmail'] == true]">
+            	<logger message="sending email notification out..." level="INFO" doc:name="Logger"/>
+            	<component doc:name="EmailBody">
+        			<spring-object bean="EmailBody"/>
+        		</component>
+		        <smtp:outbound-endpoint 
+		        	connector-ref="smtpGmailConnector"
+		        	to="${email.to}" 
+		        	from="${email.from}" 
+		        	subject="${email.subject}" 
+		        	responseTimeout="${email.responseTimeout}" 
+		        	host="${email.host}"
+		        	port="${email.port}" 
+		        	mimeType="${email.mimeType}" 
+		        	user="${email.user}"
+		        	password="${email.password}"
+		        	doc:name="SMTP"/>
+            </when>
+            <otherwise>
+               <logger message="Email notifications are disabled..." level="INFO" doc:name="Logger"/>
+               <logger message="Email body written to log: #[payload]" level="INFO" doc:name="Logger"/>
+            </otherwise>
+        </choice>		
     </flow>
     
     <!-- 3PS Harness Flow. TODO will be removed once the real 3PS service works.-->
