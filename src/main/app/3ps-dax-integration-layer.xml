@@ -10,7 +10,8 @@ http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/m
 http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/json/current/mule-json.xsd
 http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schema/mule/ee/data-mapper/current/mule-data-mapper.xsd
 http://www.mulesoft.org/schema/mule/scripting http://www.mulesoft.org/schema/mule/scripting/current/mule-scripting.xsd
-http://www.mulesoft.org/schema/mule/smtp http://www.mulesoft.org/schema/mule/smtp/current/mule-smtp.xsd">
+http://www.mulesoft.org/schema/mule/smtp http://www.mulesoft.org/schema/mule/smtp/current/mule-smtp.xsd
+http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/file/current/mule-file.xsd">
 
 	<!-- global exception strategy -->
 	<catch-exception-strategy name="global-main-exception-strategy">
@@ -56,10 +57,19 @@ http://www.mulesoft.org/schema/mule/smtp http://www.mulesoft.org/schema/mule/smt
 	                <logger message="Message failed (ABORT) due to: #[exception.cause] #[exception.cause.message]" level="ERROR" doc:name="Logger - Error (for non-retryable issues)"/>
                 	
                 	<choice doc:name="Choice">
-		            	<when expression="#[sessionVars['DaxStep']=='3ps-callback']">
-		            		<logger level="INFO" doc:name="Logger - Aborting after 3ps-callback, sending to DLQ"/>
-		            		<vm:outbound-endpoint exchange-pattern="one-way"  doc:name="VM - DLQ" path="Q.dlq"/>
-		                </when>
+                    <when expression="#[sessionVars['DaxStep']=='3ps-callback']">
+                        <choice doc:name="Choice">
+                        	<when expression="#[sessionVars.?createPartnerProfileResponse == empty]">
+                                <set-payload value="#[sessionVars.createPartnerRequest]" doc:name="Set createPartnerRequest as Payload"/>
+                                <json:json-to-object-transformer returnClass="java.util.LinkedHashMap" doc:name="JSON to Object"/>
+                                <flow-ref name="3ps-createPartnerProfileResponse" doc:name="Flow Reference"/>
+                                <set-session-variable variableName="createPartnerProfileResponse" value="#[payload]" doc:name="Session Variable"/>
+                            </when>
+                        </choice>
+                        <logger level="INFO" doc:name="Logger - Aborting after 3ps-callback, sending to DLQ"/>
+                        <vm:outbound-endpoint exchange-pattern="one-way" path="Q.dlq" doc:name="VM - DLQ"/>
+                    </when>
+
 		                <otherwise>
 		                	 <!-- the error (in session var) is returned to Q.error, then to Q.cleanup and back to 3ps-callback-->
 		               		 <vm:outbound-endpoint exchange-pattern="one-way" path="Q.error" doc:name="VM-error"/>
@@ -125,8 +135,7 @@ http://www.mulesoft.org/schema/mule/smtp http://www.mulesoft.org/schema/mule/smt
         <exception-strategy ref="apiKitGlobalExceptionMapping" doc:name="Reference Exception Strategy" />
     </flow>
     <flow name="post:/3ps-dax-int:apiConfig" doc:name="post:/3ps-dax-int:apiConfig">
-        <object-to-string-transformer doc:name="Object to String"/>
-
+        <json:object-to-json-transformer doc:name="Object to JSON"/>
         <set-session-variable variableName="partnerProfileId" value="#[json:entityId]" doc:name="Session Variable" />
         <set-session-variable variableName="createPartnerRequest" value="#[payload]" doc:name="Session Variable"/>
 
@@ -289,6 +298,7 @@ http://www.mulesoft.org/schema/mule/smtp http://www.mulesoft.org/schema/mule/smt
         <flow-ref name="daxSetupCompWebServiceClient" doc:name="Invoke Dax SetupComp Webservice" />
         <logger level="INFO" doc:name="SetupComplete-success" message="SetupComplete-success partnerProfileId=#[payload.entityKeyList.entityKey[0].keyData.keyField[0].value]" />
         <set-payload value="#[null]" doc:name="Set Payload"/>
+        <set-session-variable variableName="DaxStep" value="3ps-callback" doc:name="DaxStep = 3ps-callback"/>
         <!-- reset number of retries -->
         <expression-transformer expression="#[sessionVars['numberOfRetries']=0]" doc:name="Expression"/>          
         <vm:outbound-endpoint exchange-pattern="one-way" doc:name="VM-callback-3PS" path="Q.callback"/>
@@ -462,7 +472,7 @@ http://www.mulesoft.org/schema/mule/smtp http://www.mulesoft.org/schema/mule/smt
 		            <when expression="#[sessionVars['DaxStep']==5]">
 		                <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step5" doc:name="VM-retry-step5" />
 		            </when>
-		            <when expression="sessionVars['DaxStep']==6]">
+		            <when expression="#[sessionVars['DaxStep']==6]">
 		                <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step6" doc:name="VM-retry-step6" />
 		            </when>
 		            <when expression="#[sessionVars['DaxStep']==7]">
@@ -471,8 +481,8 @@ http://www.mulesoft.org/schema/mule/smtp http://www.mulesoft.org/schema/mule/smt
 		            <when expression="#[sessionVars['DaxStep']==8]">
 		                <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step8" doc:name="VM-retry-setupComplete" />
 		            </when>
-		            <when expression="#[sessionVars['DaxStep']==3ps-callback]">
-		                <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step8" doc:name="VM-retry-setupComplete" />
+		            <when expression="#[sessionVars['DaxStep']=='3ps-callback']">
+		                <vm:outbound-endpoint exchange-pattern="one-way" path="Q.callback" doc:name="VM-callback-3PS" />
 		            </when>		            
 		            <otherwise>
 		                <vm:outbound-endpoint exchange-pattern="one-way" path="Q.cleanup" doc:name="VM-retry-cleanup" />
@@ -487,6 +497,8 @@ http://www.mulesoft.org/schema/mule/smtp http://www.mulesoft.org/schema/mule/smt
         <flow-ref name="notification-flow" doc:name="Notify Ops"/>
         <logger level="INFO" doc:name="ABORT log: avoiding circular references when/if cleanup fails" />
         <tracking:custom-event event-name="bizEvent: ABORT (unable to cleanup)" doc:name="bizEvent: ABORT (unable to cleanup)" />
+        <set-payload value="#[sessionVars.createPartnerProfileResponse]" doc:name="3PS createPartnerProfileResponse"/>
+        <file:outbound-endpoint path="${dlq.file.path}" responseTimeout="10000" doc:name="To DLQ folder" outputPattern="createPartnerProfileResponse_#[sessionVars.partnerProfileId].json"/>
         <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy" />
     </flow>
     <flow name="3PS-Callback" doc:name="3PS-Callback">
@@ -505,7 +517,33 @@ http://www.mulesoft.org/schema/mule/smtp http://www.mulesoft.org/schema/mule/smt
         <set-session-variable variableName="DaxStep" value="3ps-callback" doc:name="DaxStep = 3ps-callback"/>
         <http:outbound-endpoint connector-ref="defaultConnector" exchange-pattern="request-response" host="${3ps.http.host}" port="${3ps.http.port}" path="${3ps.http.path}/#[sessionVars.partnerProfileId]" method="GET" doc:name="HTTP-GET"/>
         <json:json-to-object-transformer returnClass="java.util.LinkedHashMap" doc:name="JSON to Object"/>
+        <flow-ref name="3ps-createPartnerProfileResponse" doc:name="Flow Reference"/>
+        <set-session-variable variableName="createPartnerProfileResponse" value="#[payload]" doc:name="Session Variable"/>
+        <http:outbound-endpoint  connector-ref="defaultConnector" exchange-pattern="request-response" host="${3ps.http.host}" port="${3ps.http.port}" path="${3ps.http.path}/#[sessionVars.partnerProfileId]" method="POST" doc:name="HTTP-POST"/>
+        <json:json-to-object-transformer returnClass="java.util.HashMap" doc:name="JSON to Object"/>
+        <logger message="3PS Update response #[payload]" level="INFO" doc:name="3PS Update response"/>
         <choice doc:name="Choice">
+        	<!-- to discuss with 3PS team what error status would be sent back upon a parsing error -->
+            <when expression="#[payload.status == 'ROLLBACK']">
+                <logger level="INFO" message="ERROR on 3PS Update" doc:name="ERROR on 3PS Update"/>
+                <vm:outbound-endpoint exchange-pattern="one-way" doc:name="VM-Error" path="Q.dlq"/>
+            </when>
+            <otherwise>
+                <logger level="INFO" message="3PS Update Success" doc:name="SUCCESS: Log Orchestration endTime"/>
+                <tracking:custom-event event-name="bizEvent: OrchestrationEndTime" doc:name="bizEvent: OrchestrationEndTime"/>
+            </otherwise>
+        </choice>
+        <!-- a non-retryable exception will be DLQ'ed and not reported back to 3PS
+        	3PS has no notion of SLA. ServiceNow, which is the workflow manager of 3PS will fire off a REST request upon SLA threshold reached.
+        	
+        TODO Raj: save DLQ'ed JSON responses to file when 3PS IF2 endpoint is offline
+        	and have a REST endpoint to read such files and posts them to 3PS when 3PS comes back online
+        	v1: manual, v2: cron'ed browsing for files every hour.
+         -->
+        <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy"/>
+    </flow>
+    <sub-flow name="3ps-createPartnerProfileResponse" doc:name="3ps-createPartnerProfileResponse">
+    	<choice doc:name="Choice">
             <when expression="#[sessionVars.?error == empty]">
                 <enricher doc:name="Message Enricher">
                     <set-payload value="#[sessionVars.canon]" doc:name="Canonical Payload from Session"/>
@@ -537,29 +575,7 @@ http://www.mulesoft.org/schema/mule/smtp http://www.mulesoft.org/schema/mule/smt
         </choice>
         <json:object-to-json-transformer doc:name="Object to JSON"/>
         <logger level="INFO" message="3PS-json-After enrichment #[payload]" doc:name="3PS-json-After"/>
-        <http:outbound-endpoint  connector-ref="defaultConnector" exchange-pattern="request-response" host="${3ps.http.host}" port="${3ps.http.port}" path="${3ps.http.path}/#[sessionVars.partnerProfileId]" method="POST" doc:name="HTTP-POST"/>
-        <json:json-to-object-transformer returnClass="java.util.HashMap" doc:name="JSON to Object"/>
-        <logger message="3PS Update response #[payload]" level="INFO" doc:name="3PS Update response"/>
-        <choice doc:name="Choice">
-        	<!-- to discuss with 3PS team what error status would be sent back upon a parsing error -->
-            <when expression="#[payload.status == 'ROLLBACK']">
-                <logger level="INFO" message="ERROR on 3PS Update" doc:name="ERROR on 3PS Update"/>
-                <vm:outbound-endpoint exchange-pattern="one-way" doc:name="VM-Error" path="Q.dlq"/>
-            </when>
-            <otherwise>
-                <logger level="INFO" message="3PS Update Success" doc:name="SUCCESS: Log Orchestration endTime"/>
-                <tracking:custom-event event-name="bizEvent: OrchestrationEndTime" doc:name="bizEvent: OrchestrationEndTime"/>
-            </otherwise>
-        </choice>
-        <!-- a non-retryable exception will be DLQ'ed and not reported back to 3PS
-        	3PS has no notion of SLA. ServiceNow, which is the workflow manager of 3PS will fire off a REST request upon SLA threshold reached.
-        	
-        TODO Raj: save DLQ'ed JSON responses to file when 3PS IF2 endpoint is offline
-        	and have a REST endpoint to read such files and posts them to 3PS when 3PS comes back online
-        	v1: manual, v2: cron'ed browsing for files every hour.
-         -->
-        <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy"/>
-    </flow>
+    </sub-flow>
 
     <flow name="notification-flow" doc:name="notification-flow">
         <!-- <http:inbound-endpoint exchange-pattern="request-response" host="localhost" port="8081" path="email" doc:name="HTTP"/>  -->

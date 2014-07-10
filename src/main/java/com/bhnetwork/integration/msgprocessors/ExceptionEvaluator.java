@@ -38,10 +38,12 @@ public class ExceptionEvaluator extends LoggerMessageProcessor {
         errorMessage.put("system", "DAX");	// will map to systemInError in 3PS error node
         if (ep == null) {
             logger.error("Exception payload is null");
-        	errorMessage.put("message", "Exception payload is null");    // will map to errorDescription in 3PS error node
-        	errorMessage.put("daxStep", muleEvent.getMessage().getProperty("DaxStep", PropertyScope.SESSION).toString()); // will map to errorStep in 3PS error node
+        	errorMessage.put("daxErrorDescription", "Exception payload is null");    // will map to errorDescription in 3PS error node
+        	errorMessage.put("daxErrorStep", muleEvent.getMessage().getProperty("DaxStep", PropertyScope.SESSION).toString()); // will map to errorStep in 3PS error node
             // set error in session
-        	muleEvent.setSessionVariable("error", errorMessage);              
+        	if(muleEvent.getMessage().getProperty("error", PropertyScope.SESSION)==null && !muleEvent.getMessage().getProperty("DaxStep", PropertyScope.SESSION).equals("3ps-callback")){
+        		muleEvent.setSessionVariable("error", errorMessage); 
+        	}
         } else {
             Throwable cause = ep.getException();
             while (cause != null && !isRetryableException) {
@@ -58,10 +60,12 @@ public class ExceptionEvaluator extends LoggerMessageProcessor {
         }
         muleEvent.getMessage().setInvocationProperty("isRetryableException", isRetryableException);
         if(!isRetryableException){
-        	errorMessage.put("message", ep.getException().getCause().getMessage());		// will map to errorDescription in 3PS error node
-        	errorMessage.put("daxStep", muleEvent.getMessage().getProperty("DaxStep", PropertyScope.SESSION).toString());  // will map to errorStep in 3PS error node
+        	errorMessage.put("daxErrorDescription", ep.getException().getCause().getMessage());		// will map to errorDescription in 3PS error node
+        	errorMessage.put("daxErrorStep", muleEvent.getMessage().getProperty("DaxStep", PropertyScope.SESSION).toString());  // will map to errorStep in 3PS error node
         	// set error in session
-        	muleEvent.setSessionVariable("error", errorMessage);
+        	if(muleEvent.getMessage().getProperty("error", PropertyScope.SESSION)==null && !muleEvent.getMessage().getProperty("DaxStep", PropertyScope.SESSION).equals("3ps-callback")){
+        		muleEvent.setSessionVariable("error", errorMessage);
+        	}
         	// DEBUGGING
         	System.out.println("Found non-retryable exception, error: " + errorMessage.toString());
         }
