@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><Graph author="rvenu00" created="Tue May 13 07:49:03 PDT 2014" description="JSON To Pojo" guiVersion="3.4.3.P" id="1400005784391" licenseCode="Unlicensed" licenseType="Unknown" modified="Tue May 13 07:49:03 PDT 2014" modifiedBy="rvenu00" name="JSON_To_Pojo" preview-file="${Project_Home}/src/main/api/examples/if1-3ps-mule-post-example.json" revision="1.0" showComponentDetails="false">
+<?xml version="1.0" encoding="UTF-8"?><Graph __version="3.5.0" author="rvenu00" created="Tue May 13 07:49:03 PDT 2014" description="JSON To Pojo" guiVersion="3.4.3.P" id="1400005784391" licenseCode="Unlicensed" licenseType="Unknown" modified="Tue May 13 07:49:03 PDT 2014" modifiedBy="rvenu00" name="JSON_To_Pojo" preview-file="${Project_Home}/src/main/api/examples/if1-3ps-mule-post-example.json" revision="1.0" showComponentDetails="false">
 <Global>
 <Metadata __index="21" __referenceCounter="1" __sourcePath="{}/object/company/cpDivision" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _metadataParentId="0e52744c-449f-4603-912e-9e129a31f276" _parent_id="__parent_id" _type="Output" id="d9358f29-0f11-40da-9f1a-fbe2df974bd6">
 <Record fieldDelimiter="," name="cpDivision" recordDelimiter="\n\\|\r\n\\|\r" type="delimited">
@@ -462,212 +462,212 @@
 <Phase number="0">
 <Node cacheInMemory="true" enabled="enabled" fileURL="dict:outputPayload" guiName="Pojo WRITER" guiX="900" guiY="20" id="BEAN_WRITER0" type="BEAN_WRITER">
 <attr name="mapping"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
-<object xmlns:clover="http://www.cloveretl.com/ns/xmlmapping" clover:inPort="2">
+<object xmlns:clover="http://www.cloveretl.com/ns/xmlmapping" clover:inPort="1">
   <company>
-    <bhnGUID>$2.bhnGUID</bhnGUID>
-    <companyAddressLine1>$2.companyAddressLine1</companyAddressLine1>
-    <companyAddressLine2>$2.companyAddressLine2</companyAddressLine2>
-    <companyBHNSetupComplete>$2.companyBHNSetupComplete</companyBHNSetupComplete>
-    <companyCity>$2.companyCity</companyCity>
-    <companyCode>$2.companyCode</companyCode>
-    <companyContractTerm>$2.companyContractTerm</companyContractTerm>
-    <companyCountry>$2.companyCountry</companyCountry>
-    <companyIsContractComplete>$2.companyIsContractComplete</companyIsContractComplete>
-    <companyLegalName>$2.companyLegalName</companyLegalName>
-    <companyMerchantCategoryCode>$2.companyMerchantCategoryCode</companyMerchantCategoryCode>
-    <companyPrimaryContactBusinessTitle>$2.companyPrimaryContactBusinessTitle</companyPrimaryContactBusinessTitle>
-    <companyPrimaryContactEmail>$2.companyPrimaryContactEmail</companyPrimaryContactEmail>
-    <companyPrimaryContactFirstName>$2.companyPrimaryContactFirstName</companyPrimaryContactFirstName>
-    <companyPrimaryContactLastName>$2.companyPrimaryContactLastName</companyPrimaryContactLastName>
-    <companyPrimaryPhoneNumber>$2.companyPrimaryPhoneNumber</companyPrimaryPhoneNumber>
-    <companyPrimaryPhoneNumberExt>$2.companyPrimaryPhoneNumberExt</companyPrimaryPhoneNumberExt>
-    <companyState>$2.companyState</companyState>
-    <companyWebSiteURL>$2.companyWebSiteURL</companyWebSiteURL>
-    <companyZipPostalCode>$2.companyZipPostalCode</companyZipPostalCode>
-    <contractExpDate>$2.contractExpDate</contractExpDate>
+    <bhnGUID>$1.bhnGUID</bhnGUID>
+    <companyAddressLine1>$1.companyAddressLine1</companyAddressLine1>
+    <companyAddressLine2>$1.companyAddressLine2</companyAddressLine2>
+    <companyBHNSetupComplete>$1.companyBHNSetupComplete</companyBHNSetupComplete>
+    <companyCity>$1.companyCity</companyCity>
+    <companyCode>$1.companyCode</companyCode>
+    <companyContractTerm>$1.companyContractTerm</companyContractTerm>
+    <companyCountry>$1.companyCountry</companyCountry>
+    <companyIsContractComplete>$1.companyIsContractComplete</companyIsContractComplete>
+    <companyLegalName>$1.companyLegalName</companyLegalName>
+    <companyMerchantCategoryCode>$1.companyMerchantCategoryCode</companyMerchantCategoryCode>
+    <companyPrimaryContactBusinessTitle>$1.companyPrimaryContactBusinessTitle</companyPrimaryContactBusinessTitle>
+    <companyPrimaryContactEmail>$1.companyPrimaryContactEmail</companyPrimaryContactEmail>
+    <companyPrimaryContactFirstName>$1.companyPrimaryContactFirstName</companyPrimaryContactFirstName>
+    <companyPrimaryContactLastName>$1.companyPrimaryContactLastName</companyPrimaryContactLastName>
+    <companyPrimaryPhoneNumber>$1.companyPrimaryPhoneNumber</companyPrimaryPhoneNumber>
+    <companyPrimaryPhoneNumberExt>$1.companyPrimaryPhoneNumberExt</companyPrimaryPhoneNumberExt>
+    <companyState>$1.companyState</companyState>
+    <companyWebSiteURL>$1.companyWebSiteURL</companyWebSiteURL>
+    <companyZipPostalCode>$1.companyZipPostalCode</companyZipPostalCode>
+    <contractExpDate>$1.contractExpDate</contractExpDate>
     <clover:collection clover:name="cpDivision">
-      <item clover:inPort="0" clover:key="__parent_id" clover:parentKey="__id">
-        <accountType>$0.accountType</accountType>
-        <bhnGUID>$0.bhnGUID</bhnGUID>
-        <companyCode>$0.companyCode</companyCode>
-        <divisionCashierInstructions>$0.divisionCashierInstructions</divisionCashierInstructions>
-        <divisionCode>$0.divisionCode</divisionCode>
-        <divisionCustomerSupportContactFirstName>$0.divisionCustomerSupportContactFirstName</divisionCustomerSupportContactFirstName>
-        <divisionCustomerSupportContactLastName>$0.divisionCustomerSupportContactLastName</divisionCustomerSupportContactLastName>
-        <divisionCustomerSupportEmail>$0.divisionCustomerSupportEmail</divisionCustomerSupportEmail>
-        <divisionCustomerSupportPhone>$0.divisionCustomerSupportPhone</divisionCustomerSupportPhone>
-        <divisionCustomerSupportURL>$0.divisionCustomerSupportURL</divisionCustomerSupportURL>
-        <divisionInStoreRedemptionInstructions>$0.divisionInStoreRedemptionInstructions</divisionInStoreRedemptionInstructions>
-        <divisionIsContractComplete>$0.divisionIsContractComplete</divisionIsContractComplete>
-        <divisionIsPinRequiredForBI>$0.divisionIsPinRequiredForBI</divisionIsPinRequiredForBI>
-        <divisionIsPinRequiredForRedemption>$0.divisionIsPinRequiredForRedemption</divisionIsPinRequiredForRedemption>
-        <divisionLocalPartner>$0.divisionLocalPartner</divisionLocalPartner>
-        <divisionLocalPartnerSource>$0.divisionLocalPartnerSource</divisionLocalPartnerSource>
-        <divisionLocale>$0.divisionLocale</divisionLocale>
-        <divisionLogoURL>$0.divisionLogoURL</divisionLogoURL>
-        <divisionOnlineRedemptionInstructions>$0.divisionOnlineRedemptionInstructions</divisionOnlineRedemptionInstructions>
-        <divisionOnlineStoreURL>$0.divisionOnlineStoreURL</divisionOnlineStoreURL>
-        <divisionProcessorCode>$0.divisionProcessorCode</divisionProcessorCode>
-        <divisionProgramDescription>$0.divisionProgramDescription</divisionProgramDescription>
-        <divisionRedemptionInformation>$0.divisionRedemptionInformation</divisionRedemptionInformation>
-        <divisionRedemptionLine1>$0.divisionRedemptionLine1</divisionRedemptionLine1>
-        <divisionRedemptionLine2>$0.divisionRedemptionLine2</divisionRedemptionLine2>
-        <divisionRedemptionMethods>$0.divisionRedemptionMethods</divisionRedemptionMethods>
-        <divisionTandCTextForPhysical>$0.divisionTandCTextForPhysical</divisionTandCTextForPhysical>
-        <name>$0.name</name>
-        <processorCode>$0.processorCode</processorCode>
-        <processorContactFirstName>$0.processorContactFirstName</processorContactFirstName>
-        <processorContactLastName>$0.processorContactLastName</processorContactLastName>
-        <processorContactPhoneNumber>$0.processorContactPhoneNumber</processorContactPhoneNumber>
-        <processorContactPhoneNumberExt>$0.processorContactPhoneNumberExt</processorContactPhoneNumberExt>
-        <processorHasRealTimeIssuance>$0.processorHasRealTimeIssuance</processorHasRealTimeIssuance>
+      <item clover:inPort="3" clover:key="__parent_id" clover:parentKey="__id">
+        <accountType>$3.accountType</accountType>
+        <bhnGUID>$3.bhnGUID</bhnGUID>
+        <companyCode>$3.companyCode</companyCode>
+        <divisionCashierInstructions>$3.divisionCashierInstructions</divisionCashierInstructions>
+        <divisionCode>$3.divisionCode</divisionCode>
+        <divisionCustomerSupportContactFirstName>$3.divisionCustomerSupportContactFirstName</divisionCustomerSupportContactFirstName>
+        <divisionCustomerSupportContactLastName>$3.divisionCustomerSupportContactLastName</divisionCustomerSupportContactLastName>
+        <divisionCustomerSupportEmail>$3.divisionCustomerSupportEmail</divisionCustomerSupportEmail>
+        <divisionCustomerSupportPhone>$3.divisionCustomerSupportPhone</divisionCustomerSupportPhone>
+        <divisionCustomerSupportURL>$3.divisionCustomerSupportURL</divisionCustomerSupportURL>
+        <divisionInStoreRedemptionInstructions>$3.divisionInStoreRedemptionInstructions</divisionInStoreRedemptionInstructions>
+        <divisionIsContractComplete>$3.divisionIsContractComplete</divisionIsContractComplete>
+        <divisionIsPinRequiredForBI>$3.divisionIsPinRequiredForBI</divisionIsPinRequiredForBI>
+        <divisionIsPinRequiredForRedemption>$3.divisionIsPinRequiredForRedemption</divisionIsPinRequiredForRedemption>
+        <divisionLocalPartner>$3.divisionLocalPartner</divisionLocalPartner>
+        <divisionLocalPartnerSource>$3.divisionLocalPartnerSource</divisionLocalPartnerSource>
+        <divisionLocale>$3.divisionLocale</divisionLocale>
+        <divisionLogoURL>$3.divisionLogoURL</divisionLogoURL>
+        <divisionOnlineRedemptionInstructions>$3.divisionOnlineRedemptionInstructions</divisionOnlineRedemptionInstructions>
+        <divisionOnlineStoreURL>$3.divisionOnlineStoreURL</divisionOnlineStoreURL>
+        <divisionProcessorCode>$3.divisionProcessorCode</divisionProcessorCode>
+        <divisionProgramDescription>$3.divisionProgramDescription</divisionProgramDescription>
+        <divisionRedemptionInformation>$3.divisionRedemptionInformation</divisionRedemptionInformation>
+        <divisionRedemptionLine1>$3.divisionRedemptionLine1</divisionRedemptionLine1>
+        <divisionRedemptionLine2>$3.divisionRedemptionLine2</divisionRedemptionLine2>
+        <divisionRedemptionMethods>$3.divisionRedemptionMethods</divisionRedemptionMethods>
+        <divisionTandCTextForPhysical>$3.divisionTandCTextForPhysical</divisionTandCTextForPhysical>
+        <name>$3.name</name>
+        <processorCode>$3.processorCode</processorCode>
+        <processorContactFirstName>$3.processorContactFirstName</processorContactFirstName>
+        <processorContactLastName>$3.processorContactLastName</processorContactLastName>
+        <processorContactPhoneNumber>$3.processorContactPhoneNumber</processorContactPhoneNumber>
+        <processorContactPhoneNumberExt>$3.processorContactPhoneNumberExt</processorContactPhoneNumberExt>
+        <processorHasRealTimeIssuance>$3.processorHasRealTimeIssuance</processorHasRealTimeIssuance>
         <clover:collection clover:name="products">
-          <item clover:inPort="3" clover:key="__parent_id" clover:parentKey="__id">
-            <bhnGUID>$3.bhnGUID</bhnGUID>
-            <bhnIsEANUPC>$3.bhnIsEANUPC</bhnIsEANUPC>
-            <companyCode>$3.companyCode</companyCode>
-            <customTemplatePathURL>$3.customTemplatePathURL</customTemplatePathURL>
-            <divisionCode>$3.divisionCode</divisionCode>
+          <item clover:inPort="2" clover:key="__parent_id" clover:parentKey="__id">
+            <bhnGUID>$2.bhnGUID</bhnGUID>
+            <bhnIsEANUPC>$2.bhnIsEANUPC</bhnIsEANUPC>
+            <companyCode>$2.companyCode</companyCode>
+            <customTemplatePathURL>$2.customTemplatePathURL</customTemplatePathURL>
+            <divisionCode>$2.divisionCode</divisionCode>
             <iid>
-              <bhnGUID>$3.bhnGUID_1</bhnGUID>
-              <divisionBrandName>$3.divisionBrandName</divisionBrandName>
-              <divisionCardImageURL>$3.divisionCardImageURL</divisionCardImageURL>
-              <divisionCode>$3.divisionCode_1</divisionCode>
-              <iidActivationType>$3.iidActivationType</iidActivationType>
-              <iidCaseCount>$3.iidCaseCount</iidCaseCount>
-              <iidCountry>$3.iidCountry</iidCountry>
-              <iidDescription>$3.iidDescription</iidDescription>
-              <iidPackSize>$3.iidPackSize</iidPackSize>
-              <iidProdPackType>$3.iidProdPackType</iidProdPackType>
-              <iidUseStdUnitConvert>$3.iidUseStdUnitConvert</iidUseStdUnitConvert>
-              <inventBatchId>$3.inventBatchId</inventBatchId>
-              <itemId>$3.itemId</itemId>
-              <language>$3.language</language>
-              <name>$3.name</name>
-              <newIidReasonCode>$3.newIidReasonCode</newIidReasonCode>
-              <recId>$3.recId</recId>
+              <bhnGUID>$2.bhnGUID_1</bhnGUID>
+              <divisionBrandName>$2.divisionBrandName</divisionBrandName>
+              <divisionCardImageURL>$2.divisionCardImageURL</divisionCardImageURL>
+              <divisionCode>$2.divisionCode_1</divisionCode>
+              <iidActivationType>$2.iidActivationType</iidActivationType>
+              <iidCaseCount>$2.iidCaseCount</iidCaseCount>
+              <iidCountry>$2.iidCountry</iidCountry>
+              <iidDescription>$2.iidDescription</iidDescription>
+              <iidPackSize>$2.iidPackSize</iidPackSize>
+              <iidProdPackType>$2.iidProdPackType</iidProdPackType>
+              <iidUseStdUnitConvert>$2.iidUseStdUnitConvert</iidUseStdUnitConvert>
+              <inventBatchId>$2.inventBatchId</inventBatchId>
+              <itemId>$2.itemId</itemId>
+              <language>$2.language</language>
+              <name>$2.name</name>
+              <newIidReasonCode>$2.newIidReasonCode</newIidReasonCode>
+              <recId>$2.recId</recId>
             </iid>
-            <isActivationRequired>$3.isActivationRequired</isActivationRequired>
-            <isProductDenominationVariable>$3.isProductDenominationVariable</isProductDenominationVariable>
-            <isReloadable>$3.isReloadable</isReloadable>
-            <processorCode>$3.processorCode</processorCode>
-            <productAccountInquiryBIN>$3.productAccountInquiryBIN</productAccountInquiryBIN>
-            <productAccountTopupBIN>$3.productAccountTopupBIN</productAccountTopupBIN>
-            <productActivationInstructions>$3.productActivationInstructions</productActivationInstructions>
-            <productBHNNotes>$3.productBHNNotes</productBHNNotes>
-            <productBINForDARTransaction>$3.productBINForDARTransaction</productBINForDARTransaction>
-            <productBackCardTemplateId>$3.productBackCardTemplateId</productBackCardTemplateId>
-            <productBuyerGroup>$3.productBuyerGroup</productBuyerGroup>
-            <productChannelDimension>$3.productChannelDimension</productChannelDimension>
-            <productClassification>$3.productClassification</productClassification>
-            <productCurrency>$3.productCurrency</productCurrency>
-            <productDefaultIID>$3.productDefaultIID</productDefaultIID>
-            <productDenomination>$3.productDenomination</productDenomination>
-            <productDimensionCode>$3.productDimensionCode</productDimensionCode>
-            <productDimensionGroup>$3.productDimensionGroup</productDimensionGroup>
-            <productExpDate>$3.productExpDate</productExpDate>
-            <productExpLength>$3.productExpLength</productExpLength>
-            <productGroup>$3.productGroup</productGroup>
-            <productInventorySource>$3.productInventorySource</productInventorySource>
-            <productIsCheckMinMax>$3.productIsCheckMinMax</productIsCheckMinMax>
-            <productIsTaxable>$3.productIsTaxable</productIsTaxable>
-            <productIsUsingStandardDesign>$3.productIsUsingStandardDesign</productIsUsingStandardDesign>
-            <productIssuerCompanyCode>$3.productIssuerCompanyCode</productIssuerCompanyCode>
-            <productItemGroupId>$3.productItemGroupId</productItemGroupId>
-            <productItemName>$3.productItemName</productItemName>
-            <productMaximumFaceValue>$3.productMaximumFaceValue</productMaximumFaceValue>
-            <productMinimumFaceValue>$3.productMinimumFaceValue</productMinimumFaceValue>
-            <productModelGroupId>$3.productModelGroupId</productModelGroupId>
-            <productMultiCardIndicator>$3.productMultiCardIndicator</productMultiCardIndicator>
-            <productNewUPCReason>$3.productNewUPCReason</productNewUPCReason>
-            <productOwnershipType>$3.productOwnershipType</productOwnershipType>
-            <productSubstitutionGroup>$3.productSubstitutionGroup</productSubstitutionGroup>
-            <productTaxIncluded>$3.productTaxIncluded</productTaxIncluded>
-            <productTermsAndConditions>$3.productTermsAndConditions</productTermsAndConditions>
-            <productType>$3.productType</productType>
-            <productTypeId>$3.productTypeId</productTypeId>
-            <reloadMaxAmount>$3.reloadMaxAmount</reloadMaxAmount>
-            <reloadMinAmount>$3.reloadMinAmount</reloadMinAmount>
+            <isActivationRequired>$2.isActivationRequired</isActivationRequired>
+            <isProductDenominationVariable>$2.isProductDenominationVariable</isProductDenominationVariable>
+            <isReloadable>$2.isReloadable</isReloadable>
+            <processorCode>$2.processorCode</processorCode>
+            <productAccountInquiryBIN>$2.productAccountInquiryBIN</productAccountInquiryBIN>
+            <productAccountTopupBIN>$2.productAccountTopupBIN</productAccountTopupBIN>
+            <productActivationInstructions>$2.productActivationInstructions</productActivationInstructions>
+            <productBHNNotes>$2.productBHNNotes</productBHNNotes>
+            <productBINForDARTransaction>$2.productBINForDARTransaction</productBINForDARTransaction>
+            <productBackCardTemplateId>$2.productBackCardTemplateId</productBackCardTemplateId>
+            <productBuyerGroup>$2.productBuyerGroup</productBuyerGroup>
+            <productChannelDimension>$2.productChannelDimension</productChannelDimension>
+            <productClassification>$2.productClassification</productClassification>
+            <productCurrency>$2.productCurrency</productCurrency>
+            <productDefaultIID>$2.productDefaultIID</productDefaultIID>
+            <productDenomination>$2.productDenomination</productDenomination>
+            <productDimensionCode>$2.productDimensionCode</productDimensionCode>
+            <productDimensionGroup>$2.productDimensionGroup</productDimensionGroup>
+            <productExpDate>$2.productExpDate</productExpDate>
+            <productExpLength>$2.productExpLength</productExpLength>
+            <productGroup>$2.productGroup</productGroup>
+            <productInventorySource>$2.productInventorySource</productInventorySource>
+            <productIsCheckMinMax>$2.productIsCheckMinMax</productIsCheckMinMax>
+            <productIsTaxable>$2.productIsTaxable</productIsTaxable>
+            <productIsUsingStandardDesign>$2.productIsUsingStandardDesign</productIsUsingStandardDesign>
+            <productIssuerCompanyCode>$2.productIssuerCompanyCode</productIssuerCompanyCode>
+            <productItemGroupId>$2.productItemGroupId</productItemGroupId>
+            <productItemName>$2.productItemName</productItemName>
+            <productMaximumFaceValue>$2.productMaximumFaceValue</productMaximumFaceValue>
+            <productMinimumFaceValue>$2.productMinimumFaceValue</productMinimumFaceValue>
+            <productModelGroupId>$2.productModelGroupId</productModelGroupId>
+            <productMultiCardIndicator>$2.productMultiCardIndicator</productMultiCardIndicator>
+            <productNewUPCReason>$2.productNewUPCReason</productNewUPCReason>
+            <productOwnershipType>$2.productOwnershipType</productOwnershipType>
+            <productSubstitutionGroup>$2.productSubstitutionGroup</productSubstitutionGroup>
+            <productTaxIncluded>$2.productTaxIncluded</productTaxIncluded>
+            <productTermsAndConditions>$2.productTermsAndConditions</productTermsAndConditions>
+            <productType>$2.productType</productType>
+            <productTypeId>$2.productTypeId</productTypeId>
+            <reloadMaxAmount>$2.reloadMaxAmount</reloadMaxAmount>
+            <reloadMinAmount>$2.reloadMinAmount</reloadMinAmount>
             <substGrp>
-              <brandRecId>$3.brandRecId</brandRecId>
-              <guid>$3.guid</guid>
-              <subGroupId>$3.subGroupId</subGroupId>
-              <substitutionBrandDenomDescription>$3.substitutionBrandDenomDescription</substitutionBrandDenomDescription>
-              <substitutionCardDisplayDesc>$3.substitutionCardDisplayDesc</substitutionCardDisplayDesc>
-              <substitutionPOG1Category>$3.substitutionPOG1Category</substitutionPOG1Category>
-              <substitutionPOG2Category>$3.substitutionPOG2Category</substitutionPOG2Category>
-              <substitutionPOG3Category>$3.substitutionPOG3Category</substitutionPOG3Category>
-              <substitutionPOGDimension>$3.substitutionPOGDimension</substitutionPOGDimension>
-              <substitutionPortalDisplayName>$3.substitutionPortalDisplayName</substitutionPortalDisplayName>
-              <substitutionShipperUPC>$3.substitutionShipperUPC</substitutionShipperUPC>
+              <brandRecId>$2.brandRecId</brandRecId>
+              <guid>$2.guid</guid>
+              <subGroupId>$2.subGroupId</subGroupId>
+              <substitutionBrandDenomDescription>$2.substitutionBrandDenomDescription</substitutionBrandDenomDescription>
+              <substitutionCardDisplayDesc>$2.substitutionCardDisplayDesc</substitutionCardDisplayDesc>
+              <substitutionPOG1Category>$2.substitutionPOG1Category</substitutionPOG1Category>
+              <substitutionPOG2Category>$2.substitutionPOG2Category</substitutionPOG2Category>
+              <substitutionPOG3Category>$2.substitutionPOG3Category</substitutionPOG3Category>
+              <substitutionPOGDimension>$2.substitutionPOGDimension</substitutionPOGDimension>
+              <substitutionPortalDisplayName>$2.substitutionPortalDisplayName</substitutionPortalDisplayName>
+              <substitutionShipperUPC>$2.substitutionShipperUPC</substitutionShipperUPC>
             </substGrp>
           </item>
         </clover:collection>
-        <recId>$0.recId</recId>
+        <recId>$3.recId</recId>
         <clover:collection clover:name="stores">
-          <item clover:inPort="1" clover:key="__parent_id" clover:parentKey="__id">
-            <accountNum>$1.accountNum</accountNum>
-            <bhnCompanyCode>$1.bhnCompanyCode</bhnCompanyCode>
-            <bhnDivisionCode>$1.bhnDivisionCode</bhnDivisionCode>
-            <bhnGUID>$1.bhnGUID</bhnGUID>
-            <companyPhysicalStoreAddressLine1>$1.companyPhysicalStoreAddressLine1</companyPhysicalStoreAddressLine1>
-            <companyPhysicalStoreCountry>$1.companyPhysicalStoreCountry</companyPhysicalStoreCountry>
-            <productLanguage>$1.productLanguage</productLanguage>
-            <storeBHNCustLevel>$1.storeBHNCustLevel</storeBHNCustLevel>
-            <storeBHNStoreCode>$1.storeBHNStoreCode</storeBHNStoreCode>
-            <storeBlocked>$1.storeBlocked</storeBlocked>
-            <storeChannelDimension>$1.storeChannelDimension</storeChannelDimension>
-            <storeContactPhoneNumber>$1.storeContactPhoneNumber</storeContactPhoneNumber>
-            <storeCountryRegionId>$1.storeCountryRegionId</storeCountryRegionId>
-            <storeCustGroup>$1.storeCustGroup</storeCustGroup>
-            <storeDimensionPAC>$1.storeDimensionPAC</storeDimensionPAC>
-            <storeDimensionRegion>$1.storeDimensionRegion</storeDimensionRegion>
-            <storePhysicalStoreAddressLine1>$1.storePhysicalStoreAddressLine1</storePhysicalStoreAddressLine1>
-            <storePhysicalStoreAddressLine2>$1.storePhysicalStoreAddressLine2</storePhysicalStoreAddressLine2>
-            <storePhysicalStoreCity>$1.storePhysicalStoreCity</storePhysicalStoreCity>
-            <storePhysicalStoreName>$1.storePhysicalStoreName</storePhysicalStoreName>
-            <storePhysicalStorePostalCode>$1.storePhysicalStorePostalCode</storePhysicalStorePostalCode>
-            <storePhysicalStoreState>$1.storePhysicalStoreState</storePhysicalStoreState>
-            <storePriceToleranceGroup>$1.storePriceToleranceGroup</storePriceToleranceGroup>
+          <item clover:inPort="0" clover:key="__parent_id" clover:parentKey="__id">
+            <accountNum>$0.accountNum</accountNum>
+            <bhnCompanyCode>$0.bhnCompanyCode</bhnCompanyCode>
+            <bhnDivisionCode>$0.bhnDivisionCode</bhnDivisionCode>
+            <bhnGUID>$0.bhnGUID</bhnGUID>
+            <companyPhysicalStoreAddressLine1>$0.companyPhysicalStoreAddressLine1</companyPhysicalStoreAddressLine1>
+            <companyPhysicalStoreCountry>$0.companyPhysicalStoreCountry</companyPhysicalStoreCountry>
+            <productLanguage>$0.productLanguage</productLanguage>
+            <storeBHNCustLevel>$0.storeBHNCustLevel</storeBHNCustLevel>
+            <storeBHNStoreCode>$0.storeBHNStoreCode</storeBHNStoreCode>
+            <storeBlocked>$0.storeBlocked</storeBlocked>
+            <storeChannelDimension>$0.storeChannelDimension</storeChannelDimension>
+            <storeContactPhoneNumber>$0.storeContactPhoneNumber</storeContactPhoneNumber>
+            <storeCountryRegionId>$0.storeCountryRegionId</storeCountryRegionId>
+            <storeCustGroup>$0.storeCustGroup</storeCustGroup>
+            <storeDimensionPAC>$0.storeDimensionPAC</storeDimensionPAC>
+            <storeDimensionRegion>$0.storeDimensionRegion</storeDimensionRegion>
+            <storePhysicalStoreAddressLine1>$0.storePhysicalStoreAddressLine1</storePhysicalStoreAddressLine1>
+            <storePhysicalStoreAddressLine2>$0.storePhysicalStoreAddressLine2</storePhysicalStoreAddressLine2>
+            <storePhysicalStoreCity>$0.storePhysicalStoreCity</storePhysicalStoreCity>
+            <storePhysicalStoreName>$0.storePhysicalStoreName</storePhysicalStoreName>
+            <storePhysicalStorePostalCode>$0.storePhysicalStorePostalCode</storePhysicalStorePostalCode>
+            <storePhysicalStoreState>$0.storePhysicalStoreState</storePhysicalStoreState>
+            <storePriceToleranceGroup>$0.storePriceToleranceGroup</storePriceToleranceGroup>
           </item>
         </clover:collection>
       </item>
     </clover:collection>
-    <legalEntityCode>$2.legalEntityCode</legalEntityCode>
-    <legalEntityStateOfIncorporation>$2.legalEntityStateOfIncorporation</legalEntityStateOfIncorporation>
-    <recId>$2.recId</recId>
+    <legalEntityCode>$1.legalEntityCode</legalEntityCode>
+    <legalEntityStateOfIncorporation>$1.legalEntityStateOfIncorporation</legalEntityStateOfIncorporation>
+    <recId>$1.recId</recId>
   </company>
   <vendor>
-    <accountNum>$2.accountNum</accountNum>
-    <companyLegalName>$2.companyLegalName_1</companyLegalName>
-    <divisionBrandName>$2.divisionBrandName</divisionBrandName>
-    <recId>$2.recId_1</recId>
-    <vendorAddress>$2.vendorAddress</vendorAddress>
-    <vendorBlocked>$2.vendorBlocked</vendorBlocked>
-    <vendorCity>$2.vendorCity</vendorCity>
-    <vendorCountryRegionId>$2.vendorCountryRegionId</vendorCountryRegionId>
-    <vendorCounty>$2.vendorCounty</vendorCounty>
-    <vendorCurrency>$2.vendorCurrency</vendorCurrency>
-    <vendorDBA>$2.vendorDBA</vendorDBA>
-    <vendorEmail>$2.vendorEmail</vendorEmail>
-    <vendorForeignEntityIndicator>$2.vendorForeignEntityIndicator</vendorForeignEntityIndicator>
-    <vendorGroup>$2.vendorGroup</vendorGroup>
-    <vendorLanguageId>$2.vendorLanguageId</vendorLanguageId>
-    <vendorName>$2.vendorName</vendorName>
-    <vendorPartyType>$2.vendorPartyType</vendorPartyType>
-    <vendorPaymMode>$2.vendorPaymMode</vendorPaymMode>
-    <vendorPaymentTermsId>$2.vendorPaymentTermsId</vendorPaymentTermsId>
-    <vendorPhone>$2.vendorPhone</vendorPhone>
-    <vendorState>$2.vendorState</vendorState>
-    <vendorStreet>$2.vendorStreet</vendorStreet>
-    <vendorTax1099NameChoice>$2.vendorTax1099NameChoice</vendorTax1099NameChoice>
-    <vendorTax1099Reports>$2.vendorTax1099Reports</vendorTax1099Reports>
-    <vendorTaxGroup>$2.vendorTaxGroup</vendorTaxGroup>
-    <vendorTaxIDNumber>$2.vendorTaxIDNumber</vendorTaxIDNumber>
-    <vendorTaxIdType>$2.vendorTaxIdType</vendorTaxIdType>
-    <vendorURL>$2.vendorURL</vendorURL>
-    <vendorW9>$2.vendorW9</vendorW9>
-    <vendorZipCode>$2.vendorZipCode</vendorZipCode>
+    <accountNum>$1.accountNum</accountNum>
+    <companyLegalName>$1.companyLegalName_1</companyLegalName>
+    <divisionBrandName>$1.divisionBrandName</divisionBrandName>
+    <recId>$1.recId_1</recId>
+    <vendorAddress>$1.vendorAddress</vendorAddress>
+    <vendorBlocked>$1.vendorBlocked</vendorBlocked>
+    <vendorCity>$1.vendorCity</vendorCity>
+    <vendorCountryRegionId>$1.vendorCountryRegionId</vendorCountryRegionId>
+    <vendorCounty>$1.vendorCounty</vendorCounty>
+    <vendorCurrency>$1.vendorCurrency</vendorCurrency>
+    <vendorDBA>$1.vendorDBA</vendorDBA>
+    <vendorEmail>$1.vendorEmail</vendorEmail>
+    <vendorForeignEntityIndicator>$1.vendorForeignEntityIndicator</vendorForeignEntityIndicator>
+    <vendorGroup>$1.vendorGroup</vendorGroup>
+    <vendorLanguageId>$1.vendorLanguageId</vendorLanguageId>
+    <vendorName>$1.vendorName</vendorName>
+    <vendorPartyType>$1.vendorPartyType</vendorPartyType>
+    <vendorPaymMode>$1.vendorPaymMode</vendorPaymMode>
+    <vendorPaymentTermsId>$1.vendorPaymentTermsId</vendorPaymentTermsId>
+    <vendorPhone>$1.vendorPhone</vendorPhone>
+    <vendorState>$1.vendorState</vendorState>
+    <vendorStreet>$1.vendorStreet</vendorStreet>
+    <vendorTax1099NameChoice>$1.vendorTax1099NameChoice</vendorTax1099NameChoice>
+    <vendorTax1099Reports>$1.vendorTax1099Reports</vendorTax1099Reports>
+    <vendorTaxGroup>$1.vendorTaxGroup</vendorTaxGroup>
+    <vendorTaxIDNumber>$1.vendorTaxIDNumber</vendorTaxIDNumber>
+    <vendorTaxIdType>$1.vendorTaxIdType</vendorTaxIdType>
+    <vendorURL>$1.vendorURL</vendorURL>
+    <vendorW9>$1.vendorW9</vendorW9>
+    <vendorZipCode>$1.vendorZipCode</vendorZipCode>
   </vendor>
 </object>]]></attr>
 <attr name="_data_format"><![CDATA[JAVA]]></attr>
@@ -938,7 +938,7 @@ output.storeBHNCustLevel=input.storeBHNCustLevel;
 output.companyPhysicalStoreCountry=input.companyPhysicalStoreCountry;
 ]]></attr>
 </Node>
-<Node enabled="enabled" guiName="Foreach 'object' -&gt; 'cpDivision'" guiX="460" guiY="120" id="FOREACH_OBJECT_CP_DIVISION" transformClass="com.mulesoft.datamapper.transform.MelRecordTransform" type="REFORMAT">
+<Node enabled="enabled" guiName="Foreach 'object' -&gt; 'cpDivision'" guiX="460" guiY="320" id="FOREACH_OBJECT_CP_DIVISION" transformClass="com.mulesoft.datamapper.transform.MelRecordTransform" type="REFORMAT">
 <attr name="melScript"><![CDATA[//MEL
 //START -> DO NOT REMOVE
 output.__id = input.__id;
@@ -954,7 +954,7 @@ output.divisionCustomerSupportPhone = input.divisionCustomerSupportPhone;
 output.divisionCustomerSupportURL = input.divisionCustomerSupportURL;
 output.divisionLocale = input.divisionLocale;
 output.divisionLogoURL = input.divisionLogoURL;
-output.divisionLocalPartner = input.divisionLocalPartner;
+output.divisionLocalPartner = (isnull(input.divisionLocalPartner) ? null : str2bool(input.divisionLocalPartner));
 output.divisionLocalPartnerSource = input.divisionLocalPartnerSource;
 output.processorContactPhoneNumberExt = input.processorContactPhoneNumberExt;
 output.divisionInStoreRedemptionInstructions = input.divisionInStoreRedemptionInstructions;
@@ -1102,392 +1102,238 @@ output.substitutionShipperUPC = input.substitutionShipperUPC;]]></attr>
 <Node charset="UTF-8" enabled="enabled" fileURL="dict:inputPayload" guiName="JSON READER" guiX="20" guiY="20" id="JSON_READER0" type="JSON_READER">
 <attr name="mapping"><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <Context xpath="/root">
-  <Context xpath=".">
-    <Context outPort="2" sequenceField="__id" xpath="object">
-      <Mapping cloverField="createdTimestamp" trim="true" xpath="createdTimestamp"/>
-      <Mapping cloverField="creatorId" trim="true" xpath="creatorId"/>
-      <Mapping cloverField="entityId" trim="true" xpath="entityId"/>
-      <Mapping cloverField="updatedTimestamp" trim="true" xpath="updatedTimestamp"/>
-      <Mapping cloverField="updaterId" trim="true" xpath="updaterId"/>
-      <Mapping cloverField="version" trim="true" xpath="version"/>
-      <Mapping cloverField="partnerProfileSource" trim="true" xpath="source/partnerProfileSource"/>
-      <Mapping cloverField="isTest" trim="true" xpath="source/isTest"/>
-      <Mapping cloverField="companyCode" trim="true" xpath="company/companyCode"/>
-      <Mapping cloverField="companyCountry" trim="true" xpath="company/companyCountry"/>
-      <Mapping cloverField="companyLegalName" trim="true" xpath="company/companyLegalName"/>
-      <Mapping cloverField="companyIsContractComplete" trim="true" xpath="company/companyIsContractComplete"/>
-      <Mapping cloverField="contractExpDate" trim="true" xpath="company/contractExpDate"/>
-      <Mapping cloverField="companyBHNSetupComplete" trim="true" xpath="company/companyBHNSetupComplete"/>
-      <Mapping cloverField="legalEntityCode" trim="true" xpath="company/legalEntityCode"/>
-      <Mapping cloverField="companyPrimaryContactFirstName" trim="true" xpath="company/companyPrimaryContactFirstName"/>
-      <Mapping cloverField="companyPrimaryContactLastName" trim="true" xpath="company/companyPrimaryContactLastName"/>
-      <Mapping cloverField="companyPrimaryContactBusinessTitle" trim="true" xpath="company/companyPrimaryContactBusinessTitle"/>
-      <Mapping cloverField="companyPrimaryPhoneNumber" trim="true" xpath="company/companyPrimaryPhoneNumber"/>
-      <Mapping cloverField="companyPrimaryPhoneNumberExt" trim="true" xpath="company/companyPrimaryPhoneNumberExt"/>
-      <Mapping cloverField="companyPrimaryContactEmail" trim="true" xpath="company/companyPrimaryContactEmail"/>
-      <Mapping cloverField="companyAddressLine1" trim="true" xpath="company/companyAddressLine1"/>
-      <Mapping cloverField="companyAddressLine2" trim="true" xpath="company/companyAddressLine2"/>
-      <Mapping cloverField="companyCity" trim="true" xpath="company/companyCity"/>
-      <Mapping cloverField="companyState" trim="true" xpath="company/companyState"/>
-      <Mapping cloverField="companyZipPostalCode" trim="true" xpath="company/companyZipPostalCode"/>
-      <Mapping cloverField="companyWebSiteURL" trim="true" xpath="company/companyWebSiteURL"/>
-      <Mapping cloverField="companyMerchantCategoryCode" trim="true" xpath="company/companyMerchantCategoryCode"/>
-      <Mapping cloverField="companyContractTerm" trim="true" xpath="company/companyContractTerm"/>
-      <Mapping cloverField="legalEntityStateOfIncorporation" trim="true" xpath="company/legalEntityStateOfIncorporation"/>
-      <Mapping cloverField="accountType" trim="true" xpath="cpDivision/accountType"/>
-      <Mapping cloverField="divisionCode" trim="true" xpath="cpDivision/divisionCode"/>
-      <Mapping cloverField="divisionCustomerSupportContactFirstName" trim="true" xpath="cpDivision/divisionCustomerSupportContactFirstName"/>
-      <Mapping cloverField="divisionCustomerSupportContactLastName" trim="true" xpath="cpDivision/divisionCustomerSupportContactLastName"/>
-      <Mapping cloverField="divisionCustomerSupportEmail" trim="true" xpath="cpDivision/divisionCustomerSupportEmail"/>
-      <Mapping cloverField="divisionCustomerSupportPhone" trim="true" xpath="cpDivision/divisionCustomerSupportPhone"/>
-      <Mapping cloverField="divisionCustomerSupportURL" trim="true" xpath="cpDivision/divisionCustomerSupportURL"/>
-      <Mapping cloverField="divisionLocale" trim="true" xpath="cpDivision/divisionLocale"/>
-      <Mapping cloverField="divisionLogoURL" trim="true" xpath="cpDivision/divisionLogoURL"/>
-      <Mapping cloverField="divisionProcessorCode" trim="true" xpath="cpDivision/divisionProcessorCode"/>
-      <Mapping cloverField="divisionRedemptionLocationType" trim="true" xpath="cpDivision/divisionRedemptionLocationType"/>
-      <Mapping cloverField="divisionLocalPartner" trim="true" xpath="cpDivision/divisionLocalPartner"/>
-      <Mapping cloverField="divisionLocalPartnerSource" trim="true" xpath="cpDivision/divisionLocalPartnerSource"/>
-      <Mapping cloverField="processorContactPhoneNumberExt" trim="true" xpath="cpDivision/processorContactPhoneNumberExt"/>
-      <Mapping cloverField="divisionInStoreRedemptionInstructions" trim="true" xpath="cpDivision/divisionInStoreRedemptionInstructions"/>
-      <Mapping cloverField="divisionCashierInstructions" trim="true" xpath="cpDivision/divisionCashierInstructions"/>
-      <Mapping cloverField="divisionOnlineRedemptionInstructions" trim="true" xpath="cpDivision/divisionOnlineRedemptionInstructions"/>
-      <Mapping cloverField="divisionRedemptionInformation" trim="true" xpath="cpDivision/divisionRedemptionInformation"/>
-      <Mapping cloverField="divisionRedemptionLine1" trim="true" xpath="cpDivision/divisionRedemptionLine1"/>
-      <Mapping cloverField="divisionRedemptionLine2" trim="true" xpath="cpDivision/divisionRedemptionLine2"/>
-      <Mapping cloverField="divisionTandCTextForPhysical" trim="true" xpath="cpDivision/divisionTandCTextForPhysical"/>
-      <Mapping cloverField="divisionRedemptionMethods" trim="true" xpath="cpDivision/divisionRedemptionMethods"/>
-      <Mapping cloverField="divisionIsPinRequiredForRedemption" trim="true" xpath="cpDivision/divisionIsPinRequiredForRedemption"/>
-      <Mapping cloverField="divisionIsPinRequiredForBI" trim="true" xpath="cpDivision/divisionIsPinRequiredForBI"/>
-      <Mapping cloverField="divisionOnlineStoreURL" trim="true" xpath="cpDivision/divisionOnlineStoreURL"/>
-      <Mapping cloverField="divisionProgramDescription" trim="true" xpath="cpDivision/divisionProgramDescription"/>
-      <Mapping cloverField="divisionAccountNumberLabel" trim="true" xpath="cpDivision/divisionAccountNumberLabel"/>
-      <Mapping cloverField="divisionIsReloadable" trim="true" xpath="cpDivision/divisionIsReloadable"/>
-      <Mapping cloverField="divisionMinimumReloadAmount" trim="true" xpath="cpDivision/divisionMinimumReloadAmount"/>
-      <Mapping cloverField="divisionMaximumReloadAmount" trim="true" xpath="cpDivision/divisionMaximumReloadAmount"/>
-      <Mapping cloverField="divisionPaymentNetworkType" trim="true" xpath="cpDivision/divisionPaymentNetworkType"/>
-      <Mapping cloverField="divisionBins" trim="true" xpath="cpDivision/divisionBins"/>
-      <Mapping cloverField="divisionPinLabel" trim="true" xpath="cpDivision/divisionPinLabel"/>
-      <Mapping cloverField="divisionCardPinType" trim="true" xpath="cpDivision/divisionCardPinType"/>
-      <Mapping cloverField="divisionCardPinLocation" trim="true" xpath="cpDivision/divisionCardPinLocation"/>
-      <Mapping cloverField="divisionLostStolenPolicyText" trim="true" xpath="cpDivision/divisionLostStolenPolicyText"/>
-      <Mapping cloverField="divisionLostStolenPolicyPhone" trim="true" xpath="cpDivision/divisionLostStolenPolicyPhone"/>
-      <Mapping cloverField="divisionisLostStolenPolicyAutomated" trim="true" xpath="cpDivision/divisionisLostStolenPolicyAutomated"/>
-      <Mapping cloverField="divisionAccessCode" trim="true" xpath="cpDivision/divisionAccessCode"/>
-      <Mapping cloverField="divisionManualEntryFormat" trim="true" xpath="cpDivision/divisionManualEntryFormat"/>
-      <Mapping cloverField="divisionTrack1Format" trim="true" xpath="cpDivision/divisionTrack1Format"/>
-      <Mapping cloverField="divisionTrack2Format" trim="true" xpath="cpDivision/divisionTrack2Format"/>
-      <Mapping cloverField="divisionTrack3Format" trim="true" xpath="cpDivision/divisionTrack3Format"/>
-      <Mapping cloverField="divisionAreBalancesTransferable" trim="true" xpath="cpDivision/divisionAreBalancesTransferable"/>
-      <Mapping cloverField="divisionBalanceLockTimeFrame" trim="true" xpath="cpDivision/divisionBalanceLockTimeFrame"/>
-      <Mapping cloverField="divisionHasUniversalBISupport" trim="true" xpath="cpDivision/divisionHasUniversalBISupport"/>
-      <Mapping cloverField="divisionBalanceMerges" trim="true" xpath="cpDivision/divisionBalanceMerges"/>
-      <Mapping cloverField="divisionCanCardExpire" trim="true" xpath="cpDivision/divisionCanCardExpire"/>
-      <Mapping cloverField="divisionHasPhoneSupportAtPOS" trim="true" xpath="cpDivision/divisionHasPhoneSupportAtPOS"/>
-      <Mapping cloverField="divisionSupportsPartialBalanceInquiry" trim="true" xpath="cpDivision/divisionSupportsPartialBalanceInquiry"/>
-      <Mapping cloverField="divisionSupportsPhysicalCards" trim="true" xpath="cpDivision/divisionSupportsPhysicalCards"/>
-      <Mapping cloverField="divisionSupportsRedemption" trim="true" xpath="cpDivision/divisionSupportsRedemption"/>
-      <Mapping cloverField="divisionSupportsRegift" trim="true" xpath="cpDivision/divisionSupportsRegift"/>
-      <Mapping cloverField="divisionIsCardReplaceable" trim="true" xpath="cpDivision/divisionIsCardReplaceable"/>
-      <Mapping cloverField="divisionSupportsTransactionHistory" trim="true" xpath="cpDivision/divisionSupportsTransactionHistory"/>
-      <Mapping cloverField="divisionIsCardTransferable" trim="true" xpath="cpDivision/divisionIsCardTransferable"/>
-      <Mapping cloverField="divisionSupportsBalanceInquiry" trim="true" xpath="cpDivision/divisionSupportsBalanceInquiry"/>
-      <Mapping cloverField="divisionSupportsVirtualCard" trim="true" xpath="cpDivision/divisionSupportsVirtualCard"/>
-      <Mapping cloverField="divisionSupportsVoidActivation" trim="true" xpath="cpDivision/divisionSupportsVoidActivation"/>
-      <Mapping cloverField="divisionSupportsVoidRedemption" trim="true" xpath="cpDivision/divisionSupportsVoidRedemption"/>
-      <Mapping cloverField="divisionSupportsVoidReload" trim="true" xpath="cpDivision/divisionSupportsVoidReload"/>
-      <Mapping cloverField="divisionSupportsAddQRCode" trim="true" xpath="cpDivision/divisionSupportsAddQRCode"/>
-      <Mapping cloverField="divisionIsBISystemBLAST" trim="true" xpath="cpDivision/divisionIsBISystemBLAST"/>
-      <Mapping cloverField="divisionIsBISystemCAPTCHA" trim="true" xpath="cpDivision/divisionIsBISystemCAPTCHA"/>
-      <Mapping cloverField="divisionIsBISystemCardpool" trim="true" xpath="cpDivision/divisionIsBISystemCardpool"/>
-      <Mapping cloverField="divisionIsBISystemScreenScraped" trim="true" xpath="cpDivision/divisionIsBISystemScreenScraped"/>
-      <Mapping cloverField="divisionIsBISystemUserEntered" trim="true" xpath="cpDivision/divisionIsBISystemUserEntered"/>
-      <Mapping cloverField="divisionIsBarcodeFormat1D_C128" trim="true" xpath="cpDivision/divisionIsBarcodeFormat1D-C128"/>
-      <Mapping cloverField="division1D_C128Expression" trim="true" xpath="cpDivision/division1D-C128Expression"/>
-      <Mapping cloverField="divisionIsBarcodeFormat2D_PDF417" trim="true" xpath="cpDivision/divisionIsBarcodeFormat2D-PDF417"/>
-      <Mapping cloverField="divisionIsContractComplete" trim="true" xpath="cpDivision/divisionIsContractComplete"/>
-      <Mapping cloverField="division2D_PDF417Expression" trim="true" xpath="cpDivision/division2D-PDF417Expression"/>
-      <Mapping cloverField="divisionIsBarcodeFormat2D_QRCODE" trim="true" xpath="cpDivision/divisionIsBarcodeFormat2D-QRCODE"/>
-      <Mapping cloverField="division2D_QRCODEExpression" trim="true" xpath="cpDivision/division2D-QRCODEExpression"/>
-      <Mapping cloverField="divisionCardImageBack1URL" trim="true" xpath="cpDivision/divisionCardImageBack1URL"/>
-      <Mapping cloverField="divisionCardImageBack2URL" trim="true" xpath="cpDivision/divisionCardImageBack2URL"/>
-      <Mapping cloverField="divisionCardImageBack3URL" trim="true" xpath="cpDivision/divisionCardImageBack3URL"/>
-      <Mapping cloverField="divisionCardImageBack4URL" trim="true" xpath="cpDivision/divisionCardImageBack4URL"/>
-      <Mapping cloverField="divisionCardImageBack5URL" trim="true" xpath="cpDivision/divisionCardImageBack5URL"/>
-      <Mapping cloverField="divisionCardImageFront1URL" trim="true" xpath="cpDivision/divisionCardImageFront1URL"/>
-      <Mapping cloverField="divisionCardImageFront2URL" trim="true" xpath="cpDivision/divisionCardImageFront2URL"/>
-      <Mapping cloverField="divisionCardImageFront3URL" trim="true" xpath="cpDivision/divisionCardImageFront3URL"/>
-      <Mapping cloverField="divisionCardImageFront5URL" trim="true" xpath="cpDivision/divisionCardImageFront5URL"/>
-      <Mapping cloverField="divisionisBarcodeScanSupported" trim="true" xpath="cpDivision/divisionisBarcodeScanSupported"/>
-      <Mapping cloverField="name" trim="true" xpath="cpDivision/name"/>
-      <Mapping cloverField="processorContactFirstName" trim="true" xpath="processorInformation/processorContactFirstName"/>
-      <Mapping cloverField="processorContactLastName" trim="true" xpath="processorInformation/processorContactLastName"/>
-      <Mapping cloverField="processorContactPhoneNumber" trim="true" xpath="processorInformation/processorContactPhoneNumber"/>
-      <Mapping cloverField="processorHasRealTimeIssuance" trim="true" xpath="processorInformation/processorHasRealTimeIssuance"/>
-      <Mapping cloverField="processorCode" trim="true" xpath="processorInformation/processorCode"/>
-      <Mapping cloverField="processorContactPhoneNumberExt_1" trim="true" xpath="processorInformation/processorContactPhoneNumberExt"/>
-      <Mapping cloverField="processorIsRequiredToPrint" trim="true" xpath="processorInformation/processorIsRequiredToPrint"/>
-      <Mapping cloverField="processorSupportsVoids" trim="true" xpath="processorInformation/processorSupportsVoids"/>
-      <Mapping cloverField="cardProductionCostPerCard" trim="true" xpath="processorInformation/cardProductionCostPerCard"/>
-      <Mapping cloverField="cardProductionQuantity" trim="true" xpath="processorInformation/cardProductionQuantity"/>
-      <Mapping cloverField="vendorNameFor1099" trim="true" xpath="vendorInformation/vendorNameFor1099"/>
-      <Mapping cloverField="vendorGroup" trim="true" xpath="vendorInformation/vendorGroup"/>
-      <Mapping cloverField="vendorCurrency" trim="true" xpath="vendorInformation/vendorCurrency"/>
-      <Mapping cloverField="vendorBlocked" trim="true" xpath="vendorInformation/vendorBlocked"/>
-      <Mapping cloverField="vendorLanguageId" trim="true" xpath="vendorInformation/vendorLanguageId"/>
-      <Mapping cloverField="vendorCity" trim="true" xpath="vendorInformation/vendorCity"/>
-      <Mapping cloverField="vendorForeignEntityIndicator" trim="true" xpath="vendorInformation/vendorForeignEntityIndicator"/>
-      <Mapping cloverField="vendorTax1099NameChoice" trim="true" xpath="vendorInformation/vendorTax1099NameChoice"/>
-      <Mapping cloverField="vendorW9" trim="true" xpath="vendorInformation/vendorW9"/>
-      <Mapping cloverField="vendorAddress" trim="true" xpath="vendorInformation/vendorAddress"/>
-      <Mapping cloverField="vendorCountryRegionId" trim="true" xpath="vendorInformation/vendorCountryRegionId"/>
-      <Mapping cloverField="vendorCounty" trim="true" xpath="vendorInformation/vendorCounty"/>
-      <Mapping cloverField="vendorEmail" trim="true" xpath="vendorInformation/vendorEmail"/>
-      <Mapping cloverField="vendorPartyType" trim="true" xpath="vendorInformation/vendorPartyType"/>
-      <Mapping cloverField="vendorPaymentMode" trim="true" xpath="vendorInformation/vendorPaymentMode"/>
-      <Mapping cloverField="vendorPaymentTermsId" trim="true" xpath="vendorInformation/vendorPaymentTermsId"/>
-      <Mapping cloverField="vendorPhone" trim="true" xpath="vendorInformation/vendorPhone"/>
-      <Mapping cloverField="vendorState" trim="true" xpath="vendorInformation/vendorState"/>
-      <Mapping cloverField="vendorTaxIDNumber" trim="true" xpath="vendorInformation/vendorTaxIDNumber"/>
-      <Mapping cloverField="vendorEmployerIdNumber" trim="true" xpath="vendorInformation/vendorEmployerIdNumber"/>
-      <Mapping cloverField="vendorTax1099Reports" trim="true" xpath="vendorInformation/vendorTax1099Reports"/>
-      <Mapping cloverField="vendorTaxGroup" trim="true" xpath="vendorInformation/vendorTaxGroup"/>
-      <Mapping cloverField="vendorTaxIDType" trim="true" xpath="vendorInformation/vendorTaxIDType"/>
-      <Mapping cloverField="vendorURL" trim="true" xpath="vendorInformation/vendorURL"/>
-      <Mapping cloverField="vendorZipCode" trim="true" xpath="vendorInformation/vendorZipCode"/>
-      <Context generatedKey="__parent_id" outPort="1" parentKey="__id" sequenceField="__id" xpath="CustomerStore">
-        <Mapping cloverField="productLanguage" trim="true" xpath="productLanguage"/>
-        <Mapping cloverField="storeBHNStoreCode" trim="true" xpath="storeBHNStoreCode"/>
-        <Mapping cloverField="storeCustGroup" trim="true" xpath="storeCustGroup"/>
-        <Mapping cloverField="storePhysicalStoreName" trim="true" xpath="storePhysicalStoreName"/>
-        <Mapping cloverField="storePhysicalStoreAddressLine1" trim="true" xpath="storePhysicalStoreAddressLine1"/>
-        <Mapping cloverField="storePhysicalStoreAddressLine2" trim="true" xpath="storePhysicalStoreAddressLine2"/>
-        <Mapping cloverField="storeContactPhoneNumber" trim="true" xpath="storeContactPhoneNumber"/>
-        <Mapping cloverField="storeBlocked" trim="true" xpath="storeBlocked"/>
-        <Mapping cloverField="storeChannelDimension" trim="true" xpath="storeChannelDimension"/>
-        <Mapping cloverField="storeDimensionPAC" trim="true" xpath="storeDimensionPAC"/>
-        <Mapping cloverField="storeDimensionRegion" trim="true" xpath="storeDimensionRegion"/>
-        <Mapping cloverField="storePriceToleranceGroup" trim="true" xpath="storePriceToleranceGroup"/>
-        <Mapping cloverField="storeCountryRegionId" trim="true" xpath="storeCountryRegionId"/>
-        <Mapping cloverField="storePhysicalStorePostalCode" trim="true" xpath="storePhysicalStorePostalCode"/>
-        <Mapping cloverField="storePhysicalStoreState" trim="true" xpath="storePhysicalStoreState"/>
-        <Mapping cloverField="storePhysicalStoreCity" trim="true" xpath="storePhysicalStoreCity"/>
-        <Mapping cloverField="companyPhysicalStoreAddressLine1" trim="true" xpath="companyPhysicalStoreAddressLine1"/>
-        <Mapping cloverField="companyPhysicalStoreCountry" trim="true" xpath="companyPhysicalStoreCountry"/>
-        <Mapping cloverField="storeBHNCustLevel" trim="true" xpath="storeBHNCustLevel"/>
-      </Context>
-      <Context generatedKey="__parent_id" outPort="3" parentKey="__id" sequenceField="__id" xpath="ProductInformation">
-        <Mapping cloverField="productBuyerGroup" trim="true" xpath="productBuyerGroup"/>
-        <Mapping cloverField="productClassification" trim="true" xpath="productClassification"/>
-        <Mapping cloverField="productCurrency" trim="true" xpath="productCurrency"/>
-        <Mapping cloverField="productDenomination" trim="true" xpath="productDenomination"/>
-        <Mapping cloverField="productDimensionCode" trim="true" xpath="productDimensionCode"/>
-        <Mapping cloverField="productDimensionGroup" trim="true" xpath="productDimensionGroup"/>
-        <Mapping cloverField="productModelGroupId" trim="true" xpath="productModelGroupId"/>
-        <Mapping cloverField="productGroup" trim="true" xpath="productGroup"/>
-        <Mapping cloverField="productInventorySource" trim="true" xpath="productInventorySource"/>
-        <Mapping cloverField="productIssuerCompanyCode" trim="true" xpath="productIssuerCompanyCode"/>
-        <Mapping cloverField="productIsUsingStandardDesign" trim="true" xpath="productIsUsingStandardDesign"/>
-        <Mapping cloverField="productItemGroupId" trim="true" xpath="productItemGroupId"/>
-        <Mapping cloverField="productItemName" trim="true" xpath="productItemName"/>
-        <Mapping cloverField="productOwnershipType" trim="true" xpath="productOwnershipType"/>
-        <Mapping cloverField="productSubstitutionGroup" trim="true" xpath="productSubstitutionGroup"/>
-        <Mapping cloverField="productType" trim="true" xpath="productType"/>
-        <Mapping cloverField="productTypeID" trim="true" xpath="productTypeID"/>
-        <Mapping cloverField="productChannelDimension" trim="true" xpath="productChannelDimension"/>
-        <Mapping cloverField="productBHNNotes" trim="true" xpath="productBHNNotes"/>
-        <Mapping cloverField="productMulticardindicator" trim="true" xpath="productMulticardindicator"/>
-        <Mapping cloverField="isProductDenominationVariable" trim="true" xpath="isProductDenominationVariable"/>
-        <Mapping cloverField="productNewUPCReason" trim="true" xpath="productNewUPCReason"/>
-        <Mapping cloverField="productMinimumFaceValue" trim="true" xpath="productMinimumFaceValue"/>
-        <Mapping cloverField="productMaximumFaceValue" trim="true" xpath="productMaximumFaceValue"/>
-        <Mapping cloverField="productTaxIncluded" trim="true" xpath="productTaxIncluded"/>
-        <Mapping cloverField="productIsCheckMinMax" trim="true" xpath="productIsCheckMinMax"/>
-        <Mapping cloverField="productIsTaxable" trim="true" xpath="productIsTaxable"/>
-        <Mapping cloverField="productTermsAndConditions" trim="true" xpath="productTermsAndConditions"/>
-        <Mapping cloverField="productBackCardTemplateId" trim="true" xpath="productBackCardTemplateId"/>
-        <Mapping cloverField="productBINForDARTransaction" trim="true" xpath="productBINForDARTransaction"/>
-        <Mapping cloverField="productAccountInquiryBIN" trim="true" xpath="productAccountInquiryBIN"/>
-        <Mapping cloverField="productAccountTopupBIN" trim="true" xpath="productAccountTopupBIN"/>
-        <Mapping cloverField="productExpDate" trim="true" xpath="productExpDate"/>
-        <Mapping cloverField="productExpLength" trim="true" xpath="productExpLength"/>
-        <Mapping cloverField="productDefaultIID" trim="true" xpath="productDefaultIID"/>
-        <Mapping cloverField="productActivationInstructions" trim="true" xpath="productActivationInstructions"/>
-        <Mapping cloverField="customTemplatePathURL" trim="true" xpath="customTemplatePathURL"/>
-        <Mapping cloverField="isActivationRequired" trim="true" xpath="isActivationRequired"/>
-        <Mapping cloverField="isReloadable" trim="true" xpath="isReloadable"/>
-        <Mapping cloverField="reloadMinAmount" trim="true" xpath="reloadMinAmount"/>
-        <Mapping cloverField="reloadMaxAmount" trim="true" xpath="reloadMaxAmount"/>
-        <Mapping cloverField="substitutionCardDisplayDesc" trim="true" xpath="substitutionCardDisplayDesc"/>
-        <Mapping cloverField="substitutionPOG1Category" trim="true" xpath="substitutionPOG1Category"/>
-        <Mapping cloverField="substitutionPOG2Category" trim="true" xpath="substitutionPOG2Category"/>
-        <Mapping cloverField="substitutionPOG3Category" trim="true" xpath="substitutionPOG3Category"/>
-        <Mapping cloverField="substitutionPortalDisplayName" trim="true" xpath="substitutionPortalDisplayName"/>
-        <Mapping cloverField="substitutionPOGDimension" trim="true" xpath="substitutionPOGDimension"/>
-        <Mapping cloverField="substitutionShipperUPC" trim="true" xpath="substitutionShipperUPC"/>
-        <Mapping cloverField="divisionCardImageURL" trim="true" xpath="iid/divisionCardImageURL"/>
-        <Mapping cloverField="iidActivationType" trim="true" xpath="iid/iidActivationType"/>
-        <Mapping cloverField="iidCaseCount" trim="true" xpath="iid/iidCaseCount"/>
-        <Mapping cloverField="iidCountry" trim="true" xpath="iid/iidCountry"/>
-        <Mapping cloverField="iidDescription" trim="true" xpath="iid/iidDescription"/>
-        <Mapping cloverField="iidPackSize" trim="true" xpath="iid/iidPackSize"/>
-        <Mapping cloverField="iidProdPackType" trim="true" xpath="iid/iidProdPackType"/>
-        <Mapping cloverField="name" trim="true" xpath="iid/name"/>
-        <Mapping cloverField="language" trim="true" xpath="iid/language"/>
-        <Mapping cloverField="newIIDReasonCode" trim="true" xpath="iid/newIIDReasonCode"/>
-        <Mapping cloverField="iidUseStdUnitConvert" trim="true" xpath="iid/iidUseStdUnitConvert"/>
-      </Context>
+  <Context outPort="1" sequenceField="__id" xpath="object">
+    <Mapping cloverField="createdTimestamp" trim="true" xpath="createdTimestamp"/>
+    <Mapping cloverField="creatorId" trim="true" xpath="creatorId"/>
+    <Mapping cloverField="entityId" trim="true" xpath="entityId"/>
+    <Mapping cloverField="updatedTimestamp" trim="true" xpath="updatedTimestamp"/>
+    <Mapping cloverField="updaterId" trim="true" xpath="updaterId"/>
+    <Mapping cloverField="version" trim="true" xpath="version"/>
+    <Mapping cloverField="partnerProfileSource" trim="true" xpath="source/partnerProfileSource"/>
+    <Mapping cloverField="isTest" trim="true" xpath="source/isTest"/>
+    <Mapping cloverField="companyCode" trim="true" xpath="company/companyCode"/>
+    <Mapping cloverField="companyCountry" trim="true" xpath="company/companyCountry"/>
+    <Mapping cloverField="companyLegalName" trim="true" xpath="company/companyLegalName"/>
+    <Mapping cloverField="companyIsContractComplete" trim="true" xpath="company/companyIsContractComplete"/>
+    <Mapping cloverField="contractExpDate" trim="true" xpath="company/contractExpDate"/>
+    <Mapping cloverField="companyBHNSetupComplete" trim="true" xpath="company/companyBHNSetupComplete"/>
+    <Mapping cloverField="legalEntityCode" trim="true" xpath="company/legalEntityCode"/>
+    <Mapping cloverField="companyPrimaryContactFirstName" trim="true" xpath="company/companyPrimaryContactFirstName"/>
+    <Mapping cloverField="companyPrimaryContactLastName" trim="true" xpath="company/companyPrimaryContactLastName"/>
+    <Mapping cloverField="companyPrimaryContactBusinessTitle" trim="true" xpath="company/companyPrimaryContactBusinessTitle"/>
+    <Mapping cloverField="companyPrimaryPhoneNumber" trim="true" xpath="company/companyPrimaryPhoneNumber"/>
+    <Mapping cloverField="companyPrimaryPhoneNumberExt" trim="true" xpath="company/companyPrimaryPhoneNumberExt"/>
+    <Mapping cloverField="companyPrimaryContactEmail" trim="true" xpath="company/companyPrimaryContactEmail"/>
+    <Mapping cloverField="companyAddressLine1" trim="true" xpath="company/companyAddressLine1"/>
+    <Mapping cloverField="companyAddressLine2" trim="true" xpath="company/companyAddressLine2"/>
+    <Mapping cloverField="companyCity" trim="true" xpath="company/companyCity"/>
+    <Mapping cloverField="companyState" trim="true" xpath="company/companyState"/>
+    <Mapping cloverField="companyZipPostalCode" trim="true" xpath="company/companyZipPostalCode"/>
+    <Mapping cloverField="companyWebSiteURL" trim="true" xpath="company/companyWebSiteURL"/>
+    <Mapping cloverField="companyMerchantCategoryCode" trim="true" xpath="company/companyMerchantCategoryCode"/>
+    <Mapping cloverField="companyContractTerm" trim="true" xpath="company/companyContractTerm"/>
+    <Mapping cloverField="legalEntityStateOfIncorporation" trim="true" xpath="company/legalEntityStateOfIncorporation"/>
+    <Mapping cloverField="accountType" trim="true" xpath="cpDivision/accountType"/>
+    <Mapping cloverField="divisionCode" trim="true" xpath="cpDivision/divisionCode"/>
+    <Mapping cloverField="divisionCustomerSupportContactFirstName" trim="true" xpath="cpDivision/divisionCustomerSupportContactFirstName"/>
+    <Mapping cloverField="divisionCustomerSupportContactLastName" trim="true" xpath="cpDivision/divisionCustomerSupportContactLastName"/>
+    <Mapping cloverField="divisionCustomerSupportEmail" trim="true" xpath="cpDivision/divisionCustomerSupportEmail"/>
+    <Mapping cloverField="divisionCustomerSupportPhone" trim="true" xpath="cpDivision/divisionCustomerSupportPhone"/>
+    <Mapping cloverField="divisionCustomerSupportURL" trim="true" xpath="cpDivision/divisionCustomerSupportURL"/>
+    <Mapping cloverField="divisionLocale" trim="true" xpath="cpDivision/divisionLocale"/>
+    <Mapping cloverField="divisionLogoURL" trim="true" xpath="cpDivision/divisionLogoURL"/>
+    <Mapping cloverField="divisionProcessorCode" trim="true" xpath="cpDivision/divisionProcessorCode"/>
+    <Mapping cloverField="divisionRedemptionLocationType" trim="true" xpath="cpDivision/divisionRedemptionLocationType"/>
+    <Mapping cloverField="divisionLocalPartner" trim="true" xpath="cpDivision/divisionLocalPartner"/>
+    <Mapping cloverField="divisionLocalPartnerSource" trim="true" xpath="cpDivision/divisionLocalPartnerSource"/>
+    <Mapping cloverField="processorContactPhoneNumberExt" trim="true" xpath="cpDivision/processorContactPhoneNumberExt"/>
+    <Mapping cloverField="divisionInStoreRedemptionInstructions" trim="true" xpath="cpDivision/divisionInStoreRedemptionInstructions"/>
+    <Mapping cloverField="divisionCashierInstructions" trim="true" xpath="cpDivision/divisionCashierInstructions"/>
+    <Mapping cloverField="divisionOnlineRedemptionInstructions" trim="true" xpath="cpDivision/divisionOnlineRedemptionInstructions"/>
+    <Mapping cloverField="divisionRedemptionInformation" trim="true" xpath="cpDivision/divisionRedemptionInformation"/>
+    <Mapping cloverField="divisionRedemptionLine1" trim="true" xpath="cpDivision/divisionRedemptionLine1"/>
+    <Mapping cloverField="divisionRedemptionLine2" trim="true" xpath="cpDivision/divisionRedemptionLine2"/>
+    <Mapping cloverField="divisionTandCTextForPhysical" trim="true" xpath="cpDivision/divisionTandCTextForPhysical"/>
+    <Mapping cloverField="divisionRedemptionMethods" trim="true" xpath="cpDivision/divisionRedemptionMethods"/>
+    <Mapping cloverField="divisionIsPinRequiredForRedemption" trim="true" xpath="cpDivision/divisionIsPinRequiredForRedemption"/>
+    <Mapping cloverField="divisionIsPinRequiredForBI" trim="true" xpath="cpDivision/divisionIsPinRequiredForBI"/>
+    <Mapping cloverField="divisionOnlineStoreURL" trim="true" xpath="cpDivision/divisionOnlineStoreURL"/>
+    <Mapping cloverField="divisionProgramDescription" trim="true" xpath="cpDivision/divisionProgramDescription"/>
+    <Mapping cloverField="divisionAccountNumberLabel" trim="true" xpath="cpDivision/divisionAccountNumberLabel"/>
+    <Mapping cloverField="divisionIsReloadable" trim="true" xpath="cpDivision/divisionIsReloadable"/>
+    <Mapping cloverField="divisionMinimumReloadAmount" trim="true" xpath="cpDivision/divisionMinimumReloadAmount"/>
+    <Mapping cloverField="divisionMaximumReloadAmount" trim="true" xpath="cpDivision/divisionMaximumReloadAmount"/>
+    <Mapping cloverField="divisionPaymentNetworkType" trim="true" xpath="cpDivision/divisionPaymentNetworkType"/>
+    <Mapping cloverField="divisionBins" trim="true" xpath="cpDivision/divisionBins"/>
+    <Mapping cloverField="divisionPinLabel" trim="true" xpath="cpDivision/divisionPinLabel"/>
+    <Mapping cloverField="divisionCardPinType" trim="true" xpath="cpDivision/divisionCardPinType"/>
+    <Mapping cloverField="divisionCardPinLocation" trim="true" xpath="cpDivision/divisionCardPinLocation"/>
+    <Mapping cloverField="divisionLostStolenPolicyText" trim="true" xpath="cpDivision/divisionLostStolenPolicyText"/>
+    <Mapping cloverField="divisionLostStolenPolicyPhone" trim="true" xpath="cpDivision/divisionLostStolenPolicyPhone"/>
+    <Mapping cloverField="divisionisLostStolenPolicyAutomated" trim="true" xpath="cpDivision/divisionisLostStolenPolicyAutomated"/>
+    <Mapping cloverField="divisionAccessCode" trim="true" xpath="cpDivision/divisionAccessCode"/>
+    <Mapping cloverField="divisionManualEntryFormat" trim="true" xpath="cpDivision/divisionManualEntryFormat"/>
+    <Mapping cloverField="divisionTrack1Format" trim="true" xpath="cpDivision/divisionTrack1Format"/>
+    <Mapping cloverField="divisionTrack2Format" trim="true" xpath="cpDivision/divisionTrack2Format"/>
+    <Mapping cloverField="divisionTrack3Format" trim="true" xpath="cpDivision/divisionTrack3Format"/>
+    <Mapping cloverField="divisionAreBalancesTransferable" trim="true" xpath="cpDivision/divisionAreBalancesTransferable"/>
+    <Mapping cloverField="divisionBalanceLockTimeFrame" trim="true" xpath="cpDivision/divisionBalanceLockTimeFrame"/>
+    <Mapping cloverField="divisionHasUniversalBISupport" trim="true" xpath="cpDivision/divisionHasUniversalBISupport"/>
+    <Mapping cloverField="divisionBalanceMerges" trim="true" xpath="cpDivision/divisionBalanceMerges"/>
+    <Mapping cloverField="divisionCanCardExpire" trim="true" xpath="cpDivision/divisionCanCardExpire"/>
+    <Mapping cloverField="divisionHasPhoneSupportAtPOS" trim="true" xpath="cpDivision/divisionHasPhoneSupportAtPOS"/>
+    <Mapping cloverField="divisionSupportsPartialBalanceInquiry" trim="true" xpath="cpDivision/divisionSupportsPartialBalanceInquiry"/>
+    <Mapping cloverField="divisionSupportsPhysicalCards" trim="true" xpath="cpDivision/divisionSupportsPhysicalCards"/>
+    <Mapping cloverField="divisionSupportsRedemption" trim="true" xpath="cpDivision/divisionSupportsRedemption"/>
+    <Mapping cloverField="divisionSupportsRegift" trim="true" xpath="cpDivision/divisionSupportsRegift"/>
+    <Mapping cloverField="divisionIsCardReplaceable" trim="true" xpath="cpDivision/divisionIsCardReplaceable"/>
+    <Mapping cloverField="divisionSupportsTransactionHistory" trim="true" xpath="cpDivision/divisionSupportsTransactionHistory"/>
+    <Mapping cloverField="divisionIsCardTransferable" trim="true" xpath="cpDivision/divisionIsCardTransferable"/>
+    <Mapping cloverField="divisionSupportsBalanceInquiry" trim="true" xpath="cpDivision/divisionSupportsBalanceInquiry"/>
+    <Mapping cloverField="divisionSupportsVirtualCard" trim="true" xpath="cpDivision/divisionSupportsVirtualCard"/>
+    <Mapping cloverField="divisionSupportsVoidActivation" trim="true" xpath="cpDivision/divisionSupportsVoidActivation"/>
+    <Mapping cloverField="divisionSupportsVoidRedemption" trim="true" xpath="cpDivision/divisionSupportsVoidRedemption"/>
+    <Mapping cloverField="divisionSupportsVoidReload" trim="true" xpath="cpDivision/divisionSupportsVoidReload"/>
+    <Mapping cloverField="divisionSupportsAddQRCode" trim="true" xpath="cpDivision/divisionSupportsAddQRCode"/>
+    <Mapping cloverField="divisionIsBISystemBLAST" trim="true" xpath="cpDivision/divisionIsBISystemBLAST"/>
+    <Mapping cloverField="divisionIsBISystemCAPTCHA" trim="true" xpath="cpDivision/divisionIsBISystemCAPTCHA"/>
+    <Mapping cloverField="divisionIsBISystemCardpool" trim="true" xpath="cpDivision/divisionIsBISystemCardpool"/>
+    <Mapping cloverField="divisionIsBISystemScreenScraped" trim="true" xpath="cpDivision/divisionIsBISystemScreenScraped"/>
+    <Mapping cloverField="divisionIsBISystemUserEntered" trim="true" xpath="cpDivision/divisionIsBISystemUserEntered"/>
+    <Mapping cloverField="divisionIsBarcodeFormat1D_C128" trim="true" xpath="cpDivision/divisionIsBarcodeFormat1D-C128"/>
+    <Mapping cloverField="division1D_C128Expression" trim="true" xpath="cpDivision/division1D-C128Expression"/>
+    <Mapping cloverField="divisionIsBarcodeFormat2D_PDF417" trim="true" xpath="cpDivision/divisionIsBarcodeFormat2D-PDF417"/>
+    <Mapping cloverField="divisionIsContractComplete" trim="true" xpath="cpDivision/divisionIsContractComplete"/>
+    <Mapping cloverField="division2D_PDF417Expression" trim="true" xpath="cpDivision/division2D-PDF417Expression"/>
+    <Mapping cloverField="divisionIsBarcodeFormat2D_QRCODE" trim="true" xpath="cpDivision/divisionIsBarcodeFormat2D-QRCODE"/>
+    <Mapping cloverField="division2D_QRCODEExpression" trim="true" xpath="cpDivision/division2D-QRCODEExpression"/>
+    <Mapping cloverField="divisionCardImageBack1URL" trim="true" xpath="cpDivision/divisionCardImageBack1URL"/>
+    <Mapping cloverField="divisionCardImageBack2URL" trim="true" xpath="cpDivision/divisionCardImageBack2URL"/>
+    <Mapping cloverField="divisionCardImageBack3URL" trim="true" xpath="cpDivision/divisionCardImageBack3URL"/>
+    <Mapping cloverField="divisionCardImageBack4URL" trim="true" xpath="cpDivision/divisionCardImageBack4URL"/>
+    <Mapping cloverField="divisionCardImageBack5URL" trim="true" xpath="cpDivision/divisionCardImageBack5URL"/>
+    <Mapping cloverField="divisionCardImageFront1URL" trim="true" xpath="cpDivision/divisionCardImageFront1URL"/>
+    <Mapping cloverField="divisionCardImageFront2URL" trim="true" xpath="cpDivision/divisionCardImageFront2URL"/>
+    <Mapping cloverField="divisionCardImageFront3URL" trim="true" xpath="cpDivision/divisionCardImageFront3URL"/>
+    <Mapping cloverField="divisionCardImageFront5URL" trim="true" xpath="cpDivision/divisionCardImageFront5URL"/>
+    <Mapping cloverField="divisionisBarcodeScanSupported" trim="true" xpath="cpDivision/divisionisBarcodeScanSupported"/>
+    <Mapping cloverField="name" trim="true" xpath="cpDivision/name"/>
+    <Mapping cloverField="processorContactFirstName" trim="true" xpath="processorInformation/processorContactFirstName"/>
+    <Mapping cloverField="processorContactLastName" trim="true" xpath="processorInformation/processorContactLastName"/>
+    <Mapping cloverField="processorContactPhoneNumber" trim="true" xpath="processorInformation/processorContactPhoneNumber"/>
+    <Mapping cloverField="processorHasRealTimeIssuance" trim="true" xpath="processorInformation/processorHasRealTimeIssuance"/>
+    <Mapping cloverField="processorCode" trim="true" xpath="processorInformation/processorCode"/>
+    <Mapping cloverField="processorContactPhoneNumberExt_1" trim="true" xpath="processorInformation/processorContactPhoneNumberExt"/>
+    <Mapping cloverField="processorIsRequiredToPrint" trim="true" xpath="processorInformation/processorIsRequiredToPrint"/>
+    <Mapping cloverField="processorSupportsVoids" trim="true" xpath="processorInformation/processorSupportsVoids"/>
+    <Mapping cloverField="cardProductionCostPerCard" trim="true" xpath="processorInformation/cardProductionCostPerCard"/>
+    <Mapping cloverField="cardProductionQuantity" trim="true" xpath="processorInformation/cardProductionQuantity"/>
+    <Mapping cloverField="vendorNameFor1099" trim="true" xpath="vendorInformation/vendorNameFor1099"/>
+    <Mapping cloverField="vendorGroup" trim="true" xpath="vendorInformation/vendorGroup"/>
+    <Mapping cloverField="vendorCurrency" trim="true" xpath="vendorInformation/vendorCurrency"/>
+    <Mapping cloverField="vendorBlocked" trim="true" xpath="vendorInformation/vendorBlocked"/>
+    <Mapping cloverField="vendorLanguageId" trim="true" xpath="vendorInformation/vendorLanguageId"/>
+    <Mapping cloverField="vendorCity" trim="true" xpath="vendorInformation/vendorCity"/>
+    <Mapping cloverField="vendorForeignEntityIndicator" trim="true" xpath="vendorInformation/vendorForeignEntityIndicator"/>
+    <Mapping cloverField="vendorTax1099NameChoice" trim="true" xpath="vendorInformation/vendorTax1099NameChoice"/>
+    <Mapping cloverField="vendorW9" trim="true" xpath="vendorInformation/vendorW9"/>
+    <Mapping cloverField="vendorAddress" trim="true" xpath="vendorInformation/vendorAddress"/>
+    <Mapping cloverField="vendorCountryRegionId" trim="true" xpath="vendorInformation/vendorCountryRegionId"/>
+    <Mapping cloverField="vendorCounty" trim="true" xpath="vendorInformation/vendorCounty"/>
+    <Mapping cloverField="vendorEmail" trim="true" xpath="vendorInformation/vendorEmail"/>
+    <Mapping cloverField="vendorPartyType" trim="true" xpath="vendorInformation/vendorPartyType"/>
+    <Mapping cloverField="vendorPaymentMode" trim="true" xpath="vendorInformation/vendorPaymentMode"/>
+    <Mapping cloverField="vendorPaymentTermsId" trim="true" xpath="vendorInformation/vendorPaymentTermsId"/>
+    <Mapping cloverField="vendorPhone" trim="true" xpath="vendorInformation/vendorPhone"/>
+    <Mapping cloverField="vendorState" trim="true" xpath="vendorInformation/vendorState"/>
+    <Mapping cloverField="vendorTaxIDNumber" trim="true" xpath="vendorInformation/vendorTaxIDNumber"/>
+    <Mapping cloverField="vendorEmployerIdNumber" trim="true" xpath="vendorInformation/vendorEmployerIdNumber"/>
+    <Mapping cloverField="vendorTax1099Reports" trim="true" xpath="vendorInformation/vendorTax1099Reports"/>
+    <Mapping cloverField="vendorTaxGroup" trim="true" xpath="vendorInformation/vendorTaxGroup"/>
+    <Mapping cloverField="vendorTaxIDType" trim="true" xpath="vendorInformation/vendorTaxIDType"/>
+    <Mapping cloverField="vendorURL" trim="true" xpath="vendorInformation/vendorURL"/>
+    <Mapping cloverField="vendorZipCode" trim="true" xpath="vendorInformation/vendorZipCode"/>
+    <Context generatedKey="__parent_id" outPort="0" parentKey="__id" sequenceField="__id" xpath="CustomerStore">
+      <Mapping cloverField="productLanguage" trim="true" xpath="productLanguage"/>
+      <Mapping cloverField="storeBHNStoreCode" trim="true" xpath="storeBHNStoreCode"/>
+      <Mapping cloverField="storeCustGroup" trim="true" xpath="storeCustGroup"/>
+      <Mapping cloverField="storePhysicalStoreName" trim="true" xpath="storePhysicalStoreName"/>
+      <Mapping cloverField="storePhysicalStoreAddressLine1" trim="true" xpath="storePhysicalStoreAddressLine1"/>
+      <Mapping cloverField="storePhysicalStoreAddressLine2" trim="true" xpath="storePhysicalStoreAddressLine2"/>
+      <Mapping cloverField="storeContactPhoneNumber" trim="true" xpath="storeContactPhoneNumber"/>
+      <Mapping cloverField="storeBlocked" trim="true" xpath="storeBlocked"/>
+      <Mapping cloverField="storeChannelDimension" trim="true" xpath="storeChannelDimension"/>
+      <Mapping cloverField="storeDimensionPAC" trim="true" xpath="storeDimensionPAC"/>
+      <Mapping cloverField="storeDimensionRegion" trim="true" xpath="storeDimensionRegion"/>
+      <Mapping cloverField="storePriceToleranceGroup" trim="true" xpath="storePriceToleranceGroup"/>
+      <Mapping cloverField="storeCountryRegionId" trim="true" xpath="storeCountryRegionId"/>
+      <Mapping cloverField="storePhysicalStorePostalCode" trim="true" xpath="storePhysicalStorePostalCode"/>
+      <Mapping cloverField="storePhysicalStoreState" trim="true" xpath="storePhysicalStoreState"/>
+      <Mapping cloverField="storePhysicalStoreCity" trim="true" xpath="storePhysicalStoreCity"/>
+      <Mapping cloverField="companyPhysicalStoreAddressLine1" trim="true" xpath="companyPhysicalStoreAddressLine1"/>
+      <Mapping cloverField="companyPhysicalStoreCountry" trim="true" xpath="companyPhysicalStoreCountry"/>
+      <Mapping cloverField="storeBHNCustLevel" trim="true" xpath="storeBHNCustLevel"/>
     </Context>
-    <Context outPort="0" sequenceField="__id" xpath="object">
-      <Mapping cloverField="createdTimestamp" trim="true" xpath="createdTimestamp"/>
-      <Mapping cloverField="creatorId" trim="true" xpath="creatorId"/>
-      <Mapping cloverField="entityId" trim="true" xpath="entityId"/>
-      <Mapping cloverField="updatedTimestamp" trim="true" xpath="updatedTimestamp"/>
-      <Mapping cloverField="updaterId" trim="true" xpath="updaterId"/>
-      <Mapping cloverField="version" trim="true" xpath="version"/>
-      <Mapping cloverField="partnerProfileSource" trim="true" xpath="source/partnerProfileSource"/>
-      <Mapping cloverField="isTest" trim="true" xpath="source/isTest"/>
-      <Mapping cloverField="companyCode" trim="true" xpath="company/companyCode"/>
-      <Mapping cloverField="companyCountry" trim="true" xpath="company/companyCountry"/>
-      <Mapping cloverField="companyLegalName" trim="true" xpath="company/companyLegalName"/>
-      <Mapping cloverField="companyIsContractComplete" trim="true" xpath="company/companyIsContractComplete"/>
-      <Mapping cloverField="contractExpDate" trim="true" xpath="company/contractExpDate"/>
-      <Mapping cloverField="companyBHNSetupComplete" trim="true" xpath="company/companyBHNSetupComplete"/>
-      <Mapping cloverField="legalEntityCode" trim="true" xpath="company/legalEntityCode"/>
-      <Mapping cloverField="companyPrimaryContactFirstName" trim="true" xpath="company/companyPrimaryContactFirstName"/>
-      <Mapping cloverField="companyPrimaryContactLastName" trim="true" xpath="company/companyPrimaryContactLastName"/>
-      <Mapping cloverField="companyPrimaryContactBusinessTitle" trim="true" xpath="company/companyPrimaryContactBusinessTitle"/>
-      <Mapping cloverField="companyPrimaryPhoneNumber" trim="true" xpath="company/companyPrimaryPhoneNumber"/>
-      <Mapping cloverField="companyPrimaryPhoneNumberExt" trim="true" xpath="company/companyPrimaryPhoneNumberExt"/>
-      <Mapping cloverField="companyPrimaryContactEmail" trim="true" xpath="company/companyPrimaryContactEmail"/>
-      <Mapping cloverField="companyAddressLine1" trim="true" xpath="company/companyAddressLine1"/>
-      <Mapping cloverField="companyAddressLine2" trim="true" xpath="company/companyAddressLine2"/>
-      <Mapping cloverField="companyCity" trim="true" xpath="company/companyCity"/>
-      <Mapping cloverField="companyState" trim="true" xpath="company/companyState"/>
-      <Mapping cloverField="companyZipPostalCode" trim="true" xpath="company/companyZipPostalCode"/>
-      <Mapping cloverField="companyWebSiteURL" trim="true" xpath="company/companyWebSiteURL"/>
-      <Mapping cloverField="companyMerchantCategoryCode" trim="true" xpath="company/companyMerchantCategoryCode"/>
-      <Mapping cloverField="companyContractTerm" trim="true" xpath="company/companyContractTerm"/>
-      <Mapping cloverField="legalEntityStateOfIncorporation" trim="true" xpath="company/legalEntityStateOfIncorporation"/>
-      <Mapping cloverField="accountType" trim="true" xpath="cpDivision/accountType"/>
-      <Mapping cloverField="divisionCode" trim="true" xpath="cpDivision/divisionCode"/>
-      <Mapping cloverField="divisionCustomerSupportContactFirstName" trim="true" xpath="cpDivision/divisionCustomerSupportContactFirstName"/>
-      <Mapping cloverField="divisionCustomerSupportContactLastName" trim="true" xpath="cpDivision/divisionCustomerSupportContactLastName"/>
-      <Mapping cloverField="divisionCustomerSupportEmail" trim="true" xpath="cpDivision/divisionCustomerSupportEmail"/>
-      <Mapping cloverField="divisionCustomerSupportPhone" trim="true" xpath="cpDivision/divisionCustomerSupportPhone"/>
-      <Mapping cloverField="divisionCustomerSupportURL" trim="true" xpath="cpDivision/divisionCustomerSupportURL"/>
-      <Mapping cloverField="divisionLocale" trim="true" xpath="cpDivision/divisionLocale"/>
-      <Mapping cloverField="divisionLogoURL" trim="true" xpath="cpDivision/divisionLogoURL"/>
-      <Mapping cloverField="divisionProcessorCode" trim="true" xpath="cpDivision/divisionProcessorCode"/>
-      <Mapping cloverField="divisionRedemptionLocationType" trim="true" xpath="cpDivision/divisionRedemptionLocationType"/>
-      <Mapping cloverField="divisionLocalPartner" trim="true" xpath="cpDivision/divisionLocalPartner"/>
-      <Mapping cloverField="divisionLocalPartnerSource" trim="true" xpath="cpDivision/divisionLocalPartnerSource"/>
-      <Mapping cloverField="processorContactPhoneNumberExt" trim="true" xpath="cpDivision/processorContactPhoneNumberExt"/>
-      <Mapping cloverField="divisionInStoreRedemptionInstructions" trim="true" xpath="cpDivision/divisionInStoreRedemptionInstructions"/>
-      <Mapping cloverField="divisionCashierInstructions" trim="true" xpath="cpDivision/divisionCashierInstructions"/>
-      <Mapping cloverField="divisionOnlineRedemptionInstructions" trim="true" xpath="cpDivision/divisionOnlineRedemptionInstructions"/>
-      <Mapping cloverField="divisionRedemptionInformation" trim="true" xpath="cpDivision/divisionRedemptionInformation"/>
-      <Mapping cloverField="divisionRedemptionLine1" trim="true" xpath="cpDivision/divisionRedemptionLine1"/>
-      <Mapping cloverField="divisionRedemptionLine2" trim="true" xpath="cpDivision/divisionRedemptionLine2"/>
-      <Mapping cloverField="divisionTandCTextForPhysical" trim="true" xpath="cpDivision/divisionTandCTextForPhysical"/>
-      <Mapping cloverField="divisionRedemptionMethods" trim="true" xpath="cpDivision/divisionRedemptionMethods"/>
-      <Mapping cloverField="divisionIsPinRequiredForRedemption" trim="true" xpath="cpDivision/divisionIsPinRequiredForRedemption"/>
-      <Mapping cloverField="divisionIsPinRequiredForBI" trim="true" xpath="cpDivision/divisionIsPinRequiredForBI"/>
-      <Mapping cloverField="divisionOnlineStoreURL" trim="true" xpath="cpDivision/divisionOnlineStoreURL"/>
-      <Mapping cloverField="divisionProgramDescription" trim="true" xpath="cpDivision/divisionProgramDescription"/>
-      <Mapping cloverField="divisionAccountNumberLabel" trim="true" xpath="cpDivision/divisionAccountNumberLabel"/>
-      <Mapping cloverField="divisionIsReloadable" trim="true" xpath="cpDivision/divisionIsReloadable"/>
-      <Mapping cloverField="divisionMinimumReloadAmount" trim="true" xpath="cpDivision/divisionMinimumReloadAmount"/>
-      <Mapping cloverField="divisionMaximumReloadAmount" trim="true" xpath="cpDivision/divisionMaximumReloadAmount"/>
-      <Mapping cloverField="divisionPaymentNetworkType" trim="true" xpath="cpDivision/divisionPaymentNetworkType"/>
-      <Mapping cloverField="divisionBins" trim="true" xpath="cpDivision/divisionBins"/>
-      <Mapping cloverField="divisionPinLabel" trim="true" xpath="cpDivision/divisionPinLabel"/>
-      <Mapping cloverField="divisionCardPinType" trim="true" xpath="cpDivision/divisionCardPinType"/>
-      <Mapping cloverField="divisionCardPinLocation" trim="true" xpath="cpDivision/divisionCardPinLocation"/>
-      <Mapping cloverField="divisionLostStolenPolicyText" trim="true" xpath="cpDivision/divisionLostStolenPolicyText"/>
-      <Mapping cloverField="divisionLostStolenPolicyPhone" trim="true" xpath="cpDivision/divisionLostStolenPolicyPhone"/>
-      <Mapping cloverField="divisionisLostStolenPolicyAutomated" trim="true" xpath="cpDivision/divisionisLostStolenPolicyAutomated"/>
-      <Mapping cloverField="divisionAccessCode" trim="true" xpath="cpDivision/divisionAccessCode"/>
-      <Mapping cloverField="divisionManualEntryFormat" trim="true" xpath="cpDivision/divisionManualEntryFormat"/>
-      <Mapping cloverField="divisionTrack1Format" trim="true" xpath="cpDivision/divisionTrack1Format"/>
-      <Mapping cloverField="divisionTrack2Format" trim="true" xpath="cpDivision/divisionTrack2Format"/>
-      <Mapping cloverField="divisionTrack3Format" trim="true" xpath="cpDivision/divisionTrack3Format"/>
-      <Mapping cloverField="divisionAreBalancesTransferable" trim="true" xpath="cpDivision/divisionAreBalancesTransferable"/>
-      <Mapping cloverField="divisionBalanceLockTimeFrame" trim="true" xpath="cpDivision/divisionBalanceLockTimeFrame"/>
-      <Mapping cloverField="divisionHasUniversalBISupport" trim="true" xpath="cpDivision/divisionHasUniversalBISupport"/>
-      <Mapping cloverField="divisionBalanceMerges" trim="true" xpath="cpDivision/divisionBalanceMerges"/>
-      <Mapping cloverField="divisionCanCardExpire" trim="true" xpath="cpDivision/divisionCanCardExpire"/>
-      <Mapping cloverField="divisionHasPhoneSupportAtPOS" trim="true" xpath="cpDivision/divisionHasPhoneSupportAtPOS"/>
-      <Mapping cloverField="divisionSupportsPartialBalanceInquiry" trim="true" xpath="cpDivision/divisionSupportsPartialBalanceInquiry"/>
-      <Mapping cloverField="divisionSupportsPhysicalCards" trim="true" xpath="cpDivision/divisionSupportsPhysicalCards"/>
-      <Mapping cloverField="divisionSupportsRedemption" trim="true" xpath="cpDivision/divisionSupportsRedemption"/>
-      <Mapping cloverField="divisionSupportsRegift" trim="true" xpath="cpDivision/divisionSupportsRegift"/>
-      <Mapping cloverField="divisionIsCardReplaceable" trim="true" xpath="cpDivision/divisionIsCardReplaceable"/>
-      <Mapping cloverField="divisionSupportsTransactionHistory" trim="true" xpath="cpDivision/divisionSupportsTransactionHistory"/>
-      <Mapping cloverField="divisionIsCardTransferable" trim="true" xpath="cpDivision/divisionIsCardTransferable"/>
-      <Mapping cloverField="divisionSupportsBalanceInquiry" trim="true" xpath="cpDivision/divisionSupportsBalanceInquiry"/>
-      <Mapping cloverField="divisionSupportsVirtualCard" trim="true" xpath="cpDivision/divisionSupportsVirtualCard"/>
-      <Mapping cloverField="divisionSupportsVoidActivation" trim="true" xpath="cpDivision/divisionSupportsVoidActivation"/>
-      <Mapping cloverField="divisionSupportsVoidRedemption" trim="true" xpath="cpDivision/divisionSupportsVoidRedemption"/>
-      <Mapping cloverField="divisionSupportsVoidReload" trim="true" xpath="cpDivision/divisionSupportsVoidReload"/>
-      <Mapping cloverField="divisionSupportsAddQRCode" trim="true" xpath="cpDivision/divisionSupportsAddQRCode"/>
-      <Mapping cloverField="divisionIsBISystemBLAST" trim="true" xpath="cpDivision/divisionIsBISystemBLAST"/>
-      <Mapping cloverField="divisionIsBISystemCAPTCHA" trim="true" xpath="cpDivision/divisionIsBISystemCAPTCHA"/>
-      <Mapping cloverField="divisionIsBISystemCardpool" trim="true" xpath="cpDivision/divisionIsBISystemCardpool"/>
-      <Mapping cloverField="divisionIsBISystemScreenScraped" trim="true" xpath="cpDivision/divisionIsBISystemScreenScraped"/>
-      <Mapping cloverField="divisionIsBISystemUserEntered" trim="true" xpath="cpDivision/divisionIsBISystemUserEntered"/>
-      <Mapping cloverField="divisionIsBarcodeFormat1D_C128" trim="true" xpath="cpDivision/divisionIsBarcodeFormat1D-C128"/>
-      <Mapping cloverField="division1D_C128Expression" trim="true" xpath="cpDivision/division1D-C128Expression"/>
-      <Mapping cloverField="divisionIsBarcodeFormat2D_PDF417" trim="true" xpath="cpDivision/divisionIsBarcodeFormat2D-PDF417"/>
-      <Mapping cloverField="divisionIsContractComplete" trim="true" xpath="cpDivision/divisionIsContractComplete"/>
-      <Mapping cloverField="division2D_PDF417Expression" trim="true" xpath="cpDivision/division2D-PDF417Expression"/>
-      <Mapping cloverField="divisionIsBarcodeFormat2D_QRCODE" trim="true" xpath="cpDivision/divisionIsBarcodeFormat2D-QRCODE"/>
-      <Mapping cloverField="division2D_QRCODEExpression" trim="true" xpath="cpDivision/division2D-QRCODEExpression"/>
-      <Mapping cloverField="divisionCardImageBack1URL" trim="true" xpath="cpDivision/divisionCardImageBack1URL"/>
-      <Mapping cloverField="divisionCardImageBack2URL" trim="true" xpath="cpDivision/divisionCardImageBack2URL"/>
-      <Mapping cloverField="divisionCardImageBack3URL" trim="true" xpath="cpDivision/divisionCardImageBack3URL"/>
-      <Mapping cloverField="divisionCardImageBack4URL" trim="true" xpath="cpDivision/divisionCardImageBack4URL"/>
-      <Mapping cloverField="divisionCardImageBack5URL" trim="true" xpath="cpDivision/divisionCardImageBack5URL"/>
-      <Mapping cloverField="divisionCardImageFront1URL" trim="true" xpath="cpDivision/divisionCardImageFront1URL"/>
-      <Mapping cloverField="divisionCardImageFront2URL" trim="true" xpath="cpDivision/divisionCardImageFront2URL"/>
-      <Mapping cloverField="divisionCardImageFront3URL" trim="true" xpath="cpDivision/divisionCardImageFront3URL"/>
-      <Mapping cloverField="divisionCardImageFront5URL" trim="true" xpath="cpDivision/divisionCardImageFront5URL"/>
-      <Mapping cloverField="divisionisBarcodeScanSupported" trim="true" xpath="cpDivision/divisionisBarcodeScanSupported"/>
-      <Mapping cloverField="name" trim="true" xpath="cpDivision/name"/>
-      <Mapping cloverField="processorContactFirstName" trim="true" xpath="processorInformation/processorContactFirstName"/>
-      <Mapping cloverField="processorContactLastName" trim="true" xpath="processorInformation/processorContactLastName"/>
-      <Mapping cloverField="processorContactPhoneNumber" trim="true" xpath="processorInformation/processorContactPhoneNumber"/>
-      <Mapping cloverField="processorHasRealTimeIssuance" trim="true" xpath="processorInformation/processorHasRealTimeIssuance"/>
-      <Mapping cloverField="processorCode" trim="true" xpath="processorInformation/processorCode"/>
-      <Mapping cloverField="processorContactPhoneNumberExt_1" trim="true" xpath="processorInformation/processorContactPhoneNumberExt"/>
-      <Mapping cloverField="processorIsRequiredToPrint" trim="true" xpath="processorInformation/processorIsRequiredToPrint"/>
-      <Mapping cloverField="processorSupportsVoids" trim="true" xpath="processorInformation/processorSupportsVoids"/>
-      <Mapping cloverField="cardProductionCostPerCard" trim="true" xpath="processorInformation/cardProductionCostPerCard"/>
-      <Mapping cloverField="cardProductionQuantity" trim="true" xpath="processorInformation/cardProductionQuantity"/>
-      <Mapping cloverField="vendorNameFor1099" trim="true" xpath="vendorInformation/vendorNameFor1099"/>
-      <Mapping cloverField="vendorGroup" trim="true" xpath="vendorInformation/vendorGroup"/>
-      <Mapping cloverField="vendorCurrency" trim="true" xpath="vendorInformation/vendorCurrency"/>
-      <Mapping cloverField="vendorBlocked" trim="true" xpath="vendorInformation/vendorBlocked"/>
-      <Mapping cloverField="vendorLanguageId" trim="true" xpath="vendorInformation/vendorLanguageId"/>
-      <Mapping cloverField="vendorCity" trim="true" xpath="vendorInformation/vendorCity"/>
-      <Mapping cloverField="vendorForeignEntityIndicator" trim="true" xpath="vendorInformation/vendorForeignEntityIndicator"/>
-      <Mapping cloverField="vendorTax1099NameChoice" trim="true" xpath="vendorInformation/vendorTax1099NameChoice"/>
-      <Mapping cloverField="vendorW9" trim="true" xpath="vendorInformation/vendorW9"/>
-      <Mapping cloverField="vendorAddress" trim="true" xpath="vendorInformation/vendorAddress"/>
-      <Mapping cloverField="vendorCountryRegionId" trim="true" xpath="vendorInformation/vendorCountryRegionId"/>
-      <Mapping cloverField="vendorCounty" trim="true" xpath="vendorInformation/vendorCounty"/>
-      <Mapping cloverField="vendorEmail" trim="true" xpath="vendorInformation/vendorEmail"/>
-      <Mapping cloverField="vendorPartyType" trim="true" xpath="vendorInformation/vendorPartyType"/>
-      <Mapping cloverField="vendorPaymentMode" trim="true" xpath="vendorInformation/vendorPaymentMode"/>
-      <Mapping cloverField="vendorPaymentTermsId" trim="true" xpath="vendorInformation/vendorPaymentTermsId"/>
-      <Mapping cloverField="vendorPhone" trim="true" xpath="vendorInformation/vendorPhone"/>
-      <Mapping cloverField="vendorState" trim="true" xpath="vendorInformation/vendorState"/>
-      <Mapping cloverField="vendorTaxIDNumber" trim="true" xpath="vendorInformation/vendorTaxIDNumber"/>
-      <Mapping cloverField="vendorEmployerIdNumber" trim="true" xpath="vendorInformation/vendorEmployerIdNumber"/>
-      <Mapping cloverField="vendorTax1099Reports" trim="true" xpath="vendorInformation/vendorTax1099Reports"/>
-      <Mapping cloverField="vendorTaxGroup" trim="true" xpath="vendorInformation/vendorTaxGroup"/>
-      <Mapping cloverField="vendorTaxIDType" trim="true" xpath="vendorInformation/vendorTaxIDType"/>
-      <Mapping cloverField="vendorURL" trim="true" xpath="vendorInformation/vendorURL"/>
-      <Mapping cloverField="vendorZipCode" trim="true" xpath="vendorInformation/vendorZipCode"/>
+    <Context generatedKey="__parent_id" outPort="2" parentKey="__id" sequenceField="__id" xpath="ProductInformation">
+      <Mapping cloverField="productBuyerGroup" trim="true" xpath="productBuyerGroup"/>
+      <Mapping cloverField="productClassification" trim="true" xpath="productClassification"/>
+      <Mapping cloverField="productCurrency" trim="true" xpath="productCurrency"/>
+      <Mapping cloverField="productDenomination" trim="true" xpath="productDenomination"/>
+      <Mapping cloverField="productDimensionCode" trim="true" xpath="productDimensionCode"/>
+      <Mapping cloverField="productDimensionGroup" trim="true" xpath="productDimensionGroup"/>
+      <Mapping cloverField="productModelGroupId" trim="true" xpath="productModelGroupId"/>
+      <Mapping cloverField="productGroup" trim="true" xpath="productGroup"/>
+      <Mapping cloverField="productInventorySource" trim="true" xpath="productInventorySource"/>
+      <Mapping cloverField="productIssuerCompanyCode" trim="true" xpath="productIssuerCompanyCode"/>
+      <Mapping cloverField="productIsUsingStandardDesign" trim="true" xpath="productIsUsingStandardDesign"/>
+      <Mapping cloverField="productItemGroupId" trim="true" xpath="productItemGroupId"/>
+      <Mapping cloverField="productItemName" trim="true" xpath="productItemName"/>
+      <Mapping cloverField="productOwnershipType" trim="true" xpath="productOwnershipType"/>
+      <Mapping cloverField="productSubstitutionGroup" trim="true" xpath="productSubstitutionGroup"/>
+      <Mapping cloverField="productType" trim="true" xpath="productType"/>
+      <Mapping cloverField="productTypeID" trim="true" xpath="productTypeID"/>
+      <Mapping cloverField="productChannelDimension" trim="true" xpath="productChannelDimension"/>
+      <Mapping cloverField="productBHNNotes" trim="true" xpath="productBHNNotes"/>
+      <Mapping cloverField="productMulticardindicator" trim="true" xpath="productMulticardindicator"/>
+      <Mapping cloverField="isProductDenominationVariable" trim="true" xpath="isProductDenominationVariable"/>
+      <Mapping cloverField="productNewUPCReason" trim="true" xpath="productNewUPCReason"/>
+      <Mapping cloverField="productMinimumFaceValue" trim="true" xpath="productMinimumFaceValue"/>
+      <Mapping cloverField="productMaximumFaceValue" trim="true" xpath="productMaximumFaceValue"/>
+      <Mapping cloverField="productTaxIncluded" trim="true" xpath="productTaxIncluded"/>
+      <Mapping cloverField="productIsCheckMinMax" trim="true" xpath="productIsCheckMinMax"/>
+      <Mapping cloverField="productIsTaxable" trim="true" xpath="productIsTaxable"/>
+      <Mapping cloverField="productTermsAndConditions" trim="true" xpath="productTermsAndConditions"/>
+      <Mapping cloverField="productBackCardTemplateId" trim="true" xpath="productBackCardTemplateId"/>
+      <Mapping cloverField="productBINForDARTransaction" trim="true" xpath="productBINForDARTransaction"/>
+      <Mapping cloverField="productAccountInquiryBIN" trim="true" xpath="productAccountInquiryBIN"/>
+      <Mapping cloverField="productAccountTopupBIN" trim="true" xpath="productAccountTopupBIN"/>
+      <Mapping cloverField="productExpDate" trim="true" xpath="productExpDate"/>
+      <Mapping cloverField="productExpLength" trim="true" xpath="productExpLength"/>
+      <Mapping cloverField="productDefaultIID" trim="true" xpath="productDefaultIID"/>
+      <Mapping cloverField="productActivationInstructions" trim="true" xpath="productActivationInstructions"/>
+      <Mapping cloverField="customTemplatePathURL" trim="true" xpath="customTemplatePathURL"/>
+      <Mapping cloverField="isActivationRequired" trim="true" xpath="isActivationRequired"/>
+      <Mapping cloverField="isReloadable" trim="true" xpath="isReloadable"/>
+      <Mapping cloverField="reloadMinAmount" trim="true" xpath="reloadMinAmount"/>
+      <Mapping cloverField="reloadMaxAmount" trim="true" xpath="reloadMaxAmount"/>
+      <Mapping cloverField="substitutionCardDisplayDesc" trim="true" xpath="substitutionCardDisplayDesc"/>
+      <Mapping cloverField="substitutionPOG1Category" trim="true" xpath="substitutionPOG1Category"/>
+      <Mapping cloverField="substitutionPOG2Category" trim="true" xpath="substitutionPOG2Category"/>
+      <Mapping cloverField="substitutionPOG3Category" trim="true" xpath="substitutionPOG3Category"/>
+      <Mapping cloverField="substitutionPortalDisplayName" trim="true" xpath="substitutionPortalDisplayName"/>
+      <Mapping cloverField="substitutionPOGDimension" trim="true" xpath="substitutionPOGDimension"/>
+      <Mapping cloverField="substitutionShipperUPC" trim="true" xpath="substitutionShipperUPC"/>
+      <Mapping cloverField="divisionCardImageURL" trim="true" xpath="iid/divisionCardImageURL"/>
+      <Mapping cloverField="iidActivationType" trim="true" xpath="iid/iidActivationType"/>
+      <Mapping cloverField="iidCaseCount" trim="true" xpath="iid/iidCaseCount"/>
+      <Mapping cloverField="iidCountry" trim="true" xpath="iid/iidCountry"/>
+      <Mapping cloverField="iidDescription" trim="true" xpath="iid/iidDescription"/>
+      <Mapping cloverField="iidPackSize" trim="true" xpath="iid/iidPackSize"/>
+      <Mapping cloverField="iidProdPackType" trim="true" xpath="iid/iidProdPackType"/>
+      <Mapping cloverField="name" trim="true" xpath="iid/name"/>
+      <Mapping cloverField="language" trim="true" xpath="iid/language"/>
+      <Mapping cloverField="newIIDReasonCode" trim="true" xpath="iid/newIIDReasonCode"/>
+      <Mapping cloverField="iidUseStdUnitConvert" trim="true" xpath="iid/iidUseStdUnitConvert"/>
     </Context>
   </Context>
 </Context>
@@ -1495,13 +1341,15 @@ output.substitutionShipperUPC = input.substitutionShipperUPC;]]></attr>
 <attr name="_data_format"><![CDATA[JSON]]></attr>
 <attr name="jsonSchemaURL"><![CDATA[.\src\main\api\examples\if1-3ps-mule-post-example.json]]></attr>
 </Node>
-<Edge debugMode="true" fromNode="FOREACH_CUSTOMER_STORE_STORES:0" guiBendpoints="" id="Edge7" inPort="Port 1 (in)" metadata="2199f073-f747-40db-8533-1122c4785e57" outPort="Port 0 (out)" toNode="BEAN_WRITER0:1"/>
-<Edge debugMode="true" fromNode="FOREACH_OBJECT_CP_DIVISION:0" guiBendpoints="" id="Edge3" inPort="Port 0 (in)" metadata="d9358f29-0f11-40da-9f1a-fbe2df974bd6" outPort="Port 0 (out)" toNode="BEAN_WRITER0:0"/>
-<Edge debugMode="true" fromNode="FOREACH_OBJECT_OBJECT:0" guiBendpoints="" id="Edge1" inPort="Port 2 (in)" metadata="0e52744c-449f-4603-912e-9e129a31f276" outPort="Port 0 (out)" toNode="BEAN_WRITER0:2"/>
-<Edge debugMode="true" fromNode="FOREACH_PRODUCT_INFORMATION_PRODUCTS:0" guiBendpoints="" id="Edge5" inPort="Port 3 (in)" metadata="8f2a44d4-84ea-46c8-b58d-c6c2219d162a" outPort="Port 0 (out)" toNode="BEAN_WRITER0:3"/>
-<Edge debugMode="true" fromNode="JSON_READER0:0" guiBendpoints="" id="Edge2" inPort="Port 0 (in)" metadata="62ddf0bf-09b2-4348-9449-fe3657d6dcbb" outPort="Port 0 (out)" toNode="FOREACH_OBJECT_CP_DIVISION:0"/>
-<Edge debugMode="true" fromNode="JSON_READER0:1" guiBendpoints="" id="Edge6" inPort="Port 0 (in)" metadata="ed363cca-8b21-4d79-8723-ec2e58cbb341" outPort="Port 1 (out)" toNode="FOREACH_CUSTOMER_STORE_STORES:0"/>
-<Edge debugMode="true" fromNode="JSON_READER0:2" guiBendpoints="" id="Edge0" inPort="Port 0 (in)" metadata="62ddf0bf-09b2-4348-9449-fe3657d6dcbb" outPort="Port 2 (out)" toNode="FOREACH_OBJECT_OBJECT:0"/>
-<Edge debugMode="true" fromNode="JSON_READER0:3" guiBendpoints="" id="Edge4" inPort="Port 0 (in)" metadata="82f6040f-421a-461d-99cf-c5a238fd3384" outPort="Port 3 (out)" toNode="FOREACH_PRODUCT_INFORMATION_PRODUCTS:0"/>
+<Node enabled="enabled" guiName="Duplicate object" guiX="240" guiY="20" id="SIMPLE_COPY0" type="SIMPLE_COPY"/>
+<Edge debugMode="true" fromNode="FOREACH_CUSTOMER_STORE_STORES:0" guiBendpoints="" id="Edge1" inPort="Port 0 (in)" metadata="2199f073-f747-40db-8533-1122c4785e57" outPort="Port 0 (out)" toNode="BEAN_WRITER0:0"/>
+<Edge debugMode="true" fromNode="FOREACH_OBJECT_CP_DIVISION:0" guiBendpoints="" id="Edge3" inPort="Port 3 (in)" metadata="d9358f29-0f11-40da-9f1a-fbe2df974bd6" outPort="Port 0 (out)" toNode="BEAN_WRITER0:3"/>
+<Edge debugMode="true" fromNode="FOREACH_OBJECT_OBJECT:0" guiBendpoints="" id="Edge6" inPort="Port 1 (in)" metadata="0e52744c-449f-4603-912e-9e129a31f276" outPort="Port 0 (out)" toNode="BEAN_WRITER0:1"/>
+<Edge debugMode="true" fromNode="FOREACH_PRODUCT_INFORMATION_PRODUCTS:0" guiBendpoints="" id="Edge8" inPort="Port 2 (in)" metadata="8f2a44d4-84ea-46c8-b58d-c6c2219d162a" outPort="Port 0 (out)" toNode="BEAN_WRITER0:2"/>
+<Edge debugMode="true" fromNode="JSON_READER0:0" guiBendpoints="" id="Edge0" inPort="Port 0 (in)" metadata="ed363cca-8b21-4d79-8723-ec2e58cbb341" outPort="Port 0 (out)" toNode="FOREACH_CUSTOMER_STORE_STORES:0"/>
+<Edge debugMode="true" fromNode="JSON_READER0:1" guiBendpoints="" id="Edge4" inPort="Port 0 (in)" metadata="62ddf0bf-09b2-4348-9449-fe3657d6dcbb" outPort="Port 1 (out)" toNode="SIMPLE_COPY0:0"/>
+<Edge debugMode="true" fromNode="JSON_READER0:2" guiBendpoints="" id="Edge7" inPort="Port 0 (in)" metadata="82f6040f-421a-461d-99cf-c5a238fd3384" outPort="Port 2 (out)" toNode="FOREACH_PRODUCT_INFORMATION_PRODUCTS:0"/>
+<Edge debugMode="true" fromNode="SIMPLE_COPY0:0" guiBendpoints="" id="Edge5" inPort="Port 0 (in)" metadata="62ddf0bf-09b2-4348-9449-fe3657d6dcbb" outPort="Port 0 (out)" toNode="FOREACH_OBJECT_OBJECT:0"/>
+<Edge debugMode="true" fromNode="SIMPLE_COPY0:1" guiBendpoints="" id="Edge2" inPort="Port 0 (in)" metadata="62ddf0bf-09b2-4348-9449-fe3657d6dcbb" outPort="Port 1 (out)" toNode="FOREACH_OBJECT_CP_DIVISION:0"/>
 </Phase>
 </Graph>
