@@ -1,22 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mule 
-xmlns:data-mapper="http://www.mulesoft.org/schema/mule/ee/data-mapper" 
-xmlns:json="http://www.mulesoft.org/schema/mule/json" 
-xmlns="http://www.mulesoft.org/schema/mule/core" 
-xmlns:apikit="http://www.mulesoft.org/schema/mule/apikit" 
-xmlns:context="http://www.springframework.org/schema/context" 
-xmlns:core="http://www.mulesoft.org/schema/mule/core" 
-xmlns:cxf="http://www.mulesoft.org/schema/mule/cxf" 
-xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" 
-xmlns:http="http://www.mulesoft.org/schema/mule/http" 
-xmlns:spring="http://www.springframework.org/schema/beans" 
-xmlns:tracking="http://www.mulesoft.org/schema/mule/ee/tracking" 
-xmlns:vm="http://www.mulesoft.org/schema/mule/vm" 
-xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-xmlns:smtp="http://www.mulesoft.org/schema/mule/smtp" 
-xmlns:smtps="http://www.mulesoft.org/schema/mule/smtps"
-version="EE-3.4.1" 
-xsi:schemaLocation="http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+<mule xmlns:scripting="http://www.mulesoft.org/schema/mule/scripting" xmlns:file="http://www.mulesoft.org/schema/mule/file" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:apikit="http://www.mulesoft.org/schema/mule/apikit" xmlns:context="http://www.springframework.org/schema/context" xmlns:core="http://www.mulesoft.org/schema/mule/core" xmlns:cxf="http://www.mulesoft.org/schema/mule/cxf" xmlns:data-mapper="http://www.mulesoft.org/schema/mule/ee/data-mapper" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:json="http://www.mulesoft.org/schema/mule/json" xmlns:spring="http://www.springframework.org/schema/beans" xmlns:tracking="http://www.mulesoft.org/schema/mule/ee/tracking" xmlns:vm="http://www.mulesoft.org/schema/mule/vm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:smtp="http://www.mulesoft.org/schema/mule/smtp" version="EE-3.4.1" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
 http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
 http://www.mulesoft.org/schema/mule/apikit http://www.mulesoft.org/schema/mule/apikit/current/mule-apikit.xsd
 http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
@@ -26,15 +9,44 @@ http://www.mulesoft.org/schema/mule/cxf http://www.mulesoft.org/schema/mule/cxf/
 http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/mule/ee/tracking/current/mule-tracking-ee.xsd
 http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/json/current/mule-json.xsd
 http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schema/mule/ee/data-mapper/current/mule-data-mapper.xsd
+http://www.mulesoft.org/schema/mule/scripting http://www.mulesoft.org/schema/mule/scripting/current/mule-scripting.xsd
 http://www.mulesoft.org/schema/mule/smtp http://www.mulesoft.org/schema/mule/smtp/current/mule-smtp.xsd
-http://www.mulesoft.org/schema/mule/smtps http://www.mulesoft.org/schema/mule/smtps/current/mule-smtps.xsd">
+http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/file/current/mule-file.xsd">
 
 	<!-- global exception strategy -->
 	<catch-exception-strategy name="global-main-exception-strategy">
+			<logger message="In CATCH-EXCEPTION-STRATEGY: before exceptionEvaluator" level="INFO" doc:name="debugging"/>
 	        <custom-processor class="com.bhnetwork.integration.msgprocessors.ExceptionEvaluator" doc:name="ExceptionEvaluator"/>
+	        <!-- set the waitTime and the MaximumNumberOfRetries in session from the properties file -->
+	        <logger message="In CATCH-EXCEPTION-STRATEGY: before setting waitTime and MaxNumberRetries" level="INFO" doc:name="debugging"/>
+        	<message-properties-transformer doc:name="set DaxStep=cleanUp (before)" overwrite="true" scope="session">
+            	<add-message-property key="maximumNumberOfRetries" value="${retry.maxNumber}" />
+            	<add-message-property key="waitTimeBetweenRetries" value="${retry.waitTime.millis}"/>
+        	</message-properties-transformer>
+        	<logger message="In CATCH-EXCEPTION-STRATEGY: before first choice" level="INFO" doc:name="debugging"/>
 	        <choice doc:name="Choice">
+        	<!-- TODO Stephane Retryable Exception goes recursively for UnknownHostException (testing the service without vpn enabled) -->
 	            <when expression="#[flowVars['isRetryableException']==true]">
-	                <logger message="Message failed (RETRY) due to: #[exception.cause] #[exception.cause.message]" level="INFO" doc:name="Logger - Retrying"/>
+	            	<logger message="In CATCH-EXCEPTION-STRATEGY: before second choice" level="INFO" doc:name="debugging"/>
+	            	<!-- managing numberOfRetries -->
+	            	<choice doc:name="Choice">
+	            		<when expression="#[sessionVars['numberOfRetries']==null]">
+	            			<logger message="numberOfRetries is null" level="INFO" doc:name="numberOfRetries is null"/>
+                        	<expression-transformer expression="#[sessionVars['numberOfRetries']=1]" doc:name="Expression"/>
+	            		</when>
+	            		<when expression="#[sessionVars['numberOfRetries']=='']">
+	            			<logger message="numberOfRetries is empty" level="INFO" doc:name="numberOfRetries is empty"/>
+                        	<expression-transformer expression="#[sessionVars['numberOfRetries']=1]" doc:name="Expression"/>
+	            		</when>
+	            		<when expression="#[sessionVars['numberOfRetries']==0]">
+	            			<logger message="numberOfRetries is 0" level="INFO" doc:name="numberOfRetries is 0"/>
+                        	<expression-transformer expression="#[sessionVars['numberOfRetries']=1]" doc:name="Expression"/>
+	            		</when>
+	            		<when expression="#[sessionVars['numberOfRetries']>0]">
+	            			<logger message="numberOfRetries is >0 ... RETRYING..." level="INFO" doc:name="numberOfRetries is >0"/>
+	            		</when>
+	            	</choice>
+	                <!-- <logger message="Message failed (RETRY) due to: #[exception.cause] #[exception.cause.message]" level="INFO" doc:name="Logger - Retrying"/> -->
 	                <vm:outbound-endpoint exchange-pattern="one-way" path="Q.retry" doc:name="VM-retry"/>
 	            </when>
 	            <when expression="#[sessionVars['DaxStep']=='BEFORE-CLEAN-UP']">
@@ -43,25 +55,45 @@ http://www.mulesoft.org/schema/mule/smtps http://www.mulesoft.org/schema/mule/sm
 	            </when>
 	            <when expression="#[flowVars['isRetryableException']==false]">
 	                <logger message="Message failed (ABORT) due to: #[exception.cause] #[exception.cause.message]" level="ERROR" doc:name="Logger - Error (for non-retryable issues)"/>
-	                <vm:outbound-endpoint exchange-pattern="one-way" path="Q.error" doc:name="VM-error"/>
+                	
+                	<choice doc:name="Choice">
+                    <when expression="#[sessionVars['DaxStep']=='3ps-callback']">
+                        <choice doc:name="Choice">
+                        	<when expression="#[sessionVars.?createPartnerProfileResponse == empty]">
+                                <set-payload value="#[sessionVars.createPartnerRequest]" doc:name="Set createPartnerRequest as Payload"/>
+                                <json:json-to-object-transformer returnClass="java.util.LinkedHashMap" doc:name="JSON to Object"/>
+                                <flow-ref name="3ps-createPartnerProfileResponse" doc:name="Flow Reference"/>
+                                <set-session-variable variableName="createPartnerProfileResponse" value="#[payload]" doc:name="Session Variable"/>
+                            </when>
+                        </choice>
+                        <logger level="INFO" doc:name="Logger - Aborting after 3ps-callback, sending to DLQ"/>
+                        <vm:outbound-endpoint exchange-pattern="one-way" path="Q.dlq" doc:name="VM - DLQ"/>
+                    </when>
+
+		                <otherwise>
+		                	 <!-- the error (in session var) is returned to Q.error, then to Q.cleanup and back to 3ps-callback-->
+		               		 <vm:outbound-endpoint exchange-pattern="one-way" path="Q.error" doc:name="VM-error"/>
+		                </otherwise>
+	   				</choice>
 	            </when>
 	        </choice>
     </catch-exception-strategy> 
     
      <smtp:gmail-connector name="smtpGmailConnector" doc:name="Gmail"/>
-     <http:connector name="httpConnector" doc:name="HTTP\HTTPS">
+    <http:connector name="httpDAXConnector" doc:name="HTTP\HTTPS">
         <service-overrides sessionHandler="org.mule.session.NullSessionHandler" dispatcherFactory="org.mule.transport.http.NTLMv2HttpClientMessageDispatcherFactor" />
-    </http:connector> 
+    </http:connector>
+    <http:connector name="defaultConnector" doc:name="HTTP\HTTPS"/>
     <object-to-byte-array-transformer name="objectToByteArrayTransformer" doc:name="Object to Byte Array" />
     <context:property-placeholder location="classpath:3ps-dax-int.properties, file:///${app.properties.override.location}" />
     <spring:beans>
-        <spring:bean name="loggingIn" class="org.apache.cxf.interceptor.LoggingInInterceptor">
-            <spring:property name="prettyLogging" value="true"/>
+    	<spring:bean name="loggingIn" class="org.apache.cxf.interceptor.LoggingInInterceptor">
+            <spring:property name="prettyLogging" value="true" />
         </spring:bean>
         <spring:bean name="loggingOut" class="org.apache.cxf.interceptor.LoggingOutInterceptor">
-            <spring:property name="prettyLogging" value="true"/>
+            <spring:property name="prettyLogging" value="true" />
         </spring:bean>
-        <spring:bean id="canonicalCalidator" class="com.bhnetwork.integration.component.CanonicalValidation"/>
+        <spring:bean id="canonicalCalidator" class="com.bhnetwork.integration.component.CanonicalValidation" />
     </spring:beans>
     <apikit:config name="apiConfig" raml="3ps-dax-int.raml" consoleEnabled="true" consolePath="console" doc:name="Router" />
     <apikit:mapping-exception-strategy name="apiKitGlobalExceptionMapping">
@@ -88,355 +120,514 @@ http://www.mulesoft.org/schema/mule/smtps http://www.mulesoft.org/schema/mule/sm
         <apikit:mapping statusCode="400">
             <apikit:exception value="org.mule.module.apikit.exception.BadRequestException" />
             <set-property propertyName="Content-Type" value="application/json" />
-            <logger level="ERROR" message="#[groovy:message.getExceptionPayload().getMessage()]" /> 
-            <set-payload value="{ &quot;message&quot;: &quot;Bad request&quot; }" />
+            <logger level="ERROR" message="#[groovy:message.getExceptionPayload().getMessage()]" />
+            <scripting:component doc:name="Groovy">
+            	<scripting:script name="error" engine="Groovy"><![CDATA[errorResponse = new java.util.LinkedHashMap(); errorResponse.put("message", "Bad Request"); errorResponse.put("detailed message",message.getExceptionPayload().getMessage()); return errorResponse;]]></scripting:script>
+        	</scripting:component>
+        	<json:object-to-json-transformer doc:name="Object to JSON"/>
         </apikit:mapping>
     </apikit:mapping-exception-strategy>
-    <data-mapper:config name="json_to_pojo" transformationGraphPath="json_to_pojo.grf" doc:name="json_to_pojo"/>
+    <data-mapper:config name="json_to_pojo" transformationGraphPath="json_to_pojo.grf" doc:name="json_to_pojo" />
     <flow name="main" doc:name="main">
-        <http:inbound-endpoint address="http://${http.host}:${http.port}/api" doc:name="HTTP" exchange-pattern="request-response" />
+        <http:inbound-endpoint connector-ref="defaultConnector" address="http://${http.host}:${http.port}/api" doc:name="HTTP" exchange-pattern="request-response" />
         <apikit:router config-ref="apiConfig" doc:name="APIkit Router" />
         <exception-strategy ref="apiKitGlobalExceptionMapping" doc:name="Reference Exception Strategy" />
     </flow>
     <flow name="post:/3ps-dax-int:apiConfig" doc:name="post:/3ps-dax-int:apiConfig">
-        <object-to-byte-array-transformer doc:name="Object to Byte Array"/>
-        <set-session-variable variableName="partnerProfileId" value="#[json:entityId]" doc:name="Session Variable"/>
-        <logger level="INFO" doc:name="TODO Validation" />
+        <json:object-to-json-transformer doc:name="Object to JSON"/>
+        <set-session-variable variableName="partnerProfileId" value="#[json:entityId]" doc:name="Session Variable" />
+        <set-session-variable variableName="createPartnerRequest" value="#[payload]" doc:name="Session Variable"/>
+
         <all doc:name="All">
-            <set-payload value="{   &quot;status&quot;: &quot;ACK&quot; }" doc:name="Send ACK"/>
+            <set-payload value="{   &quot;status&quot;: &quot;ACK&quot; }" doc:name="Send ACK" />
             <async doc:name="Async">
-                <vm:outbound-endpoint exchange-pattern="one-way" path="Q.transform" doc:name="VM-transforms"/>
+                <vm:outbound-endpoint exchange-pattern="one-way" path="Q.transform" doc:name="VM-transforms" />
             </async>
         </all>
-        <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy"/>
+        <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy" />
     </flow>
     <flow name="data-transformation-flow" doc:name="data-transformation-flow">
         <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-transforms" path="Q.transform" />
-        <data-mapper:transform config-ref="json_to_pojo" doc:name="3PS-Canonical"/>
+        <data-mapper:transform config-ref="json_to_pojo" doc:name="3PS-Canonical" />
         <!--  <component class="com.bhnetwork.integration.component.CanonicalValidation" doc:name="Canonical Validator"/>  -->
         <vm:outbound-endpoint exchange-pattern="one-way" doc:name="VM-continue" path="Q.continue" />
-        <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy"/>
+        <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy" />
     </flow>
     <flow name="send-data-to-DAX-flow" doc:name="send-data-to-DAX-flow">
         <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-continue" path="Q.continue" />
-        <set-session-variable variableName="canon" value="#[payload]" doc:name="Persist canonical in session"/>
+        <set-session-variable variableName="canon" value="#[payload]" doc:name="Persist canonical in session" />
         <logger level="INFO" doc:name="Log Orchestration startTime" />
         <tracking:custom-event event-name="bizEvent: OrchestrationStartTime" doc:name="bizEvent: OrchestrationStartTime" />
-        
-        <message-properties-transformer doc:name="set DaxStep=1" overwrite="true" scope="session" />
+        <set-session-variable variableName="DaxStep" value="1" doc:name="DaxStep = 1"/>
         <vm:outbound-endpoint exchange-pattern="one-way" doc:name="VM-step1" path="Q.step1" />
-        
-        <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy"/>
+        <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy" />
     </flow>
     <flow name="DAX-step1-flow" doc:name="DAX-step1-flow">
         <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-step1" path="Q.step1" />
-        <set-payload value="#[sessionVars.canon]" doc:name="Canonical Payload from Session"/>
-        <custom-transformer class="com.bhnetwork.integration.transformer.CanonicalToDAXCustCompanyCodeServiceCreateRequest" doc:name="Canon-to-CompanyRequest"/>
+        <set-payload value="#[sessionVars.canon]" doc:name="Canonical Payload from Session" />
+        <custom-transformer class="com.bhnetwork.integration.transformer.CanonicalToDAXCustCompanyCodeServiceCreateRequest" doc:name="Canon-to-CompanyRequest" />
         <enricher doc:name="Enrich-Canonical-w-DAX-values ">
-            <flow-ref name="daxCompanyWebServiceClient" doc:name="Invoke Dax Company Webservice"/>
-            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[0].value]" target="#[sessionVars.canon.company.bhnGUID]"/>
-            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[1].value]" target="#[sessionVars.canon.company.recId]"/>
+            <flow-ref name="daxCompanyWebServiceClient" doc:name="Invoke Dax Company Webservice" />
+            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[0].value]" target="#[sessionVars.canon.company.bhnGUID]" />
+            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[1].value]" target="#[sessionVars.canon.company.recId]" />
         </enricher>
-        <logger level="INFO" doc:name="Log bhnGUID and recId" message="bhnGUID=#[sessionVars.canon.company.bhnGUID] and recId=#[sessionVars.canon.company.recId]"/>
-        <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step2" doc:name="Q.step2"/>
-        <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy"/>
+        <logger level="INFO" doc:name="Log bhnGUID and recId" message="bhnGUID=#[sessionVars.canon.company.bhnGUID] and recId=#[sessionVars.canon.company.recId]" />
+        <set-session-variable variableName="DaxStep" value="2" doc:name="DaxStep = 2"/>
+        <!-- reset number of retries -->
+        <expression-transformer expression="#[sessionVars['numberOfRetries']=0]" doc:name="Expression"/>        
+        <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step2" doc:name="Q.step2" />
+        <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy" />
     </flow>
     <flow name="DAX-step2-flow" doc:name="DAX-step2-flow">
         <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-step2" path="Q.step2" />
-        <set-payload value="#[sessionVars.canon]" doc:name="Canonical Payload from Session"/>
-        <custom-transformer class="com.bhnetwork.integration.transformer.CanonicalToBhnDivision3PSServiceCreateRequest" doc:name="Canon-to-DivisionRequest"/>
+        <set-payload value="#[sessionVars.canon]" doc:name="Canonical Payload from Session" />
+        <custom-transformer class="com.bhnetwork.integration.transformer.CanonicalToBhnDivision3PSServiceCreateRequest" doc:name="Canon-to-DivisionRequest" />
         <enricher doc:name="Enrich-Canonical-w-DAX-values ">
-            <flow-ref name="daxDivisionWebServiceClient" doc:name="Invoke Dax Division Webservice"/>
-            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[0].value]" target="#[sessionVars.canon.company.cpDivision[0].bhnGUID]"/>
-            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[1].value]" target="#[sessionVars.canon.company.cpDivision[0].recId]"/>
+            <flow-ref name="daxDivisionWebServiceClient" doc:name="Invoke Dax Division Webservice" />
+            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[0].value]" target="#[sessionVars.canon.company.cpDivision[0].bhnGUID]" />
+            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[1].value]" target="#[sessionVars.canon.company.cpDivision[0].recId]" />
         </enricher>
-        <logger level="INFO" doc:name="Log bhnGUID and recId" message="guid=#[sessionVars.canon.company.cpDivision[0].bhnGUID] and RecId=#[sessionVars.canon.company.cpDivision[0].recId]"/>
-        <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step3" doc:name="Q.step3"/> 
-        <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy"/>
+        <logger level="INFO" doc:name="Log bhnGUID and recId" message="guid=#[sessionVars.canon.company.cpDivision[0].bhnGUID] and RecId=#[sessionVars.canon.company.cpDivision[0].recId]" />
+        <set-session-variable variableName="DaxStep" value="3" doc:name="DaxStep = 3"/>
+        <!-- reset number of retries -->
+        <expression-transformer expression="#[sessionVars['numberOfRetries']=0]" doc:name="Expression"/>          
+        <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step3" doc:name="Q.step3" />
+        <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy" />
     </flow>
     <flow name="DAX-step3-flow" doc:name="DAX-step3-flow">
         <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-step3" path="Q.step3" />
-        <set-payload value="#[sessionVars.canon]" doc:name="Canonical Payload from Session"/>
-        <custom-transformer class="com.bhnetwork.integration.transformer.CanonicalToUPCSubGroupTableServiceCreateRequest" doc:name="Canon-to-SubstgroupRequest"/>
+        <set-payload value="#[sessionVars.canon]" doc:name="Canonical Payload from Session" />
+        <custom-transformer class="com.bhnetwork.integration.transformer.CanonicalToUPCSubGroupTableServiceCreateRequest" doc:name="Canon-to-SubstgroupRequest" />
         <enricher doc:name="Enrich-Canonical-w-DAX-values ">
-            <flow-ref name="daxSubstgroupWebServiceClient" doc:name="Invoke Dax IID Webservice"/>
-            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[0].value]" target="#[sessionVars.canon.company.cpDivision[0].products[0].substGrp.subGroupId]"/>
-            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[1].value]" target="#[sessionVars.canon.company.cpDivision[0].products[0].substGrp.substitutionBrandDenomDescription]"/>
-            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[2].value]" target="#[sessionVars.canon.company.cpDivision[0].products[0].substGrp.guid]"/>
-            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[3].value]" target="#[sessionVars.canon.company.cpDivision[0].products[0].substGrp.brandRecId]"/>
+            <flow-ref name="daxSubstgroupWebServiceClient" doc:name="Invoke Dax IID Webservice" />
+            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[0].value]" target="#[sessionVars.canon.company.cpDivision[0].products[0].substGrp.subGroupId]" />
+            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[1].value]" target="#[sessionVars.canon.company.cpDivision[0].products[0].substGrp.substitutionBrandDenomDescription]" />
+            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[2].value]" target="#[sessionVars.canon.company.cpDivision[0].products[0].substGrp.guid]" />
+            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[3].value]" target="#[sessionVars.canon.company.cpDivision[0].products[0].substGrp.brandRecId]" />
         </enricher>
-        <logger level="INFO" doc:name="Log bhnGUID and recId" message="guid=#[sessionVars.canon.company.cpDivision[0].products[0].substGrp.guid] and brandRecId=#[sessionVars.canon.company.cpDivision[0].products[0].substGrp.brandRecId]"/>
-        <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step4" doc:name="Q.step4"/>
-        <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy"/>
+        <logger level="INFO" doc:name="Log bhnGUID and recId" message="guid=#[sessionVars.canon.company.cpDivision[0].products[0].substGrp.guid] and brandRecId=#[sessionVars.canon.company.cpDivision[0].products[0].substGrp.brandRecId]" />
+        <set-session-variable variableName="DaxStep" value="4" doc:name="DaxStep = 4"/>
+        <!-- reset number of retries -->
+        <expression-transformer expression="#[sessionVars['numberOfRetries']=0]" doc:name="Expression"/>          
+        <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step4" doc:name="Q.step4" />
+        <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy" />
     </flow>
     <flow name="DAX-step4-flow" doc:name="DAX-step4-flow">
         <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-step4" path="Q.step4" />
-        <set-payload value="#[sessionVars.canon]" doc:name="Canonical Payload from Session"/>
-        <custom-transformer class="com.bhnetwork.integration.transformer.CanonicalToBhnUPCAttributes3PSServiceCreateRequest" doc:name="Canon-to-UPCRequest"/>
+        <set-payload value="#[sessionVars.canon]" doc:name="Canonical Payload from Session" />
+        <custom-transformer class="com.bhnetwork.integration.transformer.CanonicalToBhnUPCAttributes3PSServiceCreateRequest" doc:name="Canon-to-UPCRequest" />
         <enricher doc:name="Enrich-Canonical-w-DAX-values ">
-            <flow-ref name="daxUPCWebServiceClient" doc:name="Invoke Dax UPC Webservice"/>
-            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[0].value]" target="#[sessionVars.canon.company.cpDivision[0].products[0].iid.itemId]"/>
-            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[3].value]" target="#[sessionVars.canon.company.cpDivision[0].products[0].bhnGUID]"/>
+            <flow-ref name="daxUPCWebServiceClient" doc:name="Invoke Dax UPC Webservice" />
+            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[0].value]" target="#[sessionVars.canon.company.cpDivision[0].products[0].iid.itemId]" />
+            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[3].value]" target="#[sessionVars.canon.company.cpDivision[0].products[0].bhnGUID]" />
         </enricher>
-        <logger level="INFO" doc:name="Log bhnGUID " message="guid=#[sessionVars.canon.company.cpDivision[0].products[0].bhnGUID]"/>
-        <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step5" doc:name="Q.step5"/>
-        <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy"/>
+        <logger level="INFO" doc:name="Log bhnGUID " message="guid=#[sessionVars.canon.company.cpDivision[0].products[0].bhnGUID]" />
+        <set-session-variable variableName="DaxStep" value="5" doc:name="DaxStep = 5"/>
+        <!-- reset number of retries -->
+        <expression-transformer expression="#[sessionVars['numberOfRetries']=0]" doc:name="Expression"/>          
+        <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step5" doc:name="Q.step5" />
+        <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy" />
     </flow>
     <flow name="DAX-step5-flow" doc:name="DAX-step5-flow">
         <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-step5" path="Q.step5" />
-        <set-payload value="#[sessionVars.canon]" doc:name="Canonical Payload from Session"/>
-        <custom-transformer class="com.bhnetwork.integration.transformer.CanonicalToBhnIIDAttributesServiceCreateRequest" doc:name="Canon-to-IIDRequest"/>
+        <set-payload value="#[sessionVars.canon]" doc:name="Canonical Payload from Session" />
+        <custom-transformer class="com.bhnetwork.integration.transformer.CanonicalToBhnIIDAttributesServiceCreateRequest" doc:name="Canon-to-IIDRequest" />
         <enricher doc:name="Enrich-Canonical-w-DAX-values ">
-            <flow-ref name="daxIIDWebServiceClient" doc:name="Invoke Dax IID Webservice"/>
-            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[0].value]" target="#[sessionVars.canon.company.cpDivision[0].products[0].iid.inventBatchId]"/>
-            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[1].value]" target="#[sessionVars.canon.company.cpDivision[0].products[0].iid.itemId]"/>
-            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[2].value]" target="#[sessionVars.canon.company.cpDivision[0].products[0].iid.bhnGUID]"/>
-            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[3].value]" target="#[sessionVars.canon.company.cpDivision[0].products[0].iid.recId]"/>
+            <flow-ref name="daxIIDWebServiceClient" doc:name="Invoke Dax IID Webservice" />
+            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[0].value]" target="#[sessionVars.canon.company.cpDivision[0].products[0].iid.inventBatchId]" />
+            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[1].value]" target="#[sessionVars.canon.company.cpDivision[0].products[0].iid.itemId]" />
+            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[2].value]" target="#[sessionVars.canon.company.cpDivision[0].products[0].iid.bhnGUID]" />
+            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[3].value]" target="#[sessionVars.canon.company.cpDivision[0].products[0].iid.recId]" />
         </enricher>
-        <logger level="INFO" doc:name="Log bhnGUID and recId" message="bhnGUID=#[sessionVars.canon.company.cpDivision[0].products[0].iid.bhnGUID] and recId=#[sessionVars.canon.company.cpDivision[0].products[0].iid.recId]"/>
-        <vm:outbound-endpoint exchange-pattern="one-way" doc:name="VM-step6" path="Q.step6"/>
-        <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy"/>
+        <logger level="INFO" doc:name="Log bhnGUID and recId" message="bhnGUID=#[sessionVars.canon.company.cpDivision[0].products[0].iid.bhnGUID] and recId=#[sessionVars.canon.company.cpDivision[0].products[0].iid.recId]" />
+        <set-session-variable variableName="DaxStep" value="6" doc:name="DaxStep = 6"/>
+        <!-- reset number of retries -->
+        <expression-transformer expression="#[sessionVars['numberOfRetries']=0]" doc:name="Expression"/>          
+        <vm:outbound-endpoint exchange-pattern="one-way" doc:name="VM-step6" path="Q.step6" />
+        <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy" />
     </flow>
     <flow name="DAX-step6-flow" doc:name="DAX-step6-flow">
-        <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-step6" path="Q.step6"/>
-        <set-payload value="#[sessionVars.canon]" doc:name="Canonical Payload from Session"/>
-        <custom-transformer class="com.bhnetwork.integration.transformer.CanonicalToStoreServiceCreateRequest" doc:name="Canon-to-StoreRequest"/>
-        <logger level="INFO" message="In step6-flow, payload after CanonicalToStoreServiceCreateRequest transformer: #[payload]" doc:name="test"/>
+        <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-step6" path="Q.step6" />
+        <set-payload value="#[sessionVars.canon]" doc:name="Canonical Payload from Session" />
+        <custom-transformer class="com.bhnetwork.integration.transformer.CanonicalToStoreServiceCreateRequest" doc:name="Canon-to-StoreRequest" />
+        <logger level="INFO" message="In step6-flow, payload after CanonicalToStoreServiceCreateRequest transformer: #[payload]" doc:name="test" />
         <enricher doc:name="Enrich-Canonical-w-DAX-values ">
-            <flow-ref name="daxStoreWebServiceClient" doc:name="Invoke Dax Store Webservice"/>
-            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[0].value]" target="#[sessionVars.canon.company.cpDivision[0].stores[0].AccountNum]"/>
-            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[1].value]" target="#[sessionVars.canon.company.cpDivision[0].stores[0].bhnCompanyCode]"/>
-            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[2].value]" target="#[sessionVars.canon.company.cpDivision[0].stores[0].bhnDivisionCode]"/>
-            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[3].value]" target="#[sessionVars.canon.company.cpDivision[0].stores[0].bhnGUID]"/>
+            <flow-ref name="daxStoreWebServiceClient" doc:name="Invoke Dax Store Webservice" />
+            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[0].value]" target="#[sessionVars.canon.company.cpDivision[0].stores[0].AccountNum]" />
+            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[1].value]" target="#[sessionVars.canon.company.cpDivision[0].stores[0].bhnCompanyCode]" />
+            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[2].value]" target="#[sessionVars.canon.company.cpDivision[0].stores[0].bhnDivisionCode]" />
+            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[3].value]" target="#[sessionVars.canon.company.cpDivision[0].stores[0].bhnGUID]" />
         </enricher>
-        <logger level="INFO" doc:name="Log AccountNum and bhnGUID" message="step6-flow: AccountNum=#[sessionVars.canon.company.cpDivision[0].stores[0].AccountNum] and bhnGUID=#[sessionVars.canon.company.cpDivision[0].stores[0].bhnGUID]"/>
+        <logger level="INFO" doc:name="Log AccountNum and bhnGUID" message="step6-flow: AccountNum=#[sessionVars.canon.company.cpDivision[0].stores[0].AccountNum] and bhnGUID=#[sessionVars.canon.company.cpDivision[0].stores[0].bhnGUID]" />
         <!-- next step: Vendor service -->
-        <vm:outbound-endpoint exchange-pattern="one-way" doc:name="VM-step7" path="Q.step7"/>
-        <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy"/>
+        <set-session-variable variableName="DaxStep" value="7" doc:name="DaxStep = 7"/>
+        <!-- reset number of retries -->
+        <expression-transformer expression="#[sessionVars['numberOfRetries']=0]" doc:name="Expression"/>          
+        <vm:outbound-endpoint exchange-pattern="one-way" doc:name="VM-step7" path="Q.step7" />
+        <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy" />
     </flow>
     <flow name="DAX-step7-flow" doc:name="DAX-step7-flow">
-        <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-step7" path="Q.step7"/>
-        <set-payload value="#[sessionVars.canon]" doc:name="Canonical Payload from Session"/>
-        <custom-transformer class="com.bhnetwork.integration.transformer.CanonicalToVendTableServiceCreateRequest" doc:name="Canon-to-VendorRequest"/>
-        <logger level="INFO" message="In step7-flow, payload after CanonicalToVendTableServiceCreateRequest transformer: #[payload]" doc:name="test"/>
-		<!-- TODO: future
+        <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-step7" path="Q.step7" />
+        <set-payload value="#[sessionVars.canon]" doc:name="Canonical Payload from Session" />
+        <custom-transformer class="com.bhnetwork.integration.transformer.CanonicalToVendTableServiceCreateRequest" doc:name="Canon-to-VendorRequest" />
+        <logger level="INFO" message="In step7-flow, payload after CanonicalToVendTableServiceCreateRequest transformer: #[payload]" doc:name="test" />
+        <!-- TODO: future
 			Right now we don't have the proper json that implements multiple vendors
 			need to implement a foreach to deal with multiple vendors
 			idea: set the new payload to be: #[payload.entityKeyList] 
 			then implement a forEach which would process each entityKey[] individually
 		-->
         <enricher doc:name="Enrich-Canonical-w-DAX-values ">
-            <flow-ref name="daxVendorWebServiceClient" doc:name="Invoke Dax Vendor Webservice"/>
-            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[0].value]" target="#[sessionVars.canon.vendor.AccountNum]"/>
-            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[1].value]" target="#[sessionVars.canon.vendor.recId]"/>
+            <flow-ref name="daxVendorWebServiceClient" doc:name="Invoke Dax Vendor Webservice" />
+            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[0].value]" target="#[sessionVars.canon.vendor.AccountNum]" />
+            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[1].value]" target="#[sessionVars.canon.vendor.recId]" />
         </enricher>
-        <logger level="INFO" doc:name="Log AccountNum and recId" message="AccountNum=#[sessionVars.canon.vendor.AccountNum] and recId=#[sessionVars.canon.vendor.recId]"/>
-         <!-- next step: Setup Complete service -->
-        <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step8" doc:name="VM-step8 (Setup Complete)"/>
-        <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy"/>
+        <logger level="INFO" doc:name="Log AccountNum and recId" message="AccountNum=#[sessionVars.canon.vendor.AccountNum] and recId=#[sessionVars.canon.vendor.recId]" />
+        <!-- next step: Setup Complete service -->
+        <set-session-variable variableName="DaxStep" value="8" doc:name="DaxStep = 8"/>
+        <!-- reset number of retries -->
+        <expression-transformer expression="#[sessionVars['numberOfRetries']=0]" doc:name="Expression"/>          
+        <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step8" doc:name="VM-step8 (Setup Complete)" />
+        <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy" />
     </flow>
     <flow name="DAX-step8-flow" doc:name="DAX-step8-flow">
         <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-step8" path="Q.step8" />
-        <set-payload value="#[sessionVars.canon]" doc:name="Canonical Payload from Session"/>
-        <custom-transformer class="com.bhnetwork.integration.transformer.CanonicalToBhnSetUpComp3PSServiceCreateRequest" doc:name="Canon-to-SetupCompRequest"/>
-        <flow-ref name="daxSetupCompWebServiceClient" doc:name="Invoke Dax SetupComp Webservice"/>
-        <logger level="INFO" doc:name="SetupComplete-success" message="SetupComplete-success partnerProfileId=#[payload.entityKeyList.entityKey[0].keyData.keyField[0].value]"/>
-        <!-- UNCOMMENT NEXT LINE ONCE CALLBACK-3PS -->
-        <!-- <vm:outbound-endpoint exchange-pattern="one-way" doc:name="VM-callback-3PS" path="Q.callback"/>  -->
-        <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy"/>
+        <set-payload value="#[sessionVars.canon]" doc:name="Canonical Payload from Session" />
+        <custom-transformer class="com.bhnetwork.integration.transformer.CanonicalToBhnSetUpComp3PSServiceCreateRequest" doc:name="Canon-to-SetupCompRequest" />
+        <flow-ref name="daxSetupCompWebServiceClient" doc:name="Invoke Dax SetupComp Webservice" />
+        <logger level="INFO" doc:name="SetupComplete-success" message="SetupComplete-success partnerProfileId=#[payload.entityKeyList.entityKey[0].keyData.keyField[0].value]" />
+        <set-payload value="#[null]" doc:name="Set Payload"/>
+        <set-session-variable variableName="DaxStep" value="3ps-callback" doc:name="DaxStep = 3ps-callback"/>
+        <!-- reset number of retries -->
+        <expression-transformer expression="#[sessionVars['numberOfRetries']=0]" doc:name="Expression"/>          
+        <vm:outbound-endpoint exchange-pattern="one-way" doc:name="VM-callback-3PS" path="Q.callback"/>
+        <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy" />
     </flow>
     <flow name="DAX-error-flow" doc:name="DAX-error-flow">
-        <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-error" path="Q.error"/>
+        <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-error" path="Q.error" />
         <flow-ref name="notification-flow" doc:name="Notify Ops"/>
-        <logger level="INFO" doc:name="Log Error, failing step &amp; 3PS entityID"/>
-        <vm:outbound-endpoint exchange-pattern="one-way" doc:name="VM-DAX-cleanup" path="Q.cleanup"/>
-        <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy"/>
+        <logger level="INFO" doc:name="Log Error, failing step &amp; 3PS entityID" />
+        <vm:outbound-endpoint exchange-pattern="one-way" doc:name="VM-DAX-cleanup" path="Q.cleanup" />
+        <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy" />
     </flow>
     <flow name="DAX-cleanup-flow" doc:name="DAX-cleanup-flow">
-        <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-DAX-cleanup" path="Q.cleanup"/>
-        <custom-transformer class="com.bhnetwork.integration.transformer.CanonicalToBhnCleanUpMegatronServiceCreateRequest" doc:name="Canon-to-CleanupRequest"/>
-        <message-properties-transformer doc:name="set DaxStep=cleanUp (before)" overwrite="true" scope="session" >
-            <add-message-property key="DaxStep" value="BEFORE-CLEAN-UP"/>
+        <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-DAX-cleanup" path="Q.cleanup" />
+        <custom-transformer class="com.bhnetwork.integration.transformer.CanonicalToBhnCleanUpMegatronServiceCreateRequest" doc:name="Canon-to-CleanupRequest" />
+        <message-properties-transformer doc:name="set DaxStep=cleanUp (before)" overwrite="true" scope="session">
+            <add-message-property key="DaxStep" value="BEFORE-CLEAN-UP" />
         </message-properties-transformer>
-        <flow-ref name="daxCleanupWebServiceClient" doc:name="Invoke Dax Cleanup Webservice"/>
-        <message-properties-transformer doc:name="set DaxStep=cleanUp (success)" overwrite="true" scope="session" >
-            <add-message-property key="DaxStep" value="SUCCESS-CLEAN-UP"/>
+        <flow-ref name="daxCleanupWebServiceClient" doc:name="Invoke Dax Cleanup Webservice" />
+        <message-properties-transformer doc:name="set DaxStep=cleanUp (success)" overwrite="true" scope="session">
+            <add-message-property key="DaxStep" value="SUCCESS-CLEAN-UP" />
         </message-properties-transformer>
-		<logger level="INFO" doc:name="CleanUp-success" message="Cleanup-success partnerProfileId=#[payload.entityKeyList.entityKey[0].keyData.keyField[0].value]"/>
-        <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy"/>
+        <logger level="INFO" doc:name="CleanUp-success" message="Cleanup-success partnerProfileId=#[payload.entityKeyList.entityKey[0].keyData.keyField[0].value]" />
+        <set-payload value="#[null]" doc:name="Set Payload"/>
+        
+        <!-- TODO: reset number of retries or not? how do we handle retries when error occurs during cleanup -->
+        <!-- <expression-transformer expression="#[sessionVars['numberOfRetries']=0]" doc:name="Expression"/> -->
+
+        <!-- forward error to 3ps-callback (using the VM dedicated for errors) -->
+        <vm:outbound-endpoint exchange-pattern="one-way" path="Q.errorReportTo3PS" doc:name="VM-reportError-to-3PS"/>        
+        <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy" />
     </flow>
     <!-- SUB-FLOWS for web services invocations -->
     <sub-flow name="daxCompanyWebServiceClient" doc:name="daxCompanyWebServiceClient">
         <cxf:jaxws-client operation="create" clientClass="com.microsoft.schemas.dynamics._2008._01.services.CustCompanyCodeService_Service" port="BasicHttpBinding_CustCompanyCodeService" doc:name="SOAP">
             <cxf:inInterceptors>
-                <spring:ref bean="loggingIn"/>
+                <spring:ref bean="loggingIn" />
             </cxf:inInterceptors>
             <cxf:outInterceptors>
-                <spring:ref bean="loggingOut"/>
+                <spring:ref bean="loggingOut" />
             </cxf:outInterceptors>
         </cxf:jaxws-client>
         <expression-component doc:name="NTLM credentials"><![CDATA[flowVars['username']='${dax.username}'; flowVars['password']='${dax.password}'; flowVars['domain']='${dax.domain}'; flowVars['realm']='${dax.realm}' ;]]></expression-component>
-        <http:outbound-endpoint exchange-pattern="request-response" host="${dax.http.host}" port="${dax.http.port}" path="${dax.http.company.path}" method="POST" transformer-refs="objectToByteArrayTransformer" doc:name="HTTP"/>
+        <http:outbound-endpoint connector-ref="httpDAXConnector" exchange-pattern="request-response" host="${dax.http.host}" port="${dax.http.port}" path="${dax.http.company.path}" method="POST" transformer-refs="objectToByteArrayTransformer" doc:name="HTTP" />
     </sub-flow>
     <sub-flow name="daxDivisionWebServiceClient" doc:name="daxDivisionWebServiceClient">
         <cxf:jaxws-client operation="create" clientClass="com.microsoft.schemas.dynamics._2008._01.services.BhnDivision3PSService_Service" port="BasicHttpBinding_bhnDivision3PSService" doc:name="SOAP">
             <cxf:inInterceptors>
-                <spring:ref bean="loggingIn"/>
+                <spring:ref bean="loggingIn" />
             </cxf:inInterceptors>
             <cxf:outInterceptors>
-                <spring:ref bean="loggingOut"/>
+                <spring:ref bean="loggingOut" />
             </cxf:outInterceptors>
         </cxf:jaxws-client>
         <expression-component doc:name="NTLM credentials"><![CDATA[flowVars['username']='${dax.username}'; flowVars['password']='${dax.password}'; flowVars['domain']='${dax.domain}'; flowVars['realm']='${dax.realm}' ;]]></expression-component>
-        <http:outbound-endpoint exchange-pattern="request-response" host="${dax.http.host}" port="${dax.http.port}" path="${dax.http.division.path}" method="POST" transformer-refs="objectToByteArrayTransformer" doc:name="HTTP"/>
+        <http:outbound-endpoint connector-ref="httpDAXConnector" exchange-pattern="request-response" host="${dax.http.host}" port="${dax.http.port}" path="${dax.http.division.path}" method="POST" transformer-refs="objectToByteArrayTransformer" doc:name="HTTP" />
     </sub-flow>
-	<sub-flow name="daxSubstgroupWebServiceClient" doc:name="daxSubstgroupWebServiceClient">
+    <sub-flow name="daxSubstgroupWebServiceClient" doc:name="daxSubstgroupWebServiceClient">
         <cxf:jaxws-client operation="create" clientClass="org.tempuri.UPCSubGroupTableService_Service" port="BasicHttpBinding_UPCSubGroupTableService" doc:name="SOAP">
             <cxf:inInterceptors>
-                <spring:ref bean="loggingIn"/>
+                <spring:ref bean="loggingIn" />
             </cxf:inInterceptors>
             <cxf:outInterceptors>
-                <spring:ref bean="loggingOut"/>
+                <spring:ref bean="loggingOut" />
             </cxf:outInterceptors>
         </cxf:jaxws-client>
         <expression-component doc:name="NTLM credentials"><![CDATA[flowVars['username']='${dax.username}'; flowVars['password']='${dax.password}'; flowVars['domain']='${dax.domain}'; flowVars['realm']='${dax.realm}' ;]]></expression-component>
-        <http:outbound-endpoint exchange-pattern="request-response" host="${dax.http.host}" port="${dax.http.port}" path="${dax.http.substGrp.path}" method="POST" transformer-refs="objectToByteArrayTransformer" doc:name="HTTP"/>
+        <http:outbound-endpoint connector-ref="httpDAXConnector" exchange-pattern="request-response" host="${dax.http.host}" port="${dax.http.port}" path="${dax.http.substGrp.path}" method="POST" transformer-refs="objectToByteArrayTransformer" doc:name="HTTP" />
     </sub-flow>
-	<sub-flow name="daxUPCWebServiceClient" doc:name="daxUPCWebServiceClient">
+    <sub-flow name="daxUPCWebServiceClient" doc:name="daxUPCWebServiceClient">
         <cxf:jaxws-client operation="create" clientClass="com.microsoft.schemas.dynamics._2008._01.services.BhnUPCAttributes3PSService_Service" port="BasicHttpBinding_bhnUPCAttributes3PSService" doc:name="SOAP">
             <cxf:inInterceptors>
-                <spring:ref bean="loggingIn"/>
+                <spring:ref bean="loggingIn" />
             </cxf:inInterceptors>
             <cxf:outInterceptors>
-                <spring:ref bean="loggingOut"/>
+                <spring:ref bean="loggingOut" />
             </cxf:outInterceptors>
         </cxf:jaxws-client>
         <expression-component doc:name="NTLM credentials"><![CDATA[flowVars['username']='${dax.username}'; flowVars['password']='${dax.password}'; flowVars['domain']='${dax.domain}'; flowVars['realm']='${dax.realm}' ;]]></expression-component>
-        <http:outbound-endpoint exchange-pattern="request-response" host="${dax.http.host}" port="${dax.http.port}" path="${dax.http.upc.path}" method="POST" transformer-refs="objectToByteArrayTransformer" doc:name="HTTP"/>
+        <http:outbound-endpoint connector-ref="httpDAXConnector" exchange-pattern="request-response" host="${dax.http.host}" port="${dax.http.port}" path="${dax.http.upc.path}" method="POST" transformer-refs="objectToByteArrayTransformer" doc:name="HTTP" />
     </sub-flow>
     <sub-flow name="daxIIDWebServiceClient" doc:name="daxIIDWebServiceClient">
         <cxf:jaxws-client operation="create" clientClass="org.tempuri.BhnIIDAttributesService_Service" port="BasicHttpBinding_bhnIIDAttributesService" doc:name="SOAP">
             <cxf:inInterceptors>
-                <spring:ref bean="loggingIn"/>
+                <spring:ref bean="loggingIn" />
             </cxf:inInterceptors>
             <cxf:outInterceptors>
-                <spring:ref bean="loggingOut"/>
+                <spring:ref bean="loggingOut" />
             </cxf:outInterceptors>
         </cxf:jaxws-client>
         <expression-component doc:name="NTLM credentials"><![CDATA[flowVars['username']='${dax.username}'; flowVars['password']='${dax.password}'; flowVars['domain']='${dax.domain}'; flowVars['realm']='${dax.realm}' ;]]></expression-component>
-        <http:outbound-endpoint exchange-pattern="request-response" host="${dax.http.host}" port="${dax.http.port}" path="${dax.http.iid.path}" method="POST" transformer-refs="objectToByteArrayTransformer" doc:name="HTTP"/>
+        <http:outbound-endpoint connector-ref="httpDAXConnector" exchange-pattern="request-response" host="${dax.http.host}" port="${dax.http.port}" path="${dax.http.iid.path}" method="POST" transformer-refs="objectToByteArrayTransformer" doc:name="HTTP" />
     </sub-flow>
     <sub-flow name="daxCleanupWebServiceClient" doc:name="daxCleanupWebServiceClient">
         <cxf:jaxws-client operation="create" clientClass="org.tempuri.BhnCleanUpMegatronService_Service" port="BasicHttpBinding_bhnCleanUpMegatronService" doc:name="SOAP">
             <cxf:inInterceptors>
-                <spring:ref bean="loggingIn"/>
+                <spring:ref bean="loggingIn" />
             </cxf:inInterceptors>
             <cxf:outInterceptors>
-                <spring:ref bean="loggingOut"/>
+                <spring:ref bean="loggingOut" />
             </cxf:outInterceptors>
         </cxf:jaxws-client>
         <expression-component doc:name="NTLM credentials"><![CDATA[flowVars['username']='${dax.username}'; flowVars['password']='${dax.password}'; flowVars['domain']='${dax.domain}'; flowVars['realm']='${dax.realm}' ;]]></expression-component>
-        <http:outbound-endpoint exchange-pattern="request-response" host="${dax.http.host}" port="${dax.http.port}" path="${dax.http.cleanup.path}" method="POST" transformer-refs="objectToByteArrayTransformer" doc:name="HTTP"/>
+        <http:outbound-endpoint connector-ref="httpDAXConnector" exchange-pattern="request-response" host="${dax.http.host}" port="${dax.http.port}" path="${dax.http.cleanup.path}" method="POST" transformer-refs="objectToByteArrayTransformer" doc:name="HTTP" />
     </sub-flow>
-	<sub-flow name="daxVendorWebServiceClient" doc:name="daxVendorWebServiceClient">
+    <sub-flow name="daxVendorWebServiceClient" doc:name="daxVendorWebServiceClient">
         <cxf:jaxws-client operation="create" clientClass="com.microsoft.schemas.dynamics._2008._01.services.VendTableService_Service" port="BasicHttpBinding_VendTableService" doc:name="SOAP">
             <cxf:inInterceptors>
-                <spring:ref bean="loggingIn"/>
+                <spring:ref bean="loggingIn" />
             </cxf:inInterceptors>
             <cxf:outInterceptors>
-                <spring:ref bean="loggingOut"/>
+                <spring:ref bean="loggingOut" />
             </cxf:outInterceptors>
         </cxf:jaxws-client>
-        <logger level="INFO" message="In subflow daxVendorWebServiceClient: before NTLM" doc:name="test"/>
+        <logger level="INFO" message="In subflow daxVendorWebServiceClient: before NTLM" doc:name="test" />
         <expression-component doc:name="NTLM credentials"><![CDATA[flowVars['username']='${dax.username}'; flowVars['password']='${dax.password}'; flowVars['domain']='${dax.domain}'; flowVars['realm']='${dax.realm}' ;]]></expression-component>
-        <logger level="INFO" message="In subflow daxVendorWebServiceClient: before Vendor service call" doc:name="test"/>
-        <http:outbound-endpoint exchange-pattern="request-response" host="${dax.http.host}" port="${dax.http.port}" path="${dax.http.vendor.path}" method="POST" transformer-refs="objectToByteArrayTransformer" doc:name="HTTP"/>
-	</sub-flow>
-	<sub-flow name="daxStoreWebServiceClient" doc:name="daxStoreWebServiceClient">
+        <logger level="INFO" message="In subflow daxVendorWebServiceClient: before Vendor service call" doc:name="test" />
+        <http:outbound-endpoint connector-ref="httpDAXConnector" exchange-pattern="request-response" host="${dax.http.host}" port="${dax.http.port}" path="${dax.http.vendor.path}" method="POST" transformer-refs="objectToByteArrayTransformer" doc:name="HTTP" />
+    </sub-flow>
+    <sub-flow name="daxStoreWebServiceClient" doc:name="daxStoreWebServiceClient">
         <cxf:jaxws-client operation="create" clientClass="com.microsoft.schemas.dynamics._2008._01.services.CustomerService_Service" port="BasicHttpBinding_CustomerService" doc:name="SOAP">
             <cxf:inInterceptors>
-                <spring:ref bean="loggingIn"/>
+                <spring:ref bean="loggingIn" />
             </cxf:inInterceptors>
             <cxf:outInterceptors>
-                <spring:ref bean="loggingOut"/>
+                <spring:ref bean="loggingOut" />
             </cxf:outInterceptors>
         </cxf:jaxws-client>
-        <logger level="INFO" message="In subflow daxStoreWebServiceClient: before NTLM" doc:name="test"/>
+        <logger level="INFO" message="In subflow daxStoreWebServiceClient: before NTLM" doc:name="test" />
         <expression-component doc:name="NTLM credentials"><![CDATA[flowVars['username']='${dax.username}'; flowVars['password']='${dax.password}'; flowVars['domain']='${dax.domain}'; flowVars['realm']='${dax.realm}' ;]]></expression-component>
-        <logger level="INFO" message="In subflow daxStoreWebServiceClient: before Store service call" doc:name="test"/>
-        <http:outbound-endpoint exchange-pattern="request-response" host="${dax.http.host}" port="${dax.http.port}" path="${dax.http.store.path}" method="POST" transformer-refs="objectToByteArrayTransformer" doc:name="HTTP"/>
-	</sub-flow>	
-	<sub-flow name="daxSetupCompWebServiceClient" doc:name="daxSetupCompWebServiceClient">
+        <logger level="INFO" message="In subflow daxStoreWebServiceClient: before Store service call" doc:name="test" />
+        <http:outbound-endpoint connector-ref="httpDAXConnector" exchange-pattern="request-response" host="${dax.http.host}" port="${dax.http.port}" path="${dax.http.store.path}" method="POST" transformer-refs="objectToByteArrayTransformer" doc:name="HTTP" />
+    </sub-flow>
+    <sub-flow name="daxSetupCompWebServiceClient" doc:name="daxSetupCompWebServiceClient">
         <cxf:jaxws-client operation="create" clientClass="com.microsoft.schemas.dynamics._2008._01.services.BhnSetUpComp3PSService_Service" port="BasicHttpBinding_bhnSetUpComp3PSService" doc:name="SOAP">
             <cxf:inInterceptors>
-                <spring:ref bean="loggingIn"/>
+                <spring:ref bean="loggingIn" />
             </cxf:inInterceptors>
             <cxf:outInterceptors>
-                <spring:ref bean="loggingOut"/>
+                <spring:ref bean="loggingOut" />
             </cxf:outInterceptors>
         </cxf:jaxws-client>
         <expression-component doc:name="NTLM credentials"><![CDATA[flowVars['username']='${dax.username}'; flowVars['password']='${dax.password}'; flowVars['domain']='${dax.domain}'; flowVars['realm']='${dax.realm}' ;]]></expression-component>
-        <http:outbound-endpoint exchange-pattern="request-response" host="${dax.http.host}" port="${dax.http.port}" path="${dax.http.setupcomp.path}" method="POST" transformer-refs="objectToByteArrayTransformer" doc:name="HTTP"/>
-    </sub-flow>    
+        <http:outbound-endpoint connector-ref="httpDAXConnector" exchange-pattern="request-response" host="${dax.http.host}" port="${dax.http.port}" path="${dax.http.setupcomp.path}" method="POST" transformer-refs="objectToByteArrayTransformer" doc:name="HTTP" />
+    </sub-flow>
     <flow name="DAX-retry-flow" doc:name="DAX-retry-flow">
-        <vm:inbound-endpoint exchange-pattern="one-way" path="Q.retry" doc:name="VM-retry"/>
-        <logger level="INFO" doc:name="In Retry flow..."/>
-        <choice doc:name="Choice">    
-            <when expression="#[sessionVars['DaxStep]==1]">
-                <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step1" doc:name="VM-retry-step1"/>
-            </when>            
-            <when expression="#[sessionVars['DaxStep]==2]">
-                <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step2" doc:name="VM-retry-step2"/>
-            </when>
-            <when expression="#[sessionVars['DaxStep]==3]">
-                <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step3" doc:name="VM-retry-step3"/>
-            </when>
-            <when expression="#[sessionVars['DaxStep]==4]">
-                <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step4" doc:name="VM-retry-step4"/>
-            </when>
-            <when expression="#[sessionVars['DaxStep]==5]">
-                <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step5" doc:name="VM-retry-step5"/>
-            </when>
-            <when expression="#[sessionVars['DaxStep]==6]">
-                <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step6" doc:name="VM-retry-step6"/>
-            </when>
-            <when expression="#[sessionVars['DaxStep]==7]">
-                <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step7" doc:name="VM-retry-step7"/>
-            </when>
-            <when expression="#[sessionVars['DaxStep]==8]">
-                <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step8" doc:name="VM-retry-setupComplete"/>
-            </when>
-            <otherwise>
-                <vm:outbound-endpoint exchange-pattern="one-way" path="Q.cleanup" doc:name="VM-retry-cleanup"/>
-            </otherwise>
+        <vm:inbound-endpoint exchange-pattern="one-way" path="Q.retry" doc:name="VM-retry" />
+        <logger level="INFO" message="Retry flow #[sessionVars['DaxStep']]" doc:name="In Retry flow..." />
+
+        <!-- short sleep before retry -->
+        <component class="com.bhnetwork.integration.msgprocessors.SleepBeforeRetry" doc:name="Pause before retry"/>
+        <!-- manage the number of retries to prevent recursing indefinitely -->
+        <choice doc:name="Choice">
+        	<when expression="#[sessionVars['numberOfRetries']>${retry.maxNumber}]">
+        		<vm:outbound-endpoint exchange-pattern="one-way" doc:name="VM-reportError-to-3PS" path="Q.errorReportTo3PS"/>
+        	</when>
+        	<otherwise>
+        		<choice doc:name="Choice">
+		            <when expression="#[sessionVars['DaxStep']==1]">
+		                <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step1" doc:name="VM-retry-step1" />
+		            </when>
+		            <when expression="#[sessionVars['DaxStep']==2]">
+		                <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step2" doc:name="VM-retry-step2" />
+		            </when>
+		            <when expression="#[sessionVars['DaxStep']==3]">
+		                <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step3" doc:name="VM-retry-step3" />
+		            </when>
+		            <when expression="#[sessionVars['DaxStep']==4]">
+		                <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step4" doc:name="VM-retry-step4" />
+		            </when>
+		            <when expression="#[sessionVars['DaxStep']==5]">
+		                <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step5" doc:name="VM-retry-step5" />
+		            </when>
+		            <when expression="#[sessionVars['DaxStep']==6]">
+		                <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step6" doc:name="VM-retry-step6" />
+		            </when>
+		            <when expression="#[sessionVars['DaxStep']==7]">
+		                <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step7" doc:name="VM-retry-step7" />
+		            </when>
+		            <when expression="#[sessionVars['DaxStep']==8]">
+		                <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step8" doc:name="VM-retry-setupComplete" />
+		            </when>
+		            <when expression="#[sessionVars['DaxStep']=='3ps-callback']">
+		                <vm:outbound-endpoint exchange-pattern="one-way" path="Q.callback" doc:name="VM-callback-3PS" />
+		            </when>		            
+		            <otherwise>
+		                <vm:outbound-endpoint exchange-pattern="one-way" path="Q.cleanup" doc:name="VM-retry-cleanup" />
+		            </otherwise>
+        		</choice>
+        	</otherwise>
         </choice>
-        <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy"/>
+        <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy" />
     </flow>
     <flow name="DAX-DLQ-flow" doc:name="DAX-DLQ-flow">
-        <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-DLQ" path="Q.dlq"/>
+        <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-DLQ" path="Q.dlq" />
         <flow-ref name="notification-flow" doc:name="Notify Ops"/>
-        <logger level="INFO" doc:name="ABORT log: avoiding circular references when/if cleanup fails"/>
-        <tracking:custom-event event-name="bizEvent: ABORT (unable to cleanup)" doc:name="bizEvent: ABORT (unable to cleanup)"/>
+        <logger level="INFO" doc:name="ABORT log: avoiding circular references when/if cleanup fails" />
+        <tracking:custom-event event-name="bizEvent: ABORT (unable to cleanup)" doc:name="bizEvent: ABORT (unable to cleanup)" />
+        <set-payload value="#[sessionVars.createPartnerProfileResponse]" doc:name="3PS createPartnerProfileResponse"/>
+        <file:outbound-endpoint path="${dlq.file.input.path}" responseTimeout="10000" doc:name="To DLQ folder" outputPattern="createPartnerProfileResponse_#[sessionVars.partnerProfileId].json"/>
+        <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy" />
+    </flow>
+    <flow name="3PS-Callback" doc:name="3PS-Callback">
+       <!-- TODO in the callback flow:
+       reset numberOfRetries to 0
+       because this flow must also be able to retry N times
+       we should use a different exception strategy for this flow (thought?)
+       if this flow causes an exception
+       if 3ps endpoint is unavailable (timeout exception)
+       if num retries is exhausted: must write json return payload to file
+        -->
+        <composite-source doc:name="Composite Source">
+            <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-callback-3PS" path="Q.callback"/>
+            <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-reportError-to-3PS" path="Q.errorReportTo3PS"/>
+        </composite-source>
+        <set-session-variable variableName="DaxStep" value="3ps-callback" doc:name="DaxStep = 3ps-callback"/>
+        <http:outbound-endpoint connector-ref="defaultConnector" exchange-pattern="request-response" host="${3ps.http.host}" port="${3ps.http.port}" path="${3ps.http.path}/#[sessionVars.partnerProfileId]" method="GET" doc:name="HTTP-GET"/>
+        <json:json-to-object-transformer returnClass="java.util.LinkedHashMap" doc:name="JSON to Object"/>
+        <flow-ref name="3ps-createPartnerProfileResponse" doc:name="3ps-createPartnerProfileResponse"/>
+        <set-session-variable variableName="createPartnerProfileResponse" value="#[payload]" doc:name="Session Variable"/>
+		<flow-ref name="3ps-updatePartnerProfile" doc:name="3ps-updatePartnerProfile"/>
+        <!-- a non-retryable exception will be DLQ'ed and not reported back to 3PS
+        	3PS has no notion of SLA. ServiceNow, which is the workflow manager of 3PS will fire off a REST request upon SLA threshold reached.
+        	
+        TODO Raj: save DLQ'ed JSON responses to file when 3PS IF2 endpoint is offline
+        	and have a REST endpoint to read such files and posts them to 3PS when 3PS comes back online
+        	v1: manual, v2: cron'ed browsing for files every hour.
+         -->
         <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy"/>
-    </flow>    
-    <flow name="notification-flow" doc:name="smtp Notification Service">
+    </flow>
+    <sub-flow name="3ps-createPartnerProfileResponse" doc:name="3ps-createPartnerProfileResponse">
+    	<choice doc:name="Choice">
+            <when expression="#[sessionVars.?error == empty]">
+                <enricher doc:name="Message Enricher">
+                    <set-payload value="#[sessionVars.canon]" doc:name="Canonical Payload from Session"/>
+                    <enrich source="#[payload.company.bhnGUID]" target="#[payload.company.bhnGUID]"/>
+                    <enrich source="#[payload.company.recId]" target="#[payload.company.recId]"/>
+                    <enrich source="#[payload.company.cpDivision[0].bhnGUID]" target="#[payload.cpDivision.bhnGUID]"/>
+                    <enrich source="#[payload.company.cpDivision[0].recId]" target="#[payload.cpDivision.recId]"/>
+                    <enrich source="#[payload.company.cpDivision[0].products[0].substGrp.subGroupId]" target="#[payload.ProductInformation[0].subGroupId]"/>
+                    <enrich source="#[payload.company.cpDivision[0].products[0].substGrp.substitutionBrandDenomDescription]" target="#[payload.ProductInformation[0].substitutionBrandDenomDescription]"/>
+                    <enrich source="#[payload.company.cpDivision[0].products[0].substGrp.guid]" target="#[payload.ProductInformation[0].guid]"/>
+                    <enrich source="#[payload.company.cpDivision[0].products[0].substGrp.brandRecId]" target="#[payload.ProductInformation[0].brandRecId]"/>
+                    <enrich source="#[payload.company.cpDivision[0].products[0].iid.itemId]" target="#[payload.ProductInformation[0].iid.itemId]"/>
+                    <enrich source="#[payload.company.cpDivision[0].products[0].bhnGUID]" target="#[payload.ProductInformation[0].bhnGUID]"/>
+                    <enrich source="#[payload.company.cpDivision[0].products[0].iid.inventBatchId]" target="#[payload.ProductInformation[0].iid.inventBatchId]"/>
+                    <enrich source="#[payload.company.cpDivision[0].products[0].iid.itemId]" target="#[payload.ProductInformation[0].iid.itemId]"/>
+                    <enrich source="#[payload.company.cpDivision[0].products[0].iid.bhnGUID]" target="#[payload.ProductInformation[0].iid.bhnGUID]"/>
+                    <enrich source="#[payload.company.cpDivision[0].products[0].iid.recId]" target="#[payload.ProductInformation[0].iid.recId]"/>
+                    <!-- TODO: more enrichment required 
+                    . vendor & store
+                    -->
+                </enricher>
+            </when>
+            <otherwise>
+            	<enricher doc:name="Message Enricher">
+            		<set-payload value="#[sessionVars.error]" doc:name="Error Payload from Session"/>
+            		<enrich source="#[payload]" target="#[payload.error]"/>
+            	</enricher>
+            </otherwise>
+        </choice>
+        <json:object-to-json-transformer doc:name="Object to JSON"/>
+        <logger level="INFO" message="3PS-json-After enrichment #[payload]" doc:name="3PS-json-After"/>
+    </sub-flow>
+    <sub-flow name="3ps-updatePartnerProfile" doc:name="3ps-updatePartnerProfile">
+    	<http:outbound-endpoint  connector-ref="defaultConnector" exchange-pattern="request-response" host="${3ps.http.host}" port="${3ps.http.port}" path="${3ps.http.path}/#[json:entityId]" method="POST" doc:name="HTTP-POST"/>
+        <json:json-to-object-transformer returnClass="java.util.HashMap" doc:name="JSON to Object"/>
+        <logger message="3PS Update response #[payload]" level="INFO" doc:name="3PS Update response"/>
+        <tracking:custom-event event-name="bizEvent: OrchestrationEndTime" doc:name="bizEvent: OrchestrationEndTime"/>
+    </sub-flow>
+    <flow name="notification-flow" doc:name="notification-flow">
         <!-- <http:inbound-endpoint exchange-pattern="request-response" host="localhost" port="8081" path="email" doc:name="HTTP"/>  -->
-        <logger message="sending email out..." level="INFO" doc:name="Logger"/>
-        <!-- <set-payload value="This is an email test!" doc:name="Set Payload"/>  -->
-        <!-- TODO: specify Error session variable -->
-        <!-- TODO @Raj: sample email using velocity template? -->
-		<set-payload value="#[sessionVars['Error']]" doc:name="Set Payload"/>
-        <smtp:outbound-endpoint 
-        	connector-ref="smtpGmailConnector"
-        	to="${email.to}" 
-        	from="${email.from}" 
-        	subject="${email.subject}" 
-        	responseTimeout="${email.responseTimeout}" 
-        	host="${email.host}"
-        	port="${email.port}" 
-        	mimeType="${email.mimeType}" 
-        	user="${email.user}"
-        	password="${email.password}"
-        	doc:name="SMTP"/>
+        <message-properties-transformer doc:name="toggle email forwarding on-off" overwrite="true" scope="invocation">
+            <add-message-property key="sendEmail" value="${email.send}" />
+        </message-properties-transformer>
+        <choice doc:name="Choice">
+            <when expression="#[flowVars['sendEmail'] == true]">
+            	<logger message="sending email notification out..." level="INFO" doc:name="Logger"/>
+            	<component doc:name="EmailBody">
+        			<spring-object bean="EmailBody"/>
+        		</component>
+		        <smtp:outbound-endpoint 
+		        	connector-ref="smtpGmailConnector"
+		        	to="${email.to}" 
+		        	from="${email.from}" 
+		        	subject="${email.subject}" 
+		        	responseTimeout="${email.responseTimeout}" 
+		        	host="${email.host}"
+		        	port="${email.port}" 
+		        	mimeType="${email.mimeType}" 
+		        	user="${email.user}"
+		        	password="${email.password}"
+		        	doc:name="SMTP"/>
+            </when>
+            <otherwise>
+               <logger message="Email notifications are disabled..." level="INFO" doc:name="Logger"/>
+               <logger message="Email body written to log: #[payload]" level="INFO" doc:name="Logger"/>
+            </otherwise>
+        </choice>		
+    </flow>
+    
+    <!-- 3PS Harness Flow. TODO will be removed once the real 3PS service works.-->
+    <flow name="get:/partnerProfileProcessing/v1/partnerProfile/{partnerProfileId}:apiConfig" doc:name="get:/partnerProfileProcessing/v1/partnerProfile/{partnerProfileId}:apiConfig">
+        <logger message="In 3ps-callback-GET" level="INFO" doc:name="Logger"/>
+        <choice doc:name="Choice">
+            <when expression="#[sessionVars.?createPartnerRequest != empty]">
+                <logger message="Partner profile to be updated is retrieved from session createPartnerRequest" level="INFO" doc:name="From Session"/>
+                <set-payload value="#[sessionVars.createPartnerRequest]" doc:name="Set Payload"/>
+            </when>
+            <otherwise>
+                <logger message="Sample Partner to be updated" level="INFO" doc:name="Default from Sample"/>
+            	<set-payload value="#[Thread.currentThread().getContextClassLoader().getResourceAsStream('examples/if1-3ps-mule-post-example.json')]" doc:name="Set Payload"/>
+        		<object-to-string-transformer doc:name="Object to String"/>
+            </otherwise>
+        </choice>
+    </flow>
+    <flow name="post:/partnerProfileProcessing/v1/partnerProfile/{partnerProfileId}:apiConfig" doc:name="post:/partnerProfileProcessing/v1/partnerProfile/{partnerProfileId}:apiConfig">
+        <object-to-string-transformer doc:name="Object to String"/>
+        <choice doc:name="Choice">
+            <when expression="#[json:error != empty]">
+                <set-payload value="{&#xA;  &quot;status&quot;: &quot;ACK-ERROR&quot;&#xA;}" doc:name="3PS Error"/>
+            </when>
+            <otherwise>
+            	<set-payload value="{&#xA;  &quot;status&quot;: &quot;ACK-SUCCESS&quot;&#xA;}" doc:name="3PS Success"/>
+            </otherwise>
+        </choice>
+    </flow>
+    <flow name="get:/partnerProfileProcessing/v1/partnerProfile/recover:apiConfig" doc:name="get:/partnerProfileProcessing/v1/partnerProfile/recover:apiConfig">
+        <flow-ref name="quartzTriggerFlow" doc:name="Quartz Trigger Flow"/>
+        <set-payload value="{ &quot;status&quot;: &quot;OK&quot; }" doc:name="Send OK"/>
+        <logger message="#[payload]" level="INFO" doc:name="Logger"/>
     </flow>
 </mule>

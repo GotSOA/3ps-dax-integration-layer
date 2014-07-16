@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mule xmlns:json="http://www.mulesoft.org/schema/mule/json"
+    xmlns="http://www.mulesoft.org/schema/mule/core"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:scripting="http://www.mulesoft.org/schema/mule/scripting" 
+    xmlns:quartz="http://www.mulesoft.org/schema/mule/quartz" 
+    xmlns:file="http://www.mulesoft.org/schema/mule/file"
+    xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+    xmlns:spring="http://www.springframework.org/schema/beans"
+    xmlns:test="http://www.mulesoft.org/schema/mule/test"
+    version="EE-3.4.1" 
+    xsi:schemaLocation="http://www.mulesoft.org/schema/mule/scripting http://www.mulesoft.org/schema/mule/scripting/current/mule-scripting.xsd
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/file/current/mule-file.xsd
+http://www.mulesoft.org/schema/mule/quartz http://www.mulesoft.org/schema/mule/quartz/current/mule-quartz.xsd
+http://www.mulesoft.org/schema/mule/test http://www.mulesoft.org/schema/mule/test/current/mule-test.xsd
+http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/json/current/mule-json.xsd">
+    
+    <!-- Logic taken from http://www.ivankrizsan.se/2013/10/21/schedule-reading-of-multiple-files-with-mule-part-one/ -->
+    
+    <!--
+        Non-streaming file connector that deletes files after reading.
+        No polling frequency is specified, since we want to read all
+        available files at each occasion as fast as possible and
+        there will be a Quartz job that schedules reading of the files.
+        Note that this file connector will be started and stopped according
+        to schedule, so it should not be used with other file inbound endpoints.
+    -->
+    <file:connector
+        name="nonStreamingFileConnector"
+        streaming="false"
+        autoDelete="true" doc:name="File"/>
+
+    <!--
+        Quartz scheduler connector that only allows for one single thread
+        to run scheduled jobs.
+        In my case I want to limit the number of threads that can be created,
+        in case something goes wrong with the job.
+        Depending on what is to be scheduled, the maximum number of threads
+        to run jobs can be adjusted.
+    -->
+    <quartz:connector name="oneThreadQuartzConnector" doc:name="Quartz">
+        <quartz:factory-property key="org.quartz.threadPool.threadCount" value="1"/>
+    </quartz:connector>
+    
+    <!--
+        This flow executes once when the Mule application starts up
+        and stops the file connector that is to be used when periodically
+        reading data from a directory.
+    -->
+    <flow name="stopFileConnectorFlow" doc:name="stopFileConnectorFlow">
+        <!--
+            A one-time trigger that executes after 1 ms.
+        -->
+        <quartz:inbound-endpoint
+            jobName="EventGeneratorJob1"
+            connector-ref="oneThreadQuartzConnector"
+            repeatCount="0"
+            repeatInterval="10000"
+            startDelay="1" doc:name="Quartz">
+            <quartz:event-generator-job>
+                <quartz:payload>Triggered!</quartz:payload>
+            </quartz:event-generator-job>
+        </quartz:inbound-endpoint>
+        
+        <!--
+            Stop the file connector reading files if it is started.
+            Groovy is used in order to make sure the connector to be stopped
+            is not already stopped.
+        -->
+        <scripting:component doc:name="Script">
+            <scripting:script engine="groovy">
+                <scripting:text><![CDATA[
+                    def theFileConnector = registry.'nonStreamingFileConnector'
+                    if (theFileConnector.isStarted()) {
+                        theFileConnector.stop()
+                    }
+                ]]></scripting:text>
+            </scripting:script>
+        </scripting:component>
+        
+        <logger level="ERROR" message="*** Stopped file connector" doc:name="Logger"/>
+    </flow>
+
+    <!--
+        This flow schedules and trigger the reading of the file(s)
+        in a directory.
+        The flow is asynchronous so that it just triggers subsequent actions
+        without waiting for a response.
+    -->
+    <flow name="quartzTriggerFlow" doc:name="quartzTriggerFlow">
+        <!--
+            After an initial 10 second delay, generates a message each 30
+            seconds with specified payload. Infinite repitition.
+            Uses the one-thread Quartz connector defined above.
+            In this application, the message is used to trigger subsequent
+            actions in the flow and the payload does not matter.
+            If the flow is synchronous, the response timeout on the quartz
+            inbound endpoint must be set to give the file reading flow enough
+            time to read many files and/or large files.
+        -->
+        <quartz:inbound-endpoint
+            jobName="EventGeneratorJob2"
+            connector-ref="oneThreadQuartzConnector"
+            cronExpression="${quartz.3psrecovery.cron}"
+            repeatCount="-1"
+            startDelay="10000" doc:name="Quartz">
+            <quartz:event-generator-job>
+                <quartz:payload>Triggered!</quartz:payload>
+            </quartz:event-generator-job>
+        </quartz:inbound-endpoint>
+        
+        <logger level="ERROR" message="*** Started reading files" doc:name="Logger"/>
+
+        <!--
+            Start the file reading connector and wait some time to give it
+            time to read and process files.
+        -->
+        <scripting:component doc:name="Script">
+            <scripting:script engine="groovy">
+                <scripting:text><![CDATA[
+                    def theFileConnector = registry.'nonStreamingFileConnector'
+                    if (!theFileConnector.isStarted()) {
+                        theFileConnector.start()
+                    }
+                    
+                    java.lang.Thread.sleep(10000)
+                ]]></scripting:text>
+            </scripting:script>
+        </scripting:component>
+        
+        <logger level="ERROR" message="*** About to stop the file connector" doc:name="Logger"/>
+        
+        <!--
+            Stop the file connector if it is started.
+        -->
+        <scripting:component doc:name="Script">
+            <scripting:script engine="groovy">
+                <scripting:text><![CDATA[
+                    def theFileConnector = registry.'nonStreamingFileConnector'
+                    if (theFileConnector.isStarted()) {
+                        theFileConnector.stop()
+                    }
+                ]]></scripting:text>
+            </scripting:script>
+        </scripting:component>
+        
+        <logger level="ERROR" message="*** Stopped reading files" doc:name="Logger"/>
+    </flow>
+    
+    <!--
+        The file reader flow that is responsible for reading and processing 
+        files from a designated directory.
+        As an alternative to starting and stopping the file connector,
+        this entire flow can be started and stopped. In such a case,
+        set the initialState attribute on the flow to "stopped" and
+        start and stop the flow similar to how the file connector
+        is started and stopped.
+    -->
+    <flow name="fileReaderFlow" doc:name="fileReaderFlow">
+        <file:inbound-endpoint
+            path="/dlq/input"
+            connector-ref="nonStreamingFileConnector" doc:name="File">
+        </file:inbound-endpoint>
+        
+        <!-- <logger level="ERROR" message="*** Read a file"/> -->
+        
+        <byte-array-to-object-transformer doc:name="Byte Array to Object"/>
+        <json:object-to-json-transformer doc:name="Object to JSON"/>
+        <flow-ref name="3ps-updatePartnerProfile" doc:name="3ps-updatePartnerProfile"/>
+    </flow>
+</mule>

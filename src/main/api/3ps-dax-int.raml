@@ -10,7 +10,7 @@ documentation:
 /3ps-dax-int:
   displayName: 3ps-dax-integration
   post:
-    description: json payload from 3ps
+    description: create partner
     body:
       application/json:
         schema: !include schemas/partner-profile-schema.json
@@ -25,3 +25,48 @@ documentation:
               {
                 "status": "ACK"
               }
+/partnerProfileProcessing/v1/partnerProfile:
+  /{partnerProfileId}:
+    displayName: update partner
+    uriParameters:
+      partnerProfileId:
+        description: partner profile id
+        type: string
+    get:
+      description: Retrieves the partner profile to be updated
+      responses:
+        200:
+          body:
+            application/json:
+              schema: !include schemas/partner-profile-schema.json
+              example: !include examples/if1-3ps-mule-post-example.json
+    post:
+      description: update partner (Enriched partner profile with DAX response submitted)
+      body:
+        application/json:
+          schema: !include schemas/partner-profile-schema.json
+          example: !include examples/if1-3ps-mule-post-example.json
+      responses:
+        200:
+          description: |
+            update partner successful
+          body:
+            application/json:
+              example: |
+                {
+                  "status": "SUCCESS"
+                }
+/partnerProfileProcessing/v1/partnerProfile/recover:
+    displayName: 3ps recovered and process all the 3ps partner profile update response from the integration layer when 3ps was down.
+    get:
+      description: Process all the 3ps partner profile update response when 3ps was down.
+      responses:
+        200:
+          description: |
+            Processed successfully
+          body:
+            application/json:
+              example: |
+                {
+                  "status": "OK"
+                }          
