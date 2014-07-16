@@ -103,7 +103,7 @@ http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/jso
         <quartz:inbound-endpoint
             jobName="EventGeneratorJob2"
             connector-ref="oneThreadQuartzConnector"
-            repeatInterval="30000"
+            repeatInterval="${quartz.3psrecovery.trigger}"
             repeatCount="-1"
             startDelay="10000" doc:name="Quartz">
             <quartz:event-generator-job>

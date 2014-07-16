@@ -625,4 +625,9 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
             </otherwise>
         </choice>
     </flow>
+    <flow name="get:/partnerProfileProcessing/v1/partnerProfile/recover:apiConfig" doc:name="get:/partnerProfileProcessing/v1/partnerProfile/recover:apiConfig">
+        <flow-ref name="quartzTriggerFlow" doc:name="Quartz Trigger Flow"/>
+        <set-payload value="{ &quot;status&quot;: &quot;OK&quot; }" doc:name="Send OK"/>
+        <logger message="#[payload]" level="INFO" doc:name="Logger"/>
+    </flow>
 </mule>

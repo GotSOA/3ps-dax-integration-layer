@@ -56,3 +56,17 @@ documentation:
                 {
                   "status": "SUCCESS"
                 }
+/partnerProfileProcessing/v1/partnerProfile/recover:
+    displayName: 3ps recovered and process all the 3ps partner profile update response from the integration layer when 3ps was down.
+    get:
+      description: Process all the 3ps partner profile update response when 3ps was down.
+      responses:
+        200:
+          description: |
+            Processed successfully
+          body:
+            application/json:
+              example: |
+                {
+                  "status": "OK"
+                }          
