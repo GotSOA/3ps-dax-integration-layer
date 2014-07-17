@@ -160,7 +160,7 @@ http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/jso
     -->
     <flow name="fileReaderFlow" doc:name="fileReaderFlow">
         <file:inbound-endpoint
-            path="/dlq/input"
+            path="${dlq.file.input.path}"
             connector-ref="nonStreamingFileConnector" doc:name="File">
         </file:inbound-endpoint>
         
