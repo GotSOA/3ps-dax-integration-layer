@@ -1,0 +1,202 @@
+{
+   "entityId":"KSHNY4TCV23TK0M54H1GGV8F60",
+   "creatorId":"1CZ05CLP5KX67SNC3TWPCR2ZP0",
+   "updaterId":"1CZ05CLP5KX67SNC3TWPCR2ZP0",
+   "createdTimestamp":"2014-07-29T06:07:19.422+0000",
+   "updatedTimestamp":"2014-07-29T06:07:22.228+0000",
+   "bankInformation": {},
+   "cardProduction": {},
+   "company": {
+      "companyAddressLine1": "1234 Amador Dr.",
+      "companyAddressLine2": "",
+      "companyCity": "Dublin",
+      "companyIsContractComplete": false,
+      "companyIsFranchise": false,
+      "companyLegalName": "Donuts LLC",
+      "companyMerchantCategoryCode": "4567",
+      "companyPrimaryContactBusinessTitle": "Sole Proprietor",
+      "companyPrimaryContactEmail": "abc@abc.com",
+      "companyPrimaryContactFirstName": "Test",
+      "companyPrimaryContactLastName": "User",
+      "companyPrimaryPhoneNumber": " 925-925-1234",
+      "companyState": "CA",
+      "companyWebSiteURL": "www.donuts.com",
+      "companyZipPostalCode": "94568",
+      "legalEntityStateOfIncorporation": "CA"
+   },
+   "contractInformation": {
+      "contractBHNCPASignatory": "",
+      "contractCPAType": "GROCERY",
+      "contractDistributionCommision": "10",
+      "contractProgramManagementFee": "5",
+      "contractTerm": "2 years"
+   },
+   "cpDivision": {
+      "divisionAccountType": "GIFT_CARD",
+      "divisionAreBalancesTransferable": false,
+      "divisionBHNLocalPartner": true,
+      "divisionBalanceMerges": false,
+      "divisionBrandName": "donuts",
+      "divisionCanCardExpire": false,
+      "divisionCardPinLocation": "Front",
+      "divisionCardPinType": "Printed",
+      "divisionCurrency": "USD",
+      "divisionCustomTandCApproval": false,
+      "divisionHasPhoneSupportAtPOS": false,
+      "divisionHasUniversalBISupport": false,
+      "divisionIsBISystemBLAST": false,
+      "divisionIsBISystemCAPTCHA": false,
+      "divisionIsBISystemCardpool": false,
+      "divisionIsBISystemScreenScraped": false,
+      "divisionIsBISystemUserEntered": false,
+      "divisionIsBarcodeFormat1D_C128": false,
+      "divisionIsBarcodeFormat2D_PDF417": false,
+      "divisionIsBarcodeFormat2D_QRCODE": false,
+      "divisionIsCardReplaceable": false,
+      "divisionIsCardTransferable": false,
+      "divisionIsInStoreRedemptionAvailable": false,
+      "divisionIsOnlineStoreRedemptionAvailable": false,
+      "divisionLocalPartnerSource": "LOCAL_INTERNAL",
+      "divisionLocale": "en_US",
+      "divisionSupportsAddQRCode": false,
+      "divisionSupportsBalanceInquiry": false,
+      "divisionSupportsPartialBalanceInquiry": false,
+      "divisionSupportsPhysicalCards": false,
+      "divisionSupportsRedemption": false,
+      "divisionSupportsVirtualCard": false,
+      "divisionSupportsVoidActivation": false,
+      "divisionSupportsVoidRedemption": false,
+      "divisionSupportsVoidReload": false,
+      "divisionisCustomTandCs": false,
+      "divisionisLostStolenPolicyAutomated": false,
+      "supportsRegift": false,
+      "supportsTransactionHistory": false
+   },
+   "invoicing": {
+      "invoicingCountry": "US"
+   },
+   "onboardWorkflow": {
+      "currentStage": "RISK_REVIEW",
+      "stages": [
+         {
+            "isCompleted": false,
+            "stageType": "SETUP_EGIFT"
+         },
+         {
+            "isCompleted": false,
+            "stageType": "CLOSED"
+         },
+         {
+            "isCompleted": false,
+            "stageType": "LEGAL_REVIEW"
+         },
+         {
+            "isCompleted": false,
+            "stageType": "ASSIGN_DPS"
+         },
+         {
+            "isCompleted": false,
+            "stageType": "CERTIFY_PRODUCT"
+         },
+         {
+            "isCompleted": false,
+            "stageType": "SIGNATURE"
+         },
+         {
+            "isCompleted": false,
+            "stageType": "RISK_REVIEW"
+         },
+         {
+            "isCompleted": false,
+            "stageType": "PRODUCT_SETUP"
+         },
+         {
+            "isCompleted": false,
+            "stageType": "BANK_INFO_REVIEW"
+         },
+         {
+            "isCompleted": false,
+            "stageType": "PRODUCT_REVIEW"
+         },
+         {
+            "isCompleted": false,
+            "stageType": "CLOSED_INCOMPLETE"
+         },
+         {
+            "isCompleted": false,
+            "stageType": "COMPANY_SETUP"
+         },
+         {
+            "isCompleted": false,
+            "stageType": "CUSTOM_TC_REVIEW"
+         }
+      ]
+   },
+   "partnerInformation": {},
+   "processorInformation": {},
+   "programInformation": {},
+   "serviceNow": {
+      "merchantRecordNumber": "MER0000038",
+      "sysID": "a4d6fd842b122100adc7d65ee8da15fc"
+   },
+   "source": {
+      "isTest": false,
+      "partnerProfileSource": "PARTNER_SERVICE_PORTAL",
+      "updateRequestedBy": "SNWF"
+   },
+   "tracsConfiguration": {
+      "tracsBasis": "Percentage",
+      "tracsCheckReferral": "Yes",
+      "tracsContractType": "Buy",
+      "tracsDetailSREAdjustmentACHDeliveryChannel": "Email",
+      "tracsDetailSRECutoffTime": "23:59:59",
+      "tracsDetailSREFrequency": "DOW /DOW",
+      "tracsDetailSREReconciliationFrequency": "Weekly",
+      "tracsDetailSREReconciliationType": "",
+      "tracsDetailSRESettlementFrequency": "Weekly",
+      "tracsDetailSREStatementDeliveryChannel": "Email",
+      "tracsDetailSREStatementReconFormat": "Dom Dr/CR / Select Format",
+      "tracsDetailSRETimeZone": "(GMT-07:00) MST",
+      "tracsGeography": "USA TAX",
+      "tracsGetsPays": "Gets",
+      "tracsProductScope": "3",
+      "tracsReferralBasis": "Percentage",
+      "tracsReferralCommPercentage": "5%",
+      "tracsReferralContractType": "Gets",
+      "tracsReferralGetsPays": "Pays",
+      "tracsReferralQualifierADS": "5067",
+      "tracsReferralSetupStatus": "Production",
+      "tracsReferralStakeholder": "12446",
+      "tracsSREClearingFiltersBuySellType": "Buy Side",
+      "tracsSREClearingFiltersPayload": "Principal/Comm",
+      "tracsSREFundsTransferAccountingType": "AP",
+      "tracsSREFundsTransferPaymentMethod": "On Hold",
+      "tracsSREFundsTransferStakeholderType": "Issuer",
+      "tracsSREReconciliationFileFormat": "Stnd NW w/o Sum(csv)",
+      "tracsSetupStatus": "Production",
+      "tracsTopSRECurrency": "US Dollar",
+      "tracsTopSREExternalReferenceId": "Hyperlocal",
+      "tracsTopSREFTStatus": "NonFT"
+   },
+   "vendorInformation": {
+      "vendorAddress": "123 Vendor Street",
+      "vendorAddress1": "123 Vendor Street",
+      "vendorAddressBookType": "Remit to",
+      "vendorCity": "San Ramon",
+      "vendorCompanyType": "SOLEPROPRIETOR",
+      "vendorCountryRegionId": "US",
+      "vendorGroup": "GC",
+      "vendorIsMethodOfPaymentStopped": "No",
+      "vendorNameFor1099": "Donuts LLC",
+      "vendorPaymentMode": "NOPAY",
+      "vendorPaymentTermsId": "N21",
+      "vendorPrimary": "Checked",
+      "vendorPublic": "Checked",
+      "vendorReceivedConsentForElectronicSignature": false,
+      "vendorState": "CA",
+      "vendorTax1099Reports": "1099k",
+      "vendorTaxIdNumber": "123-45-6789",
+      "vendorZipCode": "94583",
+      "wasVendorW9Received": "Yes"
+   }
+}

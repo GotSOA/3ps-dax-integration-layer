@@ -1,0 +1,34 @@
+{
+   "entityId":"",
+   "creatorId":"",
+   "updaterId":"",
+   "createdTimestamp":"",
+   "updatedTimestamp":"",
+   "CustomerStore":[
+      {
+
+      }
+   ],
+   "ProductInformation":[
+      {
+         "iid":{
+
+         }
+      }
+   ],
+   "company":{
+
+   },
+   "cpDivision":{
+
+   },
+   "processorInformation":{
+
+   },
+   "source":{
+
+   },
+   "vendorInformation":{
+
+   }
+}

@@ -1,0 +1,60 @@
+{
+   "entityId":"",
+   "creatorId":"",
+   "updaterId":"",
+   "createdTimestamp":"",
+   "updatedTimestamp":"",
+   "source":{
+
+   },
+   "contractInformation":{
+
+   },
+   "processorInformation":{
+
+   },
+   "company":{
+
+   },
+   "cpDivision":{
+      "divisionCustomerStores":[
+         {
+
+         }
+      ],
+      "divisionProducts":[
+         {
+            "iid":{
+
+            }
+         }
+      ]
+   },
+   "cardProduction":{
+
+   },
+   "programInformation":{
+
+   },
+   "distribution":{
+
+   },
+   "invoicing":{
+
+   },
+   "bankInformation":{
+
+   },
+   "tracsConfiguration":{
+
+   },
+   "vendorInformation":{
+
+   },
+   "serviceNow":{
+
+   },
+   "onboardWorkflow":{
+
+   }
+}

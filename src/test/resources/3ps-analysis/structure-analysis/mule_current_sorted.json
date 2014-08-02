@@ -1,0 +1,20 @@
+{
+   "entityId":"",
+   "creatorId":"",
+   "updaterId":"",
+   "createdTimestamp":"",
+   "updatedTimestamp":"",
+   "company": {},
+   "cpDivision": {},
+   "customerStore": [
+      {}
+   ],
+   "processorInformation": {},
+   "productInformation": [
+      {
+         "iid": {}
+      }
+   ],
+   "source": {},
+   "vendorInformation": {}
+}

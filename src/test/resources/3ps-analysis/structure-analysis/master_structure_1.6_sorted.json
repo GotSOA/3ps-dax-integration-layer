@@ -1,0 +1,30 @@
+{
+   "entityId":"",
+   "creatorId":"",
+   "updaterId":"",
+   "createdTimestamp":"",
+   "updatedTimestamp":"",
+   "bankInformation": {},
+   "cardProduction": {},
+   "company": {},
+   "contractInformation": {},
+   "cpDivision": {
+      "divisionCustomerStores": [
+         {}
+      ],
+      "divisionProducts": [
+         {}
+      ]
+   },
+   "distribution": {},
+   "eGiftProductInformation": {},
+   "iid": {},
+   "invoicing": {},
+   "onboardWorkflow": {},
+   "processorInformation": {},
+   "programInformation": {},
+   "serviceNow": {},
+   "source": {},
+   "tracsConfiguration": {},
+   "vendorInformation": {}
+}

@@ -1,0 +1,67 @@
+{
+   "entityId":"",
+   "creatorId":"",
+   "updaterId":"",
+   "createdTimestamp":"",
+   "updatedTimestamp":"",
+   "source":{
+
+   },
+   "contractInformation":{
+
+   },
+   "processorInformation":{
+
+   },
+   "company":{
+
+   },
+   "cpDivision":{
+
+   },
+   "customerStore":{
+
+   },
+   "cardProduction":{
+
+   },
+   "programInformation":{
+
+   },
+   "distribution":{
+
+   },
+   "productInformation":{
+
+   },
+   "iid":{
+
+   },
+   "eGiftProductInformation":{
+
+   },
+   "giftCardSupport":{
+
+   },
+   "invoicing":{
+
+   },
+   "bankInformation":{
+
+   },
+   "w9Information":{
+
+   },
+   "tracsConfiguration":{
+
+   },
+   "vendorInformation":{
+
+   },
+   "serviceNow":{
+
+   },
+   "onboardWorkflow":{
+
+   }
+}
