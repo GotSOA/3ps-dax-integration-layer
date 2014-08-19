@@ -1,0 +1,142 @@
+{
+  "entityId": "94QGMK5KV5ABPYP5A7X4KC32JR",
+  "creatorId": "SF0TJQDX2XSLKDAMA062J373LW",
+  "updaterId": "SF0TJQDX2XSLKDAMA062J373LW",
+  "createdTimestamp": "2014-03-26T22:12:54.514+0000",
+  "updatedTimestamp": "2014-03-26T22:12:56.954+0000",
+  "serviceNow": {
+     
+  },
+  "source": {
+    "partnerProfileSource": "PARTNER_SERVICE_PORTAL",
+    "isTest": false
+  },
+  "contractInformation": {
+    "contractDistributionCommision": "10%",
+    "contractProgramManagementFee": "5%",
+    "contractTerm": "2 years",
+    "title": "Sole Proprietor",
+    "nameOfSigner": "Test User",
+    "contractCPAType": "GROCERY"
+  },
+  "processorInformation": {
+     
+  },
+  "company": {
+    "companyAddressLine1": "1234 Amador Dr.",
+    "companyCity": "Dublin",
+    "companyState": "CA",
+    "companyZipPostalCode": "94568",
+    "companyLegalName": "Donuts LLC",
+    "legalEntityStateOfIncorporation": "CA",
+    "companyPrimaryPhoneNumber": " 925-925-1234",
+    "companyIsFranchise": false,
+    "companyWebSiteURL": "www.donuts.com",
+    "companyPrimaryContactFirstName": "Test",
+    "companyPrimaryContactLastName": "User",
+    "companyPrimaryContactBusinessTitle": "Sole Proprietor",
+    "companyMerchantCategoryCode": "4567",
+    "companyPrimaryContactEmail": "abc@abc.com"
+  },
+  "customerStore": {
+     
+  },
+  "cardProduction": {
+     
+  },
+  "programInformation": {
+     
+  },
+  "productInformation": {
+    "isProductDenominationVariable": false,
+    "productTheme": "NA",
+    "productIsSpecificToDP": "No",
+    "productNewUPCReasonCode": "New Program",
+    "productOwnershipType": "Non-owned",
+    "productIsMulticard": false
+  },
+  "iid": {
+    "iidActivationType": "Store",
+    "iidCaseCount": "1",
+    "iidLanguage": "English",
+    "iidPackSize": "1"
+  },
+  "eGiftProductInformation": {
+    "egiftRedemptionInformation": "null null"
+  },
+  "giftCardSupport": {
+     
+  },
+  "invoicing": {
+     
+  },
+  "bankInformation": {
+     
+  },
+  "w9Information": {
+    "receivedConsentForElectronicSignature": false,
+    "taxIdNumber": "555-55-5555"
+  },
+  "partnerInformation": {
+     
+  },
+  "tracsConfiguration": {
+    "tracsGeography": "USA TAX",
+    "tracsContractType": "Buy",
+    "tracsSetupStatus": "Production",
+    "tracsCheckReferral": "Yes",
+    "tracsProductScope": "3",
+    "tracsGetsPays": "Gets",
+    "tracsBasis": "Percentage",
+    "tracsReferralContractType": "Gets",
+    "tracsReferralStakeholder": "12446",
+    "tracsReferralQualifierADS": "5067",
+    "tracsReferralSetupStatus": "Production",
+    "tracsReferralGetsPays": "Pays",
+    "tracsReferralBasis": "Percentage",
+    "tracsReferralCommPercentage": "5%",
+    "tracsTopSRECurrency": "US Dollar",
+    "tracsTopSREExternalReferenceId": "Hyperlocal",
+    "tracsTopSREFTStatus": "NonFT",
+    "tracsDetailSRECutoffTime": "23:59:59",
+    "tracsDetailSRETimeZone": "(GMT-07:00) MST",
+    "tracsDetailSREReconciliationType": "",
+    "tracsDetailSREFrequency": "DOW /DOW",
+    "tracsDetailSREStatementReconFormat": "Dom Dr/CR / Select Format",
+    "tracsDetailSREStatementDeliveryChannel": "Email",
+    "tracsDetailSREAdjustmentACHDeliveryChannel": "Email",
+    "tracsDetailSRESettlementFrequency": "Weekly",
+    "tracsDetailSREReconciliationFrequency": "Weekly",
+    "tracsSREFundsTransferPaymentMethod": "On Hold",
+    "tracsSREFundsTransferAccountingType": "AP",
+    "tracsSREFundsTransferStakeholderType": "Issuer",
+    "tracsSREReconciliationFileFormat": "Stnd NW w/o Sum(csv)",
+    "tracsSREClearingFiltersBuySellType": "Buy Side",
+    "tracsSREClearingFiltersPayload": "Principal/Comm"
+  },
+  "vendorInformation": {
+    "vendorGroup": "GC",
+    "vendorPaymentTermsId": "N21",
+    "vendorPaymentMode": "NOPAY",
+    "vendorIsMethodOfPaymentStopped": "No",
+    "vendorPublic": "Checked",
+    "vendorPrimary": "Checked",
+    "vendorAddressBookType": "Remit to",
+    "vendorTax1099Reports": "1099k",
+    "wasVendorW9Received": "Yes",
+    "vendorNameFor1099": "Donuts LLC"
+  },
+  "onboardWorkflow": {
+    "currentStage": "DRAFT"
+  },
+  "cpDivision": {
+    "companyDivisionBrandName": "donuts",
+    "companyIsInStoreRedemptionAvailable": true,
+    "companyIsOnlineStoreRedemptionAvailable": false,
+    "divisionAccountType": "Gift Card",
+    "divisionCardNumberLabel": "Card #",
+    "divisionIsBarCodeScanSupported": false,
+    "divisionCardPinLocation": "Front",
+    "divisionCardPinType": "Printed"
+  }
+}
