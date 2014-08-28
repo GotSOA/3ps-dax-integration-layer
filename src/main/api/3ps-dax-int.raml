@@ -4,13 +4,13 @@ title: 3PS-DAX-INT
 version: 1.0
 baseUri: http://localhost:8080/api
 documentation:
-  - title: 3PCS-DAX Integration.
+  - title: 3PS-DAX Integration.
     content: |
-      This sample API has been created as part of your APIkit project. It is located in src/main/api. Feel free to poke around.
-/3ps-dax-int:
+      3PS-DAX Integration API
+/DAXOnboarding:
   displayName: 3ps-dax-integration
   post:
-    description: create partner
+    description: DAX Onboarding
     body:
       application/json:
         schema: !include schemas/partner-profile-schema.json
@@ -33,7 +33,7 @@ documentation:
         description: partner profile id
         type: string
     get:
-      description: Retrieves the partner profile to be updated
+      description: Retrieves the partner profile from 3PS to be updated (HARNESS)
       responses:
         200:
           body:

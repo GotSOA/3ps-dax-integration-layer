@@ -129,11 +129,11 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
     </apikit:mapping-exception-strategy>
     <data-mapper:config name="json_to_pojo" transformationGraphPath="json_to_pojo.grf" doc:name="json_to_pojo" />
     <flow name="main" doc:name="main">
-        <http:inbound-endpoint connector-ref="defaultConnector" address="http://${http.host}:${http.port}/api" doc:name="HTTP" exchange-pattern="request-response" />
+        <http:inbound-endpoint connector-ref="defaultConnector" address="http://${http.host}:${http.port}/${contextPath}/${version}" doc:name="HTTP" exchange-pattern="request-response" />
         <apikit:router config-ref="apiConfig" doc:name="APIkit Router" />
         <exception-strategy ref="apiKitGlobalExceptionMapping" doc:name="Reference Exception Strategy" />
     </flow>
-    <flow name="post:/3ps-dax-int:apiConfig" doc:name="post:/3ps-dax-int:apiConfig">
+    <flow name="post:/DAXOnboarding:apiConfig" doc:name="post:/DAXOnboarding:apiConfig">
         <json:object-to-json-transformer doc:name="Object to JSON"/>
         <set-session-variable variableName="partnerProfileId" value="#[json:entityId]" doc:name="Session Variable" />
         <set-session-variable variableName="createPartnerRequest" value="#[payload]" doc:name="Session Variable"/>
