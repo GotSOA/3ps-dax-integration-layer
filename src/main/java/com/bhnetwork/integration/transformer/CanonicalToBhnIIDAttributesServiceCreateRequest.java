@@ -49,7 +49,9 @@ public class CanonicalToBhnIIDAttributesServiceCreateRequest extends
 		entityBhnIIDAttributes.setNewIIDReasonCode(iid.getNewIidReasonCode());
 		entityBhnIIDAttributes.setPackSize(iid.getIidPackSize());
 		entityBhnIIDAttributes.setProdPackType(iid.getIidProdPackType());
-		entityBhnIIDAttributes.setUseStdUnitConvert(iid.getIidUseStdUnitConvert() ? AxdExtTypeNoYesId.YES : AxdExtTypeNoYesId.NO);
+		if(iid.getIidUseStdUnitConvert()!=null){
+			entityBhnIIDAttributes.setUseStdUnitConvert(iid.getIidUseStdUnitConvert() ? AxdExtTypeNoYesId.YES : AxdExtTypeNoYesId.NO);
+		}
 		entityBhnIIDAttributes.setInventBatchId("0123");//TODO Hard coded
 		entityBhnIIDAttributes.setItemId(iid.getItemId());
 		entityBhnIIDAttributes.setClazz("entity");
