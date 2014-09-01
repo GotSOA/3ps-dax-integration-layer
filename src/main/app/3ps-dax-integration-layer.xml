@@ -517,10 +517,17 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
             <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-reportError-to-3PS" path="Q.errorReportTo3PS"/>
         </composite-source>
         <set-session-variable variableName="DaxStep" value="3ps-callback" doc:name="DaxStep = 3ps-callback"/>
-        <http:outbound-endpoint connector-ref="defaultConnector" exchange-pattern="request-response" host="${3ps.http.host}" port="${3ps.http.port}" path="${3ps.http.path}/#[sessionVars.partnerProfileId]" method="GET" doc:name="HTTP-GET">
-        	<set-property propertyName="tenantId" value="${tenantId}"/>
-			<set-property propertyName="certificateId" value="${certificateId}"/>
-        </http:outbound-endpoint>
+        <choice doc:name="Choice">
+            <when expression="${3ps-harness}==false">
+                <http:outbound-endpoint exchange-pattern="request-response" host="${3ps.http.host}" port="${3ps.http.port}" path="${3ps.http.path}/#[sessionVars.partnerProfileId]" connector-ref="defaultConnector" method="GET" doc:name="HTTP-GET (3PS)">
+                    <set-property propertyName="tenantId" value="${tenantId}"/>
+                    <set-property propertyName="certificateId" value="${certificateId}"/>
+                </http:outbound-endpoint>
+            </when>
+            <otherwise>
+                <http:outbound-endpoint exchange-pattern="request-response" host="${3ps-harness.http.host}" port="${3ps-harness.http.port}" path="${3ps-harness.http.path}/#[sessionVars.partnerProfileId]" connector-ref="defaultConnector" method="GET" doc:name="HTTP-GET (3PS-HARNESS)"/>
+            </otherwise>
+        </choice>
         <json:json-to-object-transformer returnClass="java.util.LinkedHashMap" doc:name="JSON to Object"/>
         <flow-ref name="3ps-createPartnerProfileResponse" doc:name="3ps-createPartnerProfileResponse"/>
         <set-session-variable variableName="createPartnerProfileResponse" value="#[payload]" doc:name="Session Variable"/>
@@ -575,12 +582,19 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
         <logger level="INFO" message="3PS-json-After enrichment #[payload]" doc:name="3PS-json-After"/>
     </sub-flow>
     <sub-flow name="3ps-updatePartnerProfile" doc:name="3ps-updatePartnerProfile">
-    	<http:outbound-endpoint  connector-ref="defaultConnector" exchange-pattern="request-response" host="${3ps.http.host}" port="${3ps.http.port}" path="${3ps.http.path}/#[json:entityId]" method="PUT" doc:name="HTTP-PUT" >
-    		<set-property propertyName="tenantId" value="${tenantId}"/>
-			<set-property propertyName="certificateId" value="${certificateId}"/>
-    	</http:outbound-endpoint>
-        <byte-array-to-object-transformer doc:name="Byte Array to Object"/>
-        <logger message="3PS Update response #[payload]" level="INFO" doc:name="3PS Update response"/>
+    	<choice doc:name="Choice">
+            <when expression="${3ps-harness}==false">
+		        <http:outbound-endpoint  connector-ref="defaultConnector" exchange-pattern="request-response" host="${3ps.http.host}" port="${3ps.http.port}" path="${3ps.http.path}/#[json:entityId]" method="PUT" doc:name="HTTP-PUT" >
+		    		<set-property propertyName="tenantId" value="${tenantId}"/>
+					<set-property propertyName="certificateId" value="${certificateId}"/>
+		    	</http:outbound-endpoint>
+            </when>
+            <otherwise>
+                <http:outbound-endpoint  connector-ref="defaultConnector" exchange-pattern="request-response" host="${3ps-harness.http.host}" port="${3ps-harness.http.port}" path="${3ps-harness.http.path}/#[json:entityId]" method="PUT" doc:name="HTTP-PUT (HARNESS)" />
+            </otherwise>
+        </choice>
+    	<byte-array-to-object-transformer doc:name="Byte Array to Object"/>
+        <logger message="3PS UpdatePartnerProfile response #[payload]" level="INFO" doc:name="3PS Update response"/>
         <tracking:custom-event event-name="bizEvent: OrchestrationEndTime" doc:name="bizEvent: OrchestrationEndTime"/>
     </sub-flow>
     <flow name="notification-flow" doc:name="notification-flow">
