@@ -141,6 +141,7 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
         <all doc:name="All">
             <set-payload value="{   &quot;status&quot;: &quot;ACK&quot; }" doc:name="Send ACK" />
             <async doc:name="Async">
+            	<set-session-variable variableName="DaxStep" value="Data_Transformation_3PS_CANONICAL" doc:name="DaxStep = Data_Transformation_3PS_CANONICAL"/>
                 <vm:outbound-endpoint exchange-pattern="one-way" path="Q.transform" doc:name="VM-transforms" />
             </async>
         </all>
@@ -551,11 +552,17 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
                     . vendor & store
                     -->
                 </enricher>
+                <enricher doc:name="Message Enricher (DAXOnBoardingInformation)">
+                    <scripting:component doc:name="Groovy">
+		            	<scripting:script name="DAXOnBoardingInformation" engine="Groovy"><![CDATA[daxOnBoardingInformation = new java.util.HashMap(); daxOnBoardingInformation.put("daxIsOnBoardingComplete", true); return daxOnBoardingInformation;]]></scripting:script>
+		        	</scripting:component>
+                    <enrich source="#[payload]" target="#[payload.DAXOnBoardingInformation]"/>
+                </enricher>
             </when>
             <otherwise>
             	<enricher doc:name="Message Enricher">
             		<set-payload value="#[sessionVars.error]" doc:name="Error Payload from Session"/>
-            		<enrich source="#[payload]" target="#[payload.error]"/>
+            		<enrich source="#[payload]" target="#[payload.DAXOnBoardingInformation]"/>
             	</enricher>
             </otherwise>
         </choice>
@@ -563,8 +570,8 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
         <logger level="INFO" message="3PS-json-After enrichment #[payload]" doc:name="3PS-json-After"/>
     </sub-flow>
     <sub-flow name="3ps-updatePartnerProfile" doc:name="3ps-updatePartnerProfile">
-    	<http:outbound-endpoint  connector-ref="defaultConnector" exchange-pattern="request-response" host="${3ps.http.host}" port="${3ps.http.port}" path="${3ps.http.path}/#[json:entityId]" method="POST" doc:name="HTTP-POST"/>
-        <json:json-to-object-transformer returnClass="java.util.HashMap" doc:name="JSON to Object"/>
+    	<http:outbound-endpoint  connector-ref="defaultConnector" exchange-pattern="request-response" host="${3ps.http.host}" port="${3ps.http.port}" path="${3ps.http.path}/#[json:entityId]" method="PUT" doc:name="HTTP-PUT"/>
+        <byte-array-to-object-transformer doc:name="Byte Array to Object"/>
         <logger message="3PS Update response #[payload]" level="INFO" doc:name="3PS Update response"/>
         <tracking:custom-event event-name="bizEvent: OrchestrationEndTime" doc:name="bizEvent: OrchestrationEndTime"/>
     </sub-flow>
@@ -614,16 +621,9 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
             </otherwise>
         </choice>
     </flow>
-    <flow name="post:/partnerProfileProcessing/v1/partnerProfile/{partnerProfileId}:apiConfig" doc:name="post:/partnerProfileProcessing/v1/partnerProfile/{partnerProfileId}:apiConfig">
-        <object-to-string-transformer doc:name="Object to String"/>
-        <choice doc:name="Choice">
-            <when expression="#[json:error != empty]">
-                <set-payload value="{&#xA;  &quot;status&quot;: &quot;ACK-ERROR&quot;&#xA;}" doc:name="3PS Error"/>
-            </when>
-            <otherwise>
-            	<set-payload value="{&#xA;  &quot;status&quot;: &quot;ACK-SUCCESS&quot;&#xA;}" doc:name="3PS Success"/>
-            </otherwise>
-        </choice>
+    <flow name="put:/partnerProfileProcessing/v1/partnerProfile/{partnerProfileId}:apiConfig" doc:name="put:/partnerProfileProcessing/v1/partnerProfile/{partnerProfileId}:apiConfig">
+        <logger level="INFO" message="3PS HARNESS DAXOnBoardingInformation #[json:DAXOnBoardingInformation]" doc:name="DAXOnBoardingInformation"/>
+        <!-- FOR Harness: JSON received is returned as Response -->
     </flow>
     <flow name="get:/partnerProfileProcessing/v1/partnerProfile/recover:apiConfig" doc:name="get:/partnerProfileProcessing/v1/partnerProfile/recover:apiConfig">
         <flow-ref name="quartzTriggerFlow" doc:name="Quartz Trigger Flow"/>
