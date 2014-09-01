@@ -50,7 +50,7 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
 	                <vm:outbound-endpoint exchange-pattern="one-way" path="Q.retry" doc:name="VM-retry"/>
 	            </when>
 	            <when expression="#[sessionVars['DaxStep']=='BEFORE-CLEAN-UP']">
-	                <logger level="INFO" doc:name="Logger - Abort (error in clean up should not recurse)"/>
+	                <logger message="Abort (error in clean up should not recurse)" level="INFO" doc:name="Logger - Abort (error in clean up should not recurse)"/>
 	                <vm:outbound-endpoint exchange-pattern="one-way"  doc:name="VM - DLQ" path="Q.dlq"/>
 	            </when>
 	            <when expression="#[flowVars['isRetryableException']==false]">
@@ -66,7 +66,7 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
                                 <set-session-variable variableName="createPartnerProfileResponse" value="#[payload]" doc:name="Session Variable"/>
                             </when>
                         </choice>
-                        <logger level="INFO" doc:name="Logger - Aborting after 3ps-callback, sending to DLQ"/>
+                        <logger message=" Aborting after 3ps-callback, sending to DLQ" level="INFO" doc:name="Logger - Aborting after 3ps-callback, sending to DLQ"/>
                         <vm:outbound-endpoint exchange-pattern="one-way" path="Q.dlq" doc:name="VM - DLQ"/>
                     </when>
 
@@ -159,7 +159,7 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
     <flow name="send-data-to-DAX-flow" doc:name="send-data-to-DAX-flow">
         <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-continue" path="Q.continue" />
         <set-session-variable variableName="canon" value="#[payload]" doc:name="Persist canonical in session" />
-        <logger level="INFO" doc:name="Log Orchestration startTime" />
+        <logger message="Orchestration-StartTime: #[server.dateTime]" level="INFO" doc:name="Log Orchestration startTime" />
         <tracking:custom-event event-name="bizEvent: OrchestrationStartTime" doc:name="bizEvent: OrchestrationStartTime" />
         <set-session-variable variableName="DaxStep" value="1" doc:name="DaxStep = 1"/>
         <vm:outbound-endpoint exchange-pattern="one-way" doc:name="VM-step1" path="Q.step1" />
@@ -497,7 +497,7 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
     <flow name="DAX-DLQ-flow" doc:name="DAX-DLQ-flow">
         <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-DLQ" path="Q.dlq" />
         <flow-ref name="notification-flow" doc:name="Notify Ops"/>
-        <logger level="INFO" doc:name="ABORT log: avoiding circular references when/if cleanup fails" />
+        <logger message="ABORT log: avoiding circular references when/if cleanup fails" level="INFO" doc:name="ABORT log: avoiding circular references when/if cleanup fails" />
         <tracking:custom-event event-name="bizEvent: ABORT (unable to cleanup)" doc:name="bizEvent: ABORT (unable to cleanup)" />
         <set-payload value="#[sessionVars.createPartnerProfileResponse]" doc:name="3PS createPartnerProfileResponse"/>
         <file:outbound-endpoint path="${dlq.file.input.path}" responseTimeout="10000" doc:name="To DLQ folder" outputPattern="createPartnerProfileResponse_#[sessionVars.partnerProfileId].json"/>
@@ -595,6 +595,7 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
         </choice>
     	<byte-array-to-object-transformer doc:name="Byte Array to Object"/>
         <logger message="3PS UpdatePartnerProfile response #[payload]" level="INFO" doc:name="3PS Update response"/>
+        <logger message="Orchestration-EndTime: #[server.dateTime]" level="INFO" doc:name="Log OrchestrationEndTime" />
         <tracking:custom-event event-name="bizEvent: OrchestrationEndTime" doc:name="bizEvent: OrchestrationEndTime"/>
     </sub-flow>
     <flow name="notification-flow" doc:name="notification-flow">
