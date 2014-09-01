@@ -83,7 +83,9 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
     <http:connector name="httpDAXConnector" doc:name="HTTP\HTTPS">
         <service-overrides sessionHandler="org.mule.session.NullSessionHandler" dispatcherFactory="org.mule.transport.http.NTLMv2HttpClientMessageDispatcherFactor" />
     </http:connector>
-    <http:connector name="defaultConnector" doc:name="HTTP\HTTPS"/>
+    <http:connector name="defaultConnector" doc:name="HTTP\HTTPS">
+    	<service-overrides sessionHandler="org.mule.session.NullSessionHandler"/>
+    </http:connector>
     <object-to-byte-array-transformer name="objectToByteArrayTransformer" doc:name="Object to Byte Array" />
     <context:property-placeholder location="classpath:3ps-dax-int.properties, file:///${app.properties.override.location}" />
     <spring:beans>
@@ -515,7 +517,10 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
             <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-reportError-to-3PS" path="Q.errorReportTo3PS"/>
         </composite-source>
         <set-session-variable variableName="DaxStep" value="3ps-callback" doc:name="DaxStep = 3ps-callback"/>
-        <http:outbound-endpoint connector-ref="defaultConnector" exchange-pattern="request-response" host="${3ps.http.host}" port="${3ps.http.port}" path="${3ps.http.path}/#[sessionVars.partnerProfileId]" method="GET" doc:name="HTTP-GET"/>
+        <http:outbound-endpoint connector-ref="defaultConnector" exchange-pattern="request-response" host="${3ps.http.host}" port="${3ps.http.port}" path="${3ps.http.path}/#[sessionVars.partnerProfileId]" method="GET" doc:name="HTTP-GET">
+        	<set-property propertyName="tenantId" value="${tenantId}"/>
+			<set-property propertyName="certificateId" value="${certificateId}"/>
+        </http:outbound-endpoint>
         <json:json-to-object-transformer returnClass="java.util.LinkedHashMap" doc:name="JSON to Object"/>
         <flow-ref name="3ps-createPartnerProfileResponse" doc:name="3ps-createPartnerProfileResponse"/>
         <set-session-variable variableName="createPartnerProfileResponse" value="#[payload]" doc:name="Session Variable"/>
@@ -570,7 +575,10 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
         <logger level="INFO" message="3PS-json-After enrichment #[payload]" doc:name="3PS-json-After"/>
     </sub-flow>
     <sub-flow name="3ps-updatePartnerProfile" doc:name="3ps-updatePartnerProfile">
-    	<http:outbound-endpoint  connector-ref="defaultConnector" exchange-pattern="request-response" host="${3ps.http.host}" port="${3ps.http.port}" path="${3ps.http.path}/#[json:entityId]" method="PUT" doc:name="HTTP-PUT"/>
+    	<http:outbound-endpoint  connector-ref="defaultConnector" exchange-pattern="request-response" host="${3ps.http.host}" port="${3ps.http.port}" path="${3ps.http.path}/#[json:entityId]" method="PUT" doc:name="HTTP-PUT" >
+    		<set-property propertyName="tenantId" value="${tenantId}"/>
+			<set-property propertyName="certificateId" value="${certificateId}"/>
+    	</http:outbound-endpoint>
         <byte-array-to-object-transformer doc:name="Byte Array to Object"/>
         <logger message="3PS Update response #[payload]" level="INFO" doc:name="3PS Update response"/>
         <tracking:custom-event event-name="bizEvent: OrchestrationEndTime" doc:name="bizEvent: OrchestrationEndTime"/>
