@@ -1,14 +1,8 @@
 package com.bhnetwork.integration.transformer;
 
 import java.text.ParseException;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
 
 import javax.xml.datatype.DatatypeConfigurationException;
-import javax.xml.datatype.DatatypeConstants;
-import javax.xml.datatype.DatatypeFactory;
-import javax.xml.datatype.XMLGregorianCalendar;
 
 import org.mule.api.MuleMessage;
 import org.mule.api.transformer.TransformerException;

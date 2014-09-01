@@ -12,6 +12,8 @@ import org.mule.api.MuleException;
 import org.mule.api.processor.LoggerMessageProcessor;
 import org.mule.api.transport.PropertyScope;
 
+import com.bhnetwork.integration.DAXErrorTranslation;
+
 /**
  * Search through Exception chain to determine if exception was caused by a connectivity error,
  * indicating whether the original message can be retried.
@@ -41,8 +43,8 @@ public class ExceptionEvaluator extends LoggerMessageProcessor {
             logger.error("Exception payload is null");
             daxOnBoardingInformation.put("daxIsOnBoardingComplete", false);
             errorMessage.put("daxErrorCode", "FUTURE-RELEASE");
-            errorMessage.put("daxErrorDescription", "Exception payload is null");    // will map to errorDescription in 3PS error node
-        	errorMessage.put("daxErrorStep", muleEvent.getMessage().getProperty("DaxStep", PropertyScope.SESSION).toString()); // will map to errorStep in 3PS error node
+            errorMessage.put("daxErrorDescription", "Exception payload is null");
+            errorMessage.put("daxErrorStep",DAXErrorTranslation.fromKey(muleEvent.getMessage().getProperty("DaxStep", PropertyScope.SESSION).toString()).value());
             // set error in session
         	if(muleEvent.getMessage().getProperty("error", PropertyScope.SESSION)==null && !muleEvent.getMessage().getProperty("DaxStep", PropertyScope.SESSION).equals("3ps-callback")){
         		muleEvent.setSessionVariable("error", daxOnBoardingInformation); 
@@ -65,8 +67,8 @@ public class ExceptionEvaluator extends LoggerMessageProcessor {
 	        if(!isRetryableException){
 	        	daxOnBoardingInformation.put("daxIsOnBoardingComplete", false);
 	        	errorMessage.put("daxErrorCode", "FUTURE-RELEASE");
-	            errorMessage.put("daxErrorDescription", ep.getException().getCause().getMessage());
-	        	errorMessage.put("daxErrorStep", muleEvent.getMessage().getProperty("DaxStep", PropertyScope.SESSION).toString());
+	            errorMessage.put("daxErrorDescription", ep.getException().getCause().getMessage()==null ? "Internal Server Error" : ep.getException().getCause().getMessage());
+	        	errorMessage.put("daxErrorStep",DAXErrorTranslation.fromKey(muleEvent.getMessage().getProperty("DaxStep", PropertyScope.SESSION).toString()).value());
 	        	// set error in session
 	        	if(muleEvent.getMessage().getProperty("error", PropertyScope.SESSION)==null 
 	        			&& !muleEvent.getMessage().getProperty("DaxStep", PropertyScope.SESSION).equals("3ps-callback")){

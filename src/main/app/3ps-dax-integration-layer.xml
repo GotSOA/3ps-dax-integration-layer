@@ -622,7 +622,7 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
         </choice>
     </flow>
     <flow name="put:/partnerProfileProcessing/v1/partnerProfile/{partnerProfileId}:apiConfig" doc:name="put:/partnerProfileProcessing/v1/partnerProfile/{partnerProfileId}:apiConfig">
-        <logger level="INFO" message="3PS HARNESS DAXOnBoardingInformation #[json:DAXOnBoardingInformation]" doc:name="DAXOnBoardingInformation"/>
+        <logger level="INFO" message="3PS HARNESS UpdatePartnerProfile: DAXOnBoardingInformation #[json:DAXOnBoardingInformation]" doc:name="DAXOnBoardingInformation"/>
         <!-- FOR Harness: JSON received is returned as Response -->
     </flow>
     <flow name="get:/partnerProfileProcessing/v1/partnerProfile/recover:apiConfig" doc:name="get:/partnerProfileProcessing/v1/partnerProfile/recover:apiConfig">

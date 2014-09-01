@@ -9,7 +9,6 @@ import org.mule.transformer.AbstractMessageTransformer;
 
 import com.bhnetwork.integration.pppstodax.canonical.PartnerProfile;
 import com.bhnetwork.integration.pppstodax.canonical.Product;
-import com.microsoft.schemas.dynamics._2008._01.documents.bhnupcattributes3ps.AxdArrayAxdExtTypeDimension;
 import com.microsoft.schemas.dynamics._2008._01.documents.bhnupcattributes3ps.AxdEntityBhnUPCAttr1;
 import com.microsoft.schemas.dynamics._2008._01.documents.bhnupcattributes3ps.AxdEntityBhnUPCAttr2;
 import com.microsoft.schemas.dynamics._2008._01.documents.bhnupcattributes3ps.AxdEntityInventTable;
