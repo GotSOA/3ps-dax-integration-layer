@@ -307,7 +307,7 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
     <flow name="DAX-error-flow" doc:name="DAX-error-flow">
         <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-error" path="Q.error" />
         <flow-ref name="notification-flow" doc:name="Notify Ops"/>
-        <logger level="INFO" doc:name="Log Error, failing step &amp; 3PS entityID" />
+        <logger level="INFO" message="DAX-error-flow: PartnerProfileId=#[partnerProfileId], #[sessionVars.error]" doc:name="Log Error, failing step &amp; 3PS entityID" />
         <vm:outbound-endpoint exchange-pattern="one-way" doc:name="VM-DAX-cleanup" path="Q.cleanup" />
         <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy" />
     </flow>
@@ -580,13 +580,13 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
         <message-properties-transformer doc:name="toggle email forwarding on-off" overwrite="true" scope="invocation">
             <add-message-property key="sendEmail" value="${email.send}" />
         </message-properties-transformer>
+        <component doc:name="EmailBody">
+   			<spring-object bean="EmailBody"/>
+   		</component>
         <choice doc:name="Choice">
             <when expression="#[flowVars['sendEmail'] == true]">
             	<logger message="sending email notification out..." level="INFO" doc:name="Logger"/>
-            	<component doc:name="EmailBody">
-        			<spring-object bean="EmailBody"/>
-        		</component>
-		        <smtp:outbound-endpoint 
+            	<smtp:outbound-endpoint 
 		        	connector-ref="smtpGmailConnector"
 		        	to="${email.to}" 
 		        	from="${email.from}" 
@@ -601,7 +601,7 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
             </when>
             <otherwise>
                <logger message="Email notifications are disabled..." level="INFO" doc:name="Logger"/>
-               <logger message="Email body written to log: #[payload]" level="INFO" doc:name="Logger"/>
+               <logger message="Email body written to log:  #['\n'+payload]" level="INFO" doc:name="Logger"/>
             </otherwise>
         </choice>		
     </flow>
