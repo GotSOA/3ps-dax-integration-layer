@@ -151,7 +151,18 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
     </flow>
     <flow name="data-transformation-flow" doc:name="data-transformation-flow">
         <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-transforms" path="Q.transform" />
-        <data-mapper:transform config-ref="json_to_pojo" doc:name="3PS-Canonical" />
+        <message-properties-transformer doc:name="toggle data transformation between mule and v1.11" overwrite="true" scope="invocation">
+            <add-message-property key="3ps-cananonical-version" value="${3ps-cananonical-version}" />
+        </message-properties-transformer>
+        <choice doc:name="Choice">
+            <when expression="#[flowVars['3ps-cananonical-version']=='Mule']">
+                <data-mapper:transform config-ref="json_to_pojo" doc:name="3PS-Canonical (Mule)"/>
+            </when>
+            <otherwise>
+                <logger message="TODO 3PS-Canonical (V1.11)" level="INFO" doc:name="3PS-Canonical (V1.11)"/>
+            </otherwise>
+        </choice>
+
         <!--  <component class="com.bhnetwork.integration.component.CanonicalValidation" doc:name="Canonical Validator"/>  -->
         <vm:outbound-endpoint exchange-pattern="one-way" doc:name="VM-continue" path="Q.continue" />
         <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy" />
