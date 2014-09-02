@@ -1,7 +1,5 @@
 There has been an error in 3ps-dax-integration.
 
 Error Details:
-#if( ${daxStep} )
-Error while executing DaxStep: ${daxStep}
-#end
-Error Message: ${message}
+Error while executing DaxStep: ${daxErrorInformation.daxErrorStep}
+Error Message: ${daxErrorInformation.daxErrorDescription}

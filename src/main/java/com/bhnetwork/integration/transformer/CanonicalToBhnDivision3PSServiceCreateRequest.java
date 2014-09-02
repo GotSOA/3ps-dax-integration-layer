@@ -27,7 +27,9 @@ public class CanonicalToBhnDivision3PSServiceCreateRequest extends
 		
 		AxdEntityBhnCustDivisionTable bhnCustDivisionTable = new AxdEntityBhnCustDivisionTable();
 		//bhnCustDivisionTable.setName("TODO"); TODO In JSON inside vendor as divisionBrandName
-		bhnCustDivisionTable.setContractComplete(division.getDivisionIsContractComplete()? AxdEnumNoYes.YES : AxdEnumNoYes.NO);
+		if(division.getDivisionIsContractComplete()!=null){
+			bhnCustDivisionTable.setContractComplete(division.getDivisionIsContractComplete()? AxdEnumNoYes.YES : AxdEnumNoYes.NO);
+		}
 		bhnCustDivisionTable.setCompanyCode(division.getCompanyCode());
 		//bhnCustDivisionTable.setBhnLocalPartner(division.getDivisionLocalPartner()? AxdEnumNoYes.YES : AxdEnumNoYes.NO); TODO
 		bhnCustDivisionTable.setBhnPartnerPortalSource(division.getDivisionLocalPartnerSource());

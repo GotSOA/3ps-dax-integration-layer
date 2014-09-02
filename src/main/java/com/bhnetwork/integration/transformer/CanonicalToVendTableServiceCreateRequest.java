@@ -1,37 +1,23 @@
 package com.bhnetwork.integration.transformer;
 
-import java.text.ParseException;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.List;
-
-import javax.xml.datatype.DatatypeConfigurationException;
-import javax.xml.datatype.DatatypeConstants;
-import javax.xml.datatype.DatatypeFactory;
-import javax.xml.datatype.XMLGregorianCalendar;
-
 import org.mule.api.MuleMessage;
 import org.mule.api.transformer.TransformerException;
 import org.mule.api.transport.PropertyScope;
 import org.mule.transformer.AbstractMessageTransformer;
 
-import com.bhnetwork.integration.pppstodax.canonical.Vendor;
 import com.bhnetwork.integration.pppstodax.canonical.PartnerProfile;
-import com.microsoft.schemas.dynamics._2008._01.documents.vendtable.AxdVendTable;
+import com.bhnetwork.integration.pppstodax.canonical.Vendor;
 import com.microsoft.schemas.dynamics._2008._01.documents.vendtable.AxdEntityVendTable;
-import com.microsoft.schemas.dynamics._2008._01.documents.vendtable.AxdEntityVendorAddress;
-import com.microsoft.schemas.dynamics._2008._01.documents.vendtable.AxdArrayAxdExtTypeDimension;
-import com.microsoft.schemas.dynamics._2008._01.documents.vendtable.AxdEnumNoYes;
-//import com.microsoft.schemas.dynamics._2008._01.documents.vendtable.AxdExtTypeNoYesId;
-import com.microsoft.schemas.dynamics._2008._01.documents.vendtable.AxdExtTypeVendBlocked;
-import com.microsoft.schemas.dynamics._2008._01.documents.vendtable.AxdExtTypeTax1099ForeignEntityIndicator;
-import com.microsoft.schemas.dynamics._2008._01.documents.vendtable.AxdEnumTax1099NameChoice;
-import com.microsoft.schemas.dynamics._2008._01.documents.vendtable.AxdExtTypeTax1099Reporting;
-import com.microsoft.schemas.dynamics._2008._01.documents.vendtable.AxdEnumTaxIDType;
-import com.microsoft.schemas.dynamics._2008._01.documents.vendtable.AxdExtTypeVendW9;
 import com.microsoft.schemas.dynamics._2008._01.documents.vendtable.AxdEnumDirPartyType;
+import com.microsoft.schemas.dynamics._2008._01.documents.vendtable.AxdEnumTax1099NameChoice;
+import com.microsoft.schemas.dynamics._2008._01.documents.vendtable.AxdEnumTaxIDType;
+import com.microsoft.schemas.dynamics._2008._01.documents.vendtable.AxdExtTypeTax1099ForeignEntityIndicator;
+import com.microsoft.schemas.dynamics._2008._01.documents.vendtable.AxdExtTypeTax1099Reporting;
+import com.microsoft.schemas.dynamics._2008._01.documents.vendtable.AxdExtTypeVendBlocked;
+import com.microsoft.schemas.dynamics._2008._01.documents.vendtable.AxdExtTypeVendW9;
+import com.microsoft.schemas.dynamics._2008._01.documents.vendtable.AxdVendTable;
 import com.microsoft.schemas.dynamics._2008._01.services.VendTableServiceCreateRequest;
+//import com.microsoft.schemas.dynamics._2008._01.documents.vendtable.AxdExtTypeNoYesId;
 
 public class CanonicalToVendTableServiceCreateRequest extends
 		AbstractMessageTransformer {

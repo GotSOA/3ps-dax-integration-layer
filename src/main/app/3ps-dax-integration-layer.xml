@@ -50,7 +50,7 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
 	                <vm:outbound-endpoint exchange-pattern="one-way" path="Q.retry" doc:name="VM-retry"/>
 	            </when>
 	            <when expression="#[sessionVars['DaxStep']=='BEFORE-CLEAN-UP']">
-	                <logger level="INFO" doc:name="Logger - Abort (error in clean up should not recurse)"/>
+	                <logger message="Abort (error in clean up should not recurse)" level="INFO" doc:name="Logger - Abort (error in clean up should not recurse)"/>
 	                <vm:outbound-endpoint exchange-pattern="one-way"  doc:name="VM - DLQ" path="Q.dlq"/>
 	            </when>
 	            <when expression="#[flowVars['isRetryableException']==false]">
@@ -66,7 +66,7 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
                                 <set-session-variable variableName="createPartnerProfileResponse" value="#[payload]" doc:name="Session Variable"/>
                             </when>
                         </choice>
-                        <logger level="INFO" doc:name="Logger - Aborting after 3ps-callback, sending to DLQ"/>
+                        <logger message=" Aborting after 3ps-callback, sending to DLQ" level="INFO" doc:name="Logger - Aborting after 3ps-callback, sending to DLQ"/>
                         <vm:outbound-endpoint exchange-pattern="one-way" path="Q.dlq" doc:name="VM - DLQ"/>
                     </when>
 
@@ -83,9 +83,11 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
     <http:connector name="httpDAXConnector" doc:name="HTTP\HTTPS">
         <service-overrides sessionHandler="org.mule.session.NullSessionHandler" dispatcherFactory="org.mule.transport.http.NTLMv2HttpClientMessageDispatcherFactor" />
     </http:connector>
-    <http:connector name="defaultConnector" doc:name="HTTP\HTTPS"/>
+    <http:connector name="defaultConnector" doc:name="HTTP\HTTPS">
+    	<service-overrides sessionHandler="org.mule.session.NullSessionHandler"/>
+    </http:connector>
     <object-to-byte-array-transformer name="objectToByteArrayTransformer" doc:name="Object to Byte Array" />
-    <context:property-placeholder location="classpath:3ps-dax-int.properties, file:///${app.properties.override.location}" />
+    <context:property-placeholder location="3ps-dax-int.properties,${mule.env}-3ps-dax-int.properties" />
     <spring:beans>
     	<spring:bean name="loggingIn" class="org.apache.cxf.interceptor.LoggingInInterceptor">
             <spring:property name="prettyLogging" value="true" />
@@ -141,6 +143,7 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
         <all doc:name="All">
             <set-payload value="{   &quot;status&quot;: &quot;ACK&quot; }" doc:name="Send ACK" />
             <async doc:name="Async">
+            	<set-session-variable variableName="DaxStep" value="Data_Transformation_3PS_CANONICAL" doc:name="DaxStep = Data_Transformation_3PS_CANONICAL"/>
                 <vm:outbound-endpoint exchange-pattern="one-way" path="Q.transform" doc:name="VM-transforms" />
             </async>
         </all>
@@ -156,7 +159,7 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
     <flow name="send-data-to-DAX-flow" doc:name="send-data-to-DAX-flow">
         <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-continue" path="Q.continue" />
         <set-session-variable variableName="canon" value="#[payload]" doc:name="Persist canonical in session" />
-        <logger level="INFO" doc:name="Log Orchestration startTime" />
+        <logger message="Orchestration-StartTime: #[server.dateTime]" level="INFO" doc:name="Log Orchestration startTime" />
         <tracking:custom-event event-name="bizEvent: OrchestrationStartTime" doc:name="bizEvent: OrchestrationStartTime" />
         <set-session-variable variableName="DaxStep" value="1" doc:name="DaxStep = 1"/>
         <vm:outbound-endpoint exchange-pattern="one-way" doc:name="VM-step1" path="Q.step1" />
@@ -306,7 +309,7 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
     <flow name="DAX-error-flow" doc:name="DAX-error-flow">
         <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-error" path="Q.error" />
         <flow-ref name="notification-flow" doc:name="Notify Ops"/>
-        <logger level="INFO" doc:name="Log Error, failing step &amp; 3PS entityID" />
+        <logger level="INFO" message="DAX-error-flow: PartnerProfileId=#[partnerProfileId], #[sessionVars.error]" doc:name="Log Error, failing step &amp; 3PS entityID" />
         <vm:outbound-endpoint exchange-pattern="one-way" doc:name="VM-DAX-cleanup" path="Q.cleanup" />
         <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy" />
     </flow>
@@ -494,7 +497,7 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
     <flow name="DAX-DLQ-flow" doc:name="DAX-DLQ-flow">
         <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-DLQ" path="Q.dlq" />
         <flow-ref name="notification-flow" doc:name="Notify Ops"/>
-        <logger level="INFO" doc:name="ABORT log: avoiding circular references when/if cleanup fails" />
+        <logger message="ABORT log: avoiding circular references when/if cleanup fails" level="INFO" doc:name="ABORT log: avoiding circular references when/if cleanup fails" />
         <tracking:custom-event event-name="bizEvent: ABORT (unable to cleanup)" doc:name="bizEvent: ABORT (unable to cleanup)" />
         <set-payload value="#[sessionVars.createPartnerProfileResponse]" doc:name="3PS createPartnerProfileResponse"/>
         <file:outbound-endpoint path="${dlq.file.input.path}" responseTimeout="10000" doc:name="To DLQ folder" outputPattern="createPartnerProfileResponse_#[sessionVars.partnerProfileId].json"/>
@@ -514,7 +517,17 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
             <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-reportError-to-3PS" path="Q.errorReportTo3PS"/>
         </composite-source>
         <set-session-variable variableName="DaxStep" value="3ps-callback" doc:name="DaxStep = 3ps-callback"/>
-        <http:outbound-endpoint connector-ref="defaultConnector" exchange-pattern="request-response" host="${3ps.http.host}" port="${3ps.http.port}" path="${3ps.http.path}/#[sessionVars.partnerProfileId]" method="GET" doc:name="HTTP-GET"/>
+        <choice doc:name="Choice">
+            <when expression="${3ps-harness}==false">
+                <http:outbound-endpoint exchange-pattern="request-response" host="${3ps.http.host}" port="${3ps.http.port}" path="${3ps.http.path}/#[sessionVars.partnerProfileId]" connector-ref="defaultConnector" method="GET" doc:name="HTTP-GET (3PS)">
+                    <set-property propertyName="tenantId" value="${tenantId}"/>
+                    <set-property propertyName="certificateId" value="${certificateId}"/>
+                </http:outbound-endpoint>
+            </when>
+            <otherwise>
+                <http:outbound-endpoint exchange-pattern="request-response" host="${3ps-harness.http.host}" port="${3ps-harness.http.port}" path="${3ps-harness.http.path}/#[sessionVars.partnerProfileId]" connector-ref="defaultConnector" method="GET" doc:name="HTTP-GET (3PS-HARNESS)"/>
+            </otherwise>
+        </choice>
         <json:json-to-object-transformer returnClass="java.util.LinkedHashMap" doc:name="JSON to Object"/>
         <flow-ref name="3ps-createPartnerProfileResponse" doc:name="3ps-createPartnerProfileResponse"/>
         <set-session-variable variableName="createPartnerProfileResponse" value="#[payload]" doc:name="Session Variable"/>
@@ -551,11 +564,17 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
                     . vendor & store
                     -->
                 </enricher>
+                <enricher doc:name="Message Enricher (DAXOnBoardingInformation)">
+                    <scripting:component doc:name="Groovy">
+		            	<scripting:script name="DAXOnBoardingInformation" engine="Groovy"><![CDATA[daxOnBoardingInformation = new java.util.HashMap(); daxOnBoardingInformation.put("daxIsOnBoardingComplete", true); return daxOnBoardingInformation;]]></scripting:script>
+		        	</scripting:component>
+                    <enrich source="#[payload]" target="#[payload.DAXOnBoardingInformation]"/>
+                </enricher>
             </when>
             <otherwise>
             	<enricher doc:name="Message Enricher">
             		<set-payload value="#[sessionVars.error]" doc:name="Error Payload from Session"/>
-            		<enrich source="#[payload]" target="#[payload.error]"/>
+            		<enrich source="#[payload]" target="#[payload.DAXOnBoardingInformation]"/>
             	</enricher>
             </otherwise>
         </choice>
@@ -563,9 +582,20 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
         <logger level="INFO" message="3PS-json-After enrichment #[payload]" doc:name="3PS-json-After"/>
     </sub-flow>
     <sub-flow name="3ps-updatePartnerProfile" doc:name="3ps-updatePartnerProfile">
-    	<http:outbound-endpoint  connector-ref="defaultConnector" exchange-pattern="request-response" host="${3ps.http.host}" port="${3ps.http.port}" path="${3ps.http.path}/#[json:entityId]" method="POST" doc:name="HTTP-POST"/>
-        <json:json-to-object-transformer returnClass="java.util.HashMap" doc:name="JSON to Object"/>
-        <logger message="3PS Update response #[payload]" level="INFO" doc:name="3PS Update response"/>
+    	<choice doc:name="Choice">
+            <when expression="${3ps-harness}==false">
+		        <http:outbound-endpoint  connector-ref="defaultConnector" exchange-pattern="request-response" host="${3ps.http.host}" port="${3ps.http.port}" path="${3ps.http.path}/#[json:entityId]" method="PUT" doc:name="HTTP-PUT" >
+		    		<set-property propertyName="tenantId" value="${tenantId}"/>
+					<set-property propertyName="certificateId" value="${certificateId}"/>
+		    	</http:outbound-endpoint>
+            </when>
+            <otherwise>
+                <http:outbound-endpoint  connector-ref="defaultConnector" exchange-pattern="request-response" host="${3ps-harness.http.host}" port="${3ps-harness.http.port}" path="${3ps-harness.http.path}/#[json:entityId]" method="PUT" doc:name="HTTP-PUT (HARNESS)" />
+            </otherwise>
+        </choice>
+    	<byte-array-to-object-transformer doc:name="Byte Array to Object"/>
+        <logger message="3PS UpdatePartnerProfile response #[payload]" level="INFO" doc:name="3PS Update response"/>
+        <logger message="Orchestration-EndTime: #[server.dateTime]" level="INFO" doc:name="Log OrchestrationEndTime" />
         <tracking:custom-event event-name="bizEvent: OrchestrationEndTime" doc:name="bizEvent: OrchestrationEndTime"/>
     </sub-flow>
     <flow name="notification-flow" doc:name="notification-flow">
@@ -573,13 +603,13 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
         <message-properties-transformer doc:name="toggle email forwarding on-off" overwrite="true" scope="invocation">
             <add-message-property key="sendEmail" value="${email.send}" />
         </message-properties-transformer>
+        <component doc:name="EmailBody">
+   			<spring-object bean="EmailBody"/>
+   		</component>
         <choice doc:name="Choice">
             <when expression="#[flowVars['sendEmail'] == true]">
             	<logger message="sending email notification out..." level="INFO" doc:name="Logger"/>
-            	<component doc:name="EmailBody">
-        			<spring-object bean="EmailBody"/>
-        		</component>
-		        <smtp:outbound-endpoint 
+            	<smtp:outbound-endpoint 
 		        	connector-ref="smtpGmailConnector"
 		        	to="${email.to}" 
 		        	from="${email.from}" 
@@ -594,7 +624,7 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
             </when>
             <otherwise>
                <logger message="Email notifications are disabled..." level="INFO" doc:name="Logger"/>
-               <logger message="Email body written to log: #[payload]" level="INFO" doc:name="Logger"/>
+               <logger message="Email body written to log:  #['\n'+payload]" level="INFO" doc:name="Logger"/>
             </otherwise>
         </choice>		
     </flow>
@@ -614,16 +644,9 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
             </otherwise>
         </choice>
     </flow>
-    <flow name="post:/partnerProfileProcessing/v1/partnerProfile/{partnerProfileId}:apiConfig" doc:name="post:/partnerProfileProcessing/v1/partnerProfile/{partnerProfileId}:apiConfig">
-        <object-to-string-transformer doc:name="Object to String"/>
-        <choice doc:name="Choice">
-            <when expression="#[json:error != empty]">
-                <set-payload value="{&#xA;  &quot;status&quot;: &quot;ACK-ERROR&quot;&#xA;}" doc:name="3PS Error"/>
-            </when>
-            <otherwise>
-            	<set-payload value="{&#xA;  &quot;status&quot;: &quot;ACK-SUCCESS&quot;&#xA;}" doc:name="3PS Success"/>
-            </otherwise>
-        </choice>
+    <flow name="put:/partnerProfileProcessing/v1/partnerProfile/{partnerProfileId}:apiConfig" doc:name="put:/partnerProfileProcessing/v1/partnerProfile/{partnerProfileId}:apiConfig">
+        <logger level="INFO" message="3PS HARNESS UpdatePartnerProfile: DAXOnBoardingInformation #[json:DAXOnBoardingInformation]" doc:name="DAXOnBoardingInformation"/>
+        <!-- FOR Harness: JSON received is returned as Response -->
     </flow>
     <flow name="get:/partnerProfileProcessing/v1/partnerProfile/recover:apiConfig" doc:name="get:/partnerProfileProcessing/v1/partnerProfile/recover:apiConfig">
         <flow-ref name="quartzTriggerFlow" doc:name="Quartz Trigger Flow"/>

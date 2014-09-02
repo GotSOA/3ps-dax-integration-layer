@@ -12,6 +12,8 @@ import org.mule.api.MuleException;
 import org.mule.api.processor.LoggerMessageProcessor;
 import org.mule.api.transport.PropertyScope;
 
+import com.bhnetwork.integration.DAXErrorTranslation;
+
 /**
  * Search through Exception chain to determine if exception was caused by a connectivity error,
  * indicating whether the original message can be retried.
@@ -34,16 +36,19 @@ public class ExceptionEvaluator extends LoggerMessageProcessor {
     public MuleEvent process(MuleEvent muleEvent) throws MuleException {
         boolean isRetryableException = false;
         ExceptionPayload ep = muleEvent.getMessage().getExceptionPayload();
+        Map daxOnBoardingInformation = new HashMap();
         Map errorMessage = new HashMap();
-        errorMessage.put("system", "DAX");	// will map to systemInError in 3PS error node
+        daxOnBoardingInformation.put("daxErrorInformation", errorMessage);
         if (ep == null) {
             logger.error("Exception payload is null");
-        	errorMessage.put("daxErrorDescription", "Exception payload is null");    // will map to errorDescription in 3PS error node
-        	errorMessage.put("daxErrorStep", muleEvent.getMessage().getProperty("DaxStep", PropertyScope.SESSION).toString()); // will map to errorStep in 3PS error node
+            daxOnBoardingInformation.put("daxIsOnBoardingComplete", false);
+            errorMessage.put("daxErrorCode", "FUTURE-RELEASE");
+            errorMessage.put("daxErrorDescription", "Exception payload is null");
+            errorMessage.put("daxErrorStep",DAXErrorTranslation.fromKey(muleEvent.getMessage().getProperty("DaxStep", PropertyScope.SESSION).toString()).value());
             // set error in session
         	if(muleEvent.getMessage().getProperty("error", PropertyScope.SESSION)==null && !muleEvent.getMessage().getProperty("DaxStep", PropertyScope.SESSION).equals("3ps-callback")){
-        		muleEvent.setSessionVariable("error", errorMessage); 
-        	}
+        		muleEvent.setSessionVariable("error", daxOnBoardingInformation); 
+        	}        	
         } else {
             Throwable cause = ep.getException();
             while (cause != null && !isRetryableException) {
@@ -57,22 +62,26 @@ public class ExceptionEvaluator extends LoggerMessageProcessor {
                 }
                 cause = cause.getCause();
             }
-        }
-        muleEvent.getMessage().setInvocationProperty("isRetryableException", isRetryableException);
-        if(!isRetryableException){
-        	errorMessage.put("daxErrorDescription", ep.getException().getCause().getMessage());		// will map to errorDescription in 3PS error node
-        	errorMessage.put("daxErrorStep", muleEvent.getMessage().getProperty("DaxStep", PropertyScope.SESSION).toString());  // will map to errorStep in 3PS error node
-        	// set error in session
-        	if(muleEvent.getMessage().getProperty("error", PropertyScope.SESSION)==null && !muleEvent.getMessage().getProperty("DaxStep", PropertyScope.SESSION).equals("3ps-callback")){
-        		muleEvent.setSessionVariable("error", errorMessage);
-        	}
-        	// DEBUGGING
-        	System.out.println("Found non-retryable exception, error: " + errorMessage.toString());
-        }
-        else {
-        	// DEBUGGING
-        	System.out.println("Found retryable exception, error: " + ep.getMessage());
-        	System.out.println("RETRYING... ");
+     
+	        muleEvent.getMessage().setInvocationProperty("isRetryableException", isRetryableException);
+	        if(!isRetryableException){
+	        	daxOnBoardingInformation.put("daxIsOnBoardingComplete", false);
+	        	errorMessage.put("daxErrorCode", "FUTURE-RELEASE");
+	            errorMessage.put("daxErrorDescription", ep.getException().getCause().getMessage()==null ? "Internal Server Error" : ep.getException().getCause().getMessage());
+	        	errorMessage.put("daxErrorStep",DAXErrorTranslation.fromKey(muleEvent.getMessage().getProperty("DaxStep", PropertyScope.SESSION).toString()).value());
+	        	// set error in session
+	        	if(muleEvent.getMessage().getProperty("error", PropertyScope.SESSION)==null 
+	        			&& !muleEvent.getMessage().getProperty("DaxStep", PropertyScope.SESSION).equals("3ps-callback")){
+	        		muleEvent.setSessionVariable("error", daxOnBoardingInformation);
+	        	}
+	        	// DEBUGGING
+	        	System.out.println("Found non-retryable exception, error: " + errorMessage.toString());
+	        }
+	        else {
+	        	// DEBUGGING
+	        	System.out.println("Found retryable exception, error: " + ep.getMessage());
+	        	System.out.println("RETRYING... ");
+	        }
         }
         return muleEvent;
     }

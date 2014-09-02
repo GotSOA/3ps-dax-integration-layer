@@ -9,7 +9,6 @@ import org.mule.transformer.AbstractMessageTransformer;
 
 import com.bhnetwork.integration.pppstodax.canonical.PartnerProfile;
 import com.bhnetwork.integration.pppstodax.canonical.Product;
-import com.microsoft.schemas.dynamics._2008._01.documents.bhnupcattributes3ps.AxdArrayAxdExtTypeDimension;
 import com.microsoft.schemas.dynamics._2008._01.documents.bhnupcattributes3ps.AxdEntityBhnUPCAttr1;
 import com.microsoft.schemas.dynamics._2008._01.documents.bhnupcattributes3ps.AxdEntityBhnUPCAttr2;
 import com.microsoft.schemas.dynamics._2008._01.documents.bhnupcattributes3ps.AxdEntityInventTable;
@@ -51,12 +50,16 @@ public class CanonicalToBhnUPCAttributes3PSServiceCreateRequest extends
 		
 		
 	    AxdEntityBhnUPCAttr1 bhnUPCAttr1 = new AxdEntityBhnUPCAttr1();
-	    bhnUPCAttr1.setVariableIndicator(product.getIsProductDenominationVariable()?AxdEnumNoYes.YES : AxdEnumNoYes.NO);
+	    if(product.getIsProductDenominationVariable()!=null){
+	    	bhnUPCAttr1.setVariableIndicator(product.getIsProductDenominationVariable()?AxdEnumNoYes.YES : AxdEnumNoYes.NO);
+	    }
 	    bhnUPCAttr1.setProductClass(product.getProductClassification());
 	    bhnUPCAttr1.setCurrency(product.getProductCurrency());
 	    //bhnUPCAttr1.setDenomination(product.getProductDenomination()); TODO Sample value, DAX expecting decimal.
 	    bhnUPCAttr1.setProductGroup(product.getProductGroup());
-	    bhnUPCAttr1.setCheckMinMax(product.getProductIsCheckMinMax()?AxdEnumNoYes.YES : AxdEnumNoYes.NO);
+	    if(product.getProductIsCheckMinMax()!=null){
+	    	bhnUPCAttr1.setCheckMinMax(product.getProductIsCheckMinMax()?AxdEnumNoYes.YES : AxdEnumNoYes.NO);
+	    }
 	    bhnUPCAttr1.setIssuerCompanyCode(product.getProductIssuerCompanyCode());
 	    bhnUPCAttr1.setBhnVariableMax(product.getProductMaximumFaceValue().intValue());//TODO Have to check why it was double in Canon (may be due to DM mapping)
 	    bhnUPCAttr1.setBhnVariableMin(product.getProductMinimumFaceValue().intValue());//TODO Have to check why it was double in Canon (may be due to DM mapping)
@@ -64,14 +67,20 @@ public class CanonicalToBhnUPCAttributes3PSServiceCreateRequest extends
 	    //bhnUPCAttr1.setMulticardIndicator(product.getProductMultiCardIndicator());TODO DAX expecting String. 
 	    bhnUPCAttr1.setReasonCode(product.getProductNewUPCReason());
 	    bhnUPCAttr1.setOwnershipType(AxdExtTypeBhnUPCOwnershipType.fromValue(product.getProductOwnershipType()));
-	    bhnUPCAttr1.setTaxIncluded(product.getProductTaxIncluded()? AxdExtTypeNoYesId.YES : AxdExtTypeNoYesId.NO);
+	    if(product.getProductTaxIncluded()!=null){
+	    	bhnUPCAttr1.setTaxIncluded(product.getProductTaxIncluded()? AxdExtTypeNoYesId.YES : AxdExtTypeNoYesId.NO);
+	    }
 	    bhnUPCAttr1.setProductType(product.getProductType());
 	    bhnUPCAttr1.setClazz("entity");
 	    
 	    AxdEntityBhnUPCAttr2 bhnUPCAttr2 = new AxdEntityBhnUPCAttr2();
 		bhnUPCAttr2.setCustomtemplatepathURL(product.getCustomTemplatePathURL());//TODO Source of Origin seems to be DAX on the mapping document.
-	    bhnUPCAttr2.setProductIsActivationRequired(product.getIsActivationRequired()?AxdEnumNoYes.YES : AxdEnumNoYes.NO);
-	    bhnUPCAttr2.setProductIsReloadable(product.getIsReloadable()?AxdEnumNoYes.YES : AxdEnumNoYes.NO);
+		if(product.getIsActivationRequired()!=null){
+			bhnUPCAttr2.setProductIsActivationRequired(product.getIsActivationRequired()?AxdEnumNoYes.YES : AxdEnumNoYes.NO);
+		}
+		if(product.getIsReloadable()!=null){
+			bhnUPCAttr2.setProductIsReloadable(product.getIsReloadable()?AxdEnumNoYes.YES : AxdEnumNoYes.NO);
+		}
 	    //bhnUPCAttr2.setProductTypeID(AxdEnumABC.fromValue(product.getProductTypeId()));TODO Enum mismatch
 	    bhnUPCAttr2.setProductTypeID(AxdEnumABC.NONE);
 	    bhnUPCAttr2.setReloadMaxAmount(new BigDecimal(product.getReloadMaxAmount()));

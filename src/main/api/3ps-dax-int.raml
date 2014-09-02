@@ -40,7 +40,7 @@ documentation:
             application/json:
               schema: !include schemas/partner-profile-schema.json
               example: !include examples/if1-3ps-mule-post-example.json
-    post:
+    put:
       description: update partner (Enriched partner profile with DAX response submitted)
       body:
         application/json:
@@ -52,10 +52,8 @@ documentation:
             update partner successful
           body:
             application/json:
-              example: |
-                {
-                  "status": "SUCCESS"
-                }
+              schema: !include schemas/partner-profile-schema.json
+              example: !include examples/if1-3ps-mule-post-example.json
 /partnerProfileProcessing/v1/partnerProfile/recover:
     displayName: 3ps recovered and process all the 3ps partner profile update response from the integration layer when 3ps was down.
     get:
