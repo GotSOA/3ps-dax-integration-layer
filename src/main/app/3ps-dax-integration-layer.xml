@@ -87,7 +87,7 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
     	<service-overrides sessionHandler="org.mule.session.NullSessionHandler"/>
     </http:connector>
     <object-to-byte-array-transformer name="objectToByteArrayTransformer" doc:name="Object to Byte Array" />
-    <context:property-placeholder location="classpath:3ps-dax-int.properties, file:///${app.properties.override.location}" />
+    <context:property-placeholder location="3ps-dax-int.properties,${mule.env}-3ps-dax-int.properties" />
     <spring:beans>
     	<spring:bean name="loggingIn" class="org.apache.cxf.interceptor.LoggingInInterceptor">
             <spring:property name="prettyLogging" value="true" />
