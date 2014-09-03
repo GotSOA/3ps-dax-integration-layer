@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?><Graph __version="3.5.0" author="srata00" created="Tue Sep 02 16:44:00 PDT 2014" description="JSON v1.11 To POJO" guiVersion="3.4.3.P" id="1400005784391" licenseCode="Unlicensed" licenseType="Unknown" modified="Tue Sep 02 16:45:05 PDT 2014" modifiedBy="srata00" name="JSON_one_eleven_To_Pojo" preview-file="${Project_Home}/src/main/api/examples_v1_11/3PS-to-DAX-1.11-contract-v4.json" revision="1.0" showComponentDetails="false">
 <Global>
-<Metadata __index="21" __referenceCounter="2" __sourcePath="{}/object/company/cpDivision" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _metadataParentId="0e52744c-449f-4603-912e-9e129a31f276" _parent_id="__parent_id" _type="Output" id="d9358f29-0f11-40da-9f1a-fbe2df974bd6">
+<Metadata __index="21" __referenceCounter="1" __sourcePath="{}/object/company/cpDivision" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _metadataParentId="0e52744c-449f-4603-912e-9e129a31f276" _parent_id="__parent_id" _type="Output" id="d9358f29-0f11-40da-9f1a-fbe2df974bd6">
 <Record fieldDelimiter="," name="cpDivision" recordDelimiter="\n\\|\r\n\\|\r" type="delimited">
 <Field __artificialType="_id" __systemManaged="true" name="__id" type="string"/>
 <Field __artificialType="_parent_id" __systemManaged="true" name="__parent_id" type="string"/>
-<Field __index="21" __sourcePath="{}/object/company/cpDivision/divisionAccountType" containerType="SINGLE" label="divisionAccountType" name="divisionAccountType" type="string"/>
+<Field __index="21" __sourcePath="{}/object/company/cpDivision/accountType" containerType="SINGLE" label="accountType" name="accountType" type="string"/>
 <Field __index="22" __sourcePath="{}/object/company/cpDivision/bhnGUID" containerType="SINGLE" label="bhnGUID" name="bhnGUID" type="string"/>
 <Field __index="23" __sourcePath="{}/object/company/cpDivision/companyCode" containerType="SINGLE" label="companyCode" name="companyCode" type="string"/>
 <Field __index="24" __sourcePath="{}/object/company/cpDivision/divisionCashierInstructions" containerType="SINGLE" label="divisionCashierInstructions" name="divisionCashierInstructions" type="string"/>
@@ -12,6 +12,7 @@
 <Field __index="26" __sourcePath="{}/object/company/cpDivision/divisionCustomerSupportContactFirstName" containerType="SINGLE" label="divisionCustomerSupportContactFirstName" name="divisionCustomerSupportContactFirstName" type="string"/>
 <Field __index="27" __sourcePath="{}/object/company/cpDivision/divisionCustomerSupportContactLastName" containerType="SINGLE" label="divisionCustomerSupportContactLastName" name="divisionCustomerSupportContactLastName" type="string"/>
 <Field __index="28" __sourcePath="{}/object/company/cpDivision/divisionCustomerSupportEmail" containerType="SINGLE" label="divisionCustomerSupportEmail" name="divisionCustomerSupportEmail" type="string"/>
+<Field __index="29" __sourcePath="{}/object/company/cpDivision/divisionCustomerSupportPhone" containerType="SINGLE" label="divisionCustomerSupportPhone" name="divisionCustomerSupportPhone" type="string"/>
 <Field __index="30" __sourcePath="{}/object/company/cpDivision/divisionCustomerSupportURL" containerType="SINGLE" label="divisionCustomerSupportURL" name="divisionCustomerSupportURL" type="string"/>
 <Field __index="31" __sourcePath="{}/object/company/cpDivision/divisionInStoreRedemptionInstructions" containerType="SINGLE" label="divisionInStoreRedemptionInstructions" name="divisionInStoreRedemptionInstructions" type="string"/>
 <Field __index="32" __sourcePath="{}/object/company/cpDivision/divisionIsContractComplete" containerType="SINGLE" label="divisionIsContractComplete" name="divisionIsContractComplete" type="boolean"/>
@@ -20,6 +21,7 @@
 <Field __index="35" __sourcePath="{}/object/company/cpDivision/divisionLocalPartner" containerType="SINGLE" label="divisionLocalPartner" name="divisionLocalPartner" type="boolean"/>
 <Field __index="36" __sourcePath="{}/object/company/cpDivision/divisionLocalPartnerSource" containerType="SINGLE" label="divisionLocalPartnerSource" name="divisionLocalPartnerSource" type="string"/>
 <Field __index="37" __sourcePath="{}/object/company/cpDivision/divisionLocale" containerType="SINGLE" label="divisionLocale" name="divisionLocale" type="string"/>
+<Field __index="38" __sourcePath="{}/object/company/cpDivision/divisionLogoURL" containerType="SINGLE" label="divisionLogoURL" name="divisionLogoURL" type="string"/>
 <Field __index="39" __sourcePath="{}/object/company/cpDivision/divisionOnlineRedemptionInstructions" containerType="SINGLE" label="divisionOnlineRedemptionInstructions" name="divisionOnlineRedemptionInstructions" type="string"/>
 <Field __index="40" __sourcePath="{}/object/company/cpDivision/divisionOnlineStoreURL" containerType="SINGLE" label="divisionOnlineStoreURL" name="divisionOnlineStoreURL" type="string"/>
 <Field __index="41" __sourcePath="{}/object/company/cpDivision/divisionProcessorCode" containerType="SINGLE" label="divisionProcessorCode" name="divisionProcessorCode" type="string"/>
@@ -134,7 +136,7 @@
 <Field __index="132" __sourcePath="{}/object/cpDivision/divisionProducts/productItemName" containerType="SINGLE" label="productItemName" name="productItemName" type="string"/>
 </Record>
 </Metadata>
-<Metadata __index="0" __referenceCounter="2" __sourcePath="{}/object" _dataStructure="OBJECT" _id="__id" _type="Input" id="62ddf0bf-09b2-4348-9449-fe3657d6dcbb">
+<Metadata __index="0" __referenceCounter="3" __sourcePath="{}/object" _dataStructure="OBJECT" _id="__id" _type="Input" id="62ddf0bf-09b2-4348-9449-fe3657d6dcbb">
 <Record fieldDelimiter="," name="object" recordDelimiter="\n\\|\r\n\\|\r" type="delimited">
 <Field __artificialType="_id" __systemManaged="true" name="__id" type="string"/>
 <Field __index="0" __sourcePath="{}/object/entityId" containerType="SINGLE" label="entityId" name="entityId" type="string"/>
@@ -248,34 +250,36 @@
 <Field __index="191" __sourcePath="{}/object/cpDivision/divisionIsContractComplete" containerType="SINGLE" label="divisionIsContractComplete" name="divisionIsContractComplete" type="boolean"/>
 <Field __index="192" __sourcePath="{}/object/cpDivision/divisionOnlineStoreURL" containerType="SINGLE" label="divisionOnlineStoreURL" name="divisionOnlineStoreURL" type="string"/>
 <Field __index="193" __sourcePath="{}/object/cpDivision/divisionLocalPartner" containerType="SINGLE" label="divisionLocalPartner" name="divisionLocalPartner" type="string"/>
-<Field __index="194" __sourcePath="{}/object/vendorInformation/vendorDBAName" containerType="SINGLE" label="vendorDBAName" name="vendorDBAName" type="string"/>
-<Field __index="195" __sourcePath="{}/object/vendorInformation/vendorGroup" containerType="SINGLE" label="vendorGroup" name="vendorGroup" type="string"/>
-<Field __index="196" __sourcePath="{}/object/vendorInformation/vendorCurrency" containerType="SINGLE" label="vendorCurrency" name="vendorCurrency" type="string"/>
-<Field __index="197" __sourcePath="{}/object/vendorInformation/vendorBlocked" containerType="SINGLE" label="vendorBlocked" name="vendorBlocked" type="number"/>
-<Field __index="198" __sourcePath="{}/object/vendorInformation/vendorNameFor1099" containerType="SINGLE" label="vendorNameFor1099" name="vendorNameFor1099" type="string"/>
-<Field __index="199" __sourcePath="{}/object/vendorInformation/wasVendorW9Received" containerType="SINGLE" label="wasVendorW9Received" name="wasVendorW9Received" type="boolean"/>
-<Field __index="200" __sourcePath="{}/object/vendorInformation/vendorTax1099Reports" containerType="SINGLE" label="vendorTax1099Reports" name="vendorTax1099Reports" type="string"/>
-<Field __index="201" __sourcePath="{}/object/vendorInformation/vendorPaymentTermsId" containerType="SINGLE" label="vendorPaymentTermsId" name="vendorPaymentTermsId" type="string"/>
-<Field __index="202" __sourcePath="{}/object/vendorInformation/vendorPaymentMode" containerType="SINGLE" label="vendorPaymentMode" name="vendorPaymentMode" type="string"/>
-<Field __index="203" __sourcePath="{}/object/vendorInformation/vendorAddress" containerType="SINGLE" label="vendorAddress" name="vendorAddress" type="string"/>
-<Field __index="204" __sourcePath="{}/object/vendorInformation/vendorCity" containerType="SINGLE" label="vendorCity" name="vendorCity" type="string"/>
-<Field __index="205" __sourcePath="{}/object/vendorInformation/vendorState" containerType="SINGLE" label="vendorState" name="vendorState" type="string"/>
-<Field __index="206" __sourcePath="{}/object/vendorInformation/vendorZipCode" containerType="SINGLE" label="vendorZipCode" name="vendorZipCode" type="string"/>
-<Field __index="207" __sourcePath="{}/object/vendorInformation/vendorCountryRegionId" containerType="SINGLE" label="vendorCountryRegionId" name="vendorCountryRegionId" type="string"/>
-<Field __index="208" __sourcePath="{}/object/vendorInformation/vendorReceivedConsentForElectronicSignature" containerType="SINGLE" label="vendorReceivedConsentForElectronicSignature" name="vendorReceivedConsentForElectronicSignature" type="boolean"/>
-<Field __index="209" __sourcePath="{}/object/vendorInformation/vendorTaxIdNumber" containerType="SINGLE" label="vendorTaxIdNumber" name="vendorTaxIdNumber" type="string"/>
-<Field __index="210" __sourcePath="{}/object/vendorInformation/vendorPhone" containerType="SINGLE" label="vendorPhone" name="vendorPhone" type="string"/>
-<Field __index="211" __sourcePath="{}/object/vendorInformation/vendorPaymMode" containerType="SINGLE" label="vendorPaymMode" name="vendorPaymMode" type="string"/>
-<Field __index="212" __sourcePath="{}/object/vendorInformation/vendorCounty" containerType="SINGLE" label="vendorCounty" name="vendorCounty" type="string"/>
-<Field __index="213" __sourcePath="{}/object/vendorInformation/vendorEmail" containerType="SINGLE" label="vendorEmail" name="vendorEmail" type="string"/>
-<Field __index="214" __sourcePath="{}/object/vendorInformation/vendorLanguageId" containerType="SINGLE" label="vendorLanguageId" name="vendorLanguageId" type="string"/>
-<Field __index="215" __sourcePath="{}/object/vendorInformation/vendorStreet" containerType="SINGLE" label="vendorStreet" name="vendorStreet" type="string"/>
-<Field __index="216" __sourcePath="{}/object/vendorInformation/vendorForeignEntityIndicator" containerType="SINGLE" label="vendorForeignEntityIndicator" name="vendorForeignEntityIndicator" type="number"/>
-<Field __index="217" __sourcePath="{}/object/vendorInformation/vendorTax1099NameChoice" containerType="SINGLE" label="vendorTax1099NameChoice" name="vendorTax1099NameChoice" type="number"/>
-<Field __index="218" __sourcePath="{}/object/vendorInformation/vendorW9" containerType="SINGLE" label="vendorW9" name="vendorW9" type="number"/>
-<Field __index="219" __sourcePath="{}/object/vendorInformation/vendorAccountNum" containerType="SINGLE" label="vendorAccountNum" name="vendorAccountNum" type="string"/>
-<Field __index="220" __sourcePath="{}/object/vendorInformation/vendorRecId" containerType="SINGLE" label="vendorRecId" name="vendorRecId" type="string"/>
-<Field __index="221" __sourcePath="{}/object/vendorInformation/vendorNameAlias" containerType="SINGLE" label="vendorNameAlias" name="vendorNameAlias" type="string"/>
+<Field __index="194" __sourcePath="{}/object/cpDivision/divisionBhnGUID" containerType="SINGLE" label="divisionBhnGUID" name="divisionBhnGUID" type="string"/>
+<Field __index="195" __sourcePath="{}/object/cpDivision/divisionRecId" containerType="SINGLE" label="divisionRecId" name="divisionRecId" type="string"/>
+<Field __index="196" __sourcePath="{}/object/vendorInformation/vendorDBAName" containerType="SINGLE" label="vendorDBAName" name="vendorDBAName" type="string"/>
+<Field __index="197" __sourcePath="{}/object/vendorInformation/vendorGroup" containerType="SINGLE" label="vendorGroup" name="vendorGroup" type="string"/>
+<Field __index="198" __sourcePath="{}/object/vendorInformation/vendorCurrency" containerType="SINGLE" label="vendorCurrency" name="vendorCurrency" type="string"/>
+<Field __index="199" __sourcePath="{}/object/vendorInformation/vendorBlocked" containerType="SINGLE" label="vendorBlocked" name="vendorBlocked" type="number"/>
+<Field __index="200" __sourcePath="{}/object/vendorInformation/vendorNameFor1099" containerType="SINGLE" label="vendorNameFor1099" name="vendorNameFor1099" type="string"/>
+<Field __index="201" __sourcePath="{}/object/vendorInformation/wasVendorW9Received" containerType="SINGLE" label="wasVendorW9Received" name="wasVendorW9Received" type="boolean"/>
+<Field __index="202" __sourcePath="{}/object/vendorInformation/vendorTax1099Reports" containerType="SINGLE" label="vendorTax1099Reports" name="vendorTax1099Reports" type="string"/>
+<Field __index="203" __sourcePath="{}/object/vendorInformation/vendorPaymentTermsId" containerType="SINGLE" label="vendorPaymentTermsId" name="vendorPaymentTermsId" type="string"/>
+<Field __index="204" __sourcePath="{}/object/vendorInformation/vendorPaymentMode" containerType="SINGLE" label="vendorPaymentMode" name="vendorPaymentMode" type="string"/>
+<Field __index="205" __sourcePath="{}/object/vendorInformation/vendorAddress" containerType="SINGLE" label="vendorAddress" name="vendorAddress" type="string"/>
+<Field __index="206" __sourcePath="{}/object/vendorInformation/vendorCity" containerType="SINGLE" label="vendorCity" name="vendorCity" type="string"/>
+<Field __index="207" __sourcePath="{}/object/vendorInformation/vendorState" containerType="SINGLE" label="vendorState" name="vendorState" type="string"/>
+<Field __index="208" __sourcePath="{}/object/vendorInformation/vendorZipCode" containerType="SINGLE" label="vendorZipCode" name="vendorZipCode" type="string"/>
+<Field __index="209" __sourcePath="{}/object/vendorInformation/vendorCountryRegionId" containerType="SINGLE" label="vendorCountryRegionId" name="vendorCountryRegionId" type="string"/>
+<Field __index="210" __sourcePath="{}/object/vendorInformation/vendorReceivedConsentForElectronicSignature" containerType="SINGLE" label="vendorReceivedConsentForElectronicSignature" name="vendorReceivedConsentForElectronicSignature" type="boolean"/>
+<Field __index="211" __sourcePath="{}/object/vendorInformation/vendorTaxIdNumber" containerType="SINGLE" label="vendorTaxIdNumber" name="vendorTaxIdNumber" type="string"/>
+<Field __index="212" __sourcePath="{}/object/vendorInformation/vendorPhone" containerType="SINGLE" label="vendorPhone" name="vendorPhone" type="string"/>
+<Field __index="213" __sourcePath="{}/object/vendorInformation/vendorPaymMode" containerType="SINGLE" label="vendorPaymMode" name="vendorPaymMode" type="string"/>
+<Field __index="214" __sourcePath="{}/object/vendorInformation/vendorCounty" containerType="SINGLE" label="vendorCounty" name="vendorCounty" type="string"/>
+<Field __index="215" __sourcePath="{}/object/vendorInformation/vendorEmail" containerType="SINGLE" label="vendorEmail" name="vendorEmail" type="string"/>
+<Field __index="216" __sourcePath="{}/object/vendorInformation/vendorLanguageId" containerType="SINGLE" label="vendorLanguageId" name="vendorLanguageId" type="string"/>
+<Field __index="217" __sourcePath="{}/object/vendorInformation/vendorStreet" containerType="SINGLE" label="vendorStreet" name="vendorStreet" type="string"/>
+<Field __index="218" __sourcePath="{}/object/vendorInformation/vendorForeignEntityIndicator" containerType="SINGLE" label="vendorForeignEntityIndicator" name="vendorForeignEntityIndicator" type="number"/>
+<Field __index="219" __sourcePath="{}/object/vendorInformation/vendorTax1099NameChoice" containerType="SINGLE" label="vendorTax1099NameChoice" name="vendorTax1099NameChoice" type="number"/>
+<Field __index="220" __sourcePath="{}/object/vendorInformation/vendorW9" containerType="SINGLE" label="vendorW9" name="vendorW9" type="number"/>
+<Field __index="221" __sourcePath="{}/object/vendorInformation/vendorAccountNum" containerType="SINGLE" label="vendorAccountNum" name="vendorAccountNum" type="string"/>
+<Field __index="222" __sourcePath="{}/object/vendorInformation/vendorRecId" containerType="SINGLE" label="vendorRecId" name="vendorRecId" type="string"/>
+<Field __index="223" __sourcePath="{}/object/vendorInformation/vendorNameAlias" containerType="SINGLE" label="vendorNameAlias" name="vendorNameAlias" type="string"/>
 </Record>
 </Metadata>
 <Metadata __index="0" __referenceCounter="1" __sourcePath="{}/object" _dataStructure="OBJECT" _id="__id" _type="Output" id="0e52744c-449f-4603-912e-9e129a31f276">
@@ -337,7 +341,7 @@
 <Field __index="185" __sourcePath="{}/object/vendor/vendorZipCode" containerType="SINGLE" label="vendorZipCode" name="vendorZipCode" type="string"/>
 </Record>
 </Metadata>
-<Metadata __index="55" __referenceCounter="0" __sourcePath="{}/object/company/cpDivision/products" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _metadataParentId="d9358f29-0f11-40da-9f1a-fbe2df974bd6" _parent_id="__parent_id" _type="Output" id="8f2a44d4-84ea-46c8-b58d-c6c2219d162a">
+<Metadata __index="55" __referenceCounter="2" __sourcePath="{}/object/company/cpDivision/products" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _metadataParentId="d9358f29-0f11-40da-9f1a-fbe2df974bd6" _parent_id="__parent_id" _type="Output" id="8f2a44d4-84ea-46c8-b58d-c6c2219d162a">
 <Record fieldDelimiter="," name="products" recordDelimiter="\n\\|\r\n\\|\r" type="delimited">
 <Field __artificialType="_id" __systemManaged="true" name="__id" type="string"/>
 <Field __artificialType="_parent_id" __systemManaged="true" name="__parent_id" type="string"/>
@@ -478,70 +482,8 @@
     <companyZipPostalCode>$0.companyZipPostalCode</companyZipPostalCode>
     <contractExpDate>$0.contractExpDate</contractExpDate>
     <clover:collection clover:name="cpDivision">
-      <item clover:inPort="3" clover:key="__parent_id" clover:parentKey="__id">
-        <divisionAccountType>$3.divisionAccountType</divisionAccountType>
-        <bhnGUID>$3.bhnGUID</bhnGUID>
-        <companyCode>$3.companyCode</companyCode>
-        <divisionCashierInstructions>$3.divisionCashierInstructions</divisionCashierInstructions>
-        <divisionCode>$3.divisionCode</divisionCode>
-        <divisionCustomerSupportContactFirstName>$3.divisionCustomerSupportContactFirstName</divisionCustomerSupportContactFirstName>
-        <divisionCustomerSupportContactLastName>$3.divisionCustomerSupportContactLastName</divisionCustomerSupportContactLastName>
-        <divisionCustomerSupportEmail>$3.divisionCustomerSupportEmail</divisionCustomerSupportEmail>
-        <divisionCustomerSupportURL>$3.divisionCustomerSupportURL</divisionCustomerSupportURL>
-        <divisionInStoreRedemptionInstructions>$3.divisionInStoreRedemptionInstructions</divisionInStoreRedemptionInstructions>
-        <divisionIsContractComplete>$3.divisionIsContractComplete</divisionIsContractComplete>
-        <divisionIsPinRequiredForBI>$3.divisionIsPinRequiredForBI</divisionIsPinRequiredForBI>
-        <divisionIsPinRequiredForRedemption>$3.divisionIsPinRequiredForRedemption</divisionIsPinRequiredForRedemption>
-        <divisionLocalPartner>$3.divisionLocalPartner</divisionLocalPartner>
-        <divisionLocalPartnerSource>$3.divisionLocalPartnerSource</divisionLocalPartnerSource>
-        <divisionLocale>$3.divisionLocale</divisionLocale>
-        <divisionOnlineRedemptionInstructions>$3.divisionOnlineRedemptionInstructions</divisionOnlineRedemptionInstructions>
-        <divisionOnlineStoreURL>$3.divisionOnlineStoreURL</divisionOnlineStoreURL>
-        <divisionProcessorCode>$3.divisionProcessorCode</divisionProcessorCode>
-        <divisionProgramDescription>$3.divisionProgramDescription</divisionProgramDescription>
-        <divisionRedemptionInformation>$3.divisionRedemptionInformation</divisionRedemptionInformation>
-        <divisionRedemptionLine1>$3.divisionRedemptionLine1</divisionRedemptionLine1>
-        <divisionRedemptionLine2>$3.divisionRedemptionLine2</divisionRedemptionLine2>
-        <divisionRedemptionMethods>$3.divisionRedemptionMethods</divisionRedemptionMethods>
-        <divisionTandCTextForPhysical>$3.divisionTandCTextForPhysical</divisionTandCTextForPhysical>
-        <name>$3.name</name>
-        <processorCode>$3.processorCode</processorCode>
-        <processorContactFirstName>$3.processorContactFirstName</processorContactFirstName>
-        <processorContactLastName>$3.processorContactLastName</processorContactLastName>
-        <processorContactPhoneNumber>$3.processorContactPhoneNumber</processorContactPhoneNumber>
-        <processorContactPhoneNumberExt>$3.processorContactPhoneNumberExt</processorContactPhoneNumberExt>
-        <processorHasRealTimeIssuance>$3.processorHasRealTimeIssuance</processorHasRealTimeIssuance>
-        <recId>$3.recId</recId>
-        <clover:collection clover:name="stores">
-          <item clover:inPort="2" clover:key="__parent_id" clover:parentKey="__id">
-            <accountNum>$2.accountNum</accountNum>
-            <bhnCompanyCode>$2.bhnCompanyCode</bhnCompanyCode>
-            <bhnDivisionCode>$2.bhnDivisionCode</bhnDivisionCode>
-            <bhnGUID>$2.bhnGUID</bhnGUID>
-            <companyPhysicalStoreAddressLine1>$2.companyPhysicalStoreAddressLine1</companyPhysicalStoreAddressLine1>
-            <companyPhysicalStoreCountry>$2.companyPhysicalStoreCountry</companyPhysicalStoreCountry>
-            <productLanguage>$2.productLanguage</productLanguage>
-            <storeBHNCustLevel>$2.storeBHNCustLevel</storeBHNCustLevel>
-            <storeBHNStoreCode>$2.storeBHNStoreCode</storeBHNStoreCode>
-            <storeBlocked>$2.storeBlocked</storeBlocked>
-            <storeChannelDimension>$2.storeChannelDimension</storeChannelDimension>
-            <storeContactPhoneNumber>$2.storeContactPhoneNumber</storeContactPhoneNumber>
-            <storeCountryRegionId>$2.storeCountryRegionId</storeCountryRegionId>
-            <storeCustGroup>$2.storeCustGroup</storeCustGroup>
-            <storeDimensionPAC>$2.storeDimensionPAC</storeDimensionPAC>
-            <storeDimensionRegion>$2.storeDimensionRegion</storeDimensionRegion>
-            <storePhysicalStoreAddressLine1>$2.storePhysicalStoreAddressLine1</storePhysicalStoreAddressLine1>
-            <storePhysicalStoreAddressLine2>$2.storePhysicalStoreAddressLine2</storePhysicalStoreAddressLine2>
-            <storePhysicalStoreCity>$2.storePhysicalStoreCity</storePhysicalStoreCity>
-            <storePhysicalStoreName>$2.storePhysicalStoreName</storePhysicalStoreName>
-            <storePhysicalStorePostalCode>$2.storePhysicalStorePostalCode</storePhysicalStorePostalCode>
-            <storePhysicalStoreState>$2.storePhysicalStoreState</storePhysicalStoreState>
-            <storePriceToleranceGroup>$2.storePriceToleranceGroup</storePriceToleranceGroup>
-          </item>
-        </clover:collection>
-      </item>
       <item clover:inPort="1" clover:key="__parent_id" clover:parentKey="__id">
-        <divisionAccountType>$1.divisionAccountType</divisionAccountType>
+        <accountType>$1.accountType</accountType>
         <bhnGUID>$1.bhnGUID</bhnGUID>
         <companyCode>$1.companyCode</companyCode>
         <divisionCashierInstructions>$1.divisionCashierInstructions</divisionCashierInstructions>
@@ -549,6 +491,7 @@
         <divisionCustomerSupportContactFirstName>$1.divisionCustomerSupportContactFirstName</divisionCustomerSupportContactFirstName>
         <divisionCustomerSupportContactLastName>$1.divisionCustomerSupportContactLastName</divisionCustomerSupportContactLastName>
         <divisionCustomerSupportEmail>$1.divisionCustomerSupportEmail</divisionCustomerSupportEmail>
+        <divisionCustomerSupportPhone>$1.divisionCustomerSupportPhone</divisionCustomerSupportPhone>
         <divisionCustomerSupportURL>$1.divisionCustomerSupportURL</divisionCustomerSupportURL>
         <divisionInStoreRedemptionInstructions>$1.divisionInStoreRedemptionInstructions</divisionInStoreRedemptionInstructions>
         <divisionIsContractComplete>$1.divisionIsContractComplete</divisionIsContractComplete>
@@ -557,6 +500,7 @@
         <divisionLocalPartner>$1.divisionLocalPartner</divisionLocalPartner>
         <divisionLocalPartnerSource>$1.divisionLocalPartnerSource</divisionLocalPartnerSource>
         <divisionLocale>$1.divisionLocale</divisionLocale>
+        <divisionLogoURL>$1.divisionLogoURL</divisionLogoURL>
         <divisionOnlineRedemptionInstructions>$1.divisionOnlineRedemptionInstructions</divisionOnlineRedemptionInstructions>
         <divisionOnlineStoreURL>$1.divisionOnlineStoreURL</divisionOnlineStoreURL>
         <divisionProcessorCode>$1.divisionProcessorCode</divisionProcessorCode>
@@ -573,6 +517,168 @@
         <processorContactPhoneNumber>$1.processorContactPhoneNumber</processorContactPhoneNumber>
         <processorContactPhoneNumberExt>$1.processorContactPhoneNumberExt</processorContactPhoneNumberExt>
         <processorHasRealTimeIssuance>$1.processorHasRealTimeIssuance</processorHasRealTimeIssuance>
+        <clover:collection clover:name="products">
+          <item clover:inPort="3" clover:key="__parent_id" clover:parentKey="__id">
+            <bhnGUID>$3.bhnGUID</bhnGUID>
+            <bhnIsEANUPC>$3.bhnIsEANUPC</bhnIsEANUPC>
+            <companyCode>$3.companyCode</companyCode>
+            <customTemplatePathURL>$3.customTemplatePathURL</customTemplatePathURL>
+            <divisionCode>$3.divisionCode</divisionCode>
+            <iid>
+              <bhnGUID>$3.bhnGUID_1</bhnGUID>
+              <divisionBrandName>$3.divisionBrandName</divisionBrandName>
+              <divisionCardImageURL>$3.divisionCardImageURL</divisionCardImageURL>
+              <divisionCode>$3.divisionCode_1</divisionCode>
+              <iidActivationType>$3.iidActivationType</iidActivationType>
+              <iidCaseCount>$3.iidCaseCount</iidCaseCount>
+              <iidCountry>$3.iidCountry</iidCountry>
+              <iidDescription>$3.iidDescription</iidDescription>
+              <iidPackSize>$3.iidPackSize</iidPackSize>
+              <iidProdPackType>$3.iidProdPackType</iidProdPackType>
+              <iidUseStdUnitConvert>$3.iidUseStdUnitConvert</iidUseStdUnitConvert>
+              <inventBatchId>$3.inventBatchId</inventBatchId>
+              <itemId>$3.itemId</itemId>
+              <language>$3.language</language>
+              <name>$3.name</name>
+              <newIidReasonCode>$3.newIidReasonCode</newIidReasonCode>
+              <recId>$3.recId</recId>
+            </iid>
+            <isActivationRequired>$3.isActivationRequired</isActivationRequired>
+            <isProductDenominationVariable>$3.isProductDenominationVariable</isProductDenominationVariable>
+            <isReloadable>$3.isReloadable</isReloadable>
+            <processorCode>$3.processorCode</processorCode>
+            <productAccountInquiryBIN>$3.productAccountInquiryBIN</productAccountInquiryBIN>
+            <productAccountTopupBIN>$3.productAccountTopupBIN</productAccountTopupBIN>
+            <productActivationInstructions>$3.productActivationInstructions</productActivationInstructions>
+            <productBHNNotes>$3.productBHNNotes</productBHNNotes>
+            <productBINForDARTransaction>$3.productBINForDARTransaction</productBINForDARTransaction>
+            <productBackCardTemplateId>$3.productBackCardTemplateId</productBackCardTemplateId>
+            <productBuyerGroup>$3.productBuyerGroup</productBuyerGroup>
+            <productChannelDimension>$3.productChannelDimension</productChannelDimension>
+            <productClassification>$3.productClassification</productClassification>
+            <productCurrency>$3.productCurrency</productCurrency>
+            <productDefaultIID>$3.productDefaultIID</productDefaultIID>
+            <productDenomination>$3.productDenomination</productDenomination>
+            <productDimensionCode>$3.productDimensionCode</productDimensionCode>
+            <productDimensionGroup>$3.productDimensionGroup</productDimensionGroup>
+            <productExpDate>$3.productExpDate</productExpDate>
+            <productExpLength>$3.productExpLength</productExpLength>
+            <productGroup>$3.productGroup</productGroup>
+            <productInventorySource>$3.productInventorySource</productInventorySource>
+            <productIsCheckMinMax>$3.productIsCheckMinMax</productIsCheckMinMax>
+            <productIsTaxable>$3.productIsTaxable</productIsTaxable>
+            <productIsUsingStandardDesign>$3.productIsUsingStandardDesign</productIsUsingStandardDesign>
+            <productIssuerCompanyCode>$3.productIssuerCompanyCode</productIssuerCompanyCode>
+            <productItemGroupId>$3.productItemGroupId</productItemGroupId>
+            <productItemName>$3.productItemName</productItemName>
+            <productMaximumFaceValue>$3.productMaximumFaceValue</productMaximumFaceValue>
+            <productMinimumFaceValue>$3.productMinimumFaceValue</productMinimumFaceValue>
+            <productModelGroupId>$3.productModelGroupId</productModelGroupId>
+            <productMultiCardIndicator>$3.productMultiCardIndicator</productMultiCardIndicator>
+            <productNewUPCReason>$3.productNewUPCReason</productNewUPCReason>
+            <productOwnershipType>$3.productOwnershipType</productOwnershipType>
+            <productSubstitutionGroup>$3.productSubstitutionGroup</productSubstitutionGroup>
+            <productTaxIncluded>$3.productTaxIncluded</productTaxIncluded>
+            <productTermsAndConditions>$3.productTermsAndConditions</productTermsAndConditions>
+            <productType>$3.productType</productType>
+            <productTypeId>$3.productTypeId</productTypeId>
+            <reloadMaxAmount>$3.reloadMaxAmount</reloadMaxAmount>
+            <reloadMinAmount>$3.reloadMinAmount</reloadMinAmount>
+            <substGrp>
+              <brandRecId>$3.brandRecId</brandRecId>
+              <guid>$3.guid</guid>
+              <subGroupId>$3.subGroupId</subGroupId>
+              <substitutionBrandDenomDescription>$3.substitutionBrandDenomDescription</substitutionBrandDenomDescription>
+              <substitutionCardDisplayDesc>$3.substitutionCardDisplayDesc</substitutionCardDisplayDesc>
+              <substitutionPOG1Category>$3.substitutionPOG1Category</substitutionPOG1Category>
+              <substitutionPOG2Category>$3.substitutionPOG2Category</substitutionPOG2Category>
+              <substitutionPOG3Category>$3.substitutionPOG3Category</substitutionPOG3Category>
+              <substitutionPOGDimension>$3.substitutionPOGDimension</substitutionPOGDimension>
+              <substitutionPortalDisplayName>$3.substitutionPortalDisplayName</substitutionPortalDisplayName>
+              <substitutionShipperUPC>$3.substitutionShipperUPC</substitutionShipperUPC>
+            </substGrp>
+          </item>
+          <item clover:inPort="4" clover:key="__parent_id" clover:parentKey="__id">
+            <bhnGUID>$4.bhnGUID</bhnGUID>
+            <bhnIsEANUPC>$4.bhnIsEANUPC</bhnIsEANUPC>
+            <companyCode>$4.companyCode</companyCode>
+            <customTemplatePathURL>$4.customTemplatePathURL</customTemplatePathURL>
+            <divisionCode>$4.divisionCode</divisionCode>
+            <iid>
+              <bhnGUID>$4.bhnGUID_1</bhnGUID>
+              <divisionBrandName>$4.divisionBrandName</divisionBrandName>
+              <divisionCardImageURL>$4.divisionCardImageURL</divisionCardImageURL>
+              <divisionCode>$4.divisionCode_1</divisionCode>
+              <iidActivationType>$4.iidActivationType</iidActivationType>
+              <iidCaseCount>$4.iidCaseCount</iidCaseCount>
+              <iidCountry>$4.iidCountry</iidCountry>
+              <iidDescription>$4.iidDescription</iidDescription>
+              <iidPackSize>$4.iidPackSize</iidPackSize>
+              <iidProdPackType>$4.iidProdPackType</iidProdPackType>
+              <iidUseStdUnitConvert>$4.iidUseStdUnitConvert</iidUseStdUnitConvert>
+              <inventBatchId>$4.inventBatchId</inventBatchId>
+              <itemId>$4.itemId</itemId>
+              <language>$4.language</language>
+              <name>$4.name</name>
+              <newIidReasonCode>$4.newIidReasonCode</newIidReasonCode>
+              <recId>$4.recId</recId>
+            </iid>
+            <isActivationRequired>$4.isActivationRequired</isActivationRequired>
+            <isProductDenominationVariable>$4.isProductDenominationVariable</isProductDenominationVariable>
+            <isReloadable>$4.isReloadable</isReloadable>
+            <processorCode>$4.processorCode</processorCode>
+            <productAccountInquiryBIN>$4.productAccountInquiryBIN</productAccountInquiryBIN>
+            <productAccountTopupBIN>$4.productAccountTopupBIN</productAccountTopupBIN>
+            <productActivationInstructions>$4.productActivationInstructions</productActivationInstructions>
+            <productBHNNotes>$4.productBHNNotes</productBHNNotes>
+            <productBINForDARTransaction>$4.productBINForDARTransaction</productBINForDARTransaction>
+            <productBackCardTemplateId>$4.productBackCardTemplateId</productBackCardTemplateId>
+            <productBuyerGroup>$4.productBuyerGroup</productBuyerGroup>
+            <productChannelDimension>$4.productChannelDimension</productChannelDimension>
+            <productClassification>$4.productClassification</productClassification>
+            <productCurrency>$4.productCurrency</productCurrency>
+            <productDefaultIID>$4.productDefaultIID</productDefaultIID>
+            <productDenomination>$4.productDenomination</productDenomination>
+            <productDimensionCode>$4.productDimensionCode</productDimensionCode>
+            <productDimensionGroup>$4.productDimensionGroup</productDimensionGroup>
+            <productExpDate>$4.productExpDate</productExpDate>
+            <productExpLength>$4.productExpLength</productExpLength>
+            <productGroup>$4.productGroup</productGroup>
+            <productInventorySource>$4.productInventorySource</productInventorySource>
+            <productIsCheckMinMax>$4.productIsCheckMinMax</productIsCheckMinMax>
+            <productIsTaxable>$4.productIsTaxable</productIsTaxable>
+            <productIsUsingStandardDesign>$4.productIsUsingStandardDesign</productIsUsingStandardDesign>
+            <productIssuerCompanyCode>$4.productIssuerCompanyCode</productIssuerCompanyCode>
+            <productItemGroupId>$4.productItemGroupId</productItemGroupId>
+            <productItemName>$4.productItemName</productItemName>
+            <productMaximumFaceValue>$4.productMaximumFaceValue</productMaximumFaceValue>
+            <productMinimumFaceValue>$4.productMinimumFaceValue</productMinimumFaceValue>
+            <productModelGroupId>$4.productModelGroupId</productModelGroupId>
+            <productMultiCardIndicator>$4.productMultiCardIndicator</productMultiCardIndicator>
+            <productNewUPCReason>$4.productNewUPCReason</productNewUPCReason>
+            <productOwnershipType>$4.productOwnershipType</productOwnershipType>
+            <productSubstitutionGroup>$4.productSubstitutionGroup</productSubstitutionGroup>
+            <productTaxIncluded>$4.productTaxIncluded</productTaxIncluded>
+            <productTermsAndConditions>$4.productTermsAndConditions</productTermsAndConditions>
+            <productType>$4.productType</productType>
+            <productTypeId>$4.productTypeId</productTypeId>
+            <reloadMaxAmount>$4.reloadMaxAmount</reloadMaxAmount>
+            <reloadMinAmount>$4.reloadMinAmount</reloadMinAmount>
+            <substGrp>
+              <brandRecId>$4.brandRecId</brandRecId>
+              <guid>$4.guid</guid>
+              <subGroupId>$4.subGroupId</subGroupId>
+              <substitutionBrandDenomDescription>$4.substitutionBrandDenomDescription</substitutionBrandDenomDescription>
+              <substitutionCardDisplayDesc>$4.substitutionCardDisplayDesc</substitutionCardDisplayDesc>
+              <substitutionPOG1Category>$4.substitutionPOG1Category</substitutionPOG1Category>
+              <substitutionPOG2Category>$4.substitutionPOG2Category</substitutionPOG2Category>
+              <substitutionPOG3Category>$4.substitutionPOG3Category</substitutionPOG3Category>
+              <substitutionPOGDimension>$4.substitutionPOGDimension</substitutionPOGDimension>
+              <substitutionPortalDisplayName>$4.substitutionPortalDisplayName</substitutionPortalDisplayName>
+              <substitutionShipperUPC>$4.substitutionShipperUPC</substitutionShipperUPC>
+            </substGrp>
+          </item>
+        </clover:collection>
         <recId>$1.recId</recId>
         <clover:collection clover:name="stores">
           <item clover:inPort="2" clover:key="__parent_id" clover:parentKey="__id">
@@ -884,20 +990,80 @@ output.storeDimensionRegion = input.storeDimensionRegion;
 output.storeCountryRegionId = input.storeCountryRegionId;
 output.storeBHNCustLevel = input.storeBHNCustLevel;
 output.storeBHNStoreCode = input.storeBHNStoreCode;
-output.bhnGUID = input.bhnGUID;
-]]></attr>
+output.bhnGUID = input.bhnGUID + input.bhnGUID;
+output.companyPhysicalStoreAddressLine1 = input.storePhysicalStoreAddressLine1;
+output.companyPhysicalStoreCountry = input.storePhysicalStoreCountry;]]></attr>
 </Node>
-<Node enabled="enabled" guiName="Foreach 'divisionProducts' -&gt; 'cpDivision'" guiX="460" guiY="320" id="FOREACH_DIVISION_PRODUCTS_CP_DIVISION" transformClass="com.mulesoft.datamapper.transform.MelRecordTransform" type="REFORMAT">
+<Node enabled="enabled" guiName="Foreach 'divisionProducts' -&gt; 'products'" guiX="460" guiY="620" id="FOREACH_DIVISION_PRODUCTS_PRODUCTS" transformClass="com.mulesoft.datamapper.transform.MelRecordTransform" type="REFORMAT">
 <attr name="melScript"><![CDATA[//MEL
 //START -> DO NOT REMOVE
 output.__id = input.__id;
 output.__parent_id = input.__parent_id;
 //END -> DO NOT REMOVE
+output.iidPackSize = (isnull(input.iidPackSize) ? null : double2integer(input.iidPackSize)) + (isnull(input.iidPackSize) ? null : double2integer(input.iidPackSize));
+output.iidCaseCount = (isnull(input.iidCaseCount) ? null : double2integer(input.iidCaseCount));
+output.iidProdPackType = input.iidProdPackType;
+output.iidCountry = input.iidCountry;
+output.iidActivationType = input.iidActivationType;
 output.divisionCode = input.divisionCode;
+output.divisionBrandName = input.divisionBrandName;
+output.itemId = input.itemId;
 output.bhnGUID = input.bhnGUID;
-output.recId = input.RecId;
+output.recId = input.RecId + input.RecId;
+output.iidDescription = input.iidDescription;
+output.iidUseStdUnitConvert = (isnull(input.iidUseStdUnitConvert) ? null : str2bool(input.iidUseStdUnitConvert));
+output.divisionCardImageURL = input.divisionCardImageURL;
+output.isProductDenominationVariable = input.isProductDenominationVariable;
+output.productMinimumFaceValue = input.productMinimumFaceValue;
+output.productMaximumFaceValue = input.productMaximumFaceValue;
+output.productClassification = input.productClassification;
+output.productGroup = input.productGroup;
+output.productItemGroupId = input.productItemGroupId;
+output.productOwnershipType = input.productOwnershipType;
+output.productDimensionGroup = input.productDimensionGroup;
+output.productModelGroupId = input.productModelGroupId;
+output.substitutionPOGDimension = input.substitutionPOGDimension;
+output.productBHNNotes = input.productBHNNotes;
+output.productCurrency = input.productCurrency;
+output.productDimensionCode = input.productDimensionCode;
+output.productDenomination = (isnull(input.productDenomination) ? null : num2str(input.productDenomination));
+output.productTypeId = input.productTypeID;
+output.productType = input.productType;
+output.productInventorySource = input.productInventorySource;
+output.productIssuerCompanyCode = input.productIssuerCompanyCode;
+output.productIsUsingStandardDesign = input.productIsUsingStandardDesign;
+output.productTaxIncluded = input.productTaxIncluded;
+output.productIsCheckMinMax = input.productIsCheckMinMax;
+output.productIsTaxable = input.productIsTaxable;
+output.productDefaultIID = (isnull(input.productDefaultIID) ? null : input.productDefaultIID+"");
+output.substitutionBrandDenomDescription = input.substitutionBrandDenomDescription;
+output.brandRecId = input.BrandRecId;
+output.subGroupId = input.SubGroupId;
+output.productBuyerGroup = input.productBuyerGroup;
+output.substitutionCardDisplayDesc = input.substitutionCardDisplayDesc;
+output.customTemplatePathURL = input.customTemplatePathURL;
+output.productActivationInstructions = input.productActivationInstructions;
+output.productExpLength = (isnull(input.productExpLength) ? null : double2integer(input.productExpLength));
+output.productExpDate = (isnull(input.productExpDate) ? null : str2date(input.productExpDate, "yyyy/MM/dd"));
+output.productAccountTopupBIN = input.productAccountTopupBIN;
+output.productAccountInquiryBIN = input.productAccountInquiryBIN;
+output.productBINForDARTransaction = input.productBINForDARTransaction;
+output.productBackCardTemplateId = (isnull(input.productBackCardTemplateId) ? null : num2str(input.productBackCardTemplateId));
+output.productTermsAndConditions = input.productTermsAndConditions;
 output.processorCode = input.processorCode;
-]]></attr>
+output.productMultiCardIndicator = input.productMulticardindicator;
+output.productSubstitutionGroup = input.productSubstitutionGroup;
+output.productChannelDimension = input.productChannelDimension;
+output.productItemName = input.productItemName;
+output.bhnGUID_1 = input.bhnGUID;
+output.language = input.iidLanguage;
+output.name = input.iidDescription;
+output.newIidReasonCode = input.iidNewIIDReasonCode;
+output.isActivationRequired = input.productIsActivationRequired;
+output.isReloadable = input.productIsReloadable;
+output.bhnIsEANUPC = (isnull(input.productBHNIsEANUPC) ? null : num2bool(input.productBHNIsEANUPC));
+output.divisionCode_1 = input.divisionCode;
+output.guid = input.substitutionGroupGUID;]]></attr>
 </Node>
 <Node enabled="enabled" guiName="Foreach 'object' -&gt; 'cpDivision'" guiX="460" guiY="320" id="FOREACH_OBJECT_CP_DIVISION" transformClass="com.mulesoft.datamapper.transform.MelRecordTransform" type="REFORMAT">
 <attr name="melScript"><![CDATA[//MEL
@@ -923,7 +1089,10 @@ output.divisionIsPinRequiredForRedemption = input.divisionIsPinRequiredForRedemp
 output.divisionIsPinRequiredForBI = input.divisionIsPinRequiredForBI;
 output.divisionOnlineStoreURL = input.divisionOnlineStoreURL;
 output.divisionIsContractComplete = input.divisionIsContractComplete;
-]]></attr>
+output.name = input.divisionBrandName;
+output.recId = input.divisionRecId;
+output.bhnGUID = input.divisionBhnGUID;
+output.accountType = input.divisionAccountType;]]></attr>
 </Node>
 <Node enabled="enabled" guiName="Foreach 'object' -&gt; 'object'" guiX="460" guiY="320" id="FOREACH_OBJECT_OBJECT" transformClass="com.mulesoft.datamapper.transform.MelRecordTransform" type="REFORMAT">
 <attr name="melScript"><![CDATA[//MEL
@@ -967,12 +1136,31 @@ output.vendorState=input.vendorState;
 output.vendorZipCode=input.vendorZipCode;
 output.vendorTaxIDNumber=(isnull(input.vendorTaxIdNumber) ? "" : input.vendorTaxIdNumber);
 output.vendorTax1099Reports=input.vendorTax1099Reports;
-output.vendorBlocked = input.vendorBlocked);
-output.vendorTax1099NameChoice = input.vendorTax1099NameChoice;
-output.vendorForeignEntityIndicator=input.vendorForeignEntityIndicator;
-output.vendorW9 = input.vendorW9 ? 0 : input.vendorW9;
-
-]]></attr>
+output.vendorBlocked = (Boolean) input.vendorBlocked;
+output.vendorTax1099NameChoice = String.valueOf(input.vendorTax1099NameChoice);
+output.vendorForeignEntityIndicator = (Boolean) input.vendorForeignEntityIndicator;
+output.vendorW9 = (Boolean) input.vendorW9 ? false : (Boolean) input.vendorW9;
+output.recId = input.companyRecId;
+output.bhnGUID = input.companyBHNGUID;
+output.vendorDBA = input.vendorDBAName;
+output.recId_1 = input.vendorRecId;
+output.vendorStreet = input.vendorAddress;
+output.accountNum = input.vendorAccountNum;
+output.vendorTaxGroup = (isnull(input.vendorTax1099NameChoice) ? null : num2str(input.vendorTax1099NameChoice));
+output.companyLegalName_1 = input.companyLegalName;
+output.divisionBrandName = input.divisionBrandName;]]></attr>
+</Node>
+<Node enabled="enabled" guiName="Foreach 'object' -&gt; 'products'" guiX="460" guiY="420" id="FOREACH_OBJECT_PRODUCTS" transformClass="com.mulesoft.datamapper.transform.MelRecordTransform" type="REFORMAT">
+<attr name="melScript"><![CDATA[//MEL
+//START -> DO NOT REMOVE
+output.__id = input.__id;
+output.__parent_id = input.__id;
+//END -> DO NOT REMOVE
+output.companyCode = input.companyCode;
+output.divisionCode = input.divisionCode;
+output.divisionBrandName = input.divisionBrandName;
+output.reloadMinAmount = (isnull(input.divisionMinimumReloadAmount) ? null : str2double(input.divisionMinimumReloadAmount));
+output.reloadMaxAmount = (isnull(input.divisionMaximumReloadAmount) ? null : str2double(input.divisionMaximumReloadAmount));]]></attr>
 </Node>
 <Node charset="UTF-8" enabled="enabled" fileURL="dict:inputPayload" guiName="JSON READER" guiX="20" guiY="20" id="JSON_READER0" type="JSON_READER">
 <attr name="mapping"><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="no"?>
@@ -1089,6 +1277,8 @@ output.vendorW9 = input.vendorW9 ? 0 : input.vendorW9;
     <Mapping cloverField="divisionIsContractComplete" trim="true" xpath="cpDivision/divisionIsContractComplete"/>
     <Mapping cloverField="divisionOnlineStoreURL" trim="true" xpath="cpDivision/divisionOnlineStoreURL"/>
     <Mapping cloverField="divisionLocalPartner" trim="true" xpath="cpDivision/divisionLocalPartner"/>
+    <Mapping cloverField="divisionBhnGUID" trim="true" xpath="cpDivision/divisionBhnGUID"/>
+    <Mapping cloverField="divisionRecId" trim="true" xpath="cpDivision/divisionRecId"/>
     <Mapping cloverField="vendorDBAName" trim="true" xpath="vendorInformation/vendorDBAName"/>
     <Mapping cloverField="vendorGroup" trim="true" xpath="vendorInformation/vendorGroup"/>
     <Mapping cloverField="vendorCurrency" trim="true" xpath="vendorInformation/vendorCurrency"/>
@@ -1211,14 +1401,20 @@ output.vendorW9 = input.vendorW9 ? 0 : input.vendorW9;
 <attr name="jsonSchemaURL"><![CDATA[.\src\main\api\examples_v1_11\3PS-to-DAX-1.11-contract-v4.json]]></attr>
 </Node>
 <Node enabled="enabled" guiName="Duplicate object" guiX="240" guiY="20" id="SIMPLE_COPY0" type="SIMPLE_COPY"/>
+<Node enabled="enabled" guiName="Duplicate divisionCustomerStores" guiX="240" guiY="20" id="SIMPLE_COPY1" type="SIMPLE_COPY"/>
+<Node enabled="enabled" guiName="Duplicate divisionProducts" guiX="240" guiY="20" id="SIMPLE_COPY2" type="SIMPLE_COPY"/>
 <Edge debugMode="true" fromNode="FOREACH_DIVISION_CUSTOMER_STORES_STORES:0" guiBendpoints="" id="Edge1" inPort="Port 2 (in)" metadata="2199f073-f747-40db-8533-1122c4785e57" outPort="Port 0 (out)" toNode="BEAN_WRITER0:2"/>
-<Edge debugMode="true" fromNode="FOREACH_DIVISION_PRODUCTS_CP_DIVISION:0" guiBendpoints="" id="Edge8" inPort="Port 3 (in)" metadata="d9358f29-0f11-40da-9f1a-fbe2df974bd6" outPort="Port 0 (out)" toNode="BEAN_WRITER0:3"/>
+<Edge debugMode="true" fromNode="FOREACH_DIVISION_PRODUCTS_PRODUCTS:0" guiBendpoints="" id="Edge16" inPort="Port 3 (in)" metadata="8f2a44d4-84ea-46c8-b58d-c6c2219d162a" outPort="Port 0 (out)" toNode="BEAN_WRITER0:3"/>
 <Edge debugMode="true" fromNode="FOREACH_OBJECT_CP_DIVISION:0" guiBendpoints="" id="Edge3" inPort="Port 1 (in)" metadata="d9358f29-0f11-40da-9f1a-fbe2df974bd6" outPort="Port 0 (out)" toNode="BEAN_WRITER0:1"/>
 <Edge debugMode="true" fromNode="FOREACH_OBJECT_OBJECT:0" guiBendpoints="" id="Edge6" inPort="Port 0 (in)" metadata="0e52744c-449f-4603-912e-9e129a31f276" outPort="Port 0 (out)" toNode="BEAN_WRITER0:0"/>
+<Edge debugMode="true" fromNode="FOREACH_OBJECT_PRODUCTS:0" guiBendpoints="" id="Edge8" inPort="Port 4 (in)" metadata="8f2a44d4-84ea-46c8-b58d-c6c2219d162a" outPort="Port 0 (out)" toNode="BEAN_WRITER0:4"/>
 <Edge debugMode="true" fromNode="JSON_READER0:0" guiBendpoints="" id="Edge4" inPort="Port 0 (in)" metadata="62ddf0bf-09b2-4348-9449-fe3657d6dcbb" outPort="Port 0 (out)" toNode="SIMPLE_COPY0:0"/>
-<Edge debugMode="true" fromNode="JSON_READER0:1" guiBendpoints="" id="Edge0" inPort="Port 0 (in)" metadata="786c68ab-30df-4b57-a1d6-d7acd0d68642" outPort="Port 1 (out)" toNode="FOREACH_DIVISION_CUSTOMER_STORES_STORES:0"/>
-<Edge debugMode="true" fromNode="JSON_READER0:2" guiBendpoints="" id="Edge7" inPort="Port 0 (in)" metadata="dced6cb9-d799-4f15-b60e-2ca8349a7e3c" outPort="Port 2 (out)" toNode="FOREACH_DIVISION_PRODUCTS_CP_DIVISION:0"/>
+<Edge debugMode="true" fromNode="JSON_READER0:1" guiBendpoints="" id="Edge9" inPort="Port 0 (in)" metadata="786c68ab-30df-4b57-a1d6-d7acd0d68642" outPort="Port 1 (out)" toNode="SIMPLE_COPY1:0"/>
+<Edge debugMode="true" fromNode="JSON_READER0:2" guiBendpoints="" id="Edge14" inPort="Port 0 (in)" metadata="dced6cb9-d799-4f15-b60e-2ca8349a7e3c" outPort="Port 2 (out)" toNode="SIMPLE_COPY2:0"/>
 <Edge debugMode="true" fromNode="SIMPLE_COPY0:0" guiBendpoints="" id="Edge5" inPort="Port 0 (in)" metadata="62ddf0bf-09b2-4348-9449-fe3657d6dcbb" outPort="Port 0 (out)" toNode="FOREACH_OBJECT_OBJECT:0"/>
 <Edge debugMode="true" fromNode="SIMPLE_COPY0:1" guiBendpoints="" id="Edge2" inPort="Port 0 (in)" metadata="62ddf0bf-09b2-4348-9449-fe3657d6dcbb" outPort="Port 1 (out)" toNode="FOREACH_OBJECT_CP_DIVISION:0"/>
+<Edge debugMode="true" fromNode="SIMPLE_COPY0:2" guiBendpoints="" id="Edge7" inPort="Port 0 (in)" metadata="62ddf0bf-09b2-4348-9449-fe3657d6dcbb" outPort="Port 2 (out)" toNode="FOREACH_OBJECT_PRODUCTS:0"/>
+<Edge debugMode="true" fromNode="SIMPLE_COPY1:0" guiBendpoints="" id="Edge0" inPort="Port 0 (in)" metadata="786c68ab-30df-4b57-a1d6-d7acd0d68642" outPort="Port 0 (out)" toNode="FOREACH_DIVISION_CUSTOMER_STORES_STORES:0"/>
+<Edge debugMode="true" fromNode="SIMPLE_COPY2:0" guiBendpoints="" id="Edge15" inPort="Port 0 (in)" metadata="dced6cb9-d799-4f15-b60e-2ca8349a7e3c" outPort="Port 0 (out)" toNode="FOREACH_DIVISION_PRODUCTS_PRODUCTS:0"/>
 </Phase>
 </Graph>

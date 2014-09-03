@@ -322,7 +322,9 @@
 		"divisionIsBarcodeScanSupported": true,
 		"divisionIsContractComplete": true,
 		"divisionOnlineStoreURL": "some-string-value",
-		"divisionLocalPartner": "some-string-value"
+		"divisionLocalPartner": "some-string-value",
+		"divisionBhnGUID": "string-RETURNED-to-3PS-by-DAX",
+		"divisionRecId": "string-RETURNED-to-3PS-by-DAX"
    },
    "vendorInformation":    {
       "vendorDBAName": "DBA_0826_Both_3",
@@ -334,7 +336,7 @@
       "vendorTax1099Reports": "1099k",
       "vendorPaymentTermsId": "N21",
       "vendorPaymentMode": "NOPAY",
-      "vendorAddress": "123 min st 124 min st",
+      "vendorAddress": "123 min street",
       "vendorCity": "San Francisco",
       "vendorState": "IL",
       "vendorZipCode": "20433",
