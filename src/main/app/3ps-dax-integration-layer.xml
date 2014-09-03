@@ -130,6 +130,8 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
         </apikit:mapping>
     </apikit:mapping-exception-strategy>
     <data-mapper:config name="json_to_pojo" transformationGraphPath="json_to_pojo.grf" doc:name="json_to_pojo" />
+    <data-mapper:config name="json-one_eleven_to_pojo" transformationGraphPath="json_one_eleven_to_pojo.grf" doc:name="DataMapper"/>
+    
     <flow name="main" doc:name="main">
         <http:inbound-endpoint connector-ref="defaultConnector" address="http://${http.host}:${http.port}/${contextPath}/${version}" doc:name="HTTP" exchange-pattern="request-response" />
         <apikit:router config-ref="apiConfig" doc:name="APIkit Router" />
@@ -160,6 +162,7 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
             </when>
             <otherwise>
                 <logger message="TODO 3PS-Canonical (V1.11)" level="INFO" doc:name="3PS-Canonical (V1.11)"/>
+                <data-mapper:transform config-ref="json-one_eleven_to_pojo" doc:name="3PS v1.11 to Canonical (Mule)"/>
             </otherwise>
         </choice>
 
