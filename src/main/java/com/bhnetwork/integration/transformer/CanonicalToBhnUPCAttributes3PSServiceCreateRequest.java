@@ -81,8 +81,7 @@ public class CanonicalToBhnUPCAttributes3PSServiceCreateRequest extends
 		if(product.getIsReloadable()!=null){
 			bhnUPCAttr2.setProductIsReloadable(product.getIsReloadable()?AxdEnumNoYes.YES : AxdEnumNoYes.NO);
 		}
-	    //bhnUPCAttr2.setProductTypeID(AxdEnumABC.fromValue(product.getProductTypeId()));TODO Enum mismatch
-	    bhnUPCAttr2.setProductTypeID(AxdEnumABC.NONE);
+	    bhnUPCAttr2.setProductTypeID(product.getProductTypeId());
 	    bhnUPCAttr2.setReloadMaxAmount(new BigDecimal(product.getReloadMaxAmount()));
 	    bhnUPCAttr2.setReloadMinAmount(new BigDecimal(product.getReloadMinAmount()));	    
 	    bhnUPCAttr2.setClazz("entity");
