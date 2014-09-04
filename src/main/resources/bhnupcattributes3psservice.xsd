@@ -1,47 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/dynamics/2008/01/services" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/dynamics/2008/01/services">
-  <xs:import schemaLocation="bhnupcattributes3psservice_1.xsd" namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/bhnUPCAttributes3PS"/>
-  <xs:import schemaLocation="bhnupcattributes3psservice_1_2.xsd" namespace="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList"/>
-  <xs:element name="bhnUPCAttributes3PSServiceCreateRequest">
+  <xs:import schemaLocation="bhnupcattributes3psservice_1.xsd" namespace="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList"/>
+  <xs:import schemaLocation="bhnupcattributes3psservice_1_2_3.xsd" namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/bhnUPCAttributes3PS"/>
+  <xs:element name="bhnUPCAttributes3PSServiceDeleteRequest">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" ref="q1:bhnUPCAttributes3PS" xmlns:q1="http://schemas.microsoft.com/dynamics/2008/01/documents/bhnUPCAttributes3PS"/>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="bhnUPCAttributes3PSServiceCreateResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" ref="q2:EntityKeyList" xmlns:q2="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList"/>
+        <xs:element minOccurs="0" ref="q1:EntityKeyList" xmlns:q1="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="bhnUPCAttributes3PSServiceUpdateRequest">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" ref="q3:EntityKeyList" xmlns:q3="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList"/>
+        <xs:element minOccurs="0" ref="q2:EntityKeyList" xmlns:q2="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList"/>
+        <xs:element minOccurs="0" ref="q3:bhnUPCAttributes3PS" xmlns:q3="http://schemas.microsoft.com/dynamics/2008/01/documents/bhnUPCAttributes3PS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="bhnUPCAttributes3PSServiceCreateRequest">
+    <xs:complexType>
+      <xs:sequence>
         <xs:element minOccurs="0" ref="q4:bhnUPCAttributes3PS" xmlns:q4="http://schemas.microsoft.com/dynamics/2008/01/documents/bhnUPCAttributes3PS"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="bhnUPCAttributes3PSServiceReadRequest">
+  <xs:element name="bhnUPCAttributes3PSServiceCreateResponse">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" ref="q5:EntityKeyList" xmlns:q5="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="bhnUPCAttributes3PSServiceReadResponse">
+  <xs:element name="bhnUPCAttributes3PSServiceReadRequest">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" ref="q6:bhnUPCAttributes3PS" xmlns:q6="http://schemas.microsoft.com/dynamics/2008/01/documents/bhnUPCAttributes3PS"/>
+        <xs:element minOccurs="0" ref="q6:EntityKeyList" xmlns:q6="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="bhnUPCAttributes3PSServiceDeleteRequest">
+  <xs:element name="bhnUPCAttributes3PSServiceReadResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" ref="q7:EntityKeyList" xmlns:q7="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList"/>
+        <xs:element minOccurs="0" ref="q7:bhnUPCAttributes3PS" xmlns:q7="http://schemas.microsoft.com/dynamics/2008/01/documents/bhnUPCAttributes3PS"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
