@@ -25,7 +25,6 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
         	</message-properties-transformer>
         	<logger message="In CATCH-EXCEPTION-STRATEGY: before first choice" level="INFO" doc:name="debugging"/>
 	        <choice doc:name="Choice">
-        	<!-- TODO Stephane Retryable Exception goes recursively for UnknownHostException (testing the service without vpn enabled) -->
 	            <when expression="#[flowVars['isRetryableException']==true]">
 	            	<logger message="In CATCH-EXCEPTION-STRATEGY: before second choice" level="INFO" doc:name="debugging"/>
 	            	<!-- managing numberOfRetries -->

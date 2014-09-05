@@ -1063,7 +1063,8 @@ output.isActivationRequired = input.productIsActivationRequired;
 output.isReloadable = input.productIsReloadable;
 output.bhnIsEANUPC = (isnull(input.productBHNIsEANUPC) ? null : num2bool(input.productBHNIsEANUPC));
 output.divisionCode_1 = input.divisionCode;
-output.guid = input.substitutionGroupGUID;]]></attr>
+output.guid = input.substitutionGroupGUID;
+output.inventBatchId = input.IID;]]></attr>
 </Node>
 <Node enabled="enabled" guiName="Foreach 'object' -&gt; 'cpDivision'" guiX="460" guiY="320" id="FOREACH_OBJECT_CP_DIVISION" transformClass="com.mulesoft.datamapper.transform.MelRecordTransform" type="REFORMAT">
 <attr name="melScript"><![CDATA[//MEL
@@ -1148,7 +1149,8 @@ output.vendorStreet = input.vendorAddress;
 output.accountNum = input.vendorAccountNum;
 output.vendorTaxGroup = (isnull(input.vendorTax1099NameChoice) ? null : num2str(input.vendorTax1099NameChoice));
 output.companyLegalName_1 = input.companyLegalName;
-output.divisionBrandName = input.divisionBrandName;]]></attr>
+output.divisionBrandName = input.divisionBrandName;
+output.companyPrimaryPhoneNumberExt = input.companyPrimaryPhoneNumberExt;]]></attr>
 </Node>
 <Node enabled="enabled" guiName="Foreach 'object' -&gt; 'products'" guiX="460" guiY="420" id="FOREACH_OBJECT_PRODUCTS" transformClass="com.mulesoft.datamapper.transform.MelRecordTransform" type="REFORMAT">
 <attr name="melScript"><![CDATA[//MEL
