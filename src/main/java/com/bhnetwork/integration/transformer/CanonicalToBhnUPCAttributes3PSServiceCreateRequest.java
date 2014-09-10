@@ -41,7 +41,8 @@ public class CanonicalToBhnUPCAttributes3PSServiceCreateRequest extends
 			
 			// FIX (by Stephane): get divisionCode not from product level but from cpDivision object (somehow 3PS doesn't pass it)
 			// inventTable.setBhnDivision(product.getDivisionCode());
-			inventTable.setBhnCompany(canonPartnerProfile.getCompany().getCpDivision().get(0).getDivisionCode());
+			inventTable.setBhnDivision(canonPartnerProfile.getCompany().getCpDivision().get(0).getDivisionCode());
+			
 			
 			inventTable.setBhnNotes(product.getProductBHNNotes());
 			inventTable.setItemGroupId(product.getProductItemGroupId());
@@ -56,7 +57,7 @@ public class CanonicalToBhnUPCAttributes3PSServiceCreateRequest extends
 			
 			// FIX (by Stephane): get substitutionGroup not from product level but from substGroup object (somehow 3PS doesn't pass it)
 			//inventTable.setBhnSubGroup(product.getProductSubstitutionGroup());
-			inventTable.setBhnCompany(canonPartnerProfile.getCompany().getCpDivision().get(0).getProducts().get(0).getSubstGrp().getSubGroupId());
+			inventTable.setBhnSubGroup(canonPartnerProfile.getCompany().getCpDivision().get(0).getProducts().get(0).getSubstGrp().getSubGroupId());
 			// the canon has been enriched by the substGroup web svc response in 3ps-dax-integration.xml line 224
 			
 			inventTable.setPartnerProfileId(message.getProperty("partnerProfileId", PropertyScope.SESSION).toString());

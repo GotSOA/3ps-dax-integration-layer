@@ -5,12 +5,11 @@
 	<groupId>com.bhnewtork</groupId>
 	<artifactId>3ps-dax-integration-layer</artifactId>
 	<packaging>mule</packaging>
-	<version>1.0.1-SNAPSHOT</version>
+	<version>1.0.3-SNAPSHOT</version>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-
 		<mule.version>3.4.1</mule.version>
 		<eclipsePluginVersion>2.8</eclipsePluginVersion>
 		<jdkName>JavaSE-1.6</jdkName>
