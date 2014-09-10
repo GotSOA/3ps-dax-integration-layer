@@ -28,7 +28,7 @@ public class Division implements Serializable {
 	private String divisionCustomerSupportPhone;
 	private String divisionCustomerSupportURL;
 	private String divisionInStoreRedemptionInstructions;
-	private String divisionIsPinRequiredForBI;
+	private boolean divisionIsPinRequiredForBI;
 	private String divisionIsPinRequiredForRedemption;
 	private String divisionLocale;
 	private String divisionLogoURL;
@@ -164,11 +164,11 @@ public class Division implements Serializable {
 		this.divisionInStoreRedemptionInstructions = divisionInStoreRedemptionInstructions;
 	}
 
-	public String getDivisionIsPinRequiredForBI() {
+	public boolean getDivisionIsPinRequiredForBI() {
 		return divisionIsPinRequiredForBI;
 	}
 
-	public void setDivisionIsPinRequiredForBI(String divisionIsPinRequiredForBI) {
+	public void setDivisionIsPinRequiredForBI(boolean divisionIsPinRequiredForBI) {
 		this.divisionIsPinRequiredForBI = divisionIsPinRequiredForBI;
 	}
 

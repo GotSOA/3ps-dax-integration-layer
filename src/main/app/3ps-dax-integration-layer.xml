@@ -153,15 +153,16 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
     <flow name="data-transformation-flow" doc:name="data-transformation-flow">
         <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-transforms" path="Q.transform" />
         <message-properties-transformer doc:name="toggle data transformation between mule and v1.11" overwrite="true" scope="invocation">
-            <add-message-property key="3ps-cananonical-version" value="${3ps-cananonical-version}" />
+            <add-message-property key="3ps-canonical-version" value="${3ps-canonical-version}" />
         </message-properties-transformer>
         <choice doc:name="Choice">
-            <when expression="#[flowVars['3ps-cananonical-version']=='Mule']">
-                <data-mapper:transform config-ref="json_to_pojo" doc:name="3PS-Canonical (Mule)"/>
+            <when expression="#[flowVars['3ps-canonical-version']=='V1_11']">
+                <logger message="Before Data Mapper, using 3PS variant 1.11)" level="INFO" doc:name="3PS-Canonical (V1.11)"/>
+                <data-mapper:transform config-ref="json-one_eleven_to_pojo" doc:name="3PS v1.11 to Canonical (Mule)"/>
             </when>
             <otherwise>
-                <logger message="TODO 3PS-Canonical (V1.11)" level="INFO" doc:name="3PS-Canonical (V1.11)"/>
-                <data-mapper:transform config-ref="json-one_eleven_to_pojo" doc:name="3PS v1.11 to Canonical (Mule)"/>
+            	<logger message="Before Data Mapper, using 3PS variant 1.6/aka theoritical json for mule)" level="INFO" doc:name="3PS-Canonical (V1.6)"/>
+                <data-mapper:transform config-ref="json_to_pojo" doc:name="3PS-Canonical (1.6)"/>
             </otherwise>
         </choice>
 
@@ -178,6 +179,7 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
         <vm:outbound-endpoint exchange-pattern="one-way" doc:name="VM-step1" path="Q.step1" />
         <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy" />
     </flow>
+    <!-- Assumption: single company per Partner Profile on-Boarding -->
     <flow name="DAX-step1-flow" doc:name="DAX-step1-flow">
         <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-step1" path="Q.step1" />
         <set-payload value="#[sessionVars.canon]" doc:name="Canonical Payload from Session" />
@@ -194,6 +196,7 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
         <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step2" doc:name="Q.step2" />
         <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy" />
     </flow>
+    <!-- Assumption: single division per Partner Profile on-Boarding -->
     <flow name="DAX-step2-flow" doc:name="DAX-step2-flow">
         <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-step2" path="Q.step2" />
         <set-payload value="#[sessionVars.canon]" doc:name="Canonical Payload from Session" />
@@ -210,12 +213,14 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
         <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step3" doc:name="Q.step3" />
         <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy" />
     </flow>
+    <!-- Assumption: one-to-many SubstitutionGroup per Partner Profile on-Boarding -->
     <flow name="DAX-step3-flow" doc:name="DAX-step3-flow">
         <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-step3" path="Q.step3" />
         <set-payload value="#[sessionVars.canon]" doc:name="Canonical Payload from Session" />
         <custom-transformer class="com.bhnetwork.integration.transformer.CanonicalToUPCSubGroupTableServiceCreateRequest" doc:name="Canon-to-SubstgroupRequest" />
         <enricher doc:name="Enrich-Canonical-w-DAX-values ">
-            <flow-ref name="daxSubstgroupWebServiceClient" doc:name="Invoke Dax IID Webservice" />
+            <flow-ref name="daxSubstgroupWebServiceClient" doc:name="Invoke SubstGroup Webservice" />
+            <!-- TODO: iterate through linkedHashMap -->
             <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[0].value]" target="#[sessionVars.canon.company.cpDivision[0].products[0].substGrp.subGroupId]" />
             <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[1].value]" target="#[sessionVars.canon.company.cpDivision[0].products[0].substGrp.substitutionBrandDenomDescription]" />
             <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[2].value]" target="#[sessionVars.canon.company.cpDivision[0].products[0].substGrp.guid]" />
@@ -533,6 +538,7 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
         <choice doc:name="Choice">
             <when expression="${3ps-harness}==false">
                 <http:outbound-endpoint exchange-pattern="request-response" host="${3ps.http.host}" port="${3ps.http.port}" path="${3ps.http.path}/#[sessionVars.partnerProfileId]" connector-ref="defaultConnector" method="GET" doc:name="HTTP-GET (3PS)">
+                    <!-- TODO: when using SSL, do not set the following 2 properties -->
                     <set-property propertyName="tenantId" value="${tenantId}"/>
                     <set-property propertyName="certificateId" value="${certificateId}"/>
                 </http:outbound-endpoint>

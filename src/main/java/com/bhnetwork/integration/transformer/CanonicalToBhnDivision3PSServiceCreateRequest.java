@@ -50,7 +50,7 @@ public class CanonicalToBhnDivision3PSServiceCreateRequest extends
 		bhnDivisionAttributes.setDivisionCustomerSupportPhone(division.getDivisionCustomerSupportPhone());
 		bhnDivisionAttributes.setDivisionCustomerSupportURL(division.getDivisionCustomerSupportURL());
 		bhnDivisionAttributes.setDivisionInStoreRedemptionInstruction(division.getDivisionInStoreRedemptionInstructions());
-		bhnDivisionAttributes.setDivisionIsPinRequiredForBI(AxdEnumNoYes.fromValue(division.getDivisionIsPinRequiredForBI()));
+		bhnDivisionAttributes.setDivisionIsPinRequiredForBI(division.getDivisionIsPinRequiredForBI()? AxdEnumNoYes.YES : AxdEnumNoYes.NO);
 		bhnDivisionAttributes.setDivisionIsPinRequiredForRedemption(AxdEnumNoYes.fromValue(division.getDivisionIsPinRequiredForRedemption()));
 		//bhnDivisionAttributes.setDivisionLocale(AxdEnumDivisionLocale.fromValue(division.getDivisionLocale()));TODO Only None is defined in the ENUM
 		bhnDivisionAttributes.setDivisionLogoURL(division.getDivisionLogoURL());
