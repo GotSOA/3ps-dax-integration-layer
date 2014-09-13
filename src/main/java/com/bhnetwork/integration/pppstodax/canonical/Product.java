@@ -50,6 +50,7 @@ public class Product implements Serializable {
 	private Double	productMaximumFaceValue;
 	private Double	productMinimumFaceValue;
 	private String	productModelGroupId;
+	// TODO change to String (default is 'N')
 	private Boolean	productMultiCardIndicator;
 	private String	productNewUPCReason;
 	private String	productOwnershipType;
@@ -349,6 +350,7 @@ public class Product implements Serializable {
 		this.productModelGroupId = productModelGroupId;
 	}
 
+	// TODO change to String
 	public Boolean getProductMultiCardIndicator() {
 		return productMultiCardIndicator;
 	}

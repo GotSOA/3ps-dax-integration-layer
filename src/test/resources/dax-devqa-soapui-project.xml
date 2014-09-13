@@ -796,7 +796,66 @@
 </soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/dynamics/2008/01/services/CustCompanyCodeService/create"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Request (Mule Generated)"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/custcompanycodeservice.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
   <soap:Header>
     <mule:header xmlns:mule="http://www.muleumo.org/providers/soap/1.0">
-      <mule:MULE_CORRELATION_ID>5e8b29f0-3464-11e4-bbf8-0021cc66c01f</mule:MULE_CORRELATION_ID>
+      <mule:MULE_CORRELATION_ID>f22e1120-37ae-11e4-8dd1-0021ccb82f17</mule:MULE_CORRELATION_ID>
+      <mule:MULE_CORRELATION_GROUP_SIZE>2</mule:MULE_CORRELATION_GROUP_SIZE>
+      <mule:MULE_CORRELATION_SEQUENCE>-1</mule:MULE_CORRELATION_SEQUENCE>
+    </mule:header>
+  </soap:Header>
+  <soap:Body>
+    <ns2:CustCompanyCodeServiceCreateRequest xmlns:ns2="http://schemas.microsoft.com/dynamics/2008/01/services" xmlns:ns3="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKey" xmlns:ns4="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList" xmlns:ns5="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" xmlns:ns6="http://schemas.microsoft.com/dynamics/2006/02/documents/QueryCriteria" xmlns:ns7="http://schemas.microsoft.com/dynamics/2008/01/documents/bhnSetUpComp3PS" xmlns:ns8="http://schemas.microsoft.com/dynamics/2008/01/documents/bhnCleanUpMegatron" xmlns:ns9="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:ns10="http://schemas.microsoft.com/dynamics/2008/01/documents/CustCompanyCode">
+      <ns10:CustCompanyCode>
+        <ns10:DocPurpose xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        <ns10:SenderId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        <ns10:bhnCustCompanyTable class="entity">
+          <ns10:_DocumentHash xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+          <ns10:AcquirerType xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+          <ns10:AdditionalInfo xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+          <ns10:BhnGUID xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+          <ns10:BhnSetupComplete>No</ns10:BhnSetupComplete>
+          <ns10:Comments xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+          <ns10:CompanyCode>9090</ns10:CompanyCode>
+          <ns10:ContractComplete>No</ns10:ContractComplete>
+          <ns10:ContractExpDate>0020-01-04</ns10:ContractExpDate>
+          <ns10:CorporateName>aaaa0826_Both_3</ns10:CorporateName>
+          <ns10:Country>US</ns10:Country>
+          <ns10:Inactive>No</ns10:Inactive>
+          <ns10:LegalEntityCode>LE-000001</ns10:LegalEntityCode>
+          <ns10:MerchRecordNumber xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+          <ns10:Name>foobar</ns10:Name>
+          <ns10:PartnerProfileId>94QGMK5KV5ABPYP5A7X4KC32JR</ns10:PartnerProfileId>
+          <ns10:ProcessorType xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+          <ns10:RecId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+          <ns10:RecVersion xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+          <ns10:SideLetterReq xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+          <ns10:TestDateReq xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+          <ns10:bhnOnlineCompanyAttributes class="entity">
+            <ns10:CompanyAddressLine1>123 bad st</ns10:CompanyAddressLine1>
+            <ns10:CompanyAddressLine2>suite 999</ns10:CompanyAddressLine2>
+            <ns10:Companycity>san grupo</ns10:Companycity>
+            <ns10:CompanyCode>9090</ns10:CompanyCode>
+            <ns10:CompanyContractTerm>2</ns10:CompanyContractTerm>
+            <ns10:CompanyMerchantCategoryCode>5462 (for Bakeries)</ns10:CompanyMerchantCategoryCode>
+            <ns10:CompanyPrimaryContactBusinessTitle>VP sin city</ns10:CompanyPrimaryContactBusinessTitle>
+            <ns10:CompanyPrimaryContactEmail>rick.alagna@bhnetwork.com</ns10:CompanyPrimaryContactEmail>
+            <ns10:CompanyPrimaryContactFirstName>Frank</ns10:CompanyPrimaryContactFirstName>
+            <ns10:CompanyPrimaryContactLastName>Miller</ns10:CompanyPrimaryContactLastName>
+            <ns10:CompanyPrimaryPhoneNumber>(324) 764-5324</ns10:CompanyPrimaryPhoneNumber>
+            <ns10:CompanyPrimaryPhoneNumberExt>1234567890</ns10:CompanyPrimaryPhoneNumberExt>
+            <ns10:CompanyState>IL</ns10:CompanyState>
+            <ns10:CompanyWebSiteURL>www.winestuff.com</ns10:CompanyWebSiteURL>
+            <ns10:CompanyZipPostalCode>94588</ns10:CompanyZipPostalCode>
+            <ns10:LegalEntityStateOfIncorporation>AK</ns10:LegalEntityStateOfIncorporation>
+            <ns10:RecId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:RecVersion xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+          </ns10:bhnOnlineCompanyAttributes>
+        </ns10:bhnCustCompanyTable>
+      </ns10:CustCompanyCode>
+    </ns2:CustCompanyCodeServiceCreateRequest>
+  </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:username>scl-erp-dax-il-s</con:username><con:password>gZh#rYt5</con:password><con:domain>DEVQA</con:domain></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/dynamics/2008/01/services/CustCompanyCodeService/create"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Default Request"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/custcompanycodeservice.svc</con:endpoint><con:request><![CDATA[<?xml version="1.0" encoding="UTF-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Header>
+    <mule:header xmlns:mule="http://www.muleumo.org/providers/soap/1.0">
+      <mule:MULE_CORRELATION_ID>f22e1120-37ae-11e4-8dd1-0021ccb82f17</mule:MULE_CORRELATION_ID>
       <mule:MULE_CORRELATION_GROUP_SIZE>2</mule:MULE_CORRELATION_GROUP_SIZE>
       <mule:MULE_CORRELATION_SEQUENCE>-1</mule:MULE_CORRELATION_SEQUENCE>
     </mule:header>
@@ -811,40 +870,40 @@
           <ns10:AcquirerType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
           <ns10:AdditionalInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
           <ns10:BhnGUID xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-          <ns10:BhnSetupComplete>Yes</ns10:BhnSetupComplete>
+          <ns10:BhnSetupComplete>No</ns10:BhnSetupComplete>
           <ns10:Comments xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-          <ns10:CompanyCode>SWY123</ns10:CompanyCode>
-          <ns10:ContractComplete>Yes</ns10:ContractComplete>
-          <ns10:ContractExpDate>0020-01-03</ns10:ContractExpDate>
-          <ns10:CorporateName>Safeway Inc.</ns10:CorporateName>
+          <ns10:CompanyCode>123456789</ns10:CompanyCode>
+          <ns10:ContractComplete>No</ns10:ContractComplete>
+          <ns10:ContractExpDate>0020-01-04</ns10:ContractExpDate>
+          <ns10:CorporateName>aaaa0826_Both_3</ns10:CorporateName>
           <ns10:Country>US</ns10:Country>
           <ns10:Inactive>No</ns10:Inactive>
-          <ns10:LegalEntityCode>LE-003736</ns10:LegalEntityCode>
+          <ns10:LegalEntityCode>LLC</ns10:LegalEntityCode>
           <ns10:MerchRecordNumber xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-          <ns10:Name>SWY123</ns10:Name>
-          <ns10:PartnerProfileId>94QGMK5KV5ABPYP5A7X4KC32JR</ns10:PartnerProfileId>
+          <ns10:Name>123456789</ns10:Name>
+          <ns10:PartnerProfileId>1F98NJ1M79YLVKSYK1X95ZP4NH</ns10:PartnerProfileId>
           <ns10:ProcessorType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
           <ns10:RecId xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
           <ns10:RecVersion xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
           <ns10:SideLetterReq xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
           <ns10:TestDateReq xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
           <ns10:bhnOnlineCompanyAttributes class="entity">
-            <ns10:CompanyAddressLine1>221 Main Street221 Main Street</ns10:CompanyAddressLine1>
-            <ns10:CompanyAddressLine2>Suite 1200</ns10:CompanyAddressLine2>
-            <ns10:Companycity>San Francisco</ns10:Companycity>
-            <ns10:CompanyCode>SWY123</ns10:CompanyCode>
-            <ns10:CompanyContractTerm>2</ns10:CompanyContractTerm>
-            <ns10:CompanyMerchantCategoryCode>5462 (for Bakeries)</ns10:CompanyMerchantCategoryCode>
-            <ns10:CompanyPrimaryContactBusinessTitle>VP, Product Development</ns10:CompanyPrimaryContactBusinessTitle>
-            <ns10:CompanyPrimaryContactEmail>isolde@webb.com</ns10:CompanyPrimaryContactEmail>
-            <ns10:CompanyPrimaryContactFirstName>Isolde</ns10:CompanyPrimaryContactFirstName>
-            <ns10:CompanyPrimaryContactLastName>Webb</ns10:CompanyPrimaryContactLastName>
-            <ns10:CompanyPrimaryPhoneNumber>9257850967</ns10:CompanyPrimaryPhoneNumber>
-            <ns10:CompanyPrimaryPhoneNumberExt>309</ns10:CompanyPrimaryPhoneNumberExt>
-            <ns10:CompanyState>CA</ns10:CompanyState>
-            <ns10:CompanyWebSiteURL>blackhawknetwork.com</ns10:CompanyWebSiteURL>
-            <ns10:CompanyZipPostalCode>94107</ns10:CompanyZipPostalCode>
-            <ns10:LegalEntityStateOfIncorporation>DE</ns10:LegalEntityStateOfIncorporation>
+            <ns10:CompanyAddressLine1>123 bad st123 bad st</ns10:CompanyAddressLine1>
+            <ns10:CompanyAddressLine2>suite 999</ns10:CompanyAddressLine2>
+            <ns10:Companycity>san grupo</ns10:Companycity>
+            <ns10:CompanyCode>123456789</ns10:CompanyCode>
+            <ns10:CompanyContractTerm></ns10:CompanyContractTerm>
+            <ns10:CompanyMerchantCategoryCode></ns10:CompanyMerchantCategoryCode>
+            <ns10:CompanyPrimaryContactBusinessTitle>VP sin city</ns10:CompanyPrimaryContactBusinessTitle>
+            <ns10:CompanyPrimaryContactEmail>rick.alagna@bhnetwork.com</ns10:CompanyPrimaryContactEmail>
+            <ns10:CompanyPrimaryContactFirstName>Frank</ns10:CompanyPrimaryContactFirstName>
+            <ns10:CompanyPrimaryContactLastName>Miller</ns10:CompanyPrimaryContactLastName>
+            <ns10:CompanyPrimaryPhoneNumber>(324) 764-5324</ns10:CompanyPrimaryPhoneNumber>
+            <ns10:CompanyPrimaryPhoneNumberExt>1234567890</ns10:CompanyPrimaryPhoneNumberExt>
+            <ns10:CompanyState>IL</ns10:CompanyState>
+            <ns10:CompanyWebSiteURL>www.winestuff.com</ns10:CompanyWebSiteURL>
+            <ns10:CompanyZipPostalCode>10233-0044</ns10:CompanyZipPostalCode>
+            <ns10:LegalEntityStateOfIncorporation>AK</ns10:LegalEntityStateOfIncorporation>
             <ns10:RecId xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
             <ns10:RecVersion xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
           </ns10:bhnOnlineCompanyAttributes>
@@ -852,100 +911,7 @@
       </ns10:CustCompanyCode>
     </ns2:CustCompanyCodeServiceCreateRequest>
   </soap:Body>
-</soap:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/dynamics/2008/01/services/CustCompanyCodeService/create"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Default Request"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/custcompanycodeservice.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://schemas.microsoft.com/dynamics/2008/01/services" xmlns:cus="http://schemas.microsoft.com/dynamics/2008/01/documents/CustCompanyCode">
-   <soapenv:Header/>
-   <soapenv:Body>
-      <ser:CustCompanyCodeServiceCreateRequest>
-         <!--Optional:-->
-         <cus:CustCompanyCode>
-            <!--Optional:-->
-            <cus:DocPurpose>?</cus:DocPurpose>
-            <!--Optional:-->
-            <cus:SenderId>?</cus:SenderId>
-            <!--Zero or more repetitions:-->
-            <cus:bhnCustCompanyTable class="entity" action="?">
-               <!--Optional:-->
-               <cus:_DocumentHash>?</cus:_DocumentHash>
-               <!--Optional:-->
-               <cus:AcquirerType>?</cus:AcquirerType>
-               <!--Optional:-->
-               <cus:AdditionalInfo>?</cus:AdditionalInfo>
-               <!--Optional:-->
-               <cus:BhnGUID>?</cus:BhnGUID>
-               <!--Optional:-->
-               <cus:BhnSetupComplete>?</cus:BhnSetupComplete>
-               <!--Optional:-->
-               <cus:Comments>?</cus:Comments>
-               <cus:CompanyCode>?</cus:CompanyCode>
-               <!--Optional:-->
-               <cus:ContractComplete>?</cus:ContractComplete>
-               <!--Optional:-->
-               <cus:ContractExpDate>?</cus:ContractExpDate>
-               <!--Optional:-->
-               <cus:CorporateName>?</cus:CorporateName>
-               <cus:Country>?</cus:Country>
-               <!--Optional:-->
-               <cus:Inactive>?</cus:Inactive>
-               <!--Optional:-->
-               <cus:LegalEntityCode>?</cus:LegalEntityCode>
-               <!--Optional:-->
-               <cus:MerchRecordNumber>?</cus:MerchRecordNumber>
-               <cus:Name>?</cus:Name>
-               <!--Optional:-->
-               <cus:PartnerProfileId>?</cus:PartnerProfileId>
-               <!--Optional:-->
-               <cus:ProcessorType>?</cus:ProcessorType>
-               <!--Optional:-->
-               <cus:RecId>?</cus:RecId>
-               <!--Optional:-->
-               <cus:RecVersion>?</cus:RecVersion>
-               <!--Optional:-->
-               <cus:SideLetterReq>?</cus:SideLetterReq>
-               <!--Optional:-->
-               <cus:TestDateReq>?</cus:TestDateReq>
-               <!--Zero or more repetitions:-->
-               <cus:bhnOnlineCompanyAttributes class="entity" action="?">
-                  <!--Optional:-->
-                  <cus:CompanyAddressLine1>?</cus:CompanyAddressLine1>
-                  <!--Optional:-->
-                  <cus:CompanyAddressLine2>?</cus:CompanyAddressLine2>
-                  <!--Optional:-->
-                  <cus:Companycity>?</cus:Companycity>
-                  <cus:CompanyCode>?</cus:CompanyCode>
-                  <!--Optional:-->
-                  <cus:CompanyContractTerm>?</cus:CompanyContractTerm>
-                  <!--Optional:-->
-                  <cus:CompanyMerchantCategoryCode>?</cus:CompanyMerchantCategoryCode>
-                  <!--Optional:-->
-                  <cus:CompanyPrimaryContactBusinessTitle>?</cus:CompanyPrimaryContactBusinessTitle>
-                  <!--Optional:-->
-                  <cus:CompanyPrimaryContactEmail>?</cus:CompanyPrimaryContactEmail>
-                  <!--Optional:-->
-                  <cus:CompanyPrimaryContactFirstName>?</cus:CompanyPrimaryContactFirstName>
-                  <!--Optional:-->
-                  <cus:CompanyPrimaryContactLastName>?</cus:CompanyPrimaryContactLastName>
-                  <!--Optional:-->
-                  <cus:CompanyPrimaryPhoneNumber>?</cus:CompanyPrimaryPhoneNumber>
-                  <!--Optional:-->
-                  <cus:CompanyPrimaryPhoneNumberExt>?</cus:CompanyPrimaryPhoneNumberExt>
-                  <!--Optional:-->
-                  <cus:CompanyState>?</cus:CompanyState>
-                  <!--Optional:-->
-                  <cus:CompanyWebSiteURL>?</cus:CompanyWebSiteURL>
-                  <!--Optional:-->
-                  <cus:CompanyZipPostalCode>?</cus:CompanyZipPostalCode>
-                  <!--Optional:-->
-                  <cus:LegalEntityStateOfIncorporation>?</cus:LegalEntityStateOfIncorporation>
-                  <!--Optional:-->
-                  <cus:RecId>?</cus:RecId>
-                  <!--Optional:-->
-                  <cus:RecVersion>?</cus:RecVersion>
-               </cus:bhnOnlineCompanyAttributes>
-            </cus:bhnCustCompanyTable>
-         </cus:CustCompanyCode>
-      </ser:CustCompanyCodeServiceCreateRequest>
-   </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/dynamics/2008/01/services/CustCompanyCodeService/create"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Copy of Request (Mule Generated)"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/custcompanycodeservice.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+</soap:Envelope>]]></con:request><con:credentials><con:username>scl-erp-dax-il-s</con:username><con:password>gZh#rYt5</con:password><con:domain>DEVQA</con:domain></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/dynamics/2008/01/services/CustCompanyCodeService/create"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Copy of Request (Mule Generated)"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/custcompanycodeservice.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
    <soap:Header>
       <mule:header xmlns:mule="http://www.muleumo.org/providers/soap/1.0">
          <mule:MULE_CORRELATION_ID>80aed58e-db1e-11e3-b7af-e1234f4774fe</mule:MULE_CORRELATION_ID>
@@ -3136,42 +3102,81 @@
          </upc:UPCSubGroupTable>
       </tem:UPCSubGroupTableServiceCreateRequest>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/UPCSubGroupTableService/create"/><con:wsrmConfig version="1.2"/></con:call><con:call name="MuleRequest"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/upcsubgrouptableservice.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
-  <soap:Header>
-    <mule:header xmlns:mule="http://www.muleumo.org/providers/soap/1.0">
-      <mule:MULE_CORRELATION_ID>5e8b29f0-3464-11e4-bbf8-0021cc66c01f</mule:MULE_CORRELATION_ID>
-      <mule:MULE_CORRELATION_GROUP_SIZE>2</mule:MULE_CORRELATION_GROUP_SIZE>
-      <mule:MULE_CORRELATION_SEQUENCE>-1</mule:MULE_CORRELATION_SEQUENCE>
-    </mule:header>
-  </soap:Header>
-  <soap:Body>
-    <ns2:UPCSubGroupTableServiceCreateRequest xmlns:ns2="http://tempuri.org" xmlns:ns3="http://schemas.microsoft.com/dynamics/2008/01/documents/UPCSubGroupTable" xmlns:ns4="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" xmlns:ns5="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKey" xmlns:ns6="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList" xmlns:ns7="http://schemas.microsoft.com/dynamics/2008/01/documents/bhnCleanUpMegatron" xmlns:ns8="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:ns9="http://schemas.microsoft.com/dynamics/2006/02/documents/QueryCriteria">
-      <ns3:UPCSubGroupTable>
-        <ns3:DocPurpose xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-        <ns3:SenderId xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-        <ns3:bhnUPCSubGroupTable_1 class="entity">
-          <ns3:_DocumentHash xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-          <ns3:BhnDivisionCode>TBD</ns3:BhnDivisionCode>
-          <ns3:BhnGUID xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-          <ns3:BhnUPCParentSubGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-          <ns3:CardDisplayDesc>h1</ns3:CardDisplayDesc>
-          <ns3:MerchRecordNumber xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-          <ns3:Name>DEFAULT</ns3:Name>
-          <ns3:PartnerProfileId>94QGMK5KV5ABPYP5A7X4KC32JR</ns3:PartnerProfileId>
-          <ns3:POGCategory1>TELE</ns3:POGCategory1>
-          <ns3:POGCategory2>WIRE</ns3:POGCategory2>
-          <ns3:POGCategory3>NA</ns3:POGCategory3>
-          <ns3:POGDimension xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-          <ns3:PortalDisplayName>i1</ns3:PortalDisplayName>
-          <ns3:RecId xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-          <ns3:RecVersion xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-          <ns3:ShipperUPC>No</ns3:ShipperUPC>
-          <ns3:SubGroupId>DEFAULT</ns3:SubGroupId>
-        </ns3:bhnUPCSubGroupTable_1>
-      </ns3:UPCSubGroupTable>
-    </ns2:UPCSubGroupTableServiceCreateRequest>
-  </soap:Body>
-</soap:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/UPCSubGroupTableService/create"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="http://tempuri.org/UPCSubGroupTableService/delete" name="delete" bindingOperationName="delete" type="Request-Response" inputName="UPCSubGroupTableServiceDeleteRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/upcsubgrouptableservice.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org" xmlns:ent="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList" xmlns:ent1="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKey">
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/UPCSubGroupTableService/create"/><con:wsrmConfig version="1.2"/></con:call><con:call name="MuleRequest"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/upcsubgrouptableservice.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org" xmlns:upc="http://schemas.microsoft.com/dynamics/2008/01/documents/UPCSubGroupTable">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:UPCSubGroupTableServiceCreateRequest>
+         <!--Optional:-->
+         <upc:UPCSubGroupTable>
+            <!--Optional:-->
+            <upc:DocPurpose>Original</upc:DocPurpose>
+            <!--Optional:-->
+            <upc:SenderId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <!--Zero or more repetitions:-->
+            <upc:bhnUPCSubGroupTable_1 class="entity">
+               <!--Optional:-->
+               <upc:_DocumentHash xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <upc:BhnDivisionCode>SPA</upc:BhnDivisionCode>
+               <!--Optional:-->
+               <upc:BhnGUID xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <upc:BhnUPCParentSubGroup xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <upc:CardDisplayDesc>NA</upc:CardDisplayDesc>
+               <!--Optional:-->
+               <upc:MerchRecordNumber xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <upc:Name>STEF01</upc:Name>
+               <!--Optional:-->
+               <upc:PartnerProfileId>098765</upc:PartnerProfileId>
+               <upc:POGCategory1>NO POG</upc:POGCategory1>
+               <!--Optional:-->
+               <upc:POGCategory2 xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <upc:POGCategory3 xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <upc:POGDimension xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <upc:PortalDisplayName>TESTMANOJ2</upc:PortalDisplayName>
+               <!--Optional:-->
+               <upc:RecId>1234</upc:RecId>
+               <!--Optional:-->
+               <upc:RecVersion>12345678</upc:RecVersion>
+               <!--Optional:-->
+               <upc:ShipperUPC>No</upc:ShipperUPC>
+               <upc:SubGroupId>STEPHANE1</upc:SubGroupId>
+            </upc:bhnUPCSubGroupTable_1>
+            <upc:bhnUPCSubGroupTable_1 class="entity">
+               <!--Optional:-->
+               <upc:_DocumentHash xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <upc:BhnDivisionCode>SPA</upc:BhnDivisionCode>
+               <!--Optional:-->
+               <upc:BhnGUID xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <upc:BhnUPCParentSubGroup xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <upc:CardDisplayDesc>NA</upc:CardDisplayDesc>
+               <!--Optional:-->
+               <upc:MerchRecordNumber xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <upc:Name>STEF02</upc:Name>
+               <!--Optional:-->
+               <upc:PartnerProfileId>098765</upc:PartnerProfileId>
+               <upc:POGCategory1>NO POG</upc:POGCategory1>
+               <!--Optional:-->
+               <upc:POGCategory2 xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <upc:POGCategory3 xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <!--Optional:-->
+               <upc:POGDimension xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+               <upc:PortalDisplayName>TESTMANOJ1</upc:PortalDisplayName>
+               <!--Optional:-->
+               <upc:RecId>1234</upc:RecId>
+               <!--Optional:-->
+               <upc:RecVersion>12345678</upc:RecVersion>
+               <!--Optional:-->
+               <upc:ShipperUPC>No</upc:ShipperUPC>
+               <upc:SubGroupId>STEPHANE2</upc:SubGroupId>
+            </upc:bhnUPCSubGroupTable_1>
+         </upc:UPCSubGroupTable>
+      </tem:UPCSubGroupTableServiceCreateRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>scl-erp-dax-il-s</con:username><con:password>gZh#rYt5</con:password><con:domain>DEVQA</con:domain></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/UPCSubGroupTableService/create"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="http://tempuri.org/UPCSubGroupTableService/delete" name="delete" bindingOperationName="delete" type="Request-Response" inputName="UPCSubGroupTableServiceDeleteRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/upcsubgrouptableservice.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org" xmlns:ent="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList" xmlns:ent1="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKey">
    <soapenv:Header/>
    <soapenv:Body>
       <tem:UPCSubGroupTableServiceDeleteRequest>
@@ -6629,7 +6634,7 @@ Affiliate:Affiliate number.</xs:documentation>
       </ns3:bhnCleanUpMegatron>
     </ns2:bhnCleanUpMegatronServiceCreateRequest>
   </soap:Body>
-</soap:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/bhnCleanUpMegatronService/create"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="http://tempuri.org/bhnCleanUpMegatronService/delete" name="delete" bindingOperationName="delete" type="Request-Response" inputName="bhnCleanUpMegatronServiceDeleteRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhncleanupmegatronservice.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org" xmlns:ent="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList" xmlns:ent1="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKey">
+</soap:Envelope>]]></con:request><con:credentials><con:username>scl-erp-dax-il-s</con:username><con:password>gZh#rYt5</con:password><con:domain>DEVQA</con:domain></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/bhnCleanUpMegatronService/create"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="http://tempuri.org/bhnCleanUpMegatronService/delete" name="delete" bindingOperationName="delete" type="Request-Response" inputName="bhnCleanUpMegatronServiceDeleteRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://vmsclapmdaxq02w.devqa.local/MicrosoftDynamicsAXAif50/bhncleanupmegatronservice.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org" xmlns:ent="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList" xmlns:ent1="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKey">
    <soapenv:Header/>
    <soapenv:Body>
       <tem:bhnCleanUpMegatronServiceDeleteRequest>
@@ -11992,140 +11997,140 @@ Affiliate:Affiliate number.</xs:documentation>
   <soap:Body>
     <ns2:bhnDivision3PSServiceCreateRequest xmlns:ns2="http://schemas.microsoft.com/dynamics/2008/01/services" xmlns:ns3="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKey" xmlns:ns4="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList" xmlns:ns5="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" xmlns:ns6="http://schemas.microsoft.com/dynamics/2008/01/documents/bhnSetUpComp3PS" xmlns:ns7="http://schemas.microsoft.com/dynamics/2006/02/documents/QueryCriteria" xmlns:ns8="http://schemas.microsoft.com/dynamics/2008/01/documents/bhnCleanUpMegatron" xmlns:ns9="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:ns10="http://schemas.microsoft.com/dynamics/2008/01/documents/bhnDivision3PS">
       <ns10:bhnDivision3PS>
-        <ns10:DocPurpose xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-        <ns10:SenderId xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+        <ns10:DocPurpose xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        <ns10:SenderId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         <ns10:bhnCustDivisionTable class="entity">
-          <ns10:_DocumentHash xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-          <ns10:AcquirerCode xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-          <ns10:AcquirerType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-          <ns10:AdditionalInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-          <ns10:BankAuthorizationRequired xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-          <ns10:BhnGUID xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-          <ns10:BhnLocalPartner xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-          <ns10:BhnPartnerPortalSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-          <ns10:BhnSetupComplete xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-          <ns10:BhnStandInCSR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-          <ns10:BhnValidateTxn xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-          <ns10:BhnVoidSupport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-          <ns10:BillingSourceCode xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-          <ns10:BusChannel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-          <ns10:Comments xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+          <ns10:_DocumentHash xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+          <ns10:AcquirerCode xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+          <ns10:AcquirerType xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+          <ns10:AdditionalInfo xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+          <ns10:BankAuthorizationRequired xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+          <ns10:BhnGUID xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+          <ns10:BhnLocalPartner xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+          <ns10:BhnPartnerPortalSource xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+          <ns10:BhnSetupComplete xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+          <ns10:BhnStandInCSR xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+          <ns10:BhnValidateTxn xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+          <ns10:BhnVoidSupport xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+          <ns10:BillingSourceCode xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+          <ns10:BusChannel xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+          <ns10:Comments xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
           <ns10:CompanyCode>SWY123</ns10:CompanyCode>
           <ns10:ContractComplete>Yes</ns10:ContractComplete>
-          <ns10:DisabledDate xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-          <ns10:DivisionAID xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+          <ns10:DisabledDate xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+          <ns10:DivisionAID xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
           <ns10:DivisionCode>TBD</ns10:DivisionCode>
-          <ns10:DivisionMID xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-          <ns10:EnabledDate xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-          <ns10:ExpiryDate xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-          <ns10:Inactive xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-          <ns10:MerchRecordNumber xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+          <ns10:DivisionMID xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+          <ns10:EnabledDate xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+          <ns10:ExpiryDate xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+          <ns10:Inactive xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+          <ns10:MerchRecordNumber xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
           <ns10:Name>DEFAULT</ns10:Name>
           <ns10:PartnerProfileId>94QGMK5KV5ABPYP5A7X4KC32JR</ns10:PartnerProfileId>
-          <ns10:PartnerRecId xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-          <ns10:ProcessorCode xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-          <ns10:ProcessorType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-          <ns10:RecId xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-          <ns10:RecVersion xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-          <ns10:RegulatedProducts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+          <ns10:PartnerRecId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+          <ns10:ProcessorCode xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+          <ns10:ProcessorType xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+          <ns10:RecId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+          <ns10:RecVersion xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+          <ns10:RegulatedProducts xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
           <ns10:RelationCode>CP</ns10:RelationCode>
-          <ns10:SideLetter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-          <ns10:SideLetterReq xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-          <ns10:SideLetterReq1 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-          <ns10:WebSite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+          <ns10:SideLetter xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+          <ns10:SideLetterReq xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+          <ns10:SideLetterReq1 xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+          <ns10:WebSite xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
           <ns10:bhnDivisionAttributes class="entity">
-            <ns10:BalanceLockTimeFrame xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:BhnGCMGuid xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:BhnGCMRetailerId xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:Division1DC128Expression xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:Division2DPDF417Expression xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:Division2DQRCODEExpression xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:DivisionAccessCode xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:DivisionAccountNumberLabel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns10:BalanceLockTimeFrame xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:BhnGCMGuid xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:BhnGCMRetailerId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:Division1DC128Expression xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:Division2DPDF417Expression xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:Division2DQRCODEExpression xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:DivisionAccessCode xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:DivisionAccountNumberLabel xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
             <ns10:DivisionAccountType>None</ns10:DivisionAccountType>
-            <ns10:DivisionAreBalancesTransferable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:DivisionBalanceMerges xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:DivisionBins xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:DivisionCanCardExpire xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:DivisionCardImageBack1URL xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:DivisionCardImageBack2URL xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:DivisionCardImageBack3URL xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:DivisionCardImageBack4URL xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:DivisionCardImageBack5URL xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:DivisionCardImageFront1URL xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:DivisionCardImageFront2URL xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:DivisionCardImageFront3URL xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:DivisionCardImageFront4URL xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:DivisionCardImageFront5URL xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:DivisionCardPinLocation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:DivisionCardPinType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:DivisionCashierInstructions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns10:DivisionAreBalancesTransferable xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:DivisionBalanceMerges xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:DivisionBins xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:DivisionCanCardExpire xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:DivisionCardImageBack1URL xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:DivisionCardImageBack2URL xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:DivisionCardImageBack3URL xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:DivisionCardImageBack4URL xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:DivisionCardImageBack5URL xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:DivisionCardImageFront1URL xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:DivisionCardImageFront2URL xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:DivisionCardImageFront3URL xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:DivisionCardImageFront4URL xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:DivisionCardImageFront5URL xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:DivisionCardPinLocation xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:DivisionCardPinType xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:DivisionCashierInstructions xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
             <ns10:DivisionCode>TBD</ns10:DivisionCode>
-            <ns10:DivisionCustomerSupportContactFirstN xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:DivisionCustomerSupportContactLastNa xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:DivisionCustomerSupportEmail xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:DivisionCustomerSupportPhone xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:DivisionCustomerSupportURL xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:DivisionHasPhoneSupportAtPOS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:DivisionHasUniversalBISupport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:DivisionInStoreRedemptionInstruction xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:DivisionIsBarcodeFormat1DC128 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:DivisionIsBarcodeFormat2DPDF417 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:DivisionIsBarcodeFormat2DQRCODE xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:DivisionisBarcodeScanSupported xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:DivisionIsBISystemBLAST xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:DivisionIsBISystemCAPTCHA xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:DivisionIsBISystemCardpool xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:DivisionIsBISystemScreenScraped xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:DivisionIsBISystemUserEntered xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:DivisionIsCardReplaceable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:DivisionIsCardTransferable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:DivisionisLostStolenPolicyAutomated xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns10:DivisionCustomerSupportContactFirstN xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:DivisionCustomerSupportContactLastNa xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:DivisionCustomerSupportEmail xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:DivisionCustomerSupportPhone xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:DivisionCustomerSupportURL xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:DivisionHasPhoneSupportAtPOS xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:DivisionHasUniversalBISupport xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:DivisionInStoreRedemptionInstruction xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:DivisionIsBarcodeFormat1DC128 xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:DivisionIsBarcodeFormat2DPDF417 xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:DivisionIsBarcodeFormat2DQRCODE xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:DivisionisBarcodeScanSupported xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:DivisionIsBISystemBLAST xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:DivisionIsBISystemCAPTCHA xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:DivisionIsBISystemCardpool xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:DivisionIsBISystemScreenScraped xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:DivisionIsBISystemUserEntered xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:DivisionIsCardReplaceable xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:DivisionIsCardTransferable xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:DivisionisLostStolenPolicyAutomated xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
             <ns10:DivisionIsPinRequiredForBI>Yes</ns10:DivisionIsPinRequiredForBI>
             <ns10:DivisionIsPinRequiredForRedemption>Yes</ns10:DivisionIsPinRequiredForRedemption>
-            <ns10:DivisionLocale xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:DivisionLogoURL xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:DivisionLostStolenPolicyText xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:DivisionManualEntryFormat xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:DivisionMaximumReloadAmount xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:DivisionMinimumReloadAmount xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:DivisionOnlineRedemptionInstructions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:DivisionOnlineStoreURL xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:DivisionPaymentNetworkType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:DivisionPinLabel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:DivisionProgramDescription xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:DivisionRedemptionInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:DivisionRedemptionLine1 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:DivisionRedemptionLine2 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:DivisionRedemptionlocation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:DivisionRedemptionMethod xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:DivisionRedemptionMethods xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:DivisionSupportsAddQRCode xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:DivisionSupportsBalanceInquiry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:DivisionSupportsPartialBalanceInquir xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:DivisionSupportsPhysicalCards xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:DivisionSupportsRedemption xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:DivisionSupportsVirtualCard xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:DivisionSupportsVoidActivation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:DivisionSupportsVoidRedemption xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:DivisionSupportsVoidReload xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:DivisionTandCTextForPhysical xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:DivisionTrack1Format xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:DivisionTrack2Format xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:DivisionTrack3Format xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:LostStolenPolicyPhone xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:ProcessorContactFirstName xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:ProcessorContactLastName xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:ProcessorContactPhoneNumber xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:ProcessorContactPhoneNumberExt xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:ProcessorHasRealTimeIssuance xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:RecId xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:RecVersion xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:RedemptionAdditionalDataLabel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:SupportsPartialBalanceInquiry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:SupportsRegift xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:SupportsReload xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns10:SupportsTransactionHistory xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns10:DivisionLocale xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:DivisionLogoURL xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:DivisionLostStolenPolicyText xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:DivisionManualEntryFormat xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:DivisionMaximumReloadAmount xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:DivisionMinimumReloadAmount xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:DivisionOnlineRedemptionInstructions xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:DivisionOnlineStoreURL xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:DivisionPaymentNetworkType xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:DivisionPinLabel xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:DivisionProgramDescription xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:DivisionRedemptionInformation xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:DivisionRedemptionLine1 xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:DivisionRedemptionLine2 xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:DivisionRedemptionlocation xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:DivisionRedemptionMethod xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:DivisionRedemptionMethods xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:DivisionSupportsAddQRCode xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:DivisionSupportsBalanceInquiry xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:DivisionSupportsPartialBalanceInquir xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:DivisionSupportsPhysicalCards xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:DivisionSupportsRedemption xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:DivisionSupportsVirtualCard xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:DivisionSupportsVoidActivation xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:DivisionSupportsVoidRedemption xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:DivisionSupportsVoidReload xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:DivisionTandCTextForPhysical xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:DivisionTrack1Format xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:DivisionTrack2Format xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:DivisionTrack3Format xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:LostStolenPolicyPhone xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:ProcessorContactFirstName xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:ProcessorContactLastName xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:ProcessorContactPhoneNumber xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:ProcessorContactPhoneNumberExt xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:ProcessorHasRealTimeIssuance xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:RecId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:RecVersion xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:RedemptionAdditionalDataLabel xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:SupportsPartialBalanceInquiry xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:SupportsRegift xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:SupportsReload xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns10:SupportsTransactionHistory xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
           </ns10:bhnDivisionAttributes>
         </ns10:bhnCustDivisionTable>
       </ns10:bhnDivision3PS>

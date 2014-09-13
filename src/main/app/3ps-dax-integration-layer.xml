@@ -229,8 +229,10 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
         <logger level="INFO" doc:name="Log bhnGUID and recId" message="guid=#[sessionVars.canon.company.cpDivision[0].products[0].substGrp.guid] and brandRecId=#[sessionVars.canon.company.cpDivision[0].products[0].substGrp.brandRecId]" />
         <set-session-variable variableName="DaxStep" value="4" doc:name="DaxStep = 4"/>
         <!-- reset number of retries -->
-        <expression-transformer expression="#[sessionVars['numberOfRetries']=0]" doc:name="Expression"/>          
-        <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step4" doc:name="Q.step4" />
+        <expression-transformer expression="#[sessionVars['numberOfRetries']=0]" doc:name="Expression"/> 
+        <!-- just skipping a few steps/flows to progress (stuck on UPCAttributes --> 
+        <!-- <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step4" doc:name="Q.step4" />  -->       
+        <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step6" doc:name="Q.step6" />
         <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy" />
     </flow>
     <flow name="DAX-step4-flow" doc:name="DAX-step4-flow">

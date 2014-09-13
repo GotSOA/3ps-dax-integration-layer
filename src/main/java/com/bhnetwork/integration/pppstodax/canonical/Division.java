@@ -29,7 +29,7 @@ public class Division implements Serializable {
 	private String divisionCustomerSupportURL;
 	private String divisionInStoreRedemptionInstructions;
 	private boolean divisionIsPinRequiredForBI;
-	private String divisionIsPinRequiredForRedemption;
+	private boolean divisionIsPinRequiredForRedemption;
 	private String divisionLocale;
 	private String divisionLogoURL;
 	private String divisionOnlineRedemptionInstructions;
@@ -172,12 +172,12 @@ public class Division implements Serializable {
 		this.divisionIsPinRequiredForBI = divisionIsPinRequiredForBI;
 	}
 
-	public String getDivisionIsPinRequiredForRedemption() {
+	public boolean getDivisionIsPinRequiredForRedemption() {
 		return divisionIsPinRequiredForRedemption;
 	}
 
 	public void setDivisionIsPinRequiredForRedemption(
-			String divisionIsPinRequiredForRedemption) {
+			boolean divisionIsPinRequiredForRedemption) {
 		this.divisionIsPinRequiredForRedemption = divisionIsPinRequiredForRedemption;
 	}
 

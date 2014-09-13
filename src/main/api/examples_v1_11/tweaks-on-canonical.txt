@@ -1,0 +1,11 @@
+Tweaks on json1.11
+
+cpDivision
+
+changed:
+      "divisionIsPinRequiredForRedemption": "true",
+      "divisionIsPinRequiredForBI": "true",
+	  
+	  into:
+	  "divisionIsPinRequiredForRedemption": true,
+      "divisionIsPinRequiredForBI": true,
