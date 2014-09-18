@@ -65,13 +65,13 @@ public class CanonicalToVendTableServiceCreateRequest extends
 		//bhnVendorTable1.setCompanyChainId(value);
 		//bhnVendorTable1.setContactPersonId(value);
 		bhnVendorTable1.setCountryRegionId(vendorObj.getVendorCountryRegionId());
-		//bhnVendorTable1.setCounty(vendorObj.getVendorCounty());
+		bhnVendorTable1.setCounty(vendorObj.getVendorCounty());
 		bhnVendorTable1.setCounty("");
 		//bhnVendorTable1.setCreditMax(value);
 		//bhnVendorTable1.setCreditRating(value);
 		bhnVendorTable1.setCurrency(vendorObj.getVendorCurrency());
 		//bhnVendorTable1.setCustAccount(value);
-		//bhnVendorTable1.setDBA(value);
+		bhnVendorTable1.setDBA(vendorObj.getVendorDBA());
 		//bhnVendorTable1.setDestinationCodeId(value);
 		//bhnVendorTable1.setDimension(value);
 		//bhnVendorTable1.setDlvMode(value);
@@ -96,8 +96,6 @@ public class CanonicalToVendTableServiceCreateRequest extends
 		//bhnVendorTable1.setMerchRecordNumber(value);
 		//bhnVendorTable1.setMultiLineDisc(value);
 		bhnVendorTable1.setName(vendorObj.getCompanyLegalName());
-	
-
 		//bhnVendorTable1.setNameAlias(value);
 		//bhnVendorTable1.setNameControl(value);
 		//bhnVendorTable1.setNumberSequenceGroup(value);
@@ -138,7 +136,7 @@ public class CanonicalToVendTableServiceCreateRequest extends
 		
 		// // TODO: review what default should be - also STRING vs. Boolean issue
 		bhnVendorTable1.setTax1099Reports(vendorObj.getVendorTax1099Reports()==""? AxdExtTypeTax1099Reporting.YES:AxdExtTypeTax1099Reporting.NO);
-		bhnVendorTable1.setTaxGroup(vendorObj.getVendorTaxGroup()); // try: STOUSCA
+		bhnVendorTable1.setTaxGroup(vendorObj.getVendorTaxGroup()); // try: STOUSCA, STOCAQC, STOUSAR, STOUSAZ
 		
 		bhnVendorTable1.setTaxIDType(vendorObj.getVendorTaxIdType()==""? AxdEnumTaxIDType.SSN:AxdEnumTaxIDType.EIN);
 		// enum values are: UnKnown, EIN, SSN, ITIN, ATIN

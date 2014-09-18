@@ -284,8 +284,7 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
         <!-- reset number of retries -->
         <expression-transformer expression="#[sessionVars['numberOfRetries']=0]" doc:name="Expression"/>   
         <!-- temporary for testing: skip vendor -->        
-        <!-- <vm:outbound-endpoint exchange-pattern="one-way" doc:name="VM-step7" path="Q.step7" /> -->
-        <vm:outbound-endpoint exchange-pattern="one-way" doc:name="VM-step7" path="Q.step8" /> 
+        <vm:outbound-endpoint exchange-pattern="one-way" doc:name="VM-step7" path="Q.step7" /> 
         <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy" />
     </flow>
     <flow name="DAX-step7-flow" doc:name="DAX-step7-flow">

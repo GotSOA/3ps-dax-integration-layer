@@ -19,7 +19,8 @@ public class StoreServiceResponseToCanonical extends AbstractMessageTransformer 
 		System.out.println("StoreServiceResponseToCanonical: Payload is of type: " + message.getPayload().getClass());
 		
 		CustomerServiceCreateResponse resp = (CustomerServiceCreateResponse) message.getPayload();
-		
+		PartnerProfile canonPartnerProfile = (PartnerProfile) message.getProperty("canon", PropertyScope.SESSION);
+	
 		EntityKeyList entityKeyList = resp.getEntityKeyList();
 		
 		// to iterate through the list
@@ -27,7 +28,6 @@ public class StoreServiceResponseToCanonical extends AbstractMessageTransformer 
 		
 		System.out.println("\n Got a CustomerStore Response List of size = " + entityKeyList.getEntityKey().size());
 		
-        PartnerProfile canonPartnerProfile = (PartnerProfile) message.getProperty("canon", PropertyScope.SESSION);
         int idx=0;
         EntityKey entKey=null;
         
@@ -36,8 +36,12 @@ public class StoreServiceResponseToCanonical extends AbstractMessageTransformer 
         	entKey = entityKeyListIterator.next();
         	
         	canonPartnerProfile.getCompany().getCpDivision().get(0).getStores().get(idx).setAccountNum(entKey.getKeyData().getKeyField().get(0).getValue());
-        	canonPartnerProfile.getCompany().getCpDivision().get(0).getStores().get(idx).setBhnCompanyCode(entKey.getKeyData().getKeyField().get(1).getValue());
-        	canonPartnerProfile.getCompany().getCpDivision().get(0).getStores().get(idx).setBhnDivisionCode(entKey.getKeyData().getKeyField().get(2).getValue());
+        	//canonPartnerProfile.getCompany().getCpDivision().get(0).getStores().get(idx).setBhnCompanyCode(entKey.getKeyData().getKeyField().get(1).getValue());
+        	// get CompanyCode from canon instead
+        	canonPartnerProfile.getCompany().getCpDivision().get(0).getStores().get(idx).setBhnCompanyCode(canonPartnerProfile.getCompany().getCompanyCode());
+        	//canonPartnerProfile.getCompany().getCpDivision().get(0).getStores().get(idx).setBhnDivisionCode(entKey.getKeyData().getKeyField().get(2).getValue());
+        	// get DivisionCode from canon instead
+        	canonPartnerProfile.getCompany().getCpDivision().get(0).getStores().get(idx).setBhnDivisionCode(canonPartnerProfile.getCompany().getCpDivision().get(0).getDivisionCode());
         	canonPartnerProfile.getCompany().getCpDivision().get(0).getStores().get(idx).setBhnGUID(entKey.getKeyData().getKeyField().get(3).getValue());
 
         	// TODO: put this logger pattern elsewhere

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><Graph __version="3.5.0" author="srata00" created="Tue Sep 02 16:44:00 PDT 2014" description="JSON v1.11 To POJO" guiVersion="3.4.3.P" id="1400005784391" licenseCode="Unlicensed" licenseType="Unknown" modified="Tue Sep 02 16:45:05 PDT 2014" modifiedBy="srata00" name="JSON_one_eleven_To_Pojo" preview-file="${Project_Home}/src/main/api/examples_v1_11/3PS-to-DAX-1.11-contract-v5.json" revision="1.0" showComponentDetails="false">
+<?xml version="1.0" encoding="UTF-8"?><Graph __version="3.5.0" author="srata00" created="Tue Sep 02 16:44:00 PDT 2014" description="JSON v1.11 To POJO" guiVersion="3.4.3.P" id="1400005784391" licenseCode="Unlicensed" licenseType="Unknown" modified="Tue Sep 02 16:45:05 PDT 2014" modifiedBy="srata00" name="JSON_one_eleven_To_Pojo" preview-file="${Project_Home}/src/main/api/examples_v1_11/3PS-to-DAX-1.11-contract-v6.json" revision="1.0" showComponentDetails="false">
 <Global>
 <Metadata __index="21" __referenceCounter="1" __sourcePath="{}/object/company/cpDivision" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _metadataParentId="0e52744c-449f-4603-912e-9e129a31f276" _parent_id="__parent_id" _type="Output" id="d9358f29-0f11-40da-9f1a-fbe2df974bd6">
 <Record fieldDelimiter="," name="cpDivision" recordDelimiter="\n\\|\r\n\\|\r" type="delimited">
@@ -77,75 +77,73 @@
 <Field __index="73" __sourcePath="{}/object/cpDivision/divisionProducts/iid/iidCountry" containerType="SINGLE" label="iidCountry" name="iidCountry" type="string"/>
 <Field __index="74" __sourcePath="{}/object/cpDivision/divisionProducts/iid/iidActivationType" containerType="SINGLE" label="iidActivationType" name="iidActivationType" type="string"/>
 <Field __index="75" __sourcePath="{}/object/cpDivision/divisionProducts/iid/OnlineIIDAtributesDescription" containerType="SINGLE" label="OnlineIIDAtributesDescription" name="OnlineIIDAtributesDescription" type="string"/>
-<Field __index="76" __sourcePath="{}/object/cpDivision/divisionProducts/iid/divisionCode" containerType="SINGLE" label="divisionCode" name="divisionCode" type="string"/>
-<Field __index="77" __sourcePath="{}/object/cpDivision/divisionProducts/iid/divisionBrandName" containerType="SINGLE" label="divisionBrandName" name="divisionBrandName" type="string"/>
-<Field __index="78" __sourcePath="{}/object/cpDivision/divisionProducts/iid/IID" containerType="SINGLE" label="IID" name="IID" type="string"/>
-<Field __index="79" __sourcePath="{}/object/cpDivision/divisionProducts/iid/itemId" containerType="SINGLE" label="itemId" name="itemId" type="string"/>
-<Field __index="80" __sourcePath="{}/object/cpDivision/divisionProducts/iid/bhnGUID" containerType="SINGLE" label="bhnGUID" name="bhnGUID" type="string"/>
-<Field __index="81" __sourcePath="{}/object/cpDivision/divisionProducts/iid/RecId" containerType="SINGLE" label="RecId" name="RecId" type="string"/>
-<Field __index="82" __sourcePath="{}/object/cpDivision/divisionProducts/iid/iidDescription" containerType="SINGLE" label="iidDescription" name="iidDescription" type="string"/>
-<Field __index="83" __sourcePath="{}/object/cpDivision/divisionProducts/iid/iidLanguage" containerType="SINGLE" label="iidLanguage" name="iidLanguage" type="string"/>
-<Field __index="84" __sourcePath="{}/object/cpDivision/divisionProducts/iid/iidNewIIDReasonCode" containerType="SINGLE" label="iidNewIIDReasonCode" name="iidNewIIDReasonCode" type="string"/>
-<Field __index="85" __sourcePath="{}/object/cpDivision/divisionProducts/iid/iidUseStdUnitConvert" containerType="SINGLE" label="iidUseStdUnitConvert" name="iidUseStdUnitConvert" type="string"/>
-<Field __index="86" __sourcePath="{}/object/cpDivision/divisionProducts/iid/divisionCardImageURL" containerType="SINGLE" label="divisionCardImageURL" name="divisionCardImageURL" type="string"/>
-<Field __index="87" __sourcePath="{}/object/cpDivision/divisionProducts/iid/divisionPrintReadyFrontImageURL" containerType="SINGLE" label="divisionPrintReadyFrontImageURL" name="divisionPrintReadyFrontImageURL" type="string"/>
-<Field __index="88" __sourcePath="{}/object/cpDivision/divisionProducts/iid/divisionPrintReadyTandCURL" containerType="SINGLE" label="divisionPrintReadyTandCURL" name="divisionPrintReadyTandCURL" type="string"/>
-<Field __index="89" __sourcePath="{}/object/cpDivision/divisionProducts/isProductDenominationVariable" containerType="SINGLE" label="isProductDenominationVariable" name="isProductDenominationVariable" type="boolean"/>
-<Field __index="90" __sourcePath="{}/object/cpDivision/divisionProducts/productMinimumFaceValue" containerType="SINGLE" label="productMinimumFaceValue" name="productMinimumFaceValue" type="number"/>
-<Field __index="91" __sourcePath="{}/object/cpDivision/divisionProducts/productMaximumFaceValue" containerType="SINGLE" label="productMaximumFaceValue" name="productMaximumFaceValue" type="number"/>
-<Field __index="92" __sourcePath="{}/object/cpDivision/divisionProducts/productClassification" containerType="SINGLE" label="productClassification" name="productClassification" type="string"/>
-<Field __index="93" __sourcePath="{}/object/cpDivision/divisionProducts/productGroup" containerType="SINGLE" label="productGroup" name="productGroup" type="string"/>
-<Field __index="94" __sourcePath="{}/object/cpDivision/divisionProducts/productItemGroupId" containerType="SINGLE" label="productItemGroupId" name="productItemGroupId" type="string"/>
-<Field __index="95" __sourcePath="{}/object/cpDivision/divisionProducts/productOwnershipType" containerType="SINGLE" label="productOwnershipType" name="productOwnershipType" type="string"/>
-<Field __index="96" __sourcePath="{}/object/cpDivision/divisionProducts/productDimensionGroup" containerType="SINGLE" label="productDimensionGroup" name="productDimensionGroup" type="string"/>
-<Field __index="97" __sourcePath="{}/object/cpDivision/divisionProducts/productModelGroupId" containerType="SINGLE" label="productModelGroupId" name="productModelGroupId" type="string"/>
-<Field __index="98" __sourcePath="{}/object/cpDivision/divisionProducts/substitutionPOGDimension" containerType="SINGLE" label="substitutionPOGDimension" name="substitutionPOGDimension" type="string"/>
-<Field __index="99" __sourcePath="{}/object/cpDivision/divisionProducts/productBHNNotes" containerType="SINGLE" label="productBHNNotes" name="productBHNNotes" type="string"/>
-<Field __index="100" __sourcePath="{}/object/cpDivision/divisionProducts/productCurrency" containerType="SINGLE" label="productCurrency" name="productCurrency" type="string"/>
-<Field __index="101" __sourcePath="{}/object/cpDivision/divisionProducts/productDimensionCode" containerType="SINGLE" label="productDimensionCode" name="productDimensionCode" type="string"/>
-<Field __index="102" __sourcePath="{}/object/cpDivision/divisionProducts/productDenomination" containerType="SINGLE" label="productDenomination" name="productDenomination" type="number"/>
-<Field __index="103" __sourcePath="{}/object/cpDivision/divisionProducts/productCheckMinMax" containerType="SINGLE" label="productCheckMinMax" name="productCheckMinMax" type="boolean"/>
-<Field __index="104" __sourcePath="{}/object/cpDivision/divisionProducts/productTypeID" containerType="SINGLE" label="productTypeID" name="productTypeID" type="string"/>
-<Field __index="105" __sourcePath="{}/object/cpDivision/divisionProducts/productType" containerType="SINGLE" label="productType" name="productType" type="string"/>
-<Field __index="106" __sourcePath="{}/object/cpDivision/divisionProducts/productInventorySource" containerType="SINGLE" label="productInventorySource" name="productInventorySource" type="string"/>
-<Field __index="107" __sourcePath="{}/object/cpDivision/divisionProducts/productIssuerCompanyCode" containerType="SINGLE" label="productIssuerCompanyCode" name="productIssuerCompanyCode" type="string"/>
-<Field __index="108" __sourcePath="{}/object/cpDivision/divisionProducts/productIsUsingStandardDesign" containerType="SINGLE" label="productIsUsingStandardDesign" name="productIsUsingStandardDesign" type="boolean"/>
-<Field __index="109" __sourcePath="{}/object/cpDivision/divisionProducts/productIsActivationRequired" containerType="SINGLE" label="productIsActivationRequired" name="productIsActivationRequired" type="boolean"/>
-<Field __index="110" __sourcePath="{}/object/cpDivision/divisionProducts/productIsReloadable" containerType="SINGLE" label="productIsReloadable" name="productIsReloadable" type="boolean"/>
-<Field __index="111" __sourcePath="{}/object/cpDivision/divisionProducts/productMinimumReloadAmount" containerType="SINGLE" label="productMinimumReloadAmount" name="productMinimumReloadAmount" type="number"/>
-<Field __index="112" __sourcePath="{}/object/cpDivision/divisionProducts/productMaximumReloadAmount" containerType="SINGLE" label="productMaximumReloadAmount" name="productMaximumReloadAmount" type="number"/>
-<Field __index="113" __sourcePath="{}/object/cpDivision/divisionProducts/productTaxIncluded" containerType="SINGLE" label="productTaxIncluded" name="productTaxIncluded" type="boolean"/>
-<Field __index="114" __sourcePath="{}/object/cpDivision/divisionProducts/productIsCheckMinMax" containerType="SINGLE" label="productIsCheckMinMax" name="productIsCheckMinMax" type="boolean"/>
-<Field __index="115" __sourcePath="{}/object/cpDivision/divisionProducts/productIsTaxable" containerType="SINGLE" label="productIsTaxable" name="productIsTaxable" type="boolean"/>
-<Field __index="116" __sourcePath="{}/object/cpDivision/divisionProducts/productDefaultIID" containerType="SINGLE" label="productDefaultIID" name="productDefaultIID" type="boolean"/>
-<Field __index="117" __sourcePath="{}/object/cpDivision/divisionProducts/substitutionBrandDenomDescription" containerType="SINGLE" label="substitutionBrandDenomDescription" name="substitutionBrandDenomDescription" type="string"/>
-<Field __index="118" __sourcePath="{}/object/cpDivision/divisionProducts/BrandRecId" containerType="SINGLE" label="BrandRecId" name="BrandRecId" type="string"/>
-<Field __index="119" __sourcePath="{}/object/cpDivision/divisionProducts/SubGroupId" containerType="SINGLE" label="SubGroupId" name="SubGroupId" type="string"/>
-<Field __index="120" __sourcePath="{}/object/cpDivision/divisionProducts/substitutionGroupGUID" containerType="SINGLE" label="substitutionGroupGUID" name="substitutionGroupGUID" type="string"/>
-<Field __index="121" __sourcePath="{}/object/cpDivision/divisionProducts/productItemBuyerGroupId" containerType="SINGLE" label="productItemBuyerGroupId" name="productItemBuyerGroupId" type="string"/>
-<Field __index="122" __sourcePath="{}/object/cpDivision/divisionProducts/productCode" containerType="SINGLE" label="productCode" name="productCode" type="string"/>
-<Field __index="123" __sourcePath="{}/object/cpDivision/divisionProducts/substitutionCardDisplayDesc" containerType="SINGLE" label="substitutionCardDisplayDesc" name="substitutionCardDisplayDesc" type="string"/>
-<Field __index="124" __sourcePath="{}/object/cpDivision/divisionProducts/substitutionPortalDisplayName" containerType="SINGLE" label="substitutionPortalDisplayName" name="substitutionPortalDisplayName" type="string"/>
-<Field __index="125" __sourcePath="{}/object/cpDivision/divisionProducts/substitutionShipperUPC" containerType="SINGLE" label="substitutionShipperUPC" name="substitutionShipperUPC" type="string"/>
-<Field __index="126" __sourcePath="{}/object/cpDivision/divisionProducts/customTemplatePathURL" containerType="SINGLE" label="customTemplatePathURL" name="customTemplatePathURL" type="string"/>
-<Field __index="127" __sourcePath="{}/object/cpDivision/divisionProducts/productActivationInstructions" containerType="SINGLE" label="productActivationInstructions" name="productActivationInstructions" type="string"/>
-<Field __index="128" __sourcePath="{}/object/cpDivision/divisionProducts/productExpLength" containerType="SINGLE" label="productExpLength" name="productExpLength" type="number"/>
-<Field __index="129" __sourcePath="{}/object/cpDivision/divisionProducts/productExpDate" containerType="SINGLE" label="productExpDate" name="productExpDate" type="string"/>
-<Field __index="130" __sourcePath="{}/object/cpDivision/divisionProducts/productAccountTopupBIN" containerType="SINGLE" label="productAccountTopupBIN" name="productAccountTopupBIN" type="string"/>
-<Field __index="131" __sourcePath="{}/object/cpDivision/divisionProducts/productAccountInquiryBIN" containerType="SINGLE" label="productAccountInquiryBIN" name="productAccountInquiryBIN" type="string"/>
-<Field __index="132" __sourcePath="{}/object/cpDivision/divisionProducts/productBINForDARTransaction" containerType="SINGLE" label="productBINForDARTransaction" name="productBINForDARTransaction" type="string"/>
-<Field __index="133" __sourcePath="{}/object/cpDivision/divisionProducts/productBackCardTemplateId" containerType="SINGLE" label="productBackCardTemplateId" name="productBackCardTemplateId" type="number"/>
-<Field __index="134" __sourcePath="{}/object/cpDivision/divisionProducts/productTermsAndConditions" containerType="SINGLE" label="productTermsAndConditions" name="productTermsAndConditions" type="string"/>
-<Field __index="135" __sourcePath="{}/object/cpDivision/divisionProducts/processorCode" containerType="SINGLE" label="processorCode" name="processorCode" type="string"/>
-<Field __index="136" __sourcePath="{}/object/cpDivision/divisionProducts/productMulticardindicator" containerType="SINGLE" label="productMulticardindicator" name="productMulticardindicator" type="string"/>
-<Field __index="137" __sourcePath="{}/object/cpDivision/divisionProducts/productSubstitutionGroup" containerType="SINGLE" label="productSubstitutionGroup" name="productSubstitutionGroup" type="string"/>
-<Field __index="138" __sourcePath="{}/object/cpDivision/divisionProducts/productBHNIsEANUPC" containerType="SINGLE" label="productBHNIsEANUPC" name="productBHNIsEANUPC" type="number"/>
-<Field __index="139" __sourcePath="{}/object/cpDivision/divisionProducts/productBHNCheckDigit" containerType="SINGLE" label="productBHNCheckDigit" name="productBHNCheckDigit" type="number"/>
-<Field __index="140" __sourcePath="{}/object/cpDivision/divisionProducts/productChannelDimension" containerType="SINGLE" label="productChannelDimension" name="productChannelDimension" type="string"/>
-<Field __index="141" __sourcePath="{}/object/cpDivision/divisionProducts/productItemName" containerType="SINGLE" label="productItemName" name="productItemName" type="string"/>
-<Field __index="142" __sourcePath="{}/object/cpDivision/divisionProducts/substitutionPOG1Category" containerType="SINGLE" label="substitutionPOG1Category" name="substitutionPOG1Category" type="string"/>
-<Field __index="143" __sourcePath="{}/object/cpDivision/divisionProducts/substitutionPOG2Category" containerType="SINGLE" label="substitutionPOG2Category" name="substitutionPOG2Category" type="string"/>
-<Field __index="144" __sourcePath="{}/object/cpDivision/divisionProducts/substitutionPOG3Category" containerType="SINGLE" label="substitutionPOG3Category" name="substitutionPOG3Category" type="string"/>
+<Field __index="76" __sourcePath="{}/object/cpDivision/divisionProducts/iid/IID" containerType="SINGLE" label="IID" name="IID" type="string"/>
+<Field __index="77" __sourcePath="{}/object/cpDivision/divisionProducts/iid/itemId" containerType="SINGLE" label="itemId" name="itemId" type="string"/>
+<Field __index="78" __sourcePath="{}/object/cpDivision/divisionProducts/iid/bhnGUID" containerType="SINGLE" label="bhnGUID" name="bhnGUID" type="string"/>
+<Field __index="79" __sourcePath="{}/object/cpDivision/divisionProducts/iid/RecId" containerType="SINGLE" label="RecId" name="RecId" type="string"/>
+<Field __index="80" __sourcePath="{}/object/cpDivision/divisionProducts/iid/iidDescription" containerType="SINGLE" label="iidDescription" name="iidDescription" type="string"/>
+<Field __index="81" __sourcePath="{}/object/cpDivision/divisionProducts/iid/iidLanguage" containerType="SINGLE" label="iidLanguage" name="iidLanguage" type="string"/>
+<Field __index="82" __sourcePath="{}/object/cpDivision/divisionProducts/iid/iidNewIIDReasonCode" containerType="SINGLE" label="iidNewIIDReasonCode" name="iidNewIIDReasonCode" type="string"/>
+<Field __index="83" __sourcePath="{}/object/cpDivision/divisionProducts/iid/iidUseStdUnitConvert" containerType="SINGLE" label="iidUseStdUnitConvert" name="iidUseStdUnitConvert" type="string"/>
+<Field __index="84" __sourcePath="{}/object/cpDivision/divisionProducts/iid/divisionCardImageURL" containerType="SINGLE" label="divisionCardImageURL" name="divisionCardImageURL" type="string"/>
+<Field __index="85" __sourcePath="{}/object/cpDivision/divisionProducts/iid/divisionPrintReadyFrontImageURL" containerType="SINGLE" label="divisionPrintReadyFrontImageURL" name="divisionPrintReadyFrontImageURL" type="string"/>
+<Field __index="86" __sourcePath="{}/object/cpDivision/divisionProducts/iid/divisionPrintReadyTandCURL" containerType="SINGLE" label="divisionPrintReadyTandCURL" name="divisionPrintReadyTandCURL" type="string"/>
+<Field __index="87" __sourcePath="{}/object/cpDivision/divisionProducts/isProductDenominationVariable" containerType="SINGLE" label="isProductDenominationVariable" name="isProductDenominationVariable" type="boolean"/>
+<Field __index="88" __sourcePath="{}/object/cpDivision/divisionProducts/productMinimumFaceValue" containerType="SINGLE" label="productMinimumFaceValue" name="productMinimumFaceValue" type="number"/>
+<Field __index="89" __sourcePath="{}/object/cpDivision/divisionProducts/productMaximumFaceValue" containerType="SINGLE" label="productMaximumFaceValue" name="productMaximumFaceValue" type="number"/>
+<Field __index="90" __sourcePath="{}/object/cpDivision/divisionProducts/productClassification" containerType="SINGLE" label="productClassification" name="productClassification" type="string"/>
+<Field __index="91" __sourcePath="{}/object/cpDivision/divisionProducts/productGroup" containerType="SINGLE" label="productGroup" name="productGroup" type="string"/>
+<Field __index="92" __sourcePath="{}/object/cpDivision/divisionProducts/productItemGroupId" containerType="SINGLE" label="productItemGroupId" name="productItemGroupId" type="string"/>
+<Field __index="93" __sourcePath="{}/object/cpDivision/divisionProducts/productOwnershipType" containerType="SINGLE" label="productOwnershipType" name="productOwnershipType" type="string"/>
+<Field __index="94" __sourcePath="{}/object/cpDivision/divisionProducts/productDimensionGroup" containerType="SINGLE" label="productDimensionGroup" name="productDimensionGroup" type="string"/>
+<Field __index="95" __sourcePath="{}/object/cpDivision/divisionProducts/productModelGroupId" containerType="SINGLE" label="productModelGroupId" name="productModelGroupId" type="string"/>
+<Field __index="96" __sourcePath="{}/object/cpDivision/divisionProducts/substitutionPOGDimension" containerType="SINGLE" label="substitutionPOGDimension" name="substitutionPOGDimension" type="string"/>
+<Field __index="97" __sourcePath="{}/object/cpDivision/divisionProducts/productBHNNotes" containerType="SINGLE" label="productBHNNotes" name="productBHNNotes" type="string"/>
+<Field __index="98" __sourcePath="{}/object/cpDivision/divisionProducts/productCurrency" containerType="SINGLE" label="productCurrency" name="productCurrency" type="string"/>
+<Field __index="99" __sourcePath="{}/object/cpDivision/divisionProducts/productDimensionCode" containerType="SINGLE" label="productDimensionCode" name="productDimensionCode" type="string"/>
+<Field __index="100" __sourcePath="{}/object/cpDivision/divisionProducts/productDenomination" containerType="SINGLE" label="productDenomination" name="productDenomination" type="number"/>
+<Field __index="101" __sourcePath="{}/object/cpDivision/divisionProducts/productCheckMinMax" containerType="SINGLE" label="productCheckMinMax" name="productCheckMinMax" type="boolean"/>
+<Field __index="102" __sourcePath="{}/object/cpDivision/divisionProducts/productTypeID" containerType="SINGLE" label="productTypeID" name="productTypeID" type="string"/>
+<Field __index="103" __sourcePath="{}/object/cpDivision/divisionProducts/productType" containerType="SINGLE" label="productType" name="productType" type="string"/>
+<Field __index="104" __sourcePath="{}/object/cpDivision/divisionProducts/productInventorySource" containerType="SINGLE" label="productInventorySource" name="productInventorySource" type="string"/>
+<Field __index="105" __sourcePath="{}/object/cpDivision/divisionProducts/productIssuerCompanyCode" containerType="SINGLE" label="productIssuerCompanyCode" name="productIssuerCompanyCode" type="string"/>
+<Field __index="106" __sourcePath="{}/object/cpDivision/divisionProducts/productIsUsingStandardDesign" containerType="SINGLE" label="productIsUsingStandardDesign" name="productIsUsingStandardDesign" type="boolean"/>
+<Field __index="107" __sourcePath="{}/object/cpDivision/divisionProducts/productIsActivationRequired" containerType="SINGLE" label="productIsActivationRequired" name="productIsActivationRequired" type="boolean"/>
+<Field __index="108" __sourcePath="{}/object/cpDivision/divisionProducts/productIsReloadable" containerType="SINGLE" label="productIsReloadable" name="productIsReloadable" type="boolean"/>
+<Field __index="109" __sourcePath="{}/object/cpDivision/divisionProducts/productMinimumReloadAmount" containerType="SINGLE" label="productMinimumReloadAmount" name="productMinimumReloadAmount" type="number"/>
+<Field __index="110" __sourcePath="{}/object/cpDivision/divisionProducts/productMaximumReloadAmount" containerType="SINGLE" label="productMaximumReloadAmount" name="productMaximumReloadAmount" type="number"/>
+<Field __index="111" __sourcePath="{}/object/cpDivision/divisionProducts/productTaxIncluded" containerType="SINGLE" label="productTaxIncluded" name="productTaxIncluded" type="boolean"/>
+<Field __index="112" __sourcePath="{}/object/cpDivision/divisionProducts/productIsCheckMinMax" containerType="SINGLE" label="productIsCheckMinMax" name="productIsCheckMinMax" type="boolean"/>
+<Field __index="113" __sourcePath="{}/object/cpDivision/divisionProducts/productIsTaxable" containerType="SINGLE" label="productIsTaxable" name="productIsTaxable" type="boolean"/>
+<Field __index="114" __sourcePath="{}/object/cpDivision/divisionProducts/productDefaultIID" containerType="SINGLE" label="productDefaultIID" name="productDefaultIID" type="boolean"/>
+<Field __index="115" __sourcePath="{}/object/cpDivision/divisionProducts/substitutionBrandDenomDescription" containerType="SINGLE" label="substitutionBrandDenomDescription" name="substitutionBrandDenomDescription" type="string"/>
+<Field __index="116" __sourcePath="{}/object/cpDivision/divisionProducts/BrandRecId" containerType="SINGLE" label="BrandRecId" name="BrandRecId" type="string"/>
+<Field __index="117" __sourcePath="{}/object/cpDivision/divisionProducts/SubGroupId" containerType="SINGLE" label="SubGroupId" name="SubGroupId" type="string"/>
+<Field __index="118" __sourcePath="{}/object/cpDivision/divisionProducts/substitutionGroupGUID" containerType="SINGLE" label="substitutionGroupGUID" name="substitutionGroupGUID" type="string"/>
+<Field __index="119" __sourcePath="{}/object/cpDivision/divisionProducts/productItemBuyerGroupId" containerType="SINGLE" label="productItemBuyerGroupId" name="productItemBuyerGroupId" type="string"/>
+<Field __index="120" __sourcePath="{}/object/cpDivision/divisionProducts/productCode" containerType="SINGLE" label="productCode" name="productCode" type="string"/>
+<Field __index="121" __sourcePath="{}/object/cpDivision/divisionProducts/substitutionCardDisplayDesc" containerType="SINGLE" label="substitutionCardDisplayDesc" name="substitutionCardDisplayDesc" type="string"/>
+<Field __index="122" __sourcePath="{}/object/cpDivision/divisionProducts/substitutionPortalDisplayName" containerType="SINGLE" label="substitutionPortalDisplayName" name="substitutionPortalDisplayName" type="string"/>
+<Field __index="123" __sourcePath="{}/object/cpDivision/divisionProducts/substitutionShipperUPC" containerType="SINGLE" label="substitutionShipperUPC" name="substitutionShipperUPC" type="string"/>
+<Field __index="124" __sourcePath="{}/object/cpDivision/divisionProducts/customTemplatePathURL" containerType="SINGLE" label="customTemplatePathURL" name="customTemplatePathURL" type="string"/>
+<Field __index="125" __sourcePath="{}/object/cpDivision/divisionProducts/productActivationInstructions" containerType="SINGLE" label="productActivationInstructions" name="productActivationInstructions" type="string"/>
+<Field __index="126" __sourcePath="{}/object/cpDivision/divisionProducts/productExpLength" containerType="SINGLE" label="productExpLength" name="productExpLength" type="number"/>
+<Field __index="127" __sourcePath="{}/object/cpDivision/divisionProducts/productExpDate" containerType="SINGLE" label="productExpDate" name="productExpDate" type="string"/>
+<Field __index="128" __sourcePath="{}/object/cpDivision/divisionProducts/productAccountTopupBIN" containerType="SINGLE" label="productAccountTopupBIN" name="productAccountTopupBIN" type="string"/>
+<Field __index="129" __sourcePath="{}/object/cpDivision/divisionProducts/productAccountInquiryBIN" containerType="SINGLE" label="productAccountInquiryBIN" name="productAccountInquiryBIN" type="string"/>
+<Field __index="130" __sourcePath="{}/object/cpDivision/divisionProducts/productBINForDARTransaction" containerType="SINGLE" label="productBINForDARTransaction" name="productBINForDARTransaction" type="string"/>
+<Field __index="131" __sourcePath="{}/object/cpDivision/divisionProducts/productBackCardTemplateId" containerType="SINGLE" label="productBackCardTemplateId" name="productBackCardTemplateId" type="number"/>
+<Field __index="132" __sourcePath="{}/object/cpDivision/divisionProducts/productTermsAndConditions" containerType="SINGLE" label="productTermsAndConditions" name="productTermsAndConditions" type="string"/>
+<Field __index="133" __sourcePath="{}/object/cpDivision/divisionProducts/processorCode" containerType="SINGLE" label="processorCode" name="processorCode" type="string"/>
+<Field __index="134" __sourcePath="{}/object/cpDivision/divisionProducts/productMulticardindicator" containerType="SINGLE" label="productMulticardindicator" name="productMulticardindicator" type="string"/>
+<Field __index="135" __sourcePath="{}/object/cpDivision/divisionProducts/productSubstitutionGroup" containerType="SINGLE" label="productSubstitutionGroup" name="productSubstitutionGroup" type="string"/>
+<Field __index="136" __sourcePath="{}/object/cpDivision/divisionProducts/productBHNIsEANUPC" containerType="SINGLE" label="productBHNIsEANUPC" name="productBHNIsEANUPC" type="number"/>
+<Field __index="137" __sourcePath="{}/object/cpDivision/divisionProducts/productBHNCheckDigit" containerType="SINGLE" label="productBHNCheckDigit" name="productBHNCheckDigit" type="number"/>
+<Field __index="138" __sourcePath="{}/object/cpDivision/divisionProducts/productChannelDimension" containerType="SINGLE" label="productChannelDimension" name="productChannelDimension" type="string"/>
+<Field __index="139" __sourcePath="{}/object/cpDivision/divisionProducts/productItemName" containerType="SINGLE" label="productItemName" name="productItemName" type="string"/>
+<Field __index="140" __sourcePath="{}/object/cpDivision/divisionProducts/substitutionPOG1Category" containerType="SINGLE" label="substitutionPOG1Category" name="substitutionPOG1Category" type="string"/>
+<Field __index="141" __sourcePath="{}/object/cpDivision/divisionProducts/substitutionPOG2Category" containerType="SINGLE" label="substitutionPOG2Category" name="substitutionPOG2Category" type="string"/>
+<Field __index="142" __sourcePath="{}/object/cpDivision/divisionProducts/substitutionPOG3Category" containerType="SINGLE" label="substitutionPOG3Category" name="substitutionPOG3Category" type="string"/>
 </Record>
 </Metadata>
 <Metadata __index="0" __referenceCounter="3" __sourcePath="{}/object" _dataStructure="OBJECT" _id="__id" _type="Input" id="62ddf0bf-09b2-4348-9449-fe3657d6dcbb">
@@ -201,97 +199,97 @@
 <Field __index="47" __sourcePath="{}/object/cpDivision/divisionRedemptionLocationType" containerType="SINGLE" label="divisionRedemptionLocationType" name="divisionRedemptionLocationType" type="string"/>
 <Field __index="48" __sourcePath="{}/object/cpDivision/divisionBrandName" containerType="SINGLE" label="divisionBrandName" name="divisionBrandName" type="string"/>
 <Field __index="49" __sourcePath="{}/object/cpDivision/divisionRedemptionMethods" containerType="list" label="divisionRedemptionMethods" name="divisionRedemptionMethods" type="string"/>
-<Field __index="145" __sourcePath="{}/object/cpDivision/divisionAccountNumberLabel" containerType="SINGLE" label="divisionAccountNumberLabel" name="divisionAccountNumberLabel" type="string"/>
-<Field __index="146" __sourcePath="{}/object/cpDivision/divisionIsReloadable" containerType="SINGLE" label="divisionIsReloadable" name="divisionIsReloadable" type="boolean"/>
-<Field __index="147" __sourcePath="{}/object/cpDivision/divisionMinimumReloadAmount" containerType="SINGLE" label="divisionMinimumReloadAmount" name="divisionMinimumReloadAmount" type="string"/>
-<Field __index="148" __sourcePath="{}/object/cpDivision/divisionMaximumReloadAmount" containerType="SINGLE" label="divisionMaximumReloadAmount" name="divisionMaximumReloadAmount" type="string"/>
-<Field __index="149" __sourcePath="{}/object/cpDivision/divisionPaymentNetworkType" containerType="SINGLE" label="divisionPaymentNetworkType" name="divisionPaymentNetworkType" type="string"/>
-<Field __index="150" __sourcePath="{}/object/cpDivision/divisionBins" containerType="SINGLE" label="divisionBins" name="divisionBins" type="string"/>
-<Field __index="151" __sourcePath="{}/object/cpDivision/divisionPinLabel" containerType="SINGLE" label="divisionPinLabel" name="divisionPinLabel" type="string"/>
-<Field __index="152" __sourcePath="{}/object/cpDivision/divisionLostStolenPolicyText" containerType="SINGLE" label="divisionLostStolenPolicyText" name="divisionLostStolenPolicyText" type="string"/>
-<Field __index="153" __sourcePath="{}/object/cpDivision/divisionLostStolenPolicyPhone" containerType="SINGLE" label="divisionLostStolenPolicyPhone" name="divisionLostStolenPolicyPhone" type="string"/>
-<Field __index="154" __sourcePath="{}/object/cpDivision/divisionAccessCode" containerType="SINGLE" label="divisionAccessCode" name="divisionAccessCode" type="string"/>
-<Field __index="155" __sourcePath="{}/object/cpDivision/divisionManualEntryFormat" containerType="SINGLE" label="divisionManualEntryFormat" name="divisionManualEntryFormat" type="string"/>
-<Field __index="156" __sourcePath="{}/object/cpDivision/divisionTrack1Format" containerType="SINGLE" label="divisionTrack1Format" name="divisionTrack1Format" type="string"/>
-<Field __index="157" __sourcePath="{}/object/cpDivision/divisionTrack2Format" containerType="SINGLE" label="divisionTrack2Format" name="divisionTrack2Format" type="string"/>
-<Field __index="158" __sourcePath="{}/object/cpDivision/divisionTrack3Format" containerType="SINGLE" label="divisionTrack3Format" name="divisionTrack3Format" type="string"/>
-<Field __index="159" __sourcePath="{}/object/cpDivision/divisionCardPinType" containerType="SINGLE" label="divisionCardPinType" name="divisionCardPinType" type="string"/>
-<Field __index="160" __sourcePath="{}/object/cpDivision/divisionCardPinLocation" containerType="SINGLE" label="divisionCardPinLocation" name="divisionCardPinLocation" type="string"/>
-<Field __index="161" __sourcePath="{}/object/cpDivision/divisionisLostStolenPolicyAutomated" containerType="SINGLE" label="divisionisLostStolenPolicyAutomated" name="divisionisLostStolenPolicyAutomated" type="boolean"/>
-<Field __index="162" __sourcePath="{}/object/cpDivision/divisionAreBalancesTransferable" containerType="SINGLE" label="divisionAreBalancesTransferable" name="divisionAreBalancesTransferable" type="boolean"/>
-<Field __index="163" __sourcePath="{}/object/cpDivision/divisionHasUniversalBISupport" containerType="SINGLE" label="divisionHasUniversalBISupport" name="divisionHasUniversalBISupport" type="boolean"/>
-<Field __index="164" __sourcePath="{}/object/cpDivision/divisionBalanceMerges" containerType="SINGLE" label="divisionBalanceMerges" name="divisionBalanceMerges" type="boolean"/>
-<Field __index="165" __sourcePath="{}/object/cpDivision/divisionCanCardExpire" containerType="SINGLE" label="divisionCanCardExpire" name="divisionCanCardExpire" type="boolean"/>
-<Field __index="166" __sourcePath="{}/object/cpDivision/divisionHasPhoneSupportAtPOS" containerType="SINGLE" label="divisionHasPhoneSupportAtPOS" name="divisionHasPhoneSupportAtPOS" type="boolean"/>
-<Field __index="167" __sourcePath="{}/object/cpDivision/divisionSupportsPartialBalanceInquiry" containerType="SINGLE" label="divisionSupportsPartialBalanceInquiry" name="divisionSupportsPartialBalanceInquiry" type="boolean"/>
-<Field __index="168" __sourcePath="{}/object/cpDivision/divisionSupportsPhysicalCards" containerType="SINGLE" label="divisionSupportsPhysicalCards" name="divisionSupportsPhysicalCards" type="boolean"/>
-<Field __index="169" __sourcePath="{}/object/cpDivision/divisionSupportsRedemption" containerType="SINGLE" label="divisionSupportsRedemption" name="divisionSupportsRedemption" type="boolean"/>
-<Field __index="170" __sourcePath="{}/object/cpDivision/supportsRegift" containerType="SINGLE" label="supportsRegift" name="supportsRegift" type="boolean"/>
-<Field __index="171" __sourcePath="{}/object/cpDivision/divisionIsCardReplaceable" containerType="SINGLE" label="divisionIsCardReplaceable" name="divisionIsCardReplaceable" type="boolean"/>
-<Field __index="172" __sourcePath="{}/object/cpDivision/supportsTransactionHistory" containerType="SINGLE" label="supportsTransactionHistory" name="supportsTransactionHistory" type="boolean"/>
-<Field __index="173" __sourcePath="{}/object/cpDivision/divisionIsCardTransferable" containerType="SINGLE" label="divisionIsCardTransferable" name="divisionIsCardTransferable" type="boolean"/>
-<Field __index="174" __sourcePath="{}/object/cpDivision/divisionSupportsBalanceInquiry" containerType="SINGLE" label="divisionSupportsBalanceInquiry" name="divisionSupportsBalanceInquiry" type="boolean"/>
-<Field __index="175" __sourcePath="{}/object/cpDivision/divisionSupportsVirtualCard" containerType="SINGLE" label="divisionSupportsVirtualCard" name="divisionSupportsVirtualCard" type="boolean"/>
-<Field __index="176" __sourcePath="{}/object/cpDivision/divisionSupportsVoidActivation" containerType="SINGLE" label="divisionSupportsVoidActivation" name="divisionSupportsVoidActivation" type="boolean"/>
-<Field __index="177" __sourcePath="{}/object/cpDivision/divisionSupportsVoidRedemption" containerType="SINGLE" label="divisionSupportsVoidRedemption" name="divisionSupportsVoidRedemption" type="boolean"/>
-<Field __index="178" __sourcePath="{}/object/cpDivision/divisionSupportsVoidReload" containerType="SINGLE" label="divisionSupportsVoidReload" name="divisionSupportsVoidReload" type="boolean"/>
-<Field __index="179" __sourcePath="{}/object/cpDivision/divisionSupportsAddQRCode" containerType="SINGLE" label="divisionSupportsAddQRCode" name="divisionSupportsAddQRCode" type="boolean"/>
-<Field __index="180" __sourcePath="{}/object/cpDivision/divisionIsBISystemBLAST" containerType="SINGLE" label="divisionIsBISystemBLAST" name="divisionIsBISystemBLAST" type="boolean"/>
-<Field __index="181" __sourcePath="{}/object/cpDivision/divisionIsBISystemCAPTCHA" containerType="SINGLE" label="divisionIsBISystemCAPTCHA" name="divisionIsBISystemCAPTCHA" type="boolean"/>
-<Field __index="182" __sourcePath="{}/object/cpDivision/divisionIsBISystemCardpool" containerType="SINGLE" label="divisionIsBISystemCardpool" name="divisionIsBISystemCardpool" type="boolean"/>
-<Field __index="183" __sourcePath="{}/object/cpDivision/divisionIsBISystemScreenScraped" containerType="SINGLE" label="divisionIsBISystemScreenScraped" name="divisionIsBISystemScreenScraped" type="boolean"/>
-<Field __index="184" __sourcePath="{}/object/cpDivision/divisionIsBISystemUserEntered" containerType="SINGLE" label="divisionIsBISystemUserEntered" name="divisionIsBISystemUserEntered" type="boolean"/>
-<Field __index="185" __sourcePath="{}/object/cpDivision/divisionIsBarcodeFormat1D_x005fC128" containerType="SINGLE" label="divisionIsBarcodeFormat1D_C128" name="divisionIsBarcodeFormat1D_C128" type="boolean"/>
-<Field __index="186" __sourcePath="{}/object/cpDivision/divisionIsBarcodeFormat2D_x005fPDF417" containerType="SINGLE" label="divisionIsBarcodeFormat2D_PDF417" name="divisionIsBarcodeFormat2D_PDF417" type="boolean"/>
-<Field __index="187" __sourcePath="{}/object/cpDivision/divisionIsBarcodeFormat2D_x005fQRCODE" containerType="SINGLE" label="divisionIsBarcodeFormat2D_QRCODE" name="divisionIsBarcodeFormat2D_QRCODE" type="boolean"/>
-<Field __index="188" __sourcePath="{}/object/cpDivision/divisionBalanceLockTimeFrame" containerType="SINGLE" label="divisionBalanceLockTimeFrame" name="divisionBalanceLockTimeFrame" type="number"/>
-<Field __index="189" __sourcePath="{}/object/cpDivision/division1D_x005fC128Expression" containerType="SINGLE" label="division1D_C128Expression" name="division1D_C128Expression" type="string"/>
-<Field __index="190" __sourcePath="{}/object/cpDivision/division2D_x005fPDF417Expression" containerType="SINGLE" label="division2D_PDF417Expression" name="division2D_PDF417Expression" type="string"/>
-<Field __index="191" __sourcePath="{}/object/cpDivision/division2D_x005fQRCODEExpression" containerType="SINGLE" label="division2D_QRCODEExpression" name="division2D_QRCODEExpression" type="string"/>
-<Field __index="192" __sourcePath="{}/object/cpDivision/divisionCardImageBack1URL" containerType="SINGLE" label="divisionCardImageBack1URL" name="divisionCardImageBack1URL" type="string"/>
-<Field __index="193" __sourcePath="{}/object/cpDivision/divisionCardImageBack2URL" containerType="SINGLE" label="divisionCardImageBack2URL" name="divisionCardImageBack2URL" type="string"/>
-<Field __index="194" __sourcePath="{}/object/cpDivision/divisionCardImageBack3URL" containerType="SINGLE" label="divisionCardImageBack3URL" name="divisionCardImageBack3URL" type="string"/>
-<Field __index="195" __sourcePath="{}/object/cpDivision/divisionCardImageBack4URL" containerType="SINGLE" label="divisionCardImageBack4URL" name="divisionCardImageBack4URL" type="string"/>
-<Field __index="196" __sourcePath="{}/object/cpDivision/divisionCardImageBack5URL" containerType="SINGLE" label="divisionCardImageBack5URL" name="divisionCardImageBack5URL" type="string"/>
-<Field __index="197" __sourcePath="{}/object/cpDivision/divisionCardImageFront1URL" containerType="SINGLE" label="divisionCardImageFront1URL" name="divisionCardImageFront1URL" type="string"/>
-<Field __index="198" __sourcePath="{}/object/cpDivision/divisionCardImageFront2URL" containerType="SINGLE" label="divisionCardImageFront2URL" name="divisionCardImageFront2URL" type="string"/>
-<Field __index="199" __sourcePath="{}/object/cpDivision/divisionCardImageFront3URL" containerType="SINGLE" label="divisionCardImageFront3URL" name="divisionCardImageFront3URL" type="string"/>
-<Field __index="200" __sourcePath="{}/object/cpDivision/divisionCardImageFront4URL" containerType="SINGLE" label="divisionCardImageFront4URL" name="divisionCardImageFront4URL" type="string"/>
-<Field __index="201" __sourcePath="{}/object/cpDivision/divisionCardImageFront5URL" containerType="SINGLE" label="divisionCardImageFront5URL" name="divisionCardImageFront5URL" type="string"/>
-<Field __index="202" __sourcePath="{}/object/cpDivision/divisionIsBarcodeScanSupported" containerType="SINGLE" label="divisionIsBarcodeScanSupported" name="divisionIsBarcodeScanSupported" type="boolean"/>
-<Field __index="203" __sourcePath="{}/object/cpDivision/divisionIsContractComplete" containerType="SINGLE" label="divisionIsContractComplete" name="divisionIsContractComplete" type="boolean"/>
-<Field __index="204" __sourcePath="{}/object/cpDivision/divisionOnlineStoreURL" containerType="SINGLE" label="divisionOnlineStoreURL" name="divisionOnlineStoreURL" type="string"/>
-<Field __index="205" __sourcePath="{}/object/cpDivision/divisionLocalPartner" containerType="SINGLE" label="divisionLocalPartner" name="divisionLocalPartner" type="string"/>
-<Field __index="206" __sourcePath="{}/object/cpDivision/divisionBhnGUID" containerType="SINGLE" label="divisionBhnGUID" name="divisionBhnGUID" type="string"/>
-<Field __index="207" __sourcePath="{}/object/cpDivision/divisionRecId" containerType="SINGLE" label="divisionRecId" name="divisionRecId" type="string"/>
-<Field __index="208" __sourcePath="{}/object/vendorInformation/vendorDBAName" containerType="SINGLE" label="vendorDBAName" name="vendorDBAName" type="string"/>
-<Field __index="209" __sourcePath="{}/object/vendorInformation/vendorGroup" containerType="SINGLE" label="vendorGroup" name="vendorGroup" type="string"/>
-<Field __index="210" __sourcePath="{}/object/vendorInformation/vendorCurrency" containerType="SINGLE" label="vendorCurrency" name="vendorCurrency" type="string"/>
-<Field __index="211" __sourcePath="{}/object/vendorInformation/vendorBlocked" containerType="SINGLE" label="vendorBlocked" name="vendorBlocked" type="number"/>
-<Field __index="212" __sourcePath="{}/object/vendorInformation/vendorNameFor1099" containerType="SINGLE" label="vendorNameFor1099" name="vendorNameFor1099" type="string"/>
-<Field __index="213" __sourcePath="{}/object/vendorInformation/wasVendorW9Received" containerType="SINGLE" label="wasVendorW9Received" name="wasVendorW9Received" type="boolean"/>
-<Field __index="214" __sourcePath="{}/object/vendorInformation/vendorTax1099Reports" containerType="SINGLE" label="vendorTax1099Reports" name="vendorTax1099Reports" type="string"/>
-<Field __index="215" __sourcePath="{}/object/vendorInformation/vendorPaymentTermsId" containerType="SINGLE" label="vendorPaymentTermsId" name="vendorPaymentTermsId" type="string"/>
-<Field __index="216" __sourcePath="{}/object/vendorInformation/vendorPaymentMode" containerType="SINGLE" label="vendorPaymentMode" name="vendorPaymentMode" type="string"/>
-<Field __index="217" __sourcePath="{}/object/vendorInformation/vendorAddress" containerType="SINGLE" label="vendorAddress" name="vendorAddress" type="string"/>
-<Field __index="218" __sourcePath="{}/object/vendorInformation/vendorCity" containerType="SINGLE" label="vendorCity" name="vendorCity" type="string"/>
-<Field __index="219" __sourcePath="{}/object/vendorInformation/vendorState" containerType="SINGLE" label="vendorState" name="vendorState" type="string"/>
-<Field __index="220" __sourcePath="{}/object/vendorInformation/vendorZipCode" containerType="SINGLE" label="vendorZipCode" name="vendorZipCode" type="string"/>
-<Field __index="221" __sourcePath="{}/object/vendorInformation/vendorCountryRegionId" containerType="SINGLE" label="vendorCountryRegionId" name="vendorCountryRegionId" type="string"/>
-<Field __index="222" __sourcePath="{}/object/vendorInformation/vendorReceivedConsentForElectronicSignature" containerType="SINGLE" label="vendorReceivedConsentForElectronicSignature" name="vendorReceivedConsentForElectronicSignature" type="boolean"/>
-<Field __index="223" __sourcePath="{}/object/vendorInformation/vendorTaxIdNumber" containerType="SINGLE" label="vendorTaxIdNumber" name="vendorTaxIdNumber" type="string"/>
-<Field __index="224" __sourcePath="{}/object/vendorInformation/vendorPhone" containerType="SINGLE" label="vendorPhone" name="vendorPhone" type="string"/>
-<Field __index="225" __sourcePath="{}/object/vendorInformation/vendorPaymMode" containerType="SINGLE" label="vendorPaymMode" name="vendorPaymMode" type="string"/>
-<Field __index="226" __sourcePath="{}/object/vendorInformation/vendorCounty" containerType="SINGLE" label="vendorCounty" name="vendorCounty" type="string"/>
-<Field __index="227" __sourcePath="{}/object/vendorInformation/vendorEmail" containerType="SINGLE" label="vendorEmail" name="vendorEmail" type="string"/>
-<Field __index="228" __sourcePath="{}/object/vendorInformation/vendorLanguageId" containerType="SINGLE" label="vendorLanguageId" name="vendorLanguageId" type="string"/>
-<Field __index="229" __sourcePath="{}/object/vendorInformation/vendorStreet" containerType="SINGLE" label="vendorStreet" name="vendorStreet" type="string"/>
-<Field __index="230" __sourcePath="{}/object/vendorInformation/vendorForeignEntityIndicator" containerType="SINGLE" label="vendorForeignEntityIndicator" name="vendorForeignEntityIndicator" type="number"/>
-<Field __index="231" __sourcePath="{}/object/vendorInformation/vendorTax1099NameChoice" containerType="SINGLE" label="vendorTax1099NameChoice" name="vendorTax1099NameChoice" type="number"/>
-<Field __index="232" __sourcePath="{}/object/vendorInformation/vendorW9" containerType="SINGLE" label="vendorW9" name="vendorW9" type="number"/>
-<Field __index="233" __sourcePath="{}/object/vendorInformation/vendorAccountNum" containerType="SINGLE" label="vendorAccountNum" name="vendorAccountNum" type="string"/>
-<Field __index="234" __sourcePath="{}/object/vendorInformation/vendorRecId" containerType="SINGLE" label="vendorRecId" name="vendorRecId" type="string"/>
-<Field __index="235" __sourcePath="{}/object/vendorInformation/vendorNameAlias" containerType="SINGLE" label="vendorNameAlias" name="vendorNameAlias" type="string"/>
+<Field __index="143" __sourcePath="{}/object/cpDivision/divisionAccountNumberLabel" containerType="SINGLE" label="divisionAccountNumberLabel" name="divisionAccountNumberLabel" type="string"/>
+<Field __index="144" __sourcePath="{}/object/cpDivision/divisionIsReloadable" containerType="SINGLE" label="divisionIsReloadable" name="divisionIsReloadable" type="boolean"/>
+<Field __index="145" __sourcePath="{}/object/cpDivision/divisionMinimumReloadAmount" containerType="SINGLE" label="divisionMinimumReloadAmount" name="divisionMinimumReloadAmount" type="string"/>
+<Field __index="146" __sourcePath="{}/object/cpDivision/divisionMaximumReloadAmount" containerType="SINGLE" label="divisionMaximumReloadAmount" name="divisionMaximumReloadAmount" type="string"/>
+<Field __index="147" __sourcePath="{}/object/cpDivision/divisionPaymentNetworkType" containerType="SINGLE" label="divisionPaymentNetworkType" name="divisionPaymentNetworkType" type="string"/>
+<Field __index="148" __sourcePath="{}/object/cpDivision/divisionBins" containerType="SINGLE" label="divisionBins" name="divisionBins" type="string"/>
+<Field __index="149" __sourcePath="{}/object/cpDivision/divisionPinLabel" containerType="SINGLE" label="divisionPinLabel" name="divisionPinLabel" type="string"/>
+<Field __index="150" __sourcePath="{}/object/cpDivision/divisionLostStolenPolicyText" containerType="SINGLE" label="divisionLostStolenPolicyText" name="divisionLostStolenPolicyText" type="string"/>
+<Field __index="151" __sourcePath="{}/object/cpDivision/divisionLostStolenPolicyPhone" containerType="SINGLE" label="divisionLostStolenPolicyPhone" name="divisionLostStolenPolicyPhone" type="string"/>
+<Field __index="152" __sourcePath="{}/object/cpDivision/divisionAccessCode" containerType="SINGLE" label="divisionAccessCode" name="divisionAccessCode" type="string"/>
+<Field __index="153" __sourcePath="{}/object/cpDivision/divisionManualEntryFormat" containerType="SINGLE" label="divisionManualEntryFormat" name="divisionManualEntryFormat" type="string"/>
+<Field __index="154" __sourcePath="{}/object/cpDivision/divisionTrack1Format" containerType="SINGLE" label="divisionTrack1Format" name="divisionTrack1Format" type="string"/>
+<Field __index="155" __sourcePath="{}/object/cpDivision/divisionTrack2Format" containerType="SINGLE" label="divisionTrack2Format" name="divisionTrack2Format" type="string"/>
+<Field __index="156" __sourcePath="{}/object/cpDivision/divisionTrack3Format" containerType="SINGLE" label="divisionTrack3Format" name="divisionTrack3Format" type="string"/>
+<Field __index="157" __sourcePath="{}/object/cpDivision/divisionCardPinType" containerType="SINGLE" label="divisionCardPinType" name="divisionCardPinType" type="string"/>
+<Field __index="158" __sourcePath="{}/object/cpDivision/divisionCardPinLocation" containerType="SINGLE" label="divisionCardPinLocation" name="divisionCardPinLocation" type="string"/>
+<Field __index="159" __sourcePath="{}/object/cpDivision/divisionisLostStolenPolicyAutomated" containerType="SINGLE" label="divisionisLostStolenPolicyAutomated" name="divisionisLostStolenPolicyAutomated" type="boolean"/>
+<Field __index="160" __sourcePath="{}/object/cpDivision/divisionAreBalancesTransferable" containerType="SINGLE" label="divisionAreBalancesTransferable" name="divisionAreBalancesTransferable" type="boolean"/>
+<Field __index="161" __sourcePath="{}/object/cpDivision/divisionHasUniversalBISupport" containerType="SINGLE" label="divisionHasUniversalBISupport" name="divisionHasUniversalBISupport" type="boolean"/>
+<Field __index="162" __sourcePath="{}/object/cpDivision/divisionBalanceMerges" containerType="SINGLE" label="divisionBalanceMerges" name="divisionBalanceMerges" type="boolean"/>
+<Field __index="163" __sourcePath="{}/object/cpDivision/divisionCanCardExpire" containerType="SINGLE" label="divisionCanCardExpire" name="divisionCanCardExpire" type="boolean"/>
+<Field __index="164" __sourcePath="{}/object/cpDivision/divisionHasPhoneSupportAtPOS" containerType="SINGLE" label="divisionHasPhoneSupportAtPOS" name="divisionHasPhoneSupportAtPOS" type="boolean"/>
+<Field __index="165" __sourcePath="{}/object/cpDivision/divisionSupportsPartialBalanceInquiry" containerType="SINGLE" label="divisionSupportsPartialBalanceInquiry" name="divisionSupportsPartialBalanceInquiry" type="boolean"/>
+<Field __index="166" __sourcePath="{}/object/cpDivision/divisionSupportsPhysicalCards" containerType="SINGLE" label="divisionSupportsPhysicalCards" name="divisionSupportsPhysicalCards" type="boolean"/>
+<Field __index="167" __sourcePath="{}/object/cpDivision/divisionSupportsRedemption" containerType="SINGLE" label="divisionSupportsRedemption" name="divisionSupportsRedemption" type="boolean"/>
+<Field __index="168" __sourcePath="{}/object/cpDivision/supportsRegift" containerType="SINGLE" label="supportsRegift" name="supportsRegift" type="boolean"/>
+<Field __index="169" __sourcePath="{}/object/cpDivision/divisionIsCardReplaceable" containerType="SINGLE" label="divisionIsCardReplaceable" name="divisionIsCardReplaceable" type="boolean"/>
+<Field __index="170" __sourcePath="{}/object/cpDivision/supportsTransactionHistory" containerType="SINGLE" label="supportsTransactionHistory" name="supportsTransactionHistory" type="boolean"/>
+<Field __index="171" __sourcePath="{}/object/cpDivision/divisionIsCardTransferable" containerType="SINGLE" label="divisionIsCardTransferable" name="divisionIsCardTransferable" type="boolean"/>
+<Field __index="172" __sourcePath="{}/object/cpDivision/divisionSupportsBalanceInquiry" containerType="SINGLE" label="divisionSupportsBalanceInquiry" name="divisionSupportsBalanceInquiry" type="boolean"/>
+<Field __index="173" __sourcePath="{}/object/cpDivision/divisionSupportsVirtualCard" containerType="SINGLE" label="divisionSupportsVirtualCard" name="divisionSupportsVirtualCard" type="boolean"/>
+<Field __index="174" __sourcePath="{}/object/cpDivision/divisionSupportsVoidActivation" containerType="SINGLE" label="divisionSupportsVoidActivation" name="divisionSupportsVoidActivation" type="boolean"/>
+<Field __index="175" __sourcePath="{}/object/cpDivision/divisionSupportsVoidRedemption" containerType="SINGLE" label="divisionSupportsVoidRedemption" name="divisionSupportsVoidRedemption" type="boolean"/>
+<Field __index="176" __sourcePath="{}/object/cpDivision/divisionSupportsVoidReload" containerType="SINGLE" label="divisionSupportsVoidReload" name="divisionSupportsVoidReload" type="boolean"/>
+<Field __index="177" __sourcePath="{}/object/cpDivision/divisionSupportsAddQRCode" containerType="SINGLE" label="divisionSupportsAddQRCode" name="divisionSupportsAddQRCode" type="boolean"/>
+<Field __index="178" __sourcePath="{}/object/cpDivision/divisionIsBISystemBLAST" containerType="SINGLE" label="divisionIsBISystemBLAST" name="divisionIsBISystemBLAST" type="boolean"/>
+<Field __index="179" __sourcePath="{}/object/cpDivision/divisionIsBISystemCAPTCHA" containerType="SINGLE" label="divisionIsBISystemCAPTCHA" name="divisionIsBISystemCAPTCHA" type="boolean"/>
+<Field __index="180" __sourcePath="{}/object/cpDivision/divisionIsBISystemCardpool" containerType="SINGLE" label="divisionIsBISystemCardpool" name="divisionIsBISystemCardpool" type="boolean"/>
+<Field __index="181" __sourcePath="{}/object/cpDivision/divisionIsBISystemScreenScraped" containerType="SINGLE" label="divisionIsBISystemScreenScraped" name="divisionIsBISystemScreenScraped" type="boolean"/>
+<Field __index="182" __sourcePath="{}/object/cpDivision/divisionIsBISystemUserEntered" containerType="SINGLE" label="divisionIsBISystemUserEntered" name="divisionIsBISystemUserEntered" type="boolean"/>
+<Field __index="183" __sourcePath="{}/object/cpDivision/divisionIsBarcodeFormat1D_x005fC128" containerType="SINGLE" label="divisionIsBarcodeFormat1D_C128" name="divisionIsBarcodeFormat1D_C128" type="boolean"/>
+<Field __index="184" __sourcePath="{}/object/cpDivision/divisionIsBarcodeFormat2D_x005fPDF417" containerType="SINGLE" label="divisionIsBarcodeFormat2D_PDF417" name="divisionIsBarcodeFormat2D_PDF417" type="boolean"/>
+<Field __index="185" __sourcePath="{}/object/cpDivision/divisionIsBarcodeFormat2D_x005fQRCODE" containerType="SINGLE" label="divisionIsBarcodeFormat2D_QRCODE" name="divisionIsBarcodeFormat2D_QRCODE" type="boolean"/>
+<Field __index="186" __sourcePath="{}/object/cpDivision/divisionBalanceLockTimeFrame" containerType="SINGLE" label="divisionBalanceLockTimeFrame" name="divisionBalanceLockTimeFrame" type="number"/>
+<Field __index="187" __sourcePath="{}/object/cpDivision/division1D_x005fC128Expression" containerType="SINGLE" label="division1D_C128Expression" name="division1D_C128Expression" type="string"/>
+<Field __index="188" __sourcePath="{}/object/cpDivision/division2D_x005fPDF417Expression" containerType="SINGLE" label="division2D_PDF417Expression" name="division2D_PDF417Expression" type="string"/>
+<Field __index="189" __sourcePath="{}/object/cpDivision/division2D_x005fQRCODEExpression" containerType="SINGLE" label="division2D_QRCODEExpression" name="division2D_QRCODEExpression" type="string"/>
+<Field __index="190" __sourcePath="{}/object/cpDivision/divisionCardImageBack1URL" containerType="SINGLE" label="divisionCardImageBack1URL" name="divisionCardImageBack1URL" type="string"/>
+<Field __index="191" __sourcePath="{}/object/cpDivision/divisionCardImageBack2URL" containerType="SINGLE" label="divisionCardImageBack2URL" name="divisionCardImageBack2URL" type="string"/>
+<Field __index="192" __sourcePath="{}/object/cpDivision/divisionCardImageBack3URL" containerType="SINGLE" label="divisionCardImageBack3URL" name="divisionCardImageBack3URL" type="string"/>
+<Field __index="193" __sourcePath="{}/object/cpDivision/divisionCardImageBack4URL" containerType="SINGLE" label="divisionCardImageBack4URL" name="divisionCardImageBack4URL" type="string"/>
+<Field __index="194" __sourcePath="{}/object/cpDivision/divisionCardImageBack5URL" containerType="SINGLE" label="divisionCardImageBack5URL" name="divisionCardImageBack5URL" type="string"/>
+<Field __index="195" __sourcePath="{}/object/cpDivision/divisionCardImageFront1URL" containerType="SINGLE" label="divisionCardImageFront1URL" name="divisionCardImageFront1URL" type="string"/>
+<Field __index="196" __sourcePath="{}/object/cpDivision/divisionCardImageFront2URL" containerType="SINGLE" label="divisionCardImageFront2URL" name="divisionCardImageFront2URL" type="string"/>
+<Field __index="197" __sourcePath="{}/object/cpDivision/divisionCardImageFront3URL" containerType="SINGLE" label="divisionCardImageFront3URL" name="divisionCardImageFront3URL" type="string"/>
+<Field __index="198" __sourcePath="{}/object/cpDivision/divisionCardImageFront4URL" containerType="SINGLE" label="divisionCardImageFront4URL" name="divisionCardImageFront4URL" type="string"/>
+<Field __index="199" __sourcePath="{}/object/cpDivision/divisionCardImageFront5URL" containerType="SINGLE" label="divisionCardImageFront5URL" name="divisionCardImageFront5URL" type="string"/>
+<Field __index="200" __sourcePath="{}/object/cpDivision/divisionIsBarcodeScanSupported" containerType="SINGLE" label="divisionIsBarcodeScanSupported" name="divisionIsBarcodeScanSupported" type="boolean"/>
+<Field __index="201" __sourcePath="{}/object/cpDivision/divisionIsContractComplete" containerType="SINGLE" label="divisionIsContractComplete" name="divisionIsContractComplete" type="boolean"/>
+<Field __index="202" __sourcePath="{}/object/cpDivision/divisionOnlineStoreURL" containerType="SINGLE" label="divisionOnlineStoreURL" name="divisionOnlineStoreURL" type="string"/>
+<Field __index="203" __sourcePath="{}/object/cpDivision/divisionLocalPartner" containerType="SINGLE" label="divisionLocalPartner" name="divisionLocalPartner" type="string"/>
+<Field __index="204" __sourcePath="{}/object/cpDivision/divisionBhnGUID" containerType="SINGLE" label="divisionBhnGUID" name="divisionBhnGUID" type="string"/>
+<Field __index="205" __sourcePath="{}/object/cpDivision/divisionRecId" containerType="SINGLE" label="divisionRecId" name="divisionRecId" type="string"/>
+<Field __index="206" __sourcePath="{}/object/vendorInformation/vendorDBAName" containerType="SINGLE" label="vendorDBAName" name="vendorDBAName" type="string"/>
+<Field __index="207" __sourcePath="{}/object/vendorInformation/vendorGroup" containerType="SINGLE" label="vendorGroup" name="vendorGroup" type="string"/>
+<Field __index="208" __sourcePath="{}/object/vendorInformation/vendorCurrency" containerType="SINGLE" label="vendorCurrency" name="vendorCurrency" type="string"/>
+<Field __index="209" __sourcePath="{}/object/vendorInformation/vendorBlocked" containerType="SINGLE" label="vendorBlocked" name="vendorBlocked" type="number"/>
+<Field __index="210" __sourcePath="{}/object/vendorInformation/vendorNameFor1099" containerType="SINGLE" label="vendorNameFor1099" name="vendorNameFor1099" type="string"/>
+<Field __index="211" __sourcePath="{}/object/vendorInformation/wasVendorW9Received" containerType="SINGLE" label="wasVendorW9Received" name="wasVendorW9Received" type="boolean"/>
+<Field __index="212" __sourcePath="{}/object/vendorInformation/vendorTax1099Reports" containerType="SINGLE" label="vendorTax1099Reports" name="vendorTax1099Reports" type="string"/>
+<Field __index="213" __sourcePath="{}/object/vendorInformation/vendorPaymentTermsId" containerType="SINGLE" label="vendorPaymentTermsId" name="vendorPaymentTermsId" type="string"/>
+<Field __index="214" __sourcePath="{}/object/vendorInformation/vendorPaymentMode" containerType="SINGLE" label="vendorPaymentMode" name="vendorPaymentMode" type="string"/>
+<Field __index="215" __sourcePath="{}/object/vendorInformation/vendorAddress" containerType="SINGLE" label="vendorAddress" name="vendorAddress" type="string"/>
+<Field __index="216" __sourcePath="{}/object/vendorInformation/vendorCity" containerType="SINGLE" label="vendorCity" name="vendorCity" type="string"/>
+<Field __index="217" __sourcePath="{}/object/vendorInformation/vendorState" containerType="SINGLE" label="vendorState" name="vendorState" type="string"/>
+<Field __index="218" __sourcePath="{}/object/vendorInformation/vendorZipCode" containerType="SINGLE" label="vendorZipCode" name="vendorZipCode" type="string"/>
+<Field __index="219" __sourcePath="{}/object/vendorInformation/vendorCountryRegionId" containerType="SINGLE" label="vendorCountryRegionId" name="vendorCountryRegionId" type="string"/>
+<Field __index="220" __sourcePath="{}/object/vendorInformation/vendorReceivedConsentForElectronicSignature" containerType="SINGLE" label="vendorReceivedConsentForElectronicSignature" name="vendorReceivedConsentForElectronicSignature" type="boolean"/>
+<Field __index="221" __sourcePath="{}/object/vendorInformation/vendorTaxIdNumber" containerType="SINGLE" label="vendorTaxIdNumber" name="vendorTaxIdNumber" type="string"/>
+<Field __index="222" __sourcePath="{}/object/vendorInformation/vendorPhone" containerType="SINGLE" label="vendorPhone" name="vendorPhone" type="string"/>
+<Field __index="223" __sourcePath="{}/object/vendorInformation/vendorCounty" containerType="SINGLE" label="vendorCounty" name="vendorCounty" type="string"/>
+<Field __index="224" __sourcePath="{}/object/vendorInformation/vendorEmail" containerType="SINGLE" label="vendorEmail" name="vendorEmail" type="string"/>
+<Field __index="225" __sourcePath="{}/object/vendorInformation/vendorLanguageId" containerType="SINGLE" label="vendorLanguageId" name="vendorLanguageId" type="string"/>
+<Field __index="226" __sourcePath="{}/object/vendorInformation/vendorStreet" containerType="SINGLE" label="vendorStreet" name="vendorStreet" type="string"/>
+<Field __index="227" __sourcePath="{}/object/vendorInformation/vendorForeignEntityIndicator" containerType="SINGLE" label="vendorForeignEntityIndicator" name="vendorForeignEntityIndicator" type="number"/>
+<Field __index="228" __sourcePath="{}/object/vendorInformation/vendorTax1099NameChoice" containerType="SINGLE" label="vendorTax1099NameChoice" name="vendorTax1099NameChoice" type="number"/>
+<Field __index="229" __sourcePath="{}/object/vendorInformation/vendorTaxGroup" containerType="SINGLE" label="vendorTaxGroup" name="vendorTaxGroup" type="string"/>
+<Field __index="230" __sourcePath="{}/object/vendorInformation/vendorW9" containerType="SINGLE" label="vendorW9" name="vendorW9" type="number"/>
+<Field __index="231" __sourcePath="{}/object/vendorInformation/vendorAccountNum" containerType="SINGLE" label="vendorAccountNum" name="vendorAccountNum" type="string"/>
+<Field __index="232" __sourcePath="{}/object/vendorInformation/vendorRecId" containerType="SINGLE" label="vendorRecId" name="vendorRecId" type="string"/>
+<Field __index="233" __sourcePath="{}/object/vendorInformation/vendorNameAlias" containerType="SINGLE" label="vendorNameAlias" name="vendorNameAlias" type="string"/>
 </Record>
 </Metadata>
 <Metadata __index="0" __referenceCounter="1" __sourcePath="{}/object" _dataStructure="OBJECT" _id="__id" _type="Output" id="0e52744c-449f-4603-912e-9e129a31f276">
@@ -1028,8 +1026,6 @@ output.iidCaseCount = (isnull(input.iidCaseCount) ? null : double2integer(input.
 output.iidProdPackType = input.iidProdPackType;
 output.iidCountry = input.iidCountry;
 output.iidActivationType = input.iidActivationType;
-output.divisionCode = input.divisionCode;
-output.divisionBrandName = input.divisionBrandName;
 output.itemId = input.itemId;
 output.bhnGUID = input.bhnGUID;
 output.recId = input.RecId + input.RecId;
@@ -1084,7 +1080,6 @@ output.newIidReasonCode = input.iidNewIIDReasonCode;
 output.isActivationRequired = input.productIsActivationRequired;
 output.isReloadable = input.productIsReloadable;
 output.bhnIsEANUPC = (isnull(input.productBHNIsEANUPC) ? null : num2bool(input.productBHNIsEANUPC));
-output.divisionCode_1 = input.divisionCode;
 output.guid = input.substitutionGroupGUID;
 output.inventBatchId = input.IID;
 output.substitutionPOG1Category = input.substitutionPOG1Category;
@@ -1177,10 +1172,10 @@ output.vendorDBA = input.vendorDBAName;
 output.recId_1 = input.vendorRecId;
 output.vendorStreet = input.vendorAddress;
 output.accountNum = input.vendorAccountNum;
-output.vendorTaxGroup = (isnull(input.vendorTax1099NameChoice) ? null : num2str(input.vendorTax1099NameChoice));
 output.companyLegalName_1 = input.companyLegalName;
 output.divisionBrandName = input.divisionBrandName;
-output.companyPrimaryPhoneNumberExt = input.companyPrimaryPhoneNumberExt;]]></attr>
+output.companyPrimaryPhoneNumberExt = input.companyPrimaryPhoneNumberExt;
+output.vendorTaxGroup = input.vendorTaxGroup;]]></attr>
 </Node>
 <Node enabled="enabled" guiName="Foreach 'object' -&gt; 'products'" guiX="460" guiY="420" id="FOREACH_OBJECT_PRODUCTS" transformClass="com.mulesoft.datamapper.transform.MelRecordTransform" type="REFORMAT">
 <attr name="melScript"><![CDATA[//MEL
@@ -1328,13 +1323,13 @@ output.reloadMaxAmount = (isnull(input.divisionMaximumReloadAmount) ? null : str
     <Mapping cloverField="vendorReceivedConsentForElectronicSignature" trim="true" xpath="vendorInformation/vendorReceivedConsentForElectronicSignature"/>
     <Mapping cloverField="vendorTaxIdNumber" trim="true" xpath="vendorInformation/vendorTaxIdNumber"/>
     <Mapping cloverField="vendorPhone" trim="true" xpath="vendorInformation/vendorPhone"/>
-    <Mapping cloverField="vendorPaymMode" trim="true" xpath="vendorInformation/vendorPaymMode"/>
     <Mapping cloverField="vendorCounty" trim="true" xpath="vendorInformation/vendorCounty"/>
     <Mapping cloverField="vendorEmail" trim="true" xpath="vendorInformation/vendorEmail"/>
     <Mapping cloverField="vendorLanguageId" trim="true" xpath="vendorInformation/vendorLanguageId"/>
     <Mapping cloverField="vendorStreet" trim="true" xpath="vendorInformation/vendorStreet"/>
     <Mapping cloverField="vendorForeignEntityIndicator" trim="true" xpath="vendorInformation/vendorForeignEntityIndicator"/>
     <Mapping cloverField="vendorTax1099NameChoice" trim="true" xpath="vendorInformation/vendorTax1099NameChoice"/>
+    <Mapping cloverField="vendorTaxGroup" trim="true" xpath="vendorInformation/vendorTaxGroup"/>
     <Mapping cloverField="vendorW9" trim="true" xpath="vendorInformation/vendorW9"/>
     <Mapping cloverField="vendorAccountNum" trim="true" xpath="vendorInformation/vendorAccountNum"/>
     <Mapping cloverField="vendorRecId" trim="true" xpath="vendorInformation/vendorRecId"/>
@@ -1368,8 +1363,6 @@ output.reloadMaxAmount = (isnull(input.divisionMaximumReloadAmount) ? null : str
       <Mapping cloverField="iidCountry" trim="true" xpath="iid/iidCountry"/>
       <Mapping cloverField="iidActivationType" trim="true" xpath="iid/iidActivationType"/>
       <Mapping cloverField="OnlineIIDAtributesDescription" trim="true" xpath="iid/OnlineIIDAtributesDescription"/>
-      <Mapping cloverField="divisionCode" trim="true" xpath="iid/divisionCode"/>
-      <Mapping cloverField="divisionBrandName" trim="true" xpath="iid/divisionBrandName"/>
       <Mapping cloverField="IID" trim="true" xpath="iid/IID"/>
       <Mapping cloverField="itemId" trim="true" xpath="iid/itemId"/>
       <Mapping cloverField="bhnGUID" trim="true" xpath="iid/bhnGUID"/>
@@ -1442,7 +1435,7 @@ output.reloadMaxAmount = (isnull(input.divisionMaximumReloadAmount) ? null : str
 </Context>
 ]]></attr>
 <attr name="_data_format"><![CDATA[JSON]]></attr>
-<attr name="jsonSchemaURL"><![CDATA[.\src\main\api\examples_v1_11\3PS-to-DAX-1.11-contract-v5.json]]></attr>
+<attr name="jsonSchemaURL"><![CDATA[.\src\main\api\examples_v1_11\3PS-to-DAX-1.11-contract-v6.json]]></attr>
 </Node>
 <Node enabled="enabled" guiName="Duplicate object" guiX="240" guiY="20" id="SIMPLE_COPY0" type="SIMPLE_COPY"/>
 <Node enabled="enabled" guiName="Duplicate divisionCustomerStores" guiX="240" guiY="20" id="SIMPLE_COPY1" type="SIMPLE_COPY"/>
