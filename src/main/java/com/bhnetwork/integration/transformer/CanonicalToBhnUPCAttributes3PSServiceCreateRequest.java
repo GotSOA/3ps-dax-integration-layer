@@ -59,6 +59,7 @@ public class CanonicalToBhnUPCAttributes3PSServiceCreateRequest extends
 				inventTable.setDimGroupId(product.getProductDimensionGroup());
 				inventTable.setItemGroupId(product.getProductItemGroupId());
 				inventTable.setItemName(product.getProductItemName());
+				
 				inventTable.setModelGroupId(product.getProductModelGroupId());
 				
 				// FIX (by Stephane): get substitutionGroup not from product level but from substGroup object (somehow 3PS doesn't pass it)
@@ -71,6 +72,7 @@ public class CanonicalToBhnUPCAttributes3PSServiceCreateRequest extends
 				
 				
 			    AxdEntityBhnUPCAttr1 bhnUPCAttr1 = new AxdEntityBhnUPCAttr1();
+			    
 			    if(product.getIsProductDenominationVariable()!=null){
 			    	bhnUPCAttr1.setVariableIndicator(product.getIsProductDenominationVariable()?AxdEnumNoYes.YES : AxdEnumNoYes.NO);
 			    }
@@ -90,8 +92,15 @@ public class CanonicalToBhnUPCAttributes3PSServiceCreateRequest extends
 			    bhnUPCAttr1.setBhnVariableMin(product.getProductMinimumFaceValue().intValue());
 			    
 			    bhnUPCAttr1.setItemId("DEFAULT");
-			    bhnUPCAttr1.setMulticardIndicator(product.getProductMultiCardIndicator().toString());    // DAX expecting String. 
-			    bhnUPCAttr1.setReasonCode(product.getProductNewUPCReason());
+			    // HACK: despite having modified the canonical model for product and reloaded the DM multiple times, the multiCardIndicator field would not reload inside DM 
+			    // as a String field, so input.productMultiCardIndicator was mapped to 
+			    // bhnUPCAttr1.setMulticardIndicator(product.getProductMultiCardIndicator().toString());    // DAX expecting String. 
+			    bhnUPCAttr1.setMulticardIndicator(product.getProductNewUPCReason());
+			    
+			    // so for now passing ReasonCode=blank. It appears that 3PS is not passing productNewUPCReasonCode (yet)
+			    //bhnUPCAttr1.setReasonCode(product.getProductNewUPCReason());
+			    bhnUPCAttr1.setReasonCode("");
+			    
 			    // valid values are: NonOwned, OwnedShip or OwnedAct
 			    bhnUPCAttr1.setOwnershipType(AxdExtTypeBhnUPCOwnershipType.fromValue(product.getProductOwnershipType()));
 			    if(product.getProductTaxIncluded()!=null){
@@ -101,6 +110,7 @@ public class CanonicalToBhnUPCAttributes3PSServiceCreateRequest extends
 			    bhnUPCAttr1.setClazz("entity");
 			    
 			    AxdEntityBhnUPCAttr2 bhnUPCAttr2 = new AxdEntityBhnUPCAttr2();
+			    
 				bhnUPCAttr2.setCustomtemplatepathURL(product.getCustomTemplatePathURL());//TODO Source of Origin seems to be DAX on the mapping document.
 				if(product.getIsActivationRequired()!=null){
 					bhnUPCAttr2.setProductIsActivationRequired(product.getIsActivationRequired()?AxdEnumNoYes.YES : AxdEnumNoYes.NO);
@@ -108,10 +118,10 @@ public class CanonicalToBhnUPCAttributes3PSServiceCreateRequest extends
 				if(product.getIsReloadable()!=null){
 					bhnUPCAttr2.setProductIsReloadable(product.getIsReloadable()?AxdEnumNoYes.YES : AxdEnumNoYes.NO);
 				}
-				System.out.println("ProductTypeId: " + product.getProductTypeId());
+				//System.out.println("ProductTypeId: " + product.getProductTypeId());
 			    bhnUPCAttr2.setProductTypeID(product.getProductTypeId());
 			    bhnUPCAttr2.setReloadMaxAmount(new BigDecimal(product.getReloadMaxAmount()));
-			    bhnUPCAttr2.setReloadMinAmount(new BigDecimal(product.getReloadMinAmount()));	    
+			    bhnUPCAttr2.setReloadMinAmount(new BigDecimal(product.getReloadMinAmount()));	
 			    bhnUPCAttr2.setClazz("entity");
 			    
 				inventTable.getBhnUPCAttr1().add(bhnUPCAttr1);

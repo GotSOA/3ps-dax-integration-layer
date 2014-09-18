@@ -50,8 +50,9 @@ public class Product implements Serializable {
 	private Double	productMaximumFaceValue;
 	private Double	productMinimumFaceValue;
 	private String	productModelGroupId;
-	// TODO change to String (default is 'N')
-	private Boolean	productMultiCardIndicator;
+	// SR: changed productMultiCardIndicator from Boolean to String on 9/12/2003 (default is 'N' for SINGLE, 'C' for CHILD, 'P' for PARENT)
+	private Boolean productMultiCardIndicator;
+	private String	productMultiCardIndicatorStr;
 	private String	productNewUPCReason;
 	private String	productOwnershipType;
 	private String	productSubstitutionGroup;
@@ -350,15 +351,26 @@ public class Product implements Serializable {
 		this.productModelGroupId = productModelGroupId;
 	}
 
-	// TODO change to String
+	// Not used but DM doesn't release that old reference to the field as a Boolean
 	public Boolean getProductMultiCardIndicator() {
 		return productMultiCardIndicator;
 	}
 
+	// Not used but DM doesn't release that old reference to the field as a Boolean
 	public void setProductMultiCardIndicator(Boolean productMultiCardIndicator) {
 		this.productMultiCardIndicator = productMultiCardIndicator;
 	}
 
+	//productMultiCardIndicatorStr in lieu of the former productMultiCardIndicator
+	public String getProductMultiCardIndicatorStr() {
+		return productMultiCardIndicatorStr;
+	}
+
+	//productMultiCardIndicatorStr in lieu of the former productMultiCardIndicator
+	public void setProductMultiCardIndicator(String productMultiCardIndicatorStr) {
+		this.productMultiCardIndicatorStr = productMultiCardIndicatorStr;
+	}
+	
 	public String getProductNewUPCReason() {
 		return productNewUPCReason;
 	}

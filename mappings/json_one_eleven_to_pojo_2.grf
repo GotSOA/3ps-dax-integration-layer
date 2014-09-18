@@ -469,6 +469,8 @@
 </Global>
 <Phase number="0">
 <Node cacheInMemory="true" enabled="enabled" fileURL="dict:outputPayload" guiName="Pojo WRITER" guiX="900" guiY="20" id="BEAN_WRITER0" type="BEAN_WRITER">
+<attr name="factory"><![CDATA[#Mon Sep 15 02:01:33 PDT 2014
+]]></attr>
 <attr name="mapping"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <object xmlns:clover="http://www.cloveretl.com/ns/xmlmapping" clover:inPort="0">
   <company>
@@ -984,6 +986,8 @@
   </typed-object>
 </schema-object>
 ]]></attr>
+<attr name="bindings"><![CDATA[#Mon Sep 15 02:01:33 PDT 2014
+]]></attr>
 </Node>
 <Node enabled="enabled" guiName="Foreach 'cpDivision.divisionCustomerStores' -&gt; cpDivision.stores" guiX="460" guiY="220" id="FOREACH_DIVISION_CUSTOMER_STORES_STORES" transformClass="com.mulesoft.datamapper.transform.MelRecordTransform" type="REFORMAT">
 <attr name="melScript"><![CDATA[//MEL
@@ -1090,7 +1094,7 @@ output.substitutionPortalDisplayName = input.substitutionPortalDisplayName;
 output.substitutionShipperUPC = input.substitutionShipperUPC;
 output.reloadMinAmount = input.productMinimumReloadAmount;
 output.reloadMaxAmount = input.productMaximumReloadAmount;
-output.productMultiCardIndicator = input.productMulticardindicator;]]></attr>
+output.productNewUPCReason = input.productMulticardindicator;]]></attr>
 </Node>
 <Node enabled="enabled" guiName="Foreach 'object' -&gt; 'cpDivision'" guiX="460" guiY="320" id="FOREACH_OBJECT_CP_DIVISION" transformClass="com.mulesoft.datamapper.transform.MelRecordTransform" type="REFORMAT">
 <attr name="melScript"><![CDATA[//MEL

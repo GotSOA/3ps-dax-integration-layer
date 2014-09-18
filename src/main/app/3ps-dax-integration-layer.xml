@@ -129,8 +129,7 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
         </apikit:mapping>
     </apikit:mapping-exception-strategy>
     <data-mapper:config name="json_to_pojo" transformationGraphPath="json_to_pojo.grf" doc:name="json_to_pojo" />
-    <data-mapper:config name="json-one_eleven_to_pojo" transformationGraphPath="json_one_eleven_to_pojo.grf" doc:name="DataMapper"/>
-    
+    <data-mapper:config name="json_one_eleven_to_canonical" transformationGraphPath="json_one_eleven_to_pojo_2.grf" doc:name="DataMapper"/>
     <flow name="main" doc:name="main">
         <http:inbound-endpoint connector-ref="defaultConnector" address="http://${http.host}:${http.port}/${contextPath}/${version}" doc:name="HTTP" exchange-pattern="request-response" />
         <apikit:router config-ref="apiConfig" doc:name="APIkit Router" />
@@ -158,7 +157,7 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
         <choice doc:name="Choice">
             <when expression="#[flowVars['3ps-canonical-version']=='V1_11']">
                 <logger message="Before Data Mapper, using 3PS variant 1.11)" level="INFO" doc:name="3PS-Canonical (V1.11)"/>
-                <data-mapper:transform config-ref="json-one_eleven_to_pojo" doc:name="3PS v1.11 to Canonical (Mule)"/>
+				<data-mapper:transform config-ref="json_one_eleven_to_canonical" doc:name="3PS-Canonical (1.11)"/>
             </when>
             <otherwise>
             	<logger message="Before Data Mapper, using 3PS variant 1.6/aka theoritical json for mule)" level="INFO" doc:name="3PS-Canonical (V1.6)"/>
@@ -218,33 +217,27 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
         <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-step3" path="Q.step3" />
         <set-payload value="#[sessionVars.canon]" doc:name="Canonical Payload from Session" />
         <custom-transformer class="com.bhnetwork.integration.transformer.CanonicalToUPCSubGroupTableServiceCreateRequest" doc:name="Canon-to-SubstgroupRequest" />
-        <enricher doc:name="Enrich-Canonical-w-DAX-values ">
-            <flow-ref name="daxSubstgroupWebServiceClient" doc:name="Invoke SubstGroup Webservice" />
-            <!-- TODO: iterate through linkedHashMap -->
-            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[0].value]" target="#[sessionVars.canon.company.cpDivision[0].products[0].substGrp.subGroupId]" />
-            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[1].value]" target="#[sessionVars.canon.company.cpDivision[0].products[0].substGrp.substitutionBrandDenomDescription]" />
-            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[2].value]" target="#[sessionVars.canon.company.cpDivision[0].products[0].substGrp.guid]" />
-            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[3].value]" target="#[sessionVars.canon.company.cpDivision[0].products[0].substGrp.brandRecId]" />
-        </enricher>
-        <logger level="INFO" doc:name="Log bhnGUID and recId" message="guid=#[sessionVars.canon.company.cpDivision[0].products[0].substGrp.guid] and brandRecId=#[sessionVars.canon.company.cpDivision[0].products[0].substGrp.brandRecId]" />
+        <flow-ref name="daxSubstgroupWebServiceClient" doc:name="Invoke SubstGroup Webservice" />
+        <custom-transformer class="com.bhnetwork.integration.transformer.SubstitutionGroupServiceResponseToCanonical" doc:name="Response-with-multiples-to-canon" />
+        <!-- <logger level="INFO" doc:name="Log bhnGUID and recId" message="guid=#[sessionVars.canon.company.cpDivision[0].products[0].substGrp.guid] and brandRecId=#[sessionVars.canon.company.cpDivision[0].products[0].substGrp.brandRecId]" /> -->
         <set-session-variable variableName="DaxStep" value="4" doc:name="DaxStep = 4"/>
         <!-- reset number of retries -->
         <expression-transformer expression="#[sessionVars['numberOfRetries']=0]" doc:name="Expression"/> 
-        <!-- just skipping a few steps/flows to progress (stuck on UPCAttributes --> 
-        <!-- <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step4" doc:name="Q.step4" />  -->       
-        <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step6" doc:name="Q.step6" />
+        <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step4" doc:name="Q.step4" />     
         <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy" />
     </flow>
     <flow name="DAX-step4-flow" doc:name="DAX-step4-flow">
         <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-step4" path="Q.step4" />
         <set-payload value="#[sessionVars.canon]" doc:name="Canonical Payload from Session" />
         <custom-transformer class="com.bhnetwork.integration.transformer.CanonicalToBhnUPCAttributes3PSServiceCreateRequest" doc:name="Canon-to-UPCRequest" />
-        <enricher doc:name="Enrich-Canonical-w-DAX-values ">
+        <!-- <enricher doc:name="Enrich-Canonical-w-DAX-values "> -->
             <flow-ref name="daxUPCWebServiceClient" doc:name="Invoke Dax UPC Webservice" />
-            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[0].value]" target="#[sessionVars.canon.company.cpDivision[0].products[0].iid.itemId]" />
+        <!-- <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[0].value]" target="#[sessionVars.canon.company.cpDivision[0].products[0].iid.itemId]" />
             <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[3].value]" target="#[sessionVars.canon.company.cpDivision[0].products[0].bhnGUID]" />
         </enricher>
-        <logger level="INFO" doc:name="Log bhnGUID " message="guid=#[sessionVars.canon.company.cpDivision[0].products[0].bhnGUID]" />
+         -->
+        <custom-transformer class="com.bhnetwork.integration.transformer.UPCAttributesServiceResponseToCanonical" doc:name="Response-with-multiples-to-canon" />
+        <!-- <logger level="INFO" doc:name="Log bhnGUID " message="guid=#[sessionVars.canon.company.cpDivision[0].products[0].bhnGUID]" />  -->
         <set-session-variable variableName="DaxStep" value="5" doc:name="DaxStep = 5"/>
         <!-- reset number of retries -->
         <expression-transformer expression="#[sessionVars['numberOfRetries']=0]" doc:name="Expression"/>          
@@ -274,19 +267,25 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
         <set-payload value="#[sessionVars.canon]" doc:name="Canonical Payload from Session" />
         <custom-transformer class="com.bhnetwork.integration.transformer.CanonicalToStoreServiceCreateRequest" doc:name="Canon-to-StoreRequest" />
         <logger level="INFO" message="In step6-flow, payload after CanonicalToStoreServiceCreateRequest transformer: #[payload]" doc:name="test" />
-        <enricher doc:name="Enrich-Canonical-w-DAX-values ">
+        <!-- <enricher doc:name="Enrich-Canonical-w-DAX-values "> -->
             <flow-ref name="daxStoreWebServiceClient" doc:name="Invoke Dax Store Webservice" />
+        <!--
             <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[0].value]" target="#[sessionVars.canon.company.cpDivision[0].stores[0].AccountNum]" />
             <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[1].value]" target="#[sessionVars.canon.company.cpDivision[0].stores[0].bhnCompanyCode]" />
             <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[2].value]" target="#[sessionVars.canon.company.cpDivision[0].stores[0].bhnDivisionCode]" />
             <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[3].value]" target="#[sessionVars.canon.company.cpDivision[0].stores[0].bhnGUID]" />
         </enricher>
-        <logger level="INFO" doc:name="Log AccountNum and bhnGUID" message="step6-flow: AccountNum=#[sessionVars.canon.company.cpDivision[0].stores[0].AccountNum] and bhnGUID=#[sessionVars.canon.company.cpDivision[0].stores[0].bhnGUID]" />
-        <!-- next step: Vendor service -->
+         -->
+        <logger level="INFO" doc:name="debug only" message="BEFORE ResponseTransformer..."/>
+        <custom-transformer class="com.bhnetwork.integration.transformer.StoreServiceResponseToCanonical" doc:name="Response-with-multiples-to-canon" />
+        <logger level="INFO" doc:name="debug only" message="AFTER ResponseTransformer..."/>
+        <!-- <logger level="INFO" doc:name="Log AccountNum and bhnGUID" message="step6-flow: AccountNum=#[sessionVars.canon.company.cpDivision[0].stores[0].AccountNum] and bhnGUID=#[sessionVars.canon.company.cpDivision[0].stores[0].bhnGUID]" /> -->
         <set-session-variable variableName="DaxStep" value="7" doc:name="DaxStep = 7"/>
         <!-- reset number of retries -->
-        <expression-transformer expression="#[sessionVars['numberOfRetries']=0]" doc:name="Expression"/>          
-        <vm:outbound-endpoint exchange-pattern="one-way" doc:name="VM-step7" path="Q.step7" />
+        <expression-transformer expression="#[sessionVars['numberOfRetries']=0]" doc:name="Expression"/>   
+        <!-- temporary for testing: skip vendor -->        
+        <!-- <vm:outbound-endpoint exchange-pattern="one-way" doc:name="VM-step7" path="Q.step7" /> -->
+        <vm:outbound-endpoint exchange-pattern="one-way" doc:name="VM-step7" path="Q.step8" /> 
         <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy" />
     </flow>
     <flow name="DAX-step7-flow" doc:name="DAX-step7-flow">
@@ -294,12 +293,6 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
         <set-payload value="#[sessionVars.canon]" doc:name="Canonical Payload from Session" />
         <custom-transformer class="com.bhnetwork.integration.transformer.CanonicalToVendTableServiceCreateRequest" doc:name="Canon-to-VendorRequest" />
         <logger level="INFO" message="In step7-flow, payload after CanonicalToVendTableServiceCreateRequest transformer: #[payload]" doc:name="test" />
-        <!-- TODO: future
-			Right now we don't have the proper json that implements multiple vendors
-			need to implement a foreach to deal with multiple vendors
-			idea: set the new payload to be: #[payload.entityKeyList] 
-			then implement a forEach which would process each entityKey[] individually
-		-->
         <enricher doc:name="Enrich-Canonical-w-DAX-values ">
             <flow-ref name="daxVendorWebServiceClient" doc:name="Invoke Dax Vendor Webservice" />
             <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[0].value]" target="#[sessionVars.canon.vendor.AccountNum]" />
@@ -309,7 +302,7 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
         <!-- next step: Setup Complete service -->
         <set-session-variable variableName="DaxStep" value="8" doc:name="DaxStep = 8"/>
         <!-- reset number of retries -->
-        <expression-transformer expression="#[sessionVars['numberOfRetries']=0]" doc:name="Expression"/>          
+        <expression-transformer expression="#[sessionVars['numberOfRetries']=0]" doc:name="Expression"/>         
         <vm:outbound-endpoint exchange-pattern="one-way" path="Q.step8" doc:name="VM-step8 (Setup Complete)" />
         <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy" />
     </flow>
