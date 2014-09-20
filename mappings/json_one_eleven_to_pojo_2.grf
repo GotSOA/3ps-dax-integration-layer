@@ -117,8 +117,8 @@
 <Field __index="113" __sourcePath="{}/object/cpDivision/divisionProducts/productIsTaxable" containerType="SINGLE" label="productIsTaxable" name="productIsTaxable" type="boolean"/>
 <Field __index="114" __sourcePath="{}/object/cpDivision/divisionProducts/productDefaultIID" containerType="SINGLE" label="productDefaultIID" name="productDefaultIID" type="boolean"/>
 <Field __index="115" __sourcePath="{}/object/cpDivision/divisionProducts/substitutionBrandDenomDescription" containerType="SINGLE" label="substitutionBrandDenomDescription" name="substitutionBrandDenomDescription" type="string"/>
-<Field __index="116" __sourcePath="{}/object/cpDivision/divisionProducts/BrandRecId" containerType="SINGLE" label="BrandRecId" name="BrandRecId" type="string"/>
-<Field __index="117" __sourcePath="{}/object/cpDivision/divisionProducts/SubGroupId" containerType="SINGLE" label="SubGroupId" name="SubGroupId" type="string"/>
+<Field __index="116" __sourcePath="{}/object/cpDivision/divisionProducts/brandRecId" containerType="SINGLE" label="brandRecId" name="brandRecId" type="string"/>
+<Field __index="117" __sourcePath="{}/object/cpDivision/divisionProducts/subGroupId" containerType="SINGLE" label="subGroupId" name="subGroupId" type="string"/>
 <Field __index="118" __sourcePath="{}/object/cpDivision/divisionProducts/substitutionGroupGUID" containerType="SINGLE" label="substitutionGroupGUID" name="substitutionGroupGUID" type="string"/>
 <Field __index="119" __sourcePath="{}/object/cpDivision/divisionProducts/productItemBuyerGroupId" containerType="SINGLE" label="productItemBuyerGroupId" name="productItemBuyerGroupId" type="string"/>
 <Field __index="120" __sourcePath="{}/object/cpDivision/divisionProducts/productCode" containerType="SINGLE" label="productCode" name="productCode" type="string"/>
@@ -1056,8 +1056,8 @@ output.productIsCheckMinMax = input.productIsCheckMinMax;
 output.productIsTaxable = input.productIsTaxable;
 output.productDefaultIID = (isnull(input.productDefaultIID) ? null : input.productDefaultIID+"");
 output.substitutionBrandDenomDescription = input.substitutionBrandDenomDescription;
-output.brandRecId = input.BrandRecId;
-output.subGroupId = input.SubGroupId;
+output.brandRecId = input.brandRecId;
+output.subGroupId = input.subGroupId;
 output.productBuyerGroup = input.productItemBuyerGroupId;
 output.substitutionCardDisplayDesc = input.substitutionCardDisplayDesc;
 output.customTemplatePathURL = input.customTemplatePathURL;
@@ -1403,8 +1403,8 @@ output.reloadMaxAmount = (isnull(input.divisionMaximumReloadAmount) ? null : str
       <Mapping cloverField="productIsTaxable" trim="true" xpath="productIsTaxable"/>
       <Mapping cloverField="productDefaultIID" trim="true" xpath="productDefaultIID"/>
       <Mapping cloverField="substitutionBrandDenomDescription" trim="true" xpath="substitutionBrandDenomDescription"/>
-      <Mapping cloverField="BrandRecId" trim="true" xpath="BrandRecId"/>
-      <Mapping cloverField="SubGroupId" trim="true" xpath="SubGroupId"/>
+      <Mapping cloverField="brandRecId" trim="true" xpath="brandRecId"/>
+      <Mapping cloverField="subGroupId" trim="true" xpath="subGroupId"/>
       <Mapping cloverField="substitutionGroupGUID" trim="true" xpath="substitutionGroupGUID"/>
       <Mapping cloverField="productItemBuyerGroupId" trim="true" xpath="productItemBuyerGroupId"/>
       <Mapping cloverField="productCode" trim="true" xpath="productCode"/>

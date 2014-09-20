@@ -219,7 +219,6 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
         <custom-transformer class="com.bhnetwork.integration.transformer.CanonicalToUPCSubGroupTableServiceCreateRequest" doc:name="Canon-to-SubstgroupRequest" />
         <flow-ref name="daxSubstgroupWebServiceClient" doc:name="Invoke SubstGroup Webservice" />
         <custom-transformer class="com.bhnetwork.integration.transformer.SubstitutionGroupServiceResponseToCanonical" doc:name="Response-with-multiples-to-canon" />
-        <!-- <logger level="INFO" doc:name="Log bhnGUID and recId" message="guid=#[sessionVars.canon.company.cpDivision[0].products[0].substGrp.guid] and brandRecId=#[sessionVars.canon.company.cpDivision[0].products[0].substGrp.brandRecId]" /> -->
         <set-session-variable variableName="DaxStep" value="4" doc:name="DaxStep = 4"/>
         <!-- reset number of retries -->
         <expression-transformer expression="#[sessionVars['numberOfRetries']=0]" doc:name="Expression"/> 
@@ -230,14 +229,8 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
         <vm:inbound-endpoint exchange-pattern="one-way" doc:name="VM-step4" path="Q.step4" />
         <set-payload value="#[sessionVars.canon]" doc:name="Canonical Payload from Session" />
         <custom-transformer class="com.bhnetwork.integration.transformer.CanonicalToBhnUPCAttributes3PSServiceCreateRequest" doc:name="Canon-to-UPCRequest" />
-        <!-- <enricher doc:name="Enrich-Canonical-w-DAX-values "> -->
-            <flow-ref name="daxUPCWebServiceClient" doc:name="Invoke Dax UPC Webservice" />
-        <!-- <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[0].value]" target="#[sessionVars.canon.company.cpDivision[0].products[0].iid.itemId]" />
-            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[3].value]" target="#[sessionVars.canon.company.cpDivision[0].products[0].bhnGUID]" />
-        </enricher>
-         -->
+        <flow-ref name="daxUPCWebServiceClient" doc:name="Invoke Dax UPC Webservice" />
         <custom-transformer class="com.bhnetwork.integration.transformer.UPCAttributesServiceResponseToCanonical" doc:name="Response-with-multiples-to-canon" />
-        <!-- <logger level="INFO" doc:name="Log bhnGUID " message="guid=#[sessionVars.canon.company.cpDivision[0].products[0].bhnGUID]" />  -->
         <set-session-variable variableName="DaxStep" value="5" doc:name="DaxStep = 5"/>
         <!-- reset number of retries -->
         <expression-transformer expression="#[sessionVars['numberOfRetries']=0]" doc:name="Expression"/>          
@@ -267,23 +260,13 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
         <set-payload value="#[sessionVars.canon]" doc:name="Canonical Payload from Session" />
         <custom-transformer class="com.bhnetwork.integration.transformer.CanonicalToStoreServiceCreateRequest" doc:name="Canon-to-StoreRequest" />
         <logger level="INFO" message="In step6-flow, payload after CanonicalToStoreServiceCreateRequest transformer: #[payload]" doc:name="test" />
-        <!-- <enricher doc:name="Enrich-Canonical-w-DAX-values "> -->
-            <flow-ref name="daxStoreWebServiceClient" doc:name="Invoke Dax Store Webservice" />
-        <!--
-            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[0].value]" target="#[sessionVars.canon.company.cpDivision[0].stores[0].AccountNum]" />
-            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[1].value]" target="#[sessionVars.canon.company.cpDivision[0].stores[0].bhnCompanyCode]" />
-            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[2].value]" target="#[sessionVars.canon.company.cpDivision[0].stores[0].bhnDivisionCode]" />
-            <enrich source="#[payload.entityKeyList.entityKey[0].keyData.keyField[3].value]" target="#[sessionVars.canon.company.cpDivision[0].stores[0].bhnGUID]" />
-        </enricher>
-         -->
+        <flow-ref name="daxStoreWebServiceClient" doc:name="Invoke Dax Store Webservice" />
         <logger level="INFO" doc:name="debug only" message="BEFORE ResponseTransformer..."/>
         <custom-transformer class="com.bhnetwork.integration.transformer.StoreServiceResponseToCanonical" doc:name="Response-with-multiples-to-canon" />
         <logger level="INFO" doc:name="debug only" message="AFTER ResponseTransformer..."/>
-        <!-- <logger level="INFO" doc:name="Log AccountNum and bhnGUID" message="step6-flow: AccountNum=#[sessionVars.canon.company.cpDivision[0].stores[0].AccountNum] and bhnGUID=#[sessionVars.canon.company.cpDivision[0].stores[0].bhnGUID]" /> -->
         <set-session-variable variableName="DaxStep" value="7" doc:name="DaxStep = 7"/>
         <!-- reset number of retries -->
-        <expression-transformer expression="#[sessionVars['numberOfRetries']=0]" doc:name="Expression"/>   
-        <!-- temporary for testing: skip vendor -->        
+        <expression-transformer expression="#[sessionVars['numberOfRetries']=0]" doc:name="Expression"/>          
         <vm:outbound-endpoint exchange-pattern="one-way" doc:name="VM-step7" path="Q.step7" /> 
         <exception-strategy ref="global-main-exception-strategy" doc:name="Reference Exception Strategy" />
     </flow>
@@ -542,7 +525,9 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
             </otherwise>
         </choice>
         <json:json-to-object-transformer returnClass="java.util.LinkedHashMap" doc:name="JSON to Object"/>
+        <logger message="3PS-RESPONSE-BEFORE-ENRICHMENT: #[payload]" level="INFO" doc:name="debugging" />
         <flow-ref name="3ps-createPartnerProfileResponse" doc:name="3ps-createPartnerProfileResponse"/>
+        <logger message="3PS-RESPONSE-AFTER-ENRICHMENT: #[payload]" level="INFO" doc:name="debugging" />
         <set-session-variable variableName="createPartnerProfileResponse" value="#[payload]" doc:name="Session Variable"/>
 		<flow-ref name="3ps-updatePartnerProfile" doc:name="3ps-updatePartnerProfile"/>
         <!-- a non-retryable exception will be DLQ'ed and not reported back to 3PS
@@ -557,26 +542,8 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
     <sub-flow name="3ps-createPartnerProfileResponse" doc:name="3ps-createPartnerProfileResponse">
     	<choice doc:name="Choice">
             <when expression="#[sessionVars.?error == empty]">
-                <enricher doc:name="Message Enricher">
-                    <set-payload value="#[sessionVars.canon]" doc:name="Canonical Payload from Session"/>
-                    <enrich source="#[payload.company.bhnGUID]" target="#[payload.company.bhnGUID]"/>
-                    <enrich source="#[payload.company.recId]" target="#[payload.company.recId]"/>
-                    <enrich source="#[payload.company.cpDivision[0].bhnGUID]" target="#[payload.cpDivision.bhnGUID]"/>
-                    <enrich source="#[payload.company.cpDivision[0].recId]" target="#[payload.cpDivision.recId]"/>
-                    <enrich source="#[payload.company.cpDivision[0].products[0].substGrp.subGroupId]" target="#[payload.ProductInformation[0].subGroupId]"/>
-                    <enrich source="#[payload.company.cpDivision[0].products[0].substGrp.substitutionBrandDenomDescription]" target="#[payload.ProductInformation[0].substitutionBrandDenomDescription]"/>
-                    <enrich source="#[payload.company.cpDivision[0].products[0].substGrp.guid]" target="#[payload.ProductInformation[0].guid]"/>
-                    <enrich source="#[payload.company.cpDivision[0].products[0].substGrp.brandRecId]" target="#[payload.ProductInformation[0].brandRecId]"/>
-                    <enrich source="#[payload.company.cpDivision[0].products[0].iid.itemId]" target="#[payload.ProductInformation[0].iid.itemId]"/>
-                    <enrich source="#[payload.company.cpDivision[0].products[0].bhnGUID]" target="#[payload.ProductInformation[0].bhnGUID]"/>
-                    <enrich source="#[payload.company.cpDivision[0].products[0].iid.inventBatchId]" target="#[payload.ProductInformation[0].iid.inventBatchId]"/>
-                    <enrich source="#[payload.company.cpDivision[0].products[0].iid.itemId]" target="#[payload.ProductInformation[0].iid.itemId]"/>
-                    <enrich source="#[payload.company.cpDivision[0].products[0].iid.bhnGUID]" target="#[payload.ProductInformation[0].iid.bhnGUID]"/>
-                    <enrich source="#[payload.company.cpDivision[0].products[0].iid.recId]" target="#[payload.ProductInformation[0].iid.recId]"/>
-                    <!-- TODO: more enrichment required 
-                    . vendor & store
-                    -->
-                </enricher>
+                <!-- new: custom enricher for 3PS output that handles multiples -->
+                <custom-transformer class="com.bhnetwork.integration.transformer.CanonicalTo3PSEnricher" doc:name="enricher-to-3PS-partnerProfile-handling-multiples" />
                 <enricher doc:name="Message Enricher (DAXOnBoardingInformation)">
                     <scripting:component doc:name="Groovy">
 		            	<scripting:script name="DAXOnBoardingInformation" engine="Groovy"><![CDATA[daxOnBoardingInformation = new java.util.HashMap(); daxOnBoardingInformation.put("daxIsOnBoardingComplete", true); return daxOnBoardingInformation;]]></scripting:script>
@@ -652,7 +619,11 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
             </when>
             <otherwise>
                 <logger message="Sample Partner to be updated" level="INFO" doc:name="Default from Sample"/>
-            	<set-payload value="#[Thread.currentThread().getContextClassLoader().getResourceAsStream('examples/if1-3ps-mule-post-example.json')]" doc:name="Set Payload"/>
+                <!-- TODO: add a choice router, for now comment out 1.6 -->
+                <!-- for 1.6 -->
+            	<!-- <set-payload value="#[Thread.currentThread().getContextClassLoader().getResourceAsStream('examples/if1-3ps-mule-post-example.json')]" doc:name="Set Payload"/> -->
+            	<!-- for 1.11 -->
+            	<set-payload value="#[Thread.currentThread().getContextClassLoader().getResourceAsStream('examples_v1_11/if1-3ps-mule-post-example-v1.11.json')]" doc:name="Set Payload"/>
         		<object-to-string-transformer doc:name="Object to String"/>
             </otherwise>
         </choice>
