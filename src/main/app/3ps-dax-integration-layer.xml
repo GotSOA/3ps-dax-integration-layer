@@ -525,9 +525,9 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
             </otherwise>
         </choice>
         <json:json-to-object-transformer returnClass="java.util.LinkedHashMap" doc:name="JSON to Object"/>
-        <logger message="3PS-RESPONSE-BEFORE-ENRICHMENT: #[payload]" level="INFO" doc:name="debugging" />
+        <!-- <logger message="3PS-RESPONSE-BEFORE-ENRICHMENT: #[payload]" level="INFO" doc:name="debugging" />  -->
         <flow-ref name="3ps-createPartnerProfileResponse" doc:name="3ps-createPartnerProfileResponse"/>
-        <logger message="3PS-RESPONSE-AFTER-ENRICHMENT: #[payload]" level="INFO" doc:name="debugging" />
+        <!-- <logger message="3PS-RESPONSE-AFTER-ENRICHMENT: #[payload]" level="INFO" doc:name="debugging" />  -->
         <set-session-variable variableName="createPartnerProfileResponse" value="#[payload]" doc:name="Session Variable"/>
 		<flow-ref name="3ps-updatePartnerProfile" doc:name="3ps-updatePartnerProfile"/>
         <!-- a non-retryable exception will be DLQ'ed and not reported back to 3PS
